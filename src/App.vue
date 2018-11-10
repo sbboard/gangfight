@@ -1,43 +1,49 @@
 <template>
   <div id="app" :style="{flexDirection: (isTaller == 'vh')?'row':'column'}">
     <template v-if="isTaller == 'vw'">
-      <TopBorder :style="{height: (windowHeight - windowWidth) / 2 + 'px'}"/>
+      <div id="TopBorder" :style="{height: (windowHeight - windowWidth) / 2 + 'px'}">
+
+      </div>
     </template>
     <template v-if="isTaller == 'vh'">
-      <LeftBorder :style="{width: (windowWidth - windowHeight) / 2 + 'px'}"/>
+      <div id="LeftBorder" :style="{width: (windowWidth - windowHeight) / 2 + 'px'}">
+        <div id="boxContain">
+            <span>ギャングファイト</span>
+            <div id="line"></div>
+            <div id="fortune">{{fortune}}</div>
+            <div id="leftLine"></div>
+        </div>
+      </div>
     </template>
     <temp :style="{width: '100'+isTaller, height: '100'+isTaller}"/>
     <template v-if="isTaller == 'vh'">
-      <RightBorder :style="{width: (windowWidth - windowHeight) / 2 + 'px'}"/>
+      <div id="RightBorder" :style="{width: (windowWidth - windowHeight) / 2 + 'px'}">
+
+      </div>
     </template>
     <template v-if="isTaller == 'vw'">
-      <BottomBorder :style="{height: (windowHeight - windowWidth) / 2 + 'px'}"/>
+      <div id="BottomBorder" :style="{height: (windowHeight - windowWidth) / 2 + 'px'}">
+
+      </div>
     </template>
   </div>
 </template>
 
 <script>
 import Temp from './components/screen/temp.vue'
-import BottomBorder from './components/borders/bottom.vue'
-import LeftBorder from './components/borders/left.vue'
-import RightBorder from './components/borders/right.vue'
-import TopBorder from './components/borders/top.vue'
 
 export default {
   name: 'app',
   components: {
-    Temp,
-    BottomBorder,
-    LeftBorder,
-    RightBorder,
-    TopBorder
+    Temp
   },
   data(){
     return{
       windowHeight: 0,
       windowWidth: 0,
       isTaller: false,
-      flexDirect: "row" 
+      flexDirect: "row",
+      fortune: "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
     }
   },
   methods:{
