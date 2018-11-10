@@ -1,7 +1,7 @@
 <template>
   <div id="app" :style="{flexDirection: (isTaller == 'vh')?'row':'column'}">
     <template v-if="isTaller == 'vw'">
-      <TopBorder/>
+      <TopBorder :style="{height: (windowHeight - windowWidth) / 2 + 'px'}"/>
     </template>
     <template v-if="isTaller == 'vh'">
       <LeftBorder/>
@@ -11,7 +11,7 @@
       <RightBorder/>
     </template>
     <template v-if="isTaller == 'vw'">
-      <BottomBorder/>
+      <BottomBorder :style="{height: (windowHeight - windowWidth) / 2 + 'px'}"/>
     </template>
   </div>
 </template>
