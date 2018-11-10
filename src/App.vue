@@ -4,11 +4,11 @@
       <TopBorder :style="{height: (windowHeight - windowWidth) / 2 + 'px'}"/>
     </template>
     <template v-if="isTaller == 'vh'">
-      <LeftBorder/>
+      <LeftBorder :style="{width: (windowWidth - windowHeight) / 2 + 'px'}"/>
     </template>
     <temp :style="{width: '100'+isTaller, height: '100'+isTaller}"/>
     <template v-if="isTaller == 'vh'">
-      <RightBorder/>
+      <RightBorder :style="{width: (windowWidth - windowHeight) / 2 + 'px'}"/>
     </template>
     <template v-if="isTaller == 'vw'">
       <BottomBorder :style="{height: (windowHeight - windowWidth) / 2 + 'px'}"/>
@@ -77,4 +77,5 @@ export default {
   display: flex
   height: 100%
   justify-content: center
+  overflow: hidden
 </style>
