@@ -9,12 +9,12 @@
       <div id="LeftBorder" :style="{width: (windowWidth - windowHeight) / 2 + 'px'
                                     }">
         <div id="leftBoxContain" :style="{height: (windowWidth - windowHeight) / 2 + 'px',
-                                          //transform: 'translateY('+ (windowHeight - windowWidth) / 2 +'px) rotate(90deg)',
-                                          //transformOrigin: 'left bottom'
+                                          transform: 'translateY('+ (windowHeight - windowWidth) / 2 +'px) rotate(90deg)',
+                                          transformOrigin: 'left bottom'
                                           }">
             <div id="leftBoxContents">
               <div id="leftBoxTopRow">
-                <span>ギャングファイト</span><div :style="{width: 'calc(100% - 8em)'}" id="line"></div>
+                <span>ギャングファイト</span><div :style="{width: 'calc(100% - 8.5em)'}" id="line"></div>
               </div>
               <div id="fortune">"{{fortune}}"</div>
             </div>
@@ -93,28 +93,47 @@ export default {
   overflow: hidden
   #LeftBorder
     height: 100%
-    background-color: green
+    background-color: #3A0D07
     #leftBoxContain
       position: absolute
-      background-color: rgba(44,44,44,.5)
       width: 100vh
       #leftLine
-        height: 5px
-        background-color: red
+        height: .75em
+        background-color: #F7941D
         margin: 1em 
         position: absolute;
         bottom: 0;
-        width: calc(100% - 2em);
+        width: calc(100% - 2em)
+        &::after
+          height: 1.5em
+          background-color: #F7941D
+          width: .75em
+          display: block
+          content: " "
+          transform: translatey(-.75em);
+        &::before
+          height: 1.5em
+          background-color: #F7941D
+          width: .75em
+          display: block
+          content: " "
+          transform: translatey(-.75em);
+          position: absolute
+          right: 0
       #leftBoxContents
         margin: 1em
-        background-color: yellow
         #fortune
           font-style: italic;
+          font-size: 1.5em
+          color: #FAF5B3
         #leftBoxTopRow
+          color: #EE6E63
           font-size: 2.5em
+          font-weight: 800
           #line
             height: .25em
-            background-color: red
+            background-color: #F7941D
             display: inline-block
             margin-bottom: .2em
+            margin-left: .5em
 </style>
