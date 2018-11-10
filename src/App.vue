@@ -6,12 +6,19 @@
       </div>
     </template>
     <template v-if="isTaller == 'vh'">
-      <div id="LeftBorder" :style="{width: (windowWidth - windowHeight) / 2 + 'px'}">
-        <div id="boxContain">
-            <span>ギャングファイト</span>
-            <div id="line"></div>
-            <div id="fortune">{{fortune}}</div>
-            <div id="leftLine"></div>
+      <div id="LeftBorder" :style="{width: (windowWidth - windowHeight) / 2 + 'px'
+                                    }">
+        <div id="leftBoxContain" :style="{height: (windowWidth - windowHeight) / 2 + 'px',
+                                          //transform: 'translateY('+ (windowHeight - windowWidth) / 2 +'px) rotate(90deg)',
+                                          //transformOrigin: 'left bottom'
+                                          }">
+            <div id="leftBoxContents">
+              <div id="leftBoxTopRow">
+                <span>ギャングファイト</span><div :style="{width: 'calc(100% - 8em)'}" id="line"></div>
+              </div>
+              <div id="fortune">"{{fortune}}"</div>
+            </div>
+          <div id="leftLine"></div>
         </div>
       </div>
     </template>
@@ -84,4 +91,30 @@ export default {
   height: 100%
   justify-content: center
   overflow: hidden
+  #LeftBorder
+    height: 100%
+    background-color: green
+    #leftBoxContain
+      position: absolute
+      background-color: rgba(44,44,44,.5)
+      width: 100vh
+      #leftLine
+        height: 5px
+        background-color: red
+        margin: 1em 
+        position: absolute;
+        bottom: 0;
+        width: calc(100% - 2em);
+      #leftBoxContents
+        margin: 1em
+        background-color: yellow
+        #fortune
+          font-style: italic;
+        #leftBoxTopRow
+          font-size: 2.5em
+          #line
+            height: .25em
+            background-color: red
+            display: inline-block
+            margin-bottom: .2em
 </style>
