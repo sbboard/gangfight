@@ -1,6 +1,18 @@
 <template>
-  <div id="app">
+  <div id="app" :style="{flexDirection: (isTaller == 'vh')?'row':'column'}">
+    <template v-if="isTaller == 'vw'">
+      <TopBorder/>
+    </template>
+    <template v-if="isTaller == 'vh'">
+      <LeftBorder/>
+    </template>
     <temp :style="{width: '100'+isTaller, height: '100'+isTaller}"/>
+    <template v-if="isTaller == 'vh'">
+      <RightBorder/>
+    </template>
+    <template v-if="isTaller == 'vw'">
+      <BottomBorder/>
+    </template>
   </div>
 </template>
 
@@ -24,13 +36,13 @@ export default {
     return{
       windowHeight: 0,
       windowWidth: 0,
-      isTaller: false
+      isTaller: false,
+      flexDirect: "row" 
     }
   },
   methods:{
     changeSize(){
       this.isTaller = (this.windowHeight > this.windowWidth) ? "vw":"vh"
-      console.log(this.isTaller)
     }
   },
   created(){
@@ -61,4 +73,8 @@ export default {
 
 <style lang="sass" scoped>
 @import "./css/reset.css";
+#app
+  display: flex
+  height: 100%
+  justify-content: center
 </style>
