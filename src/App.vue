@@ -1,7 +1,6 @@
 <template>
   <div id="app">
-    {{windowWidth}} x {{windowHeight}}
-    <temp/>
+    <temp :style="{width: '100'+isTaller, height: '100'+isTaller}"/>
   </div>
 </template>
 
@@ -24,12 +23,30 @@ export default {
   data(){
     return{
       windowHeight: 0,
-      windowWidth: 0
+      windowWidth: 0,
+      isTaller: false
+    }
+  },
+  methods:{
+    changeSize(){
+      this.isTaller = (this.windowHeight > this.windowWidth) ? "vw":"vh"
+      console.log(this.isTaller)
     }
   },
   created(){
     this.windowHeight = window.innerHeight
     this.windowWidth = window.innerWidth
+  },
+  watch: {
+    windowHeight: function(){
+      this.changeSize()
+    },
+    windowWidth:function(){
+      this.changeSize()
+    },
+    isTaller: function(){
+
+    }
   },
   mounted() {
     this.$nextTick(() => {
@@ -42,6 +59,6 @@ export default {
 }
 </script>
 
-<style>
-
+<style lang="sass" scoped>
+@import "./css/reset.css";
 </style>
