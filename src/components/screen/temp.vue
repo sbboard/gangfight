@@ -1,6 +1,7 @@
 <template>
     <div>
-        ddd
+        <img src="@/assets/fortune.png"/>
+        <a href="#">BEGIN</a>
     </div>
 </template>
 
@@ -13,5 +14,14 @@ export default {
 
 <style lang="sass" scoped>
 div
-    background-color: red
+    background-color: black
+    img
+        margin: 4em auto 0 auto
+        display: block
+    a  
+        color: white
+        text-decoration: none
+        &:hover
+            color: black
+            background-color: white
 </style>

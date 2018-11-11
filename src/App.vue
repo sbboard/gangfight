@@ -42,7 +42,7 @@
               <div id="leftOfLows">{{pageDescrip}}</div>
               <div id="rightOfLows">
                 <div id="rightBar"></div>
-                <div id="copyright">© 2012 - 2030 Buff<br/>イルミナティの公式メンバー</div>
+                <div id="copyright">© 2012 - {{futureYear}} Buff<br/>イルミナティの公式メンバー</div>
               </div>
             </div>
           </div>
@@ -75,8 +75,9 @@ export default {
       isTaller: false,
       flexDirect: "row",
       fortune: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-      currentPage: "home",
-      pageDescrip: "Ah yes, the warm summer breeze. lorem lorem lorem baby okay dude."
+      currentPage: "welcome",
+      pageDescrip: "Welcome to Gang Fight. We've been waiting for you. Now we can begin.",
+      futureYear: new Date().getFullYear()+12
     }
   },
   methods:{
@@ -111,7 +112,13 @@ export default {
 </script>
 
 <style lang="sass" scoped>
-@import "./css/reset.css";
+@import "./css/reset.css"
+@import "./css/gfColors.scss"
+@import url('https://fonts.googleapis.com/css?family=Montserrat')
+@import url('https://fonts.googleapis.com/css?family=Yantramanav')
+
+$lineWidth: .5em
+
 #app
   display: flex
   height: 100%
@@ -121,28 +128,28 @@ export default {
   /* right border */
   #RightBorder
     height: 100%
-    background-color: green
     #rightBoxContain
       position: absolute
-      background-color: #3A0D07
+      background: linear-gradient(to right,$sideGradient)
       width: 100vh
+      overflow: hidden
       #rightLine
-        height: .75em
-        background-color: #F7941D
+        height: $lineWidth
+        background-color: $outrunYellow
         margin: 1em 
         position: absolute;
         top: 0;
         width: calc(100% - 2em)
         &::after
           height: 1.5em
-          background-color: #F7941D
-          width: .75em
+          background-color: $outrunYellow
+          width: $lineWidth
           display: block
           content: " "
         &::before
           height: 1.5em
-          background-color: #F7941D
-          width: .75em
+          background-color: $outrunYellow
+          width: $lineWidth
           display: block
           content: " "
           position: absolute
@@ -155,53 +162,55 @@ export default {
         #pageTitle
           text-transform: capitalize
           font-size: 5em
-          color: #EE6E63
+          color: $white
+          font-family: 'Montserrat', sans-serif;
         #lowOfLows
+          font-family: 'Yantramanav', sans-serif;
           #leftOfLows
             float: left
             width: calc(100% - (100% - 21.25em))
-            color: #FAF5B3
+            color: $white
           #rightOfLows
             float: right
             width: calc(100% - 8.5em)
             font-size: 2.5em
             #rightBar
-              height: .25em
+              height: $lineWidth / 3
               width: 100%
-              background-color: #F7941D
+              background-color: $neonBlue
               margin-bottom: .3em
             #copyright
               text-align: right
               font-size: .3em
-              color: #FAF5B3
+              color: $white
   /* left border */
   #LeftBorder
     height: 100%
-    background-color: #3A0D07
+    background: linear-gradient(to bottom,$sideGradient)
     #leftBoxContain
       position: absolute
       width: 100vh
       #leftLine
-        height: .75em
-        background-color: #F7941D
+        height: $lineWidth
+        background-color: $outrunYellow
         margin: 1em 
         position: absolute;
         bottom: 0;
         width: calc(100% - 2em)
         &::after
           height: 1.5em
-          background-color: #F7941D
-          width: .75em
+          background-color: $outrunYellow
+          width: $lineWidth
           display: block
           content: " "
-          transform: translatey(-.75em);
+          transform: translatey($lineWidth * -2);
         &::before
           height: 1.5em
-          background-color: #F7941D
-          width: .75em
+          background-color: $outrunYellow
+          width: $lineWidth
           display: block
           content: " "
-          transform: translatey(-.75em);
+          transform: translatey($lineWidth * - 2);
           position: absolute
           right: 0
       #leftBoxContents
@@ -209,17 +218,17 @@ export default {
         #fortune
           font-style: italic;
           font-size: 1.5em
-          color: #FAF5B3
+          color: white
           margin-top: .25em
           margin-left: 1em
         #leftBoxTopRow
-          color: #EE6E63
+          color: $neonPink
           font-size: 2.5em
           font-weight: 800
           #line
-            height: .25em
-            background-color: #F7941D
+            height: $lineWidth / 3
+            background-color: $neonBlue
             display: inline-block
-            margin-bottom: .2em
+            margin-bottom: $lineWidth / 2
             margin-left: .5em
 </style>
