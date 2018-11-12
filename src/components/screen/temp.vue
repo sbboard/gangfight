@@ -1,7 +1,9 @@
 <template>
     <div>
-    <cookie id="cookie"/>
-    Okay dude
+    <cookie style="height: 60%; margin-top: 10%; width:100%; cursor:pointer"/>
+    <div id="optionBox">
+        <a href="#">RECIEVE YOUR FORTUNE</a> &bull <a href="#">CONTINUE AS GUEST</a>
+    </div>
     </div>
 </template>
 
@@ -15,8 +17,19 @@ export default {
 </script>
 
 <style lang="sass" scoped>
-#cookie
-    width: 50vh
-    height: 50vh
-    overflow: none
+div
+    background-color: black
+    a
+        font-family: "Courier New", Courier, monospace
+        color: white
+        text-decoration: none
+        padding: 0 1em
+        font-size: 1.5em
+        &:hover
+            background-color: white
+            color: black
+#optionBox
+    display: block
+    margin: 2em auto 0 auto
+    width: fit-content
 </style>

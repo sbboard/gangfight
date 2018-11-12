@@ -3,7 +3,7 @@
         id="model"
         :rotation="rotation"
         @on-load="onLoad"
-        src="/duck.gltf"
+        src="/BarramundiFish.gltf"
         :backgroundAlpha="0"
         :position="position"
         :scale="scale"
@@ -28,9 +28,9 @@ export default {
                 z: 0
             },
             scale: {
-                x: .75,
-                y: .75,
-                z: .75
+                x: 1,
+                y: 1,
+                z: 1
             },
             bgColor: '#000'
         }
@@ -43,11 +43,12 @@ export default {
             this.rotate();
         },
         rotate () {
-            this.rotation.y += 0.01;
+            this.rotation.y += 0.05;
             requestAnimationFrame( this.rotate );
         },
         clicked(){
             // eslint-disable-next-line
+            console.log("clicked")
         }
     }
  
@@ -58,13 +59,8 @@ export default {
 <style lang="sass" scoped>
 div
     background-color: black
-    img
-        margin: 4em auto 0 auto
-        display: block
-    a  
-        color: white
-        text-decoration: none
-        &:hover
-            color: black
-            background-color: white
+    background-image: repeating-linear-gradient(0deg,transparent,transparent 70px,#CCC 70px,#CCC 71px),repeating-linear-gradient(-90deg,transparent,transparent 70px,#CCC 70px,#CCC 71px);
+    background-size: 71px 71px;
+    background-attachment: fixed;
+    background-position: center; 
 </style>

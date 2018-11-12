@@ -27,7 +27,7 @@
     </template>
 
     <!-- MIDDLE -->
-    <temp :style="{width: '100'+isTaller, height: '100'+isTaller}"/>
+    <temp v-if="isTaller" :style="{width: '100'+isTaller, height: '100'+isTaller}"/>
     
     <!-- RIGHT -->
     <template v-if="isTaller == 'vh'">
