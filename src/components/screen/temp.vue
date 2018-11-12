@@ -1,27 +1,22 @@
 <template>
     <div>
-        <img src="@/assets/fortune.png"/>
-        <a href="#">BEGIN</a>
+    <cookie id="cookie"/>
+    Okay dude
     </div>
 </template>
 
 <script>
+import cookie from './cookie.vue'
 export default {
-    
+    components:{
+        cookie
+    }
 }
 </script>
 
-
 <style lang="sass" scoped>
-div
-    background-color: black
-    img
-        margin: 4em auto 0 auto
-        display: block
-    a  
-        color: white
-        text-decoration: none
-        &:hover
-            color: black
-            background-color: white
+#cookie
+    width: 50vh
+    height: 50vh
+    overflow: none
 </style>
