@@ -2,7 +2,7 @@
     <div>
     <cookie style="height: 60%; margin-top: 10%; width:100%; cursor:pointer"/>
     <div id="optionBox">
-        <a href="#">RECIEVE YOUR FORTUNE</a> &bull <a href="#">CONTINUE AS GUEST</a>
+        <a href="#">//RECIEVE YOUR FORTUNE</a> &bull <a href="#">//CONTINUE AS GUEST</a>
     </div>
     </div>
 </template>
@@ -23,7 +23,7 @@ div
         font-family: "Courier New", Courier, monospace
         color: white
         text-decoration: none
-        padding: 0 1em
+        padding: 0 .5em
         font-size: 1.5em
         &:hover
             background-color: white
