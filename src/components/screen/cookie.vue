@@ -8,6 +8,7 @@
         :position="position"
         :scale="scale"
         :lights="lights"
+        :controllable="false"
         @on-click="clicked">
         </model-gltf>
 </template>
