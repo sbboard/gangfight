@@ -3,12 +3,12 @@
         id="model"
         :rotation="rotation"
         @on-load="onLoad"
-        src="/cookie.gltf"
+        src="/hard4.gltf"
         :backgroundAlpha="0"
         :position="position"
         :scale="scale"
-        :lights="lights"
         :controllable="false"
+        :lights="lights"
         @on-click="clicked">
         </model-gltf>
 </template>
@@ -17,6 +17,9 @@
 import { ModelGltf } from 'vue-3d-model'  
 
 export default {
+    components:{
+        ModelGltf
+    },
     data(){
         return{
             rotation: {
@@ -50,9 +53,6 @@ export default {
                      } 
                  ] 
         }
-    },
-    components:{
-        ModelGltf
     },
     methods: {
         onLoad () {
