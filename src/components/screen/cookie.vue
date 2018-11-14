@@ -39,13 +39,13 @@ export default {
                          position: { x: 1, y: 1, z: 1 }, 
                          skyColor: 0xffffff, 
                          groundColor: 0xffffff, 
-                         intensity: 1 
+                         intensity: 1.5 
                      }, 
                      { 
                          type: 'DirectionalLight', 
                          position: { x: 1, y: 1, z: 1 }, 
                          color: 0xffffff, 
-                         intensity: 1 
+                         intensity: 1.5
                      } 
                  ] 
         }
@@ -58,7 +58,7 @@ export default {
             this.rotate();
         },
         rotate () {
-            this.rotation.y += 0.05;
+            this.rotation.y += 0.03;
             requestAnimationFrame( this.rotate );
         },
         clicked(event){
