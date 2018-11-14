@@ -3,11 +3,12 @@
         id="model"
         :rotation="rotation"
         @on-load="onLoad"
-        src="/BarramundiFish.gltf"
+        src="/cookie.gltf"
         :backgroundAlpha="0"
         :position="position"
         :scale="scale"
-        @on-click="clicked()">
+        :lights="lights"
+        @on-click="clicked">
         </model-gltf>
 </template>
 
@@ -28,11 +29,25 @@ export default {
                 z: 0
             },
             scale: {
-                x: 1,
-                y: 1,
-                z: 1
+                x: .5,
+                y: .5,
+                z: .5
             },
-            bgColor: '#000'
+            lights:[ 
+                     { 
+                         type: 'HemisphereLight', 
+                         position: { x: 1, y: 1, z: 1 }, 
+                         skyColor: 0xffffff, 
+                         groundColor: 0xffffff, 
+                         intensity: 1 
+                     }, 
+                     { 
+                         type: 'DirectionalLight', 
+                         position: { x: 1, y: 1, z: 1 }, 
+                         color: 0xffffff, 
+                         intensity: 1 
+                     } 
+                 ] 
         }
     },
     components:{
@@ -46,9 +61,9 @@ export default {
             this.rotation.y += 0.05;
             requestAnimationFrame( this.rotate );
         },
-        clicked(){
+        clicked(event){
             // eslint-disable-next-line
-            console.log("clicked")
+            console.log(event)
         }
     }
  
