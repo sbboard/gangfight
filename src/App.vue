@@ -27,7 +27,7 @@
     </template>
 
     <!-- MIDDLE -->
-    <temp v-if="isTaller" :style="{width: '100'+isTaller, height: '100'+isTaller}"/>
+    <router-view v-if="isTaller" :style="{width: '100'+isTaller, height: '100'+isTaller}"/>
     
     <!-- RIGHT -->
     <template v-if="isTaller == 'vh'">
@@ -61,12 +61,9 @@
 </template>
 
 <script>
-import Temp from './components/screen/temp.vue'
-
 export default {
   name: 'app',
   components: {
-    Temp
   },
   data(){
     return{

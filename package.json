@@ -11,7 +11,8 @@
     "node-sass": "^4.10.0",
     "sass-loader": "^7.1.0",
     "vue": "^2.5.17",
-    "vue-3d-model": "^1.0.2"
+    "vue-3d-model": "^1.0.2",
+    "vue-router": "^3.0.2"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.1.1",
