@@ -3,7 +3,7 @@
         id="model"
         :rotation="rotation"
         @on-load="onLoad"
-        src="/hard4.gltf"
+        src="/3dModel/hard4.gltf"
         :backgroundAlpha="0"
         :position="position"
         :scale="scale"
