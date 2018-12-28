@@ -124,7 +124,6 @@ $lineWidth: .5em
   height: 100%
   justify-content: center
   overflow: hidden
-
   /* right border */
   #RightBorder
     height: 100%
