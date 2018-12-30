@@ -27,7 +27,7 @@
     </template>
 
     <!-- MIDDLE -->
-    <nav/>
+    <navigation/>
     <router-view v-if="isTaller" :style="{width: '100'+isTaller, height: '100'+isTaller}"/>
     
     <!-- RIGHT -->
@@ -62,9 +62,12 @@
 </template>
 
 <script>
+import navigation from './components/nav/navHome.vue'
+
 export default {
   name: 'app',
   components: {
+    navigation
   },
   data(){
     return{

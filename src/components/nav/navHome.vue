@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div id="nav">
         Home
     </div>
 </template>
@@ -11,5 +11,7 @@ export default {
 </script>
 
 <style lang="sass" scoped>
-
+#nav
+    position: fixed
+    bottom: 0
 </style>
