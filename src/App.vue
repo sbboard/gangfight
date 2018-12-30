@@ -27,6 +27,7 @@
     </template>
 
     <!-- MIDDLE -->
+    <nav/>
     <router-view v-if="isTaller" :style="{width: '100'+isTaller, height: '100'+isTaller}"/>
     
     <!-- RIGHT -->
