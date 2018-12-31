@@ -38,9 +38,9 @@
                                           transformOrigin: 'left bottom'
                                           }">
           <div id="bottomSlap">
-            <div id="pageTitle">{{this.$store.getters.getPage}}</div>
+            <div id="pageTitle">{{this.$router.currentRoute.name}}</div>
             <div id="lowOfLows">
-              <div id="leftOfLows">{{this.$store.getters.getPageDescription}}</div>
+              <div id="leftOfLows">{{pageList[this.$router.currentRoute.name].description}}</div>
               <div id="rightOfLows">
                 <div id="rightBar"></div>
                 <div id="copyright">© 2012 - {{futureYear}} Buff<br/>イルミナティの公式メンバー</div>
@@ -63,6 +63,7 @@
 
 <script>
 import navigation from './components/nav/navHome.vue'
+import pagelist from './pageDescriptions.json'
 
 export default {
   name: 'app',
@@ -76,7 +77,8 @@ export default {
       isTaller: false,
       flexDirect: "row",
       fortune: this.$store.getters.getFortune,
-      futureYear: new Date().getFullYear()+12
+      futureYear: new Date().getFullYear()+12,
+      pageList: pagelist
     }
   },
   methods:{
@@ -98,9 +100,9 @@ export default {
     isTaller: function(){
 
     },
-    $route: function(to){
-      this.$store.commit('changePage',to.name)
-    }
+    //$route: function(to){
+      //this.$store.commit('changePage',to.name)
+    //}
   },
   mounted() {
     this.$nextTick(() => {
