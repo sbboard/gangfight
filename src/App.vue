@@ -38,9 +38,9 @@
                                           transformOrigin: 'left bottom'
                                           }">
           <div id="bottomSlap">
-            <div id="pageTitle">{{currentPage}}</div>
+            <div id="pageTitle">{{this.$store.getters.getPage}}</div>
             <div id="lowOfLows">
-              <div id="leftOfLows">{{pageDescrip}}</div>
+              <div id="leftOfLows">{{this.$store.getters.getPageDescription}}</div>
               <div id="rightOfLows">
                 <div id="rightBar"></div>
                 <div id="copyright">© 2012 - {{futureYear}} Buff<br/>イルミナティの公式メンバー</div>
@@ -75,9 +75,7 @@ export default {
       windowWidth: 0,
       isTaller: false,
       flexDirect: "row",
-      fortune: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-      currentPage: "welcome",
-      pageDescrip: "Welcome to Gang Fight. We've been waiting for you. Now we can begin.",
+      fortune: this.$store.getters.getFortune,
       futureYear: new Date().getFullYear()+12
     }
   },
@@ -99,6 +97,9 @@ export default {
     },
     isTaller: function(){
 
+    },
+    $route: function(to){
+      this.$store.commit('changePage',to.name)
     }
   },
   mounted() {

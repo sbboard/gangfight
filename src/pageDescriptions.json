@@ -1,0 +1,11 @@
+{  
+    "home":{  
+       "description":"Welcome to Gang Fight. We've been waiting for you. Now we can begin."
+    },
+    "login":{
+        "description":"Your future is what you make of it."
+    },
+    "dracula's culture club":{
+        "description":"Get recommendations from the dark lord himself."
+    }
+ }

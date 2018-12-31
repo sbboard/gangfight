@@ -20,7 +20,7 @@ export default new Router({
     },
     {
     path: "*",
-    name: "404/405",
+    name: "dracula's culture club",
     component: Dracula
     },
   ]
