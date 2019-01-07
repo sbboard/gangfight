@@ -25,16 +25,6 @@
           <div class="col-3">rand</div>
           <div class="col-3">rand</div>
           <div class="col-3">time</div>
-      <!--
-            <div id="leftBoxContents">
-              <div id="leftBoxTopRow">
-                <span>ギャングファイト</span><div :style="{width: 'calc(100% - 8.5em)'}" id="line"></div>
-              </div>
-              <div id="fortune">"{{fortune}}"</div>
-            </div>
-          <div id="leftLine"></div>
-        -->
-
         </div>
       </div>
     </template>
@@ -63,19 +53,6 @@
           <div class="col-1">ip address and flag</div>
           <div class="col-8">{{this.$router.currentRoute.name}}</div>
           <div class="col-4">© 2012 - {{futureYear}} Buff<br/>イルミナティの公式メンバー</div>
-          <!--
-          <div id="bottomSlap">
-            <div id="pageTitle">{{this.$router.currentRoute.name}}</div>
-            <div id="lowOfLows">
-              <div id="leftOfLows">{{pageList[this.$router.currentRoute.name].description}}</div>
-              <div id="rightOfLows">
-                <div id="rightBar"></div>
-                <div id="copyright">© 2012 - {{futureYear}} Buff<br/>イルミナティの公式メンバー</div>
-              </div>
-            </div>
-          </div>
-          <div id="rightLine"></div>
-        -->
         </div>
       </div>
     </template>
