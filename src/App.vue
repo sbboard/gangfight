@@ -4,17 +4,28 @@
     <!-- TOP -->
     <template v-if="isTaller == 'vw'">
       <div id="TopBorder" :style="{height: (windowHeight - windowWidth) / 2 + 'px'}">
-
+        gang fight<br>
+        ギャングファイト
       </div>
     </template>
 
     <!-- LEFT -->
     <template v-if="isTaller == 'vh'">
       <div id="LeftBorder" :style="{width: (windowWidth - windowHeight) / 2 + 'px'}">
-        <div id="leftBoxContain" :style="{height: (windowWidth - windowHeight) / 2 + 'px',
+        <div id="leftBoxContain" class="grid-noGutter" :style="{height: (windowWidth - windowHeight) / 2 + 'px',
                                           transform: 'translateY('+ (windowHeight - windowWidth) / 2 +'px) rotate(90deg)',
                                           transformOrigin: 'left bottom'
                                           }">
+          <div class="col-10">
+            <div class="col-12">ギャングファイト</div>
+            <div class="col-12">{{fortune}}</div>
+          </div>
+          <div class="col-2">barcode</div>
+          <div class="col-3">pic</div>
+          <div class="col-3">rand</div>
+          <div class="col-3">rand</div>
+          <div class="col-3">time</div>
+      <!--
             <div id="leftBoxContents">
               <div id="leftBoxTopRow">
                 <span>ギャングファイト</span><div :style="{width: 'calc(100% - 8.5em)'}" id="line"></div>
@@ -22,6 +33,8 @@
               <div id="fortune">"{{fortune}}"</div>
             </div>
           <div id="leftLine"></div>
+        -->
+
         </div>
       </div>
     </template>
@@ -33,10 +46,24 @@
     <!-- RIGHT -->
     <template v-if="isTaller == 'vh'">
       <div id="RightBorder" :style="{width: (windowWidth - windowHeight) / 2 + 'px'}">
-        <div id="rightBoxContain" :style="{height: (windowWidth - windowHeight) / 2 + 'px',
+        <div id="rightBoxContain" class="grid-noGutter" :style="{height: (windowWidth - windowHeight) / 2 + 'px',
                                           transform: 'translateY('+ (windowHeight - windowWidth) / 2 +'px) rotate(90deg)',
                                           transformOrigin: 'left bottom'
                                           }">
+          <div class="col-2">{{pageList[this.$router.currentRoute.name].description}}</div>
+          <div class="col-1">stage 2 act 1</div>
+          <div class="col-2">
+            <div class="col-6">chewy</div>
+            <div class="col-6">online now (i think)</div>
+          </div>
+          <div class="col-4">last update</div>
+          <div class="col-2">
+            <div class="col-6">90s logo</div>
+            <div class="col-6">90s logo</div></div>
+          <div class="col-1">ip address and flag</div>
+          <div class="col-8">{{this.$router.currentRoute.name}}</div>
+          <div class="col-4">© 2012 - {{futureYear}} Buff<br/>イルミナティの公式メンバー</div>
+          <!--
           <div id="bottomSlap">
             <div id="pageTitle">{{this.$router.currentRoute.name}}</div>
             <div id="lowOfLows">
@@ -48,6 +75,7 @@
             </div>
           </div>
           <div id="rightLine"></div>
+        -->
         </div>
       </div>
     </template>
@@ -55,7 +83,14 @@
     <!-- BOTTOM -->
     <template v-if="isTaller == 'vw'">
       <div id="BottomBorder" :style="{height: (windowHeight - windowWidth) / 2 + 'px'}">
-
+        <div class="grid-noGutter">
+          <div class="col-8">{{this.$router.currentRoute.name}}</div>
+          <div class="col-4">© 2012 - {{futureYear}} Buff<br/>イルミナティの公式メンバー</div>
+          <div class="col-12">Buffum 10/15/15 3:75PM</div>
+          <div class="col-2">barcode</div>
+          <div class="col-9"></div>
+          <div class="col-1">1st edition</div>
+        </div>
       </div>
     </template>
   </div>
@@ -118,6 +153,7 @@ export default {
 <style lang="sass" scoped>
 @import "./css/reset.css"
 @import "./css/gfColors.scss"
+@import "./css/gridlex.min.css"
 @import url('https://fonts.googleapis.com/css?family=Montserrat')
 @import url('https://fonts.googleapis.com/css?family=Yantramanav')
 
@@ -131,9 +167,10 @@ $lineWidth: .5em
   /* right border */
   #RightBorder
     height: 100%
+    //background-color: red
     #rightBoxContain
       position: absolute
-      background: linear-gradient(to right,$sideGradient)
+      //background: linear-gradient(to right,$sideGradient)
       width: 100vh
       overflow: hidden
       #rightLine
@@ -189,7 +226,7 @@ $lineWidth: .5em
   /* left border */
   #LeftBorder
     height: 100%
-    background: linear-gradient(to bottom,$sideGradient)
+    //background: linear-gradient(to bottom,$sideGradient)
     #leftBoxContain
       position: absolute
       width: 100vh
