@@ -12,19 +12,23 @@
     <!-- LEFT -->
     <template v-if="isTaller == 'vh'">
       <div id="LeftBorder" :style="{width: (windowWidth - windowHeight) / 2 + 'px'}">
-        <div id="leftBoxContain" class="grid-noGutter" :style="{height: (windowWidth - windowHeight) / 2 + 'px',
+        <div id="leftBoxContain" :style="{height: (windowWidth - windowHeight) / 2 + 'px',
                                           transform: 'translateY('+ (windowHeight - windowWidth) / 2 +'px) rotate(90deg)',
                                           transformOrigin: 'left bottom'
                                           }">
-          <div class="col-10">
-            <div class="col-12">ギャングファイト</div>
-            <div class="col-12">{{fortune}}</div>
+          <div class="grid-noGutter" style="background-color:blue">
+            <div class="col-10">
+              <div class="col-12 heightFifty sideLogo"><span>ギャングファイト</span></div>
+              <div class="col-12 heightFifty fortune">{{fortune}}</div>
+            </div>
+            <div class="col-2 barcodeBox" style="background-color:red"><img class="barcode" :src="'assets/' + this.$store.getters.assetFolder + '/sidebar/barcode.png'"/></div>
           </div>
-          <div class="col-2">barcode</div>
+          <div class="grid-noGutter" style="background-color:green">
           <div class="col-3">pic</div>
           <div class="col-3">rand</div>
           <div class="col-3">rand</div>
           <div class="col-3">time</div>
+          </div>
         </div>
       </div>
     </template>
@@ -248,4 +252,23 @@ $lineWidth: .5em
             display: inline-block
             margin-bottom: $lineWidth / 2
             margin-left: .5em
+.barcodeBox
+  align-self: center
+  text-align: center
+  .barcode
+    width: 13vh
+.heightFifty
+  height: 50%
+  border: .5px solid blue
+.sideLogo
+  font-size: 8vh
+  display: flex
+  align-content: center
+  padding: 0
+  display: block
+  align-self: center
+  span
+.fortune
+  padding: 0
+  font-size: 3vh
 </style>
