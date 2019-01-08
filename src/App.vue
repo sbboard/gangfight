@@ -23,11 +23,15 @@
             </div>
             <div class="col-2 barcodeBox" style="background-color:red"><img class="barcode" :src="'assets/' + this.$store.getters.assetFolder + '/sidebar/barcode.png'"/></div>
           </div>
-          <div class="grid-noGutter" style="background-color:green">
-          <div class="col-3">pic</div>
-          <div class="col-3">rand</div>
-          <div class="col-3">rand</div>
-          <div class="col-3">time</div>
+          <div class="grid-noGutter farLeft" style="background-color:green">
+          <div class="col-3"><img class="profilePic" :src="'assets/global/sidebar/photo.png'"/></div>
+          <div class="col-2 nameBlock">Buffum</div>
+          <div class="col-2"><img class="randoBlock" :src="'assets/' + this.$store.getters.assetFolder + '/sidebar/2.jpg'"/></div>
+          <div class="col-2"><img class="randoBlock" :src="'assets/' + this.$store.getters.assetFolder + '/sidebar/5.jpg'"/></div>
+          <div class="col-3 timeBox">
+            <span class="date">1/2/19</span>
+            <span class="time">5:30PM</span>
+          </div>
           </div>
         </div>
       </div>
@@ -271,4 +275,29 @@ $lineWidth: .5em
 .fortune
   padding: 0
   font-size: 3vh
+  margin-left: .75em
+.randoBlock
+  width: 100%
+  transform: rotate(-90deg)
+.farLeft
+  line-height: 0
+.timeBox
+  line-height: 1
+  display: flex
+  flex-direction: column
+  justify-content: center
+  span
+    display: block
+    font-size: 3.5vh
+    text-align: center
+    letter-spacing: 1vh
+.profilePic    
+  width: 25vh
+  height: 100%
+.nameBlock
+  line-height: 1
+  font-size: 6vh
+  word-break: break-all
+  transform: rotate(-90deg)
+  align-self: center
 </style>
