@@ -18,7 +18,7 @@
                                           }">
           <div class="grid-noGutter" style="background-color:blue">
             <div class="col-10">
-              <div class="col-12 heightFifty sideLogo"><span>ギャングファイト</span></div>
+              <div class="col-12 heightFifty sideLogo"><span>ギャングファイト</span><span class="leftLine"></span></div>
               <div class="col-12 heightFifty fortune">{{fortune}}</div>
             </div>
             <div class="col-2 barcodeBox" style="background-color:red"><img class="barcode" :src="'assets/' + this.$store.getters.assetFolder + '/sidebar/barcode.png'"/></div>
@@ -44,23 +44,30 @@
     <!-- RIGHT -->
     <template v-if="isTaller == 'vh'">
       <div id="RightBorder" :style="{width: (windowWidth - windowHeight) / 2 + 'px'}">
-        <div id="rightBoxContain" class="grid-noGutter" :style="{height: (windowWidth - windowHeight) / 2 + 'px',
+        <div id="rightBoxContain" style="background-color:red" :style="{height: (windowWidth - windowHeight) / 2 + 'px',
                                           transform: 'translateY('+ (windowHeight - windowWidth) / 2 +'px) rotate(90deg)',
                                           transformOrigin: 'left bottom'
                                           }">
-          <div class="col-2">{{pageList[this.$router.currentRoute.name].description}}</div>
+          <div class="rightBox">
+          <div class="grid-noGutter">
+          <div class="col-2 descripBox"><span>{{pageList[this.$router.currentRoute.name].description}}</span></div>
           <div class="col-1">stage 2 act 1</div>
           <div class="col-2">
             <div class="col-6">chewy</div>
             <div class="col-6">online now (i think)</div>
           </div>
-          <div class="col-4">last update</div>
+          <div class="col-4 lastUpdatePic"><img :src="'http://gang-fight.com/projects/thumbs/xeno.jpg'"/></div>
           <div class="col-2">
-            <div class="col-6">90s logo</div>
-            <div class="col-6">90s logo</div></div>
+            <div class="col-6 adHere"><img class="profilePic" :src="'assets/global/sidebar/n64.jpg'"/></div>
+            <div class="col-6 adHere"><img class="profilePic" :src="'assets/global/sidebar/playstation.png'"/></div>
+          </div>
           <div class="col-1">ip address and flag</div>
-          <div class="col-8">{{this.$router.currentRoute.name}}</div>
-          <div class="col-4">© 2012 - {{futureYear}} Buff<br/>イルミナティの公式メンバー</div>
+          </div>
+          <div class="grid-noGutter">
+          <div class="col-8 routeName">{{this.$router.currentRoute.name}}</div>
+          <div class="col-4 copyRight"><span>© 2012 - {{futureYear}} Buff<br/>イルミナティの公式メンバー</span></div>
+          </div>
+          </div>
         </div>
       </div>
     </template>
@@ -269,7 +276,6 @@ $lineWidth: .5em
   display: flex
   align-content: center
   padding: 0
-  display: block
   align-self: center
   span
 .fortune
@@ -300,4 +306,41 @@ $lineWidth: .5em
   word-break: break-all
   transform: rotate(-90deg)
   align-self: center
+.leftLine
+  height: .5vh
+  display: inline-block
+  width: 100px
+  background-color: red
+  align-self: center
+  margin-bottom: .10em
+  width: 18vh
+.rightBox
+  position: absolute
+  bottom: 0
+  .routeName
+    font-size: 8vh
+    padding-left: .5em
+  .copyRight
+    text-align: right
+    display: flex
+    justify-content: flex-end
+    font-size: 1.75vh
+    span
+      align-self: flex-end
+      justify-self: baseline
+      padding-right: 1em
+      padding-bottom: 1em
+  .descripBox
+    span
+      display: block
+.adHere
+  padding: 0
+  line-height: 0
+  img
+    width: 100%
+.lastUpdatePic
+  img
+    width: 100%
+    filter: saturate(5) contrast(2.5) hue-rotate(151deg)
+    transform: rotate(-90deg)
 </style>
