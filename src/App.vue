@@ -3,8 +3,9 @@
 
     <!-- TOP -->
     <template v-if="isTaller == 'vw'">
-      <div id="TopBorder" :style="{height: (windowHeight - windowWidth) / 2 + 'px'}">
-        <div class="topLogoBox">
+      <div id="TopBorder" :style="{height: (windowHeight - windowWidth) / 2 + 'px',
+                                   backgroundImage: 'url(' + 'assets/' + this.$store.getters.assetFolder + '/sidebar/topBrdrBg.gif)'}">
+        <div ref="wordBox" class="topLogoBox" :style="{bottom: logoBoxBottom}">
         <span id="topWords">gang fight</span>
         <span id="bottomWords">ギャングファイト</span>
         </div>
@@ -83,12 +84,12 @@
           <div class="col-4 bottomRight" style="background-color:blue"><span>© 2012 - {{futureYear}} Buff<br/>イルミナティの公式メンバー</span></div>
         </div>
         <div class="grid-noGutter">
-          <div class="col-12" style="background-color:green">Buffum 10/15/15 3:75PM</div>
+          <div class="col-12 personInfo" style="background-color:green">Buffum 10/15/15 3:75PM</div>
         </div>
         <div class="grid-noGutter">
-          <div class="col-2" style="background-color:pink">barcode</div>
+          <div class="col-2 bottomBar" style="background-color:pink"><img :src="'assets/' + this.$store.getters.assetFolder + '/sidebar/barcodeHori.png'"/></div>
           <div class="col-9" style="background-color:blue"></div>
-          <div class="col-1">1st edition</div>
+          <div class="col-1 firstEd"><img src="assets/global/sidebar/1sted.png"/></div>
         </div>
         </div>
       </div>
@@ -113,7 +114,8 @@ export default {
       flexDirect: "row",
       fortune: this.$store.getters.getFortune,
       futureYear: new Date().getFullYear()+12,
-      pageList: pagelist
+      pageList: pagelist,
+      boxHeight: 0
     }
   },
   methods:{
@@ -124,6 +126,17 @@ export default {
   created(){
     this.windowHeight = window.innerHeight
     this.windowWidth = window.innerWidth
+  },
+  computed: {
+    logoBoxBottom(){
+      const windowSize = (this.windowHeight - this.windowWidth) / 2
+      if(((windowSize - this.boxHeight) / 2) > 0){
+        return (windowSize - this.boxHeight) / 2 + "px"
+      }
+      else{
+        return "0px"
+      }
+    }
   },
   watch: {
     windowHeight: function(){
@@ -144,6 +157,7 @@ export default {
       window.addEventListener('resize', () => {
         this.windowHeight = window.innerHeight
         this.windowWidth = window.innerWidth
+        this.boxHeight = this.$refs.wordBox.clientHeight
       });
     })
   },
@@ -162,13 +176,22 @@ $lineWidth: .5em
 #BottomBorder
   #grids
   .bottomRouteName
-    font-size: 10vh
+    font-size: 5.5vh
   .bottomRight
     text-align: right
     span
       padding-right: 1em
       display: block
       font-size: 2.5vw
+  .firstEd
+    img
+      width: 100%
+  .bottomBar
+    img
+      width: 100%
+  .personInfo
+    text-align: center
+    letter-spacing: .25em
 #TopBorder
   background-color: red
   text-align: center
@@ -176,12 +199,18 @@ $lineWidth: .5em
   flex-direction: column
   align-content: center
   justify-content: center
+  color: red
+  position: relative
+  //color: white
   .topLogoBox
     margin: 0 auto
     display: block
     width: fit-content
-    border: 2px solid blue
+    border: 2px solid red
+    //border: 2px solid white
     padding: 1em
+    position: absolute
+    bottom: 0
 span#topWords
   display:block !important
   font-size: 9vw
