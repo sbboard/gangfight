@@ -1,6 +1,5 @@
 <template>
     <div id="homeBlock">
-        <h1>Gang Fight</h1>
         <div id="gridBlock">
         <span>Latest Tracks:</span>
         <div id="latestGrid">

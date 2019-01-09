@@ -4,8 +4,10 @@
     <!-- TOP -->
     <template v-if="isTaller == 'vw'">
       <div id="TopBorder" :style="{height: (windowHeight - windowWidth) / 2 + 'px'}">
-        gang fight<br>
-        ギャングファイト
+        <div class="topLogoBox">
+        <span id="topWords">gang fight</span>
+        <span id="bottomWords">ギャングファイト</span>
+        </div>
       </div>
     </template>
 
@@ -44,26 +46,26 @@
     <!-- RIGHT -->
     <template v-if="isTaller == 'vh'">
       <div id="RightBorder" :style="{width: (windowWidth - windowHeight) / 2 + 'px'}">
-        <div id="rightBoxContain" style="background-color:red" :style="{height: (windowWidth - windowHeight) / 2 + 'px',
+        <div id="rightBoxContain" :style="{height: (windowWidth - windowHeight) / 2 + 'px',
                                           transform: 'translateY('+ (windowHeight - windowWidth) / 2 +'px) rotate(90deg)',
                                           transformOrigin: 'left bottom'
                                           }">
           <div class="rightBox">
-          <div class="grid-noGutter">
-          <div class="col-2 descripBox"><span>{{pageList[this.$router.currentRoute.name].description}}</span></div>
-          <div class="col-1">stage 2 act 1</div>
+          <div class="grid-noGutter leftInnerBox" style="background-color:red">
+          <div class="col-2 descripBox" style="background-color: yellow"><span>{{pageList[this.$router.currentRoute.name].description}}</span></div>
+          <div class="col-1 stageList"><span>stage 2 act 1</span></div>
           <div class="col-2">
-            <div class="col-6">chewy</div>
-            <div class="col-6">online now (i think)</div>
+            <div class="col-6 topRightBlock iconBlock" style="background-color: blue"><span>O</span></div>
+            <div class="col-6 topRightBlock onlineNowBlock" style="background-color: green"><span class="onlineNow">Online Now</span><span class="onlineNo">3</span></div>
           </div>
           <div class="col-4 lastUpdatePic"><img :src="'http://gang-fight.com/projects/thumbs/xeno.jpg'"/></div>
           <div class="col-2">
             <div class="col-6 adHere"><img class="profilePic" :src="'assets/global/sidebar/n64.jpg'"/></div>
             <div class="col-6 adHere"><img class="profilePic" :src="'assets/global/sidebar/playstation.png'"/></div>
           </div>
-          <div class="col-1">ip address and flag</div>
+          <div class="col-1 ipFlag"><span>ip address and flag</span></div>
           </div>
-          <div class="grid-noGutter">
+          <div class="grid-noGutter" style="background-color:blue">
           <div class="col-8 routeName">{{this.$router.currentRoute.name}}</div>
           <div class="col-4 copyRight"><span>© 2012 - {{futureYear}} Buff<br/>イルミナティの公式メンバー</span></div>
           </div>
@@ -74,14 +76,20 @@
 
     <!-- BOTTOM -->
     <template v-if="isTaller == 'vw'">
-      <div id="BottomBorder" :style="{height: (windowHeight - windowWidth) / 2 + 'px'}">
+      <div id="BottomBorder" style="background-color: yellow" :style="{height: (windowHeight - windowWidth) / 2 + 'px'}">
+      <div id="grids">
         <div class="grid-noGutter">
-          <div class="col-8">{{this.$router.currentRoute.name}}</div>
-          <div class="col-4">© 2012 - {{futureYear}} Buff<br/>イルミナティの公式メンバー</div>
-          <div class="col-12">Buffum 10/15/15 3:75PM</div>
-          <div class="col-2">barcode</div>
-          <div class="col-9"></div>
+          <div class="col-8 bottomRouteName" style="background-color:red"><span>{{this.$router.currentRoute.name}}</span></div>
+          <div class="col-4 bottomRight" style="background-color:blue"><span>© 2012 - {{futureYear}} Buff<br/>イルミナティの公式メンバー</span></div>
+        </div>
+        <div class="grid-noGutter">
+          <div class="col-12" style="background-color:green">Buffum 10/15/15 3:75PM</div>
+        </div>
+        <div class="grid-noGutter">
+          <div class="col-2" style="background-color:pink">barcode</div>
+          <div class="col-9" style="background-color:blue"></div>
           <div class="col-1">1st edition</div>
+        </div>
         </div>
       </div>
     </template>
@@ -151,6 +159,36 @@ export default {
 
 $lineWidth: .5em
 
+#BottomBorder
+  #grids
+  .bottomRouteName
+    font-size: 10vh
+  .bottomRight
+    text-align: right
+    span
+      padding-right: 1em
+      display: block
+      font-size: 2.5vw
+#TopBorder
+  background-color: red
+  text-align: center
+  display: flex
+  flex-direction: column
+  align-content: center
+  justify-content: center
+  .topLogoBox
+    margin: 0 auto
+    display: block
+    width: fit-content
+    border: 2px solid blue
+    padding: 1em
+span#topWords
+  display:block !important
+  font-size: 9vw
+span#bottomWords
+  display:block !important
+  font-size: 3vw
+  padding-top: .5em
 #app
   display: flex
   height: 100%
@@ -278,8 +316,19 @@ $lineWidth: .5em
   padding: 0
   align-self: center
   span
+    padding-top: .25em
+  .leftLine
+    height: .5vh
+    display: inline-block
+    width: 100px
+    background-color: red
+    align-self: center
+    margin-bottom: -.4em
+    width: 18vh
+    padding: 0
 .fortune
   padding: 0
+  padding-top: .25em
   font-size: 3vh
   margin-left: .75em
 .randoBlock
@@ -306,14 +355,6 @@ $lineWidth: .5em
   word-break: break-all
   transform: rotate(-90deg)
   align-self: center
-.leftLine
-  height: .5vh
-  display: inline-block
-  width: 100px
-  background-color: red
-  align-self: center
-  margin-bottom: .10em
-  width: 18vh
 .rightBox
   position: absolute
   bottom: 0
@@ -331,8 +372,17 @@ $lineWidth: .5em
       padding-right: 1em
       padding-bottom: 1em
   .descripBox
+    display: block
+    position: relative
+    line-height: 1
     span
-      display: block
+      display: block    
+      transform: rotate(-90deg)
+      font-size: 1.75vh
+      position: absolute
+      left: -10.5vh
+      bottom: 15vh
+      width: 32vh
 .adHere
   padding: 0
   line-height: 0
@@ -343,4 +393,62 @@ $lineWidth: .5em
     width: 100%
     filter: saturate(5) contrast(2.5) hue-rotate(151deg)
     transform: rotate(-90deg)
+.topRightBlock
+  height: 16.666666666vh
+  padding: 0
+.onlineNowBlock
+  position: relative
+  line-height: 1
+  .onlineNow
+    transform-origin: left
+    position: absolute
+    font-size: 4vh
+    bottom: -3vh
+    left: 5vh
+    transform: rotate(-90deg)
+    display: block
+  .onlineNo
+    transform: rotate(-90deg)
+    position: absolute
+    top: -2vh
+    left: 9vh
+    font-size: 10vh
+.iconBlock
+  display: flex
+  align-items: center
+  justify-content: center
+  text-align: center
+  span
+    display: block
+    transform: rotate(-90deg)
+    font-size: 15vh
+    text-align: center
+.leftInnerBox
+  line-height: 0
+.stageList
+  display: flex
+  align-items: center
+  justify-content: center
+  text-align: center
+  line-height: 1
+  flex-direction: column
+  span
+    display: block
+    width: 32vh
+    transform: rotate(-90deg)
+    font-size: 5vh
+    text-align: center
+.ipFlag
+  display: flex
+  align-items: center
+  justify-content: center
+  text-align: center
+  line-height: 1
+  flex-direction: column
+  span
+    display: block
+    width: 32vh
+    transform: rotate(-90deg)
+    font-size: 3vh
+    text-align: center
 </style>
