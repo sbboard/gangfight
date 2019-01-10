@@ -130,11 +130,11 @@ export default {
   computed: {
     logoBoxBottom(){
       const windowSize = (this.windowHeight - this.windowWidth) / 2
-      if(((windowSize - this.boxHeight) / 2) > 0){
+      if(((windowSize - this.boxHeight) / 2) > 10){
         return (windowSize - this.boxHeight) / 2 + "px"
       }
       else{
-        return "0px"
+        return "10px"
       }
     }
   },
@@ -154,10 +154,16 @@ export default {
   },
   mounted() {
     this.$nextTick(() => {
+      const logoBox = this.$refs.wordBox
+      if(logoBox != null){
+        this.boxHeight = logoBox.clientHeight
+      }
       window.addEventListener('resize', () => {
         this.windowHeight = window.innerHeight
         this.windowWidth = window.innerWidth
-        this.boxHeight = this.$refs.wordBox.clientHeight
+        if(logoBox != null){
+          this.boxHeight = logoBox.clientHeight
+        }
       });
     })
   },
@@ -199,14 +205,16 @@ $lineWidth: .5em
   flex-direction: column
   align-content: center
   justify-content: center
-  color: red
+  color: white
   position: relative
   //color: white
   .topLogoBox
     margin: 0 auto
     display: block
     width: fit-content
-    border: 2px solid red
+    border: 2px solid white
+    left: 0
+    right: 0
     //border: 2px solid white
     padding: 1em
     position: absolute
