@@ -185,17 +185,23 @@ $lineWidth: .5em
     font-size: 5.5vh
   .bottomRight
     text-align: right
+    padding-top: .5em
     span
       padding-right: 1em
       display: block
       font-size: 2.5vw
   .firstEd
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     img
       width: 100%
   .bottomBar
+    padding: .25em 0
     img
       width: 100%
   .personInfo
+    padding: .25em 0
     text-align: center
     letter-spacing: .25em
 #TopBorder
