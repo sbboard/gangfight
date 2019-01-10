@@ -5,8 +5,6 @@ Vue.use(Vuex);
 
 export const store = new Vuex.Store({
     state:{
-        //currentPage: "hm",
-        //pageDescrip: "Welcome to Gang Fight. We've been waiting for you. Now we can begin.",
         fortune: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
         assets: "default"
     },
@@ -21,6 +19,27 @@ export const store = new Vuex.Store({
     mutations: {
         changeFortune(state,n){
             state.fortune = n
+        },
+        setAsset(state,n){
+            //valentines
+            if(n[1]==2){
+                state.assets = "valentines"
+            }
+            //halloween
+            else if(n[1]==10){
+                state.assets = "halloween"
+            }
+            //christmas
+            else if(n[1]==12 && n[0] < 31){
+                state.assets = "christmas"
+            }
+            //new years
+            else if(n[1]==12 && n[0] == 31){
+                state.assets = "newYears"
+            }
+            else{
+                state.assets = "default"
+            }
         }
     }
 });

@@ -126,6 +126,11 @@ export default {
   created(){
     this.windowHeight = window.innerHeight
     this.windowWidth = window.innerWidth
+    var today = new Date();
+    var dd = today.getDate();
+    var mm = today.getMonth() + 1; //January is 0!
+    var yyyy = today.getFullYear();
+    this.$store.commit('setAsset', [dd,mm,yyyy])
   },
   computed: {
     logoBoxBottom(){
@@ -191,9 +196,9 @@ $lineWidth: .5em
       display: block
       font-size: 2.5vw
   .firstEd
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    display: flex
+    flex-direction: column
+    justify-content: center
     img
       width: 100%
   .bottomBar
