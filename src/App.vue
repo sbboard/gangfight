@@ -22,7 +22,7 @@
           <div class="grid-noGutter">
             <div class="col-10 pinkNeonBlock">
               <div class="col-12 heightFifty sideLogo"><div><span>ギ</span><span>ャ</span><span>ン</span><span>グ</span><span>フ</span><span>ァ</span><span>イ</span><span>ト</span></div><span class="leftLine"></span></div>
-              <div class="col-12 heightFifty fortune">{{fortune}}</div>
+              <div class="col-12 heightFifty fortune">"{{fortune}}"</div>
             </div>
             <div class="col-2 barcodeBox"><img class="barcode" :src="'assets/' + this.$store.getters.assetFolder + '/sidebar/barcode.png'"/></div>
           </div>
@@ -367,12 +367,6 @@ span#bottomWords
           right: 0
       #leftBoxContents
         margin: 1em
-        #fortune
-          font-style: italic;
-          font-size: 1.5em
-          color: white
-          margin-top: .25em
-          margin-left: 1em
         #leftBoxTopRow
           color: $neonPink
           font-size: 2.5em
@@ -421,6 +415,7 @@ span#bottomWords
   margin-left: .75em
   background-color: #fe0063
   color: #fafdf7
+  font-style: italic
 .randoBlock
   width: 100%
   transform: rotate(-90deg)
@@ -461,6 +456,7 @@ span#bottomWords
     background-color: #fcfb07
     color: #700123
     text-shadow: 0px 0px 8px #c56508
+    font-family: Montserrat
   .copyRight
     text-align: right
     display: flex
@@ -476,6 +472,8 @@ span#bottomWords
       padding-bottom: 1em
       .english
         color: #dda525
+        font-family: Yantramanav
+        font-weight: 800
       .japanese
         font-family: Illuminati
   .descripBox
