@@ -29,8 +29,8 @@
           <div class="grid-noGutter farLeft">
           <div class="col-3 bigboss"><img class="profilePic" :src="'assets/global/sidebar/photo.png'"/></div>
           <div class="col-2 nameBlock">Buffum</div>
-          <div class="col-2"><img class="randoBlock" :src="'assets/' + this.$store.getters.assetFolder + '/sidebar/2.jpg'"/></div>
-          <div class="col-2"><img class="randoBlock" :src="'assets/' + this.$store.getters.assetFolder + '/sidebar/5.jpg'"/></div>
+          <div class="col-2"><img class="randoBlock" :src="'assets/' + this.$store.getters.assetFolder + '/sidebar/'+this.randoOne+'.jpg'"/></div>
+          <div class="col-2"><img class="randoBlock" :src="'assets/' + this.$store.getters.assetFolder + '/sidebar/'+this.randoTwo+'.jpg'"/></div>
           <div class="col-3 timeBox">
             <span class="date">1/2/19</span>
             <span class="time">5:30PM</span>
@@ -115,7 +115,9 @@ export default {
       fortune: this.$store.getters.getFortune,
       futureYear: new Date().getFullYear()+12,
       pageList: pagelist,
-      boxHeight: 0
+      boxHeight: 0,
+      randoOne: 1,
+      randoTwo: 2
     }
   },
   methods:{
@@ -131,6 +133,18 @@ export default {
     var mm = today.getMonth() + 1; //January is 0!
     var yyyy = today.getFullYear();
     this.$store.commit('setAsset', [dd,mm,yyyy])
+
+    //generate rando Nos for sidebar imgs
+    this.randoOne = Math.floor(Math.random() * 10) + 1
+    this.randoTwo = Math.floor(Math.random() * 10) + 1
+    if(this.randoOne == this.randoTwo){
+      if(this.randoOne == 10){
+        this.randoTwo = 2
+      }
+      else{
+        this.randoTwo += 1
+      }
+    }
   },
   computed: {
     logoBoxBottom(){
