@@ -19,15 +19,15 @@
                                           transform: 'translateY('+ (windowHeight - windowWidth) / 2 +'px) rotate(90deg)',
                                           transformOrigin: 'left bottom'
                                           }">
-          <div class="grid-noGutter" style="background-color:blue">
-            <div class="col-10">
+          <div class="grid-noGutter">
+            <div class="col-10 pinkNeonBlock">
               <div class="col-12 heightFifty sideLogo"><span>ギャングファイト</span><span class="leftLine"></span></div>
               <div class="col-12 heightFifty fortune">{{fortune}}</div>
             </div>
-            <div class="col-2 barcodeBox" style="background-color:red"><img class="barcode" :src="'assets/' + this.$store.getters.assetFolder + '/sidebar/barcode.png'"/></div>
+            <div class="col-2 barcodeBox"><img class="barcode" :src="'assets/' + this.$store.getters.assetFolder + '/sidebar/barcode.png'"/></div>
           </div>
-          <div class="grid-noGutter farLeft" style="background-color:green">
-          <div class="col-3"><img class="profilePic" :src="'assets/global/sidebar/photo.png'"/></div>
+          <div class="grid-noGutter farLeft">
+          <div class="col-3 bigboss"><img class="profilePic" :src="'assets/global/sidebar/photo.png'"/></div>
           <div class="col-2 nameBlock">Buffum</div>
           <div class="col-2"><img class="randoBlock" :src="'assets/' + this.$store.getters.assetFolder + '/sidebar/2.jpg'"/></div>
           <div class="col-2"><img class="randoBlock" :src="'assets/' + this.$store.getters.assetFolder + '/sidebar/5.jpg'"/></div>
@@ -52,23 +52,23 @@
                                           transformOrigin: 'left bottom'
                                           }">
           <div class="rightBox">
-          <div class="grid-noGutter leftInnerBox" style="background-color:red">
-          <div class="col-2 descripBox" style="background-color: yellow"><span>{{pageList[this.$router.currentRoute.name].description}}</span></div>
+          <div class="grid-noGutter leftInnerBox">
+          <div class="col-2 descripBox"><span>{{pageList[this.$router.currentRoute.name].description}}</span></div>
           <div class="col-1 stageList"><span>stage 2 act 1</span></div>
           <div class="col-2">
-            <div class="col-6 topRightBlock iconBlock" style="background-color: blue"><span>O</span></div>
-            <div class="col-6 topRightBlock onlineNowBlock" style="background-color: green"><span class="onlineNow">Online Now</span><span class="onlineNo">3</span></div>
+            <div class="col-6 topRightBlock iconBlock"><span>O</span></div>
+            <div class="col-6 topRightBlock onlineNowBlock"><span class="onlineNow">Online Now</span><span class="onlineNo">3</span></div>
           </div>
           <div class="col-4 lastUpdatePic"><img :src="'http://gang-fight.com/projects/thumbs/xeno.jpg'"/></div>
           <div class="col-2">
-            <div class="col-6 adHere"><img class="profilePic" :src="'assets/global/sidebar/n64.jpg'"/></div>
+            <div class="col-6 adHere"><img class="profilePic" :src="'assets/global/sidebar/n642.jpg'"/></div>
             <div class="col-6 adHere"><img class="profilePic" :src="'assets/global/sidebar/playstation.png'"/></div>
           </div>
           <div class="col-1 ipFlag"><span>ip address and flag</span></div>
           </div>
-          <div class="grid-noGutter" style="background-color:blue">
+          <div class="grid-noGutter">
           <div class="col-8 routeName">{{this.$router.currentRoute.name}}</div>
-          <div class="col-4 copyRight"><span>© 2012 - {{futureYear}} Buff<br/>イルミナティの公式メンバー</span></div>
+          <div class="col-4 copyRight"><div><span>© 2012 - {{futureYear}} Buff</span><br/>イルミナティの公式メンバー</div></div>
           </div>
           </div>
         </div>
@@ -183,6 +183,8 @@ export default {
 @import url('https://fonts.googleapis.com/css?family=Yantramanav')
 
 $lineWidth: .5em
+$imgFilter: sepia() saturate(200%) hue-rotate(90deg)
+$neonBlack: #23131e
 
 #BottomBorder
   #grids
@@ -299,6 +301,7 @@ span#bottomWords
               margin-bottom: .3em
             #copyright
               text-align: right
+              background-color: #050814
               font-size: .3em
               color: $white
   /* left border */
@@ -356,20 +359,21 @@ span#bottomWords
     width: 13vh
 .heightFifty
   height: 50%
-  border: .5px solid blue
 .sideLogo
   font-size: 8vh
   display: flex
   align-content: center
   padding: 0
+  background-color: #00ffff
   align-self: center
+  color: #fe0063
   span
     padding-top: .25em
   .leftLine
     height: .5vh
     display: inline-block
     width: 100px
-    background-color: red
+    background-color: #fe0063
     align-self: center
     margin-bottom: -.4em
     width: 18vh
@@ -379,16 +383,21 @@ span#bottomWords
   padding-top: .25em
   font-size: 3vh
   margin-left: .75em
+  background-color: #fe0063
+  color: #fafdf7
 .randoBlock
   width: 100%
   transform: rotate(-90deg)
 .farLeft
+  background-color: #402638
   line-height: 0
 .timeBox
   line-height: 1
   display: flex
   flex-direction: column
   justify-content: center
+  background-color: $neonBlack
+  color: white
   span
     display: block
     font-size: 3.5vh
@@ -403,26 +412,38 @@ span#bottomWords
   word-break: break-all
   transform: rotate(-90deg)
   align-self: center
+  background-color: #402638
+  color: white
 .rightBox
   position: absolute
   bottom: 0
   .routeName
     font-size: 8vh
     padding-left: .5em
+    background-color: #fcfb07
+    color: #700123
+    text-shadow: 0px 0px 8px #c56508
   .copyRight
     text-align: right
     display: flex
     justify-content: flex-end
     font-size: 1.75vh
-    span
+    background-color: #050814
+    color: #00b2da
+    border: 3px solid #00b2da
+    div
       align-self: flex-end
       justify-self: baseline
       padding-right: 1em
       padding-bottom: 1em
+      span
+        color: #dda525
   .descripBox
     display: block
     position: relative
     line-height: 1
+    background-color: #000000
+    color: #f25100
     span
       display: block    
       transform: rotate(-90deg)
@@ -439,7 +460,7 @@ span#bottomWords
 .lastUpdatePic
   img
     width: 100%
-    filter: saturate(5) contrast(2.5) hue-rotate(151deg)
+    filter: $imgFilter
     transform: rotate(-90deg)
 .topRightBlock
   height: 16.666666666vh
@@ -447,6 +468,7 @@ span#bottomWords
 .onlineNowBlock
   position: relative
   line-height: 1
+  background-color: #00b6fa
   .onlineNow
     transform-origin: left
     position: absolute
@@ -455,17 +477,22 @@ span#bottomWords
     left: 5vh
     transform: rotate(-90deg)
     display: block
+    color: #e4bd2d
   .onlineNo
     transform: rotate(-90deg)
     position: absolute
     top: -2vh
     left: 9vh
     font-size: 10vh
+    color: #fdfc4b
 .iconBlock
   display: flex
   align-items: center
   justify-content: center
   text-align: center
+  background-color: #022460
+  color: #f564df
+  text-shadow: 0px 0px 20px #1007c3
   span
     display: block
     transform: rotate(-90deg)
@@ -499,4 +526,9 @@ span#bottomWords
     transform: rotate(-90deg)
     font-size: 3vh
     text-align: center
+.pinkNeonBlock
+  background-color: #fe0063
+.bigboss
+  img
+    filter: $imgFilter
 </style>
