@@ -22,6 +22,7 @@ export default {
     display: flex
     flex-direction: column
     justify-content: center
+    background-color: black
     h1
         text-align: center
         font-size: 3em

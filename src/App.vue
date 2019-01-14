@@ -386,6 +386,7 @@ span#bottomWords
 .barcodeBox
   align-self: center
   text-align: center
+  background-color: white
   .barcode
     width: 13vh
 .heightFifty
