@@ -53,7 +53,7 @@
                                           }">
           <div class="rightBox">
           <div class="grid-noGutter leftInnerBox">
-          <div class="col-2 descripBox"><span>{{pageList[this.$router.currentRoute.name].description}}</span></div>
+          <div class="col-2 descripBox"><span>{{pageList[this.$router.currentRoute.name].description}}█</span></div>
           <div class="col-1 stageList"><span>stage 2 act 1</span></div>
           <div class="col-2">
             <div class="col-6 topRightBlock iconBlock"><span>O</span></div>
@@ -68,7 +68,7 @@
           </div>
           <div class="grid-noGutter">
           <div class="col-8 routeName">{{this.$router.currentRoute.name}}</div>
-          <div class="col-4 copyRight"><div><span>© 2012 - {{futureYear}} Buff</span><br/>イルミナティの公式メンバー</div></div>
+          <div class="col-4 copyRight"><div><span class="english">© 2012 - {{futureYear}} Buff</span><br/><span class="japanese">イルミナティの公式メンバー</span></div></div>
           </div>
           </div>
         </div>
@@ -199,6 +199,15 @@ export default {
 @font-face
   font-family: VCR
   src: url('/fonts/vcr.ttf')
+
+@font-face
+  font-family: Logo
+  src: url('/fonts/makin.otf')
+
+@font-face
+  font-family: Illuminati
+  src: url('/fonts/corp.ttf')
+  //I like corp
 
 $lineWidth: .5em
 $imgFilter: sepia() saturate(200%) hue-rotate(90deg)
@@ -387,6 +396,7 @@ span#bottomWords
   color: #fe0063
   span
     padding-top: .25em
+    font-family: Logo
   .leftLine
     height: .5vh
     display: inline-block
@@ -457,8 +467,10 @@ span#bottomWords
       justify-self: baseline
       padding-right: 1em
       padding-bottom: 1em
-      span
+      .english
         color: #dda525
+      .japanese
+        font-family: Illuminati
   .descripBox
     display: block
     position: relative
@@ -466,6 +478,7 @@ span#bottomWords
     background-color: $neonBlack
     color: #f25100
     border: 3px double #F25101
+    font-family: "Courier New", Courier, monospace
     span
       display: block    
       transform: rotate(-90deg)
