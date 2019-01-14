@@ -446,6 +446,7 @@ span#bottomWords
   transform: rotate(-90deg)
   align-self: center
   font-family: VCR
+  padding-left: .2em !important
   color: white
 .rightBox
   position: absolute
