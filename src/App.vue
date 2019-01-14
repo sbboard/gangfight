@@ -24,7 +24,7 @@
               <div class="col-12 heightFifty sideLogo"><div><span>ギ</span><span>ャ</span><span>ン</span><span>グ</span><span>フ</span><span>ァ</span><span>イ</span><span>ト</span></div><span class="leftLine"></span></div>
               <div class="col-12 heightFifty fortune">"{{fortune}}"</div>
             </div>
-            <div class="col-2 barcodeBox"><img class="barcode" :src="'assets/' + this.$store.getters.assetFolder + '/sidebar/barcode.png'"/></div>
+            <div class="col-2 barcodeBox"><img class="barcode" :src="'assets/global/sidebar/Robarcode.png'"/></div>
           </div>
           <div class="grid-noGutter farLeft">
           <div class="col-3 bigboss"><img class="profilePic" :src="'assets/global/sidebar/photo.png'"/></div>
@@ -380,9 +380,10 @@ span#bottomWords
 .barcodeBox
   align-self: center
   text-align: center
-  background-color: white
+  background-color: $neonBlack
   .barcode
-    width: 13vh
+    height: 18vh
+    width: 12vh
 .heightFifty
   height: 50%
 .sideLogo
