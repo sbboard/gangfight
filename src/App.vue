@@ -53,7 +53,7 @@
                                           }">
           <div class="rightBox">
           <div class="grid-noGutter leftInnerBox">
-          <div class="col-2 descripBox"><span>{{pageList[this.$router.currentRoute.name].description}}█</span></div>
+          <div class="col-2 descripBox"><div>{{pageList[this.$router.currentRoute.name].description}}<span class="blink">█</span></div></div>
           <div class="col-1 stageList"><span>stage 2 act 1</span></div>
           <div class="col-2">
             <div class="col-6 topRightBlock iconBlock"><span>O</span></div>
@@ -275,7 +275,7 @@ span#bottomWords
   #RightBorder
     height: 100%
     background-image: url("/assets/global/sidebar/tempSide.jpg")
-    background-size: 100% auto
+    background-size: auto 100%
     //background-color: red
     #rightBoxContain
       position: absolute
@@ -337,7 +337,7 @@ span#bottomWords
   #LeftBorder
     height: 100%
     background-image: url("/assets/global/sidebar/tempSide.jpg")
-    background-size: 100% auto
+    background-size: auto 100%
     //background: linear-gradient(to bottom,$sideGradient)
     #leftBoxContain
       position: absolute
@@ -485,7 +485,7 @@ span#bottomWords
     color: #f25100
     border: 3px double #F25101
     font-family: "Courier New", Courier, monospace
-    span
+    div
       display: block    
       transform: rotate(-90deg)
       font-size: 1.75vh
@@ -573,4 +573,13 @@ span#bottomWords
 .bigboss
   img
     filter: $imgFilter
+.blink
+  animation: blink 2s infinite
+@keyframes blink
+  0%
+    opacity: 0
+  49.9%
+    opacity: 0
+  50%
+    opacity: 1
 </style>
