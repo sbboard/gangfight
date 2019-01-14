@@ -274,6 +274,8 @@ span#bottomWords
   /* right border */
   #RightBorder
     height: 100%
+    background-image: url("/assets/global/sidebar/tempSide.jpg")
+    background-size: 100% auto
     //background-color: red
     #rightBoxContain
       position: absolute
@@ -334,6 +336,8 @@ span#bottomWords
   /* left border */
   #LeftBorder
     height: 100%
+    background-image: url("/assets/global/sidebar/tempSide.jpg")
+    background-size: 100% auto
     //background: linear-gradient(to bottom,$sideGradient)
     #leftBoxContain
       position: absolute
