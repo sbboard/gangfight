@@ -388,8 +388,9 @@ span#bottomWords
 .randoBlock
   width: 100%
   transform: rotate(-90deg)
+  filter: $imgFilter
 .farLeft
-  background-color: #402638
+  background-color: $neonBlack
   line-height: 0
 .timeBox
   line-height: 1
@@ -412,7 +413,7 @@ span#bottomWords
   word-break: break-all
   transform: rotate(-90deg)
   align-self: center
-  background-color: #402638
+  background-color: $neonBlack
   color: white
 .rightBox
   position: absolute
@@ -428,7 +429,7 @@ span#bottomWords
     display: flex
     justify-content: flex-end
     font-size: 1.75vh
-    background-color: #050814
+    background-color: $neonBlack
     color: #00b2da
     border: 3px solid #00b2da
     div
@@ -442,8 +443,9 @@ span#bottomWords
     display: block
     position: relative
     line-height: 1
-    background-color: #000000
+    background-color: $neonBlack
     color: #f25100
+    border: 3px double #F25101
     span
       display: block    
       transform: rotate(-90deg)
