@@ -445,7 +445,6 @@ span#bottomWords
   word-break: break-all
   transform: rotate(-90deg)
   align-self: center
-  background-color: $neonBlack
   font-family: VCR
   color: white
 .rightBox
@@ -490,6 +489,7 @@ span#bottomWords
       left: -10.5vh
       bottom: 15vh
       width: 32vh
+      padding-left: 1em
 .adHere
   padding: 0
   line-height: 0
