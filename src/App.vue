@@ -21,7 +21,7 @@
                                           }">
           <div class="grid-noGutter">
             <div class="col-10 pinkNeonBlock">
-              <div class="col-12 heightFifty sideLogo"><span>ギャングファイト</span><span class="leftLine"></span></div>
+              <div class="col-12 heightFifty sideLogo"><div><span>ギ</span><span>ャ</span><span>ン</span><span>グ</span><span>フ</span><span>ァ</span><span>イ</span><span>ト</span></div><span class="leftLine"></span></div>
               <div class="col-12 heightFifty fortune">{{fortune}}</div>
             </div>
             <div class="col-2 barcodeBox"><img class="barcode" :src="'assets/' + this.$store.getters.assetFolder + '/sidebar/barcode.png'"/></div>
@@ -394,9 +394,12 @@ span#bottomWords
   background-color: #00ffff
   align-self: center
   color: #fe0063
-  span
-    padding-top: .25em
+  div
     font-family: Logo
+    display: flex
+    span
+      transform: rotate(-90deg)
+      display: block
   .leftLine
     height: .5vh
     display: inline-block
