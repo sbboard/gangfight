@@ -400,6 +400,7 @@ span#bottomWords
   align-self: center
   color: #fe0063
   div
+    margin-left: 3vh
     font-family: Logo
     display: flex
     span
@@ -411,8 +412,7 @@ span#bottomWords
     width: 100px
     background-color: #fe0063
     align-self: center
-    margin-bottom: -.4em
-    width: 18vh
+    width: 15vh
     padding: 0
 .fortune
   padding: 0
