@@ -196,6 +196,10 @@ export default {
 @import url('https://fonts.googleapis.com/css?family=Montserrat')
 @import url('https://fonts.googleapis.com/css?family=Yantramanav')
 
+@font-face
+  font-family: VCR
+  src: url('/fonts/vcr.ttf')
+
 $lineWidth: .5em
 $imgFilter: sepia() saturate(200%) hue-rotate(90deg)
 $neonBlack: #23131e
@@ -413,6 +417,7 @@ span#bottomWords
   justify-content: center
   background-color: $neonBlack
   color: white
+  font-family: VCR
   span
     display: block
     font-size: 3.5vh
@@ -428,6 +433,7 @@ span#bottomWords
   transform: rotate(-90deg)
   align-self: center
   background-color: $neonBlack
+  font-family: VCR
   color: white
 .rightBox
   position: absolute
