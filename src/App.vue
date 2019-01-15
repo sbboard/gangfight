@@ -54,7 +54,7 @@
           <div class="rightBox">
           <div class="grid-noGutter leftInnerBox">
           <div class="col-2 descripBox"><div>{{pageList[this.$router.currentRoute.name].description}}<span class="blink">█</span></div></div>
-          <div class="col-1 stageList"><span>stage 2 act 1</span></div>
+          <div class="col-1 stageList"><div><span class="stageOne">stage 2</span><span class="stageTwo"> act 1</span></div></div>
           <div class="col-2">
             <div class="col-6 topRightBlock iconBlock"><span>O</span></div>
             <div class="col-6 topRightBlock onlineNowBlock"><span class="onlineNow">Online Now</span><span class="onlineNo">3</span></div>
@@ -64,7 +64,7 @@
             <div class="col-6 adHere"><img class="profilePic" :src="'assets/global/sidebar/n642.jpg'"/></div>
             <div class="col-6 adHere"><img class="profilePic" :src="'assets/global/sidebar/playstation.png'"/></div>
           </div>
-          <div class="col-1 ipFlag"><span>ip address and flag</span></div>
+          <div class="col-1 ipFlag"><span>107.188.145.8</span></div>
           </div>
           <div class="grid-noGutter">
           <div class="col-8 routeName">{{this.$router.currentRoute.name}}</div>
@@ -550,12 +550,21 @@ span#bottomWords
   text-align: center
   line-height: 1
   flex-direction: column
-  span
+  background-color: $neonBlack
+  div
     display: block
     width: 32vh
     transform: rotate(-90deg)
-    font-size: 5vh
+    font-size: 3.5vh
     text-align: center
+    font-family: VCR
+    text-transform: uppercase
+    .stageOne
+      color: rgb(255, 185, 212)
+      text-shadow: 0px 0px 8px #dd5a8c
+    .stageTwo
+      color: #c4f4f5
+      text-shadow: 0px 0px 8px #1c7af0
 .ipFlag
   display: flex
   align-items: center
@@ -563,12 +572,16 @@ span#bottomWords
   text-align: center
   line-height: 1
   flex-direction: column
+  background-color: $neonBlack
+  font-family: VCR
   span
     display: block
     width: 32vh
     transform: rotate(-90deg)
     font-size: 3vh
     text-align: center
+    color: rgb(255, 185, 212)
+    text-shadow: 0px 0px 8px #dd5a8c
 .pinkNeonBlock
   background-color: #fe0063
 .bigboss
