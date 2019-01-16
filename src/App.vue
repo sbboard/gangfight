@@ -4,8 +4,9 @@
     <!-- TOP -->
     <template v-if="isTaller == 'vw'">
       <div id="TopBorder" :style="{height: (windowHeight - windowWidth) / 2 + 'px',
-                                   backgroundImage: 'url(' + 'assets/' + this.$store.getters.assetFolder + '/sidebar/topBrdrBg.gif)'}">
-        <div ref="wordBox" class="topLogoBox" :style="{bottom: logoBoxBottom}">
+                                   backgroundImage: 'url(' + 'assets/' + this.$store.getters.assetFolder + '/sidebar/tempTop.gif)'}">
+        <div ref="wordBox" class="topLogoBox" :style="{bottom: logoBoxBottom,
+        backgroundImage: 'url(' + 'assets/' + this.$store.getters.assetFolder + '/sidebar/tempLogoBG.jpg)'}">
         <span id="topWords">gang fight</span>
         <span id="bottomWords">ギャングファイト</span>
         </div>
@@ -84,7 +85,7 @@
           <div class="col-4 bottomRight" style="background-color:blue"><span>© 2012 - {{futureYear}} Buff<br/>イルミナティの公式メンバー</span></div>
         </div>
         <div class="grid-noGutter">
-          <div class="col-12 personInfo" style="background-color:green">Buffum 10/15/15 3:75PM</div>
+          <div class="col-12 personInfo">Buffum 10/15/15 3:75PM</div>
         </div>
         <div class="grid-noGutter">
           <div class="col-2 bottomBar" style="background-color:pink"><img :src="'assets/' + this.$store.getters.assetFolder + '/sidebar/barcodeHori.png'"/></div>
@@ -214,6 +215,7 @@ $imgFilter: sepia() saturate(200%) hue-rotate(90deg)
 $neonBlack: #23131e
 
 #BottomBorder
+  background-image: url("/assets/global/sidebar/tempTop.jpg")
   #grids
   .bottomRouteName
     font-size: 5.5vh
@@ -238,6 +240,10 @@ $neonBlack: #23131e
     padding: .25em 0
     text-align: center
     letter-spacing: .25em
+    background-color: $neonBlack
+    border: 2px solid #f25100
+    color: #f25100
+    text-transform: uppercase
 #TopBorder
   background-color: red
   text-align: center
@@ -254,6 +260,8 @@ $neonBlack: #23131e
     width: fit-content
     border: 2px solid white
     left: 0
+    background-size: 100% auto
+    background-position: center
     right: 0
     //border: 2px solid white
     padding: 1em
