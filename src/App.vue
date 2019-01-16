@@ -78,18 +78,18 @@
 
     <!-- BOTTOM -->
     <template v-if="isTaller == 'vw'">
-      <div id="BottomBorder" style="background-color: yellow" :style="{height: (windowHeight - windowWidth) / 2 + 'px'}">
+      <div id="BottomBorder" :style="{height: (windowHeight - windowWidth) / 2 + 'px'}">
       <div id="grids">
         <div class="grid-noGutter">
-          <div class="col-8 bottomRouteName" style="background-color:red"><span>{{this.$router.currentRoute.name}}</span></div>
-          <div class="col-4 bottomRight" style="background-color:blue"><span>© 2012 - {{futureYear}} Buff<br/>イルミナティの公式メンバー</span></div>
+          <div class="col-8 bottomRouteName"><span>{{this.$router.currentRoute.name}}</span></div>
+          <div class="col-4 bottomRight"><div><span class="bottomEng">© 2012 - {{futureYear}} Buff</span><br/><span class="bottomJP">イルミナティの公式メンバー</span></div></div>
         </div>
         <div class="grid-noGutter">
           <div class="col-12 personInfo">Buffum 10/15/15 3:75PM</div>
         </div>
-        <div class="grid-noGutter">
-          <div class="col-2 bottomBar" style="background-color:pink"><img :src="'assets/' + this.$store.getters.assetFolder + '/sidebar/barcodeHori.png'"/></div>
-          <div class="col-9" style="background-color:blue"></div>
+        <div class="grid-noGutter rainbowRoad">
+          <div class="col-2 bottomBar"><img :src="'assets/' + this.$store.getters.assetFolder + '/sidebar/barcodeHori.png'"/></div>
+          <div class="col-9"></div>
           <div class="col-1 firstEd"><img src="assets/global/sidebar/1sted.png"/></div>
         </div>
         </div>
@@ -216,24 +216,42 @@ $neonBlack: #23131e
 
 #BottomBorder
   background-image: url("/assets/global/sidebar/tempTop.jpg")
+  background-size: 100% auto
+  background-repeat: no-repeat
+  background-position: top
   #grids
   .bottomRouteName
     font-size: 5.5vh
+    background-color: #fcfb07
+    color: #700123
+    text-shadow: 0px 0px 8px #c56508
+    font-family: Montserrat
+    padding-left: .25em
+    border-right: .4em double $neonBlack
   .bottomRight
     text-align: right
     padding-top: .5em
-    span
+    background-color: #7bf7d3
+    div
       padding-right: 1em
       display: block
       font-size: 2.5vw
+      .bottomEng
+        font-family: Yantramanav
+        text-transform: uppercase
+        font-weight: 800
+      .bottomJP
+        font-family: Illuminati
   .firstEd
     display: flex
     flex-direction: column
     justify-content: center
+    text-align: left
     img
-      width: 100%
+      width: 85%
   .bottomBar
     padding: .25em 0
+    background-color: white
     img
       width: 100%
   .personInfo
@@ -241,11 +259,12 @@ $neonBlack: #23131e
     text-align: center
     letter-spacing: .25em
     background-color: $neonBlack
+    font-weight: 800
     border: 2px solid #f25100
     color: #f25100
     text-transform: uppercase
+    font-family: Montserrat
 #TopBorder
-  background-color: red
   text-align: center
   display: flex
   flex-direction: column
@@ -253,6 +272,9 @@ $neonBlack: #23131e
   justify-content: center
   color: white
   position: relative
+  background-size: 100% auto
+  background-repeat: no-repeat
+  background-position: bottom
   //color: white
   .topLogoBox
     margin: 0 auto
@@ -284,10 +306,8 @@ span#bottomWords
     height: 100%
     background-image: url("/assets/global/sidebar/tempSide.jpg")
     background-size: auto 100%
-    //background-color: red
     #rightBoxContain
       position: absolute
-      //background: linear-gradient(to right,$sideGradient)
       width: 100vh
       overflow: hidden
       #rightLine
@@ -604,4 +624,6 @@ span#bottomWords
     opacity: 0
   50%
     opacity: 1
+.rainbowRoad
+  background-image: linear-gradient(#c6399e, #e443aa,#ce51fd,#566ffd,#2c8e6e)
 </style>
