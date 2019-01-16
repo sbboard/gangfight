@@ -193,31 +193,13 @@ export default {
 
 <style lang="sass" scoped>
 @import "./css/reset.css"
-@import "./css/gfColors.scss"
+@import "./css/gangColors.sass"
+@import "./css/gangFonts.sass"
 @import "./css/gridlex.min.css"
 @import url('https://fonts.googleapis.com/css?family=Montserrat')
 @import url('https://fonts.googleapis.com/css?family=Yantramanav')
 
-@font-face
-  font-family: VCR
-  src: url('/fonts/vcr.ttf')
-
-@font-face
-  font-family: Logo
-  src: url('/fonts/makin.otf')
-
-@font-face
-  font-family: Illuminati
-  src: url('/fonts/corp.ttf')
-  //I like corp
-
-@font-face
-  font-family: Alien
-  src: url('/fonts/alienI.ttf')
-
 $lineWidth: .5em
-$imgFilter: sepia() saturate(200%) hue-rotate(90deg)
-$neonBlack: #23131e
 
 #BottomBorder
   background-image: url("/assets/global/sidebar/tempTop.jpg")
@@ -315,27 +297,6 @@ span#bottomWords
       position: absolute
       width: 100vh
       overflow: hidden
-      #rightLine
-        height: $lineWidth
-        background-color: $outrunYellow
-        margin: 1em 
-        position: absolute;
-        top: 0;
-        width: calc(100% - 2em)
-        &::after
-          height: 1.5em
-          background-color: $outrunYellow
-          width: $lineWidth
-          display: block
-          content: " "
-        &::before
-          height: 1.5em
-          background-color: $outrunYellow
-          width: $lineWidth
-          display: block
-          content: " "
-          position: absolute
-          right: 0
       #bottomSlap
         bottom: 0
         margin: 1em
@@ -356,16 +317,6 @@ span#bottomWords
             float: right
             width: calc(100% - 8.5em)
             font-size: 2.5em
-            #rightBar
-              height: $lineWidth / 3
-              width: 100%
-              background-color: $neonBlue
-              margin-bottom: .3em
-            #copyright
-              text-align: right
-              background-color: #050814
-              font-size: .3em
-              color: $white
   /* left border */
   #LeftBorder
     height: 100%
@@ -375,41 +326,8 @@ span#bottomWords
     #leftBoxContain
       position: absolute
       width: 100vh
-      #leftLine
-        height: $lineWidth
-        background-color: $outrunYellow
-        margin: 1em 
-        position: absolute;
-        bottom: 0;
-        width: calc(100% - 2em)
-        &::after
-          height: 1.5em
-          background-color: $outrunYellow
-          width: $lineWidth
-          display: block
-          content: " "
-          transform: translatey($lineWidth * -2);
-        &::before
-          height: 1.5em
-          background-color: $outrunYellow
-          width: $lineWidth
-          display: block
-          content: " "
-          transform: translatey($lineWidth * - 2);
-          position: absolute
-          right: 0
       #leftBoxContents
         margin: 1em
-        #leftBoxTopRow
-          color: $neonPink
-          font-size: 2.5em
-          font-weight: 800
-          #line
-            height: $lineWidth / 3
-            background-color: $neonBlue
-            display: inline-block
-            margin-bottom: $lineWidth / 2
-            margin-left: .5em
 .barcodeBox
   align-self: center
   text-align: center
