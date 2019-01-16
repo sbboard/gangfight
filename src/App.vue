@@ -25,9 +25,9 @@
               <div class="col-12 heightFifty sideLogo"><div><span>ギ</span><span>ャ</span><span>ン</span><span>グ</span><span>フ</span><span>ァ</span><span>イ</span><span>ト</span></div><span class="leftLine"></span></div>
               <div class="col-12 heightFifty fortune">"{{fortune}}"</div>
             </div>
-            <div class="col-2 barcodeBox"><img class="barcode" :src="'assets/global/sidebar/Robarcode.png'"/></div>
+            <div class="col-2 barcodeBox"><img id="barcodeImg" class="barcode" :src="'assets/global/sidebar/Robarcode.png'"/></div>
           </div>
-          <div class="grid-noGutter farLeft">
+          <div ref="farLeft" class="grid-noGutter farLeft">
           <div class="col-3 bigboss"><img class="profilePic" :src="'assets/global/sidebar/photo.png'"/></div>
           <div class="col-2 nameBlock">Buffum</div>
           <div class="col-2"><img class="randoBlock" :src="'assets/' + this.$store.getters.assetFolder + '/sidebar/'+this.randoOne+'.jpg'"/></div>
@@ -52,7 +52,7 @@
                                           transform: 'translateY('+ (windowHeight - windowWidth) / 2 +'px) rotate(90deg)',
                                           transformOrigin: 'left bottom'
                                           }">
-          <div class="rightBox">
+          <div ref="rightBox" class="rightBox">
           <div class="grid-noGutter leftInnerBox">
           <div class="col-2 descripBox"><div>{{pageList[this.$router.currentRoute.name].description}}<span class="blink">█</span></div></div>
           <div class="col-1 stageList"><div><span class="stageOne">stage 2</span><span class="stageTwo"> act 1</span></div></div>
