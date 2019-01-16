@@ -62,7 +62,7 @@
           </div>
           <div class="col-4 lastUpdatePic"><img :src="'http://gang-fight.com/projects/thumbs/xeno.jpg'"/></div>
           <div class="col-2">
-            <div class="col-6 adHere"><img class="profilePic" :src="'assets/global/sidebar/n642.jpg'"/></div>
+            <div class="col-6 adHere"><img class="profilePic" :src="'assets/global/sidebar/n64.jpg'"/></div>
             <div class="col-6 adHere"><img class="profilePic" :src="'assets/global/sidebar/playstation.png'"/></div>
           </div>
           <div class="col-1 ipFlag"><span>107.188.145.8</span></div>
@@ -410,7 +410,7 @@ span#bottomWords
   text-align: center
   background-color: $neonBlack
   .barcode
-    height: 18vh
+    height: 24.5vh
     width: 12vh
 .heightFifty
   height: 50%
@@ -625,5 +625,5 @@ span#bottomWords
   50%
     opacity: 1
 .rainbowRoad
-  background-image: linear-gradient(#c6399e, #e443aa,#ce51fd,#566ffd,#2c8e6e)
+  background-image: linear-gradient(#c6399e, #e443aa, #ce51fd, #566ffd, rgba(44, 142, 110, 0))
 </style>
