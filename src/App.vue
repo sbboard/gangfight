@@ -85,11 +85,11 @@
           <div class="col-4 bottomRight"><div><span class="bottomEng">© 2012 - {{futureYear}} Buff</span><br/><span class="bottomJP">イルミナティの公式メンバー</span></div></div>
         </div>
         <div class="grid-noGutter">
-          <div class="col-12 personInfo">Buffum 10/15/15 3:75PM</div>
+          <div class="col-12 personInfo">10/15/15 3:75PM</div>
         </div>
         <div class="grid-noGutter rainbowRoad">
           <div class="col-2 bottomBar"><img :src="'assets/' + this.$store.getters.assetFolder + '/sidebar/barcodeHori.png'"/></div>
-          <div class="col-9"></div>
+          <div class="col-9 bottomNamebar">BUFFUM</div>
           <div class="col-1 firstEd"><img src="assets/global/sidebar/1sted.png"/></div>
         </div>
         </div>
@@ -210,6 +210,10 @@ export default {
   font-family: Illuminati
   src: url('/fonts/corp.ttf')
   //I like corp
+
+@font-face
+  font-family: Alien
+  src: url('/fonts/alienI.ttf')
 
 $lineWidth: .5em
 $imgFilter: sepia() saturate(200%) hue-rotate(90deg)
@@ -627,4 +631,9 @@ span#bottomWords
     opacity: 1
 .rainbowRoad
   background-image: linear-gradient(#c6399e, #e443aa, #ce51fd, #566ffd, rgba(44, 142, 110, 0))
+.bottomNamebar
+  text-align: center
+  font-size: 7.75vh
+  font-family: Alien
+  color: white
 </style>
