@@ -208,7 +208,7 @@ $lineWidth: .5em
   background-position: top
   #grids
   .bottomRouteName
-    font-size: 5.5vh
+    font-size: 9vw
     background-color: #fcfb07
     color: #700123
     text-shadow: 0px 0px 8px #c56508
@@ -243,6 +243,7 @@ $lineWidth: .5em
       width: 100%
   .personInfo
     padding: .25em 0
+    font-size: 3.25vw
     text-align: center
     letter-spacing: .25em
     background-color: $neonBlack
@@ -551,7 +552,7 @@ span#bottomWords
   background-image: linear-gradient(#c6399e, #e443aa, #ce51fd, #566ffd, rgba(44, 142, 110, 0))
 .bottomNamebar
   text-align: center
-  font-size: 7.75vh
+  font-size: 13.75vw
   font-family: Alien
   color: white
 </style>
