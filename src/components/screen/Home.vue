@@ -18,6 +18,8 @@ export default {
 </script>
 
 <style lang="sass" scoped>
+@import "../../css/gangColors.sass"
+
 #homeBlock
     display: flex
     flex-direction: column

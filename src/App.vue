@@ -511,11 +511,11 @@ span#bottomWords
     font-family: VCR
     text-transform: uppercase
     .stageOne
-      color: rgb(255, 185, 212)
-      text-shadow: 0px 0px 8px #dd5a8c
+      color: $lightNeonRed
+      text-shadow: 0px 0px 8px $neonRed
     .stageTwo
-      color: #c4f4f5
-      text-shadow: 0px 0px 8px #1c7af0
+      color: $lightNeonBlue
+      text-shadow: 0px 0px 8px $neonBlue
 .ipFlag
   display: flex
   align-items: center
@@ -531,8 +531,8 @@ span#bottomWords
     transform: rotate(-90deg)
     font-size: 3vh
     text-align: center
-    color: rgb(255, 185, 212)
-    text-shadow: 0px 0px 8px #dd5a8c
+    color: $lightNeonRed
+    text-shadow: 0px 0px 8px $neonRed
 .pinkNeonBlock
   background-color: #fe0063
 .bigboss
