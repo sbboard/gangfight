@@ -124,6 +124,12 @@ export default {
   methods:{
     changeSize(){
       this.isTaller = (this.windowHeight > this.windowWidth) ? "vw":"vh"
+    },
+    getLogoHeight(){
+      const logoBox = this.$refs.wordBox
+      if(logoBox != null){
+        this.boxHeight = logoBox.clientHeight
+      }
     }
   },
   created(){
@@ -174,16 +180,11 @@ export default {
   },
   mounted() {
     this.$nextTick(() => {
-      const logoBox = this.$refs.wordBox
-      if(logoBox != null){
-        this.boxHeight = logoBox.clientHeight
-      }
+      this.getLogoHeight()
       window.addEventListener('resize', () => {
         this.windowHeight = window.innerHeight
         this.windowWidth = window.innerWidth
-        if(logoBox != null){
-          this.boxHeight = logoBox.clientHeight
-        }
+        this.getLogoHeight()
       });
     })
   },
