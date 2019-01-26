@@ -402,35 +402,27 @@ span#bottomWords
   position: absolute
   bottom: 0
   .routeName
-    padding-bottom: 0
-    p
-      font-size: 8vh
-      padding-left: .5em
-      background-color: #fcfb07
-      color: #700123
-      text-shadow: 0px 0px 8px #c56508
-      font-family: Montserrat
-      border-radius: 7px
+    font-size: 8vh
+    padding-left: .5em
+    background-color: #fcfb07
+    color: #700123
+    text-shadow: 0px 0px 8px #c56508
+    font-family: Montserrat
   .copyRight
     text-align: right
     display: flex
     justify-content: flex-end
     font-size: 1.75vh
+    background-color: $neonBlack
     color: #00b2da
-    align-self: center
-    justify-self: center
-    padding-bottom: 0
+    border: 3px solid #00b2da
     div
       align-self: flex-end
       justify-self: baseline
-      padding: 1em
-      width: 100%
-      background-color: rgba(35, 19, 30, 0.3)
-      color: #00ffff
-      border: 3px solid #00ffff
-      border-radius: 7px
+      padding-right: 1em
+      padding-bottom: 1em
       .english
-        color: #fcfb07
+        color: #dda525
         font-family: Yantramanav
         font-weight: 800
       .japanese
