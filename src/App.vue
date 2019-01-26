@@ -43,13 +43,23 @@
                                           transformOrigin: 'left bottom'
                                           }">
           <div ref="rightBox" class="rightBox">
-          <div class="grid rightGridPad">
-            <div class="col-8 routeName"><p>{{this.$router.currentRoute.name}}</p></div>
-            <div class="col-4 copyRight">
-              <div>
-                <span class="english">© 2012 - {{futureYear}} Buff</span><br/><span class="japanese">イルミナティの公式メンバー</span>
-              </div>
-            </div>
+          <div class="grid-noGutter leftInnerBox">
+          <div class="col-2 descripBox"><div>{{pageList[this.$router.currentRoute.name].description}}<span class="blink">█</span></div></div>
+          <div class="col-1 stageList"><div><span class="stageOne">stage 2</span><span class="stageTwo"> act 1</span></div></div>
+          <div class="col-2">
+            <div class="col-6 topRightBlock iconBlock"><span>O</span></div>
+            <div class="col-6 topRightBlock onlineNowBlock"><span class="onlineNow">Online Now</span><span class="onlineNo">3</span></div>
+          </div>
+          <div class="col-4 lastUpdatePic"><img :src="'http://gang-fight.com/projects/thumbs/xeno.jpg'"/></div>
+          <div class="col-2">
+            <div class="col-6 adHere"><img class="profilePic" :src="'assets/global/sidebar/n64.jpg'"/></div>
+            <div class="col-6 adHere"><img class="profilePic" :src="'assets/global/sidebar/playstation.png'"/></div>
+          </div>
+          <div class="col-1 ipFlag"><span>107.188.145.8</span></div>
+          </div>
+          <div class="grid-noGutter">
+          <div class="col-8 routeName">{{this.$router.currentRoute.name}}</div>
+          <div class="col-4 copyRight"><div><span class="english">© 2012 - {{futureYear}} Buff</span><br/><span class="japanese">イルミナティの公式メンバー</span></div></div>
           </div>
           </div>
         </div>
