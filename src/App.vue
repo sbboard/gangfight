@@ -25,7 +25,7 @@
               <div class="col-12 heightFifty sideLogo"><div><span>ギ</span><span>ャ</span><span>ン</span><span>グ</span><span>フ</span><span>ァ</span><span>イ</span><span>ト</span></div><span class="leftLine"></span></div>
               <div class="col-12 heightFifty fortune">"{{fortune}}"</div>
             </div>
-            <div class="col-2 barcodeBox"></div>
+            <div class="col-2"></div>
           </div>
         </div>
       </div>
@@ -43,15 +43,13 @@
                                           transformOrigin: 'left bottom'
                                           }">
           <div ref="rightBox" class="rightBox">
-            <div class="grid leftInnerBox">
-              <div class="col-2 descripBox">
-                <div>{{pageList[this.$router.currentRoute.name].description}}<span class="blink">█</span></div>
-              </div>
-              <div class="col-10"></div>
-            </div>
           <div class="grid rightGridPad">
             <div class="col-8 routeName"><p>{{this.$router.currentRoute.name}}</p></div>
-            <div class="col-4 copyRight"><div><span class="english">© 2012 - {{futureYear}} Buff</span><br/><span class="japanese">イルミナティの公式メンバー</span></div></div>
+            <div class="col-4 copyRight">
+              <div>
+                <span class="english">© 2012 - {{futureYear}} Buff</span><br/><span class="japanese">イルミナティの公式メンバー</span>
+              </div>
+            </div>
           </div>
           </div>
         </div>
@@ -394,6 +392,7 @@ span#bottomWords
   position: absolute
   bottom: 0
   .routeName
+    padding-bottom: 0
     p
       font-size: 8vh
       padding-left: .5em
@@ -401,6 +400,7 @@ span#bottomWords
       color: #700123
       text-shadow: 0px 0px 8px #c56508
       font-family: Montserrat
+      border-radius: 7px
   .copyRight
     text-align: right
     display: flex
@@ -416,10 +416,11 @@ span#bottomWords
       padding: 1em
       width: 100%
       background-color: rgba(35, 19, 30, 0.3)
-      color: #00b2da
-      border: 3px solid #00b2da
+      color: #00ffff
+      border: 3px solid #00ffff
+      border-radius: 7px
       .english
-        color: #dda525
+        color: #fcfb07
         font-family: Yantramanav
         font-weight: 800
       .japanese
@@ -554,5 +555,6 @@ span#bottomWords
 .gridPadding
   padding-top: 1vh
 .rightGridPad
-  padding-bottom: 1vh
+  width: 100vh
+  padding-bottom: .75em
 </style>
