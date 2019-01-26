@@ -20,22 +20,12 @@
                                           transform: 'translateY('+ (windowHeight - windowWidth) / 2 +'px) rotate(90deg)',
                                           transformOrigin: 'left bottom'
                                           }">
-          <div class="grid-noGutter">
+          <div class="grid gridPadding">
             <div class="col-10 pinkNeonBlock">
               <div class="col-12 heightFifty sideLogo"><div><span>ギ</span><span>ャ</span><span>ン</span><span>グ</span><span>フ</span><span>ァ</span><span>イ</span><span>ト</span></div><span class="leftLine"></span></div>
               <div class="col-12 heightFifty fortune">"{{fortune}}"</div>
             </div>
-            <div class="col-2 barcodeBox"><img id="barcodeImg" class="barcode" :src="'assets/global/sidebar/Robarcode.png'"/></div>
-          </div>
-          <div ref="farLeft" class="grid-noGutter farLeft">
-          <div class="col-3 bigboss"><img class="profilePic" :src="'assets/global/sidebar/photo.png'"/></div>
-          <div class="col-2 nameBlock">Buffum</div>
-          <div class="col-2"><img class="randoBlock" :src="'assets/' + this.$store.getters.assetFolder + '/sidebar/'+this.randoOne+'.jpg'"/></div>
-          <div class="col-2"><img class="randoBlock" :src="'assets/' + this.$store.getters.assetFolder + '/sidebar/'+this.randoTwo+'.jpg'"/></div>
-          <div class="col-3 timeBox">
-            <span class="date">1/2/19</span>
-            <span class="time">5:30PM</span>
-          </div>
+            <div class="col-2 barcodeBox"></div>
           </div>
         </div>
       </div>
@@ -53,23 +43,15 @@
                                           transformOrigin: 'left bottom'
                                           }">
           <div ref="rightBox" class="rightBox">
-          <div class="grid-noGutter leftInnerBox">
-          <div class="col-2 descripBox"><div>{{pageList[this.$router.currentRoute.name].description}}<span class="blink">█</span></div></div>
-          <div class="col-1 stageList"><div><span class="stageOne">stage 2</span><span class="stageTwo"> act 1</span></div></div>
-          <div class="col-2">
-            <div class="col-6 topRightBlock iconBlock"><span>O</span></div>
-            <div class="col-6 topRightBlock onlineNowBlock"><span class="onlineNow">Online Now</span><span class="onlineNo">3</span></div>
-          </div>
-          <div class="col-4 lastUpdatePic"><img :src="'http://gang-fight.com/projects/thumbs/xeno.jpg'"/></div>
-          <div class="col-2">
-            <div class="col-6 adHere"><img class="profilePic" :src="'assets/global/sidebar/n64.jpg'"/></div>
-            <div class="col-6 adHere"><img class="profilePic" :src="'assets/global/sidebar/playstation.png'"/></div>
-          </div>
-          <div class="col-1 ipFlag"><span>107.188.145.8</span></div>
-          </div>
-          <div class="grid-noGutter">
-          <div class="col-8 routeName">{{this.$router.currentRoute.name}}</div>
-          <div class="col-4 copyRight"><div><span class="english">© 2012 - {{futureYear}} Buff</span><br/><span class="japanese">イルミナティの公式メンバー</span></div></div>
+            <div class="grid leftInnerBox">
+              <div class="col-2 descripBox">
+                <div>{{pageList[this.$router.currentRoute.name].description}}<span class="blink">█</span></div>
+              </div>
+              <div class="col-10"></div>
+            </div>
+          <div class="grid rightGridPad">
+            <div class="col-8 routeName"><p>{{this.$router.currentRoute.name}}</p></div>
+            <div class="col-4 copyRight"><div><span class="english">© 2012 - {{futureYear}} Buff</span><br/><span class="japanese">イルミナティの公式メンバー</span></div></div>
           </div>
           </div>
         </div>
@@ -80,14 +62,14 @@
     <template v-if="isTaller == 'vw'">
       <div id="BottomBorder" :style="{height: (windowHeight - windowWidth) / 2 + 'px'}">
       <div id="grids">
-        <div class="grid-noGutter">
+        <div class="grid">
           <div class="col-8 bottomRouteName"><span>{{this.$router.currentRoute.name}}</span></div>
           <div class="col-4 bottomRight"><div><span class="bottomEng">© 2012 - {{futureYear}} Buff</span><br/><span class="bottomJP">イルミナティの公式メンバー</span></div></div>
         </div>
-        <div class="grid-noGutter">
+        <div class="grid">
           <div class="col-12 personInfo">10/15/15 3:75PM</div>
         </div>
-        <div class="grid-noGutter rainbowRoad">
+        <div class="grid rainbowRoad">
           <div class="col-2 bottomBar"><img :src="'assets/' + this.$store.getters.assetFolder + '/sidebar/barcodeHori.png'"/></div>
           <div class="col-9 bottomNamebar">BUFFUM</div>
           <div class="col-1 firstEd"><img src="assets/global/sidebar/1sted.png"/></div>
@@ -200,6 +182,7 @@ export default {
 @import url('https://fonts.googleapis.com/css?family=Yantramanav')
 
 $lineWidth: .5em
+$sideImgOpacity: .7
 
 #BottomBorder
   background-image: url("/assets/global/sidebar/tempTop.jpg")
@@ -246,7 +229,7 @@ $lineWidth: .5em
     font-size: 3.25vw
     text-align: center
     letter-spacing: .25em
-    background-color: $neonBlack
+    //background-color: $neonBlack
     font-weight: 800
     border: 2px solid #f25100
     color: #f25100
@@ -332,20 +315,25 @@ span#bottomWords
 .barcodeBox
   align-self: center
   text-align: center
-  background-color: $neonBlack
+  //background-color: $neonBlack
   .barcode
     height: 24.5vh
-    width: 12vh
+    width: 11vh
 .heightFifty
   height: 50%
 .sideLogo
   font-size: 8vh
   display: flex
   align-content: center
+  height: 11.5vh
   padding: 0
-  background-color: #00ffff
+  //background-color: #00ffff
   align-self: center
   color: #fe0063
+  margin-left: .25em
+  border: 8px double #00ffff
+  border-radius: 15px
+  background-color: rgba(55,55,55,.5)
   div
     margin-left: 3vh
     font-family: Logo
@@ -359,29 +347,39 @@ span#bottomWords
     width: 100px
     background-color: #fe0063
     align-self: center
-    width: 15vh
+    width: 9.5vh
     padding: 0
 .fortune
   padding: 0
   padding-top: .25em
   font-size: 3vh
   margin-left: .75em
-  background-color: #fe0063
+  //background-color: #fe0063
   color: #fafdf7
   font-style: italic
-.randoBlock
-  width: 100%
-  transform: rotate(-90deg)
-  filter: $imgFilter
+.randoBlockWrap
+  display: flex    
+  align-content: center
+  flex-direction: column
+  justify-content: center
+  //padding: 0 .5em !important
+  img
+    filter: $imgFilter
+    opacity: $sideImgOpacity
+    width: 100%
+    height: auto
+    justify-self: center
+    align-self: center
+    transform: rotate(-90deg)
 .farLeft
-  background-color: $neonBlack
+  //background-color: $neonBlack
   line-height: 0
 .timeBox
   line-height: 1
   display: flex
   flex-direction: column
   justify-content: center
-  background-color: $neonBlack
+  //background-color: $neonBlack
   color: white
   font-family: VCR
   span
@@ -392,38 +390,34 @@ span#bottomWords
 .profilePic    
   width: 25vh
   height: 100%
-.nameBlock
-  line-height: 1
-  font-size: 6vh
-  word-break: break-all
-  transform: rotate(-90deg)
-  align-self: center
-  font-family: VCR
-  padding-left: .2em !important
-  color: white
 .rightBox
   position: absolute
   bottom: 0
   .routeName
-    font-size: 8vh
-    padding-left: .5em
-    background-color: #fcfb07
-    color: #700123
-    text-shadow: 0px 0px 8px #c56508
-    font-family: Montserrat
+    p
+      font-size: 8vh
+      padding-left: .5em
+      background-color: #fcfb07
+      color: #700123
+      text-shadow: 0px 0px 8px #c56508
+      font-family: Montserrat
   .copyRight
     text-align: right
     display: flex
     justify-content: flex-end
     font-size: 1.75vh
-    background-color: $neonBlack
     color: #00b2da
-    border: 3px solid #00b2da
+    align-self: center
+    justify-self: center
+    padding-bottom: 0
     div
       align-self: flex-end
       justify-self: baseline
-      padding-right: 1em
-      padding-bottom: 1em
+      padding: 1em
+      width: 100%
+      background-color: rgba(35, 19, 30, 0.3)
+      color: #00b2da
+      border: 3px solid #00b2da
       .english
         color: #dda525
         font-family: Yantramanav
@@ -457,6 +451,7 @@ span#bottomWords
     width: 100%
     filter: $imgFilter
     transform: rotate(-90deg)
+    opacity: $sideImgOpacity
 .topRightBlock
   height: 16.666666666vh
   padding: 0
@@ -535,10 +530,7 @@ span#bottomWords
     color: $lightNeonRed
     text-shadow: 0px 0px 8px $neonRed
 .pinkNeonBlock
-  background-color: #fe0063
-.bigboss
-  img
-    filter: $imgFilter
+  //background-color: #fe0063
 .blink
   animation: blink 2s infinite
 @keyframes blink
@@ -555,4 +547,12 @@ span#bottomWords
   font-size: 13.75vw
   font-family: Alien
   color: white
+
+[class*=grid-], [class*=grid_], [class~=grid]
+    margin: 0 !important
+
+.gridPadding
+  padding-top: 1vh
+.rightGridPad
+  padding-bottom: 1vh
 </style>
