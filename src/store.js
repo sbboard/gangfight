@@ -37,6 +37,10 @@ export const store = new Vuex.Store({
             else if(n[1]==12 && n[0] == 31){
                 state.assets = "newYears"
             }
+            //summer gang fight
+            else if(n[1] >= 5 && n[1] <= 8){
+                state.assets = "summer"
+            }
             else{
                 state.assets = "default"
             }
