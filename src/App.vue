@@ -51,8 +51,8 @@
               <div>5:25PM</div>
             </div>
             <div class="col-2">
-              <div class="col-12"><div>pic</div></div>
-              <div class="col-12"><div>pic</div></div>
+              <div class="col-12 randoBlock"><img :src="'assets/' + this.$store.getters.assetFolder + '/sidebar/'+this.randoOne+'.jpg'"/></div>
+              <div class="col-12 randoBlock"><img :src="'assets/' + this.$store.getters.assetFolder + '/sidebar/'+this.randoTwo+'.jpg'"/></div>
             </div>
             <div class="col-4">
               <div class="col-12"><div>japanese</div></div>
@@ -371,20 +371,6 @@ span#bottomWords
   //background-color: #fe0063
   color: #fafdf7
   font-style: italic
-.randoBlockWrap
-  display: flex    
-  align-content: center
-  flex-direction: column
-  justify-content: center
-  //padding: 0 .5em !important
-  img
-    filter: $imgFilter
-    opacity: $sideImgOpacity
-    width: 100%
-    height: auto
-    justify-self: center
-    align-self: center
-    transform: rotate(-90deg)
 .farLeft
   //background-color: $neonBlack
   line-height: 0
@@ -411,6 +397,13 @@ span#bottomWords
   div
     div
       background-color: rgba(255,0,0,.5)
+  .randoBlock
+    line-height: 0
+    img
+      transform: rotate(-90deg)
+      width: 100%    
+      opacity: 1
+      filter: contrast(1.5) saturate(4) blur(1px)
   .routeName
     font-size: 8vh
     padding-left: .5em
