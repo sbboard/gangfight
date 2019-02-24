@@ -64,7 +64,7 @@
               <div class="col-12"><div>CYBER</div></div>
             </div>
 
-            <div class="col-9"><div class="routeName">{{ this.$store.getters. }}</div></div>
+            <div class="col-9"><div class="routeName">{{this.$router.currentRoute.name}}</div></div>
             <div class="col-3"><div class="copyRight"><div><span class="english">© 2012 - {{futureYear}} Buff</span><br/><span class="japanese">イルミナティの公式メンバー</span></div></div></div>
           </div>
           
@@ -394,9 +394,6 @@ span#bottomWords
   position: absolute
   bottom: 0
   width: 100vh
-  div
-    div
-      background-color: rgba(255,0,0,.5)
   .randoBlock
     line-height: 0
     img
@@ -405,12 +402,13 @@ span#bottomWords
       opacity: 1
       filter: contrast(1.5) saturate(4) blur(1px)
   .routeName
-    font-size: 8vh
-    padding-left: .5em
+    font-size: 7vh
+    padding: .5vh .5em
     background-color: #fcfb07
     color: #700123
     text-shadow: 0px 0px 8px #c56508
     font-family: Montserrat
+    border-radius: 11px
   .copyRight
     text-align: right
     display: flex
@@ -418,6 +416,7 @@ span#bottomWords
     font-size: 1.75vh
     background-color: $neonBlack
     color: #00b2da
+    height: calc(100% - 6px)
     border: 3px solid #00b2da
     div
       align-self: flex-end
