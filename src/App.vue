@@ -47,8 +47,8 @@
             <div class="col-2">
               <div>OPEN 24HR</div>
             </div>
-            <div class="col-1">
-              <div>5:25PM</div>
+            <div class="col-1 timeCol">
+              <div class="timeDiv">{{hour}}:{{minute}}{{AMPM}}</div>
             </div>
             <div class="col-2">
               <div class="col-12 randoBlock"><img :src="'assets/' + this.$store.getters.assetFolder + '/sidebar/'+this.randoOne+'.jpg'"/></div>
@@ -114,7 +114,10 @@ export default {
       pageList: pagelist,
       boxHeight: 0,
       randoOne: 1,
-      randoTwo: 2
+      randoTwo: 2,
+      hour: 0,
+      minute: 0,
+      AMPM: "AM"
     }
   },
   methods:{
@@ -126,16 +129,32 @@ export default {
       if(logoBox != null){
         this.boxHeight = logoBox.clientHeight
       }
+    },
+    sendTime(){
+      function addZero(i) {
+      if (i < 10) {
+        i = "0" + i;
+      }
+      return i;
+      }
+      var today = new Date();
+      var dd = today.getDate();
+      var mm = today.getMonth() + 1; //January is 0!
+      var yyyy = today.getFullYear();
+      let tempHour = today.getHours()
+      if(tempHour > 12){
+        tempHour = tempHour-12
+        this.AMPM = "PM"
+      }
+      this.hour = tempHour
+      this.minute = addZero(today.getMinutes())
+      this.$store.commit('setAsset', [dd,mm,yyyy])
     }
   },
   created(){
     this.windowHeight = window.innerHeight
     this.windowWidth = window.innerWidth
-    var today = new Date();
-    var dd = today.getDate();
-    var mm = today.getMonth() + 1; //January is 0!
-    var yyyy = today.getFullYear();
-    this.$store.commit('setAsset', [dd,mm,yyyy])
+    setInterval(this.sendTime, 1000);
 
     //generate rando Nos for sidebar imgs
     this.randoOne = Math.floor(Math.random() * 10) + 1
@@ -341,13 +360,12 @@ span#bottomWords
   align-content: center
   height: 11.5vh
   padding: 0
-  //background-color: #00ffff
   align-self: center
   color: #fe0063
   margin-left: .25em
   border: 8px double #00ffff
   border-radius: 15px
-  background-color: rgba(55,55,55,.5)
+  //background-color: rgba(55,55,55,.5)
   div
     margin-left: 3vh
     font-family: Logo
@@ -374,19 +392,6 @@ span#bottomWords
 .farLeft
   //background-color: $neonBlack
   line-height: 0
-.timeBox
-  line-height: 1
-  display: flex
-  flex-direction: column
-  justify-content: center
-  //background-color: $neonBlack
-  color: white
-  font-family: VCR
-  span
-    display: block
-    font-size: 3.5vh
-    text-align: center
-    letter-spacing: 1vh
 .profilePic    
   width: 25vh
   height: 100%
@@ -394,6 +399,16 @@ span#bottomWords
   position: absolute
   bottom: 0
   width: 100vh
+  .timeCol
+    position: relative
+    .timeDiv
+      transform: rotate(-90deg)
+      position: absolute
+      top: 11.25vh
+      right: -8.25vh
+      font-size: 6.5vh
+      font-family: VCR
+      color: $neonGreen
   .randoBlock
     line-height: 0
     img
@@ -498,45 +513,6 @@ span#bottomWords
     text-align: center
 .leftInnerBox
   line-height: 0
-.stageList
-  display: flex
-  align-items: center
-  justify-content: center
-  text-align: center
-  line-height: 1
-  flex-direction: column
-  background-color: $neonBlack
-  div
-    display: block
-    width: 32vh
-    transform: rotate(-90deg)
-    font-size: 3.5vh
-    text-align: center
-    font-family: VCR
-    text-transform: uppercase
-    .stageOne
-      color: $lightNeonRed
-      text-shadow: 0px 0px 8px $neonRed
-    .stageTwo
-      color: $lightNeonBlue
-      text-shadow: 0px 0px 8px $neonBlue
-.ipFlag
-  display: flex
-  align-items: center
-  justify-content: center
-  text-align: center
-  line-height: 1
-  flex-direction: column
-  background-color: $neonBlack
-  font-family: VCR
-  span
-    display: block
-    width: 32vh
-    transform: rotate(-90deg)
-    font-size: 3vh
-    text-align: center
-    color: $lightNeonRed
-    text-shadow: 0px 0px 8px $neonRed
 .pinkNeonBlock
   //background-color: #fe0063
 .blink
