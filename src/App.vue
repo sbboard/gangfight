@@ -416,10 +416,11 @@ span#bottomWords
     display: flex
     justify-content: flex-end
     font-size: 1.75vh
-    background-color: $neonBlack
+    //background-color: $neonBlack
     color: #00b2da
-    height: calc(100% - 6px)
-    border: 3px solid #00b2da
+    height: 100%
+    //height: calc(100% - 6px)
+    //border: 3px solid #00b2da
     div
       align-self: flex-end
       justify-self: baseline
