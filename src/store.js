@@ -22,7 +22,7 @@ export const store = new Vuex.Store({
         },
         setAsset(state,n){
             //valentines
-            if(n[1]==2){
+            if(n[1]==2 && n[0] < 16){
                 state.assets = "valentines"
             }
             //halloween
