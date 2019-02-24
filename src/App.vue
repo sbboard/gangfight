@@ -400,7 +400,9 @@ span#bottomWords
       transform: rotate(-90deg)
       width: 100%    
       opacity: 1
-      filter: contrast(1.5) saturate(4) blur(1px)
+      filter: contrast(1.5) saturate(2)
+    &:nth-child(2)
+      padding-bottom: 0
   .routeName
     font-size: 7vh
     padding: .5vh .5em
