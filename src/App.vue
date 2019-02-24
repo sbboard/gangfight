@@ -64,8 +64,8 @@
               <div class="col-12"><div>CYBER</div></div>
             </div>
 
-            <div class="col-9"><div class="routeName">HOME</div></div>
-            <div class="col-3"><div class="copyRight">copyright</div></div>
+            <div class="col-9"><div class="routeName">{{ this.$store.getters. }}</div></div>
+            <div class="col-3"><div class="copyRight"><div><span class="english">© 2012 - {{futureYear}} Buff</span><br/><span class="japanese">イルミナティの公式メンバー</span></div></div></div>
           </div>
           
         </div>
