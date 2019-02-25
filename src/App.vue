@@ -45,7 +45,9 @@
           
           <div class="grid rightBox gridPadding">
             <div class="col-2">
-              <div>OPEN 24HR</div>
+              <div class="openWindow">
+                <span class="openText">OPEN 24HR</span>
+              </div>
             </div>
             <div class="col-1 timeCol">
               <div class="timeDiv">{{hour}}:{{minute}}{{AMPM}}</div>
@@ -55,13 +57,13 @@
               <div class="col-12 randoBlock"><img :src="'assets/' + this.$store.getters.assetFolder + '/sidebar/'+this.randoTwo+'.jpg'"/></div>
             </div>
             <div class="col-4">
-              <div class="col-12"><div>japanese</div></div>
+              <div class="col-12"><div><span>足</span><span>の</span><span>王</span></div></div>
               <div class="col-12"><div>new pic</div></div>
             </div>
             <div class="col-3">
-              <div class="col-6"><div>Chewy</div></div>
+              <div class="col-6"><div>O</div></div>
               <div class="col-6"></div>
-              <div class="col-12"><div>CYBER</div></div>
+              <div class="col-12"><div><span>CYBER</span></div></div>
             </div>
 
             <div class="col-9"><div class="routeName">{{this.$router.currentRoute.name}}</div></div>
@@ -399,6 +401,13 @@ span#bottomWords
   position: absolute
   bottom: 0
   width: 100vh
+  .openWindow
+    height: calc(100% - 10px)
+    border: 5px solid $neonGreen
+    .openText
+      background-color: yellow
+      transform: rotate(-90deg)
+      display: block
   .timeCol
     position: relative
     .timeDiv
