@@ -325,9 +325,9 @@ span#bottomWords
           text-transform: capitalize
           font-size: 5em
           color: $white
-          font-family: 'Montserrat', sans-serif;
+          font-family: 'Montserrat', sans-serif
         #lowOfLows
-          font-family: 'Yantramanav', sans-serif;
+          font-family: 'Yantramanav', sans-serif
           #leftOfLows
             float: left
             width: calc(100% - (100% - 21.25em))
@@ -404,10 +404,16 @@ span#bottomWords
   .openWindow
     height: calc(100% - 10px)
     border: 5px solid $neonGreen
+    position: relative
+    border-radius: 5px
     .openText
-      background-color: yellow
       transform: rotate(-90deg)
       display: block
+      position: absolute
+      font-size: 7vh
+      bottom: 6.5vh
+      left: -2.2vh
+      color: $neonYellow
   .timeCol
     position: relative
     .timeDiv
