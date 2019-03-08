@@ -58,12 +58,21 @@
             </div>
             <div class="col-4">
               <div class="col-12 fiftyFifty"><div id="threeLetter"><span>足</span><span>の</span><span>王</span></div></div>
-              <div class="col-12 fiftyFifty"><div id="newImg"><img src="assets/global/sidebar/barcode.png"/></div></div>
+              <div class="col-12 fiftyFifty leftLeft">
+                <div id="newImg">
+                  <div id="top">
+                    <span>NEW</span>
+                  </div>
+                  <div id="bottom">
+                    <span>NEW</span>
+                  </div>
+                </div>
+              </div>
             </div>
             <div class="col-3">
               <div class="col-6 fiftyFifty"><div>O</div></div>
               <div class="col-6"></div>
-              <div class="col-12 fiftyFifty"><div id="cyber"><span></span><span>C</span><span>Y</span><span>B</span><span>E</span><span>R</span><span></span></div></div>
+              <div class="col-12 fiftyFifty leftLeft"><div id="cyber"><span></span><span>C</span><span>Y</span><span>B</span><span>E</span><span>R</span><span></span></div></div>
             </div>
 
             <div class="col-9"><div class="routeName">{{this.$router.currentRoute.name}}</div></div>
@@ -579,15 +588,52 @@ span#bottomWords
   display: flex
   flex-direction: initial
   justify-content: center
+  align-items: center
+  height: 100%
   span
     transform: rotate(-90deg)
     color: $neonYellow
     font-size: 5em
     display: block
 #newImg
-  img
-    width: 100%
-    height: auto
+  position: relative
+  height: 100%
+  width: 100%
+  background-image: url("http://localhost:8080/assets/default/sidebar/2.jpg")
+  #top
+    background-color: black
+    height: 100%
+    width: 3em
+    float: left
+    position: relative
+    display: flex
+    align-items: center
+    justify-content: center
+    span
+      color: white
+      transform: rotate(-90deg)
+      display: block
+      width: fit-content
+      margin: 0 auto
+      font-size: 2em
+  #bottom
+    background-color: black
+    height: 100%
+    width: 3em
+    float: right
+    position: relative
+    display: flex
+    align-items: center
+    justify-content: center
+    span
+      color: white
+      transform: rotate(-90deg)
+      display: block
+      width: fit-content
+      margin: 0 auto
+      font-size: 2em
 .fiftyFifty
   height: 50%
+.leftLeft
+  padding: 0
 </style>
