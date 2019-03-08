@@ -30,6 +30,7 @@ export default {
 @import "../../css/gangFonts.sass"
 
 #aboutUs
+    background-image: url("/assets/global/sidebar/computer.gif")
     .aboutText
         background-color: rgba(black, .8)
         color: $neonRed

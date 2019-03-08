@@ -33,7 +33,7 @@
 
     <!-- MIDDLE -->
     <navigation/>
-    <router-view v-if="isTaller" :style="{width: '100'+isTaller, height: '100'+isTaller}"/>
+    <router-view :class="[(isTaller == 'vh')?'middleViewLong':'middleViewHigh']" :style="{width: '100'+isTaller, height: '100'+isTaller}"/>
     
     <!-- RIGHT -->
     <template v-if="isTaller == 'vh'">
@@ -555,4 +555,8 @@ span#bottomWords
 .rightGridPad
   width: 100vh
   padding-bottom: .75em
+.middleViewLong
+  box-shadow: inset 8px 0 15px -5px rgba(0, 0, 0, 0.8), inset -8px 0 15px -5px rgba(0, 0, 0, 0.8)
+.middleViewHigh
+  box-shadow: inset 0 8px 15px -5px rgba(0, 0, 0, 0.8), inset 0 -8px 15px -5px rgba(0, 0, 0, 0.8)
 </style>
