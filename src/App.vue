@@ -53,8 +53,8 @@
               <div class="timeDiv">{{hour}}:{{minute}}{{AMPM}}</div>
             </div>
             <div class="col-2">
-              <div class="col-12 randoBlock"><img :src="'assets/' + this.$store.getters.assetFolder + '/sidebar/'+this.randoOne+'.jpg'"/></div>
-              <div class="col-12 randoBlock"><img :src="'assets/' + this.$store.getters.assetFolder + '/sidebar/'+this.randoTwo+'.jpg'"/></div>
+              <div class="col-12 randoBlock fiftyFifty"><div><img :src="'assets/' + this.$store.getters.assetFolder + '/sidebar/'+this.randoOne+'.jpg'"/></div></div>
+              <div class="col-12 randoBlock fiftyFifty"><div><img :src="'assets/' + this.$store.getters.assetFolder + '/sidebar/'+this.randoTwo+'.jpg'"/></div></div>
             </div>
             <div class="col-4">
               <div class="col-12 fiftyFifty"><div id="threeLetter"><span>足</span><span>の</span><span>王</span></div></div>
@@ -70,9 +70,9 @@
               </div>
             </div>
             <div class="col-3">
-              <div class="col-6 fiftyFifty"><div>O</div></div>
-              <div class="col-6"></div>
-              <div class="col-12 fiftyFifty leftLeft"><div id="cyber"><span></span><span>C</span><span>Y</span><span>B</span><span>E</span><span>R</span><span></span></div></div>
+              <div class="col-6 fiftyFifty chewyPlace"><div id="iconGuy"><span>O</span></div></div>
+              <div class="col-6 padZero"></div>
+              <div class="col-12 fiftyFifty leftLeft" id="cyberTop"><div id="cyber"><span></span><span>C</span><span>Y</span><span>B</span><span>E</span><span>R</span><span></span></div></div>
             </div>
 
             <div class="col-9"><div class="routeName">{{this.$router.currentRoute.name}}</div></div>
@@ -224,6 +224,7 @@ export default {
 @import "./css/gridlex.min.css"
 @import url('https://fonts.googleapis.com/css?family=Montserrat')
 @import url('https://fonts.googleapis.com/css?family=Yantramanav')
+@import url('https://fonts.googleapis.com/css?family=Kosugi+Maru')
 
 $lineWidth: .5em
 $sideImgOpacity: .7
@@ -436,13 +437,15 @@ span#bottomWords
       color: $neonGreen
   .randoBlock
     line-height: 0
-    img
-      transform: rotate(-90deg)
-      width: 100%    
-      opacity: 1
-      filter: contrast(1.5) saturate(2)
-    &:nth-child(2)
-      padding-bottom: 0
+    padding: 0
+    div
+      height: fit-content
+      padding: .25em
+      img
+        transform: rotate(-90deg)
+        width: 100%
+        opacity: 1
+        filter: contrast(1.5) saturate(2)
   .routeName
     font-size: 7vh
     padding: .5vh .5em
@@ -569,27 +572,34 @@ span#bottomWords
   box-shadow: inset 8px 0 15px -5px rgba(0, 0, 0, 0.8), inset -8px 0 15px -5px rgba(0, 0, 0, 0.8)
 .middleViewHigh
   box-shadow: inset 0 8px 15px -5px rgba(0, 0, 0, 0.8), inset 0 -8px 15px -5px rgba(0, 0, 0, 0.8)
-#cyber
-  border: 5px solid $neonPink
-  flex-direction: inherit
-  display: flex
-  justify-content: space-around
-  font-size: 2em
-  font-family: Montserrat
-  span
-    color: $neonGreen
-    transform: rotate(-90deg)
-    display: block
-    width: fit-content
-    margin: 0
-    padding: .75em 0
-    font-weight: 700
+#cyberTop
+  padding: inherit
+  padding-bottom: 0
+  #cyber
+    border: 5px solid $neonPink
+    flex-direction: inherit
+    display: flex
+    justify-content: space-around
+    font-size: 2em
+    font-family: Montserrat
+    height: calc(100% - 10px)
+    align-items: center
+    span
+      color: $neonGreen
+      transform: rotate(-90deg)
+      display: block
+      width: fit-content
+      height: fit-content
+      margin: 0
+      padding: 0
+      font-weight: 700
 #threeLetter
   display: flex
   flex-direction: initial
   justify-content: center
   align-items: center
   height: 100%
+  font-family: 'Kosugi Maru', sans-serif
   span
     transform: rotate(-90deg)
     color: $neonYellow
@@ -600,6 +610,8 @@ span#bottomWords
   height: 100%
   width: 100%
   background-image: url("http://localhost:8080/assets/default/sidebar/2.jpg")
+  overflow: hidden
+  border-radius: 1.25em
   #top
     background-color: black
     height: 100%
@@ -609,6 +621,7 @@ span#bottomWords
     display: flex
     align-items: center
     justify-content: center
+    font-family: Alien
     span
       color: white
       transform: rotate(-90deg)
@@ -625,6 +638,7 @@ span#bottomWords
     display: flex
     align-items: center
     justify-content: center
+    font-family: Alien
     span
       color: white
       transform: rotate(-90deg)
@@ -635,5 +649,20 @@ span#bottomWords
 .fiftyFifty
   height: 50%
 .leftLeft
+  padding: 0
+.chewyPlace
+  padding-right: 50%
+  #iconGuy
+    width: 100%
+    height: 100%
+    display: flex
+    justify-content: center
+    align-items: center
+    span
+      display: block
+      transform: rotate(-90deg)
+      font-size: 15vh
+      height: fit-content
+.padZero
   padding: 0
 </style>
