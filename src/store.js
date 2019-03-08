@@ -22,7 +22,7 @@ export const store = new Vuex.Store({
         },
         setAsset(state,n){
             //valentines
-            if(n[1]==2){
+            if(n[1]==2 && n[0] < 16){
                 state.assets = "valentines"
             }
             //halloween
@@ -36,6 +36,10 @@ export const store = new Vuex.Store({
             //new years
             else if(n[1]==12 && n[0] == 31){
                 state.assets = "newYears"
+            }
+            //summer gang fight
+            else if(n[1] >= 5 && n[1] <= 8){
+                state.assets = "summer"
             }
             else{
                 state.assets = "default"
