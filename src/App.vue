@@ -57,13 +57,13 @@
               <div class="col-12 randoBlock"><img :src="'assets/' + this.$store.getters.assetFolder + '/sidebar/'+this.randoTwo+'.jpg'"/></div>
             </div>
             <div class="col-4">
-              <div class="col-12"><div><span>足</span><span>の</span><span>王</span></div></div>
-              <div class="col-12"><div>new pic</div></div>
+              <div class="col-12 fiftyFifty"><div id="threeLetter"><span>足</span><span>の</span><span>王</span></div></div>
+              <div class="col-12 fiftyFifty"><div id="newImg"><img src="assets/global/sidebar/barcode.png"/></div></div>
             </div>
             <div class="col-3">
-              <div class="col-6"><div>O</div></div>
+              <div class="col-6 fiftyFifty"><div>O</div></div>
               <div class="col-6"></div>
-              <div class="col-12"><div><span>CYBER</span></div></div>
+              <div class="col-12 fiftyFifty"><div id="cyber"><span></span><span>C</span><span>Y</span><span>B</span><span>E</span><span>R</span><span></span></div></div>
             </div>
 
             <div class="col-9"><div class="routeName">{{this.$router.currentRoute.name}}</div></div>
@@ -403,17 +403,18 @@ span#bottomWords
   width: 100vh
   .openWindow
     height: calc(100% - 10px)
-    border: 5px solid $neonGreen
+    border: 5px solid $neonBlue
     position: relative
     border-radius: 5px
     .openText
       transform: rotate(-90deg)
       display: block
       position: absolute
-      font-size: 7vh
-      bottom: 6.5vh
-      left: -2.2vh
       color: $neonYellow
+      font-size: 6.25vh
+      bottom: 7.5vh
+      left: -2.5vh
+      font-family: Montserrat
   .timeCol
     position: relative
     .timeDiv
@@ -559,4 +560,34 @@ span#bottomWords
   box-shadow: inset 8px 0 15px -5px rgba(0, 0, 0, 0.8), inset -8px 0 15px -5px rgba(0, 0, 0, 0.8)
 .middleViewHigh
   box-shadow: inset 0 8px 15px -5px rgba(0, 0, 0, 0.8), inset 0 -8px 15px -5px rgba(0, 0, 0, 0.8)
+#cyber
+  border: 5px solid $neonPink
+  flex-direction: inherit
+  display: flex
+  justify-content: space-around
+  font-size: 2em
+  font-family: Montserrat
+  span
+    color: $neonGreen
+    transform: rotate(-90deg)
+    display: block
+    width: fit-content
+    margin: 0
+    padding: .75em 0
+    font-weight: 700
+#threeLetter
+  display: flex
+  flex-direction: initial
+  justify-content: center
+  span
+    transform: rotate(-90deg)
+    color: $neonYellow
+    font-size: 5em
+    display: block
+#newImg
+  img
+    width: 100%
+    height: auto
+.fiftyFifty
+  height: 50%
 </style>
