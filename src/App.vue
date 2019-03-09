@@ -53,8 +53,13 @@
               <div class="timeDiv">{{hour}}:{{minute}}{{AMPM}}</div>
             </div>
             <div class="col-2">
-              <div class="col-12 randoBlock fiftyFifty"><div><img :src="'assets/' + this.$store.getters.assetFolder + '/sidebar/'+this.randoOne+'.jpg'"/></div></div>
-              <div class="col-12 randoBlock fiftyFifty"><div><img :src="'assets/' + this.$store.getters.assetFolder + '/sidebar/'+this.randoTwo+'.jpg'"/></div></div>
+              <div class="col-12 randoBlock fiftyFifty"><div>
+                <img class="scanlines" src="assets/global/sidebar/scanlines.png"/>
+                <img class="screen" :src="'assets/' + this.$store.getters.assetFolder + '/sidebar/'+this.randoOne+'.jpg'"/>
+                </div></div>
+              <div class="col-12 randoBlock fiftyFifty"><div>
+                <img class="scanlines" src="assets/global/sidebar/scanlines.png"/>
+                <img class="screen" :src="'assets/' + this.$store.getters.assetFolder + '/sidebar/'+this.randoTwo+'.jpg'"/></div></div>
             </div>
             <div class="col-4">
               <div class="col-12 fiftyFifty"><div id="threeLetter"><span>足</span><span>の</span><span>王</span></div></div>
@@ -441,11 +446,19 @@ span#bottomWords
     div
       height: fit-content
       padding: .25em
-      img
+      position: relative
+      .screen
         transform: rotate(-90deg)
         width: 100%
         opacity: 1
         filter: contrast(1.5) saturate(2)
+      .scanlines
+        height: calc(100% - .5em)
+        width: calc(100% - .5em)
+        position: absolute
+        z-index: 1
+        transform: rotate(-90deg)
+        opacity: 0.5
   .routeName
     font-size: 7vh
     padding: .5vh .5em
