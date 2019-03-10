@@ -8,7 +8,7 @@
         <div ref="wordBox" class="topLogoBox" :style="{bottom: logoBoxBottom,
         backgroundImage: 'url(' + 'assets/' + this.$store.getters.assetFolder + '/sidebar/tempLogoBG.jpg)'}">
         <span id="topWords">gang fight</span>
-        <span id="bottomWords">ギャングファイト</span>
+        <div id="bottomWords"><span>ギ</span><span>ャ</span><span>ン</span><span>グ</span><span>フ</span><span>ァ</span><span>イ</span><span>ト</span></div>
         </div>
       </div>
     </template>
@@ -101,7 +101,7 @@
           <div class="col-4 bottomRight"><div><span class="bottomEng">© 2012 - {{futureYear}} Buff</span><br/><span class="bottomJP">イルミナティの公式メンバー</span></div></div>
         </div>
         <div class="grid">
-          <div class="col-12 personInfo">10/15/15 3:75PM</div>
+          <div class="col-12 personInfo">{{month}}/{{day}}/{{futureYear}} {{hour}}:{{minute}}{{AMPM}}</div>
         </div>
         <div class="grid rainbowRoad">
           <div class="col-2 bottomBar">
@@ -132,7 +132,9 @@ export default {
       isTaller: false,
       flexDirect: "row",
       fortune: this.$store.getters.getFortune,
-      futureYear: new Date().getFullYear()+12,
+      futureYear: 0,
+      day: 0,
+      month: 0,
       pageList: pagelist,
       boxHeight: 0,
       randoOne: 1,
@@ -170,6 +172,9 @@ export default {
       }
       this.hour = tempHour
       this.minute = addZero(today.getMinutes())
+      this.month = mm
+      this.day = dd
+      this.futureYear = yyyy+12
       this.$store.commit('setAsset', [dd,mm,yyyy])
     }
   },
@@ -339,10 +344,13 @@ $sideImgOpacity: .7
 span#topWords
   display:block !important
   font-size: 9vw
-span#bottomWords
-  display:block !important
+  font-family: Montserrat
+#bottomWords
   font-size: 3vw
-  padding-top: .5em
+  font-family: topLogo
+  display: flex
+  justify-content: space-evenly
+  margin-top: 1em
 #app
   display: flex
   height: 100%
