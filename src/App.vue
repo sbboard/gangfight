@@ -46,19 +46,23 @@
           <div class="grid rightBox gridPadding">
             <div class="col-2">
               <div class="openWindow">
-                <span class="openText">OPEN 24HR</span>
+                <div>
+                  <span class="openText">OPEN 24HR</span>
+                </div>
               </div>
             </div>
             <div class="col-1 timeCol">
-              <div class="timeDiv">{{hour}}:{{minute}}{{AMPM}}</div>
+              <div class="timeDiv">
+                <span>{{hour}}:{{minute}}{{AMPM}}</span>
+              </div>
             </div>
             <div class="col-2">
               <div class="col-12 randoBlock fiftyFifty"><div>
-                <img class="scanlines" src="assets/global/sidebar/scanlines.png"/>
+                <img class="scanlines" src="assets/global/sidebar/scanlines4.png"/>
                 <img class="screen" :src="'assets/' + this.$store.getters.assetFolder + '/sidebar/'+this.randoOne+'.jpg'"/>
                 </div></div>
               <div class="col-12 randoBlock fiftyFifty"><div>
-                <img class="scanlines" src="assets/global/sidebar/scanlines.png"/>
+                <img class="scanlines" src="assets/global/sidebar/scanlines4.png"/>
                 <img class="screen" :src="'assets/' + this.$store.getters.assetFolder + '/sidebar/'+this.randoTwo+'.jpg'"/></div></div>
             </div>
             <div class="col-4">
@@ -80,8 +84,8 @@
               <div class="col-12 fiftyFifty leftLeft" id="cyberTop"><div id="cyber"><span></span><span>C</span><span>Y</span><span>B</span><span>E</span><span>R</span><span></span></div></div>
             </div>
 
-            <div class="col-9"><div class="routeName">{{this.$router.currentRoute.name}}</div></div>
-            <div class="col-3"><div class="copyRight"><div><span class="english">© 2012 - {{futureYear}} Buff</span><br/><span class="japanese">イルミナティの公式メンバー</span></div></div></div>
+            <div class="col-9 theBottomRight"><div class="routeName">{{this.$router.currentRoute.name}}</div></div>
+            <div class="col-3 theBottomRight"><div class="copyRight"><div><span class="english">© 2012 - {{futureYear}} Buff</span><br/><span class="japanese">イルミナティの公式メンバー</span></div></div></div>
           </div>
           
         </div>
@@ -227,6 +231,10 @@ export default {
 @import "./css/gangColors.sass"
 @import "./css/gangFonts.sass"
 @import "./css/gridlex.min.css"
+[class*=grid-], [class*=grid_], [class~=grid]
+    margin: 0
+[class*=col-], [class*=col_], [class~=col]
+    padding: 0 .75vh 1.75vh
 @import url('https://fonts.googleapis.com/css?family=Montserrat')
 @import url('https://fonts.googleapis.com/css?family=Yantramanav')
 @import url('https://fonts.googleapis.com/css?family=Kosugi+Maru')
@@ -380,7 +388,7 @@ span#bottomWords
   align-self: center
   color: #fe0063
   margin-left: .25em
-  border: 8px double #00ffff
+  border: .75vh double #00ffff
   border-radius: 15px
   //background-color: rgba(55,55,55,.5)
   div
@@ -417,29 +425,42 @@ span#bottomWords
   bottom: 0
   width: 100vh
   .openWindow
-    height: calc(100% - 10px)
-    border: 5px solid $neonBlue
+    height: calc(100% - 1vh)
+    border: .5vh solid $neonBlue
     position: relative
-    border-radius: 5px
-    .openText
-      transform: rotate(-90deg)
-      display: block
-      position: absolute
-      color: $neonYellow
-      font-size: 6.25vh
-      bottom: 7.5vh
-      left: -2.5vh
-      font-family: Montserrat
+    border-radius: .5vh
+    div
+      width: 100%
+      height: 100%
+      display: flex
+      justify-content: center
+      .openText
+        transform: rotate(-90deg)
+        display: block
+        color: $neonYellow
+        font-size: 6.25vh
+        width: fit-content
+        align-self: center
+        justify-self: center
+        height: fit-content
+        font-family: Montserrat
   .timeCol
     position: relative
     .timeDiv
-      transform: rotate(-90deg)
-      position: absolute
-      top: 11.25vh
-      right: -8.25vh
-      font-size: 6.5vh
-      font-family: VCR
-      color: $neonGreen
+      display: flex
+      width: 100%
+      height: 100%
+      align-content: center
+      justify-content: center
+      span
+        transform: rotate(-90deg)
+        font-size: 6.5vh
+        font-family: VCR
+        color: $neonGreen
+        width: fit-content
+        height: fit-content
+        align-self: center
+        justify-self: center
   .randoBlock
     line-height: 0
     padding: 0
@@ -449,16 +470,16 @@ span#bottomWords
       position: relative
       .screen
         transform: rotate(-90deg)
-        width: 100%
-        opacity: 1
-        filter: contrast(1.5) saturate(2)
+        width: 100%    
+        filter: contrast(1.75) saturate(2)
+        opacity: 0.9
       .scanlines
         height: calc(100% - .5em)
         width: calc(100% - .5em)
         position: absolute
         z-index: 1
         transform: rotate(-90deg)
-        opacity: 0.5
+        opacity: 0.3
   .routeName
     font-size: 7vh
     padding: .5vh .5em
@@ -572,10 +593,6 @@ span#bottomWords
   font-size: 13.75vw
   font-family: Alien
   color: white
-
-[class*=grid-], [class*=grid_], [class~=grid]
-    margin: 0 !important
-
 .gridPadding
   padding-top: 1vh
 .rightGridPad
@@ -589,11 +606,11 @@ span#bottomWords
   padding: inherit
   padding-bottom: 0
   #cyber
-    border: 5px solid $neonPink
+    border: .5vh solid $neonPink
     flex-direction: inherit
     display: flex
     justify-content: space-around
-    font-size: 2em
+    font-size: 2.5vh
     font-family: Montserrat
     height: calc(100% - 10px)
     align-items: center
@@ -616,49 +633,49 @@ span#bottomWords
   span
     transform: rotate(-90deg)
     color: $neonYellow
-    font-size: 5em
+    font-size: 10vh
     display: block
 #newImg
   position: relative
   height: 100%
   width: 100%
   background-image: url("http://localhost:8080/assets/default/sidebar/2.jpg")
+  background-size: 100% auto
   overflow: hidden
-  border-radius: 1.25em
+  border-radius: 1em
+  filter: contrast(1.5) saturate(1)
+  font-size: 3.5vh
+  font-family: Alien
   #top
     background-color: black
     height: 100%
-    width: 3em
     float: left
     position: relative
     display: flex
     align-items: center
     justify-content: center
-    font-family: Alien
+    width: 20%
     span
       color: white
       transform: rotate(-90deg)
       display: block
       width: fit-content
       margin: 0 auto
-      font-size: 2em
   #bottom
     background-color: black
     height: 100%
-    width: 3em
     float: right
     position: relative
     display: flex
     align-items: center
     justify-content: center
-    font-family: Alien
+    width: 20%
     span
       color: white
       transform: rotate(-90deg)
       display: block
       width: fit-content
       margin: 0 auto
-      font-size: 2em
 .fiftyFifty
   height: 50%
 .leftLeft
@@ -678,4 +695,6 @@ span#bottomWords
       height: fit-content
 .padZero
   padding: 0
+.theBottomRight
+  padding-bottom: 1vh
 </style>
