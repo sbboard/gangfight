@@ -170,7 +170,7 @@ export default {
         tempHour = tempHour-12
         this.AMPM = "PM"
       }
-      this.hour = tempHour
+      (tempHour == 0)?this.hour = 12:this.hour = tempHour
       this.minute = addZero(today.getMinutes())
       this.month = mm
       this.day = dd
