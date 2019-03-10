@@ -178,6 +178,9 @@ export default {
       this.$store.commit('setAsset', [dd,mm,yyyy])
     }
   },
+  beforeMount(){
+    this.sendTime()
+  },
   created(){
     this.windowHeight = window.innerHeight
     this.windowWidth = window.innerWidth
