@@ -4,7 +4,7 @@
     <!-- TOP -->
     <template v-if="isTaller == 'vw'">
       <div id="TopBorder" :style="{height: (windowHeight - windowWidth) / 2 + 'px',
-                                   backgroundImage: 'url(' + 'assets/' + this.$store.getters.assetFolder + '/sidebar/tempTop.gif)'}">
+                                   backgroundImage: 'url(' + 'assets/' + this.$store.getters.assetFolder + '/sidebar/tempTopp.gif)'}">
         <div ref="wordBox" class="topLogoBox" :style="{bottom: logoBoxBottom,
         backgroundImage: 'url(' + 'assets/' + this.$store.getters.assetFolder + '/sidebar/tempLogoBG.jpg)'}">
         <span id="topWords">gang fight</span>
@@ -104,7 +104,9 @@
           <div class="col-12 personInfo">10/15/15 3:75PM</div>
         </div>
         <div class="grid rainbowRoad">
-          <div class="col-2 bottomBar"><img :src="'assets/' + this.$store.getters.assetFolder + '/sidebar/barcodeHori.png'"/></div>
+          <div class="col-2 bottomBar">
+            <div><img :src="'assets/' + this.$store.getters.assetFolder + '/sidebar/barcodeHori.png'"/></div>
+          </div>
           <div class="col-9 bottomNamebar">BUFFUM</div>
           <div class="col-1 firstEd"><img src="assets/global/sidebar/1stedi.png"/></div>
         </div>
@@ -250,16 +252,27 @@ $sideImgOpacity: .7
   #grids
   .bottomRouteName
     font-size: 9vw
-    background-color: #fcfb07
+    background-color: $neonYellow
     color: #700123
     text-shadow: 0px 0px 8px #c56508
     font-family: Montserrat
+    padding: 0
+    display: flex
+    align-content: center
     padding-left: .25em
-    border-right: .4em double $neonBlack
+    border-right: 0.4em double $neonBlack
+    span
+      display: block
+      height: fit-content
+      align-self: center
   .bottomRight
     text-align: right
     padding-top: .5em
     background-color: #7bf7d3
+    padding: 0
+    display: flex
+    align-items: center
+    justify-content: flex-end
     div
       padding-right: 1em
       display: block
@@ -275,13 +288,18 @@ $sideImgOpacity: .7
     flex-direction: column
     justify-content: center
     text-align: left
-    img
-      width: 85%
-  .bottomBar
-    padding: .25em 0
-    background-color: white
+    padding-left: 0
+    padding-right: 1vw
     img
       width: 100%
+  .bottomBar
+    padding-left: 0
+    padding-right: 0
+    div
+      background-color: white
+      padding-top: 1vw
+      img
+        width: 100%
   .personInfo
     padding: .25em 0
     font-size: 3.25vw
