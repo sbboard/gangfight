@@ -106,7 +106,7 @@
         <div class="grid rainbowRoad">
           <div class="col-2 bottomBar"><img :src="'assets/' + this.$store.getters.assetFolder + '/sidebar/barcodeHori.png'"/></div>
           <div class="col-9 bottomNamebar">BUFFUM</div>
-          <div class="col-1 firstEd"><img src="assets/global/sidebar/1sted.png"/></div>
+          <div class="col-1 firstEd"><img src="assets/global/sidebar/1stedi.png"/></div>
         </div>
         </div>
       </div>
