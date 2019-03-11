@@ -79,9 +79,13 @@
               </div>
             </div>
             <div class="col-3">
-              <div class="col-6 fiftyFifty chewyPlace"><div id="iconGuy"><span>O</span></div></div>
+              <div class="col-6 fiftyFifty chewyPlace"><div id="iconGuy"><span>
+              
+              <img src="assets/global/sidebar/chewy.svg" onload="SVGInject(this)" />
+
+              </span></div></div>
               <div class="col-6 padZero"></div>
-              <div class="col-12 fiftyFifty leftLeft" id="cyberTop"><div id="cyber"><span></span><span>C</span><span>Y</span><span>B</span><span>E</span><span>R</span><span></span></div></div>
+              <div class="col-12 fiftyFifty leftLeft"><div id="cyberTop"><div id="cyber"><span></span><span>C</span><span>Y</span><span>B</span><span>E</span><span>R</span><span></span></div></div></div>
             </div>
 
             <div class="col-9 theBottomRight"><div class="routeName">{{this.$router.currentRoute.name}}</div></div>
@@ -115,7 +119,6 @@
     </template>
   </div>
 </template>
-
 <script>
 import navigation from './components/nav/navHome.vue'
 import pagelist from './pageDescriptions.json'
@@ -632,24 +635,24 @@ span#topWords
 #cyberTop
   padding: inherit
   padding-bottom: 0
+  width: calc(100% - 1em)
+  height: 100%
+  display: flex
+  align-items: center
   #cyber
     border: .5vh solid $neonPink
-    flex-direction: inherit
+    font-family: Montserrat    
+    height: 50%
+    width: 100%
     display: flex
-    justify-content: space-around
-    font-size: 2.5vh
-    font-family: Montserrat
-    height: calc(100% - 10px)
+    flex-direction: inherit
     align-items: center
+    justify-content: space-evenly
     span
       color: $neonGreen
-      transform: rotate(-90deg)
-      display: block
-      width: fit-content
-      height: fit-content
-      margin: 0
-      padding: 0
       font-weight: 700
+      display: block
+      transform: rotate(-90deg)
 #threeLetter
   display: flex
   flex-direction: initial
@@ -719,7 +722,10 @@ span#topWords
       display: block
       transform: rotate(-90deg)
       font-size: 15vh
-      height: fit-content
+      height: inherit
+      width: 100%
+      svg
+        fill: $neonPink
 .padZero
   padding: 0
 .theBottomRight
