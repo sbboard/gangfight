@@ -107,7 +107,7 @@
           <div class="col-2 bottomBar">
             <div><img :src="'assets/' + this.$store.getters.assetFolder + '/sidebar/barcodeHori.png'"/></div>
           </div>
-          <div class="col-9 bottomNamebar">BUFFUM</div>
+          <div class="col-9 bottomNamebar">bad</div>
           <div class="col-1 firstEd"><img src="assets/global/sidebar/1stedi.png"/></div>
         </div>
         </div>
@@ -245,9 +245,6 @@ export default {
     margin: 0
 [class*=col-], [class*=col_], [class~=col]
     padding: 0 .75vh 1.75vh
-@import url('https://fonts.googleapis.com/css?family=Montserrat')
-@import url('https://fonts.googleapis.com/css?family=Yantramanav')
-@import url('https://fonts.googleapis.com/css?family=Kosugi+Maru')
 
 $lineWidth: .5em
 $sideImgOpacity: .7
@@ -276,7 +273,7 @@ $sideImgOpacity: .7
   .bottomRight
     text-align: right
     padding-top: .5em
-    background-color: #7bf7d3
+    background-color: $neonGreen
     padding: 0
     display: flex
     align-items: center
@@ -313,7 +310,6 @@ $sideImgOpacity: .7
     font-size: 3.25vw
     text-align: center
     letter-spacing: .25em
-    //background-color: $neonBlack
     font-weight: 800
     border: 2px solid #f25100
     color: #f25100
@@ -362,8 +358,9 @@ span#topWords
   /* right border */
   #RightBorder
     height: 100%
-    background-image: url("/assets/global/sidebar/tempSide.jpg")
+    background-image: url("/assets/global/sidebar/sidebarRm.jpg")
     background-size: auto 100%
+    background-position: left
     #rightBoxContain
       position: absolute
       width: 100vh
@@ -391,8 +388,9 @@ span#topWords
   /* left border */
   #LeftBorder
     height: 100%
-    background-image: url("/assets/global/sidebar/tempSide.jpg")
+    background-image: url("/assets/global/sidebar/sidebarLm.jpg")
     background-size: auto 100%
+    background-position: right
     //background: linear-gradient(to bottom,$sideGradient)
     #leftBoxContain
       position: absolute
@@ -419,7 +417,7 @@ span#topWords
   margin-left: .25em
   border: .75vh double #00ffff
   border-radius: 15px
-  //background-color: rgba(55,55,55,.5)
+  background-color: rgba(0,0,0,.3)
   div
     margin-left: 3vh
     font-family: Logo
