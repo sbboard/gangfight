@@ -1,20 +1,26 @@
 <template>
-    <model-gltf 
-        id="model"
-        :rotation="rotation"
-        @on-load="onLoad"
-        src="/3dModel/hard4.gltf"
-        :backgroundAlpha="0"
-        :position="position"
-        :scale="scale"
-        :controllable="false"
-        :lights="lights"
-        @on-click="clicked">
-        </model-gltf>
+    <div id="loginPage">
+        <div id="modelContain">
+            <model-gltf 
+                id="model"
+                :rotation="rotation"
+                @on-load="onLoad"
+                src="/3dModel/hard4.gltf"
+                :backgroundAlpha="0"
+                :scale="scale"
+                :controllable="true"
+                :lights="lights"
+                @on-click="clicked">
+            </model-gltf>
+        </div>
+        <div id="optionBox">
+            <a href="#">//RECIEVE YOUR FORTUNE</a> &bull; <a href="#">//CONTINUE AS GUEST</a>
+        </div>
+    </div>
 </template>
 
 <script>
-import { ModelGltf } from 'vue-3d-model'  
+import { ModelGltf } from 'vue-3d-model'
 
 export default {
     components:{
@@ -71,12 +77,29 @@ export default {
 }
 </script>
 
-
 <style lang="sass" scoped>
-div
+#loginPage
     background-color: black
-    background-image: repeating-linear-gradient(0deg,transparent,transparent 70px,#CCC 70px,#CCC 71px),repeating-linear-gradient(-90deg,transparent,transparent 70px,#CCC 70px,#CCC 71px);
-    background-size: 71px 71px;
-    background-attachment: fixed;
-    background-position: center; 
+    a
+        font-family: "Courier New", Courier, monospace
+        color: white
+        text-decoration: none
+        padding: 0 .5em
+        font-size: 1.5em
+        &:hover
+            background-color: white
+            color: black
+#optionBox
+    display: block
+    margin: 2em auto 0 auto
+    width: fit-content
+#modelContain
+    height: 60vh
+    margin-top: 10vh
+    cursor: pointer
+    background-color: black
+    background-image: repeating-linear-gradient(0deg,transparent,transparent 70px,#CCC 70px,#CCC 71px),repeating-linear-gradient(-90deg,transparent,transparent 70px,#CCC 70px,#CCC 71px)
+    background-size: 71px 71px
+    background-attachment: fixed
+    background-position: center
 </style>

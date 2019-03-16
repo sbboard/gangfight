@@ -6,7 +6,8 @@ Vue.use(Vuex);
 export const store = new Vuex.Store({
     state:{
         fortune: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-        assets: "default"
+        assets: "default",
+        isTaller: "vw"
     },
     getters:{
         getFortune: state=> {
@@ -14,11 +15,17 @@ export const store = new Vuex.Store({
         },
         assetFolder: state=> {
             return state.assets
+        },
+        getTaller: state=> {
+            return state.isTaller
         }
     },
     mutations: {
         changeFortune(state,n){
             state.fortune = n
+        },
+        setTaller(state,n){
+            state.isTaller = n
         },
         setAsset(state,n){
             //valentines

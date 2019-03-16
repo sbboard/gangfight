@@ -1,8 +1,8 @@
 <template>
-  <div id="app" :style="{flexDirection: (isTaller == 'vh')?'row':'column'}">
+  <div id="app" :style="{flexDirection: (this.$store.getters.getTaller == 'vh')?'row':'column'}">
 
     <!-- TOP -->
-    <template v-if="isTaller == 'vw'">
+    <template v-if="this.$store.getters.getTaller == 'vw'">
       <div id="TopBorder" :style="{height: (windowHeight - windowWidth) / 2 + 'px',
                                    backgroundImage: 'url(' + 'assets/' + this.$store.getters.assetFolder + '/sidebar/tempTopp.gif)'}">
         <div ref="wordBox" class="topLogoBox" :style="{bottom: logoBoxBottom,
@@ -14,7 +14,7 @@
     </template>
 
     <!-- LEFT -->
-    <template v-if="isTaller == 'vh'">
+    <template v-if="this.$store.getters.getTaller == 'vh'">
       <div id="LeftBorder" :style="{width: (windowWidth - windowHeight) / 2 + 'px'}">
         <div id="leftBoxContain" :style="{height: (windowWidth - windowHeight) / 2 + 'px',
                                           transform: 'translateY('+ (windowHeight - windowWidth) / 2 +'px) rotate(90deg)',
@@ -33,10 +33,10 @@
 
     <!-- MIDDLE -->
     <navigation/>
-    <router-view :class="[(isTaller == 'vh')?'middleViewLong':'middleViewHigh']" :style="{width: '100'+isTaller, height: '100'+isTaller}"/>
+    <router-view :class="[(this.$store.getters.getTaller == 'vh')?'middleViewLong':'middleViewHigh']" :style="{width: '100'+this.$store.getters.getTaller, height: '100'+this.$store.getters.getTaller, position: 'relative'}"/>
     
     <!-- RIGHT -->
-    <template v-if="isTaller == 'vh'">
+    <template v-if="this.$store.getters.getTaller == 'vh'">
       <div id="RightBorder" :style="{width: (windowWidth - windowHeight) / 2 + 'px'}">
         <div id="rightBoxContain" :style="{height: (windowWidth - windowHeight) / 2 + 'px',
                                           transform: 'translateY('+ (windowHeight - windowWidth) / 2 +'px) rotate(90deg)',
@@ -97,7 +97,7 @@
     </template>
 
     <!-- BOTTOM -->
-    <template v-if="isTaller == 'vw'">
+    <template v-if="this.$store.getters.getTaller == 'vw'">
       <div id="BottomBorder" :style="{height: (windowHeight - windowWidth) / 2 + 'px'}">
       <div id="grids">
         <div class="grid">
@@ -132,7 +132,6 @@ export default {
     return{
       windowHeight: 0,
       windowWidth: 0,
-      isTaller: false,
       flexDirect: "row",
       fortune: this.$store.getters.getFortune,
       futureYear: 0,
@@ -149,7 +148,8 @@ export default {
   },
   methods:{
     changeSize(){
-      this.isTaller = (this.windowHeight > this.windowWidth) ? "vw":"vh"
+      let newView = (this.windowHeight > this.windowWidth) ? "vw":"vh"
+      this.$store.commit('setTaller',newView)
     },
     getLogoHeight(){
       const logoBox = this.$refs.wordBox
@@ -218,10 +218,7 @@ export default {
     },
     windowWidth:function(){
       this.changeSize()
-    },
-    isTaller: function(){
-
-    },
+    }
     //$route: function(to){
       //this.$store.commit('changePage',to.name)
     //}
@@ -653,6 +650,7 @@ span#topWords
       font-weight: 700
       display: block
       transform: rotate(-90deg)
+      font-size: 2vh
 #threeLetter
   display: flex
   flex-direction: initial
@@ -677,7 +675,7 @@ span#topWords
   font-size: 3.5vh
   font-family: Alien
   #top
-    background-color: black
+    background-color: $neonYellow
     height: 100%
     float: left
     position: relative
@@ -686,13 +684,13 @@ span#topWords
     justify-content: center
     width: 20%
     span
-      color: white
+      color: $neonGreen
       transform: rotate(-90deg)
       display: block
       width: fit-content
       margin: 0 auto
   #bottom
-    background-color: black
+    background-color: $neonRed
     height: 100%
     float: right
     position: relative
@@ -701,7 +699,7 @@ span#topWords
     justify-content: center
     width: 20%
     span
-      color: white
+      color: $neonBlue
       transform: rotate(-90deg)
       display: block
       width: fit-content
