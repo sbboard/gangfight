@@ -1,23 +1,35 @@
 <template>
     <div id="homeBlock">
         <div id="gridBlock">
-            <span>Latest Tracks:</span>
+            <span class="latestTracks">Latest Tracks:</span>
             <div id="latestGrid">
-                <img src="http://gang-fight.com/projects/thumbs/xeno.jpg">
-                <img src="http://gang-fight.com/projects/thumbs/xeno.jpg">
-                <img src="http://gang-fight.com/projects/thumbs/xeno.jpg">
-                <img src="http://gang-fight.com/projects/thumbs/xeno.jpg">
+                <!-- begin -->
+                <div class="contentBoxes" :style="blockSize">
+                    <p class="boxDate">03 . 15 . 18 </p>
+                    <p class="titleName">
+                        <span class="titleText">Xenoblade Chronicles 2 Team Planner</span>
+                    </p>
+                    <a href="http://gang-fight.com/projects/xenoblade/">
+                        <img :style="blockSize" src="http://www.gang-fight.com/projects/thumbs/xeno.jpg" alt="Xenoblade Chronicles 2"/>
+                    </a>
+                </div>
+                <!-- end -->
             </div>
         </div>
         <div id="city"></div>
         <div id="cityLights"></div>
         <div id="cityOfStars"></div>
+        <div id="cityBlues"></div>
     </div>
 </template>
 
 <script>
 export default {
-    
+    computed: {
+        blockSize(){
+            return {width: '40'+this.$store.getters.getTaller,height: '40'+this.$store.getters.getTaller}
+        }
+    }
 }
 </script>
 
@@ -50,53 +62,86 @@ export default {
     #cityOfStars
         position: absolute
         z-index: -7
-        width: 100%;
-        position: fixed;
-        bottom: 0px;
-        left: 0px;
-        height: 100%;
-        background-image: url(/img/site/home/bg.jpg);
-        margin: 0 !important;
-        padding: 0 !important;
-        -webkit-background-size: cover;
-        -moz-background-size: cover;
-        -o-background-size: cover;
-        background-size: cover;
-        background-attachment: fixed;
-        min-height: 60%;
-        min-width: 40%;
-        background-repeat: no-repeat;
-        display: flex;
-        flex-direction: column;
-        background-position: center;
-        margin-left: auto;
-        margin-right: auto;
-        animation: starglow 10s infinite;
-        z-index: -4;
-    h1
-        text-align: center
-        font-size: 3em
+        width: 100%
+        position: absolute
+        bottom: 0px
+        left: 0px
+        height: 100%
+        background-image: url(http://www.gang-fight.com/img/site/home/bg.jpg);
+        margin: 0
+        padding: 0
+        background-size: cover
+        background-attachment: fixed
+        background-repeat: no-repeat
+        background-position: center
+        animation: starglow 10s infinite
+    #cityBlues
+        background: -webkit-radial-gradient(bottom, #121729, #020306 60%);
+        margin: 0
+        padding: 0
+        background-size: cover
+        background-attachment: fixed
+        background-repeat: no-repeat
+        background-position: center
+        height: 100%
+        width: 100%
+        z-index: -8
+        position: absolute
+        top: 0
     #gridBlock
         width: 80%
         margin: 0 auto
-        span
+        line-height: normal
+        letter-spacing: 1.5px
+        font-family: Yantramanav
+        .latestTracks
             margin-left: 1%
-            color: $neonBlue
+            color: $neonWhite
             font-size: 2.5vh
-            font-family: Montserrat
             font-weight: 800
+            text-transform: lowercase
         #latestGrid
             line-height: 0
-            img
-                display: inline-block
-                width: 48%
-                height: auto
-                margin: 1%
+            font-size: 1.75vh
+.contentBoxes
+    display: inline-block
+    position: relative
+    overflow: hidden
+    line-height: normal
+    .boxDate
+        position: absolute
+        bottom: 0
+        margin: 0
+        padding: 5px 5px 0 5px
+        right: 0
+        background-color: rgba(0,0,0,0.75)
+        pointer-events: none
+        z-index: 5
+        color: #3ca9ff
+        text-decoration: none
+    .titleName
+        position: absolute
+        text-transform: uppercase
+        margin: 15px 0 0 15px
+        text-align: left
+        z-index: 6
+        pointer-events: none
+        display: none
+        .titleText
+            background-color: black
+            padding: 0 3px 0 3px
+            color: #F4225A
+            text-decoration: none
+    &:hover
+        .titleName
+            display: inline-block
+        img
+            filter: brightness(.5)
 @keyframes starglow
     0%
-        opacity:.1
+        opacity:.2
     50%
-        opacity:.15
+        opacity:.3
     100%
-        opacity:.1
+        opacity:.2
 </style>
