@@ -1,9 +1,36 @@
 <template>
     <div id="homeBlock">
-        <div id="gridBlock">
+        <div id="gridBlock" :style="fontSize">
             <span class="latestTracks">Latest Tracks:</span>
             <div id="latestGrid">
                 <!-- begin -->
+                <div class="contentBoxes" :style="blockSize">
+                    <p class="boxDate">03 . 15 . 18 </p>
+                    <p class="titleName">
+                        <span class="titleText">Xenoblade Chronicles 2 Team Planner</span>
+                    </p>
+                    <a href="http://gang-fight.com/projects/xenoblade/">
+                        <img :style="blockSize" src="http://www.gang-fight.com/projects/thumbs/xeno.jpg" alt="Xenoblade Chronicles 2"/>
+                    </a>
+                </div>
+                <div class="contentBoxes" :style="blockSize">
+                    <p class="boxDate">03 . 15 . 18 </p>
+                    <p class="titleName">
+                        <span class="titleText">Xenoblade Chronicles 2 Team Planner</span>
+                    </p>
+                    <a href="http://gang-fight.com/projects/xenoblade/">
+                        <img :style="blockSize" src="http://www.gang-fight.com/projects/thumbs/xeno.jpg" alt="Xenoblade Chronicles 2"/>
+                    </a>
+                </div>
+                <div class="contentBoxes" :style="blockSize">
+                    <p class="boxDate">03 . 15 . 18 </p>
+                    <p class="titleName">
+                        <span class="titleText">Xenoblade Chronicles 2 Team Planner</span>
+                    </p>
+                    <a href="http://gang-fight.com/projects/xenoblade/">
+                        <img :style="blockSize" src="http://www.gang-fight.com/projects/thumbs/xeno.jpg" alt="Xenoblade Chronicles 2"/>
+                    </a>
+                </div>
                 <div class="contentBoxes" :style="blockSize">
                     <p class="boxDate">03 . 15 . 18 </p>
                     <p class="titleName">
@@ -27,7 +54,10 @@
 export default {
     computed: {
         blockSize(){
-            return {width: '40'+this.$store.getters.getTaller,height: '40'+this.$store.getters.getTaller}
+            return {width: '37'+this.$store.getters.getTaller,height: '37'+this.$store.getters.getTaller}
+        },
+        fontSize(){
+            return {fontSize: '1'+this.$store.getters.getTaller}
         }
     }
 }
@@ -94,20 +124,23 @@ export default {
         line-height: normal
         letter-spacing: 1.5px
         font-family: Yantramanav
+        font-size: 16px
         .latestTracks
-            margin-left: 1%
+            margin-left: 3%
             color: $neonWhite
-            font-size: 2.5vh
-            font-weight: 800
+            font-size: 2.5em
             text-transform: lowercase
         #latestGrid
             line-height: 0
-            font-size: 1.75vh
+            font-size: 1.75em
+            text-align: center
 .contentBoxes
     display: inline-block
     position: relative
     overflow: hidden
     line-height: normal
+    margin: .5vh
+    font-size: 1em
     .boxDate
         position: absolute
         bottom: 0
