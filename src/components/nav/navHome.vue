@@ -64,7 +64,7 @@ $transBlack: rgba(black,.8)
     height: 1em
     border: 1px solid $neonRed
     cursor: pointer
-    transition: height .25s, width .25s
+    transition: height .25s, width .25s, padding .25s
     nav
         font-size: 0em
         opacity: 0
@@ -118,6 +118,7 @@ $transBlack: rgba(black,.8)
         width: 100%
         display: flex
         padding: .5em 0
+        font-weight: 700
     .button
         display: none
 </style>
