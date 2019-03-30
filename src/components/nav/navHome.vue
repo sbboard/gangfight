@@ -38,7 +38,7 @@ $transBlack: rgba(black,.8)
     bottom: 0
     z-index: 10
     background-color: $transBlack
-    font-family: Montserrat
+    font-family: Yantramanav
     text-transform: uppercase
     .linkFormat
         text-decoration: none

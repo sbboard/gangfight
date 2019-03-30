@@ -3,7 +3,10 @@ import Router from "vue-router"
 import Home from "./components/screen/Home.vue"
 import Login from "./components/screen/login.vue"
 import Dracula from "./components/screen/dracula.vue"
+import fakeFourOFour from "./components/screen/placeholder404.vue"
 import About from "./components/screen/about.vue"
+import Comics from "./components/screen/comics.vue"
+import Projects from "./components/screen/projects.vue"
 
 Vue.use(Router);
 
@@ -26,9 +29,19 @@ export default new Router({
     component: Login
     },
     {
+    path: "/comic",
+    name: "comics",
+    component: Comics
+    },
+    {
+    path: "/project",
+    name: "projects",
+    component: Projects
+    },
+    {
     path: "*",
-    name: "dracula's culture club",
-    component: Dracula
+    name: "404",
+    component: fakeFourOFour
     },
   ]
 });
