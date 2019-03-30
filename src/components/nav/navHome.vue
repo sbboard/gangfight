@@ -1,9 +1,9 @@
 <template>
-<div id="navBox" :class="[(this.$store.getters.getTaller == 'vh')?'desktop':'mobile']">
-    <span class="button" onclick="clickNav()">M</span>
+<div id="navBox" :class="[(this.$store.getters.getTaller == 'vh')?'desktop':'mobile',{open: navOpen}]" @click="clickNav()">
+    <span class="button"><i class="fas fa-bars"></i></span>
     <nav>
         <a href="#" class="redLink">Gang Fight</a>
-        <a href="#" class="redLink">About Us</a>
+        <a href="#peen" class="redLink">About Us</a>
         <a href="#" class="blueLink">Comics</a>
         <a href="#" class="blueLink">Projects</a>
     </nav>
@@ -15,13 +15,12 @@ export default {
     name: "navigation",
     data(){
         return{
-
+            navOpen: false
         }
     },
     methods:{
         clickNav(){
-            // eslint-disable-next-line
-            console.log("boom")
+            this.navOpen = !this.navOpen
         }
     }
 }
@@ -31,6 +30,7 @@ export default {
 @import "../../css/reset.css"
 @import "../../css/gangColors.sass"
 @import "../../css/gangFonts.sass"
+@import "../../css/fontawesome/css/all.css"
 
 $transBlack: rgba(black,.8)
 #navBox
@@ -54,7 +54,6 @@ $transBlack: rgba(black,.8)
         &:hover
             color: $lightNeonBlue
     .button
-        cursor: pointer
 #navBox.mobile
     color: $neonRed
     font-size: 3em
@@ -62,11 +61,21 @@ $transBlack: rgba(black,.8)
     bottom: 0
     right: 0
     border-top-left-radius: .5em
-    width: fit-content
+    width: 1em
+    padding: .5em
+    height: 1em
+    cursor: pointer
+    transition: height .5s, width .5s
     nav
-        display: none
-    .button
+        font-size: 0em
+        opacity: 0
+        transition: opacity 0s, font-size 0s
+    .button     
+        position: absolute
+        top: 0
+        right: 0
         padding: .5em
+        cursor: pointer
 #navBox.mobile.open
     height: 100%
     width: 100%
@@ -75,15 +84,15 @@ $transBlack: rgba(black,.8)
     display: flex
     justify-content: center
     align-items: center
-    .button    
-        position: fixed
-        top: 0
-        right: 0
+    cursor: inherit
     nav
         display: flex
         flex-direction: column
         align-content: center
         justify-content: center
+        opacity: 1
+        font-size: 1em
+        transition: opacity 1s
         a
             text-align: center
             margin: .5em 0
