@@ -110,6 +110,9 @@ $transBlack: rgba(black,.8)
     display: flex    
     flex-direction: inherit
     justify-content: space-evenly
+    position: absolute
+    bottom: .5em
+    border: 1px solid $neonRed
     nav
         justify-content: space-evenly
         width: 100%

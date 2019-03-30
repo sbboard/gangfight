@@ -731,5 +731,5 @@ span#topWords
 .navWidthMiddle
   width: 100%
 .navWidthHundred
-  width: 100vh
+  width: calc(100vh - 1em)
 </style>
