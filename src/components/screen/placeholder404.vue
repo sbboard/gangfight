@@ -1,7 +1,7 @@
 <template>
     <div id="bigBack">
         <div class="fourText">
-            <h2>there's nothing here.</h2>
+            <h2>404: Kill Me, Dude</h2>
         </div>
         <iframe class="efron" :src="'https://www.youtube.com/embed/videoseries?list=PLa20yDzXOyGg9KigaXG3YsijSPLqHSw1C&amp;controls=0&amp;showinfo=0&amp;autoplay=1&mute=1&loop=1&index='+randoNum" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
         <div id="cityLights"></div>

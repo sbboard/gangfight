@@ -42,7 +42,6 @@ $transBlack: rgba(black,.8)
     text-transform: uppercase
     .linkFormat
         text-decoration: none
-        font-weight: 600
     .redLink
         @extend .linkFormat
         color: $neonRed
@@ -57,19 +56,21 @@ $transBlack: rgba(black,.8)
 #navBox.mobile
     color: $neonRed
     font-size: 3em
-    position: fixed
-    bottom: 0
-    right: 0
-    border-top-left-radius: .5em
+    position: absolute
+    bottom: .25em
+    right: .25em
     width: 1em
     padding: .5em
     height: 1em
+    border: 1px solid $neonRed
     cursor: pointer
-    transition: height .5s, width .5s
+    transition: height .25s, width .25s
     nav
         font-size: 0em
         opacity: 0
         transition: opacity 0s, font-size 0s
+        transition-delay: 0s
+        font-weight: 100
     .button     
         position: absolute
         top: 0
@@ -77,8 +78,8 @@ $transBlack: rgba(black,.8)
         padding: .5em
         cursor: pointer
 #navBox.mobile.open
-    height: 100%
-    width: 100%
+    height: calc(100% - .5em)
+    width: calc(100% - .5em)
     padding: 0
     border-top-left-radius: 0
     display: flex
@@ -92,10 +93,17 @@ $transBlack: rgba(black,.8)
         justify-content: center
         opacity: 1
         font-size: 1em
-        transition: opacity 1s
+        transition: opacity 0s, font-size 0s
+        transition-delay: .25s
+        font-family: Craft
         a
             text-align: center
             margin: .5em 0
+    .button
+        border-bottom: 1px solid $neonRed
+        width: calc(100% - 1em)
+        text-align: right
+        display: inline-block
 #navBox.desktop
     padding: .5em 0
     color: $neonBlue
