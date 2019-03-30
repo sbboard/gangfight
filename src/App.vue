@@ -32,7 +32,7 @@
     </template>
 
     <!-- MIDDLE -->
-    <navigation/>
+    <navigation :class="[(this.$store.getters.getTaller == 'vh')?'navWidthHundred':'navWidthMiddle']"/>
     <router-view :class="[(this.$store.getters.getTaller == 'vh')?'middleViewLong':'middleViewHigh']" :style="{width: '100'+this.$store.getters.getTaller, height: '100'+this.$store.getters.getTaller, position: 'relative'}"/>
     
     <!-- RIGHT -->
@@ -728,4 +728,8 @@ span#topWords
   padding: 0
 .theBottomRight
   padding-bottom: 1vh
+.navWidthMiddle
+  width: 100%
+.navWidthHundred
+  width: 100vh
 </style>
