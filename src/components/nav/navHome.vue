@@ -2,10 +2,10 @@
 <div id="navBox" :class="[(this.$store.getters.getTaller == 'vh')?'desktop':'mobile',{open: navOpen}]" @click="clickNav()">
     <span class="button"><i class="fas fa-bars"></i></span>
     <nav>
-        <a href="#" class="redLink">Gang Fight</a>
-        <a href="#peen" class="redLink">About Us</a>
-        <a href="#" class="blueLink">Comics</a>
-        <a href="#" class="blueLink">Projects</a>
+        <router-link to="/" class="redLink">Gang Fight</router-link>
+        <router-link to="/about" class="redLink">About Us</router-link>
+        <router-link to="/comic" class="blueLink">Comics</router-link>
+        <router-link to="/project" class="blueLink">Projects</router-link>
     </nav>
 </div>
 </template>
@@ -36,7 +36,7 @@ $transBlack: rgba(black,.8)
 #navBox
     position: fixed
     bottom: 0
-    z-index: 10
+    z-index: 9999999
     background-color: $transBlack
     font-family: Yantramanav
     text-transform: uppercase
