@@ -1,6 +1,7 @@
 <template>
-<div id="navBox" :class="[(this.$store.getters.getTaller == 'vh')?'desktop':'mobile',{open: navOpen}]" @click="clickNav()">
-    <span class="button"><i class="fas fa-bars"></i></span>
+<div id="navBox" :class="[(this.$store.getters.getTaller == 'vh')?'desktop':'mobile',{open: navOpen}]" @click="clickNav()"><span class="button">
+    <i class="fas" :class="[(navOpen)?'fa-times-circle':'fa-bars']"></i>
+    </span>
     <nav>
         <router-link to="/" class="redLink">Gang Fight</router-link>
         <router-link to="/about" class="redLink">About Us</router-link>
@@ -59,7 +60,7 @@ $transBlack: rgba(black,.8)
     position: absolute
     bottom: .25em
     right: .25em
-    width: 1em
+    width: .9em
     padding: .5em
     height: 1em
     border: 1px solid $neonRed
@@ -72,6 +73,7 @@ $transBlack: rgba(black,.8)
         transition-delay: 0s
         font-weight: 100
     .button     
+        text-align: center
         position: absolute
         top: 0
         right: 0
