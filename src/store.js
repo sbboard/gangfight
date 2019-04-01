@@ -7,7 +7,8 @@ export const store = new Vuex.Store({
     state:{
         fortune: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
         assets: "default",
-        isTaller: "vw"
+        isTaller: "vw",
+        GFAPI: "http://159.65.188.38:8128/api"
     },
     getters:{
         getFortune: state=> {
@@ -18,6 +19,9 @@ export const store = new Vuex.Store({
         },
         getTaller: state=> {
             return state.isTaller
+        },
+        getAPI: state=>{
+            return state.GFAPI
         }
     },
     mutations: {
