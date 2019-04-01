@@ -1,8 +1,9 @@
 <template>
-<div id="navBox" :class="[(this.$store.getters.getTaller == 'vh')?'desktop':'mobile',{open: navOpen}]" @click="clickNav()"><span class="button">
-    <i class="fas" :class="[(navOpen)?'fa-times-circle':'fa-bars']"></i>
+<div id="navBox" :class="[(this.$store.getters.getTaller == 'vh')?'desktop':'mobile',{open: navOpen}]">
+    <span class="button" @click="clickNav('button')">
+        <i :class="[(navOpen)?'far fa-times-circle':'fas fa-bars']"></i>
     </span>
-    <nav>
+    <nav @click="clickNav('link')">
         <router-link to="/" class="redLink">Gang Fight</router-link>
         <router-link to="/about" class="redLink">About Us</router-link>
         <router-link to="/comic" class="blueLink">Comics</router-link>
@@ -20,8 +21,16 @@ export default {
         }
     },
     methods:{
-        clickNav(){
-            this.navOpen = !this.navOpen
+        clickNav(source){
+            if(source == "button")
+                this.navOpen = !this.navOpen
+            else if(source == "link")
+                this.navOpen = false
+        }
+    },
+    computed: {
+        fontSize(){
+            return {fontSize: '1'+this.$store.getters.getTaller}
         }
     }
 }
@@ -35,8 +44,8 @@ export default {
 
 $transBlack: rgba(black,.8)
 #navBox
-    position: fixed
-    bottom: 0
+    position: absolute
+    bottom: 1em
     z-index: 9999999
     background-color: $transBlack
     font-family: Yantramanav
@@ -53,21 +62,18 @@ $transBlack: rgba(black,.8)
         color: $neonBlue
         &:hover
             color: $lightNeonBlue
-    .button
 #navBox.mobile
     color: $neonRed
-    font-size: 3em
     position: absolute
-    bottom: .25em
-    right: .25em
-    width: .9em
-    padding: .5em
-    height: 1em
+    right: 1vh
+    bottom: 1vh
+    height: 10vh
+    width: 9.6vh
     border: 1px solid $neonRed
     cursor: pointer
     transition: height .25s, width .25s, padding .25s
     nav
-        font-size: 0em
+        font-size: 0vh
         opacity: 0
         transition: opacity 0s, font-size 0s
         transition-delay: 0s
@@ -77,11 +83,13 @@ $transBlack: rgba(black,.8)
         position: absolute
         top: 0
         right: 0
-        padding: .5em
+        padding: 1.75vh
+        padding-bottom: 0
         cursor: pointer
+        font-size: 7vh
 #navBox.mobile.open
-    height: calc(100% - .5em)
-    width: calc(100% - .5em)
+    height: calc(100% - 2vh)
+    width: calc(100% - 2vh)
     padding: 0
     border-top-left-radius: 0
     display: flex
@@ -94,7 +102,7 @@ $transBlack: rgba(black,.8)
         align-content: center
         justify-content: center
         opacity: 1
-        font-size: 1em
+        font-size: 8vw
         transition: opacity 0s, font-size 0s
         transition-delay: .25s
         font-family: Craft
@@ -103,10 +111,12 @@ $transBlack: rgba(black,.8)
             margin: .5em 0
     .button
         border-bottom: 1px solid $neonRed
-        width: calc(100% - 1em)
+        width: calc(100% - 3.5vh)
         text-align: right
         display: inline-block
+        padding-bottom: 1.5vh
 #navBox.desktop
+    font-size: 2vh
     padding: .5em 0
     color: $neonBlue
     display: flex    
@@ -120,7 +130,6 @@ $transBlack: rgba(black,.8)
         width: 100%
         display: flex
         padding: .5em 0
-        font-weight: 700
     .button
         display: none
 </style>
