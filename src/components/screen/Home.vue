@@ -51,7 +51,19 @@
 </template>
 
 <script>
+import axios from 'axios'
+
 export default {
+    data(){
+        return{
+
+        }
+    },
+    mounted () {
+        axios
+        .get('http://beta-api-kuroganehammer.azurewebsites.net/api/characters/2')
+        .then(response => (console.log(response.data)))
+    },
     computed: {
         blockSize(){
             return {width: '37'+this.$store.getters.getTaller,height: '37'+this.$store.getters.getTaller}

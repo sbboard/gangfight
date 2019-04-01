@@ -42,14 +42,14 @@ export default {
 @import "../../css/gangFonts.sass"
 @import "../../css/fontawesome/css/all.css"
 
-$transBlack: rgba(black,.9)
 #navBox
     position: absolute
     bottom: 1em
     z-index: 9999999
-    background-color: $transBlack
+    background-image: linear-gradient(rgba(black,1), rgba(black,.75))
     font-family: Yantramanav
     text-transform: uppercase
+    border: 1px solid $neonRed
     .linkFormat
         text-decoration: none
     .redLink
@@ -69,7 +69,6 @@ $transBlack: rgba(black,.9)
     bottom: 1vh
     height: 10vh
     width: 9.6vh
-    border: 1px solid $neonRed
     cursor: pointer
     transition: height .25s, width .25s, padding .25s
     nav
@@ -124,7 +123,6 @@ $transBlack: rgba(black,.9)
     justify-content: space-evenly
     position: absolute
     bottom: .5em
-    border: 1px solid $neonRed
     nav
         justify-content: space-evenly
         width: 100%
