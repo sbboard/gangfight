@@ -42,7 +42,7 @@ export default {
 @import "../../css/gangFonts.sass"
 @import "../../css/fontawesome/css/all.css"
 
-$transBlack: rgba(black,.8)
+$transBlack: rgba(black,.9)
 #navBox
     position: absolute
     bottom: 1em
