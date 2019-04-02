@@ -5,7 +5,7 @@
             <div id="latestGrid">
                 <!-- begin -->
                 <div class="contentBoxes" :style="blockSize">
-                    <p class="boxDate">{{this.theFour[0].date}}</p>
+                    <p class="boxDate">{{formatDate(this.theFour[0].date)}}</p>
                     <p class="titleName">
                         <span class="titleText">{{this.theFour[0].title}}</span>
                     </p>
@@ -14,7 +14,7 @@
                     </a>
                 </div>
                 <div class="contentBoxes" :style="blockSize">
-                    <p class="boxDate">{{this.theFour[1].date}}</p>
+                    <p class="boxDate">{{formatDate(this.theFour[1].date)}}</p>
                     <p class="titleName">
                         <span class="titleText">{{this.theFour[1].title}}</span>
                     </p>
@@ -23,7 +23,7 @@
                     </a>
                 </div>
                 <div class="contentBoxes" :style="blockSize">
-                    <p class="boxDate">{{this.theFour[2].date}}</p>
+                    <p class="boxDate">{{formatDate(this.theFour[2].date)}}</p>
                     <p class="titleName">
                         <span class="titleText">{{this.theFour[2].title}}</span>
                     </p>
@@ -32,7 +32,7 @@
                     </a>
                 </div>
                 <div class="contentBoxes" :style="blockSize">
-                    <p class="boxDate">{{this.theFour[3].date}}</p>
+                    <p class="boxDate">{{formatDate(this.theFour[3].date)}}</p>
                     <p class="titleName">
                         <span class="titleText">{{this.theFour[3].title}}</span>
                     </p>
@@ -64,14 +64,24 @@ export default {
         .get(`${this.$store.getters.getAPI}/4`)
         .then(response => (this.theFour = response.data))
     },
+    methods: {
+        formatDate(isoDate){
+            let d = new Date(isoDate)
+            let month = d.getMonth()+1 < 10 ? `0${d.getMonth()+1}` : d.getMonth()+1
+            let date = d.getDate() < 10 ? `0${d.getDate()}` : d.getDate()
+            let year = d.getFullYear().toString().substring(2)
+            let dString = `${month} . ${date} . ${year}`
+            return dString
+        }
+    },
     computed: {
         blockSize(){
             return {width: '37'+this.$store.getters.getTaller,height: '37'+this.$store.getters.getTaller}
         },
         fontSize(){
             return {fontSize: '1'+this.$store.getters.getTaller}
-        }
-    }
+        },
+    },
 }
 </script>
 
