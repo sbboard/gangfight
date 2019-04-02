@@ -5,39 +5,39 @@
             <div id="latestGrid">
                 <!-- begin -->
                 <div class="contentBoxes" :style="blockSize">
-                    <p class="boxDate">03 . 15 . 18 </p>
+                    <p class="boxDate">{{this.theFour[0].date}}</p>
                     <p class="titleName">
-                        <span class="titleText">Xenoblade Chronicles 2 Team Planner</span>
+                        <span class="titleText">{{this.theFour[0].title}}</span>
                     </p>
-                    <a href="http://gang-fight.com/projects/xenoblade/">
-                        <img :style="blockSize" src="http://www.gang-fight.com/projects/thumbs/xeno.jpg" alt="Xenoblade Chronicles 2"/>
+                    <a :href="this.theFour[0].url">
+                        <img :style="blockSize" :src="'/assets/contentImages/'+this.theFour[0].img" :alt="this.theFour[0].title"/>
                     </a>
                 </div>
                 <div class="contentBoxes" :style="blockSize">
-                    <p class="boxDate">03 . 15 . 18 </p>
+                    <p class="boxDate">{{this.theFour[1].date}}</p>
                     <p class="titleName">
-                        <span class="titleText">Xenoblade Chronicles 2 Team Planner</span>
+                        <span class="titleText">{{this.theFour[1].title}}</span>
                     </p>
-                    <a href="http://gang-fight.com/projects/xenoblade/">
-                        <img :style="blockSize" src="http://www.gang-fight.com/projects/thumbs/xeno.jpg" alt="Xenoblade Chronicles 2"/>
+                    <a :href="this.theFour[1].url">
+                        <img :style="blockSize" :src="'/assets/contentImages/'+this.theFour[1].img" :alt="this.theFour[1].title"/>
                     </a>
                 </div>
                 <div class="contentBoxes" :style="blockSize">
-                    <p class="boxDate">03 . 15 . 18 </p>
+                    <p class="boxDate">{{this.theFour[2].date}}</p>
                     <p class="titleName">
-                        <span class="titleText">Xenoblade Chronicles 2 Team Planner</span>
+                        <span class="titleText">{{this.theFour[2].title}}</span>
                     </p>
-                    <a href="http://gang-fight.com/projects/xenoblade/">
-                        <img :style="blockSize" src="http://www.gang-fight.com/projects/thumbs/xeno.jpg" alt="Xenoblade Chronicles 2"/>
+                    <a :href="this.theFour[2].url">
+                        <img :style="blockSize" :src="'/assets/contentImages/'+this.theFour[2].img" :alt="this.theFour[2].title"/>
                     </a>
                 </div>
                 <div class="contentBoxes" :style="blockSize">
-                    <p class="boxDate">03 . 15 . 18 </p>
+                    <p class="boxDate">{{this.theFour[3].date}}</p>
                     <p class="titleName">
-                        <span class="titleText">Xenoblade Chronicles 2 Team Planner</span>
+                        <span class="titleText">{{this.theFour[3].title}}</span>
                     </p>
-                    <a href="http://gang-fight.com/projects/xenoblade/">
-                        <img :style="blockSize" src="http://www.gang-fight.com/projects/thumbs/xeno.jpg" alt="Xenoblade Chronicles 2"/>
+                    <a :href="this.theFour[3].url">
+                        <img :style="blockSize" :src="'/assets/contentImages/'+this.theFour[3].img" :alt="this.theFour[3].title"/>
                     </a>
                 </div>
                 <!-- end -->
@@ -56,20 +56,13 @@ import axios from 'axios'
 export default {
     data(){
         return{
-
+            theFour: []
         }
     },
     mounted () {
         axios
-        .get(`${this.$store.getters.getAPI}/4`,        {
-          headers: {
-            "Content-Type": "application/json",
-            "Access-Control-Allow-Origin": "*",
-            "Access-Control-Allow-Methods": "OPTIONS",
-            "Access-Control-Allow-Headers": "Content-Type, Authorization",
-            "Access-Control-Allow-Credentials": "true"
-          }})
-        .then(response => (console.log(response.data)))
+        .get(`${this.$store.getters.getAPI}/4`)
+        .then(response => (this.theFour = response.data))
     },
     computed: {
         blockSize(){
