@@ -80,9 +80,8 @@
             </div>
             <div class="col-3">
               <div class="col-6 fiftyFifty chewyPlace"><div id="iconGuy"><span>
-              
               <img src="assets/global/sidebar/chewy.svg" onload="SVGInject(this)" />
-
+              <img id="blurredChewy" src="assets/global/sidebar/chewy.svg" onload="SVGInject(this)" />
               </span></div></div>
               <div class="col-6 padZero"></div>
               <div class="col-12 fiftyFifty leftLeft"><div id="cyberTop"><div id="cyber"><span></span><span>C</span><span>Y</span><span>B</span><span>E</span><span>R</span><span></span></div></div></div>
@@ -257,7 +256,7 @@ $sideImgOpacity: .7
   #grids
   .bottomRouteName
     font-size: 9vw
-    background-color: $neonYellow
+    background-color: $neonBlue
     color: #700123
     text-shadow: 0px 0px 8px #c56508
     font-family: Montserrat
@@ -413,9 +412,11 @@ span#topWords
   height: 11.5vh
   padding: 0
   align-self: center
-  color: #fe0063
+  color: #ffcce0
+  @include textGlow(#fe0063, 1px)
+  @include boxGlow(#00c4ff)
   margin-left: .25em
-  border: .75vh double #00ffff
+  border: 0.75vh double #9affff
   border-radius: 15px
   background-color: rgba(0,0,0,.3)
   div
@@ -429,7 +430,8 @@ span#topWords
     height: .5vh
     display: inline-block
     width: 100px
-    background-color: #fe0063
+    background-color: #ffcce0
+    box-shadow: 1px -1px 2px black, 0px 0px 10px #fe0063, 0 0 20px #fe0063, 0 0 10px #fe0063
     align-self: center
     width: 9.5vh
     padding: 0
@@ -453,9 +455,10 @@ span#topWords
   width: 100vh
   .openWindow
     height: calc(100% - 1vh)
-    border: .5vh solid $neonBlue
+    border: .5vh solid #d5ffeb
     position: relative
     border-radius: .5vh
+    @include boxGlow(#00de75)
     div
       width: 100%
       height: 100%
@@ -464,7 +467,8 @@ span#topWords
       .openText
         transform: rotate(-90deg)
         display: block
-        color: $neonYellow
+        color: #d5ffeb
+        @include textGlow(#00de75, 1px)
         font-size: 6.25vh
         width: fit-content
         align-self: center
@@ -483,7 +487,8 @@ span#topWords
         transform: rotate(-90deg)
         font-size: 6.5vh
         font-family: VCR
-        color: $neonGreen
+        color: #ffffc2
+        @include textGlow(darken($neonYellow,20%), 1px)
         width: fit-content
         height: fit-content
         align-self: center
@@ -515,27 +520,27 @@ span#topWords
     text-shadow: 0px 0px 8px #c56508
     font-family: Montserrat
     border-radius: 11px
+    @include boxGlow(#fcfb07)
   .copyRight
     text-align: right
     display: flex
     justify-content: flex-end
     font-size: 1.75vh
-    //background-color: $neonBlack
-    color: #00b2da
+    color: #5ee1ff
     height: 100%
-    //height: calc(100% - 6px)
-    //border: 3px solid #00b2da
     div
       align-self: flex-end
       justify-self: baseline
       padding-right: 1em
       padding-bottom: 1em
       .english
-        color: #dda525
+        color: #ffe09a
         font-family: Yantramanav
         font-weight: 800
+        @include textGlow(#dda525, -1px)
       .japanese
         font-family: Illuminati
+        @include textGlow(#00b2da, -1px)
   .descripBox
     display: block
     position: relative
@@ -637,7 +642,8 @@ span#topWords
   display: flex
   align-items: center
   #cyber
-    border: .5vh solid $neonPink
+    border: .5vh solid #f2ddff
+    @include boxGlow(#b131ff)
     font-family: Montserrat    
     height: 50%
     width: 100%
@@ -646,7 +652,8 @@ span#topWords
     align-items: center
     justify-content: space-evenly
     span
-      color: $neonGreen
+      color: #f2ddff
+      @include textGlow(#b131ff,1px)
       font-weight: 700
       display: block
       transform: rotate(-90deg)
@@ -660,7 +667,8 @@ span#topWords
   font-family: 'Kosugi Maru', sans-serif
   span
     transform: rotate(-90deg)
-    color: $neonYellow
+    color: #fff6e3
+    @include textGlow($neonOrange, 1px)
     font-size: 10vh
     display: block
 #newImg
@@ -675,7 +683,7 @@ span#topWords
   font-size: 3.5vh
   font-family: Alien
   #top
-    background-color: $neonYellow
+    background-color: $neonBlack
     height: 100%
     float: left
     position: relative
@@ -684,13 +692,14 @@ span#topWords
     justify-content: center
     width: 20%
     span
-      color: $neonGreen
+      color: #e8f5ff
+      @include textGlow($neonBlue, 1px)
       transform: rotate(-90deg)
       display: block
       width: fit-content
       margin: 0 auto
   #bottom
-    background-color: $neonRed
+    background-color: $neonBlack
     height: 100%
     float: right
     position: relative
@@ -699,7 +708,8 @@ span#topWords
     justify-content: center
     width: 20%
     span
-      color: $neonBlue
+      color: #e8f5ff
+      @include textGlow($neonBlue, 1px)
       transform: rotate(-90deg)
       display: block
       width: fit-content
@@ -723,7 +733,15 @@ span#topWords
       height: inherit
       width: 100%
       svg
-        fill: $neonPink
+        fill: rgb(255, 216, 226)
+      #blurredChewy
+        //filter: drop-shadow(0 0 10px 0px $neonRed)
+        filter: drop-shadow(0 0 10px $neonRed)
+        fill: black
+        z-index: -1
+        position: absolute
+        left: 1px
+        top: 1vh
 .padZero
   padding: 0
 .theBottomRight

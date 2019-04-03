@@ -5,7 +5,7 @@
             <div id="latestGrid">
                 <!-- begin -->
                 <div class="contentBoxes" :style="blockSize">
-                    <p class="boxDate">{{formatDate(this.theFour[0].date)}}</p>
+                    <p class="boxDate">{{this.theFour[0].date}}</p>
                     <p class="titleName">
                         <span class="titleText">{{this.theFour[0].title}}</span>
                     </p>
@@ -14,7 +14,7 @@
                     </a>
                 </div>
                 <div class="contentBoxes" :style="blockSize">
-                    <p class="boxDate">{{formatDate(this.theFour[1].date)}}</p>
+                    <p class="boxDate">{{this.theFour[1].date}}</p>
                     <p class="titleName">
                         <span class="titleText">{{this.theFour[1].title}}</span>
                     </p>
@@ -23,7 +23,7 @@
                     </a>
                 </div>
                 <div class="contentBoxes" :style="blockSize">
-                    <p class="boxDate">{{formatDate(this.theFour[2].date)}}</p>
+                    <p class="boxDate">{{this.theFour[2].date}}</p>
                     <p class="titleName">
                         <span class="titleText">{{this.theFour[2].title}}</span>
                     </p>
@@ -32,7 +32,7 @@
                     </a>
                 </div>
                 <div class="contentBoxes" :style="blockSize">
-                    <p class="boxDate">{{formatDate(this.theFour[3].date)}}</p>
+                    <p class="boxDate">{{this.theFour[3].date}}</p>
                     <p class="titleName">
                         <span class="titleText">{{this.theFour[3].title}}</span>
                     </p>
@@ -70,7 +70,7 @@ export default {
             let month = d.getMonth()+1 < 10 ? `0${d.getMonth()+1}` : d.getMonth()+1
             let date = d.getDate() < 10 ? `0${d.getDate()}` : d.getDate()
             let year = d.getFullYear().toString().substring(2)
-            let dString = `${month} . ${date} . ${year}`
+            let dString = `${month}:${date}:${year}`
             return dString
         }
     },
@@ -82,6 +82,13 @@ export default {
             return {fontSize: '1'+this.$store.getters.getTaller}
         },
     },
+    watch: {
+        theFour(){
+            for(let i=0;i<this.theFour.length;i++){
+                this.theFour[i].date = this.formatDate(this.theFour[i].date)
+            }
+        }
+    }
 }
 </script>
 

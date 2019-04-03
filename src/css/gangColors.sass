@@ -1,19 +1,22 @@
 $neonRed: #F4225A
 $lightNeonRed: lighten($neonRed, 40%)
 
-$neonBlue: mix(#42C6FF, #358cff)
-$lightNeonBlue: lighten($neonBlue, 40%)
-
-$neonGreen: #23F893
-$lightNeonGreen: lighten($neonGreen, 40%)
-
 $neonPink: #FF0081
 $lightNeonPink: lighten($neonPink, 40%)
+
+$neonOrange: #dda525
 
 $neonYellow: #fcfb07
 $lightNeonYellow: lighten($neonYellow, 40%)
 
-$neonOrange: #dda525
+$neonGreen: #23F893
+$lightNeonGreen: lighten($neonGreen, 40%)
+
+$neonBlue: mix(#42C6FF, #358cff)
+$lightNeonBlue: lighten($neonBlue, 40%)
+
+$neonCyan: #00ffff
+$lightNeonCyan: light($neonCyan, 40%)
 
 $white: white
 $neonWhite: $white
@@ -21,3 +24,9 @@ $neonBlack: #23131e
 
 //gives images tbe green filter
 $imgFilter: sepia() saturate(200%) hue-rotate(90deg)
+
+@mixin textGlow($color, $boxDirection)
+  text-shadow: 1px $boxDirection 2px black, 0px 0px 10px $color, 0 0 20px $color, 0 0 10px $color
+
+@mixin boxGlow($color)
+    box-shadow: 0 0 10px 0px $color
