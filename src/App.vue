@@ -47,7 +47,8 @@
             <div class="col-2">
               <div class="openWindow">
                 <div>
-                  <span class="openText">OPEN 24HR</span>
+                  <div class="openText">OPEN
+                    <span>24HR</span></div>
                 </div>
               </div>
             </div>
@@ -70,10 +71,10 @@
               <div class="col-12 fiftyFifty leftLeft">
                 <div id="newImg">
                   <div id="top">
-                    <span>NEW</span>
+                    <span>EAT</span>
                   </div>
                   <div id="bottom">
-                    <span>NEW</span>
+                    <span>DIRT</span>
                   </div>
                 </div>
               </div>
@@ -455,10 +456,10 @@ span#topWords
   width: 100vh
   .openWindow
     height: calc(100% - 1vh)
-    border: .5vh solid #d5ffeb
+    border: .5vh solid #ECF028
     position: relative
     border-radius: .5vh
-    @include boxGlow(#00de75)
+    @include boxGlow(#ECF028)
     div
       width: 100%
       height: 100%
@@ -467,14 +468,18 @@ span#topWords
       .openText
         transform: rotate(-90deg)
         display: block
-        color: #d5ffeb
-        @include textGlow(#00de75, 1px)
+        color: #DB4486
+        @include textGlow(#DB4486, 1px)
         font-size: 6.25vh
         width: fit-content
         align-self: center
         justify-self: center
         height: fit-content
         font-family: Montserrat
+        span
+          color: #16DBF2
+          @include textGlow(#16DBF2, 1px)
+
   .timeCol
     position: relative
     .timeDiv
@@ -483,12 +488,12 @@ span#topWords
       height: 100%
       align-content: center
       justify-content: center
+      background-color: black
       span
         transform: rotate(-90deg)
         font-size: 6.5vh
         font-family: VCR
-        color: #ffffc2
-        @include textGlow(darken($neonYellow,20%), 1px)
+        color: white
         width: fit-content
         height: fit-content
         align-self: center
@@ -526,7 +531,7 @@ span#topWords
     display: flex
     justify-content: flex-end
     font-size: 1.75vh
-    color: #5ee1ff
+    color: #00b2da
     height: 100%
     div
       align-self: flex-end
@@ -534,13 +539,11 @@ span#topWords
       padding-right: 1em
       padding-bottom: 1em
       .english
-        color: #ffe09a
+        color: #dda525
         font-family: Yantramanav
         font-weight: 800
-        @include textGlow(#dda525, -1px)
       .japanese
         font-family: Illuminati
-        @include textGlow(#00b2da, -1px)
   .descripBox
     display: block
     position: relative
@@ -642,8 +645,8 @@ span#topWords
   display: flex
   align-items: center
   #cyber
-    border: .5vh solid #f2ddff
-    @include boxGlow(#b131ff)
+    border: .5vh solid $neonGreen
+    @include boxGlow($neonGreen)
     font-family: Montserrat    
     height: 50%
     width: 100%
@@ -652,8 +655,8 @@ span#topWords
     align-items: center
     justify-content: space-evenly
     span
-      color: #f2ddff
-      @include textGlow(#b131ff,1px)
+      color: $neonGreen
+      @include textGlow($neonGreen,1px)
       font-weight: 700
       display: block
       transform: rotate(-90deg)
@@ -693,7 +696,6 @@ span#topWords
     width: 20%
     span
       color: #e8f5ff
-      @include textGlow($neonBlue, 1px)
       transform: rotate(-90deg)
       display: block
       width: fit-content
@@ -709,7 +711,6 @@ span#topWords
     width: 20%
     span
       color: #e8f5ff
-      @include textGlow($neonBlue, 1px)
       transform: rotate(-90deg)
       display: block
       width: fit-content
