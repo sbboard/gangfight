@@ -165,34 +165,36 @@ export default {
             text-align: center
 .contentBoxes
     display: inline-block
+    font-family: VCR
     position: relative
     overflow: hidden
     line-height: normal
     margin: .5vh
-    font-size: 1em
+    font-size: 2em
+    color: white
+    font-weight: 100
     .boxDate
         position: absolute
         bottom: 0
         margin: 0
-        padding: 5px 5px 0 5px
+        padding: 0 3px 0 3px
         right: 0
-        background-color: rgba(0,0,0,0.75)
+        background-color: black
         pointer-events: none
         z-index: 5
-        color: #3ca9ff
         text-decoration: none
+        margin: .5em
     .titleName
         position: absolute
         text-transform: uppercase
-        margin: 15px 0 0 15px
         text-align: left
         z-index: 6
         pointer-events: none
+        margin: .5em
         display: none
         .titleText
             background-color: black
             padding: 0 3px 0 3px
-            color: #F4225A
             text-decoration: none
     &:hover
         .titleName
