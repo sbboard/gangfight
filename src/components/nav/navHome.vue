@@ -49,7 +49,8 @@ export default {
     background-image: linear-gradient(rgba(black,1), rgba(black,.75))
     font-family: Yantramanav
     text-transform: uppercase
-    border: 1px solid $neonRed
+    //border: 2px solid $neonRed
+    //@include boxGlow($neonRed)
     .linkFormat
         text-decoration: none
     .redLink

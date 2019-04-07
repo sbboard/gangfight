@@ -5,40 +5,48 @@
             <div id="latestGrid">
                 <!-- begin -->
                 <div class="contentBoxes" :style="blockSize">
-                    <p class="boxDate">{{this.theFour[0].date}}</p>
-                    <p class="titleName">
-                        <span class="titleText">{{this.theFour[0].title}}</span>
-                    </p>
-                    <a :href="this.theFour[0].url">
-                        <img :style="blockSize" :src="'/assets/contentImages/'+this.theFour[0].img" :alt="this.theFour[0].title"/>
-                    </a>
+                    <div class="boxWrap">
+                        <p class="boxDate">{{this.theFour[0].date}}</p>
+                        <p class="titleName">
+                            <span class="titleText">{{this.theFour[0].title}}</span>
+                        </p>
+                        <a :href="this.theFour[0].url">
+                            <img :style="blockSize" :src="'/assets/contentImages/'+this.theFour[0].img" :alt="this.theFour[0].title"/>
+                        </a>
+                    </div>
                 </div>
                 <div class="contentBoxes" :style="blockSize">
-                    <p class="boxDate">{{this.theFour[1].date}}</p>
-                    <p class="titleName">
-                        <span class="titleText">{{this.theFour[1].title}}</span>
-                    </p>
-                    <a :href="this.theFour[1].url">
-                        <img :style="blockSize" :src="'/assets/contentImages/'+this.theFour[1].img" :alt="this.theFour[1].title"/>
-                    </a>
+                    <div class="boxWrap">
+                        <p class="boxDate">{{this.theFour[1].date}}</p>
+                        <p class="titleName">
+                            <span class="titleText">{{this.theFour[1].title}}</span>
+                        </p>
+                        <a :href="this.theFour[1].url">
+                            <img :style="blockSize" :src="'/assets/contentImages/'+this.theFour[1].img" :alt="this.theFour[1].title"/>
+                        </a>
+                    </div>
                 </div>
                 <div class="contentBoxes" :style="blockSize">
-                    <p class="boxDate">{{this.theFour[2].date}}</p>
-                    <p class="titleName">
-                        <span class="titleText">{{this.theFour[2].title}}</span>
-                    </p>
-                    <a :href="this.theFour[2].url">
-                        <img :style="blockSize" :src="'/assets/contentImages/'+this.theFour[2].img" :alt="this.theFour[2].title"/>
-                    </a>
+                    <div class="boxWrap">
+                        <p class="boxDate">{{this.theFour[2].date}}</p>
+                        <p class="titleName">
+                            <span class="titleText">{{this.theFour[2].title}}</span>
+                        </p>
+                        <a :href="this.theFour[2].url">
+                            <img :style="blockSize" :src="'/assets/contentImages/'+this.theFour[2].img" :alt="this.theFour[2].title"/>
+                        </a>
+                    </div>
                 </div>
                 <div class="contentBoxes" :style="blockSize">
-                    <p class="boxDate">{{this.theFour[3].date}}</p>
-                    <p class="titleName">
-                        <span class="titleText">{{this.theFour[3].title}}</span>
-                    </p>
-                    <a :href="this.theFour[3].url">
-                        <img :style="blockSize" :src="'/assets/contentImages/'+this.theFour[3].img" :alt="this.theFour[3].title"/>
-                    </a>
+                    <div class="boxWrap">
+                        <p class="boxDate">{{this.theFour[3].date}}</p>
+                        <p class="titleName">
+                            <span class="titleText">{{this.theFour[3].title}}</span>
+                        </p>
+                        <a :href="this.theFour[3].url">
+                            <img :style="blockSize" :src="'/assets/contentImages/'+this.theFour[3].img" :alt="this.theFour[3].title"/>
+                        </a>
+                    </div>
                 </div>
                 <!-- end -->
             </div>
@@ -173,6 +181,11 @@ export default {
     font-size: 2em
     color: white
     font-weight: 100
+    background-image: url("/assets/global/homepage/pixel.png")
+    animation: screenGlow 10s infinite
+    border-radius: .2em
+    .boxWrap
+        opacity: .75
     .boxDate
         position: absolute
         bottom: 0
@@ -197,6 +210,7 @@ export default {
             padding: 0 3px 0 3px
             text-decoration: none
     &:hover
+        opacity: 1
         .titleName
             display: inline-block
         img
@@ -208,4 +222,11 @@ export default {
         opacity:.3
     100%
         opacity:.2
+@keyframes screenGlow
+    0%
+        opacity: .9
+    50%
+        opacity: 1
+    100%
+        opacity: .9
 </style>
