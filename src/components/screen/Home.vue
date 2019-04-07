@@ -64,7 +64,7 @@ import axios from 'axios'
 export default {
     data(){
         return{
-            theFour: []
+            theFour: ["k","j","k","k"]
         }
     },
     mounted () {
