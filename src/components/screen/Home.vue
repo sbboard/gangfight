@@ -33,9 +33,9 @@ export default {
         return{
             theFour: [
                         {"_id":"0","title":"HOLD ON","img":"tvload.jpg","url":"#","date":"01:01:0000","__v":0},
-                        {"_id":"0","title":"HOLD ON","img":"tvload.jpg","url":"#","date":"01:01:0000","__v":0},
-                        {"_id":"0","title":"HOLD ON","img":"tvload.jpg","url":"#","date":"01:01:0000","__v":0},
-                        {"_id":"0","title":"HOLD ON","img":"tvload.jpg","url":"#","date":"01:01:0000","__v":0},
+                        {"_id":"0","title":"WHAT","img":"tvload.jpg","url":"#","date":"01:01:0000","__v":0},
+                        {"_id":"0","title":"UH...","img":"tvload.jpg","url":"#","date":"01:01:0000","__v":0},
+                        {"_id":"0","title":"OH NO","img":"tvload.jpg","url":"#","date":"01:01:0000","__v":0},
                         ]
         }
     },
@@ -153,7 +153,6 @@ export default {
     font-size: 2em
     color: white
     font-weight: 100
-    background-image: url("/assets/global/homepage/pixel.png")
     animation: screenGlow 10s infinite
     border-radius: .2em
     .boxWrap

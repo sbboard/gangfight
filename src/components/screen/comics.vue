@@ -71,7 +71,6 @@ export default {
         font-size: 2em
         color: white
         font-weight: 100
-        background-image: url("/assets/global/homepage/pixel.png")
         animation: screenGlow 10s infinite
         .boxWrap
             opacity: .75
