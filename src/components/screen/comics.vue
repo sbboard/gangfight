@@ -1,13 +1,13 @@
 <template>
-    <div id="comicArch" :style="[blockSize, fontSize]"> 
+    <div id="arch" :style="[blockSize, fontSize]"> 
         <div class="contentBoxes" :style="blockSize" v-for="(item, id) in theArchive" :key="`${id}`">
             <div class="boxWrap">
-                <p class="boxDate">{{formatDate(item[3])}}</p>
+                <p class="boxDate">{{item.date}}</p>
                 <p class="titleName">
-                    <span class="titleText">{{item[0]}}</span>
+                    <span class="titleText">{{item.title}}</span>
                 </p>
-                <a :href="item[4]||'http://www.google.com'">
-                    <img :style="blockSize" :src="'/assets/contentImages/'+item[2]" :alt="item[0]"/>
+                <a :href="item.url||'http://www.google.com'">
+                    <img :style="blockSize" :src="'/assets/contentImages/'+item.img" :alt="item.title"/>
                 </a>
             </div>
         </div>
@@ -57,7 +57,7 @@ export default {
 </script>
 
 <style lang="sass" scoped>
-#comicArch
+#arch
     background-color: black
     width: 100%
     height: 100%
