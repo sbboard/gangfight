@@ -25,7 +25,7 @@ export default {
     },
     mounted () {
         axios
-        .get(`${this.$store.getters.getAPI}/projects`)
+        .get(`${this.$store.getters.getAPI}/category/project`)
         .then(response => (this.theArchive = response.data))
     },
     methods: {

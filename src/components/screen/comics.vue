@@ -25,7 +25,7 @@ export default {
     },
     mounted () {
         axios
-        .get(`${this.$store.getters.getAPI}/comics`)
+        .get(`${this.$store.getters.getAPI}/category/comic`)
         .then(response => (this.theArchive = response.data))
     },
     methods: {

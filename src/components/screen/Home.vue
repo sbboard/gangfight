@@ -4,50 +4,17 @@
             <span class="latestTracks">Latest Tracks:</span>
             <div id="latestGrid">
                 <!-- begin -->
-                <div class="contentBoxes" :style="blockSize">
-                    <div class="boxWrap">
-                        <p class="boxDate">{{this.theFour[0].date}}</p>
-                        <p class="titleName">
-                            <span class="titleText">{{this.theFour[0].title}}</span>
-                        </p>
-                        <a :href="this.theFour[0].url">
-                            <img :style="blockSize" :src="'/assets/contentImages/'+this.theFour[0].img" :alt="this.theFour[0].title"/>
-                        </a>
-                    </div>
-                </div>
-                <div class="contentBoxes" :style="blockSize">
-                    <div class="boxWrap">
-                        <p class="boxDate">{{this.theFour[1].date}}</p>
-                        <p class="titleName">
-                            <span class="titleText">{{this.theFour[1].title}}</span>
-                        </p>
-                        <a :href="this.theFour[1].url">
-                            <img :style="blockSize" :src="'/assets/contentImages/'+this.theFour[1].img" :alt="this.theFour[1].title"/>
-                        </a>
-                    </div>
-                </div>
-                <div class="contentBoxes" :style="blockSize">
-                    <div class="boxWrap">
-                        <p class="boxDate">{{this.theFour[2].date}}</p>
-                        <p class="titleName">
-                            <span class="titleText">{{this.theFour[2].title}}</span>
-                        </p>
-                        <a :href="this.theFour[2].url">
-                            <img :style="blockSize" :src="'/assets/contentImages/'+this.theFour[2].img" :alt="this.theFour[2].title"/>
-                        </a>
-                    </div>
-                </div>
-                <div class="contentBoxes" :style="blockSize">
-                    <div class="boxWrap">
-                        <p class="boxDate">{{this.theFour[3].date}}</p>
-                        <p class="titleName">
-                            <span class="titleText">{{this.theFour[3].title}}</span>
-                        </p>
-                        <a :href="this.theFour[3].url">
-                            <img :style="blockSize" :src="'/assets/contentImages/'+this.theFour[3].img" :alt="this.theFour[3].title"/>
-                        </a>
-                    </div>
-                </div>
+                <div class="contentBoxes" :style="blockSize" v-for="(item, id) in theFour" :key="`${id}`">
+                <div class="boxWrap">
+                <p class="boxDate">{{item.date}}</p>
+                <p class="titleName">
+                    <span class="titleText">{{item.title}}</span>
+                </p>
+                <a :href="item.url||'http://www.google.com'">
+                    <img :style="blockSize" :src="'/assets/contentImages/'+item.img" :alt="item.title"/>
+                </a>
+            </div>
+        </div>
                 <!-- end -->
             </div>
         </div>
