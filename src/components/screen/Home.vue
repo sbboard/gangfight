@@ -31,7 +31,12 @@ import axios from 'axios'
 export default {
     data(){
         return{
-            theFour: ["k","j","k","k"]
+            theFour: [
+                        {"_id":"0","title":"HOLD ON","img":"tvload.jpg","url":"#","date":"2000-01-01T06:00:00.000Z","__v":0},
+                        {"_id":"0","title":"HOLD ON","img":"tvload.jpg","url":"#","date":"2000-01-01T06:00:00.000Z","__v":0},
+                        {"_id":"0","title":"HOLD ON","img":"tvload.jpg","url":"#","date":"2000-01-01T06:00:00.000Z","__v":0},
+                        {"_id":"0","title":"HOLD ON","img":"tvload.jpg","url":"#","date":"2000-01-01T06:00:00.000Z","__v":0},
+                        ]
         }
     },
     mounted () {
