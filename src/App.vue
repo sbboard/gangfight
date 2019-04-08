@@ -69,7 +69,7 @@
             <div class="col-4">
               <div class="col-12 fiftyFifty"><div id="threeLetter"><span>足</span><span>の</span><span>王</span></div></div>
               <div class="col-12 fiftyFifty leftLeft">
-                <div id="newImg">
+                <div id="newImg" :style="{ 'background-image': 'url(/assets/contentImages/' + this.newestUpdate + ')' }">
                   <div id="top">
                     <span>EAT</span>
                   </div>
@@ -122,6 +122,7 @@
 <script>
 import navigation from './components/nav/navHome.vue'
 import pagelist from './pageDescriptions.json'
+import axios from 'axios'
 
 export default {
   name: 'app',
@@ -143,7 +144,8 @@ export default {
       randoTwo: 2,
       hour: 0,
       minute: 0,
-      AMPM: "AM"
+      AMPM: "AM",
+      newestUpdate: []
     }
   },
   methods:{
@@ -200,6 +202,9 @@ export default {
         this.randoTwo += 1
       }
     }
+
+    //get latest update
+    axios.get(`${this.$store.getters.getAPI}/1`).then(response => (this.newestUpdate = response.data[0].img))
   },
   computed: {
     logoBoxBottom(){
