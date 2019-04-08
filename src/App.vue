@@ -69,7 +69,7 @@
             <div class="col-4">
               <div class="col-12 fiftyFifty"><div id="threeLetter"><span>足</span><span>の</span><span>王</span></div></div>
               <div class="col-12 fiftyFifty leftLeft">
-                <div id="newImg" :style="{ 'background-image': 'url(/assets/contentImages/' + this.newestUpdate + ')' }">
+                <div id="newImg" :style="{ 'background-image': 'url(/assets/contentImages/' + this.newestUpdate + ')' }" style="background-size: contain;">
                   <div id="top">
                     <span>EAT</span>
                   </div>
@@ -109,7 +109,7 @@
         </div>
         <div class="grid rainbowRoad">
           <div class="col-2 bottomBar">
-            <div><img :src="'assets/' + this.$store.getters.assetFolder + '/sidebar/barcodeHori.png'"/></div>
+            <div><img :src="'assets/global/sidebar/barcodeHori.png'"/></div>
           </div>
           <div class="col-9 bottomNamebar">bad</div>
           <div class="col-1 firstEd"><img src="assets/global/sidebar/1stedi.png"/></div>
@@ -145,7 +145,7 @@ export default {
       hour: 0,
       minute: 0,
       AMPM: "AM",
-      newestUpdate: []
+      newestUpdate: "tvload.jpg"
     }
   },
   methods:{
@@ -683,7 +683,6 @@ span#topWords
   position: relative
   height: 100%
   width: 100%
-  background-image: url("http://localhost:8080/assets/default/sidebar/2.jpg")
   background-size: 100% auto
   overflow: hidden
   border-radius: 1em

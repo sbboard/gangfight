@@ -2,6 +2,7 @@
 node_modules
 /dist
 src/css/fontawesome
+/dev_resources/
 
 # local env files
 .env.local

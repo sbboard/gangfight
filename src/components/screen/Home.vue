@@ -10,7 +10,7 @@
                 <p class="titleName">
                     <span class="titleText">{{item.title}}</span>
                 </p>
-                <a :href="item.url||'http://www.google.com'">
+                <a :href="item.url||'#'">
                     <img :style="blockSize" :src="'/assets/contentImages/'+item.img" :alt="item.title"/>
                 </a>
             </div>
@@ -82,7 +82,7 @@ export default {
     flex-direction: column
     justify-content: center
     #city
-        background-image: url('http://gang-fight.com/img/site/home/megapix2.png')
+        background-image: url('/assets/global/homepage/rochester.png')
         background-position: bottom
         background-repeat: repeat-x
         background-size: 100% auto
@@ -106,7 +106,7 @@ export default {
         bottom: 0px
         left: 0px
         height: 100%
-        background-image: url(http://www.gang-fight.com/img/site/home/bg.jpg);
+        background-image: url(/assets/global/homepage/starsbg.jpg);
         margin: 0
         padding: 0
         background-size: cover
