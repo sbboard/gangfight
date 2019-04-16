@@ -153,6 +153,7 @@ export default {
     font-size: 2em
     color: white
     font-weight: 100
+    //background-image: url('/assets/global/homepage/pixel2.png')
     animation: screenGlow 10s infinite
     border-radius: .2em
     .boxWrap

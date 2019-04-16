@@ -262,7 +262,7 @@ $sideImgOpacity: .7
   #grids
   .bottomRouteName
     font-size: 9vw
-    background-color: $neonBlue
+    background-color: #fcfb07
     color: #700123
     text-shadow: 0px 0px 8px #c56508
     font-family: Montserrat
@@ -271,6 +271,7 @@ $sideImgOpacity: .7
     align-content: center
     padding-left: .25em
     border-right: 0.4em double $neonBlack
+    @include boxGlow(#fcfb07)
     span
       display: block
       height: fit-content
@@ -283,6 +284,7 @@ $sideImgOpacity: .7
     display: flex
     align-items: center
     justify-content: flex-end
+    @include boxGlow($neonGreen)
     div
       padding-right: 1em
       display: block
@@ -316,10 +318,13 @@ $sideImgOpacity: .7
     text-align: center
     letter-spacing: .25em
     font-weight: 800
-    border: 2px solid #f25100
-    color: #f25100
+    border: 2px solid #9affff
     text-transform: uppercase
     font-family: Montserrat
+    
+    color: #ffcce0
+    @include textGlow(#fe0063, 1px)
+    @include boxGlow(#00c4ff)
 #TopBorder
   text-align: center
   display: flex
