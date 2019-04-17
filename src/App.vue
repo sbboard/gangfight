@@ -6,7 +6,7 @@
       <div id="TopBorder" :style="{height: (windowHeight - windowWidth) / 2 + 'px',
                                    backgroundImage: 'url(' + 'assets/' + this.$store.getters.assetFolder + '/sidebar/tempTopp.gif)'}">
         <div ref="wordBox" class="topLogoBox" :style="{bottom: logoBoxBottom,
-        backgroundImage: 'url(' + 'assets/' + this.$store.getters.assetFolder + '/sidebar/tempLogoBG.jpg)'}">
+        backgroundImage: 'url(' + 'assets/global/sidebar/sidebarTop.jpg)'}">
         <span id="topWords">gang fight</span>
         <div id="bottomWords"><span>ギ</span><span>ャ</span><span>ン</span><span>グ</span><span>フ</span><span>ァ</span><span>イ</span><span>ト</span></div>
         </div>
@@ -255,7 +255,8 @@ $lineWidth: .5em
 $sideImgOpacity: .7
 
 #BottomBorder
-  background-image: url("/assets/global/sidebar/tempTop.jpg")
+  background-image: url("/assets/global/sidebar/bottomBar.jpg")
+  background-color: black
   background-size: 100% auto
   background-repeat: no-repeat
   background-position: top
