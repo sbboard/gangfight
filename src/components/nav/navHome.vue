@@ -49,8 +49,6 @@ export default {
     background-image: linear-gradient(rgba(black,1), rgba(black,.75))
     font-family: Yantramanav
     text-transform: uppercase
-    //border: 2px solid $neonRed
-    //@include boxGlow($neonRed)
     .linkFormat
         text-decoration: none
     .redLink
@@ -67,7 +65,7 @@ export default {
     color: $neonRed
     position: absolute
     right: 1vh
-    bottom: 1vh
+    bottom: 2vh
     height: 10vh
     width: 9.6vh
     cursor: pointer
@@ -88,7 +86,7 @@ export default {
         cursor: pointer
         font-size: 7vh
 #navBox.mobile.open
-    height: calc(100% - 2vh)
+    height: calc(100% - 3vh)
     width: calc(100% - 2vh)
     padding: 0
     border-top-left-radius: 0
@@ -119,11 +117,13 @@ export default {
     font-size: 2vh
     padding: .5em 0
     color: $neonBlue
+    right: 0
+    margin: 0 auto
+    left: 0
     display: flex    
     flex-direction: inherit
     justify-content: space-evenly
     position: absolute
-    bottom: .5em
     nav
         justify-content: space-evenly
         width: 100%

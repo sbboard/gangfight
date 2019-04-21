@@ -147,10 +147,6 @@ export default {
     }
   },
   methods:{
-    changeSize(){
-      let newView = (this.windowHeight > this.windowWidth) ? "vw":"vh"
-      this.$store.commit('setTaller',newView)
-    },
     getLogoHeight(){
       const logoBox = this.$refs.wordBox
       if(logoBox != null){
@@ -214,17 +210,6 @@ export default {
         return "10px"
       }
     }
-  },
-  watch: {
-    windowHeight: function(){
-      this.changeSize()
-    },
-    windowWidth:function(){
-      this.changeSize()
-    }
-    //$route: function(to){
-      //this.$store.commit('changePage',to.name)
-    //}
   },
   mounted() {
     this.$nextTick(() => {
