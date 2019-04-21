@@ -6,7 +6,9 @@ import Login from "./components/screen/login.vue"
 import fakeFourOFour from "./components/screen/placeholder404.vue"
 import About from "./components/screen/about.vue"
 import Comics from "./components/screen/comics.vue"
+import ComicReader from "./components/outerbounds/comicReader.vue"
 import Projects from "./components/screen/projects.vue"
+import screen from "./components/screen/screen.vue"
 
 Vue.use(Router);
 
@@ -14,34 +16,42 @@ export default new Router({
   mode: 'history',
   routes: [
     {
-    path: "/",
-    name: "home",
-    component: Home
+      path: "/comicReader/:id",
+      component: ComicReader
     },
-    {
-    path: "/about",
-    name: "about us",
-    component: About
-    },
-    {
-    path: "/login",
-    name: "login",
-    component: Login
-    },
-    {
-    path: "/comic",
-    name: "comics",
-    component: Comics
-    },
-    {
-    path: "/project",
-    name: "projects",
-    component: Projects
-    },
-    {
-    path: "*",
-    name: "404",
-    component: fakeFourOFour
-    },
+    { path: '/', component: screen,
+    children: [
+      {
+        path: "/",
+        name: "home",
+        component: Home
+      },
+      {
+        path: "/about",
+        name: "about us",
+        component: About
+      },
+      {
+        path: "/login",
+        name: "login",
+        component: Login
+      },
+      {
+        path: "/comic",
+        name: "comics",
+        component: Comics
+      },
+      {
+        path: "/project",
+        name: "projects",
+        component: Projects
+      },
+      {
+        path: "*",
+        name: "404",
+        component: fakeFourOFour
+      },
+    ]
+  },
   ]
 });
