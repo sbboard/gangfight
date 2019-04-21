@@ -8,7 +8,7 @@ export const store = new Vuex.Store({
         fortune: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
         assets: "default",
         isTaller: "vw",
-        GFAPI: "http://159.65.188.38:8128/api"
+        GFAPI: "/api/"
     },
     getters:{
         getFortune: state=> {
