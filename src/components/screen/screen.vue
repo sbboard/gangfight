@@ -366,10 +366,10 @@ span#topWords
   overflow: hidden
   /* right border */
   #RightBorder
-    height: 100%
     background-image: url("/assets/global/sidebar/sidebarRm.jpg")
     background-size: auto 100%
     background-position: left
+    height: 100vh
     #rightBoxContain
       position: absolute
       width: 100vh
@@ -400,6 +400,7 @@ span#topWords
     background-image: url("/assets/global/sidebar/sidebarLm.jpg")
     background-size: auto 100%
     background-position: right
+    height: 100vh
     //background: linear-gradient(to bottom,$sideGradient)
     #leftBoxContain
       position: absolute
