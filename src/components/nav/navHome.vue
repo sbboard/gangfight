@@ -43,7 +43,7 @@ export default {
 @import "../../css/fontawesome/css/all.css"
 
 #navBox
-    position: absolute
+    position: fixed
     bottom: 1em
     z-index: 9999999
     background-image: linear-gradient(rgba(black,1), rgba(black,.75))
@@ -63,7 +63,7 @@ export default {
             color: $lightNeonBlue
 #navBox.mobile
     color: $neonRed
-    position: absolute
+    position: fixed
     right: 1vh
     bottom: 2vh
     height: 10vh
@@ -78,7 +78,7 @@ export default {
         font-weight: 100
     .button     
         text-align: center
-        position: absolute
+        position: fixed
         top: 0
         right: 0
         padding: 1.75vh
@@ -123,7 +123,7 @@ export default {
     display: flex    
     flex-direction: inherit
     justify-content: space-evenly
-    position: absolute
+    position: fixed
     nav
         justify-content: space-evenly
         width: 100%

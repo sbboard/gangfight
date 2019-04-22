@@ -9,6 +9,7 @@ import Comics from "./components/screen/comics.vue"
 import ComicReader from "./components/outerbounds/comicReader.vue"
 import Projects from "./components/screen/projects.vue"
 import screen from "./components/screen/screen.vue"
+import sbboardExit from "./components/outerbounds/sbboardExit.vue"
 
 Vue.use(Router);
 
@@ -18,6 +19,10 @@ export default new Router({
     {
       path: "/comicReader/:id",
       component: ComicReader
+    },
+    {
+      path: "/sbboard",
+      component: sbboardExit
     },
     { path: '/', component: screen,
     children: [
