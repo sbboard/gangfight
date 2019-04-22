@@ -16,7 +16,6 @@ export default {
     changeSize(){
       let newView = (this.windowHeight > this.windowWidth) ? "vw":"vh"
       this.$store.commit('setTaller',newView)
-      console.log("ok")
     },
   },
   created(){
