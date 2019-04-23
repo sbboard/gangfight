@@ -3,8 +3,8 @@
       <div id="theComic">
         <h1>{{comicInfo.title}}</h1>
         <h2>{{comicInfo.subtitle}}</h2>
-        <div class="comicPages">
-        <img v-for="pages in comicInfo.comicsArray" :key="pages" :src="`/assets/comics/${comicInfo.url}/${pages}`"/>
+        <div class="comicPages" v-lazy-container="{ selector: 'img' }">
+          <img v-for="pages in comicInfo.comicsArray" :key="pages" :data-src="`/assets/comics/${comicInfo.url}/${pages}`"/>
         </div>
         <navigation :class="[(this.$store.getters.getTaller == 'vh')?'navWidthHundred':'navWidthMiddle']"/>
         <div v-if="comicInfo.series !== 'noseries'">
@@ -81,6 +81,7 @@ export default {
         max-width: 100%
         margin: 0 auto 1em auto
         display: block
+        min-height: 500px
 
 #city
     background-image: url('/assets/global/homepage/rochester.png')
