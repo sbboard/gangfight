@@ -65,7 +65,7 @@ export default {
     color: $neonRed
     position: fixed
     right: 1vh
-    bottom: 2vh
+    bottom: 1vh
     height: 10vh
     width: 9.6vh
     cursor: pointer
@@ -78,7 +78,7 @@ export default {
         font-weight: 100
     .button     
         text-align: center
-        position: fixed
+        position: absolute
         top: 0
         right: 0
         padding: 1.75vh
@@ -86,7 +86,7 @@ export default {
         cursor: pointer
         font-size: 7vh
 #navBox.mobile.open
-    height: calc(100% - 3vh)
+    height: calc(100% - 2vh)
     width: calc(100% - 2vh)
     padding: 0
     border-top-left-radius: 0
