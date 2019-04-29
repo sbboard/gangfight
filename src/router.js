@@ -20,10 +20,6 @@ export default new Router({
       path: "/comicReader/:id",
       component: ComicReader
     },
-    {
-      path: "/sbboard",
-      component: sbboardExit
-    },
     { path: '/', component: screen,
     children: [
       {
@@ -50,6 +46,11 @@ export default new Router({
         path: "/project",
         name: "projects",
         component: Projects
+      },
+      {
+        path: "/sbboard",
+        name: "SBboard",
+        component: sbboardExit
       },
       {
         path: "*",

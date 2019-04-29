@@ -115,7 +115,7 @@ export default {
         background-position: center
         animation: starglow 10s infinite
     #cityBlues
-        background: -webkit-radial-gradient(bottom, #121729, #020306 60%);
+        background: -webkit-radial-gradient(bottom, #121729, #020306 60%)
         margin: 0
         padding: 0
         background-size: cover
