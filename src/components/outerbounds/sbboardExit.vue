@@ -52,6 +52,7 @@ export default {
       margin: 1em auto 0 auto
       display: block
       height: 10vh
+      opacity: .8
     h1
         font-size: 2.5em
         display: block
