@@ -8,7 +8,8 @@ export const store = new Vuex.Store({
         fortune: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
         assets: "default",
         isTaller: "vw",
-        GFAPI: process.env.VUE_APP_API
+        GFAPI: process.env.VUE_APP_API,
+        date: []
     },
     getters:{
         getFortune: state=> {
@@ -22,6 +23,9 @@ export const store = new Vuex.Store({
         },
         getAPI: state=>{
             return state.GFAPI
+        },
+        getDate: state=>{
+            return state.date
         }
     },
     mutations: {
@@ -33,6 +37,7 @@ export const store = new Vuex.Store({
         },
         setAsset(state,n){
             //valentines
+            state.date = n
             if(n[1]==2 && n[0] < 16){
                 state.assets = "2valentines"
             }

@@ -19,7 +19,7 @@
 </template>
 
 <script>
-//import axios from 'axios'
+import axios from 'axios'
 import navigation from '../../components/nav/navHome.vue'
 
 export default {
@@ -43,9 +43,9 @@ export default {
     navigation
   },
   mounted () {
-      // axios
-      // .get(`${this.$store.getters.getAPI}/comic/${this.comicId}`)
-      // .then(response => (this.comicInfo = response.data[0]))
+       axios
+       .get(`${this.$store.getters.getAPI}/comic/${this.comicId}`)
+       .then(response => (this.comicInfo = response.data[0]))
   }
 }
 </script>

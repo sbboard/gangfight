@@ -6,7 +6,10 @@
                 <!-- begin -->
                 <div class="contentBoxes" :style="blockSize" v-for="(item, id) in theFour" :key="`${id}`">
                 <div class="boxWrap">
-                <p class="boxDate">{{item.date}}</p>
+                <p class="alert" v-if="checkWeek(item.date)">
+                    <i class="fas fa-exclamation-circle"></i>
+                </p>
+                <p class="boxDate">{{item.newDate}}</p>
                 <p class="titleName">
                     <span class="titleText">{{item.title}}</span>
                 </p>
@@ -32,11 +35,11 @@ export default {
     data(){
         return{
             theFour: [
-                        {"_id":"0","title":"HOLD ON","img":"tvload.jpg","url":"#","date":"01:01:0000","__v":0},
-                        {"_id":"0","title":"WHAT","img":"tvload.jpg","url":"#","date":"01:01:0000","__v":0},
-                        {"_id":"0","title":"UH...","img":"tvload.jpg","url":"#","date":"01:01:0000","__v":0},
-                        {"_id":"0","title":"OH NO","img":"tvload.jpg","url":"#","date":"01:01:0000","__v":0},
-                        ]
+                        {"_id":"0","title":"HOLD ON","img":"tvload.jpg","url":"#","newDate":"01:01:0000","date":"2019-04-29T17:43:10.000Z","__v":0},
+                        {"_id":"0","title":"WHAT","img":"tvload.jpg","url":"#","newDate":"01:01:0000","date":"2019-01-29T17:43:10.000Z","__v":0},
+                        {"_id":"0","title":"UH...","img":"tvload.jpg","url":"#","newDate":"01:01:0000","date":"2019-01-29T17:43:10.000Z","__v":0},
+                        {"_id":"0","title":"OH NO","img":"tvload.jpg","url":"#","newDate":"01:01:0000","date":"2019-01-29T17:43:10.000Z","__v":0},
+                        ],
         }
     },
     mounted () {
@@ -52,7 +55,19 @@ export default {
             let year = d.getFullYear().toString().substring(2)
             let dString = `${month}:${date}:${year}`
             return dString
-        }
+        },
+        checkWeek(week){
+            const newWeek = week.split("T")[0];
+            const wk = this.$store.getters.getDate
+            const currentWeekString = `${wk[2]}-${wk[1]}-${wk[0]}`
+            let diff =  Math.floor(( Date.parse(currentWeekString) - Date.parse(newWeek) ) / 86400000); 
+            if(diff <= 7){
+                return true
+            }
+            else{
+                return false
+            }
+        },
     },
     computed: {
         blockSize(){
@@ -65,7 +80,7 @@ export default {
     watch: {
         theFour(){
             for(let i=0;i<this.theFour.length;i++){
-                this.theFour[i].date = this.formatDate(this.theFour[i].date)
+                this.theFour[i].newDate = this.formatDate(this.theFour[i].date)
             }
         }
     }
@@ -76,6 +91,7 @@ export default {
 @import "../../css/reset.css"
 @import "../../css/gangColors.sass"
 @import "../../css/gangFonts.sass"
+@import "../../css/fontawesome/css/all.css"
 
 #homeBlock
     display: flex
@@ -161,7 +177,6 @@ export default {
     .boxDate
         position: absolute
         bottom: 0
-        margin: 0
         padding: 0 3px 0 3px
         right: 0
         background-color: black
@@ -169,6 +184,15 @@ export default {
         z-index: 5
         text-decoration: none
         margin: .5em
+    .alert
+        color: $neonGreen
+        position: absolute
+        bottom: 0
+        padding: 0 3px 0 3px
+        z-index: 5
+        margin: .5em
+        animation: blink linear .75s infinite alternate
+        pointer-events: none
     .titleName
         position: absolute
         text-transform: uppercase
@@ -201,4 +225,15 @@ export default {
         opacity: 1
     100%
         opacity: .9
+@keyframes blink
+    0%
+        opacity: 1
+    49%
+        opacity: 1
+    50%
+        opacity: 0
+    51%
+        opacity: 0
+    100%
+        opacity: 0
 </style>
