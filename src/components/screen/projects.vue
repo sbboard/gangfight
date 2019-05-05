@@ -5,6 +5,7 @@
                 <p class="boxDate">{{item.date}}</p>
                 <p class="titleName">
                     <span class="titleText">{{item.title}}</span>
+                    <span class="subtitle" v-if="item.subtitle != ''">{{item.subtitle}}</span>
                 </p>
                 <a :href="item.url||'http://www.google.com'">
                     <img :style="blockSize" :src="'/assets/contentImages/'+item.img" :alt="item.title"/>
@@ -97,10 +98,17 @@ export default {
                 background-color: black
                 padding: 0 3px 0 3px
                 text-decoration: none
+            .subtitle
+                background-color: black
+                padding: 0 3px 0 3px
+                text-decoration: none
+                font-size: .75em
         &:hover
             opacity: 1
             .titleName
                 display: inline-block
+            .subtitle
+                display: block
             img
                 filter: brightness(.5)
 @keyframes screenGlow

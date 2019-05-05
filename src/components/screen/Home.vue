@@ -7,11 +7,12 @@
                 <div class="contentBoxes" :style="blockSize" v-for="(item, id) in theFour" :key="`${id}`">
                 <div class="boxWrap">
                 <p class="alert" v-if="checkWeek(item.date)">
-                    <i class="fas fa-exclamation-circle"></i>
+                    <i class="fas fa-exclamation"></i>
                 </p>
                 <p class="boxDate">{{item.newDate}}</p>
                 <p class="titleName">
                     <span class="titleText">{{item.title}}</span>
+                    <span class="subtitle" v-if="item.subtitle != ''">{{item.subtitle}}</span>
                 </p>
                 <a :href="item.url||'#'">
                     <img :style="blockSize" :src="'/assets/contentImages/'+item.img" :alt="item.title"/>
@@ -185,14 +186,21 @@ export default {
         text-decoration: none
         margin: .5em
     .alert
-        color: $neonGreen
+        color: black
         position: absolute
         bottom: 0
-        padding: 0 3px 0 3px
+        padding: .1em 3px
         z-index: 5
         margin: .5em
         animation: blink linear .75s infinite alternate
         pointer-events: none
+        background-color: $neonGreen
+        width: .9em
+        display: flex
+        justify-content: center
+        i
+            font-size: .75em
+            width: 0.35em
     .titleName
         position: absolute
         text-transform: uppercase
@@ -205,10 +213,17 @@ export default {
             background-color: black
             padding: 0 3px 0 3px
             text-decoration: none
+        .subtitle
+            background-color: black
+            padding: 0 3px 0 3px
+            text-decoration: none
+            font-size: .75em
     &:hover
         opacity: 1
         .titleName
             display: inline-block
+        .subtitle
+            display: block
         img
             filter: brightness(.5)
 @keyframes starglow
