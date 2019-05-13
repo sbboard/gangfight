@@ -3,8 +3,8 @@
       <div id="theComic">
         <h1>{{comicInfo.title}}</h1>
         <h2>{{comicInfo.subtitle}}</h2>
-        <div class="comicPages" v-lazy-container="{ selector: 'img' }">
-          <img v-for="pages in comicInfo.comicsArray" :key="pages" :data-src="`/assets/comics/${comicInfo.url}/${pages}`"/>
+        <div class="comicPages">
+          <img v-for="pages in comicInfo.comicsArray" :key="pages" v-lazy="`/assets/comics/${comicInfo.url}/${pages}`"/>
         </div>
         <navigation :class="[(this.$store.getters.getTaller == 'vh')?'navWidthHundred':'navWidthMiddle']"/>
         <div v-if="comicInfo.series !== 'noseries'">
@@ -25,17 +25,15 @@ import navigation from '../../components/nav/navHome.vue'
 export default {
   data(){
     return{
-      comicInfo:{
-              "comicsArray": ["1.jpg","2.jpg","3.jpg","4.jpg","5.jpg","6.jpg","7.jpg","8.jpg","9.jpg","10.jpg"],
-              "_id": "5cbd3a9077ebc22a4dfbbd62",
-              "title": "Afro Ahab",
-              "subtitle": "Quest for idk",
-              "img": "afroAhab.png",
-              "url": "afroAhab",
-              "category": "comic",
-              "date": "2016-10-30T03:52:48.000Z",
-              "series": "Afro Ahab",
-              "__v": 0},
+      comicInfo:{"comicsArray":[""],
+      "_id":"",
+      "title":"",
+      "subtitle":"",
+      "img":"",
+      "url":"",
+      "category":"",
+      "date":"",
+      "series":"noseries"},
       comicId: this.$route.params.id
     }
   },
@@ -45,7 +43,15 @@ export default {
   mounted () {
        axios
        .get(`${this.$store.getters.getAPI}/comic/${this.comicId}`)
-       .then(response => (this.comicInfo = response.data[0]))
+        .then((response) => {
+           if(response.data.length > 0){
+            this.comicInfo = response.data[0]
+           }
+           else{
+             this.$router.push('/')
+           }
+       })
+       .catch(() => this.$router.push('/'))
   }
 }
 </script>
@@ -62,7 +68,7 @@ export default {
   position: relative
   min-height: 100vh
   #theComic
-    padding: 1em 1em 6vh 1em
+    padding: 1em 1em 7vh 1em
     h1
       font-size: 3em
       text-align: center

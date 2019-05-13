@@ -7,7 +7,10 @@
                     <span class="titleText">{{item.title}}</span>
                     <span class="subtitle" v-if="item.subtitle != ''">{{item.subtitle}}</span>
                 </p>
-                <a :href="item.url||'http://www.google.com'">
+                <a :href="item.url" v-if="item.comicsArray.length < 1 || item.comicsArray[0] == ''">
+                    <img :style="blockSize" :src="'/assets/contentImages/'+item.img" :alt="item.title"/>
+                </a>
+                <a v-else :href="'/comicReader/'+item._id">
                     <img :style="blockSize" :src="'/assets/contentImages/'+item.img" :alt="item.title"/>
                 </a>
             </div>
