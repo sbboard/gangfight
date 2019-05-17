@@ -243,6 +243,7 @@ $sideImgOpacity: .7
   background-size: 100% auto
   background-repeat: no-repeat
   background-position: top
+  z-index: 99999999
   #grids
   .bottomRouteName
     font-size: 9vw
@@ -320,6 +321,7 @@ $sideImgOpacity: .7
   background-size: 100% auto
   background-repeat: no-repeat
   background-position: bottom
+  z-index: 99999999
   //color: white
   .topLogoBox
     margin: 0 auto
@@ -355,6 +357,7 @@ span#topWords
     background-size: auto 100%
     background-position: left
     height: 100vh
+    z-index: 99999999
     #rightBoxContain
       position: absolute
       width: 100vh
@@ -386,6 +389,7 @@ span#topWords
     background-size: auto 100%
     background-position: right
     height: 100vh
+    z-index: 99999999
     //background: linear-gradient(to bottom,$sideGradient)
     #leftBoxContain
       position: absolute

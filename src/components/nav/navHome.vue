@@ -45,7 +45,7 @@ export default {
 #navBox
     position: fixed
     bottom: 1em
-    z-index: 9999999
+    z-index: 99999999999
     background-image: linear-gradient(rgba(black,1), rgba(black,.75))
     font-family: Yantramanav
     text-transform: uppercase
