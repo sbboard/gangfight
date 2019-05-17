@@ -17,6 +17,9 @@
         <img id="posterOne" src="/assets/global/about/poster2.gif"/>
         <img id="posterTwo" src="/assets/global/about/poster3.gif"/>
         <img id="posterThree" src="/assets/global/about/poster4.gif"/>
+        <div id="leftWall"></div>
+        <div id="rightWall"></div>
+        <div id="floor"></div>
 
         <img id="windowSketch" src="/assets/global/about/sketchWindow.png"/>
         <div id="windowTint"></div>
@@ -167,4 +170,26 @@ export default {
         @include boxGlow($neonBlue)
         &:hover
             color: white
+    #floor    
+        width: 100%
+        position: absolute
+        bottom: 0
+        z-index: 400
+        height: 40em
+        background-color: blue
+    #wall
+        background-color: green
+        width: 20em
+        position: absolute
+        z-index: 401
+        top: -16.35em
+        height: 85em
+    #leftWall
+        @extend #wall
+        left: 0    
+        transform: skewY(-41deg)
+    #rightWall
+        @extend #wall
+        right: -0.05em
+        transform: skewY(41deg)
 </style>
