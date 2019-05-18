@@ -1,5 +1,24 @@
 <template>
     <div id="aboutUs" :style="fontSize">
+        <div id="lanternBox">
+            <img id="wire" src="/assets/global/about/wire.gif"/>
+            <img class="lantern" src="/assets/global/about/lant1.png"/>
+            <img class="lantern" src="/assets/global/about/lant2.png"/>
+            <img class="lantern" src="/assets/global/about/lant3.png"/>
+            <img class="lantern" src="/assets/global/about/lant4.png"/>
+            <img class="lantern" src="/assets/global/about/lant5.png"/>
+            <img class="lantern" src="/assets/global/about/lant6.png"/>
+            <img class="lantern" src="/assets/global/about/lant7.png"/>
+        </div>
+        <div id="lanternReflect">
+            <img class="lantern" src="/assets/global/about/lant1.png"/>
+            <img class="lantern" src="/assets/global/about/lant2.png"/>
+            <img class="lantern" src="/assets/global/about/lant3.png"/>
+            <img class="lantern" src="/assets/global/about/lant4.png"/>
+            <img class="lantern" src="/assets/global/about/lant5.png"/>
+            <img class="lantern" src="/assets/global/about/lant6.png"/>
+            <img class="lantern" src="/assets/global/about/lant7.png"/>
+        </div>
         <div id="descBox">
             <span>Gang Fight is a media brand based in the United States of America.
             We make content not because we seek any sort of financial gain, 
@@ -14,14 +33,17 @@
             <i class="fab fa-facebook-f"></i></a>
         <a href="#" class="socMedia">
             <i class="fas fa-envelope"></i></a>
-        <img id="posterOne" src="/assets/global/about/poster2.gif"/>
-        <img id="posterTwo" src="/assets/global/about/poster3.gif"/>
-        <img id="posterThree" src="/assets/global/about/poster4.gif"/>
+        <img id="posterOne" src="/assets/global/about/poster5.gif"/>
+        <img id="posterTwo" src="/assets/global/about/poster6.gif"/>
+        <img id="posterThree" src="/assets/global/about/poster1.gif"/>
+        <img id="posterFour" src="/assets/global/about/poster9.gif"/>
+        <div id="leftWallGlow"></div>
+        <div id="rightWallGlow"></div>
         <div id="leftWall"></div>
         <div id="rightWall"></div>
         <div id="floor"></div>
 
-        <img id="windowSketch" src="/assets/global/about/sketchWindow.png"/>
+        <img id="windowSketch" src="/assets/global/about/sketch.jpg"/>
         <div id="windowTint"></div>
         <div id="windowStreakOne"></div>
         <div id="windowStreakTwo"></div>
@@ -68,7 +90,7 @@ export default {
         width: 21em
         left: 13.5em
         padding: 1em
-        top: 7em
+        top: 11em
         transform: rotate(-1deg)
         font-size: 1.75em
         font-family: Yantramanav
@@ -82,18 +104,22 @@ export default {
         position: absolute
         transform: skewY(-21deg)
         width: 12em
-        z-index: 500
+        z-index: 425
     #posterOne
         @extend #poster
-        left: 5em
+        left: 7em
     #posterTwo   
         @extend #poster 
-        left: -8em
-        top: 11em
+        left: -6em
+        top: 15em
     #posterThree
         @extend #poster    
-        left: 5em
-        top: 19em
+        left: 7em
+        top: 18em
+    #posterFour
+        @extend #poster    
+        left: -6em
+        top: -3em
     #rochester    
         position: absolute
         width: 203em
@@ -120,8 +146,10 @@ export default {
     #windowSketch
         width: 100%
         height: 100%
-        z-index: 300
+        z-index: 800
         position: absolute
+        opacity: 0
+        pointer-events: none
     #stars    
         width: 80%
         left: 6em
@@ -153,7 +181,7 @@ export default {
     .socMedia    
         left: 8.5em
         z-index: 500
-        top: 8.75em
+        top: 10.5em
         font-size: 4em
         background-color: rgba(black,.8)
         padding: .5em
@@ -176,9 +204,9 @@ export default {
         bottom: 0
         z-index: 400
         height: 40em
-        background-color: blue
+        background-image: linear-gradient(#791f6b, #211e40 40%)
     #wall
-        background-color: green
+        background-color: #14131f
         width: 20em
         position: absolute
         z-index: 401
@@ -192,4 +220,72 @@ export default {
         @extend #wall
         right: -0.05em
         transform: skewY(41deg)
+    #wallGlow
+        z-index: 450
+        background-color: initial
+    #leftWallGlow
+        @extend #leftWall
+        @extend #wallGlow
+        background-image: linear-gradient(to left, rgba(191, 37, 159, 0.6), rgba(191, 37, 159, 0) 90%)
+    #rightWallGlow
+        @extend #rightWall
+        @extend #wallGlow
+        background-image: linear-gradient(to right, rgba(191, 37, 159, 0.6), rgba(191, 37, 159, 0) 90%)
+    #lanternBox
+        position: absolute
+        top: 0em
+        left: 0
+        right: 0
+        #wire
+            position: absolute
+            z-index: 600
+            left: 0
+            right: 0
+            width: 65em
+            margin: 0 auto
+            pointer-events: none
+        .lantern
+            z-index: 601
+            position: absolute
+            width: 6em
+            pointer-events: none
+            &:nth-of-type(2)
+                left: 18em
+                top: 1em
+            &:nth-of-type(3)
+                left: 27.5em
+                top: 2.5em
+            &:nth-of-type(4)
+                left: 37em
+                top: 4em
+            &:nth-of-type(5)
+                left: 47em
+                top: 4em
+            &:nth-of-type(6)
+                left: 56.5em
+                top: 3em
+            &:nth-of-type(7)
+                left: 66em
+                top: 2em
+            &:nth-of-type(8)
+                left: 76em
+                top: .5em
+    #lanternReflect
+        @extend #lanternBox
+        top: 1em
+        z-index: 100
+        opacity: .5
+        .lantern
+            &:nth-of-type(2)
+                left: 15em
+            &:nth-of-type(3)
+                left: 25.5em
+            &:nth-of-type(4)
+                left: 36em
+            &:nth-of-type(6)
+                left: 57.5em
+            &:nth-of-type(7)
+                left: 68em
+            &:nth-of-type(8)
+                left: 79em
 </style>
