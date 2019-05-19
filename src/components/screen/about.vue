@@ -49,23 +49,12 @@
             <i class="fas fa-envelope"></i></a>
 
         <!-- walls -->
-        <div id="leftWallWrap">
-            <div id="leftWallComplete">
-                <div id="wallGlowLeft"></div>
-                <img id="posterOne" src="/assets/global/about/poster5.gif"/>
-                <img id="posterTwo" src="/assets/global/about/poster6.gif"/>
-                <img id="posterThree" src="/assets/global/about/poster1.gif"/>
-                <img id="posterFour" src="/assets/global/about/poster9.gif"/>
-            </div>
-        </div>
-        <div id="rightWallWrap">
-            <div id="rightWallComplete">
-                <div id="wallGlowRight"></div>
-            </div>
-        </div>
-        <div id="floorWrap">
-            <div id="floorComplete">
-                <div id="glowFloor"></div>
+        <div class="ex1">
+            <div class="cube">
+                <div class="side right"></div>
+                <div class="side left"></div>
+                <!--<div class="side top"></div>-->
+                <div class="side bottom"></div>
             </div>
         </div>
 
@@ -111,6 +100,50 @@ export default {
 @import "../../css/gangColors.sass"
 @import "../../css/gangFonts.sass"
 
+
+.ex1
+    perspective: 86em
+    justify-content: center
+    width: 100em
+    top: -17em
+    display: flex
+    height: 100em
+    perspective-origin: 50% 59.35%
+    position: absolute
+    z-index: 500
+    align-items: center
+
+.cube 
+    font-size: 4em
+    width: 2em
+    transform-style: preserve-3d
+    transform: rotateX(-3deg) rotateY(0deg) translateZ(19.75em)
+
+.side
+    position: absolute
+    width: 2em
+    height: 2em
+    background: rgba(100,100,100,0.5)
+    border: 1px solid red
+    text-align: center
+
+.front
+    transform: translateZ(1em)
+.top
+    transform: rotateX(90deg) translateZ(1em)
+.right
+    transform: rotateY(90deg) translateZ(1em)
+    height: 3em
+    top: -1em
+.left
+    transform: rotateY(-90deg) translateZ(1em)
+    height: 3em
+    top: -1em
+.bottom
+    transform: rotateX(-90deg) translateZ(1em)
+.back
+    transform: rotateY(-180deg) translateZ(1em)
+
 #aboutUs
     .aboutText
         background-color: rgba(black, .8)
@@ -141,40 +174,30 @@ export default {
             &:first-child
                 margin-bottom: .25em
     #floorWrap
-        -webkit-perspective: 100em
-        perspective: 51em
+        perspective: 57em
         position: absolute
-        bottom: 0
-        background-color: red
+        bottom: -28em
         z-index: 500
-        left: 48em
-        margin: 0 auto
         #floorComplete
-            background-color: #141521
-            bottom: -34em
-            position: absolute
-            width: 53em
-            left: -21.25em
-            height: 90em
-            transform: rotateX(39deg) scale(3)
+            background-color: red
+            opacity: .5
+            height: 100em
+            width: 100em
+            transform: rotateX(53deg) scale(1)
             #glowFloor
                 height: 50em
                 width: 100%
                 background: linear-gradient(to bottom, rgba(191, 37, 159, 0.6), rgba(191, 37, 159, 0))
     #rightWallWrap
-        perspective: 100em
+        perspective: 57em
         position: absolute
-        right: 0
-        top: 0
+        right: -28em
         z-index: 500
         #rightWallComplete
-            background-color: #141521
-            top: 0em
-            right: -4em
-            position: absolute
-            width: 29em
-            height: 65.2em
-            transform: rotateY(-37deg)
+            background-color: blue
+            height: 100em
+            width: 100em
+            transform: rotateY(53deg) scale(1)
             #wallGlowRight
                 width: 100%
                 height: 100%
