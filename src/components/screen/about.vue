@@ -1,5 +1,6 @@
 <template>
     <div id="aboutUs" :style="fontSize">
+        <!-- lanterns -->
         <div id="lanternBox">
             <img id="wire" src="/assets/global/about/wire.gif"/>
             <img class="lantern" src="/assets/global/about/lant1.png"/>
@@ -19,14 +20,19 @@
             <img class="lantern" src="/assets/global/about/lant6.png"/>
             <img class="lantern" src="/assets/global/about/lant7.png"/>
         </div>
+
+        <!-- TV
         <img id="tv" src="/assets/global/about/tv.gif"/>
         <div id="screenBox">
             <img id="tvScreen" src="/assets/8summer/sidebar/2.jpg"/>
         </div>
-        <div id="blackback"></div>
+        <div id="blackback"></div> -->
+
+        <!-- bed
         <img id="bedCat" src="/assets/global/about/bedcat2.png"/>
-        <img id="bed" src="/assets/global/about/bed3.png"/>
-        <div id="bedShadow"></div>
+        <img id="bed" src="/assets/global/about/bed3.png"/> -->
+
+        <!-- action stuff -->
         <div id="descBox">
             <span>Gang Fight is a media brand based in the United States of America.
             We make content not because we seek any sort of financial gain, 
@@ -41,20 +47,34 @@
             <i class="fab fa-facebook-f"></i></a>
         <a href="#" class="socMedia">
             <i class="fas fa-envelope"></i></a>
-        <img id="posterOne" src="/assets/global/about/poster5.gif"/>
-        <img id="posterTwo" src="/assets/global/about/poster6.gif"/>
-        <img id="posterThree" src="/assets/global/about/poster1.gif"/>
-        <img id="posterFour" src="/assets/global/about/poster9.gif"/>
-        <div id="leftWallGlow"></div>
-        <div id="rightWallGlow"></div>
-        <div id="leftWall"></div>
-        <div id="rightWall"></div>
-        <div id="floor"></div>
 
+        <!-- walls -->
+        <div id="leftWallWrap">
+            <div id="leftWallComplete">
+                <div id="wallGlowLeft"></div>
+                <img id="posterOne" src="/assets/global/about/poster5.gif"/>
+                <img id="posterTwo" src="/assets/global/about/poster6.gif"/>
+                <img id="posterThree" src="/assets/global/about/poster1.gif"/>
+                <img id="posterFour" src="/assets/global/about/poster9.gif"/>
+            </div>
+        </div>
+        <div id="rightWallWrap">
+            <div id="rightWallComplete">
+                <div id="wallGlowRight"></div>
+            </div>
+        </div>
+        <div id="floorWrap">
+            <div id="floorComplete">
+                <div id="glowFloor"></div>
+            </div>
+        </div>
+
+        <!-- window -->
         <img id="windowSketch" src="/assets/global/about/sketch.jpg"/>
         <div id="windowTint"></div>
         <div id="windowStreakOne"></div>
         <div id="windowStreakTwo"></div>
+
         <!-- outside -->
         <img id="rochesterThree" src="/assets/global/homepage/rochester.png"/>
         <img id="rochester" src="/assets/global/homepage/rochester.png"/>
@@ -120,26 +140,102 @@ export default {
             display: block
             &:first-child
                 margin-bottom: .25em
-    #poster
+    #floorWrap
+        -webkit-perspective: 100em
+        perspective: 51em
         position: absolute
-        transform: skewY(-21deg)
-        width: 12em
-        z-index: 425
-    #posterOne
-        @extend #poster
-        left: 7em
-    #posterTwo   
-        @extend #poster 
-        left: -6em
-        top: 15em
-    #posterThree
-        @extend #poster    
-        left: 7em
-        top: 18em
-    #posterFour
-        @extend #poster    
-        left: -6em
-        top: -3em
+        bottom: 0
+        background-color: red
+        z-index: 500
+        left: 48em
+        margin: 0 auto
+        #floorComplete
+            background-color: #141521
+            bottom: -34em
+            position: absolute
+            width: 53em
+            left: -21.25em
+            height: 90em
+            transform: rotateX(39deg) scale(3)
+            #glowFloor
+                height: 50em
+                width: 100%
+                background: linear-gradient(to bottom, rgba(191, 37, 159, 0.6), rgba(191, 37, 159, 0))
+    #rightWallWrap
+        perspective: 100em
+        position: absolute
+        right: 0
+        top: 0
+        z-index: 500
+        #rightWallComplete
+            background-color: #141521
+            top: 0em
+            right: -4em
+            position: absolute
+            width: 29em
+            height: 65.2em
+            transform: rotateY(-37deg)
+            #wallGlowRight
+                width: 100%
+                height: 100%
+                background: linear-gradient(to right, rgba(191, 37, 159, 0.6), rgba(191, 37, 159, 0) 90%)
+                z-index: 600
+                position: absolute
+    #leftWallWrap
+        perspective: 100em
+        position: absolute
+        left: 0
+        top: 0
+        z-index: 500
+        #leftWallComplete
+            background-color: #141521
+            top: 0em
+            left: -4em
+            position: absolute
+            width: 29em
+            height: 65.2em
+            transform: rotateY(37deg)
+            #wallGlowLeft
+                width: 100%
+                height: 100%
+                background: linear-gradient(to left, rgba(191, 37, 159, 0.6), rgba(191, 37, 159, 0) 90%)
+                z-index: 600
+                position: absolute
+            #poster
+                position: absolute
+                width: 14em
+            #posterOne
+                @extend #poster
+                right: 1.5em
+            #posterTwo   
+                @extend #poster 
+                right: 17em
+                top: 11em
+            #posterThree
+                @extend #poster  
+                right: 1.5em
+                top: 20.5em
+            #posterFour
+                @extend #poster 
+                right: 17em
+                top: -10em
+            #wall
+                background-color: #14131f
+                width: 20em
+                position: absolute
+                z-index: 401
+                top: -16.35em
+                height: 85em
+            #leftWall
+                @extend #wall
+                left: 0
+            #wallGlow
+                z-index: 450
+                background-color: initial
+            #leftWallGlow
+                @extend #leftWall
+                @extend #wallGlow
+                background-image: linear-gradient(to left, rgba(191, 37, 159, 0.6), rgba(191, 37, 159, 0) 90%)
     #rochester    
         position: absolute
         width: 203em
@@ -218,39 +314,6 @@ export default {
         @include boxGlow($neonBlue)
         &:hover
             color: white
-    #floor    
-        width: 100%
-        position: absolute
-        bottom: 0
-        z-index: 400
-        height: 40em
-        background-image: linear-gradient(#791f6b, #211e40 40%)
-    #wall
-        background-color: #14131f
-        width: 20em
-        position: absolute
-        z-index: 401
-        top: -16.35em
-        height: 85em
-    #leftWall
-        @extend #wall
-        left: 0    
-        transform: skewY(-41deg)
-    #rightWall
-        @extend #wall
-        right: -0.05em
-        transform: skewY(41deg)
-    #wallGlow
-        z-index: 450
-        background-color: initial
-    #leftWallGlow
-        @extend #leftWall
-        @extend #wallGlow
-        background-image: linear-gradient(to left, rgba(191, 37, 159, 0.6), rgba(191, 37, 159, 0) 90%)
-    #rightWallGlow
-        @extend #rightWall
-        @extend #wallGlow
-        background-image: linear-gradient(to right, rgba(191, 37, 159, 0.6), rgba(191, 37, 159, 0) 90%)
     #lanternBox
         position: absolute
         top: 0em
@@ -332,24 +395,6 @@ export default {
         right: 14.75em
         width: 10em
         filter: hue-rotate(71deg) saturate(1.5)
-    #desktop
-        width: 20em
-        height: 2em
-        top: 51em
-        left: 0
-        transform: skewY(-21deg)
-        z-index: 650
-        background-color: green
-        position: absolute
-    #deskside
-        width: 20em
-        height: 2em
-        top: 51em
-        left: 0
-        transform: skewY(-21deg)
-        z-index: 650
-        background-color: blue
-        position: absolute
     #tv
         z-index: 650
         position: absolute
