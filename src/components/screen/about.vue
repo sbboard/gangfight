@@ -20,7 +20,8 @@
             <img class="lantern" src="/assets/global/about/lant7.png"/>
         </div>
         <img id="bedCat" src="/assets/global/about/bedcat2.png"/>
-        <img id="bed" src="/assets/global/about/bed.png"/>
+        <img id="bed" src="/assets/global/about/bed3.png"/>
+        <div id="bedShadow"></div>
         <div id="descBox">
             <span>Gang Fight is a media brand based in the United States of America.
             We make content not because we seek any sort of financial gain, 
@@ -59,7 +60,19 @@
 </template>
 
 <script>
+import { Draggable } from 'draggable-vue-directive'
 export default {
+    directives: {
+        Draggable,
+    },
+    data() {
+        return {
+            handleId: "handle-id",
+            draggableValue: {
+                handle: undefined
+            }
+        };
+    },
     computed: {
         fontSize(){
             return {fontSize: '1'+this.$store.getters.getTaller}
@@ -293,15 +306,25 @@ export default {
     #bed
         position: absolute
         z-index: 600
-        width: 61em    
-        bottom: 19em
-        right: -5em
-        filter: brightness(.95) contrast(1.25)
+        width: 60em    
+        bottom: 16.5em
+        right: -15.5em
+        filter: brightness(.95) contrast(1.25) hue-rotate(-290deg)
+    #bedShadow
+        width: 34em
+        transform: skewX(44deg)
+        position: absolute
+        z-index: 599
+        height: 24em
+        opacity: .5
+        background-color: black
+        bottom: 0
+        right: -17em
     #bedCat
         position: absolute
         z-index: 601
-        top: 46em
-        right: 20em
-        width: 14em
+        top: 45em
+        right: 11.75em
+        width: 13em
         filter: hue-rotate(71deg) saturate(1.5)
 </style>
