@@ -19,6 +19,8 @@
             <img class="lantern" src="/assets/global/about/lant6.png"/>
             <img class="lantern" src="/assets/global/about/lant7.png"/>
         </div>
+        <img id="bedCat" src="/assets/global/about/bedcat2.png"/>
+        <img id="bed" src="/assets/global/about/bed.png"/>
         <div id="descBox">
             <span>Gang Fight is a media brand based in the United States of America.
             We make content not because we seek any sort of financial gain, 
@@ -179,8 +181,8 @@ export default {
         height: 4em
         top: 46em
     .socMedia    
-        left: 8.5em
-        z-index: 500
+        left: 6em
+        z-index: 600
         top: 10.5em
         font-size: 4em
         background-color: rgba(black,.8)
@@ -191,9 +193,9 @@ export default {
         text-align: center
         height: 1em
         &:nth-of-type(1)
-            left: 10.75em
+            left: 8.25em
         &:nth-of-type(2)
-            left: 13em
+            left: 10.5em
         color: $neonBlue
         @include boxGlow($neonBlue)
         &:hover
@@ -288,4 +290,18 @@ export default {
                 left: 68em
             &:nth-of-type(8)
                 left: 79em
+    #bed
+        position: absolute
+        z-index: 600
+        width: 61em    
+        bottom: 19em
+        right: -5em
+        filter: brightness(.95) contrast(1.25)
+    #bedCat
+        position: absolute
+        z-index: 601
+        top: 46em
+        right: 20em
+        width: 14em
+        filter: hue-rotate(71deg) saturate(1.5)
 </style>
