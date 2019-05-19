@@ -19,6 +19,11 @@
             <img class="lantern" src="/assets/global/about/lant6.png"/>
             <img class="lantern" src="/assets/global/about/lant7.png"/>
         </div>
+        <img id="tv" src="/assets/global/about/tv.gif"/>
+        <div id="screenBox">
+            <img id="tvScreen" src="/assets/8summer/sidebar/2.jpg"/>
+        </div>
+        <div id="blackback"></div>
         <img id="bedCat" src="/assets/global/about/bedcat2.png"/>
         <img id="bed" src="/assets/global/about/bed3.png"/>
         <div id="bedShadow"></div>
@@ -306,9 +311,9 @@ export default {
     #bed
         position: absolute
         z-index: 600
-        width: 60em    
-        bottom: 16.5em
-        right: -15.5em
+        width: 51em    
+        bottom: 20em
+        right: -10em
         filter: brightness(.95) contrast(1.25) hue-rotate(-290deg)
     #bedShadow
         width: 34em
@@ -319,12 +324,56 @@ export default {
         opacity: .5
         background-color: black
         bottom: 0
-        right: -17em
+        right: -20.5em
     #bedCat
         position: absolute
         z-index: 601
-        top: 45em
-        right: 11.75em
-        width: 13em
+        top: 47em
+        right: 14.75em
+        width: 10em
         filter: hue-rotate(71deg) saturate(1.5)
+    #desktop
+        width: 20em
+        height: 2em
+        top: 51em
+        left: 0
+        transform: skewY(-21deg)
+        z-index: 650
+        background-color: green
+        position: absolute
+    #deskside
+        width: 20em
+        height: 2em
+        top: 51em
+        left: 0
+        transform: skewY(-21deg)
+        z-index: 650
+        background-color: blue
+        position: absolute
+    #tv
+        z-index: 650
+        position: absolute
+        top: 49em
+        left: 11em
+        width: 23em
+    #blackback    
+        z-index: 648
+        position: absolute
+        top: 50em
+        left: 15.2em
+        width: 17.5em
+        height: 16em
+        transform: skew(-6deg)
+        background-color: black
+    #screenBox    
+        z-index: 649
+        position: absolute
+        top: 51em
+        left: 19.2em
+        width: 23em
+        perspective: 28em
+        transform: rotate(-9deg)
+        #tvScreen
+            width: 14.05em
+            transform: rotateY(35deg) rotateX(-23deg)
 </style>
