@@ -49,12 +49,24 @@
             <i class="fas fa-envelope"></i></a>
 
         <!-- walls -->
-        <div class="ex1">
+        <div class="room">
             <div class="cube">
-                <div class="side right"></div>
-                <div class="side left"></div>
+                <div class="side right">
+                    <div id="wallGlowRight"></div>
+                </div>
+                <div class="side left">
+                    <div id="wallGlowLeft"></div>
+                    <img id="posterOne" src="/assets/global/about/poster7.gif"/>
+                    <img id="posterTwo" src="/assets/global/about/poster5.gif"/>
+                    <img id="posterThree" src="/assets/global/about/poster1.gif"/>
+                    <img id="posterFour" src="/assets/global/about/poster9.gif"/>
+                    <img id="posterFive" src="/assets/global/about/poster6.gif">
+                    <img id="posterSix" src="/assets/global/about/poster8.gif">
+                </div>
                 <!--<div class="side top"></div>-->
-                <div class="side bottom"></div>
+                <div class="side bottom">
+                    <div id="floorGlow"></div>
+                </div>
             </div>
         </div>
 
@@ -101,48 +113,79 @@ export default {
 @import "../../css/gangFonts.sass"
 
 
-.ex1
-    perspective: 86em
+.room
+    perspective: 120em
     justify-content: center
     width: 100em
-    top: -17em
+    top: -46em
+    left: -.2em
     display: flex
     height: 100em
-    perspective-origin: 50% 59.35%
+    perspective-origin: 50% 69%
     position: absolute
     z-index: 500
     align-items: center
-
-.cube 
-    font-size: 4em
-    width: 2em
-    transform-style: preserve-3d
-    transform: rotateX(-3deg) rotateY(0deg) translateZ(19.75em)
-
-.side
-    position: absolute
-    width: 2em
-    height: 2em
-    background: rgba(100,100,100,0.5)
-    border: 1px solid red
-    text-align: center
-
-.front
-    transform: translateZ(1em)
-.top
-    transform: rotateX(90deg) translateZ(1em)
-.right
-    transform: rotateY(90deg) translateZ(1em)
-    height: 3em
-    top: -1em
-.left
-    transform: rotateY(-90deg) translateZ(1em)
-    height: 3em
-    top: -1em
-.bottom
-    transform: rotateX(-90deg) translateZ(1em)
-.back
-    transform: rotateY(-180deg) translateZ(1em)
+    .cube 
+        width: 50em
+        transform-style: preserve-3d
+        transform: rotateX(0deg) rotateY(0deg) translateZ(46.75em)
+        .side
+            position: absolute
+            width: 50em
+            height: 50em
+            text-align: center
+            background-color: #141521
+        .right
+            transform: rotateY(90deg) translateZ(25em)
+            #wallGlowRight
+                width: 100%
+                height: 100%
+                background: linear-gradient(to left, rgba(191, 37, 159, 0.6), rgba(191, 37, 159, 0) 75%)
+                z-index: 600
+                position: absolute
+        .left
+            transform: rotateY(-90deg) translateZ(25em)
+            background-color: #141521
+            #poster
+                position: absolute
+                width: 14em
+                transform: scaleX(-1)
+            #posterOne
+                @extend #poster
+                left: 3em
+            #posterTwo   
+                @extend #poster 
+                left: 18em
+                top: 10em
+            #posterThree
+                @extend #poster  
+                left: 3em
+                top: 22.5em
+            #posterFour
+                @extend #poster 
+                left: 18em
+                top: -10em
+            #posterFive
+                @extend #poster 
+                left: 34em
+            #posterSix
+                @extend #poster 
+                left: 34em
+                top: 20em
+            #wallGlowLeft
+                width: 100%
+                height: 100%
+                background: linear-gradient(to right, rgba(191, 37, 159, 0.6), rgba(191, 37, 159, 0) 75%)
+                z-index: 600
+                position: absolute
+        .bottom
+            transform: rotateX(-90deg) translateZ(25em)
+            #floorGlow
+                width: 100%
+                height: 100%
+                background: linear-gradient(to top, rgba(191, 37, 159, 0.6), rgba(191, 37, 159, 0) 75%)
+                z-index: 600
+                position: absolute
 
 #aboutUs
     .aboutText
@@ -173,92 +216,6 @@ export default {
             display: block
             &:first-child
                 margin-bottom: .25em
-    #floorWrap
-        perspective: 57em
-        position: absolute
-        bottom: -28em
-        z-index: 500
-        #floorComplete
-            background-color: red
-            opacity: .5
-            height: 100em
-            width: 100em
-            transform: rotateX(53deg) scale(1)
-            #glowFloor
-                height: 50em
-                width: 100%
-                background: linear-gradient(to bottom, rgba(191, 37, 159, 0.6), rgba(191, 37, 159, 0))
-    #rightWallWrap
-        perspective: 57em
-        position: absolute
-        right: -28em
-        z-index: 500
-        #rightWallComplete
-            background-color: blue
-            height: 100em
-            width: 100em
-            transform: rotateY(53deg) scale(1)
-            #wallGlowRight
-                width: 100%
-                height: 100%
-                background: linear-gradient(to right, rgba(191, 37, 159, 0.6), rgba(191, 37, 159, 0) 90%)
-                z-index: 600
-                position: absolute
-    #leftWallWrap
-        perspective: 100em
-        position: absolute
-        left: 0
-        top: 0
-        z-index: 500
-        #leftWallComplete
-            background-color: #141521
-            top: 0em
-            left: -4em
-            position: absolute
-            width: 29em
-            height: 65.2em
-            transform: rotateY(37deg)
-            #wallGlowLeft
-                width: 100%
-                height: 100%
-                background: linear-gradient(to left, rgba(191, 37, 159, 0.6), rgba(191, 37, 159, 0) 90%)
-                z-index: 600
-                position: absolute
-            #poster
-                position: absolute
-                width: 14em
-            #posterOne
-                @extend #poster
-                right: 1.5em
-            #posterTwo   
-                @extend #poster 
-                right: 17em
-                top: 11em
-            #posterThree
-                @extend #poster  
-                right: 1.5em
-                top: 20.5em
-            #posterFour
-                @extend #poster 
-                right: 17em
-                top: -10em
-            #wall
-                background-color: #14131f
-                width: 20em
-                position: absolute
-                z-index: 401
-                top: -16.35em
-                height: 85em
-            #leftWall
-                @extend #wall
-                left: 0
-            #wallGlow
-                z-index: 450
-                background-color: initial
-            #leftWallGlow
-                @extend #leftWall
-                @extend #wallGlow
-                background-image: linear-gradient(to left, rgba(191, 37, 159, 0.6), rgba(191, 37, 159, 0) 90%)
     #rochester    
         position: absolute
         width: 203em
@@ -347,7 +304,7 @@ export default {
             z-index: 600
             left: 0
             right: 0
-            width: 65em
+            width: 62em
             margin: 0 auto
             pointer-events: none
         .lantern
