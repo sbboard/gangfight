@@ -21,6 +21,17 @@
             <img class="lantern" src="/assets/global/about/lant7.png"/>
         </div>
 
+        <div id="draggable" v-draggable="draggableValue">
+            <div id="exitCube" @click="exitWindow()"></div>
+            <div :ref="handleId">
+                <img src="/assets/global/about/windowsTopBar.gif" alt="move">
+            </div>
+            <div id="windowStuff">
+                <img src="/assets/global/about/pc.png"/>
+                <p>colin.buffum@gmail.com</p>
+            </div>
+            <img id="winBottom" src="/assets/global/about/windowsBottom.png"/>
+        </div>
         <!-- TV
         <img id="tv" src="/assets/global/about/tv.gif"/>
         <div id="screenBox">
@@ -103,6 +114,14 @@ export default {
         fontSize(){
             return {fontSize: '1'+this.$store.getters.getTaller}
         }
+    },
+    mounted() {
+        this.draggableValue.handle = this.$refs[this.handleId];
+    },
+    methods: {
+        exitWindow() {
+            console.log("ok")
+        }
     }
 }
 </script>
@@ -112,6 +131,36 @@ export default {
 @import "../../css/gangColors.sass"
 @import "../../css/gangFonts.sass"
 
+#draggable
+    position: absolute
+    z-index: 800
+    top: 0
+    left: 0
+    background-image: url("/assets/global/about/windowsMiddle.png")
+    #exitCube    
+        z-index: 801
+        top: .45em
+        position: absolute
+        right: .4em
+        width: 1.7em
+        height: 1.5em
+        cursor: pointer
+    #windowStuff
+        display: flex
+        justify-content: center
+        margin: 1em auto
+        width: fit-content
+        font-size: 2em
+        font-family: monospace
+        img
+            display: inline-block
+            margin-right: 1em
+        p
+            display: inline-block
+            user-select: all
+    #winBottom
+        position: absolute
+        bottom: 0
 
 .room
     perspective: 120em
