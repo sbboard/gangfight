@@ -21,17 +21,18 @@
             <img class="lantern" src="/assets/global/about/lant7.png"/>
         </div>
 
-        <div id="draggable" v-draggable="draggableValue">
-            <div id="exitCube" @click="exitWindow()"></div>
+        <div class="draggable" :style="{ top: coords[boxNumber-1].y, left: coords[boxNumber-1].x}" v-draggable="draggableValue" v-for="boxNumber in popups" :key="boxNumber">
+            <div class="exitCube" @click="exitWindow(boxNumber)"></div>
             <div :ref="handleId">
                 <img src="/assets/global/about/windowsTopBar.gif" alt="move">
             </div>
-            <div id="windowStuff">
+            <div class="windowStuff">
                 <img src="/assets/global/about/pc.png"/>
                 <p>colin.buffum@gmail.com</p>
             </div>
-            <img id="winBottom" src="/assets/global/about/windowsBottom.png"/>
+            <img class="winBottom" src="/assets/global/about/windowsBottom.png"/>
         </div>
+
         <!-- TV
         <img id="tv" src="/assets/global/about/tv.gif"/>
         <div id="screenBox">
@@ -56,7 +57,7 @@
         </a>
         <a href="https://www.facebook.com/gangfight" class="socMedia">
             <i class="fab fa-facebook-f"></i></a>
-        <a href="#" class="socMedia">
+        <a href="#" class="socMedia" @click="spawnpop('email')">
             <i class="fas fa-envelope"></i></a>
 
         <!-- walls -->
@@ -107,7 +108,9 @@ export default {
             handleId: "handle-id",
             draggableValue: {
                 handle: undefined
-            }
+            },
+            popups: 0,
+            coords: []
         };
     },
     computed: {
@@ -116,13 +119,20 @@ export default {
         }
     },
     mounted() {
-        this.draggableValue.handle = this.$refs[this.handleId];
+        this.draggableValue.handle = this.$refs[this.handleId]
     },
     methods: {
-        exitWindow() {
-            console.log("ok")
-        }
-    }
+        exitWindow(num) {
+            document.getElementsByClassName("draggable")[num-1].style.visibility = "hidden"
+        },
+        spawnpop(){
+            let randoX = Math.floor(Math.random() * Math.floor(60))
+            let randoY = Math.floor(Math.random() * Math.floor(80))
+            this.coords.push({x: randoX + "em",y: randoY + "em"})
+            console.log(this.coords)
+            this.popups++
+        },
+    },
 }
 </script>
 
@@ -131,13 +141,13 @@ export default {
 @import "../../css/gangColors.sass"
 @import "../../css/gangFonts.sass"
 
-#draggable
+.draggable
     position: absolute
     z-index: 800
     top: 0
     left: 0
     background-image: url("/assets/global/about/windowsMiddle.png")
-    #exitCube    
+    .exitCube    
         z-index: 801
         top: .45em
         position: absolute
@@ -145,7 +155,7 @@ export default {
         width: 1.7em
         height: 1.5em
         cursor: pointer
-    #windowStuff
+    .windowStuff
         display: flex
         justify-content: center
         margin: 1em auto
@@ -158,10 +168,9 @@ export default {
         p
             display: inline-block
             user-select: all
-    #winBottom
+    .winBottom
         position: absolute
         bottom: 0
-
 .room
     perspective: 120em
     justify-content: center
