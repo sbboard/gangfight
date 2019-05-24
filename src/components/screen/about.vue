@@ -32,17 +32,10 @@
             </div>
             <img class="winBottom" src="/assets/global/about/windowsBottom.png"/>
         </div>
-
-        <!-- TV
-        <img id="tv" src="/assets/global/about/tv.gif"/>
-        <div id="screenBox">
-            <img id="tvScreen" src="/assets/8summer/sidebar/2.jpg"/>
-        </div>
-        <div id="blackback"></div> -->
-
-        <!-- bed
         <img id="bedCat" src="/assets/global/about/bedcat2.png"/>
-        <img id="bed" src="/assets/global/about/bed3.png"/> -->
+        <img id="deskSketch" src="/assets/global/about/deskchair.png"/>
+        <img id="speakerSketch" src="/assets/global/about/speaker.png"/>
+        <img id="bedSketch" src="/assets/global/about/beddy.png"/>
 
         <!-- action stuff -->
         <div id="descBox">
@@ -129,7 +122,6 @@ export default {
             let randoX = Math.floor(Math.random() * Math.floor(60))
             let randoY = Math.floor(Math.random() * Math.floor(80))
             this.coords.push({x: randoX + "em",y: randoY + "em"})
-            console.log(this.coords)
             this.popups++
         },
     },
@@ -140,6 +132,26 @@ export default {
 @import "../../css/reset.css"
 @import "../../css/gangColors.sass"
 @import "../../css/gangFonts.sass"
+
+#sketches
+    z-index: 600
+    position: absolute
+#bedSketch
+    @extend #sketches
+    width: 46em
+    bottom: 0
+    right: 0
+#speakerSketch
+    @extend #sketches
+    top: 18em
+    right: 3em
+    width: 13em
+#deskSketch
+    @extend #sketches
+    bottom: 0
+    left: 0
+    top: 38em
+    width: 39em
 
 .draggable
     position: absolute
@@ -429,10 +441,10 @@ export default {
     #bedCat
         position: absolute
         z-index: 601
-        top: 47em
-        right: 14.75em
-        width: 10em
         filter: hue-rotate(71deg) saturate(1.5)
+        top: 59em
+        right: 11em
+        width: 13em
     #tv
         z-index: 650
         position: absolute
