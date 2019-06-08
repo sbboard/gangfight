@@ -27,12 +27,17 @@
                 <img src="/assets/global/about/windowsTopBar.gif" alt="move">
             </div>
             <div class="windowStuff">
-                <img src="/assets/global/about/pc.png"/>
-                <p>colin.buffum@gmail.com</p>
+                <template v-if="popUpArray[boxNumber-1] == 'email'">
+                    <img id="pcImg" src="/assets/global/about/pc.png"/>
+                    <p>colin.buffum@gmail.com</p>
+                </template>
+                <template v-if="popUpArray[boxNumber-1] == 'cat'">
+                    <img id="detailedCat" src="/assets/global/about/detailedCat.png"/>
+                </template>
             </div>
             <img class="winBottom" src="/assets/global/about/windowsBottom.png"/>
         </div>
-        <img id="bedCat" src="/assets/global/about/bedcat2.png"/>
+        <img id="bedCat" src="/assets/global/about/bedcat2.png" @click="spawnpop('cat')"/>
         <img id="deskSketch" src="/assets/global/about/deskchair.png"/>
         <img id="speakerSketch" src="/assets/global/about/speaker.png"/>
         <img id="bedSketch" src="/assets/global/about/beddy.png"/>
@@ -103,7 +108,8 @@ export default {
                 handle: undefined
             },
             popups: 0,
-            coords: []
+            coords: [],
+            popUpArray: []
         };
     },
     computed: {
@@ -118,10 +124,11 @@ export default {
         exitWindow(num) {
             document.getElementsByClassName("draggable")[num-1].style.visibility = "hidden"
         },
-        spawnpop(){
+        spawnpop(windowType){
             let randoX = Math.floor(Math.random() * Math.floor(60))
             let randoY = Math.floor(Math.random() * Math.floor(80))
             this.coords.push({x: randoX + "em",y: randoY + "em"})
+            this.popUpArray.push(windowType)
             this.popups++
         },
     },
@@ -174,9 +181,13 @@ export default {
         width: fit-content
         font-size: 2em
         font-family: monospace
-        img
+        #pcImg
             display: inline-block
             margin-right: 1em
+        #detailedCat
+            width: 12em
+            height: 12em
+            filter: hue-rotate(71deg) saturate(1.5)
         p
             display: inline-block
             user-select: all
@@ -445,6 +456,7 @@ export default {
         top: 59em
         right: 11em
         width: 13em
+        cursor: pointer
     #tv
         z-index: 650
         position: absolute
