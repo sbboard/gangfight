@@ -386,10 +386,10 @@ export default {
         height: 4em
         top: 46em
     .socMedia    
-        left: 6em
-        z-index: 600
-        top: 10.5em
-        font-size: 4em
+        left: 8.25em
+        z-index: 700
+        top: 12.35em
+        font-size: 3.35em
         background-color: rgba(black,.8)
         padding: .5em
         border-radius: 1em
@@ -398,9 +398,9 @@ export default {
         text-align: center
         height: 1em
         &:nth-of-type(1)
-            left: 8.25em
-        &:nth-of-type(2)
             left: 10.5em
+        &:nth-of-type(2)
+            left: 12.75em
         color: $neonBlue
         @include boxGlow($neonBlue)
         &:hover
