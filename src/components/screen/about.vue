@@ -168,6 +168,7 @@ export default {
     left: 0
     top: 39em
     width: 38em
+    filter: saturate(3)
 #sbboardScreen
     z-index: 600
     position: absolute
@@ -177,6 +178,7 @@ export default {
     height: 14em
     top: 42.5em
     transform: skewY(-40deg) skewX(1deg)
+    filter: saturate(3) brightness(1.1)
 #banjoScreen
     z-index: 600
     position: absolute
@@ -186,6 +188,7 @@ export default {
     height: 14.5em
     top: 52em
     transform: skewY(-43deg) skewX(1deg)
+    filter: saturate(14) brightness(1.1)
 
 .draggable
     position: absolute
