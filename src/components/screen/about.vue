@@ -38,8 +38,10 @@
             <img class="winBottom" src="/assets/global/about/windowsBottom.png"/>
         </div>
         <img id="bedCat" src="/assets/global/about/bedcat2.png" @click="spawnpop('cat')"/>
-        <img id="deskSketch" src="/assets/global/about/deskchair.png"/>
-        <img id="speakerSketch" src="/assets/global/about/speaker.png"/>
+        <img id="deskDraw" src="/assets/global/about/potentChair.png"/>
+        <img id="sbboardScreen" src="/assets/global/about/sbboard.gif"/>
+        <img id="banjoScreen" src="/assets/global/about/banjo.gif"/>
+        <!--<img id="speakerSketch" src="/assets/global/about/speaker.png"/>-->
         <img id="bedSketch" src="/assets/global/about/beddy.png"/>
 
         <!-- action stuff -->
@@ -159,6 +161,31 @@ export default {
     left: 0
     top: 38em
     width: 39em
+#deskDraw
+    @extend #sketches
+    z-index: 601
+    bottom: 0
+    left: 0
+    top: 39em
+    width: 38em
+#sbboardScreen
+    z-index: 600
+    position: absolute
+    width: 8.7em
+    left: 17em
+    border-radius: 1em
+    height: 14em
+    top: 42.5em
+    transform: skewY(-40deg) skewX(1deg)
+#banjoScreen
+    z-index: 600
+    position: absolute
+    width: 7em
+    left: 7em
+    border-radius: 1em
+    height: 14.5em
+    top: 52em
+    transform: skewY(-43deg) skewX(1deg)
 
 .draggable
     position: absolute
