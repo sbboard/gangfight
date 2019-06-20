@@ -198,12 +198,12 @@ export default {
     background-image: url("/assets/global/about/windowsMiddle.png")
     .exitCube    
         z-index: 801
-        top: .45em
         position: absolute
-        right: .4em
-        width: 1.7em
-        height: 1.5em
         cursor: pointer
+        top: 3px
+        right: 4px
+        width: 16px
+        height: 15px
     .windowStuff
         display: flex
         justify-content: center
