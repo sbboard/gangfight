@@ -42,7 +42,7 @@
         <img id="sbboardScreen" src="/assets/global/about/sbboard.gif"/>
         <img id="banjoScreen" src="/assets/global/about/banjo.gif"/>
         <!--<img id="speakerSketch" src="/assets/global/about/speaker.png"/>-->
-        <img id="bedSketch" src="/assets/global/about/beddy.png"/>
+        <img id="bedDraw" src="/assets/global/about/bed2.gif"/>
 
         <!-- action stuff -->
         <div id="descBox">
@@ -148,6 +148,11 @@ export default {
 #bedSketch
     @extend #sketches
     width: 46em
+    bottom: 0
+    right: 0
+#bedDraw
+    @extend #sketches
+    width: 44em
     bottom: 0
     right: 0
 #speakerSketch
