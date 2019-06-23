@@ -99,7 +99,7 @@ export default {
 
 #homeBlock
     display: flex
-    flex-direction: column
+    //flex-direction: column
     justify-content: center
     #city
         background-image: url('/assets/global/homepage/rochester.png')
@@ -154,6 +154,7 @@ export default {
         letter-spacing: 1.5px
         font-family: Yantramanav
         font-size: 16px
+        margin-top: 7em
         .latestTracks
             margin-left: 3%
             color: $neonWhite
