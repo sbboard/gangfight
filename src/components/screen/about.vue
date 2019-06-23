@@ -1,5 +1,12 @@
 <template>
     <div id="aboutUs" :style="fontSize">
+        <div id="driftBox">
+            <span>Gang Fight</span>
+            <span>Gang Fight</span>
+            <span>Gang Fight</span>
+            <span>Gang Fight</span>
+            <span>Gang Fight</span>
+        </div>
         <!-- lanterns -->
         <div id="lanternBox">
             <img id="wire" src="/assets/global/about/wire.gif"/>
@@ -141,6 +148,28 @@ export default {
 @import "../../css/reset.css"
 @import "../../css/gangColors.sass"
 @import "../../css/gangFonts.sass"
+
+#driftBox
+    position: absolute
+    top: -.75em
+    right: 1em
+    color: white
+    font-size: 4em
+    z-index: 900
+    span
+        margin-top: .25em
+        display: block
+        font-family: Alien
+        &:nth-child(1)
+            opacity: 1
+        &:nth-child(2)
+            opacity: .8
+        &:nth-child(3)
+            opacity: .6
+        &:nth-child(4)
+            opacity: .4
+        &:nth-child(5)
+            opacity: .2
 
 #sketches
     z-index: 600
