@@ -155,7 +155,8 @@ export default {
     right: 1em
     color: white
     font-size: 4em
-    z-index: 900
+    z-index: 700
+    pointer-events: none
     span
         margin-top: .25em
         display: block
