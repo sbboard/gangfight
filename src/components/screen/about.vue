@@ -36,7 +36,7 @@
             <div class="windowStuff">
                 <template v-if="popUpArray[boxNumber-1] == 'email'">
                     <img id="pcImg" src="/assets/global/about/pc.png"/>
-                    <p>colin.buffum@gmail.com</p>
+                    <p>gyangufaito@gmail.com</p>
                 </template>
                 <template v-if="popUpArray[boxNumber-1] == 'cat'">
                     <img id="detailedCat" src="/assets/global/about/detailedCat.png"/>
