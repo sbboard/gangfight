@@ -271,6 +271,7 @@ export default {
     position: absolute
     z-index: 500
     align-items: center
+    pointer-events: none
     .cube 
         width: 50em
         transform-style: preserve-3d
