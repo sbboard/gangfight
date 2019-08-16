@@ -71,10 +71,10 @@
               <div class="col-12 fiftyFifty leftLeft">
                 <div id="newImg" :style="{ 'background-image': 'url(/assets/contentImages/' + this.newestUpdate + ')' }" style="background-size: contain;">
                   <div id="top">
-                    <span>EAT</span>
+                    <span>FREE</span>
                   </div>
                   <div id="bottom">
-                    <span>DIRT</span>
+                    <span>REVENGE</span>
                   </div>
                 </div>
               </div>
