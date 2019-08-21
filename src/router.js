@@ -2,7 +2,6 @@ import Vue from "vue"
 import Router from "vue-router"
 import Home from "./components/screen/Home.vue"
 import Login from "./components/screen/login.vue"
-//import Dracula from "./components/screen/dracula.vue"
 import fakeFourOFour from "./components/screen/placeholder404.vue"
 import About from "./components/screen/about.vue"
 import Comics from "./components/screen/comics.vue"
@@ -45,7 +44,7 @@ export default new Router({
       },
       {
         path: "/comicArch",
-        name: "comics",
+        name: "comics working",
         component: ComicArch
       },
       {

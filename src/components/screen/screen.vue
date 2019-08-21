@@ -681,7 +681,7 @@ span#topWords
   overflow: hidden
   border-radius: 1em
   filter: contrast(1.5) saturate(1)
-  font-size: 3.5vh
+  font-size: 2.5vh
   font-family: Alien
   #top
     background-color: $neonBlack

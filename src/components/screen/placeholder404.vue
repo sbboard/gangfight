@@ -1,12 +1,18 @@
 <template>
-    <div id="bigBack">
-        <div class="fourText">
-            <h2>404: Kill Me, Dude</h2>
+    <div>
+        <div id="dayMode" v-if="hour<17||hour>5">
+            <div class="fourText">
+                <h1>404</h1>
+                <h2>come back when it's darker</h2>
+            </div>
+            <iframe class="efron" :src="'https://www.youtube.com/embed/videoseries?list=PLa20yDzXOyGg9KigaXG3YsijSPLqHSw1C&amp;controls=0&amp;showinfo=0&amp;autoplay=1&mute=1&loop=1&index='+randoNum" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            <div id="cityLights"></div>
+            <div id="cityOfStars"></div>
+            <div id="cityBlues"></div>
         </div>
-        <iframe class="efron" :src="'https://www.youtube.com/embed/videoseries?list=PLa20yDzXOyGg9KigaXG3YsijSPLqHSw1C&amp;controls=0&amp;showinfo=0&amp;autoplay=1&mute=1&loop=1&index='+randoNum" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-        <div id="cityLights"></div>
-        <div id="cityOfStars"></div>
-        <div id="cityBlues"></div>
+        <div id="nightMode" v-else>
+            What's up it's me -- Dracula. Thanks for visiting my abode tonight. Feel free to browse my collection of worthwhile media while you're here.
+        </div>
     </div>
 </template>
 
@@ -15,12 +21,15 @@ export default {
     name: '404',
     data(){
         return{
-            randoNum: 0
+            randoNum: 0,
+            hour: 0
         }
     },
     created(){
-    //generate rando Nos for YouTube Vid
-    this.randoNum = Math.floor(Math.random() * 10) + 1
+        let today = new Date();
+        this.hour = today.getHours()
+        //generate rando Nos for YouTube Vid
+        this.randoNum = Math.floor(Math.random() * 10) + 1
     }
 }
 </script>
@@ -30,6 +39,9 @@ export default {
 @import "../../css/gangColors.sass"
 @import "../../css/gangFonts.sass"
 
+#dayMode
+    height: 100%
+    width: 100%
 .fourText
     height: 100%
     width: 100%
@@ -38,10 +50,17 @@ export default {
     align-items: center
     z-index: 10
     position: absolute
-    h2
+    flex-direction: column
+    h1
         font-family: Montserrat
         color: $neonRed
         font-size: 4em
+    h2
+        font-size: 2em
+        font-family: Montserrat
+        color: $neonRed
+        text-align: center
+        width: 7em
 iframe
     width: 100%
     height: 100%
