@@ -11,7 +11,7 @@
             <div id="cityBlues"></div>
         </div>
         <div id="nightMode" v-else>
-            What's up it's me -- Dracula. Thanks for visiting my abode tonight. Feel free to browse my collection of worthwhile media while you're here.
+            What's up it's me -- Dracula. Thanks for visiting my club tonight. Feel free to browse my collection of worthwhile media while you're here.
         </div>
     </div>
 </template>

@@ -1,26 +1,96 @@
 {  
     "game":[
         {
-            "name":"ok"
+            "name":"Hamtaro Ham-Hams Unite",
+            "creator":"",
+            "pic":"",
+            "desc":"",
+            "year":2001
         },
         {
-            "name":"sure"
+            "name":"Kingdom Hearts Series",
+            "creator":"Tetsuya Nomura",
+            "pic":"",
+            "desc":"",
+            "year":2002
+        },
+        {
+            "name":"Sin & Punishment Series",
+            "creator":"",
+            "pic":"",
+            "desc":"",
+            "year":2000
+        },
+        {
+            "name":"Chibi Robo",
+            "creator":"",
+            "pic":"",
+            "desc":"",
+            "year":2005
         }
     ],
     "video":[
         {
-            "name":"ok"
+            "name":"Two Sisters Ep 15 - 18",
+            "creator":"OlafVids",
+            "pic":"",
+            "desc":"",
+            "year":2014,
+            "url":""
         },
         {
-            "name":"sure"
+            "name":"Dragon Quest XI: The Kotaku Review",
+            "creator":"Tim Rogers",
+            "pic":"",
+            "desc":"",
+            "year":2018,
+            "url":""
+        },
+        {
+            "name":"SHUT UP ABOUT PLOT HOLES",
+            "creator":"Patrick Willems",
+            "pic":"",
+            "desc":"",
+            "year":2018,
+            "url":""
+        },
+        {
+            "name":"Sinistar or: How to Play Games Wrong",
+            "creator":"Big Joel",
+            "pic":"",
+            "desc":"",
+            "year":2018,
+            "url":""
         }
     ],
     "music":[
         {
-            "name":"ok"
+            "name":"To Pimp a Butterfly",
+            "creator":"Kendrick Lamar",
+            "pic":"",
+            "desc":"",
+            "year":2015
         },
         {
-            "name":"sure"
+            "name":"Virtue",
+            "creator":"The Voidz",
+            "pic":"",
+            "desc":"",
+            "year":2018
+        },
+        {
+            "name":"Teens of Denial",
+            "creator":"Car Seat Headrest",
+            "pic":"",
+            "desc":"",
+            "year":2016
+        },
+        {
+            "name":"Dirty Computer",
+            "creator":"Janelle Monáe",
+            "pic":"",
+            "desc":"",
+            "year":2018
         }
     ]
  }
