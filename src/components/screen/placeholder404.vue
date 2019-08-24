@@ -56,7 +56,7 @@ export default {
         let blackBox = document.getElementById("blackBox")
         let innerMouth = document.getElementById("innerMouth")
         let i = 0
-        let normSpeech = 75
+        let normSpeech = 150
 
         function speechEngine() {
         let timeStop = normSpeech
@@ -72,7 +72,7 @@ export default {
                 innerMouth.classList.add("open");
             }
             if (talk[i] == "?" || talk[i] == "!" || talk[i] == "." || talk[i] == "-") {
-                timeStop = normSpeech * 4
+                timeStop = normSpeech * 2
                 mouth.classList.remove("open");
                 innerMouth.classList.remove("open");
             }
