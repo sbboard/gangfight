@@ -12,8 +12,7 @@
         </div>
         <div id="nightMode" v-else>
             <div id="speechBubble" class="active">
-            <div id="faceBox"><div id="eyes">. .</div><div id="innerMouth"></div>
-            </div>
+            <div id="innerMouth"></div>
             <div id="speechProg"></div><div id="blackBox">█</div>
             <div id="speechText" class="hidden">What's up it's me -- Dracula. Thanks for visiting my club tonight. Feel free to browse my collection of worthwhile media while you're here.</div>
             </div>
@@ -164,33 +163,45 @@ export default {
     z-index: -3
 
 #speechBubble
-  border: 1px solid black
-  cursor: pointer
-  #faceBox
-    float: left
-    width: 50px
-    min-height: 2em
-    height: -webkit-fill-available
-    display: block
-    #eyes
-      display: inline-block
-      width: 1em
-    #innerMouth::before
-      content: "-"
-    #innerMouth.open::before
-      content: "o"
-  .hidden
-    display: none
-  &.hidden
-    display: none
-  #speechProg
-    display: inline
-  #speechProg.hidden
-    display: none
-  #blackBox
-    display: inline
-  #blackBox.hidden
-    display: none
+    cursor: pointer
+    background-color: rgba(0,0,0,.75)
+    width: 45em
+    top: 24em
+    border: 1px solid white
+    left: 20em
+    border-radius: 1em
+    z-index: 4
+    position: absolute
+    overflow: hidden
+    padding: 1em
+    #innerMouth
+        width: 10em
+        height: 10em
+        background-image: url("/assets/global/404/iconClosed.png")
+        background-size: auto 100%
+        float: left
+        margin-right: 1em
+    #innerMouth.open
+        background-image: url("/assets/global/404/iconOpen.png")
+    .hidden
+        display: none
+    &.hidden
+        display: none
+    #speechProg
+        display: inline
+        font-size: 2em
+        font-family: Yantramanav
+        color: white
+    #speechProg.hidden
+        display: none
+    #blackBox
+        display: inline
+        font-size: 2em
+        color: white
+    #blackBox.hidden
+        display: none
+    #speechText
+        @extend #speechProg
 #dracula
     position: absolute
     width: 51em
