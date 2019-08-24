@@ -17,8 +17,9 @@
             <div id="speechProg"></div><div id="blackBox">█</div>
             <div id="speechText" class="hidden">What's up it's me -- Dracula. Thanks for visiting my club tonight. Feel free to browse my collection of worthwhile media while you're here.</div>
             </div>
-            <div id="dracula">. .
-            <div id="mouth"></div>
+            <div id="dracula">
+                <div id="mouth"></div>
+                <img src="/assets/global/404/draculaSketch.png" alt="Dracula - The King of Darkness"/>
             </div>
         </div>
     </div>
@@ -146,11 +147,25 @@ export default {
   #blackBox.hidden
     display: none
 #dracula
-  #mouth::before
-    content: "-"
-  #mouth.open::before
-    content: "o"
-
+    position: absolute
+    width: 53vw
+    left: 2vw
+    top: 13vh
+    img
+        width: 100%
+        left: 4em
+        top: 14em
+    #mouth
+        background-image: url("/assets/global/404/closedMouthSketch.png")
+        width: 3.35em
+        position: absolute
+        background-repeat: no-repeat
+        height: 3em
+        top: 15.5em
+        left: 4.7em
+        background-size: 100% auto
+    #mouth.open
+        background-image: url("/assets/global/404/openMouthSketch.png")
 #dayMode
     height: 100%
     width: 100%
