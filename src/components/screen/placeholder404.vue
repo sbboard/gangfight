@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div :style="fontSize">
         <div id="dayMode" v-if="hour<17&&hour>5">
             <div class="fourText">
                 <h1>404</h1>
@@ -21,6 +21,10 @@
                 <div id="mouth"></div>
                 <img src="/assets/global/404/draculaSketch.png" alt="Dracula - The King of Darkness"/>
             </div>
+            <div id="horizon"></div>
+            <div id="blackness"></div>
+            <img id="moon" src="/assets/global/404/moon.png"/>
+            <div id="sky"></div>
         </div>
     </div>
 </template>
@@ -39,6 +43,11 @@ export default {
         this.hour = today.getHours()
         //generate rando Nos for YouTube Vid
         this.randoNum = Math.floor(Math.random() * 10) + 1
+    },
+    computed: {
+        fontSize(){
+            return {fontSize: '1'+this.$store.getters.getTaller}
+        }
     },
     mounted(){
         const talk = document.getElementById("speechText").textContent;
@@ -118,6 +127,42 @@ export default {
 @import "../../css/gangColors.sass"
 @import "../../css/gangFonts.sass"
 
+#horizon
+    background-image: url(/assets/global/homepage/rochester.png)
+    width: 100%
+    z-index: -1
+    background-repeat: repeat-x
+    background-size: 84%
+    position: absolute
+    top: 17em
+    filter: brightness(0)
+    height: 36em
+#blackness    
+    position: absolute
+    width: 100%
+    height: 80em
+    display: block
+    background-color: black
+    top: 36em
+    z-index: -1
+#moon    
+    position: absolute
+    top: 2em
+    width: 54em
+    margin: 0 auto
+    display: block
+    z-index: -2
+    right: 0
+    left: 0
+    filter: brightness(1.1) sepia(1)
+#sky
+    width: 100%
+    height: 40em
+    position: absolute
+    top: 0
+    background-image: linear-gradient(#350000, #ff0076)
+    z-index: -3
+
 #speechBubble
   border: 1px solid black
   cursor: pointer
@@ -148,24 +193,27 @@ export default {
     display: none
 #dracula
     position: absolute
-    width: 53vw
-    left: 2vw
-    top: 13vh
+    width: 51em
+    left: 2.5em
+    animation: dracHover 2.5s alternate infinite
     img
         width: 100%
-        left: 4em
-        top: 14em
     #mouth
-        background-image: url("/assets/global/404/closedMouthSketch.png")
-        width: 3.35em
+        background-image: url(/assets/global/404/closedMouthSketch.png)
+        width: 7.35em
         position: absolute
         background-repeat: no-repeat
-        height: 3em
-        top: 15.5em
-        left: 4.7em
+        height: 9em
+        top: 31.5em
+        left: 9.5em
         background-size: 100% auto
     #mouth.open
         background-image: url("/assets/global/404/openMouthSketch.png")
+@keyframes dracHover
+    0%
+        bottom: 8em
+    100%
+        bottom: 13em
 #dayMode
     height: 100%
     width: 100%
