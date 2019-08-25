@@ -11,7 +11,7 @@
             <div id="cityBlues"></div>
         </div>
         <div id="nightMode" v-else>
-            <div id="logo">DRAKULA'S CULTURE CLUB</div>
+            <div id="logo">404: DRAKULA'S CULTURE CLUB</div>
             <div id="speechBubble" class="active">
             <div id="innerMouth"></div>
             <div id="speechProg"></div><div id="blackBox">█</div>
@@ -129,9 +129,9 @@ export default {
 
 #logo
     color: $neonRed
-    width: 15em
+    width: 18em
     display: block
-    font-size: 6em
+    font-size: 5em
     left: 0
     right: 0
     margin: 0 auto
@@ -178,16 +178,27 @@ export default {
 
 #speechBubble
     cursor: pointer
-    background-color: rgba(0,0,0,.75)
+    background-color: transparentize($neonRed,.1)
     width: 45em
-    top: 24em
-    border: 1px solid white
-    left: 20em
-    border-radius: 1em
+    top: 21em
+    left: 5em
+    border-radius: .5em
     z-index: 4
     position: absolute
-    overflow: hidden
     padding: 1em
+    &:after    
+        content: ''
+        position: absolute
+        bottom: 0
+        left: 24em
+        width: 0
+        height: 0
+        border: 3em solid transparent
+        border-top-color: transparentize($neonRed,.1)
+        border-bottom: 0
+        border-left: 0
+        margin-left: -5em
+        margin-bottom: -3em
     #innerMouth
         width: 8em
         height: 10em
