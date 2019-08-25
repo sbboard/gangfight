@@ -1,6 +1,6 @@
 <template>
     <div :style="fontSize">
-        <div id="dayMode" v-if="hour<17&&hour>5">
+        <div id="dayMode" v-if="hour<17&&hour>5&&hour>30">
             <div class="fourText">
                 <h1>404</h1>
                 <h2>come back when it's darker</h2>
@@ -175,14 +175,16 @@ export default {
     overflow: hidden
     padding: 1em
     #innerMouth
-        width: 10em
+        width: 8em
         height: 10em
-        background-image: url("/assets/global/404/iconClosed.png")
+        background-image: url("/assets/global/404/iconClosedD.png")
         background-size: auto 100%
+        background-repeat: no-repeat
         float: left
         margin-right: 1em
     #innerMouth.open
-        background-image: url("/assets/global/404/iconOpen.png")
+        background-image: url("/assets/global/404/iconOpenD.png")
+        background-repeat: no-repeat
     .hidden
         display: none
     &.hidden
