@@ -11,10 +11,11 @@
             <div id="cityBlues"></div>
         </div>
         <div id="nightMode" v-else>
+            <div id="logo">DRAKULA'S CULTURE CLUB</div>
             <div id="speechBubble" class="active">
             <div id="innerMouth"></div>
             <div id="speechProg"></div><div id="blackBox">█</div>
-            <div id="speechText" class="hidden">What's up it's me -- Dracula. Thanks for visiting my club tonight. Feel free to browse my collection of worthwhile media while you're here.</div>
+            <div id="speechText" class="hidden">What's up it's me -- Drakula. Thanks for visiting my club tonight. Feel free to browse my collection of worthwhile media while you're here.</div>
             </div>
             <div id="dracula">
                 <div id="mouth"></div>
@@ -126,6 +127,19 @@ export default {
 @import "../../css/gangColors.sass"
 @import "../../css/gangFonts.sass"
 
+#logo
+    color: $neonRed
+    width: 15em
+    display: block
+    font-size: 6em
+    left: 0
+    right: 0
+    margin: 0 auto
+    text-align: center
+    position: absolute
+    top: .5em
+    font-family: VCR
+    background-color: rgba(0,0,0,.7)
 #horizon
     background-image: url(/assets/global/homepage/rochester.png)
     width: 100%
