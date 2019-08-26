@@ -21,6 +21,12 @@
                 <div id="mouth"></div>
                 <img src="/assets/global/404/draculaSketch.png" alt="Dracula - The King of Darkness"/>
             </div>
+            <div id="gallery">
+                <div id="topRow">X X X X</div>
+                <div id="innerBox">
+                    x
+                </div>
+            </div>
             <div id="horizon"></div>
             <div id="blackness"></div>
             <img id="moon" src="/assets/global/404/moon.png"/>
@@ -127,6 +133,24 @@ export default {
 @import "../../css/gangColors.sass"
 @import "../../css/gangFonts.sass"
 
+#gallery    
+    position: absolute
+    top: 21em
+    left: 54em
+    width: 41em
+    height: 69em
+    background-color: blue
+    #topRow
+        height: 6em
+        display: flex
+        justify-content: space-around
+        align-items: center
+    #innerBox    
+        background-color: red
+        height: 62em
+        width: 39em
+        display: block
+        margin: 0 auto
 #logo
     color: $neonRed
     width: 18em
@@ -137,7 +161,7 @@ export default {
     margin: 0 auto
     text-align: center
     position: absolute
-    top: .5em
+    top: 3em
     font-family: VCR
     background-color: rgba(0,0,0,.7)
 #horizon
