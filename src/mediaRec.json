@@ -1,42 +1,45 @@
 {  
-    "game":[
+    "media":[
         {
             "name":"Hamtaro Ham-Hams Unite",
             "creator":"",
             "pic":"",
             "desc":"",
-            "year":2001
+            "year":2001,
+            "category":"game"
         },
         {
             "name":"Kingdom Hearts Series",
             "creator":"Tetsuya Nomura",
             "pic":"",
             "desc":"",
-            "year":2002
+            "year":2002,
+            "category":"game"
         },
         {
             "name":"Sin & Punishment Series",
             "creator":"",
             "pic":"",
             "desc":"",
-            "year":2000
+            "year":2000,
+            "category":"game"
         },
         {
             "name":"Chibi Robo",
             "creator":"",
             "pic":"",
             "desc":"",
-            "year":2005
-        }
-    ],
-    "video":[
+            "year":2005,
+            "category":"game"
+        },
         {
             "name":"Two Sisters Ep 15 - 18",
             "creator":"OlafVids",
             "pic":"",
             "desc":"",
             "year":2014,
-            "url":""
+            "url":"",
+            "category":"video"
         },
         {
             "name":"Dragon Quest XI: The Kotaku Review",
@@ -44,7 +47,8 @@
             "pic":"",
             "desc":"",
             "year":2018,
-            "url":""
+            "url":"",
+            "category":"video"
         },
         {
             "name":"SHUT UP ABOUT PLOT HOLES",
@@ -52,7 +56,8 @@
             "pic":"",
             "desc":"",
             "year":2018,
-            "url":""
+            "url":"",
+            "category":"video"
         },
         {
             "name":"Sinistar or: How to Play Games Wrong",
@@ -60,37 +65,40 @@
             "pic":"",
             "desc":"",
             "year":2018,
-            "url":""
-        }
-    ],
-    "music":[
+            "url":"",
+            "category":"video"
+        },
         {
             "name":"To Pimp a Butterfly",
             "creator":"Kendrick Lamar",
             "pic":"",
             "desc":"",
-            "year":2015
+            "year":2015,
+            "category":"music"
         },
         {
             "name":"Virtue",
             "creator":"The Voidz",
             "pic":"",
             "desc":"",
-            "year":2018
+            "year":2018,
+            "category":"music"
         },
         {
             "name":"Teens of Denial",
             "creator":"Car Seat Headrest",
             "pic":"",
             "desc":"",
-            "year":2016
+            "year":2016,
+            "category":"music"
         },
         {
             "name":"Dirty Computer",
             "creator":"Janelle Monáe",
             "pic":"",
             "desc":"",
-            "year":2018
+            "year":2018,
+            "category":"music"
         }
     ]
  }

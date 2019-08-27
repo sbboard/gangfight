@@ -26,49 +26,22 @@
                 <div id="boxRipple"></div>
                 <div id="innerBox">
                     <ul>
-                        <li>ok</li>
-                        <li>ok</li>
-                        <li>ok</li>
-                        <li>ok</li>
-                        <li>ok</li>
-                        <li>ok</li>
-                        <li>ok</li>
-                        <li>ok</li>
-                        <li>ok</li>
-                        <li>ok</li>
-                        <li>ok</li>
-                        <li>ok</li>
-                        <li>ok</li>
-                        <li>ok</li>
-                        <li>ok</li>
-                        <li>ok</li>
-                        <li>ok</li>
-                        <li>ok</li>
-                        <li>ok</li>
-                        <li>ok</li>
-                        <li>ok</li>
-                        <li>ok</li>
-                        <li>ok</li>
-                        <li>ok</li>
-                        <li>ok</li>
-                        <li>ok</li>
-                        <li>ok</li>
-                        <li>ok</li>
-                        <li>ok</li>
-                        <li>ok</li>
-                        <li>ok</li>
-                        <li>ok</li>
+                        <li v-for="(items,id) in sortByYear(cat)" :key="`${id}`">
+                            {{items.name}}
+                        </li>
                     </ul>
                 </div>
-                <div id="topRow">
+                <div id="topRow"> 
+                    <!--this is a secret row-->
                     <img src="/assets/global/404/pmsprite.png">
                     <img src="/assets/global/404/pmsprite.png">
                     <img src="/assets/global/404/pmsprite.png">
                 </div>
                 <div id="iconsRow">
-                    <img src="/assets/global/404/pmsprite.png">
-                    <img src="/assets/global/404/pmsprite.png">
-                    <img src="/assets/global/404/pmsprite.png">
+                    <img @click="changeCat('video')" src="/assets/global/404/pmsprite.png">
+                    <img @click="changeCat('music')" src="/assets/global/404/pmsprite.png">
+                    <img @click="changeCat('game')" src="/assets/global/404/pmsprite.png">
+                    <img @click="changeCat('')" src="/assets/global/404/pmsprite.png">
                 </div>
             </div>
             <div id="horizon"></div>
@@ -80,12 +53,17 @@
 </template>
 
 <script>
+import media from '../../mediaRec.json'
+
 export default {
     name: 'DraculaCultureClub',
     data(){
         return{
             randoNum: 0,
-            hour: 0
+            hour: 0,
+            mediaGallery: media.media,
+            selected: "",
+            cat: ""
         }
     },
     created(){
@@ -97,6 +75,23 @@ export default {
     computed: {
         fontSize(){
             return {fontSize: '1'+this.$store.getters.getTaller}
+        },
+    },
+    methods:{
+        sortByYear(category){
+            let newGall = []
+            for(let i=0;i<this.mediaGallery.length;i++){
+                if(this.mediaGallery[i].category.includes(category)){
+                    newGall.push(this.mediaGallery[i])
+                }
+            }
+            newGall.sort(function(a,b){
+                return b.year - a.year;
+            })
+            return newGall
+        },
+        changeCat(category){
+            this.cat = category
         }
     },
     mounted(){
