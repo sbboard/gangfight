@@ -22,17 +22,12 @@
                 <img src="/assets/global/404/draculaSketch.png" alt="Dracula - The King of Darkness"/>
             </div>
             <div id="gallery">
+                <div id="innerBox">
+                </div>
                 <div id="topRow">
                     <img src="/assets/global/404/pmsprite.png">
                     <img src="/assets/global/404/pmsprite.png">
                     <img src="/assets/global/404/pmsprite.png">
-                </div>
-                <div id="innerBox">
-                    <ul>
-                        <li>po</li>
-                        <li>po</li>
-                        <li>po</li>
-                    </ul>
                 </div>
             </div>
             <div id="horizon"></div>
@@ -143,9 +138,9 @@ export default {
 
 #gallery    
     position: absolute
-    top: 36em
-    left: 54em
-    width: 39em
+    bottom: 10em
+    left: 53em
+    width: 41em
     padding: 1em 1em
     #topRow
         display: flex
@@ -154,18 +149,20 @@ export default {
         img
             max-height: 10em
             cursor: pointer
-            margin: 0 0 1em 0
+            margin: 2em 0 0 0
     #innerBox    
         background-color: red
         display: block
         overflow: overlay
-        max-height: 14em
-        font-size: 3em
+        max-height: 34.5em
+        font-size: 2em
         margin: 0 auto
         ul
             li
                 padding: .25em .5em
-                border-bottom: 1px solid black
+                cursor: pointer
+                &:hover
+                    background-color: pink
 #logo
     color: $neonRed
     width: 18em
@@ -176,7 +173,7 @@ export default {
     margin: 0 auto
     text-align: center
     position: absolute
-    top: 3em
+    top: .25em
     font-family: VCR
     background-color: rgba(0,0,0,.7)
 #horizon
@@ -219,7 +216,7 @@ export default {
     cursor: pointer
     background-color: transparentize($neonRed,.1)
     width: 45em
-    top: 21em
+    top: 8em
     left: 5em
     border-radius: .5em
     z-index: 4
