@@ -13,9 +13,10 @@
         <div id="nightMode" v-else>
             <div id="logo">404 DRAKULA'S CULTURE CLUB</div>
             <div id="speechBubble" class="active">
-            <div id="innerMouth"></div>
-            <div id="speechProg"></div><div id="blackBox">█</div>
-            <div id="speechText" class="hidden">What's up it's me -- Drakula. Thanks for visiting my club tonight. Feel free to browse my collection of worthwhile media while you're here.</div>
+                <div id="innerMouth"></div>
+                <div id="speechProg"></div><div id="blackBox">█</div>
+                <div id="speechText" class="hidden">What's up it's me -- Drakula. Thanks for visiting my club tonight. Feel free to browse my collection of worthwhile media while you're here.</div>
+                <div id="tailBorder"></div>
             </div>
             <div id="dracula">
                 <div id="mouth"></div>
@@ -215,6 +216,7 @@ export default {
         img
             pointer-events: all
             cursor: pointer
+            transform: skewY(10deg)
     #innerBox        
         display: block
         overflow: auto
@@ -222,6 +224,8 @@ export default {
         font-size: 2em
         margin: 0 auto
         padding-bottom: 1.75em
+        @include boxGlow($neonBlue)
+        border: 1px solid $neonBlue
         &::-webkit-scrollbar 
             width: .75em
         &::-webkit-scrollbar-track
@@ -251,6 +255,8 @@ export default {
     top: .25em
     font-family: VCR
     background-color: rgba(0,0,0,.7)
+    border: 1px solid $neonRed
+    @include boxGlow($neonRed)
 #horizon
     background-image: url(/assets/global/homepage/rochester.png)
     width: 100%
@@ -286,11 +292,28 @@ export default {
     top: 0
     background-image: linear-gradient(#350000, #ff0076)
     z-index: -3
-
+#tailBorder
+    position: absolute
+    top: 12em
+    z-index: 0
+    left: -.125em
+    &:after    
+        content: ''
+        position: absolute
+        bottom: 0
+        left: 24em
+        width: 0
+        height: 0
+        border: 3.5em solid transparent
+        border-top-color: $neonBlue
+        border-bottom: 0
+        border-left: 0
+        margin-left: -5.125em
+        margin-bottom: -3.5em
 #speechBubble
     cursor: pointer
-    background-color: transparentize($neonBlue,.1)
-    color: white
+    //background-color: transparentize($neonBlue,.1)
+    //color: white
     width: 45em
     border-radius: .5em
     top: 13em
@@ -298,6 +321,10 @@ export default {
     z-index: 4
     position: absolute
     padding: 1em
+    color: $neonBlue
+    background-color: black
+    border: 1px solid $neonBlue
+    @include boxGlow($neonBlue)
     &:after    
         content: ''
         position: absolute
@@ -306,7 +333,7 @@ export default {
         width: 0
         height: 0
         border: 3em solid transparent
-        border-top-color: $neonBlue
+        border-top-color: black
         border-bottom: 0
         border-left: 0
         margin-left: -5em
@@ -314,13 +341,13 @@ export default {
     #innerMouth
         width: 8em
         height: 10em
-        background-image: url("/assets/global/404/iconClosedD.png")
+        background-image: url("/assets/global/404/iconClosedD2.png")
         background-size: auto 100%
         background-repeat: no-repeat
         float: left
         margin-right: 1em
     #innerMouth.open
-        background-image: url("/assets/global/404/iconOpenD.png")
+        background-image: url("/assets/global/404/iconOpenD2.png")
         background-repeat: no-repeat
     .hidden
         display: none
