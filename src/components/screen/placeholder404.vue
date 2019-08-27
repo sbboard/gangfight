@@ -64,6 +64,11 @@
                     <img src="/assets/global/404/pmsprite.png">
                     <img src="/assets/global/404/pmsprite.png">
                 </div>
+                <div id="iconsRow">
+                    <img src="/assets/global/404/pmsprite.png">
+                    <img src="/assets/global/404/pmsprite.png">
+                    <img src="/assets/global/404/pmsprite.png">
+                </div>
             </div>
             <div id="horizon"></div>
             <div id="blackness"></div>
@@ -192,10 +197,21 @@ export default {
         display: flex
         justify-content: space-evenly
         align-items: center
+        pointer-events: none
+        opacity: 0
         img
             max-height: 10em
-            cursor: pointer
             margin: 2em 0 0 0
+    #iconsRow
+        @extend #topRow
+        position: absolute
+        z-index: 3
+        bottom: 7em
+        width: 100%
+        opacity: 1
+        img
+            pointer-events: all
+            cursor: pointer
     #innerBox        
         background-color: red
         display: block
