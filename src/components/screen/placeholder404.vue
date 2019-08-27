@@ -11,7 +11,7 @@
             <div id="cityBlues"></div>
         </div>
         <div id="nightMode" v-else>
-            <div id="logo">404: DRAKULA'S CULTURE CLUB</div>
+            <div id="logo">404 DRAKULA'S CULTURE CLUB</div>
             <div id="speechBubble" class="active">
             <div id="innerMouth"></div>
             <div id="speechProg"></div><div id="blackBox">█</div>
@@ -22,9 +22,17 @@
                 <img src="/assets/global/404/draculaSketch.png" alt="Dracula - The King of Darkness"/>
             </div>
             <div id="gallery">
-                <div id="topRow">X X X X</div>
+                <div id="topRow">
+                    <img src="/assets/global/404/pmsprite.png">
+                    <img src="/assets/global/404/pmsprite.png">
+                    <img src="/assets/global/404/pmsprite.png">
+                </div>
                 <div id="innerBox">
-                    x
+                    <ul>
+                        <li>po</li>
+                        <li>po</li>
+                        <li>po</li>
+                    </ul>
                 </div>
             </div>
             <div id="horizon"></div>
@@ -135,22 +143,29 @@ export default {
 
 #gallery    
     position: absolute
-    top: 21em
+    top: 36em
     left: 54em
-    width: 41em
-    height: 69em
-    background-color: blue
+    width: 39em
+    padding: 1em 1em
     #topRow
-        height: 6em
         display: flex
-        justify-content: space-around
+        justify-content: space-evenly
         align-items: center
+        img
+            max-height: 10em
+            cursor: pointer
+            margin: 0 0 1em 0
     #innerBox    
         background-color: red
-        height: 62em
-        width: 39em
         display: block
+        overflow: overlay
+        max-height: 14em
+        font-size: 3em
         margin: 0 auto
+        ul
+            li
+                padding: .25em .5em
+                border-bottom: 1px solid black
 #logo
     color: $neonRed
     width: 18em
