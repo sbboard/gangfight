@@ -184,6 +184,7 @@ export default {
 @import "../../css/gangFonts.sass"
 
 #mediaDisplay
+    color: $neonBlue
     padding: .5em
     h1
         text-align: center
@@ -220,7 +221,7 @@ export default {
     padding: 1em 1em
     transform: skewY(-6deg)
     font-family: VCR
-    color: $neonBlue
+    color: $neonGreen
     #topRow
         display: flex
         justify-content: space-evenly
@@ -248,8 +249,8 @@ export default {
         font-size: 2em
         margin: 0 auto
         padding-bottom: 1.75em
-        @include boxGlow($neonBlue)
-        border: 1px solid $neonBlue
+        @include boxGlow($neonGreen)
+        border: 1px solid $neonGreen
         &::-webkit-scrollbar 
             width: .75em
         &::-webkit-scrollbar-track
