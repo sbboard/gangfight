@@ -25,11 +25,14 @@
             <div id="gallery">
                 <div id="boxRipple"></div>
                 <div id="innerBox">
-                    <ul>
-                        <li v-for="(items,id) in sortByYear(cat)" :key="`${id}`">
+                    <ul v-if="selected==''">
+                        <li v-for="(items,id) in sortByYear(cat)" :key="`${id}`" @click="changeSelected(items.name)">
                             {{items.name}}
                         </li>
                     </ul>
+                    <div id="mediaDisplay" v-else>
+                        therpay
+                    </div>
                 </div>
                 <div id="topRow"> 
                     <!--this is a secret row-->
@@ -92,6 +95,10 @@ export default {
         },
         changeCat(category){
             this.cat = category
+            this.selected = ""
+        },
+        changeSelected(select){
+            this.selected = select
         }
     },
     mounted(){
