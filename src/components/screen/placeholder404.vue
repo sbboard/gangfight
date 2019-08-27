@@ -186,6 +186,7 @@ export default {
     pointer-events: none
     z-index: 2
     background-size: 100% 100%
+    display: none
 #gallery    
     position: absolute
     bottom: 5.75em
@@ -193,6 +194,8 @@ export default {
     width: 41em
     padding: 1em 1em
     transform: skewY(-6deg)
+    font-family: VCR
+    color: $neonBlue
     #topRow
         display: flex
         justify-content: space-evenly
@@ -213,19 +216,28 @@ export default {
             pointer-events: all
             cursor: pointer
     #innerBox        
-        background-color: red
         display: block
-        overflow: overlay
+        overflow: auto
         max-height: 33.5em
         font-size: 2em
         margin: 0 auto
         padding-bottom: 1.75em
+        &::-webkit-scrollbar 
+            width: .75em
+        &::-webkit-scrollbar-track
+            background: $lightNeonBlue
+        &::-webkit-scrollbar-thumb
+            background: $neonBlue
+        &::-webkit-scrollbar-thumb:hover
+            background: darken($neonBlue,20)
         ul
             li
                 padding: .25em .5em
                 cursor: pointer
+                background-color: rgba(0,0,0,.7)
                 &:hover
-                    background-color: pink
+                    background-color: $neonBlue
+                    color: black
 #logo
     color: $neonRed
     width: 18em
@@ -277,11 +289,12 @@ export default {
 
 #speechBubble
     cursor: pointer
-    background-color: transparentize($neonRed,.1)
+    background-color: transparentize($neonBlue,.1)
+    color: white
     width: 45em
+    border-radius: .5em
     top: 13em
     left: 5em
-    border-radius: .5em
     z-index: 4
     position: absolute
     padding: 1em
@@ -293,7 +306,7 @@ export default {
         width: 0
         height: 0
         border: 3em solid transparent
-        border-top-color: transparentize($neonRed,.1)
+        border-top-color: $neonBlue
         border-bottom: 0
         border-left: 0
         margin-left: -5em
@@ -317,13 +330,11 @@ export default {
         display: inline
         font-size: 2em
         font-family: Yantramanav
-        color: white
     #speechProg.hidden
         display: none
     #blackBox
         display: inline
         font-size: 2em
-        color: white
     #blackBox.hidden
         display: none
     #speechText
