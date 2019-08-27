@@ -22,6 +22,7 @@
                 <img src="/assets/global/404/draculaSketch.png" alt="Dracula - The King of Darkness"/>
             </div>
             <div id="gallery">
+                <div id="boxRipple"></div>
                 <div id="innerBox">
                     <ul>
                         <li>ok</li>
@@ -170,9 +171,19 @@ export default {
 @import "../../css/gangColors.sass"
 @import "../../css/gangFonts.sass"
 
+#boxRipple
+    background-image: url("/assets/global/404/ripple.png")
+    height: 4em
+    width: 100%
+    bottom: 12.77em
+    background-repeat: no-repeat
+    position: absolute
+    pointer-events: none
+    z-index: 2
+    background-size: 100% 100%
 #gallery    
     position: absolute
-    bottom: 9em
+    bottom: 5.75em
     left: 53em
     width: 41em
     padding: 1em 1em
@@ -192,6 +203,7 @@ export default {
         max-height: 33.5em
         font-size: 2em
         margin: 0 auto
+        padding-bottom: 1.75em
         ul
             li
                 padding: .25em .5em
