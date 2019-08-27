@@ -23,6 +23,40 @@
             </div>
             <div id="gallery">
                 <div id="innerBox">
+                    <ul>
+                        <li>ok</li>
+                        <li>ok</li>
+                        <li>ok</li>
+                        <li>ok</li>
+                        <li>ok</li>
+                        <li>ok</li>
+                        <li>ok</li>
+                        <li>ok</li>
+                        <li>ok</li>
+                        <li>ok</li>
+                        <li>ok</li>
+                        <li>ok</li>
+                        <li>ok</li>
+                        <li>ok</li>
+                        <li>ok</li>
+                        <li>ok</li>
+                        <li>ok</li>
+                        <li>ok</li>
+                        <li>ok</li>
+                        <li>ok</li>
+                        <li>ok</li>
+                        <li>ok</li>
+                        <li>ok</li>
+                        <li>ok</li>
+                        <li>ok</li>
+                        <li>ok</li>
+                        <li>ok</li>
+                        <li>ok</li>
+                        <li>ok</li>
+                        <li>ok</li>
+                        <li>ok</li>
+                        <li>ok</li>
+                    </ul>
                 </div>
                 <div id="topRow">
                     <img src="/assets/global/404/pmsprite.png">
@@ -138,10 +172,11 @@ export default {
 
 #gallery    
     position: absolute
-    bottom: 10em
+    bottom: 9em
     left: 53em
     width: 41em
     padding: 1em 1em
+    transform: skewY(-6deg)
     #topRow
         display: flex
         justify-content: space-evenly
@@ -150,11 +185,11 @@ export default {
             max-height: 10em
             cursor: pointer
             margin: 2em 0 0 0
-    #innerBox    
+    #innerBox        
         background-color: red
         display: block
         overflow: overlay
-        max-height: 34.5em
+        max-height: 33.5em
         font-size: 2em
         margin: 0 auto
         ul
@@ -216,7 +251,7 @@ export default {
     cursor: pointer
     background-color: transparentize($neonRed,.1)
     width: 45em
-    top: 8em
+    top: 13em
     left: 5em
     border-radius: .5em
     z-index: 4
