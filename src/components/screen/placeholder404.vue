@@ -26,12 +26,16 @@
                 <div id="boxRipple"></div>
                 <div id="innerBox">
                     <ul v-if="selected==''">
-                        <li v-for="(items,id) in sortByYear(cat)" :key="`${id}`" @click="changeSelected(items.name)">
+                        <li v-for="(items,id) in sortByYear(cat)" :key="`${id}`" @click="changeSelected(items)">
                             {{items.name}}
                         </li>
                     </ul>
                     <div id="mediaDisplay" v-else>
-                        therpay
+                        <h1>{{selected.name}}</h1>
+                        <h2>{{selected.creator}}</h2>
+                        <h3>{{selected.year}}</h3>
+                        <img class="mediaPic" :src="selected.pic"/>
+                        <p>{{selected.desc}}</p>
                     </div>
                 </div>
                 <div id="topRow"> 
@@ -179,6 +183,24 @@ export default {
 @import "../../css/gangColors.sass"
 @import "../../css/gangFonts.sass"
 
+#mediaDisplay
+    padding: .5em
+    h1
+        text-align: center
+        font-size: 1.5em
+        color: $neonRed
+    h2
+        text-align: center
+        font-size: 1.25em
+    h3
+        text-align: center
+        font-size: 1.25em
+    .mediaPic
+        margin: .5em auto
+        width: 50%
+        height: auto
+        text-align: center
+        display: block
 #boxRipple
     background-image: url("/assets/global/404/ripple.png")
     height: 4em
