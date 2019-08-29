@@ -46,8 +46,8 @@
                 </div>
                 <div id="iconsRow">
                     <img @click="changeCat('video')" src="/assets/global/404/pmsprite.png">
-                    <img @click="changeCat('music')" src="/assets/global/404/pmsprite.png">
-                    <img @click="changeCat('game')" src="/assets/global/404/pmsprite.png">
+                    <img @click="changeCat('music')" src="/assets/global/404/audioSec.png">
+                    <img @click="changeCat('game')" src="/assets/global/404/gameSec.png">
                     <img @click="changeCat('')" src="/assets/global/404/pmsprite.png">
                 </div>
             </div>
@@ -241,7 +241,9 @@ export default {
         img
             pointer-events: all
             cursor: pointer
-            transform: skewY(10deg)
+            transform: skewY(10deg)    
+            width: 8em
+            height: 10em
     #innerBox        
         display: block
         overflow: auto
@@ -254,11 +256,11 @@ export default {
         &::-webkit-scrollbar 
             width: .75em
         &::-webkit-scrollbar-track
-            background: $lightNeonBlue
+            background: $lightNeonGreen
         &::-webkit-scrollbar-thumb
-            background: $neonBlue
+            background: $neonGreen
         &::-webkit-scrollbar-thumb:hover
-            background: darken($neonBlue,20)
+            background: darken($neonGreen,20)
         ul
             li
                 padding: .25em .5em
