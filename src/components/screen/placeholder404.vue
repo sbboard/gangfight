@@ -244,6 +244,8 @@ export default {
             transform: skewY(10deg)    
             width: 8em
             height: 10em
+            &:hover
+                animation: dip .5s alternate infinite
     #innerBox        
         display: block
         overflow: auto
@@ -416,6 +418,11 @@ export default {
         bottom: 8em
     100%
         bottom: 13em
+@keyframes dip
+    0%
+        margin-top: 2em
+    100%
+        margin-top: 0
 #dayMode
     height: 100%
     width: 100%
