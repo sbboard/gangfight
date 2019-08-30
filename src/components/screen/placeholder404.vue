@@ -252,7 +252,7 @@ export default {
         max-height: 33.5em
         font-size: 2em
         margin: 0 auto
-        padding-bottom: 1.75em
+        padding-bottom: 2em
         @include boxGlow($neonGreen)
         border: 1px solid $neonGreen
         &::-webkit-scrollbar 
