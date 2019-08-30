@@ -402,6 +402,7 @@ export default {
     animation: dracHover 2.5s alternate infinite
     img
         width: 100%
+        filter: drop-shadow(0px 1em 3em transparentize($neonRed,.5))
     #mouth
         background-image: url(/assets/global/404/closedMouthSketch2.png)
         width: 6.35em
@@ -411,6 +412,7 @@ export default {
         top: 32em
         left: 10em
         background-size: 100% auto
+        z-index: 1
     #mouth.open
         background-image: url("/assets/global/404/openMouthSketch2.png")
 @keyframes dracHover
