@@ -20,7 +20,7 @@
             </div>
             <div id="dracula">
                 <div id="mouth"></div>
-                <img src="/assets/global/404/draculaSketch.png" alt="Dracula - The King of Darkness"/>
+                <img src="/assets/global/404/draculaa.png" alt="Dracula - The King of Darkness"/>
             </div>
             <div id="gallery">
                 <div id="boxRipple"></div>
@@ -45,9 +45,9 @@
                     <img src="/assets/global/404/pmsprite.png">
                 </div>
                 <div id="iconsRow">
-                    <img @click="changeCat('video')" src="/assets/global/404/pmsprite.png">
+                    <img @click="changeCat('video')" src="/assets/global/404/vhs.png">
                     <img @click="changeCat('music')" src="/assets/global/404/audioSec.png">
-                    <img @click="changeCat('game')" src="/assets/global/404/gameSec.png">
+                    <img @click="changeCat('game')" src="/assets/global/404/gbb.png">
                     <img @click="changeCat('')" src="/assets/global/404/pmsprite.png">
                 </div>
             </div>
@@ -403,16 +403,16 @@ export default {
     img
         width: 100%
     #mouth
-        background-image: url(/assets/global/404/closedMouthSketch.png)
-        width: 7.35em
+        background-image: url(/assets/global/404/closedMouthSketch2.png)
+        width: 6.35em
         position: absolute
         background-repeat: no-repeat
         height: 9em
-        top: 31.5em
-        left: 9.5em
+        top: 32em
+        left: 10em
         background-size: 100% auto
     #mouth.open
-        background-image: url("/assets/global/404/openMouthSketch.png")
+        background-image: url("/assets/global/404/openMouthSketch2.png")
 @keyframes dracHover
     0%
         bottom: 8em
