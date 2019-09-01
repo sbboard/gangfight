@@ -102,7 +102,7 @@
       <div id="grids">
         <div class="grid">
           <div class="col-8 bottomRouteName"><span>{{this.$router.currentRoute.name}}</span></div>
-          <div class="col-4 bottomRight"><div><span class="bottomEng">© 2012 - {{futureYear}} Buff</span><br/><span class="bottomJP">イルミナティの公式メンバー</span></div></div>
+          <div class="col-4 bottomRight"><div><span class="bottomEng">© 2012 - {{futureYear}}</span><br/><span class="bottomJP">イルミナティの公式メンバー</span></div></div>
         </div>
         <div class="grid">
           <div class="col-12 personInfo">{{month}}/{{day}}/{{futureYear}} {{hour}}:{{minute}}{{AMPM}}</div>
