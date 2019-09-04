@@ -4,7 +4,7 @@
             "name":"Space☆Dandy",
             "creator":"",
             "pic":"spaceDandy.jpg",
-            "desc":"",
+            "desc":"Space Dandy is one of the coolest things I’ve ever seen. Every episode is a 20 minute high-concept science-fiction epic viewed through the lense of anime Johnny Bravo. It’s surreal, it’s funny, it’s beautiful. Check it out, please.",
             "year":2014,
             "category":"video"
         },
@@ -38,7 +38,7 @@
             "pic":"olaf.jpg",
             "desc":"",
             "year":2014,
-            "url":"",
+            "url":"https://www.youtube.com/watch?v=ZynQljhcRJ4",
             "category":"video"
         },
         {
@@ -47,7 +47,7 @@
             "pic":"sinistar.jpg",
             "desc":"",
             "year":2018,
-            "url":"",
+            "url":"https://www.youtube.com/watch?v=OFbhDs_8k1A",
             "category":"video"
         },
         {
@@ -64,7 +64,8 @@
             "pic":"virtue.png",
             "desc":"",
             "year":2018,
-            "category":"music"
+            "category":"music",
+            "url":"https://www.youtube.com/watch?v=qgxWWBqvQgA"
         },
         {
             "name":"Dirty Computer",
@@ -72,7 +73,8 @@
             "pic":"dirtyComputer.jpg",
             "desc":"",
             "year":2018,
-            "category":"music"
+            "category":"music",
+            "url":"https://www.youtube.com/watch?v=jdH2Sy-BlNE"
         }
     ]
  }

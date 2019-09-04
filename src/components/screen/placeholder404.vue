@@ -35,6 +35,9 @@
                         <h2>{{selected.creator}}</h2>
                         <h3>{{selected.year}}</h3>
                         <img class="mediaPic" :src="'/assets/global/404/media/' + selected.pic"/>
+                        <template v-if="selected.hasOwnProperty('url')">
+                            <a :href="selected.url">Link</a>
+                        </template>
                         <p>{{selected.desc}}</p>
                     </div>
                 </div>
