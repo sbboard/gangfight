@@ -3,143 +3,7 @@
         {
             "name":"Space☆Dandy",
             "creator":"",
-            "pic":"",
-            "desc":"",
-            "year":2014,
-            "category":"video"
-        },
-        {
-            "name":"Space☆Dandy",
-            "creator":"",
-            "pic":"",
-            "desc":"",
-            "year":2014,
-            "category":"video"
-        },
-        {
-            "name":"Space☆Dandy",
-            "creator":"",
-            "pic":"",
-            "desc":"",
-            "year":2014,
-            "category":"video"
-        },
-        {
-            "name":"Space☆Dandy",
-            "creator":"",
-            "pic":"",
-            "desc":"",
-            "year":2014,
-            "category":"video"
-        },
-        {
-            "name":"Space☆Dandy",
-            "creator":"",
-            "pic":"",
-            "desc":"",
-            "year":2014,
-            "category":"video"
-        },
-        {
-            "name":"Space☆Dandy",
-            "creator":"",
-            "pic":"",
-            "desc":"",
-            "year":2014,
-            "category":"video"
-        },
-        {
-            "name":"Space☆Dandy",
-            "creator":"",
-            "pic":"",
-            "desc":"",
-            "year":2014,
-            "category":"video"
-        },
-        {
-            "name":"Space☆Dandy",
-            "creator":"",
-            "pic":"",
-            "desc":"",
-            "year":2014,
-            "category":"video"
-        },
-        {
-            "name":"Space☆Dandy",
-            "creator":"",
-            "pic":"",
-            "desc":"",
-            "year":2014,
-            "category":"video"
-        },
-        {
-            "name":"Space☆Dandy",
-            "creator":"",
-            "pic":"",
-            "desc":"",
-            "year":2014,
-            "category":"video"
-        },
-        {
-            "name":"Space☆Dandy",
-            "creator":"",
-            "pic":"",
-            "desc":"",
-            "year":2014,
-            "category":"video"
-        },
-        {
-            "name":"Space☆Dandy",
-            "creator":"",
-            "pic":"",
-            "desc":"",
-            "year":2014,
-            "category":"video"
-        },
-        {
-            "name":"Space☆Dandy",
-            "creator":"",
-            "pic":"",
-            "desc":"",
-            "year":2014,
-            "category":"video"
-        },
-        {
-            "name":"Space☆Dandy",
-            "creator":"",
-            "pic":"",
-            "desc":"",
-            "year":2014,
-            "category":"video"
-        },
-        {
-            "name":"Space☆Dandy",
-            "creator":"",
-            "pic":"",
-            "desc":"",
-            "year":2014,
-            "category":"video"
-        },
-        {
-            "name":"Space☆Dandy",
-            "creator":"",
-            "pic":"",
-            "desc":"",
-            "year":2014,
-            "category":"video"
-        },
-        {
-            "name":"Space☆Dandy",
-            "creator":"",
-            "pic":"",
-            "desc":"",
-            "year":2014,
-            "category":"video"
-        },
-        {
-            "name":"Space☆Dandy",
-            "creator":"",
-            "pic":"",
+            "pic":"spaceDandy.jpg",
             "desc":"",
             "year":2014,
             "category":"video"
@@ -147,23 +11,15 @@
         {
             "name":"Hamtaro Ham-Hams Unite",
             "creator":"",
-            "pic":"",
+            "pic":"hamtaro.jpg",
             "desc":"",
             "year":2001,
             "category":"game"
         },
         {
-            "name":"Kingdom Hearts Series",
-            "creator":"Tetsuya Nomura",
-            "pic":"",
-            "desc":"",
-            "year":2002,
-            "category":"game"
-        },
-        {
-            "name":"Sin & Punishment Series",
+            "name":"Sin & Punishment",
             "creator":"",
-            "pic":"",
+            "pic":"sinPunish.jpg",
             "desc":"",
             "year":2000,
             "category":"game"
@@ -171,7 +27,7 @@
         {
             "name":"Chibi Robo",
             "creator":"",
-            "pic":"",
+            "pic":"chibiRobo.jpg",
             "desc":"",
             "year":2005,
             "category":"game"
@@ -179,34 +35,16 @@
         {
             "name":"Two Sisters Ep 15 - 18",
             "creator":"OlafVids",
-            "pic":"",
+            "pic":"olaf.jpg",
             "desc":"",
             "year":2014,
             "url":"",
             "category":"video"
         },
         {
-            "name":"Dragon Quest XI: The Kotaku Review",
-            "creator":"Tim Rogers",
-            "pic":"",
-            "desc":"",
-            "year":2018,
-            "url":"",
-            "category":"video"
-        },
-        {
-            "name":"SHUT UP ABOUT PLOT HOLES",
-            "creator":"Patrick Willems",
-            "pic":"",
-            "desc":"",
-            "year":2018,
-            "url":"",
-            "category":"video"
-        },
-        {
             "name":"Sinistar or: How to Play Games Wrong",
             "creator":"Big Joel",
-            "pic":"",
+            "pic":"sinistar.jpg",
             "desc":"",
             "year":2018,
             "url":"",
@@ -215,7 +53,7 @@
         {
             "name":"To Pimp a Butterfly",
             "creator":"Kendrick Lamar",
-            "pic":"",
+            "pic":"pimp.png",
             "desc":"",
             "year":2015,
             "category":"music"
@@ -223,23 +61,15 @@
         {
             "name":"Virtue",
             "creator":"The Voidz",
-            "pic":"",
+            "pic":"virtue.png",
             "desc":"",
             "year":2018,
             "category":"music"
         },
         {
-            "name":"Teens of Denial",
-            "creator":"Car Seat Headrest",
-            "pic":"",
-            "desc":"",
-            "year":2016,
-            "category":"music"
-        },
-        {
             "name":"Dirty Computer",
             "creator":"Janelle Monáe",
-            "pic":"",
+            "pic":"dirtyComputer.jpg",
             "desc":"",
             "year":2018,
             "category":"music"

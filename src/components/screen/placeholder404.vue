@@ -34,7 +34,7 @@
                         <h1>{{selected.name}}</h1>
                         <h2>{{selected.creator}}</h2>
                         <h3>{{selected.year}}</h3>
-                        <img class="mediaPic" :src="selected.pic"/>
+                        <img class="mediaPic" :src="'/assets/global/404/media/' + selected.pic"/>
                         <p>{{selected.desc}}</p>
                     </div>
                 </div>
@@ -252,7 +252,7 @@ export default {
         max-height: 33.5em
         font-size: 2em
         margin: 0 auto
-        padding-bottom: 2em
+        padding-bottom: 2.5em
         @include boxGlow($neonGreen)
         border: 1px solid $neonGreen
         &::-webkit-scrollbar 
