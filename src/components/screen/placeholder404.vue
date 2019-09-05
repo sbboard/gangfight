@@ -205,6 +205,14 @@ export default {
         height: auto
         text-align: center
         display: block
+    p
+        font-family: Yantramanav
+        margin: 0 1em
+    a
+        margin: 0 auto .5em 0
+        display: block
+        text-align: center
+        color: $neonYellow
 #boxRipple
     background-image: url("/assets/global/404/ripple.png")
     height: 4em
