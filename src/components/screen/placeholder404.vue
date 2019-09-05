@@ -213,6 +213,9 @@ export default {
         display: block
         text-align: center
         color: $neonYellow
+        text-decoration: none
+        &:hover
+            text-decoration: underline
 #boxRipple
     background-image: url("/assets/global/404/ripple.png")
     height: 4em
