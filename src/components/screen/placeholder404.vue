@@ -51,7 +51,7 @@
                     <img @click="changeCat('video')" src="/assets/global/404/vhs.png">
                     <img @click="changeCat('music')" src="/assets/global/404/audioSec.png">
                     <img @click="changeCat('game')" src="/assets/global/404/gbb.png">
-                    <img @click="changeCat('')" src="/assets/global/404/pmsprite.png">
+                    <img @click="changeCat('')" src="/assets/global/404/misc.png">
                 </div>
             </div>
             <div id="horizon"></div>
@@ -269,6 +269,7 @@ export default {
         padding-bottom: 2.5em
         @include boxGlow($neonGreen)
         border: 1px solid $neonGreen
+        background-color: rgba(0,0,0,.7)
         &::-webkit-scrollbar 
             width: .75em
         &::-webkit-scrollbar-track
@@ -281,7 +282,6 @@ export default {
             li
                 padding: .25em .5em
                 cursor: pointer
-                background-color: rgba(0,0,0,.7)
                 &:hover
                     background-color: $neonBlue
                     color: black
@@ -359,7 +359,7 @@ export default {
     //color: white
     width: 45em
     border-radius: .5em
-    top: 13em
+    top: 11.5em
     left: 5em
     z-index: 4
     position: absolute
