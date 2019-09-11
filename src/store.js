@@ -5,7 +5,7 @@ Vue.use(Vuex);
 
 export const store = new Vuex.Store({
     state:{
-        fortune: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        fortune: "Challenge yourself to enjoy the exclusive flavors of Gang Fight.",
         assets: "default",
         isTaller: "vw",
         GFAPI: process.env.VUE_APP_API,

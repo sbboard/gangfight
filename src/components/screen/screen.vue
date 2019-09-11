@@ -111,7 +111,7 @@
           <div class="col-2 bottomBar">
             <div><img :src="'/assets/global/sidebar/barcodeHori.png'"/></div>
           </div>
-          <div class="col-9 bottomNamebar">bad</div>
+          <div class="col-9 bottomNamebar">77regret</div>
           <div class="col-1 firstEd"><img src="/assets/global/sidebar/1stedi.png"/></div>
         </div>
         </div>
