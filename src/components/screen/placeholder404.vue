@@ -1,6 +1,6 @@
 <template>
     <div :style="fontSize">
-        <div id="dayMode" v-if="hour<17&&hour>5">
+        <div id="dayMode" v-if="hour<18&&hour>5">
             <div class="fourText">
                 <h1>404</h1>
                 <h2>come back when it's darker</h2>
@@ -442,6 +442,16 @@ export default {
 #dayMode
     height: 100%
     width: 100%
+    h1
+        background-color: rgba(0,0,0,0.75)
+        width: 5em
+        text-align: center
+        display: block
+        padding-top: .35em
+    h2
+        background-color: rgba(0,0,0,0.75)
+        width: 10em
+        padding-bottom: 1em
 .fourText
     height: 100%
     width: 100%
