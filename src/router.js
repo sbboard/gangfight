@@ -24,12 +24,12 @@ export default new Router({
     children: [
       {
         path: "/",
-        name: "home",
+        name: "gang fight",
         component: Home
       },
       {
         path: "/about",
-        name: "about us",
+        name: "cockpit",
         component: About
       },
       {
@@ -44,7 +44,7 @@ export default new Router({
       },
       {
         path: "/comicArch",
-        name: "comics working",
+        name: "Ramen Shoppe",
         component: ComicArch
       },
       {
@@ -59,7 +59,7 @@ export default new Router({
       },
       {
         path: "*",
-        name: "404",
+        name: "Culture Club",
         component: fakeFourOFour
       },
     ]
