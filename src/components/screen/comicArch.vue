@@ -243,11 +243,12 @@ export default {
                   background-color: black
                   padding: 0 3px 0 3px
                   text-decoration: none
+                  font-size: 3em
               .subtitle
                   background-color: black
                   padding: 0 3px 0 3px
                   text-decoration: none
-                  font-size: .75em
+                  font-size: 2em
                   display: block
 @keyframes screenGlow
     0%
