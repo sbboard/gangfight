@@ -4,6 +4,14 @@
         <h1>Gang</h1> 
         <h1>Fight</h1> 
     </div>
+    <div id="shadowTheHedgehog">
+        <div class="topShadow"></div>
+        <div class="farLeft"></div>
+        <div class="midOne"></div>
+        <div class="midThree"></div>
+        <div class="midFive"></div>
+        <div class="farRight"></div>
+    </div>
     <div id="blackFilter">
     </div>
       <div id="menu">     
@@ -15,10 +23,10 @@
                       <span class="subtitle" v-if="item.subtitle != ''">{{item.subtitle}}</span>
                   </p>
                   <a :href="item.url" v-if="item.comicsArray.length < 1 || item.comicsArray[0] == ''">
-                      <img :style="blockSize" :src="'/assets/contentImages/'+item.img" :alt="item.title"/>
+                      <img :src="'/assets/contentImages/'+item.img" :alt="item.title"/>
                   </a>
                   <a v-else :href="'/comicReader/'+item._id">
-                      <img :style="blockSize" :src="'/assets/contentImages/'+item.img" :alt="item.title"/>
+                      <img :src="'/assets/contentImages/'+item.img" :alt="item.title"/>
                   </a>
               </div>
       </div>
@@ -89,6 +97,53 @@ export default {
     width: 100%
     height: 100%
     line-height: 0
+    #shadowTheHedgehog
+        opacity: .75
+        position: relative
+        z-index: 500
+        pointer-events: none
+        .shadow
+            background-color: black
+            position: absolute
+            display: block
+            transform: rotateZ(45deg)
+        .topShadow
+            background-color: black
+            position: absolute
+            display: block
+            top: 0
+            width: 100em
+            height: 11em
+        .farLeft
+            @extend .shadow
+            width: 46em
+            height: 45em
+            left: -33.5em
+            top: -12em
+        .midOne
+            @extend .shadow    
+            width: 10em
+            left: 27.5em
+            top: 1.5em
+            height: 10em
+        .midThree
+            @extend .shadow 
+            width: 25em
+            left: 37.5em
+            top: -13.5em
+            height: 25em
+        .midFive
+            @extend .shadow
+            width: 10em
+            right: 27.5em
+            top: 1.5em
+            height: 10em
+        .farRight
+            @extend .shadow
+            width: 46em
+            height: 45em
+            right: -33.5em
+            top: -12em
     #logo
         position: absolute
         z-index: 500
@@ -162,6 +217,9 @@ export default {
           height: 17.5em
           .boxWrap
               opacity: .75
+              img
+                  filter: sepia(1) hue-rotate(320deg) contrast(1.5)
+                  width: 100%
           .boxDate
               position: absolute
               bottom: 0
@@ -180,7 +238,7 @@ export default {
               z-index: 6
               pointer-events: none
               margin: .5em
-              display: none
+              display: inline-block
               .titleText
                   background-color: black
                   padding: 0 3px 0 3px
@@ -190,14 +248,7 @@ export default {
                   padding: 0 3px 0 3px
                   text-decoration: none
                   font-size: .75em
-          &:hover
-            opacity: 1
-            .titleName
-              display: inline-block
-            .subtitle
-              display: block
-            img
-              filter: brightness(.5)
+                  display: block
 @keyframes screenGlow
     0%
         opacity: .9
