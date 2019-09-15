@@ -11,6 +11,13 @@
         <div class="midThree"></div>
         <div class="midFive"></div>
         <div class="farRight"></div>
+        <div class="lightFlicker"></div>
+    </div>
+    <div id="rowOfLights">
+        <div class="lightOne"></div>
+        <div class="lightTwo"></div>
+        <div class="lightThree"></div>
+        <div class="lightFour"></div>
     </div>
     <div id="blackFilter">
     </div>
@@ -35,6 +42,8 @@
         <h1>COMIX</h1>
       </div>
       <div id="backboard"></div>
+      <div id="woodBack"></div>
+      <div id="tinRoof"></div>
       <div id="sketch">
       </div>
     </div>
@@ -97,6 +106,65 @@ export default {
     width: 100%
     height: 100%
     line-height: 0
+    #woodBack
+        position: absolute
+        top: 7.5em
+        left: 0
+        width: 76em
+        right: 0
+        height: 30em
+        margin: 0 auto
+        background-color: blue
+    #tinRoof
+        position: absolute
+        top: 7.5em
+        left: 0
+        width: 80em
+        right: 0
+        z-index: 80
+        margin: 0 auto
+        border-bottom: 2.5em solid green
+        border-left: 1.5em solid transparent
+        border-right: 1.5em solid transparent
+    #rowOfLights
+        z-index: 499
+        position: relative
+        .lightOne    
+            width: 10em
+            height: 4em
+            position: absolute
+            left: 20.75em
+            border-top-left-radius: 10em
+            border-top-right-radius: 10em
+            top: 7em
+            background-color: blue
+        .lightTwo
+            width: 10em
+            left: 34.25em
+            height: 4em
+            position: absolute
+            border-top-left-radius: 10em
+            border-top-right-radius: 10em
+            top: 7em
+            background-color: blue
+        .lightThree
+            width: 10em
+            height: 4em
+            position: absolute
+            right: 34.25em
+            border-top-left-radius: 10em
+            border-top-right-radius: 10em
+            background-color: blue
+            top: 7em
+        .lightFour  
+            width: 10em
+            height: 4em
+            position: absolute
+            right: 20.75em
+            border-top-left-radius: 10em
+            border-top-right-radius: 10em
+            background-color: blue
+            top: 7em
     #shadowTheHedgehog
         opacity: .75
         position: relative
@@ -127,10 +195,12 @@ export default {
             top: 1.5em
             height: 10em
         .midThree
-            @extend .shadow 
+            @extend .shadow     
             width: 25em
-            left: 37.5em
-            top: -13.5em
+            left: 0
+            right: 0
+            margin: 0 auto
+            top: -12.5em
             height: 25em
         .midFive
             @extend .shadow
@@ -142,8 +212,19 @@ export default {
             @extend .shadow
             width: 46em
             height: 45em
-            right: -33.5em
+            right: -32.75em
             top: -12em
+        .lightFlicker
+            width: 91em
+            height: 54em
+            background-color: black
+            position: absolute
+            top: -3em
+            right: -61.5em
+            -webkit-transform: rotateZ(45deg)
+            transform: rotateZ(45deg)
+            opacity: 0
+            //animation: lightShake 10s steps(5, start) infinite alternate-reverse
     #logo
         position: absolute
         z-index: 500
@@ -158,6 +239,7 @@ export default {
             display: block
             height: 1em
             text-transform: uppercase
+            font-family: Alien
     #blackFilter
         position: absolute
         bottom: 0
@@ -185,6 +267,7 @@ export default {
       top: 33em
       h1
         font-size: 4em
+        font-family: Alien
     #sketch
       background-image: url("/assets/global/comicArch/sketch.jpg")
       background-size: 100% 100%
@@ -257,4 +340,11 @@ export default {
         opacity: 1
     100%
         opacity: .9
+@keyframes lightShake
+    0%
+        opacity: 0
+    99%
+        opacity: 0
+    100%
+        opacity: 1
 </style>
