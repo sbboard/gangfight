@@ -1,5 +1,11 @@
 <template>
-    <div id="scene" :style="fontSize">   
+    <div id="scene" :style="fontSize">  
+    <div id="logo">
+        <h1>Gang</h1> 
+        <h1>Fight</h1> 
+    </div>
+    <div id="blackFilter">
+    </div>
       <div id="menu">     
         <div class="contentBoxes" v-for="(item, id) in theArchive" :key="`${id}`">
               <div class="boxWrap">
@@ -83,6 +89,26 @@ export default {
     width: 100%
     height: 100%
     line-height: 0
+    #logo
+        position: absolute
+        z-index: 500
+        bottom: 0
+        color: red
+        width: 25em
+        height: 21em
+        left: 8em
+        display: block
+        h1
+            font-size: 7em
+            display: block
+            height: 1em
+            text-transform: uppercase
+    #blackFilter
+        position: absolute
+        bottom: 0
+        width: 100em
+        height: 26em
+        background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,1) 90%)
     #backboard
       background-color: red
       height: 27em
