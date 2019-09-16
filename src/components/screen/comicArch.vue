@@ -1,5 +1,19 @@
 <template>
     <div id="scene" :style="fontSize">  
+        <div id="stoolGroup">
+            <div id="stoolOne">
+                <div class="seat"></div>
+                <div class="pole"></div>
+            </div>
+            <div id="stoolTwo">
+                <div class="seat"></div>
+                <div class="pole"></div>
+            </div>
+        </div>
+    <div id="tableTop"></div>
+    <div id="tableFront"></div>
+    <div id="poleLeft"></div>
+    <div id="poleRight"></div>
     <div id="logo">
         <h1>Gang</h1> 
         <h1>Fight</h1> 
@@ -107,6 +121,59 @@ export default {
 @import "../../css/gangFonts.sass"
 @import "../../css/fontawesome/css/all.css"
 
+#stoolGroup
+    position: absolute
+    bottom: 0
+    height: 21em
+    width: 53em
+    left: 47em
+    z-index: 600
+    .seat
+        height: 5em
+        width: 17em
+        border-radius: 1em
+        background-color: red
+    .pole
+        width: 4em
+        height: 16em
+        margin: 0 auto
+        background-color: yellow
+    #stoolOne
+        display: inline-block
+        height: 100%
+    #stoolTwo
+        @extend #stoolOne
+        margin-left: 4em
+#poleLeft
+    background-color: red
+    width: 4em
+    top: 37em
+    left: 12em
+    height: 35em
+    position: absolute
+#poleRight
+    @extend #poleLeft
+    left: initial
+    right: 12em
+#tableTop
+    width: 94em
+    top: 71em
+    background-color: green
+    position: absolute
+    height: 4em
+    margin: 0 auto
+    left: 0
+    right: 0
+    z-index: 400
+#tableFront
+    position: absolute
+    bottom: 0
+    background-color: blue
+    left: 0
+    right: 0
+    margin: 0 auto
+    width: 89em
+    height: 26em
 #lantern    
     position: absolute
     width: 16em
@@ -253,7 +320,7 @@ export default {
             //animation: lightShake 10s steps(5, start) infinite alternate-reverse
     #logo
         position: absolute
-        z-index: 500
+        z-index: 999
         bottom: 0
         color: red
         width: 25em
@@ -269,6 +336,7 @@ export default {
     #blackFilter
         position: absolute
         bottom: 0
+        z-index: 900
         width: 100em
         height: 26em
         background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,1) 90%)
