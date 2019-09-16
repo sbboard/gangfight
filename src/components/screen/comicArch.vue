@@ -10,6 +10,9 @@
                 <div class="pole"></div>
             </div>
         </div>
+    <div id="hangingSign">
+        <h2>私を殺して</h2>
+    </div>
     <div id="tableTop"></div>
     <div id="tableFront"></div>
     <div id="poleLeft"></div>
@@ -121,6 +124,19 @@ export default {
 @import "../../css/gangFonts.sass"
 @import "../../css/fontawesome/css/all.css"
 
+#hangingSign
+    width: 30em
+    height: 11em
+    position: absolute
+    top: 40em
+    left: 18em
+    background-color: yellow
+    display: flex
+    align-items: center
+    justify-content: center
+    h2
+        font-size: 5em
+        font-family: calig
 #stoolGroup
     position: absolute
     bottom: 0
@@ -327,6 +343,7 @@ export default {
         height: 21em
         left: 8em
         display: block
+        pointer-events: none
         h1
             font-size: 7em
             display: block
