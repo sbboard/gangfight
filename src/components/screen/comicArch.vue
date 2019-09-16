@@ -4,6 +4,11 @@
         <h1>Gang</h1> 
         <h1>Fight</h1> 
     </div>
+    <div id="lantern">
+        <h3>拉</h3>
+        <h4>麺</h4>
+        <img src="/assets/global/comicArch/lantern.png">
+    </div>
     <div id="shadowTheHedgehog">
         <div class="topShadow"></div>
         <div class="farLeft"></div>
@@ -102,6 +107,27 @@ export default {
 @import "../../css/gangFonts.sass"
 @import "../../css/fontawesome/css/all.css"
 
+#lantern    
+    position: absolute
+    width: 16em
+    top: 39em
+    right: 14em
+    pointer-events: none
+    h3    
+        font-size: 7em
+        z-index: 300
+        position: absolute
+        top: 1em
+        left: 0
+        right: 0
+        margin: 0 auto
+        text-align: center
+        font-family: topLogo
+    h4
+        @extend h3
+        top: 2em
+    img
+        width: 100%
 #scene
     width: 100%
     height: 100%
@@ -110,7 +136,7 @@ export default {
         position: absolute
         top: 7.5em
         left: 0
-        width: 76em
+        width: 78em
         right: 0
         height: 30em
         margin: 0 auto
