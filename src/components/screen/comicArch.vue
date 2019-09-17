@@ -1,5 +1,17 @@
 <template>
-    <div id="scene" :style="fontSize">  
+    <div id="scene" :style="fontSize">
+        <div id="wheel">
+            <div id="outerRim"></div>
+            <div id="onePole"></div>
+            <div id="twoPole"></div>
+            <div id="threePole"></div>
+            <div id="innerCircle"></div>
+        </div>  
+        <div id="handle">
+            <div id="topHandle"></div>
+            <div id="rightHandle"></div>
+            <div id="handleCurve"></div>
+        </div>
         <div id="stoolGroup">
             <div id="stoolOne">
                 <div class="seat"></div>
@@ -10,6 +22,14 @@
                 <div class="pole"></div>
             </div>
         </div>
+    <div id="signHooks">
+        <div id="leftHook"></div>
+        <div id="rightHook"></div>
+    </div>
+    <div id="leftPart">
+        <div id="roof"></div>
+        <div id="roofPole"></div>
+    </div>
     <div id="hangingSign">
         <h2>私を殺して</h2>
     </div>
@@ -68,6 +88,8 @@
       <div id="tinRoof"></div>
       <div id="sketch">
       </div>
+      <div id="backwall"></div>
+      <div id="rightwall"></div>
     </div>
 </template>
 
@@ -124,6 +146,134 @@ export default {
 @import "../../css/gangFonts.sass"
 @import "../../css/fontawesome/css/all.css"
 
+#wheel
+    position: absolute
+    bottom: -10em
+    right: 1em
+    z-index: 403
+    #outerRim
+        width: 29em
+        height: 29em
+        border-radius: 28em
+        border: 4em solid orange
+        z-index: 173
+        position: relative
+    #onePole
+        position: absolute
+        top: 17.5em
+        left: 2em
+        background-color: purple
+        width: 33em
+        height: 3em
+    #twoPole    
+        position: absolute
+        top: 17.5em
+        left: 2em
+        background-color: purple
+        width: 33em
+        height: 3em
+        transform: rotateZ(60deg)
+    #threePole
+        position: absolute
+        top: 17.5em
+        left: 2em
+        background-color: purple
+        width: 33em
+        height: 3em
+        transform: rotateZ(120deg)
+    #innerCircle  
+        position: absolute
+        top: 14em
+        left: 14em
+        background-color: orange
+        width: 10em
+        height: 10em
+        border-radius: 10em
+#handle
+    #handleParts
+        position: absolute
+        top: 1em
+        right: 1em
+        background-color: purple
+        height: 1em
+        width: 1em
+    #topHandle
+        @extend #handleParts
+        top: 41em
+        left: 88em
+        height: 7em
+        width: 9em
+        border-top-right-radius: 3em
+        transform: skewY(39deg)
+    #rightHandle
+        @extend #handleParts
+        top: 47em
+        right: 3.1em
+        height: 26em
+        width: 5.5em
+    #handleCurve
+        @extend #handleParts
+        border-top: 1em solid purple
+        border-right: 1em solid purple
+        border-radius: 2em
+        right: 8em
+        height: 29em
+        width: 4em
+        background-color: inherit
+        top: 45em
+        transform: skewY(39deg)
+#leftPart
+    #roof    
+        width: 12em
+        position: absolute
+        height: 2em
+        left: 1em
+        transform: rotateZ(-28deg)
+        top: 22em
+        background-color: green
+    #roofPole    
+        width: 1.5em
+        position: absolute
+        height: 48em
+        top: 24em
+        z-index: -1
+        left: 5em
+        background-color: yellow
+#signHooks    
+    width: 28em
+    height: 8em
+    top: 37em
+    left: 19em
+    position: absolute
+    #hook
+        width: .5em
+        height: 8em
+        background-color: black
+        position: absolute
+    #leftHook
+        @extend #hook
+        left: 0
+    #rightHook
+        @extend #hook
+        right: 0
+#backwall
+    background-color: pink
+    position: absolute
+    top: 37em
+    left: 0
+    right: 0
+    margin: 0 auto
+    width: 52em
+    z-index: -1
+    height: 36em
+#rightwall
+    background-color: purple
+    position: absolute
+    top: 37em
+    right: 16em
+    width: 8em
+    z-index: -1
+    height: 36em
 #hangingSign
     width: 30em
     height: 11em
