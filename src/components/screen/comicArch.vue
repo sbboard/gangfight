@@ -1,5 +1,7 @@
 <template>
     <div id="scene" :style="fontSize">
+        <div @click="changeNav(-1)" id="leftArrow">L</div>
+        <div @click="changeNav(1)" id="rightArrow">R</div>
         <div id="wheel">
             <div id="outerRim"></div>
             <div id="onePole"></div>
@@ -64,7 +66,7 @@
     <div id="blackFilter">
     </div>
       <div id="menu">     
-        <div class="contentBoxes" v-for="(item, id) in theArchive" :key="`${id}`">
+        <div class="contentBoxes" v-for="(item, id) in theArchive.slice(currentPage*4, currentPage*4+4)" :key="`${id}`">
               <div class="boxWrap">
                   <p class="boxDate">{{item.date}}</p>
                   <p class="titleName">
@@ -99,11 +101,18 @@ export default {
   name: 'comicArchive',
     data(){
         return{
+            currentPage: 0,
             theArchive: [
                         {"_id":"0","comicsArray":[],"title":"HOLD ON","img":"tvload.jpg","url":"#","newDate":"01:01:0000","date":"2019-04-29T17:43:10.000Z","__v":0},
                         {"_id":"0","comicsArray":[],"title":"WHAT","img":"tvload.jpg","url":"#","newDate":"01:01:0000","date":"2019-01-29T17:43:10.000Z","__v":0},
                         {"_id":"0","comicsArray":[],"title":"UH...","img":"tvload.jpg","url":"#","newDate":"01:01:0000","date":"2019-01-29T17:43:10.000Z","__v":0},
-                        {"_id":"0","comicsArray":[],"title":"OH NO","img":"tvload.jpg","url":"#","newDate":"01:01:0000","date":"2019-01-29T17:43:10.000Z","__v":0},
+                        {"_id":"0","comicsArray":[],"title":"1","img":"tvload.jpg","url":"#","newDate":"01:01:0000","date":"2019-01-29T17:43:10.000Z","__v":0},
+                        {"_id":"0","comicsArray":[],"title":"2OH NO","img":"tvload.jpg","url":"#","newDate":"01:01:0000","date":"2019-01-29T17:43:10.000Z","__v":0},
+                        {"_id":"0","comicsArray":[],"title":"3OH NO","img":"tvload.jpg","url":"#","newDate":"01:01:0000","date":"2019-01-29T17:43:10.000Z","__v":0},
+                        {"_id":"0","comicsArray":[],"title":"4OH NO","img":"tvload.jpg","url":"#","newDate":"01:01:0000","date":"2019-01-29T17:43:10.000Z","__v":0},
+                        {"_id":"0","comicsArray":[],"title":"5OH NO","img":"tvload.jpg","url":"#","newDate":"01:01:0000","date":"2019-01-29T17:43:10.000Z","__v":0},
+                        {"_id":"0","comicsArray":[],"title":"6OH NO","img":"tvload.jpg","url":"#","newDate":"01:01:0000","date":"2019-01-29T17:43:10.000Z","__v":0},
+                        {"_id":"0","comicsArray":[],"title":"7OH NO","img":"tvload.jpg","url":"#","newDate":"01:01:0000","date":"2019-01-29T17:43:10.000Z","__v":0},
                         ],
         }
     },
@@ -120,6 +129,9 @@ export default {
             let year = d.getFullYear().toString().substring(2)
             let dString = `${month}:${date}:${year}`
             return dString
+        },
+        changeNav(num){
+            this.currentPage += num
         }
     },
     computed: {
@@ -146,6 +158,21 @@ export default {
 @import "../../css/gangFonts.sass"
 @import "../../css/fontawesome/css/all.css"
 
+#arrowTemplate
+    font-size: 4em
+    position: absolute
+    left: 0
+    top: 0
+    cursor: pointer
+    z-index: 900
+#leftArrow
+    @extend #arrowTemplate    
+    left: 3em
+    top: 8em
+#rightArrow
+    @extend #arrowTemplate 
+    left: 21em
+    top: 8em
 #wheel
     position: absolute
     bottom: -10em
