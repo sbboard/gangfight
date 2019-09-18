@@ -1,9 +1,9 @@
 <template>
     <div id="scene" :style="fontSize">
-        <div v-if="currentPage == 0" class="leftArrow">x</div>
-        <div v-else @click="changeNav(-1)" class="leftArrow">L</div>
-        <div v-if="currentPage > (theArchive.length/4)-1" class="rightArrow">x</div>
-        <div v-else @click="changeNav(1)" class="rightArrow">R</div>
+        <div v-if="currentPage == 0" class="leftArrow dead"><i class="fas fa-arrow-left"></i></div>
+        <div v-else @click="changeNav(-1)" class="leftArrow"><i class="fas fa-arrow-left"></i></div>
+        <div v-if="currentPage > (theArchive.length/4)-1" class="rightArrow dead"><i class="fas fa-arrow-right"></i></div>
+        <div v-else @click="changeNav(1)" class="rightArrow"><i class="fas fa-arrow-right"></i></div>
         <div id="wheel">
             <div id="outerRim"></div>
             <div id="onePole"></div>
@@ -161,20 +161,27 @@ export default {
 @import "../../css/fontawesome/css/all.css"
 
 .arrowTemplate
-    font-size: 4em
+    font-size: 10em
     position: absolute
     left: 0
     top: 0
     cursor: pointer
     z-index: 900
+    top: 2.9em
+    color: $neonGreen
+    @include textGlow($neonGreen, 1px)
 .leftArrow
     @extend .arrowTemplate    
-    left: 3em
-    top: 8em
+    left: .75em
+    transform: rotateZ(15deg)
 .rightArrow
     @extend .arrowTemplate 
-    left: 21em
-    top: 8em
+    left: 8.36em
+    transform: rotateZ(-15deg)
+.dead
+    cursor: inherit
+    color: grey
+    text-shadow: none
 #wheel
     position: absolute
     bottom: -10em
