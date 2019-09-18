@@ -1,7 +1,9 @@
 <template>
     <div id="scene" :style="fontSize">
-        <div @click="changeNav(-1)" id="leftArrow">L</div>
-        <div @click="changeNav(1)" id="rightArrow">R</div>
+        <div v-if="currentPage == 0" class="leftArrow">x</div>
+        <div v-else @click="changeNav(-1)" class="leftArrow">L</div>
+        <div v-if="currentPage > (theArchive.length/4)-1" class="rightArrow">x</div>
+        <div v-else @click="changeNav(1)" class="rightArrow">R</div>
         <div id="wheel">
             <div id="outerRim"></div>
             <div id="onePole"></div>
@@ -158,19 +160,19 @@ export default {
 @import "../../css/gangFonts.sass"
 @import "../../css/fontawesome/css/all.css"
 
-#arrowTemplate
+.arrowTemplate
     font-size: 4em
     position: absolute
     left: 0
     top: 0
     cursor: pointer
     z-index: 900
-#leftArrow
-    @extend #arrowTemplate    
+.leftArrow
+    @extend .arrowTemplate    
     left: 3em
     top: 8em
-#rightArrow
-    @extend #arrowTemplate 
+.rightArrow
+    @extend .arrowTemplate 
     left: 21em
     top: 8em
 #wheel
