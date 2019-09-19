@@ -26,16 +26,18 @@
                 <div class="pole"></div>
             </div>
         </div>
+    <!--
+    <div id="hangingSign">
+        <h2>私を殺して</h2>
+    </div>
     <div id="signHooks">
         <div id="leftHook"></div>
         <div id="rightHook"></div>
     </div>
+    -->
     <div id="leftPart">
         <div id="roof"></div>
         <div id="roofPole"></div>
-    </div>
-    <div id="hangingSign">
-        <h2>私を殺して</h2>
     </div>
     <div id="tableTop"></div>
     <div id="tableFront"></div>
