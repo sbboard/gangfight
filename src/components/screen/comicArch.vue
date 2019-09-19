@@ -90,8 +90,9 @@
       <div id="backboard"></div>
       <div id="woodBack"></div>
       <div id="tinRoof"></div>
-      <div id="sketch">
-      </div>
+      <div id="glowbg"></div>
+      <div id="citybg"></div>
+      <div id="sketchbg"></div>
       <div id="backwall"></div>
       <div id="rightwall"></div>
     </div>
@@ -105,10 +106,10 @@ export default {
         return{
             currentPage: 0,
             theArchive: [
-                        {"_id":"0","comicsArray":[],"title":"HOLD ON","img":"tvload.jpg","url":"#","newDate":"01:01:0000","date":"2019-04-29T17:43:10.000Z","__v":0},
-                        {"_id":"0","comicsArray":[],"title":"WHAT","img":"tvload.jpg","url":"#","newDate":"01:01:0000","date":"2019-01-29T17:43:10.000Z","__v":0},
-                        {"_id":"0","comicsArray":[],"title":"UH...","img":"tvload.jpg","url":"#","newDate":"01:01:0000","date":"2019-01-29T17:43:10.000Z","__v":0},
-                        {"_id":"0","comicsArray":[],"title":"1","img":"tvload.jpg","url":"#","newDate":"01:01:0000","date":"2019-01-29T17:43:10.000Z","__v":0},
+                        {"_id":"0","comicsArray":[],"title":"HOLD ON","img":"1.png","url":"#","newDate":"01:01:0000","date":"2019-04-29T17:43:10.000Z","__v":0},
+                        {"_id":"0","comicsArray":[],"title":"WHAT","img":"2.png","url":"#","newDate":"01:01:0000","date":"2019-01-29T17:43:10.000Z","__v":0},
+                        {"_id":"0","comicsArray":[],"title":"UH...","img":"3.png","url":"#","newDate":"01:01:0000","date":"2019-01-29T17:43:10.000Z","__v":0},
+                        {"_id":"0","comicsArray":[],"title":"1","img":"4.png","url":"#","newDate":"01:01:0000","date":"2019-01-29T17:43:10.000Z","__v":0},
                         {"_id":"0","comicsArray":[],"title":"2OH NO","img":"tvload.jpg","url":"#","newDate":"01:01:0000","date":"2019-01-29T17:43:10.000Z","__v":0},
                         {"_id":"0","comicsArray":[],"title":"3OH NO","img":"tvload.jpg","url":"#","newDate":"01:01:0000","date":"2019-01-29T17:43:10.000Z","__v":0},
                         {"_id":"0","comicsArray":[],"title":"4OH NO","img":"tvload.jpg","url":"#","newDate":"01:01:0000","date":"2019-01-29T17:43:10.000Z","__v":0},
@@ -160,6 +161,11 @@ export default {
 @import "../../css/gangFonts.sass"
 @import "../../css/fontawesome/css/all.css"
 
+$roofTint: rgb(0, 255, 217)
+$woodTint: #8f643d
+$bannerTint: $neonRed
+$metalColor: #74b2c1
+
 .arrowTemplate
     font-size: 10em
     position: absolute
@@ -168,8 +174,8 @@ export default {
     cursor: pointer
     z-index: 900
     top: 2.9em
-    color: $neonGreen
-    @include textGlow($neonGreen, 1px)
+    color: $lightNeonBlue
+    @include textGlow($neonBlue, 1px)
 .leftArrow
     @extend .arrowTemplate    
     left: .75em
@@ -191,21 +197,21 @@ export default {
         width: 29em
         height: 29em
         border-radius: 28em
-        border: 4em solid orange
+        border: 4em solid darken($woodTint, 0%)
         z-index: 173
         position: relative
     #onePole
         position: absolute
         top: 17.5em
         left: 2em
-        background-color: purple
+        background-color: darken($woodTint, 5%)
         width: 33em
         height: 3em
     #twoPole    
         position: absolute
         top: 17.5em
         left: 2em
-        background-color: purple
+        background-color: darken($woodTint, 5%)
         width: 33em
         height: 3em
         transform: rotateZ(60deg)
@@ -213,7 +219,7 @@ export default {
         position: absolute
         top: 17.5em
         left: 2em
-        background-color: purple
+        background-color: darken($woodTint, 5%)
         width: 33em
         height: 3em
         transform: rotateZ(120deg)
@@ -221,7 +227,7 @@ export default {
         position: absolute
         top: 14em
         left: 14em
-        background-color: orange
+        background-color: darken($woodTint, 0%)
         width: 10em
         height: 10em
         border-radius: 10em
@@ -230,7 +236,7 @@ export default {
         position: absolute
         top: 1em
         right: 1em
-        background-color: purple
+        background-color: darken($woodTint, 0%)
         height: 1em
         width: 1em
     #topHandle
@@ -249,8 +255,8 @@ export default {
         width: 5.5em
     #handleCurve
         @extend #handleParts
-        border-top: 1em solid purple
-        border-right: 1em solid purple
+        border-top: 1em solid darken($woodTint, 10%)
+        border-right: 1em solid darken($woodTint, 10%)
         border-radius: 2em
         right: 8em
         height: 29em
@@ -266,7 +272,7 @@ export default {
         left: 1em
         transform: rotateZ(-28deg)
         top: 22em
-        background-color: green
+        background-color: $roofTint
     #roofPole    
         width: 1.5em
         position: absolute
@@ -274,7 +280,7 @@ export default {
         top: 24em
         z-index: -1
         left: 5em
-        background-color: yellow
+        background-color: darken($woodTint, 15%)
 #signHooks    
     width: 28em
     height: 8em
@@ -293,7 +299,7 @@ export default {
         @extend #hook
         right: 0
 #backwall
-    background-color: pink
+    background-color: darken($woodTint, 25%)
     position: absolute
     top: 37em
     left: 0
@@ -303,7 +309,7 @@ export default {
     z-index: -1
     height: 36em
 #rightwall
-    background-color: purple
+    background-color: darken($bannerTint, 10%)
     position: absolute
     top: 37em
     right: 16em
@@ -316,7 +322,7 @@ export default {
     position: absolute
     top: 40em
     left: 18em
-    background-color: yellow
+    background-color: darken($woodTint, 0%)
     display: flex
     align-items: center
     justify-content: center
@@ -334,12 +340,12 @@ export default {
         height: 5em
         width: 17em
         border-radius: 1em
-        background-color: red
+        background-color: $roofTint
     .pole
         width: 4em
         height: 16em
         margin: 0 auto
-        background-color: yellow
+        background-color: $metalColor
     #stoolOne
         display: inline-block
         height: 100%
@@ -347,7 +353,7 @@ export default {
         @extend #stoolOne
         margin-left: 4em
 #poleLeft
-    background-color: red
+    background-color: darken($woodTint, 10%)
     width: 4em
     top: 37em
     left: 12em
@@ -360,7 +366,7 @@ export default {
 #tableTop
     width: 94em
     top: 71em
-    background-color: green
+    background-color: darken($woodTint, 5%)
     position: absolute
     height: 4em
     margin: 0 auto
@@ -370,7 +376,7 @@ export default {
 #tableFront
     position: absolute
     bottom: 0
-    background-color: blue
+    background-color: darken($woodTint, 20%)
     left: 0
     right: 0
     margin: 0 auto
@@ -396,7 +402,8 @@ export default {
         @extend h3
         top: 2em
     img
-        width: 100%
+        width: 100%    
+        filter: hue-rotate(300deg)
 #scene
     width: 100%
     height: 100%
@@ -409,7 +416,7 @@ export default {
         right: 0
         height: 30em
         margin: 0 auto
-        background-color: blue
+        background-color: darken($woodTint, 0%)
     #tinRoof
         position: absolute
         top: 7.5em
@@ -418,7 +425,7 @@ export default {
         right: 0
         z-index: 80
         margin: 0 auto
-        border-bottom: 2.5em solid green
+        border-bottom: 2.5em solid $roofTint
         border-left: 1.5em solid transparent
         border-right: 1.5em solid transparent
     #rowOfLights
@@ -432,7 +439,7 @@ export default {
             border-top-left-radius: 10em
             border-top-right-radius: 10em
             top: 7em
-            background-color: blue
+            background-color: $metalColor
         .lightTwo
             width: 10em
             left: 34.25em
@@ -441,7 +448,7 @@ export default {
             border-top-left-radius: 10em
             border-top-right-radius: 10em
             top: 7em
-            background-color: blue
+            background-color: $metalColor
         .lightThree
             width: 10em
             height: 4em
@@ -449,7 +456,7 @@ export default {
             right: 34.25em
             border-top-left-radius: 10em
             border-top-right-radius: 10em
-            background-color: blue
+            background-color: $metalColor
             top: 7em
         .lightFour  
             width: 10em
@@ -458,7 +465,7 @@ export default {
             right: 20.75em
             border-top-left-radius: 10em
             border-top-right-radius: 10em
-            background-color: blue
+            background-color: $metalColor
             top: 7em
     #shadowTheHedgehog
         opacity: .75
@@ -524,7 +531,7 @@ export default {
         position: absolute
         z-index: 999
         bottom: 0
-        color: red
+        color: $neonRed
         width: 25em
         height: 21em
         left: 8em
@@ -544,7 +551,8 @@ export default {
         height: 26em
         background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,1) 90%)
     #backboard
-      background-color: red
+      background-color: $bannerTint
+      @include boxGlow($bannerTint)
       height: 27em
       position: absolute
       z-index: 50
@@ -565,17 +573,29 @@ export default {
       h1
         font-size: 4em
         font-family: Alien
-    #sketch
-      background-image: url("/assets/global/comicArch/sketch.jpg")
+        @include textGlow($neonPink, 1px)
+        color: white
+    #bg
       background-size: 100% 100%
       position: absolute
       top: 0
       left: 0
       width: 100em
       height: 100em
-      z-index: -200
+    #sketchbg
+        @extend #bg
+        background-image: url("/assets/global/comicArch/sketch.jpg")
+        z-index: -203
+    #citybg
+        @extend #bg
+        background-image: url("/assets/global/comicArch/bgidk3.jpg")
+        z-index: -202
+    #glowbg
+        @extend #bg
+        background-image: linear-gradient(to bottom, $neonPink, black)
+        z-index: -200
+        opacity: .6
     #menu
-      background-color: black
       width: 70em
       position: absolute
       top: 13em
@@ -596,9 +616,7 @@ export default {
           width: 17.5em
           height: 17.5em
           .boxWrap
-              opacity: .75
               img
-                  filter: sepia(1) hue-rotate(320deg) contrast(1.5)
                   width: 100%
           .boxDate
               position: absolute
