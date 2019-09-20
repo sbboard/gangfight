@@ -2,7 +2,7 @@
     <div id="scene" :style="fontSize">
         <div v-if="currentPage == 0" class="leftArrow dead"><i class="fas fa-arrow-left"></i></div>
         <div v-else @click="changeNav(-1)" class="leftArrow"><i class="fas fa-arrow-left"></i></div>
-        <div v-if="currentPage > (theArchive.length/4)-1" class="rightArrow dead"><i class="fas fa-arrow-right"></i></div>
+        <div v-if="currentPage >= (theArchive.length/4)-1" class="rightArrow dead"><i class="fas fa-arrow-right"></i></div>
         <div v-else @click="changeNav(1)" class="rightArrow"><i class="fas fa-arrow-right"></i></div>
         <div id="wheel">
             <div id="outerRim"></div>
@@ -87,7 +87,9 @@
       </div>
       </div>
       <div id="comixSign">
-        <h1>COMIX</h1>
+        <h1>コミック</h1>
+        {{currentPage+1}} / 
+        {{totalPages.totalPages}}
       </div>
       <div id="backboard"></div>
       <div id="woodBack"></div>
@@ -116,8 +118,6 @@ export default {
                         {"_id":"0","comicsArray":[],"title":"3OH NO","img":"tvload.jpg","url":"#","newDate":"01:01:0000","date":"2019-01-29T17:43:10.000Z","__v":0},
                         {"_id":"0","comicsArray":[],"title":"4OH NO","img":"tvload.jpg","url":"#","newDate":"01:01:0000","date":"2019-01-29T17:43:10.000Z","__v":0},
                         {"_id":"0","comicsArray":[],"title":"5OH NO","img":"tvload.jpg","url":"#","newDate":"01:01:0000","date":"2019-01-29T17:43:10.000Z","__v":0},
-                        {"_id":"0","comicsArray":[],"title":"6OH NO","img":"tvload.jpg","url":"#","newDate":"01:01:0000","date":"2019-01-29T17:43:10.000Z","__v":0},
-                        {"_id":"0","comicsArray":[],"title":"7OH NO","img":"tvload.jpg","url":"#","newDate":"01:01:0000","date":"2019-01-29T17:43:10.000Z","__v":0},
                         ],
         }
     },
@@ -146,6 +146,9 @@ export default {
         fontSize(){
             return {fontSize: '1'+this.$store.getters.getTaller}
         },
+        totalPages(){
+            return {totalPages: Math.floor(this.theArchive.length/5 + 1)}
+        },
     },
     watch: {
         theArchive(){
@@ -163,10 +166,10 @@ export default {
 @import "../../css/gangFonts.sass"
 @import "../../css/fontawesome/css/all.css"
 
-$roofTint: rgb(0, 255, 217)
-$woodTint: #8f643d
+$roofTint: #04c7b3
+$woodTint: #8f3d64
 $bannerTint: $neonRed
-$metalColor: #74b2c1
+$metalColor: #c964ff
 
 .arrowTemplate
     font-size: 10em
@@ -550,7 +553,7 @@ $metalColor: #74b2c1
         bottom: 0
         z-index: 900
         width: 100em
-        height: 26em
+        height: 50em
         background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,1) 90%)
     #backboard
       background-color: $bannerTint
@@ -574,7 +577,7 @@ $metalColor: #74b2c1
       top: 33em
       h1
         font-size: 4em
-        font-family: Alien
+        font-family: calig
         @include textGlow($neonPink, 1px)
         color: white
     #bg
