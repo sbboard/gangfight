@@ -91,6 +91,8 @@
         <h2>{{currentPage+1}}/{{totalPages.totalPages}}</h2>
       </div>
       <div id="backboard"></div>
+      <img id="posterOne" src="/assets/global/comicArch/oil.gif"/>
+      <img id="posterTwo" src="/assets/global/comicArch/gf.gif"/>
       <div id="woodBack"></div>
       <div id="tinRoof"></div>
       <div id="glowbg"></div>
@@ -170,6 +172,29 @@ $woodTint: #8f3d64
 $bannerTint: $neonRed
 $metalColor: #c964ff
 
+#postTemp
+    position: absolute
+    filter: sepia(1)
+    opacity: .45
+    image-rendering: optimizeSpeed
+    image-rendering: -moz-crisp-edges
+    image-rendering: -o-crisp-edges
+    image-rendering: -webkit-optimize-contrast
+    image-rendering: pixelated
+    image-rendering: optimize-contrast
+    -ms-interpolation-mode: nearest-neighbor
+#posterOne
+    @extend #postTemp
+    top: 40em
+    width: 30em
+    right: 44em
+    transform: rotateZ(-1deg)
+#posterTwo
+    @extend #postTemp
+    top: 39em
+    right: 25em
+    width: 17em
+    transform: rotateZ(1deg)
 .arrowTemplate
     font-size: 10em
     position: absolute
@@ -392,6 +417,7 @@ $metalColor: #c964ff
     top: 39em
     right: 14em
     pointer-events: none
+    z-index: 50
     h3    
         font-size: 7em
         z-index: 300
