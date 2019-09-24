@@ -111,14 +111,6 @@ export default {
         return{
             currentPage: 0,
             theArchive: [
-                        {"_id":"0","comicsArray":[],"title":"HOLD ON","img":"1.png","url":"#","newDate":"01:01:0000","date":"2019-04-29T17:43:10.000Z","__v":0},
-                        {"_id":"0","comicsArray":[],"title":"WHAT","img":"2.png","url":"#","newDate":"01:01:0000","date":"2019-01-29T17:43:10.000Z","__v":0},
-                        {"_id":"0","comicsArray":[],"title":"UH...","img":"3.png","url":"#","newDate":"01:01:0000","date":"2019-01-29T17:43:10.000Z","__v":0},
-                        {"_id":"0","comicsArray":[],"title":"1","img":"4.png","url":"#","newDate":"01:01:0000","date":"2019-01-29T17:43:10.000Z","__v":0},
-                        {"_id":"0","comicsArray":[],"title":"2OH NO","img":"tvload.jpg","url":"#","newDate":"01:01:0000","date":"2019-01-29T17:43:10.000Z","__v":0},
-                        {"_id":"0","comicsArray":[],"title":"3OH NO","img":"tvload.jpg","url":"#","newDate":"01:01:0000","date":"2019-01-29T17:43:10.000Z","__v":0},
-                        {"_id":"0","comicsArray":[],"title":"4OH NO","img":"tvload.jpg","url":"#","newDate":"01:01:0000","date":"2019-01-29T17:43:10.000Z","__v":0},
-                        {"_id":"0","comicsArray":[],"title":"5OH NO","img":"tvload.jpg","url":"#","newDate":"01:01:0000","date":"2019-01-29T17:43:10.000Z","__v":0},
                         ],
         }
     },
@@ -633,58 +625,66 @@ $metalColor: #c964ff
         z-index: -200
         opacity: .6
     #menu
-      width: 70em
-      position: absolute
-      top: 13em
-      left: 0
-      height: 17.5em
-      right: 0
-      margin: 0 auto
-      z-index: 100
-      .contentBoxes
-          display: inline-block
-          font-family: VCR
-          position: relative
-          overflow: hidden
-          line-height: normal
-          color: white
-          font-weight: 100
-          animation: screenGlow 10s infinite
-          width: 17.5em
-          height: 17.5em
-          .boxWrap
-              img
-                  width: 100%
-          .boxDate
-              position: absolute
-              bottom: 0
-              margin: 0
-              padding: 0 3px 0 3px
-              right: 0
-              background-color: black
-              pointer-events: none
-              z-index: 5
-              text-decoration: none
-              margin: .5em
-          .titleName
-              position: absolute
-              text-transform: uppercase
-              text-align: left
-              z-index: 6
-              pointer-events: none
-              margin: .5em
-              display: inline-block
-              .titleText
-                  background-color: black
-                  padding: 0 3px 0 3px
-                  text-decoration: none
-                  font-size: 3em
-              .subtitle
-                  background-color: black
-                  padding: 0 3px 0 3px
-                  text-decoration: none
-                  font-size: 2em
-                  display: block
+        width: 70em
+        position: absolute
+        top: 13em
+        left: 0
+        height: 17.5em
+        right: 0
+        margin: 0 auto
+        z-index: 100
+        .contentBoxes
+            display: inline-block
+            font-family: VCR
+            position: relative
+            overflow: hidden
+            line-height: normal
+            color: white
+            font-weight: 100
+            animation: screenGlow 10s infinite
+            width: 17.5em
+            height: 17.5em
+            .boxWrap
+                &:hover
+                    filter: contrast(2)
+                img
+                    width: 100%
+                .boxDate
+                    bottom: 0
+                    margin: 0
+                    width: fit-content
+                    left: 0
+                    padding: 0 3px 0 3px
+                    right: 0
+                    font-size: 2em
+                    background-color: rgba(0,0,0,.75)
+                    pointer-events: none
+                    z-index: 5
+                    text-decoration: none
+                    margin: .25em auto
+                    position: absolute
+            .titleName
+                position: absolute
+                text-transform: uppercase
+                text-align: left
+                z-index: 6
+                left: 0
+                right: 0
+                width: fit-content
+                pointer-events: none
+                margin: .5em auto
+                display: inline-block
+                .titleText
+                    background-color: rgba(0,0,0,.75)
+                    padding: 0 3px 0 3px
+                    text-decoration: none
+                    font-size: 3em
+                .subtitle
+                    background-color: rgba(0,0,0,.75)
+                    padding: 0 3px 0 3px
+                    text-decoration: none
+                    font-size: 2em
+                    display: block
 @keyframes screenGlow
     0%
         opacity: .9
