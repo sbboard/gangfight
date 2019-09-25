@@ -670,7 +670,7 @@ $metalColor: #c964ff
             .titleName
                 position: absolute
                 text-transform: uppercase
-                text-align: left
+                text-align: center
                 z-index: 6
                 left: 0
                 right: 0
