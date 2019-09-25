@@ -97,7 +97,6 @@
       <div id="tinRoof"></div>
       <div id="glowbg"></div>
       <div id="citybg"></div>
-      <div id="sketchbg"></div>
       <div id="backwall"></div>
       <div id="rightwall"></div>
     </div>
@@ -499,6 +498,7 @@ $metalColor: #c964ff
             position: absolute
             display: block
             transform: rotateZ(45deg)
+            filter: blur(2.75em)
         .topShadow
             background-color: black
             position: absolute
@@ -506,12 +506,13 @@ $metalColor: #c964ff
             top: 0
             width: 100em
             height: 11em
+            filter: blur(1em)
         .farLeft
             @extend .shadow
-            width: 46em
-            height: 45em
-            left: -33.5em
-            top: -12em
+            width: 52em
+            height: 47em
+            left: -35.5em
+            top: -18em
         .midOne
             @extend .shadow    
             width: 10em
@@ -611,13 +612,16 @@ $metalColor: #c964ff
       left: 0
       width: 100em
       height: 100em
-    #sketchbg
-        @extend #bg
-        background-image: url("/assets/global/comicArch/sketch.jpg")
-        z-index: -203
     #citybg
         @extend #bg
         background-image: url("/assets/global/comicArch/bgidk3.jpg")
+        image-rendering: optimizeSpeed
+        image-rendering: -moz-crisp-edges
+        image-rendering: -o-crisp-edges
+        image-rendering: -webkit-optimize-contrast
+        image-rendering: pixelated
+        image-rendering: optimize-contrast
+        -ms-interpolation-mode: nearest-neighbor
         z-index: -202
     #glowbg
         @extend #bg
