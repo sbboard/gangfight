@@ -4,6 +4,10 @@
         <div v-else @click="changeNav(-1)" class="leftArrow"><i class="fas fa-arrow-left"></i></div>
         <div v-if="currentPage >= (theArchive.length/4)-1" class="rightArrow dead"><i class="fas fa-arrow-right"></i></div>
         <div v-else @click="changeNav(1)" class="rightArrow"><i class="fas fa-arrow-right"></i></div>
+        <div id="shopOwner">
+            <img class="eye" src="/assets/global/comicArch/ownerEye.png"/>
+            <img class="body" src="/assets/global/comicArch/ownerBody.png"/>
+        </div>
         <div id="wheel">
             <div id="outerRim"></div>
             <div id="onePole"></div>
@@ -163,6 +167,20 @@ $woodTint: #8f3d64
 $bannerTint: $neonRed
 $metalColor: #c964ff
 
+#shopOwner    
+    position: absolute
+    top: 39em
+    left: 50em
+    z-index: 1
+    img
+        position: absolute   
+    .eye
+        z-index: 2
+        width: 5em
+        top: 9.5em
+        left: 7.5em
+    .body 
+        width: 19em
 #postTemp
     position: absolute
     filter: sepia(1)
