@@ -5,7 +5,7 @@
         <div v-if="currentPage >= (theArchive.length/4)-1" class="rightArrow dead"><i class="fas fa-arrow-right"></i></div>
         <div v-else @click="changeNav(1)" class="rightArrow"><i class="fas fa-arrow-right"></i></div>
         <div id="shopOwner">
-            <img class="eye" src="/assets/global/comicArch/ownerEye.png"/>
+            <img class="eye" id="ownerEye" src="/assets/global/comicArch/ownerEye.png"/>
             <img class="body" src="/assets/global/comicArch/ownerBody.png"/>
         </div>
         <div id="wheel">
@@ -121,6 +121,21 @@ export default {
         axios
         .get(`${this.$store.getters.getAPI}/category/comic`)
         .then(response => (this.theArchive = response.data))
+
+        //blink animation for ramen shop owner
+        const images = ["/assets/global/comicArch/ownerEye.png","/assets/global/comicArch/ownerEyeClosed.png"]
+        setInterval(function(){
+            document.getElementById("ownerEye").src = images[1]; 
+            setTimeout(function(){ 
+                document.getElementById("ownerEye").src = images[0]; 
+            }, 300);
+            setTimeout(function(){ 
+                document.getElementById("ownerEye").src = images[1]; 
+            }, 600);
+            setTimeout(function(){ 
+                document.getElementById("ownerEye").src = images[0]; 
+            }, 900);
+        },6000);
     },
     methods: {
         formatDate(isoDate){
