@@ -115,6 +115,7 @@ export default {
             currentPage: 0,
             theArchive: [
                         ],
+            picayunes: ["how","whattime","newEnter"]
         }
     },
     mounted () {
