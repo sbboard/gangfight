@@ -67,7 +67,7 @@
                 <img class="screen" :src="'/assets/' + this.$store.getters.assetFolder + '/sidebar/'+this.randoTwo+'.jpg'"/></div></div>
             </div>
             <div class="col-4">
-              <div class="col-12 fiftyFifty"><div id="threeLetter"><span>足</span><span>の</span><span>王</span></div></div>
+              <div class="col-12 fiftyFifty"><div id="threeLetter"><span>シ</span><span>ャ</span><span>イ</span></div></div>
               <div class="col-12 fiftyFifty leftLeft">
                 <div id="newImg" :style="{ 'background-image': 'url(/assets/contentImages/' + this.newestUpdate + ')' }" style="background-size: contain;">
                   <div id="top">
