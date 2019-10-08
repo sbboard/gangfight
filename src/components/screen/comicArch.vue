@@ -8,12 +8,12 @@
         <div id="picayunes">
             <div id="picaOne" v-if="typeof picayunes[picaOne] != 'undefined'">
                 <a :href="'/projects/' + picayunes[picaOne]">
-                <img src="https://cdn.shopify.com/s/files/1/0257/6087/products/Pikachu_Single_Front_dc998741-c845-43a8-91c9-c1c97bec17a4.png?v=1523938908"/>
+                <img :src="'/assets/global/comicArch/picayunes/'+ picayunes[picaOne] + '.png'"/>
                 </a>
             </div>
             <div id="picaTwo" v-if="typeof picayunes[picaTwo] != 'undefined'">
                 <a :href="'/projects/' + picayunes[picaTwo]">
-                <img src="https://cdn.shopify.com/s/files/1/0257/6087/products/Pikachu_Single_Front_dc998741-c845-43a8-91c9-c1c97bec17a4.png?v=1523938908"/>
+                <img :src="'/assets/global/comicArch/picayunes/'+ picayunes[picaTwo] + '.png'"/>
                 </a>
             </div>
         </div>
@@ -220,7 +220,6 @@ $metalColor: #c964ff
         z-index: 850
         img
             display: inline-block
-            background-color: red
             width: 17em
     #picaOne
         @extend #picatemp
