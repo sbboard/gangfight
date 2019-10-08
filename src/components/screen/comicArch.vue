@@ -65,7 +65,7 @@
         <h1>Gang</h1> 
         <h1>Fight</h1> 
     </div>
-    <div id="lantern">
+    <div id="lantern" v-if="typeof picayunes[picaTwo] === 'undefined'">
         <h3>拉</h3>
         <h4>麺</h4>
         <img src="/assets/global/comicArch/lantern.png">
@@ -155,7 +155,7 @@ export default {
         },6000);
 
         //set picayunes
-        const totalYunes = this.picayunes.length * 3
+        const totalYunes = this.picayunes.length * 4
         this.picaOne = Math.floor(Math.random() * totalYunes)
         this.picaTwo = Math.floor(Math.random() * totalYunes)
         if(this.picaOne == this.picaTwo){
