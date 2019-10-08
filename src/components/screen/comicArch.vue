@@ -162,8 +162,6 @@ export default {
             this.picaOne = 999
             this.picaTwo = 999
         }
-        console.log(this.picaOne)
-        console.log(this.picaTwo)
     },
     methods: {
         formatDate(isoDate){
