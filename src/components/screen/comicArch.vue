@@ -4,6 +4,20 @@
         <div v-else @click="changeNav(-1)" class="leftArrow"><i class="fas fa-arrow-left"></i></div>
         <div v-if="currentPage >= (theArchive.length/4)-1" class="rightArrow dead"><i class="fas fa-arrow-right"></i></div>
         <div v-else @click="changeNav(1)" class="rightArrow"><i class="fas fa-arrow-right"></i></div>
+
+        <div id="picayunes">
+            <div id="picaOne" v-if="typeof picayunes[picaOne] != 'undefined'">
+                <a :href="'/projects/' + picayunes[picaOne]">
+                <img src="https://cdn.shopify.com/s/files/1/0257/6087/products/Pikachu_Single_Front_dc998741-c845-43a8-91c9-c1c97bec17a4.png?v=1523938908"/>
+                </a>
+            </div>
+            <div id="picaTwo" v-if="typeof picayunes[picaTwo] != 'undefined'">
+                <a :href="'/projects/' + picayunes[picaTwo]">
+                <img src="https://cdn.shopify.com/s/files/1/0257/6087/products/Pikachu_Single_Front_dc998741-c845-43a8-91c9-c1c97bec17a4.png?v=1523938908"/>
+                </a>
+            </div>
+        </div>
+
         <div id="shopOwner">
             <img class="eye" id="ownerEye" src="/assets/global/comicArch/ownerEye.png"/>
             <img class="body" src="/assets/global/comicArch/ownerBody.png"/>
@@ -115,10 +129,12 @@ export default {
             currentPage: 0,
             theArchive: [
                         ],
-            picayunes: ["how","whattime","newEnter"]
+            picayunes: ["how","whattime","newEnter"],
+            picaOne: 0,
+            picaTwo: 0
         }
     },
-    mounted () {
+    mounted() {
         axios
         .get(`${this.$store.getters.getAPI}/category/comic`)
         .then(response => (this.theArchive = response.data))
@@ -137,6 +153,17 @@ export default {
                 document.getElementById("ownerEye").src = images[0]; 
             }, 900);
         },6000);
+
+        //set picayunes
+        const totalYunes = this.picayunes.length * 3
+        this.picaOne = Math.floor(Math.random() * totalYunes)
+        this.picaTwo = Math.floor(Math.random() * totalYunes)
+        if(this.picaOne == this.picaTwo){
+            this.picaOne = 999
+            this.picaTwo = 999
+        }
+        console.log(this.picaOne)
+        console.log(this.picaTwo)
     },
     methods: {
         formatDate(isoDate){
@@ -183,10 +210,29 @@ $woodTint: #8f3d64
 $bannerTint: $neonRed
 $metalColor: #c964ff
 
+
+#picayunes
+    width: 100%
+    #picatemp
+        display: inline-block
+        bottom: 20em
+        position: absolute
+        z-index: 850
+        img
+            display: inline-block
+            background-color: red
+            width: 17em
+    #picaOne
+        @extend #picatemp
+        right: 36em
+    #picaTwo
+        @extend #picatemp  
+        right: 15em
+
 #shopOwner    
     position: absolute
     top: 39em
-    left: 50em
+    left: 20em
     z-index: 1
     img
         position: absolute   
@@ -605,6 +651,7 @@ $metalColor: #c964ff
         bottom: 0
         z-index: 900
         width: 100em
+        pointer-events: none
         height: 50em
         background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,1) 90%)
     #backboard
