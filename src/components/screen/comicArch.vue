@@ -155,7 +155,7 @@ export default {
         },6000);
 
         //set picayunes
-        const totalYunes = this.picayunes.length * 4
+        const totalYunes = this.picayunes.length * 20
         this.picaOne = Math.floor(Math.random() * totalYunes)
         this.picaTwo = Math.floor(Math.random() * totalYunes)
         if(this.picaOne == this.picaTwo){
