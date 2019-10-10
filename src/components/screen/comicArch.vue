@@ -19,8 +19,8 @@
         </div>
 
         <div id="shopOwner">
-            <img class="eye" id="ownerEye" src="/assets/global/comicArch/ownerEye.png"/>
-            <img class="body" src="/assets/global/comicArch/ownerBody.png"/>
+            <img class="eye" id="ownerEye" src="/assets/global/comicArch/ownerEyeC.png"/>
+            <img class="body" src="/assets/global/comicArch/ownerBodyCS.png"/>
         </div>
         <div id="wheel">
             <div id="outerRim"></div>
@@ -140,7 +140,7 @@ export default {
         .then(response => (this.theArchive = response.data))
 
         //blink animation for ramen shop owner
-        const images = ["/assets/global/comicArch/ownerEye.png","/assets/global/comicArch/ownerEyeClosed.png"]
+        const images = ["/assets/global/comicArch/ownerEyeC.png","/assets/global/comicArch/ownerEyeClosedC.png"]
         setInterval(function(){
             document.getElementById("ownerEye").src = images[1]; 
             setTimeout(function(){ 
@@ -228,7 +228,7 @@ $metalColor: #c964ff
 
 #shopOwner    
     position: absolute
-    top: 39em
+    top: 40em
     left: 20em
     z-index: 1
     img
