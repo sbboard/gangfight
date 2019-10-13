@@ -5,6 +5,7 @@ import Login from "./components/screen/login.vue"
 import fakeFourOFour from "./components/screen/placeholder404.vue"
 import About from "./components/screen/about.vue"
 import ComicArch from "./components/screen/comicArch.vue"
+import ProjArch from "./components/screen/projArch.vue"
 import ComicReader from "./components/outerbounds/comicReader.vue"
 import Projects from "./components/screen/projects.vue"
 import screen from "./components/screen/screen.vue"
@@ -32,13 +33,18 @@ export default new Router({
         component: About
       },
       {
+        path: "/projArch",
+        name: "game shoppe",
+        component: ProjArch
+      },
+      {
         path: "/login",
         name: "login",
         component: Login
       },
       {
         path: "/comic",
-        name: "Ramen Cart",
+        name: "ramen cart",
         component: ComicArch
       },
       {
