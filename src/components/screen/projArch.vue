@@ -1,7 +1,43 @@
 <template>
     <div id="arch" :style="[blockSize, fontSize]">
+        <div id="pageTab">
+            <div class="leftTab">L</div>
+            <div class="middleText">MIDDLE</div>
+            <div class="rightTab">R</div>
+        </div>
         <div id="shelf"></div>
-        <div class="gamePackage">
+        <div id="desk"></div>
+        <a href="#" class="gamePackage" v-for="(item, id) in theArchive" :key="`${id}`">
+            <div class="hook"></div>
+            <div class="topPackage"></div>
+            <div class="gameboy">
+                <div class="tall"></div>
+                <div class="wide"></div>
+            </div>
+            <div class="greybar"></div>
+            <div class="gameArt"></div>
+        </a>
+        <div class="fakePackage">
+            <div class="hook"></div>
+            <div class="topPackage"></div>
+            <div class="gameboy">
+                <div class="tall"></div>
+                <div class="wide"></div>
+            </div>
+            <div class="greybar"></div>
+            <div class="gameArt"></div>
+        </div>
+        <div class="fakePackage">
+            <div class="hook"></div>
+            <div class="topPackage"></div>
+            <div class="gameboy">
+                <div class="tall"></div>
+                <div class="wide"></div>
+            </div>
+            <div class="greybar"></div>
+            <div class="gameArt"></div>
+        </div>
+        <div class="fakePackage">
             <div class="hook"></div>
             <div class="topPackage"></div>
             <div class="gameboy">
@@ -20,7 +56,7 @@ import axios from 'axios'
 export default {
     data(){
         return{
-            theArchive: []
+            theArchive: [1,2,3,4,5,6]
         }
     },
     mounted () {
@@ -63,6 +99,36 @@ export default {
     height: 100%
     background-size: 90% 90%
     background-position: top center
+    #pageTab
+        background-color: red
+        position: absolute
+        left: 44em
+        bottom: 12em
+        width: 43em
+        height: 6em
+        -webkit-transform: rotate(7deg)
+        transform: rotate(7deg)
+        z-index: 502
+        display: flex
+        justify-content: space-between
+        align-items: center
+        .leftTab
+            display: block
+            margin-left: 1em
+        .middleText
+            display: block
+            font-size: 3em
+        .rightTab
+            display: block
+            margin-right: 1em
+    #desk
+        position: absolute
+        left: 0
+        bottom: -5em
+        background-color: purple
+        width: 68em
+        height: 58em
+        transform: skewY(-11deg)
     #shelf
         background-color: pink
         width: 48em
@@ -74,25 +140,40 @@ export default {
         z-index: 501
     .gamePackage
         position: absolute
-        left: 52em
-        top: 6em
         width: 20em
-        opacity: .5
         transform: rotate(7deg)
         height: 23em
         background-color: red
         z-index: 502
+        &:nth-of-type(1)
+            left: 52em
+            top: 6em
+        &:nth-of-type(2)
+            left: 75em
+            top: 9em
+        &:nth-of-type(3)
+            left: 49em
+            top: 31em
+        &:nth-of-type(4)
+            left: 72em
+            top: 34em
+        &:nth-of-type(5)
+            left: 46em
+            top: 56em
+        &:nth-of-type(6)
+            left: 69em
+            top: 59em
         .hook
             margin: 0 auto
             position: absolute
             z-index: 2
             background-color: blue
-            top: -2em
+            top: -1em
             left: 0
             right: 0
-            width: 4em
+            width: 3em
             border-radius: 7em
-            height: 4em
+            height: 3em
         .topPackage
             position: absolute
             width: 100%
@@ -134,4 +215,15 @@ export default {
             img
                 width: 100%
                 height: 100%
+    .fakePackage
+        @extend .gamePackage
+        &:nth-of-type(4)
+            left: 98em
+            top: 12em
+        &:nth-of-type(5)
+            left: 95em
+            top: 37em
+        &:nth-of-type(6)
+            left: 92em
+            top: 62em
 </style>
