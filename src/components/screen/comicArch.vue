@@ -155,7 +155,8 @@ export default {
         },6000);
 
         //set picayunes
-        const totalYunes = this.picayunes.length * 20
+        const chances = 20
+        const totalYunes = this.picayunes.length * chances
         this.picaOne = Math.floor(Math.random() * totalYunes)
         this.picaTwo = Math.floor(Math.random() * totalYunes)
         if(this.picaOne == this.picaTwo){
@@ -218,13 +219,14 @@ $metalColor: #c964ff
         z-index: 850
         img
             display: inline-block
-            width: 17em
+            width: 22em
+            filter: blur(1px)
     #picaOne
         @extend #picatemp
-        right: 36em
+        right: 33.5em
     #picaTwo
         @extend #picatemp  
-        right: 15em
+        right: 12.5em
 
 #shopOwner    
     position: absolute
