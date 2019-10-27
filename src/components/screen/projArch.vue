@@ -5,6 +5,9 @@
             <div class="middleText">MIDDLE</div>
             <div class="rightTab">R</div>
         </div>
+        <div id="opensign">
+            <h2>OPEN</h2>
+        </div>
         <div id="shelf"></div>
         <div id="desk"></div>
         <a href="#" class="gamePackage" v-for="(item, id) in theArchive" :key="`${id}`">
@@ -46,6 +49,11 @@
             </div>
             <div class="greybar"></div>
             <div class="gameArt"></div>
+        </div>
+        <div id="cityscape">
+            <img id="city" src="/assets/global/homepage/rochester.png"/>
+            <div id="blackbox"></div>
+            <img id="stars" src="/assets/global/homepage/starsbg.jpg"/>
         </div>
     </div>
 </template>
@@ -93,12 +101,54 @@ export default {
 </script>
 
 <style lang="sass" scoped>
+@import "../../css/reset.css"
+@import "../../css/gangColors.sass"
+@import "../../css/gangFonts.sass"
 #arch
     background-image: url("/assets/global/projectArch/sketch.jpg")
     width: 100%
     height: 100%
     background-size: 90% 90%
     background-position: top center
+    #cityscape
+        display: none
+        #city
+            width: 172em
+            position: absolute
+            left: -17em
+            z-index: 3
+            top: -4em
+        #blackbox
+            width: 61em
+            height: 29em
+            z-index: 10
+            background-image: linear-gradient(rgba(255, 0, 0, 0) -27%, black 36%)
+            position: absolute
+            top: 26em
+            left: -1em
+        #stars
+            position: absolute
+            z-index: 1
+            left: -21em
+            height: auto
+            top: 0
+            width: 100em
+    #opensign
+        position: absolute
+        width: fit-content
+        border: 1em double $neonRed
+        border-radius: 4em
+        z-index: 100
+        left: -3em
+        top: -2em
+        position: absolute
+        transform: rotate3d(-6, 195, -5, 154deg)
+        @include boxGlow($neonRed)
+        h2
+            font-size: 10em
+            margin: .1em
+            font-family: Yantramanav
+            color: $neonRed
     #pageTab
         background-color: red
         position: absolute
@@ -129,6 +179,7 @@ export default {
         width: 68em
         height: 58em
         transform: skewY(-11deg)
+        z-index: 50
     #shelf
         background-color: pink
         width: 48em
@@ -217,7 +268,7 @@ export default {
                 height: 100%
     .fakePackage
         @extend .gamePackage
-        &:nth-of-type(4)
+        &:nth-of-type(7)
             left: 98em
             top: 12em
         &:nth-of-type(5)
