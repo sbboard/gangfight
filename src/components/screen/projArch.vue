@@ -8,6 +8,11 @@
         <div id="opensign">
             <h2>OPEN</h2>
         </div>
+        <img class="poster" id="posterOne" src="/assets/global/projectArch/poster1.jpg"/>
+        <img class="poster" id="posterTwo" src="/assets/global/projectArch/poster2.jpg"/>
+        <img class="poster" id="posterThree" src="/assets/global/projectArch/poster3.jpg"/>
+        <img class="poster" id="posterFour" src="/assets/global/projectArch/poster4.jpg"/>
+        <img class="poster" id="posterFive" src="/assets/global/projectArch/poster5.jpg"/>
         <div id="shelf"></div>
         <div id="desk"></div>
         <a href="#" class="gamePackage" v-for="(item, id) in theArchive" :key="`${id}`">
@@ -28,7 +33,8 @@
                 <div class="wide"></div>
             </div>
             <div class="greybar"></div>
-            <div class="gameArt"></div>
+            <div class="gameArt">
+                <img :src="'/assets/global/projectArch/gameboy/' + gameThree + '.jpg'"/></div>
         </div>
         <div class="fakePackage">
             <div class="hook"></div>
@@ -38,7 +44,8 @@
                 <div class="wide"></div>
             </div>
             <div class="greybar"></div>
-            <div class="gameArt"></div>
+            <div class="gameArt">
+                <img :src="'/assets/global/projectArch/gameboy/' + gameTwo + '.jpg'"/></div>
         </div>
         <div class="fakePackage">
             <div class="hook"></div>
@@ -48,7 +55,9 @@
                 <div class="wide"></div>
             </div>
             <div class="greybar"></div>
-            <div class="gameArt"></div>
+            <div class="gameArt">
+                <img :src="'/assets/global/projectArch/gameboy/' + gameOne + '.jpg'"/>
+            </div>
         </div>
         <div id="cityscape">
             <img id="city" src="/assets/global/homepage/rochester.png"/>
@@ -64,13 +73,20 @@ import axios from 'axios'
 export default {
     data(){
         return{
-            theArchive: [1,2,3,4,5,6]
+            theArchive: [1,2,3,4,5,6],
+            gameOne: 0,
+            gameTwo: 1,
+            gameThree: 2
         }
     },
     mounted () {
         axios
         .get(`${this.$store.getters.getAPI}/category/project`)
         .then(response => (this.theArchive = response.data))
+
+        this.gameOne = Math.floor(Math.random() * 9) + 1
+        this.gameTwo = Math.floor(Math.random() * 9) + 1
+        this.gameThree = Math.floor(Math.random() * 9) + 1
     },
     methods: {
         formatDate(isoDate){
@@ -110,8 +126,31 @@ export default {
     height: 100%
     background-size: 90% 90%
     background-position: top center
+    .poster
+        position: absolute
+        height: auto    
+        width: 10em
+        z-index: 40
+        transform: rotate3d(-6, 195, -5, 154deg)
+    #posterOne
+        left: 35em
+        top: 4em
+    #posterTwo
+        left: 19em
+        top: 14em
+    #posterThree
+        top: 14em
+        left: 46em
+    #posterFour
+        top: 35em
+        left: -1em
+    #posterFive
+        top: 31em
+        width: auto
+        left: 34em
+        height: 10em
     #cityscape
-        display: none
+        //display: none
         #city
             width: 172em
             position: absolute
