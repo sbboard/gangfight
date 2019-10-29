@@ -8,6 +8,10 @@
         <div id="opensign">
             <h2>OPEN</h2>
         </div>
+        <div id="glass"></div>
+        <div id="streakOne"></div>
+        <div id="streakTwo"></div>
+        <div id="streakThree"></div>
         <img class="poster" id="posterOne" src="/assets/global/projectArch/poster1.jpg"/>
         <img class="poster" id="posterTwo" src="/assets/global/projectArch/poster2.jpg"/>
         <img class="poster" id="posterThree" src="/assets/global/projectArch/poster3.jpg"/>
@@ -25,38 +29,40 @@
             <div class="greybar"></div>
             <div class="gameArt"></div>
         </a>
-        <div class="fakePackage">
-            <div class="hook"></div>
-            <div class="topPackage"></div>
-            <div class="gameboy">
-                <div class="tall"></div>
-                <div class="wide"></div>
+        <div id="fakes">
+            <div class="fakePackage">
+                <div class="hook"></div>
+                <div class="topPackage"></div>
+                <div class="gameboy">
+                    <div class="tall"></div>
+                    <div class="wide"></div>
+                </div>
+                <div class="greybar"></div>
+                <div class="gameArt">
+                    <img :src="'/assets/global/projectArch/gameboy/' + gameThree + '.jpg'"/></div>
             </div>
-            <div class="greybar"></div>
-            <div class="gameArt">
-                <img :src="'/assets/global/projectArch/gameboy/' + gameThree + '.jpg'"/></div>
-        </div>
-        <div class="fakePackage">
-            <div class="hook"></div>
-            <div class="topPackage"></div>
-            <div class="gameboy">
-                <div class="tall"></div>
-                <div class="wide"></div>
+            <div class="fakePackage">
+                <div class="hook"></div>
+                <div class="topPackage"></div>
+                <div class="gameboy">
+                    <div class="tall"></div>
+                    <div class="wide"></div>
+                </div>
+                <div class="greybar"></div>
+                <div class="gameArt">
+                    <img :src="'/assets/global/projectArch/gameboy/' + gameTwo + '.jpg'"/></div>
             </div>
-            <div class="greybar"></div>
-            <div class="gameArt">
-                <img :src="'/assets/global/projectArch/gameboy/' + gameTwo + '.jpg'"/></div>
-        </div>
-        <div class="fakePackage">
-            <div class="hook"></div>
-            <div class="topPackage"></div>
-            <div class="gameboy">
-                <div class="tall"></div>
-                <div class="wide"></div>
-            </div>
-            <div class="greybar"></div>
-            <div class="gameArt">
-                <img :src="'/assets/global/projectArch/gameboy/' + gameOne + '.jpg'"/>
+            <div class="fakePackage">
+                <div class="hook"></div>
+                <div class="topPackage"></div>
+                <div class="gameboy">
+                    <div class="tall"></div>
+                    <div class="wide"></div>
+                </div>
+                <div class="greybar"></div>
+                <div class="gameArt">
+                    <img :src="'/assets/global/projectArch/gameboy/' + gameOne + '.jpg'"/>
+                </div>
             </div>
         </div>
         <div id="cityscape">
@@ -126,6 +132,34 @@ export default {
     height: 100%
     background-size: 90% 90%
     background-position: top center
+    #glass
+        width: 100%
+        height: 100%
+        position: absolute
+        background-color: white
+        opacity: 0.1
+        z-index: 25
+    #streak
+        background-color: white
+        opacity: .3
+        -webkit-transform: rotate(-30deg)
+        transform: rotate(-39deg)
+        width: 150em
+        position: absolute
+        z-index: 21
+        left: -41em
+    #streakOne
+        @extend #streak
+        height: 17em
+        top: 0em
+    #streakTwo
+        @extend #streak
+        height: 3em
+        top: 21em
+    #streakThree
+        @extend #streak
+        height: 7em
+        top: 37em
     .poster
         position: absolute
         height: auto    
@@ -175,7 +209,7 @@ export default {
     #opensign
         position: absolute
         width: fit-content
-        border: 1em double $neonRed
+        border: 1em double $lightNeonRed
         border-radius: 4em
         z-index: 100
         left: -3em
@@ -187,7 +221,8 @@ export default {
             font-size: 10em
             margin: .1em
             font-family: Yantramanav
-            color: $neonRed
+            color: $lightNeonRed
+            @include textGlow($neonRed, 1px)
     #pageTab
         background-color: red
         position: absolute
@@ -307,13 +342,13 @@ export default {
                 height: 100%
     .fakePackage
         @extend .gamePackage
-        &:nth-of-type(7)
+        &:nth-of-type(1)
             left: 98em
             top: 12em
-        &:nth-of-type(5)
+        &:nth-of-type(2)
             left: 95em
             top: 37em
-        &:nth-of-type(6)
+        &:nth-of-type(3)
             left: 92em
             top: 62em
 </style>
