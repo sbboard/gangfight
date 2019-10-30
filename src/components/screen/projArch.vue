@@ -18,6 +18,25 @@
         <img class="poster" id="posterFour" src="/assets/global/projectArch/poster4.jpg"/>
         <img class="poster" id="posterFive" src="/assets/global/projectArch/poster5.jpg"/>
         <div id="shelf"></div>
+        <div id="gameLibrary">
+            <div class="leftCol">
+                <img class="gamerbox topRow" src="/assets/global/projectArch/gamebox/L1.jpg"/>
+                <img class="gamerbox midRow" src="/assets/global/projectArch/gamebox/L2.jpg"/>
+                <img class="gamerbox bottomRow" src="/assets/global/projectArch/gamebox/L3.jpg"/>
+            </div>
+            <div class="midCol">
+                <img class="gamerbox topRow" src="/assets/global/projectArch/gamebox/M1.jpg"/>
+                <img class="gamerbox midRow" src="/assets/global/projectArch/gamebox/M2.jpg"/>
+                <img class="gamerbox bottomRow" src="/assets/global/projectArch/gamebox/M3.jpg"/>
+            </div>
+            <div class="rightCol">
+                <img class="gamerbox bottomRow" src="/assets/global/projectArch/gamebox/R1.jpg"/>
+                <img class="gamerbox topRow" src="/assets/global/projectArch/gamebox/R3.jpg"/>
+            </div>
+            <div class="bench StopRow"></div>
+            <div class="bench SmidRow"></div>
+            <div class="bench SbottomRow"></div>
+        </div>
         <div id="desk"></div>
         <a href="#" class="gamePackage" v-for="(item, id) in theArchive" :key="`${id}`">
             <div class="hook"></div>
@@ -90,9 +109,9 @@ export default {
         .get(`${this.$store.getters.getAPI}/category/project`)
         .then(response => (this.theArchive = response.data))
 
-        this.gameOne = Math.floor(Math.random() * 9) + 1
-        this.gameTwo = Math.floor(Math.random() * 9) + 1
-        this.gameThree = Math.floor(Math.random() * 9) + 1
+        this.gameOne = Math.floor(Math.random() * 8) + 1
+        this.gameTwo = Math.floor(Math.random() * 8) + 1
+        this.gameThree = Math.floor(Math.random() * 8) + 1
     },
     methods: {
         formatDate(isoDate){
@@ -132,6 +151,46 @@ export default {
     height: 100%
     background-size: 90% 90%
     background-position: top center
+    #gameLibrary
+        .gamerbox
+            position: absolute
+            width: 8em
+            height: auto
+            transform: rotate(-13deg)
+            z-index: 100
+        .topRow
+            top: 54em
+        .midRow
+            top: 69em
+        .bottomRow
+            top: 84em   
+        .leftCol
+            left: 33em
+            position: absolute
+        .midCol
+            left: 43em
+            position: absolute
+            top: -2em
+        .rightCol
+            left: 53em
+            position: absolute
+            top: -4em
+        .bench
+            background-color: red
+            width: 30em
+            height: 1em
+            position: absolute
+            transform: rotate(-13deg)
+            z-index: 101
+        .StopRow
+            top: 63em
+            left: 32em
+        .SmidRow
+            top: 77.75em
+            left: 33em
+        .SbottomRow
+            top: 93em
+            left: 33.1em  
     #glass
         width: 100%
         height: 100%
@@ -185,6 +244,7 @@ export default {
         height: 10em
     #cityscape
         //display: none
+        filter: blur(3px)
         #city
             width: 172em
             position: absolute
@@ -211,7 +271,7 @@ export default {
         width: fit-content
         border: 1em double $lightNeonRed
         border-radius: 4em
-        z-index: 100
+        z-index: 250
         left: -3em
         top: -2em
         position: absolute
@@ -249,13 +309,14 @@ export default {
         position: absolute
         left: 0
         bottom: -5em
-        background-color: purple
+        background-color: #26278c
         width: 68em
         height: 58em
         transform: skewY(-11deg)
         z-index: 50
+        //opacity: .3
     #shelf
-        background-color: pink
+        background-color: #2173d2
         width: 48em
         position: absolute
         right: -3em
@@ -268,8 +329,9 @@ export default {
         width: 20em
         transform: rotate(7deg)
         height: 23em
-        background-color: red
+        background-color: rgba(255,255,255,.5)
         z-index: 502
+        filter: drop-shadow(2px 4px 6px black)
         &:nth-of-type(1)
             left: 52em
             top: 6em
@@ -309,24 +371,25 @@ export default {
         .gameboy
             position: absolute
             top: 5em
+            filter: drop-shadow(2px 4px 6px black)
             .tall
                 height: 14em
                 width: 12em
                 top: 2em
                 position: absolute
                 left: 3em
-                background-color: yellow
+                background-color: #8d8d8d
             .wide
                 height: 12em
                 width: 14em
                 top: 4em
                 position: absolute
                 left: 3em
-                background-color: yellow
+                background-color: #8d8d8d
         .greybar   
             width: 12em
             height: 10em
-            background-color: blue
+            background-color: #c6d0d2
             position: absolute
             top: 10em
             left: 4em
