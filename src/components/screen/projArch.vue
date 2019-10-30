@@ -30,7 +30,7 @@
                 <img class="gamerbox bottomRow" src="/assets/global/projectArch/gamebox/M3.jpg"/>
             </div>
             <div class="rightCol">
-                <img class="gamerbox bottomRow" src="/assets/global/projectArch/gamebox/R1.jpg"/>
+                <img class="gamerbox midRow" src="/assets/global/projectArch/gamebox/R1.jpg"/>
                 <img class="gamerbox topRow" src="/assets/global/projectArch/gamebox/R3.jpg"/>
             </div>
             <div class="bench StopRow"></div>
@@ -46,7 +46,8 @@
                 <div class="wide"></div>
             </div>
             <div class="greybar"></div>
-            <div class="gameArt"></div>
+            <div class="gameArt">
+                <img :src="'/assets/contentImages/'+item.img" :alt="item.title"></div>
         </a>
         <div id="fakes">
             <div class="fakePackage">
@@ -98,7 +99,8 @@ import axios from 'axios'
 export default {
     data(){
         return{
-            theArchive: [1,2,3,4,5,6],
+            //theArchive: [1,2,3,4,5,6],
+            theArchive: [{"comicsArray":[],"_id":"5cc737ae77ebc22a4dfbbd63","title":"PC-98 Bot","subtitle":"","img":"twitterbot.png","url":"https://twitter.com/PC98_bot","category":"project","date":"2019-04-29T17:43:10.000Z","series":"noseries","__v":0},{"comicsArray":[],"_id":"5d9a86a449b6141506db2b03","title":"Xenoblade Chronicles 2 Team Builder","subtitle":"","img":"xenoboy.jpg","url":"/projects/xenoblade/","category":"project","date":"2018-03-14T00:28:20.000Z","series":"noseries","__v":0}],
             gameOne: 0,
             gameTwo: 1,
             gameThree: 2
