@@ -1,6 +1,6 @@
 <template>
     <div id="arch" :style="[blockSize, fontSize]">
-        <div id="pageTab">
+        <div id="pageTab" v-if="theArchive.length > 6">
             <div class="leftTab">L</div>
             <div class="middleText">MIDDLE</div>
             <div class="rightTab">R</div>
@@ -26,13 +26,13 @@
             </div>
             <div class="midCol">
                 <img class="gamerbox topRow" src="/assets/global/projectArch/gamebox/M1.jpg"/>
-                <img class="gamerbox midRow" src="/assets/global/projectArch/gamebox/M2.jpg"/>
+                <img class="gamerbox midRow" src="/assets/global/projectArch/gamebox/R2.jpg"/>
                 <img class="gamerbox bottomRow" src="/assets/global/projectArch/gamebox/M3.jpg"/>
             </div>
             <div class="rightCol">
                 <img class="gamerbox midRow" src="/assets/global/projectArch/gamebox/R1.jpg"/>
                 <img class="gamerbox topRow" src="/assets/global/projectArch/gamebox/R3.jpg"/>
-            </div>
+                <img class="gamerbox bottomRow" src="/assets/global/projectArch/gamebox/M2.jpg"/>            </div>
             <div class="bench StopRow"></div>
             <div class="bench SmidRow"></div>
             <div class="bench SbottomRow"></div>
@@ -41,6 +41,8 @@
         <a href="#" class="gamePackage" v-for="(item, id) in theArchive" :key="`${id}`">
             <div class="hook"></div>
             <div class="topPackage"></div>
+            <h1>{{item.title}}</h1>
+            <div id="priceSticker"><h2 v-html="item.date"></h2></div>
             <div class="gameboy">
                 <div class="tall"></div>
                 <div class="wide"></div>
@@ -100,7 +102,7 @@ export default {
     data(){
         return{
             //theArchive: [1,2,3,4,5,6],
-            theArchive: [{"comicsArray":[],"_id":"5cc737ae77ebc22a4dfbbd63","title":"PC-98 Bot","subtitle":"","img":"twitterbot.png","url":"https://twitter.com/PC98_bot","category":"project","date":"2019-04-29T17:43:10.000Z","series":"noseries","__v":0},{"comicsArray":[],"_id":"5d9a86a449b6141506db2b03","title":"Xenoblade Chronicles 2 Team Builder","subtitle":"","img":"xenoboy.jpg","url":"/projects/xenoblade/","category":"project","date":"2018-03-14T00:28:20.000Z","series":"noseries","__v":0}],
+            theArchive: [{"comicsArray":[],"_id":"5cc737ae77ebc22a4dfbbd63","title":"PC-98 Bot","subtitle":"","img":"twitterbot.png","url":"https://twitter.com/PC98_bot","category":"project","date":"03/13<h3>2019</h3>","series":"noseries","__v":0},{"comicsArray":[],"_id":"5d9a86a449b6141506db2b03","title":"Xenoblade Chronicles 2 Team Builder","subtitle":"","img":"xenoboy.jpg","url":"/projects/xenoblade/","category":"project","date":"03/13<h3>2019</h3>","series":"noseries","__v":0}],
             gameOne: 0,
             gameTwo: 1,
             gameThree: 2
@@ -121,7 +123,7 @@ export default {
             let month = d.getMonth()+1 < 10 ? `0${d.getMonth()+1}` : d.getMonth()+1
             let date = d.getDate() < 10 ? `0${d.getDate()}` : d.getDate()
             let year = d.getFullYear().toString().substring(2)
-            let dString = `${month}:${date}:${year}`
+            let dString = `${month}/${date}<h3>${year}</h3>`
             return dString
         }
     },
@@ -352,6 +354,33 @@ export default {
         &:nth-of-type(6)
             left: 69em
             top: 59em
+        h1
+            z-index: 450
+            position: absolute
+            font-size: 2.5em
+            top: 2.25em
+            color: black
+            width: 7em
+            left: .5em
+            font-family: 'Permanent Marker', cursive
+        #priceSticker
+            background-color: red
+            width: 8em
+            height: 8em
+            bottom: 1em
+            border-radius: 4em
+            display: flex
+            right: 1em
+            justify-content: center
+            overflow: hidden
+            align-items: center
+            position: absolute
+            z-index: 400
+            h2
+                color: black
+                font-family: 'Permanent Marker', cursive
+                font-size: 2em
+                transform: rotate(13deg)
         .hook
             margin: 0 auto
             position: absolute
