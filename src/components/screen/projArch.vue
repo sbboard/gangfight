@@ -177,6 +177,7 @@ export default {
             height: auto
             transform: rotate(-13deg)
             z-index: 100
+            filter: sepia(.5) hue-rotate(103deg)
         .topRow
             top: 54em
         .midRow
@@ -244,6 +245,7 @@ export default {
         width: 10em
         z-index: 40
         transform: rotate3d(-6, 195, -5, 154deg)
+        filter: sepia(.5) hue-rotate(180deg)
     #posterOne
         left: 35em
         top: 4em
@@ -335,14 +337,13 @@ export default {
         position: absolute
         left: 0
         bottom: -5em
-        background-color: #26278c
+        background-image: linear-gradient(#399494, #2b1335)
         width: 68em
         height: 58em
         transform: skewY(-11deg)
         z-index: 50
-        //opacity: .3
     #shelf
-        background-color: #2173d2
+        background-image: linear-gradient(#47d2bf, #5a337d)
         width: 48em
         position: absolute
         right: -3em
@@ -350,6 +351,7 @@ export default {
         height: 100em
         transform: skewX(-3deg)
         z-index: 501
+        filter: drop-shadow(-2em 5em 13em black)
     .gamePackage
         position: absolute
         width: 20em
