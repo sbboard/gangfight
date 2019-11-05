@@ -1,9 +1,9 @@
 <template>
     <div id="arch" :style="[blockSize, fontSize]">
-        <div id="pageTab" v-if="theArchive.length > 6">
-            <div class="leftTab">L</div>
-            <div class="middleText">MIDDLE</div>
-            <div class="rightTab">R</div>
+        <div id="pageTab" v-if="theArchive.length > postsPerPage">
+            <div class="leftTab" :class="{'dead': currentPage == 0}" @click="changeNav(-1)"><i class="fas fa-arrow-circle-left"></i></div>
+            <div class="middleText">創造的な作品 {{currentPage+1}}/{{totalPages.totalPages}}</div>
+            <div class="rightTab" :class="{'dead': currentPage == totalPages.totalPages-1}" @click="changeNav(1)"><i class="fas fa-arrow-circle-right"></i></div>
         </div>
         <div id="opensign">
             <h2>OPEN</h2>
@@ -38,7 +38,7 @@
             <div class="bench SbottomRow"></div>
         </div>
         <div id="desk"></div>
-        <a href="#" class="gamePackage" v-for="(item, id) in theArchive" :key="`${id}`">
+        <a href="#" class="gamePackage" v-for="(item, id) in theArchive.slice(currentPage*postsPerPage, currentPage*postsPerPage+postsPerPage)" :key="`${id}`">
             <div class="hook"></div>
             <div class="topPackage"></div>
             <h1>{{item.title}}</h1>
@@ -102,10 +102,12 @@ export default {
     data(){
         return{
             //theArchive: [1,2,3,4,5,6],
-            theArchive: [{"comicsArray":[],"_id":"5cc737ae77ebc22a4dfbbd63","title":"PC-98 Bot","subtitle":"","img":"twitterbot.png","url":"https://twitter.com/PC98_bot","category":"project","date":"03/13<h3>2019</h3>","series":"noseries","__v":0},{"comicsArray":[],"_id":"5d9a86a449b6141506db2b03","title":"Xenoblade Chronicles 2 Team Builder","subtitle":"","img":"xenoboy.jpg","url":"/projects/xenoblade/","category":"project","date":"03/13<h3>2019</h3>","series":"noseries","__v":0}],
+            theArchive: [{"comicsArray":[],"_id":"5cc737ae77ebc22a4dfbbd63","title":"PC-98 Bot","subtitle":"","img":"twitterbot.png","url":"https://twitter.com/PC98_bot","category":"project","date":"03/13<h3>2019</h3>","series":"noseries","__v":0},{"comicsArray":[],"_id":"5d9a86a449b6141506db2b03","title":"Xenoblade Chronicles 2 Team Builder","subtitle":"","img":"xenoboy.jpg","url":"/projects/xenoblade/","category":"project","date":"03/13<h3>2019</h3>","series":"noseries","__v":0},{"comicsArray":[],"_id":"5cc737ae77ebc22a4dfbbd63","title":"PC-98 Bot","subtitle":"","img":"twitterbot.png","url":"https://twitter.com/PC98_bot","category":"project","date":"03/13<h3>2019</h3>","series":"noseries","__v":0},{"comicsArray":[],"_id":"5d9a86a449b6141506db2b03","title":"Xenoblade Chronicles 2 Team Builder","subtitle":"","img":"xenoboy.jpg","url":"/projects/xenoblade/","category":"project","date":"03/13<h3>2019</h3>","series":"noseries","__v":0},{"comicsArray":[],"_id":"5cc737ae77ebc22a4dfbbd63","title":"PC-98 Bot","subtitle":"","img":"twitterbot.png","url":"https://twitter.com/PC98_bot","category":"project","date":"03/13<h3>2019</h3>","series":"noseries","__v":0},{"comicsArray":[],"_id":"5d9a86a449b6141506db2b03","title":"Xenoblade Chronicles 2 Team Builder","subtitle":"","img":"xenoboy.jpg","url":"/projects/xenoblade/","category":"project","date":"03/13<h3>2019</h3>","series":"noseries","__v":0},{"comicsArray":[],"_id":"5cc737ae77ebc22a4dfbbd63","title":"PC-98 Bot","subtitle":"","img":"twitterbot.png","url":"https://twitter.com/PC98_bot","category":"project","date":"03/13<h3>2019</h3>","series":"noseries","__v":0},{"comicsArray":[],"_id":"5d9a86a449b6141506db2b03","title":"Xenoblade Chronicles 2 Team Builder","subtitle":"","img":"xenoboy.jpg","url":"/projects/xenoblade/","category":"project","date":"03/13<h3>2019</h3>","series":"noseries","__v":0},{"comicsArray":[],"_id":"5cc737ae77ebc22a4dfbbd63","title":"PC-98 Bot","subtitle":"","img":"twitterbot.png","url":"https://twitter.com/PC98_bot","category":"project","date":"03/13<h3>2019</h3>","series":"noseries","__v":0},{"comicsArray":[],"_id":"5d9a86a449b6141506db2b03","title":"Xenoblade Chronicles 2 Team Builder","subtitle":"","img":"xenoboy.jpg","url":"/projects/xenoblade/","category":"project","date":"03/13<h3>2019</h3>","series":"noseries","__v":0},{"comicsArray":[],"_id":"5cc737ae77ebc22a4dfbbd63","title":"PC-98 Bot","subtitle":"","img":"twitterbot.png","url":"https://twitter.com/PC98_bot","category":"project","date":"03/13<h3>2019</h3>","series":"noseries","__v":0},{"comicsArray":[],"_id":"5d9a86a449b6141506db2b03","title":"Xenoblade Chronicles 2 Team Builder","subtitle":"","img":"xenoboy.jpg","url":"/projects/xenoblade/","category":"project","date":"03/13<h3>2019</h3>","series":"noseries","__v":0},{"comicsArray":[],"_id":"5d9a86a449b6141506db2b03","title":"Xenoblade Chronicles 2 Team Builder","subtitle":"","img":"xenoboy.jpg","url":"/projects/xenoblade/","category":"project","date":"03/13<h3>2019</h3>","series":"noseries","__v":0}],
             gameOne: 0,
             gameTwo: 1,
-            gameThree: 2
+            gameThree: 2,
+            currentPage: 0,
+            postsPerPage: 6
         }
     },
     mounted () {
@@ -125,6 +127,9 @@ export default {
             let year = d.getFullYear().toString().substring(2)
             let dString = `${month}/${date}<h3>${year}</h3>`
             return dString
+        },
+        changeNav(num){
+            this.currentPage += num
         }
     },
     computed: {
@@ -133,6 +138,13 @@ export default {
         },
         fontSize(){
             return {fontSize: '1'+this.$store.getters.getTaller}
+        },
+        totalPages(){
+            let pagetotal = Math.floor(this.theArchive.length/this.postsPerPage)
+            if(this.theArchive.length%this.postsPerPage!=0){
+                pagetotal += 1
+            }
+            return {totalPages: pagetotal}
         },
     },
     watch: {
@@ -149,6 +161,9 @@ export default {
 @import "../../css/reset.css"
 @import "../../css/gangColors.sass"
 @import "../../css/gangFonts.sass"
+
+.dead
+    visibility: hidden
 #arch
     background-image: url("/assets/global/projectArch/sketch.jpg")
     width: 100%
@@ -288,27 +303,34 @@ export default {
             color: $lightNeonRed
             @include textGlow($neonRed, 1px)
     #pageTab
-        background-color: red
         position: absolute
         left: 44em
         bottom: 12em
         width: 43em
-        height: 6em
+        height: 4em
         -webkit-transform: rotate(7deg)
         transform: rotate(7deg)
+        font-family: Montserrat
         z-index: 502
         display: flex
         justify-content: space-between
         align-items: center
-        .leftTab
-            display: block
-            margin-left: 1em
+        border: 1em double $lightNeonYellow
+        @include boxGlow($neonYellow)
+        color: $lightNeonYellow
+        @include textGlow($neonYellow, 1px)
+        background-color: rgba(0,0,0,.75)
         .middleText
             display: block
             font-size: 3em
+        .leftTab
+            @extend .middleText
+            margin-left: .3em
+            cursor: pointer
         .rightTab
-            display: block
-            margin-right: 1em
+            @extend .middleText
+            margin-right: .3em
+            cursor: pointer
     #desk
         position: absolute
         left: 0
