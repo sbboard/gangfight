@@ -130,6 +130,9 @@ export default {
         },
         changeNav(num){
             this.currentPage += num
+            this.gameOne = Math.floor(Math.random() * 8) + 1
+            this.gameTwo = Math.floor(Math.random() * 8) + 1
+            this.gameThree = Math.floor(Math.random() * 8) + 1
         }
     },
     computed: {
