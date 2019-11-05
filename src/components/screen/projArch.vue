@@ -60,8 +60,7 @@
                     <div class="wide"></div>
                 </div>
                 <div class="greybar"></div>
-                <div class="gameArt">
-                    <img :src="'/assets/global/projectArch/gameboy/' + gameThree + '.jpg'"/></div>
+                <div class="gameArt"></div>
             </div>
             <div class="fakePackage">
                 <div class="hook"></div>
@@ -86,6 +85,38 @@
                     <img :src="'/assets/global/projectArch/gameboy/' + gameOne + '.jpg'"/>
                 </div>
             </div>
+            <div class="fakePackage">
+                <div class="hook"></div>
+                <div class="topPackage"></div>
+                <div class="gameboy">
+                    <div class="tall"></div>
+                    <div class="wide"></div>
+                </div>
+                <div class="greybar"></div>
+                <div class="gameArt">
+                    <img :src="'/assets/global/projectArch/gameboy/' + gameThree + '.jpg'"/></div>
+            </div>
+            <div class="fakePackage">
+                <div class="hook"></div>
+                <div class="topPackage"></div>
+                <div class="gameboy">
+                    <div class="tall"></div>
+                    <div class="wide"></div>
+                </div>
+                <div class="greybar"></div>
+                <div class="gameArt">
+                    <img :src="'/assets/global/projectArch/gameboy/' + gameFour + '.jpg'"/></div>
+            </div>
+            <div class="fakePackage">
+                <div class="hook"></div>
+                <div class="topPackage"></div>
+                <div class="gameboy">
+                    <div class="tall"></div>
+                    <div class="wide"></div>
+                </div>
+                <div class="greybar"></div>
+                <div class="gameArt"></div>
+            </div>
         </div>
         <div id="cityscape">
             <img id="city" src="/assets/global/homepage/rochester.png"/>
@@ -106,6 +137,7 @@ export default {
             gameOne: 0,
             gameTwo: 1,
             gameThree: 2,
+            gameFour: 3,
             currentPage: 0,
             postsPerPage: 6
         }
@@ -118,6 +150,7 @@ export default {
         this.gameOne = Math.floor(Math.random() * 10) + 1
         this.gameTwo = Math.floor(Math.random() * 10) + 1
         this.gameThree = Math.floor(Math.random() * 10) + 1
+        this.gameFour = Math.floor(Math.random() * 10) + 1
     },
     methods: {
         formatDate(isoDate){
@@ -133,6 +166,7 @@ export default {
             this.gameOne = Math.floor(Math.random() * 10) + 1
             this.gameTwo = Math.floor(Math.random() * 10) + 1
             this.gameThree = Math.floor(Math.random() * 10) + 1
+            this.gameFour = Math.floor(Math.random() * 10) + 1
         }
     },
     computed: {
@@ -199,7 +233,7 @@ export default {
             position: absolute
             top: -4em
         .bench
-            background-color: red
+            background-color: #389192
             width: 30em
             height: 1em
             position: absolute
@@ -391,7 +425,7 @@ export default {
             left: .5em
             font-family: 'Permanent Marker', cursive
         #priceSticker
-            background-color: red
+            background-color: $neonRed
             width: 8em
             height: 8em
             bottom: 1em
@@ -472,4 +506,13 @@ export default {
         &:nth-of-type(3)
             left: 92em
             top: 62em
+        &:nth-of-type(4)
+            left: 55em
+            top: -20em
+        &:nth-of-type(5)    
+            left: 78em
+            top: -17em
+        &:nth-of-type(6)    
+            left: 101em
+            top: -14em
 </style>
