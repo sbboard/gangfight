@@ -115,9 +115,9 @@ export default {
         .get(`${this.$store.getters.getAPI}/category/project`)
         .then(response => (this.theArchive = response.data))
 
-        this.gameOne = Math.floor(Math.random() * 8) + 1
-        this.gameTwo = Math.floor(Math.random() * 8) + 1
-        this.gameThree = Math.floor(Math.random() * 8) + 1
+        this.gameOne = Math.floor(Math.random() * 10) + 1
+        this.gameTwo = Math.floor(Math.random() * 10) + 1
+        this.gameThree = Math.floor(Math.random() * 10) + 1
     },
     methods: {
         formatDate(isoDate){
@@ -130,9 +130,9 @@ export default {
         },
         changeNav(num){
             this.currentPage += num
-            this.gameOne = Math.floor(Math.random() * 8) + 1
-            this.gameTwo = Math.floor(Math.random() * 8) + 1
-            this.gameThree = Math.floor(Math.random() * 8) + 1
+            this.gameOne = Math.floor(Math.random() * 10) + 1
+            this.gameTwo = Math.floor(Math.random() * 10) + 1
+            this.gameThree = Math.floor(Math.random() * 10) + 1
         }
     },
     computed: {
