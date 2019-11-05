@@ -8,6 +8,7 @@
         <div id="opensign">
             <h2>OPEN</h2>
         </div>
+        <img id="pollo" src="/assets/global/projectArch/pollo.png"/>
         <div id="glass"></div>
         <div id="streakOne"></div>
         <div id="streakTwo"></div>
@@ -37,7 +38,12 @@
             <div class="bench SmidRow"></div>
             <div class="bench SbottomRow"></div>
         </div>
+        <div id="deskTop"></div>
         <div id="desk"></div>
+        <div id="owner">
+            <img id="mouth" src="/assets/global/projectArch/mouth-loop2.gif"/>
+            <img id="girl" src="/assets/global/projectArch/shopownersketch.png"/>
+        </div>
         <a href="#" class="gamePackage" v-for="(item, id) in theArchive.slice(currentPage*postsPerPage, currentPage*postsPerPage+postsPerPage)" :key="`${id}`">
             <div class="hook"></div>
             <div class="topPackage"></div>
@@ -199,8 +205,42 @@ export default {
 @import "../../css/gangColors.sass"
 @import "../../css/gangFonts.sass"
 
+#owner
+    position: absolute
+    top: 14em
+    left: 7em
+    z-index: 500
+    transform: rotate(-4deg)
+    #girl
+        width: 21em
+    #mouth
+        width: 10em
+        position: absolute
+        left: 11em
+        top: 15em
+#deskTop
+    background-color: #eed415
+    position: absolute
+    z-index: 488
+    left: -1em
+    transform: skewY(-11deg)
+    top: 48em
+    width: 59em
+    height: 3em
 .dead
     visibility: hidden
+#pollo
+    position: absolute
+    bottom: 9em
+    left: -12em
+    width: 42em
+    opacity: .6
+    transform: rotate(8deg)
+    z-index: 500  
+    filter: hue-rotate(329deg)
+    image-rendering: auto
+    image-rendering: crisp-edges
+    image-rendering: pixelated
 #arch
     background-image: url("/assets/global/projectArch/sketch.jpg")
     width: 100%
@@ -287,7 +327,7 @@ export default {
         left: 35em
         top: 4em
     #posterTwo
-        left: 19em
+        left: -6em
         top: 14em
     #posterThree
         top: 14em

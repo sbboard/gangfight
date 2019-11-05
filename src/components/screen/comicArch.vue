@@ -233,6 +233,7 @@ $metalColor: #c964ff
     top: 40em
     left: 20em
     z-index: 1
+    //sepia(.5) hue-rotate(-163deg)
     img
         position: absolute   
     .eye
