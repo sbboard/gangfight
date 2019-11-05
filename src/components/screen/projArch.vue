@@ -327,20 +327,20 @@ export default {
     #opensign
         position: absolute
         width: fit-content
-        border: 1em double $lightNeonRed
+        border: 1em double $lightNeonBlue
         border-radius: 4em
         z-index: 250
         left: -3em
         top: -2em
         position: absolute
         transform: rotate3d(-6, 195, -5, 154deg)
-        @include boxGlow($neonRed)
+        @include boxGlow($neonBlue)
         h2
             font-size: 10em
             margin: .1em
             font-family: Yantramanav
-            color: $lightNeonRed
-            @include textGlow($neonRed, 1px)
+            color: $lightNeonBlue
+            @include textGlow($neonBlue, 1px)
     #pageTab
         position: absolute
         left: 44em
@@ -424,8 +424,9 @@ export default {
             width: 7em
             left: .5em
             font-family: 'Permanent Marker', cursive
+            transform: rotate(-5deg)
         #priceSticker
-            background-color: $neonRed
+            background-color: $neonBlue
             width: 8em
             height: 8em
             bottom: 1em
@@ -446,7 +447,7 @@ export default {
             margin: 0 auto
             position: absolute
             z-index: 2
-            background-color: blue
+            background-color: #404142
             top: -1em
             left: 0
             right: 0
@@ -457,7 +458,8 @@ export default {
             position: absolute
             width: 100%
             height: 4.5em
-            background-color: yellow
+            //background-image: linear-gradient(#fff81d, #bf8951)
+            background-image: linear-gradient($neonYellow, $neonOrange)
             top: 0
             z-index: 1
         .gameboy
@@ -488,7 +490,7 @@ export default {
         .gameArt    
             width: 10em
             height: 10em
-            background-color: green
+            background-color: #338586
             position: absolute
             top: 10em
             left: 5em
