@@ -306,7 +306,7 @@ export default {
         position: absolute
         left: 44em
         bottom: 12em
-        width: 43em
+        width: 41em
         height: 4em
         -webkit-transform: rotate(7deg)
         transform: rotate(7deg)
