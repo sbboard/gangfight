@@ -8,6 +8,9 @@
         <div id="opensign">
             <h2>OPEN</h2>
         </div>
+        <div id="opensignTwo">
+            <h2>OPEN</h2>
+        </div>
         <img id="pollo" src="/assets/global/projectArch/pollo.png"/>
         <div id="glass"></div>
         <div id="streakOne"></div>
@@ -375,12 +378,19 @@ export default {
         position: absolute
         transform: rotate3d(-6, 195, -5, 154deg)
         @include boxGlow($neonBlue)
+        pointer-events: none
         h2
             font-size: 10em
             margin: .1em
             font-family: Yantramanav
             color: $lightNeonBlue
             @include textGlow($neonBlue, 1px)
+    #opensignTwo
+        @extend #opensign
+        left: -4em
+        top: -3em
+        opacity: .3
+        z-index: 249
     #pageTab
         position: absolute
         left: 44em
