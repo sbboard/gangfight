@@ -23,8 +23,8 @@ yarn-error.log*
 *.sw*
 
 assets
-fonts/
-public
-publicx
+fonts
+js
+3dModel
 
 mediaRec.json
