@@ -24,5 +24,7 @@ yarn-error.log*
 
 assets
 fonts/
+public
+publicx
 
 mediaRec.json
