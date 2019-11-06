@@ -389,7 +389,7 @@ export default {
         @extend #opensign
         left: -4em
         top: -3em
-        opacity: .3
+        opacity: .5
         z-index: 249
     #pageTab
         position: absolute
