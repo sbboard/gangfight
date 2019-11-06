@@ -703,12 +703,13 @@ $metalColor: #c964ff
         image-rendering: pixelated
         image-rendering: optimize-contrast
         -ms-interpolation-mode: nearest-neighbor
-        z-index: -202
+        z-index: -202    
+        filter: brightness(0.5)
     #glowbg
         @extend #bg
         background-image: linear-gradient(to bottom, $neonPink, black)
         z-index: -200
-        opacity: .6
+        opacity: .3
     #menu
         width: 70em
         position: absolute

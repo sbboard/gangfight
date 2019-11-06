@@ -45,7 +45,7 @@
         <div id="desk"></div>
         <div id="owner">
             <img id="mouth" src="/assets/global/projectArch/mouth-loop2.gif"/>
-            <img id="girl" src="/assets/global/projectArch/shopownersketch.png"/>
+            <img id="girl" src="/assets/global/projectArch/shopownersketch2.png"/>
         </div>
         <a href="#" class="gamePackage" v-for="(item, id) in theArchive.slice(currentPage*postsPerPage, currentPage*postsPerPage+postsPerPage)" :key="`${id}`">
             <div class="hook"></div>
@@ -212,10 +212,10 @@ export default {
     position: absolute
     top: 14em
     left: 7em
-    z-index: 500
+    z-index: 460
     transform: rotate(-4deg)
     #girl
-        width: 21em
+        width: 24.4em
     #mouth
         width: 10em
         position: absolute
