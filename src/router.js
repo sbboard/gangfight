@@ -7,7 +7,6 @@ import About from "./components/screen/about.vue"
 import ComicArch from "./components/screen/comicArch.vue"
 import ProjArch from "./components/screen/projArch.vue"
 import ComicReader from "./components/outerbounds/comicReader.vue"
-import Projects from "./components/screen/projects.vue"
 import screen from "./components/screen/screen.vue"
 import sbboardExit from "./components/outerbounds/sbboardExit.vue"
 
@@ -33,7 +32,7 @@ export default new Router({
         component: About
       },
       {
-        path: "/projArch",
+        path: "/project",
         name: "game shoppe",
         component: ProjArch
       },
@@ -46,11 +45,6 @@ export default new Router({
         path: "/comic",
         name: "ramen cart",
         component: ComicArch
-      },
-      {
-        path: "/project",
-        name: "projects",
-        component: Projects
       },
       {
         path: "/sbboard",

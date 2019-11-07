@@ -44,7 +44,7 @@
         <div id="deskTop"></div>
         <div id="desk"></div>
         <div id="owner">
-            <img id="mouth" src="/assets/global/projectArch/mouth-loop2.gif"/>
+            <img id="mouth" src="/assets/global/projectArch/mouth-loop8.gif"/>
             <img id="girl" src="/assets/global/projectArch/shopowner0.png"/>
         </div>
         <a href="#" class="gamePackage" v-for="(item, id) in theArchive.slice(currentPage*postsPerPage, currentPage*postsPerPage+postsPerPage)" :key="`${id}`">
@@ -141,8 +141,7 @@ import axios from 'axios'
 export default {
     data(){
         return{
-            //theArchive: [1,2,3,4,5,6],
-            theArchive: [{"comicsArray":[],"_id":"5cc737ae77ebc22a4dfbbd63","title":"PC-98 Bot","subtitle":"","img":"twitterbot.png","url":"https://twitter.com/PC98_bot","category":"project","date":"03/13<h3>2019</h3>","series":"noseries","__v":0},{"comicsArray":[],"_id":"5d9a86a449b6141506db2b03","title":"Xenoblade Chronicles 2 Team Builder","subtitle":"","img":"xenoboy.jpg","url":"/projects/xenoblade/","category":"project","date":"03/13<h3>2019</h3>","series":"noseries","__v":0},{"comicsArray":[],"_id":"5cc737ae77ebc22a4dfbbd63","title":"PC-98 Bot","subtitle":"","img":"twitterbot.png","url":"https://twitter.com/PC98_bot","category":"project","date":"03/13<h3>2019</h3>","series":"noseries","__v":0},{"comicsArray":[],"_id":"5d9a86a449b6141506db2b03","title":"Xenoblade Chronicles 2 Team Builder","subtitle":"","img":"xenoboy.jpg","url":"/projects/xenoblade/","category":"project","date":"03/13<h3>2019</h3>","series":"noseries","__v":0},{"comicsArray":[],"_id":"5cc737ae77ebc22a4dfbbd63","title":"PC-98 Bot","subtitle":"","img":"twitterbot.png","url":"https://twitter.com/PC98_bot","category":"project","date":"03/13<h3>2019</h3>","series":"noseries","__v":0},{"comicsArray":[],"_id":"5d9a86a449b6141506db2b03","title":"Xenoblade Chronicles 2 Team Builder","subtitle":"","img":"xenoboy.jpg","url":"/projects/xenoblade/","category":"project","date":"03/13<h3>2019</h3>","series":"noseries","__v":0},{"comicsArray":[],"_id":"5cc737ae77ebc22a4dfbbd63","title":"PC-98 Bot","subtitle":"","img":"twitterbot.png","url":"https://twitter.com/PC98_bot","category":"project","date":"03/13<h3>2019</h3>","series":"noseries","__v":0},{"comicsArray":[],"_id":"5d9a86a449b6141506db2b03","title":"Xenoblade Chronicles 2 Team Builder","subtitle":"","img":"xenoboy.jpg","url":"/projects/xenoblade/","category":"project","date":"03/13<h3>2019</h3>","series":"noseries","__v":0},{"comicsArray":[],"_id":"5cc737ae77ebc22a4dfbbd63","title":"PC-98 Bot","subtitle":"","img":"twitterbot.png","url":"https://twitter.com/PC98_bot","category":"project","date":"03/13<h3>2019</h3>","series":"noseries","__v":0},{"comicsArray":[],"_id":"5d9a86a449b6141506db2b03","title":"Xenoblade Chronicles 2 Team Builder","subtitle":"","img":"xenoboy.jpg","url":"/projects/xenoblade/","category":"project","date":"03/13<h3>2019</h3>","series":"noseries","__v":0},{"comicsArray":[],"_id":"5cc737ae77ebc22a4dfbbd63","title":"PC-98 Bot","subtitle":"","img":"twitterbot.png","url":"https://twitter.com/PC98_bot","category":"project","date":"03/13<h3>2019</h3>","series":"noseries","__v":0},{"comicsArray":[],"_id":"5d9a86a449b6141506db2b03","title":"Xenoblade Chronicles 2 Team Builder","subtitle":"","img":"xenoboy.jpg","url":"/projects/xenoblade/","category":"project","date":"03/13<h3>2019</h3>","series":"noseries","__v":0},{"comicsArray":[],"_id":"5d9a86a449b6141506db2b03","title":"Xenoblade Chronicles 2 Team Builder","subtitle":"","img":"xenoboy.jpg","url":"/projects/xenoblade/","category":"project","date":"03/13<h3>2019</h3>","series":"noseries","__v":0}],
+            theArchive: [],
             gameOne: 0,
             gameTwo: 1,
             gameThree: 2,
