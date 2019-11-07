@@ -90,7 +90,7 @@
       <div id="menu">     
         <div class="contentBoxes" v-for="(item, id) in theArchive.slice(currentPage*4, currentPage*4+4)" :key="`${id}`">
               <div class="boxWrap">
-                  <p class="boxDate">{{item.date}}</p>
+                  <p class="boxDate">{{item.updatedDate}}</p>
                   <p class="titleName">
                       <span class="titleText">{{item.title}}</span>
                       <span class="subtitle" v-if="item.subtitle != ''">{{item.subtitle}}</span>
@@ -191,7 +191,7 @@ export default {
     watch: {
         theArchive(){
             for(let i=0;i<this.theArchive.length;i++){
-                this.theArchive[i].date = this.formatDate(this.theArchive[i].date)
+                this.theArchive[i].updatedDate = this.formatDate(this.theArchive[i].updatedDate)
             }
         }
     }

@@ -51,7 +51,7 @@
             <div class="hook"></div>
             <div class="topPackage"></div>
             <h1>{{item.title}}</h1>
-            <div id="priceSticker"><h2 v-html="item.date"></h2></div>
+            <div id="priceSticker"><h2 v-html="item.updatedDate"></h2></div>
             <div class="gameboy">
                 <div class="tall"></div>
                 <div class="wide"></div>
@@ -195,7 +195,7 @@ export default {
     watch: {
         theArchive(){
             for(let i=0;i<this.theArchive.length;i++){
-                this.theArchive[i].date = this.formatDate(this.theArchive[i].date)
+                this.theArchive[i].updatedDate = this.formatDate(this.theArchive[i].updatedDate)
             }
         }
     }
