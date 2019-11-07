@@ -45,7 +45,7 @@
         <div id="desk"></div>
         <div id="owner">
             <img id="mouth" src="/assets/global/projectArch/mouth-loop2.gif"/>
-            <img id="girl" src="/assets/global/projectArch/shopownersketch2.png"/>
+            <img id="girl" src="/assets/global/projectArch/shopowner0.png"/>
         </div>
         <a href="#" class="gamePackage" v-for="(item, id) in theArchive.slice(currentPage*postsPerPage, currentPage*postsPerPage+postsPerPage)" :key="`${id}`">
             <div class="hook"></div>
