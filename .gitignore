@@ -22,9 +22,7 @@ yarn-error.log*
 *.sln
 *.sw*
 
-assets
-fonts
-js
-3dModel
-
-mediaRec.json
+public/assets
+public/fonts
+public/js
+public/3dModel
