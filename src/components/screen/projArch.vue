@@ -166,7 +166,7 @@ export default {
             let month = d.getMonth()+1 < 10 ? `0${d.getMonth()+1}` : d.getMonth()+1
             let date = d.getDate() < 10 ? `0${d.getDate()}` : d.getDate()
             let year = d.getFullYear().toString().substring(2)
-            let dString = `${month}/${date}<h3>${year}</h3>`
+            let dString = `${month}/${date}<h3>20${year}</h3>`
             return dString
         },
         changeNav(num){
