@@ -4,6 +4,7 @@ import Home from "./components/screen/Home.vue"
 import Login from "./components/screen/login.vue"
 import fakeFourOFour from "./components/screen/placeholder404.vue"
 import About from "./components/screen/about.vue"
+import AboutNew from "./components/screen/aboutNew.vue"
 import ComicArch from "./components/screen/comicArch.vue"
 import ProjArch from "./components/screen/projArch.vue"
 import ComicReader from "./components/outerbounds/comicReader.vue"
@@ -30,6 +31,11 @@ export default new Router({
         path: "/about",
         name: "cockpit",
         component: About
+      },
+      {
+        path: "/aboutNew",
+        name: "cockpit",
+        component: AboutNew
       },
       {
         path: "/project",
