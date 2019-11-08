@@ -96,8 +96,11 @@ export default {
 @import "../../css/gangFonts.sass"
 
 #screenWall
-    position: inherit
     z-index: 900
+    position: absolute
+    top: -6em
+    height: 100em
+    width: 100em
     .screenWrap
         transform: rotate(53deg)
         .screen
@@ -113,10 +116,11 @@ export default {
             img
                 height: 19em
                 width: 24em
-                margin-left: 1em
+                margin-left: 1.5em
                 display: inline-block
-                filter: sepia(1) hue-rotate(143deg) contrast(1)
+                filter: sepia(.85) hue-rotate(170deg)
                 @include boxGlow($neonBlue)
+                opacity: .85
         &:nth-child(2)
             transform: rotate(31deg)
             .screen
@@ -189,7 +193,7 @@ export default {
         &:hover
             color: white
     #walls
-        opacity: .5
+        opacity: 1
         z-index: 100
         position: absolute
         top: 0
