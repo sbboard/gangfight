@@ -1,5 +1,37 @@
 <template>
     <div id="aboutUs" :style="fontSize">
+        <div id="screenWall">
+            <div class="screenWrap">
+            <div class="screen">
+                <img src="/assets/global/newAbout/screens/1.jpg"/>
+                <img src="/assets/global/newAbout/screens/1.jpg"/>
+                <img src="/assets/global/newAbout/screens/1.jpg"/>
+            </div></div>
+            <div class="screenWrap">
+            <div class="screen">
+                <img src="/assets/global/newAbout/screens/1.jpg"/>
+                <img src="/assets/global/newAbout/screens/1.jpg"/>
+                <img src="/assets/global/newAbout/screens/1.jpg"/>
+            </div></div>
+            <div class="screenWrap">
+            <div class="screen">
+                <img src="/assets/global/newAbout/screens/1.jpg"/>
+                <img src="/assets/global/newAbout/screens/1.jpg"/>
+                <img src="/assets/global/newAbout/screens/1.jpg"/>
+            </div></div>
+            <div class="screenWrap">
+            <div class="screen">
+                <img src="/assets/global/newAbout/screens/1.jpg"/>
+                <img src="/assets/global/newAbout/screens/1.jpg"/>
+                <img src="/assets/global/newAbout/screens/1.jpg"/>
+            </div></div>
+            <div class="screenWrap">
+            <div class="screen">
+                <img src="/assets/global/newAbout/screens/1.jpg"/>
+                <img src="/assets/global/newAbout/screens/1.jpg"/>
+                <img src="/assets/global/newAbout/screens/1.jpg"/>
+            </div></div>
+        </div>
         <div id="walls">
             <div class="top"></div>
             <div class="right"></div>
@@ -62,6 +94,53 @@ export default {
 @import "../../css/reset.css"
 @import "../../css/gangColors.sass"
 @import "../../css/gangFonts.sass"
+
+#screenWall
+    position: inherit
+    z-index: 900
+    .screenWrap
+        transform: rotate(53deg)
+        .screen
+            display: block
+            position: absolute
+            width: 80em
+            height: 19em
+            transform: perspective(55em) rotateY(45deg)
+            top: 6em
+            left: 4em
+            text-align: right
+            z-index: 900
+            img
+                height: 19em
+                width: 24em
+                margin-left: 1em
+                display: inline-block
+                filter: sepia(1) hue-rotate(143deg) contrast(1)
+                @include boxGlow($neonBlue)
+        &:nth-child(2)
+            transform: rotate(31deg)
+            .screen
+                transform: perspective(55em) rotateY(45deg)
+                top: 23em
+                left: -5em
+        &:nth-child(3)
+            transform: rotate(8deg)
+            .screen
+                transform: perspective(55em) rotateY(45deg)
+                top: 35em
+                left: -21em
+        &:nth-child(4)
+            transform: rotate(-15deg)
+            .screen
+                transform: perspective(55em) rotateY(45deg)
+                top: 40em
+                left: -40em
+        &:nth-child(5)
+            transform: rotate(-38deg)
+            .screen
+                transform: perspective(55em) rotateY(45deg)
+                top: 37em
+                left: -60em
 
 #aboutUs
     #sketch
