@@ -31,6 +31,7 @@
                 <img src="/assets/global/newAbout/screens/14.jpg"/>
             </div></div>
         </div>
+        <img id="segaaa" src="/assets/global/newAbout/sega.png"/>
         <div class="draggable" :style="{ top: coords[boxNumber-1].y, left: coords[boxNumber-1].x}" v-draggable="draggableValue" v-for="boxNumber in popups" :key="boxNumber">
             <div class="exitCube" @click="exitWindow(boxNumber)"></div>
             <div :ref="handleId">
@@ -134,6 +135,14 @@ export default {
 @import "../../css/gangColors.sass"
 @import "../../css/gangFonts.sass"
 
+#segaaa
+    z-index: 2000
+    position: absolute
+    top: 75em
+    left: 31em
+    filter: drop-shadow(7em 5em 3em black) hue-rotate(87deg) drop-shadow(6em 5em 4em black) blur(.5px)
+    width: 16em
+    display: none
 #screenWall
     z-index: 900
     position: absolute
@@ -192,8 +201,10 @@ export default {
         background-image: url(/assets/global/newAbout/sketch.jpg)
         background-size: 140% 140%
         background-position: -18em -20em
-        z-index: 0
-        //opacity: 0
+        z-index: 2000
+        position: absolute
+        opacity: 0
+        pointer-events: none
     #descBox
         position: absolute    
         color: $neonBlue
