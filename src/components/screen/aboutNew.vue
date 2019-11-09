@@ -31,6 +31,22 @@
                 <img src="/assets/global/newAbout/screens/14.jpg"/>
             </div></div>
         </div>
+        <div class="draggable" :style="{ top: coords[boxNumber-1].y, left: coords[boxNumber-1].x}" v-draggable="draggableValue" v-for="boxNumber in popups" :key="boxNumber">
+            <div class="exitCube" @click="exitWindow(boxNumber)"></div>
+            <div :ref="handleId">
+                <img src="/assets/global/about/windowsTopBar.gif" alt="move">
+            </div>
+            <div class="windowStuff">
+                <template v-if="popUpArray[boxNumber-1] == 'email'">
+                    <img id="pcImg" src="/assets/global/about/pc.png"/>
+                    <p>gyangu.faito@gmail.com</p>
+                </template>
+                <template v-if="popUpArray[boxNumber-1] == 'cat'">
+                    <img id="detailedCat" src="/assets/global/about/detailedCat.png"/>
+                </template>
+            </div>
+            <img class="winBottom" src="/assets/global/about/windowsBottom.png"/>
+        </div>
         <div id="topLight"></div>
         <div id="bottomLight"></div>
         <div id="walls">
@@ -74,10 +90,20 @@
 </template>
 
 <script>
+import { Draggable } from 'draggable-vue-directive'
 export default {
+    directives: {
+        Draggable,
+    },
     data() {
         return {
-            
+            handleId: "handle-id",
+            draggableValue: {
+                handle: undefined
+            },
+            popups: 0,
+            coords: [],
+            popUpArray: []
         };
     },
     computed: {
@@ -85,8 +111,20 @@ export default {
             return {fontSize: '1'+this.$store.getters.getTaller}
         }
     },
+    mounted() {
+        this.draggableValue.handle = this.$refs[this.handleId]
+    },
     methods: {
-        
+        exitWindow(num) {
+            document.getElementsByClassName("draggable")[num-1].style.visibility = "hidden"
+        },
+        spawnpop(windowType){
+            let randoX = Math.floor(Math.random() * Math.floor(60))
+            let randoY = Math.floor(Math.random() * Math.floor(80))
+            this.coords.push({x: randoX + "em",y: randoY + "em"})
+            this.popUpArray.push(windowType)
+            this.popups++
+        },
     },
 }
 </script>
@@ -160,22 +198,22 @@ export default {
         position: absolute    
         color: $neonBlue
         background-color: rgba(black,.8)
-        width: 21em
-        left: 19.5em
+        width: 20em
+        left: 17em
         padding: 1em
-        top: 17em
+        top: 14.5em
         transform: rotate(-1deg)
-        font-size: 1.75em
+        font-size: 2em
         font-family: Yantramanav
-        z-index: 500
+        z-index: 1000
         @include boxGlow($neonBlue)
         span
             display: block
             &:first-child
                 margin-bottom: .25em
     .socMedia    
-        left: 10.25em
-        z-index: 700
+        left: 11.5em
+        z-index: 1000
         top: 16.35em
         font-size: 3.35em
         background-color: rgba(black,.8)
@@ -186,9 +224,9 @@ export default {
         text-align: center
         height: 1em
         &:nth-of-type(1)
-            left: 12.5em
+            left: 13.75em
         &:nth-of-type(2)
-            left: 14.75em
+            left: 16em
         color: $neonBlue
         @include boxGlow($neonBlue)
         &:hover
@@ -237,10 +275,12 @@ export default {
         transform: perspective(1em) rotateX(177deg)
     #bottomLight
         @extend #light
-        height: 33em
-        transform: perspective(10px) rotateX(6.25deg)
-        left: 36.49em
-        bottom: 10.1em
+        height: 47em
+        transform: perspective(10px) rotateX(2deg) skewX(-20deg)
+        left: 30em
+        width: 34em
+        bottom: -3.8em
+        background-image: linear-gradient(to right, transparentize($neonBlue,.25) , rgba(0,0,0,0) 80%)
     #window
         //opacity: 0
         #windowTint    
@@ -306,4 +346,38 @@ export default {
             top: 4em
             width: 22em
             z-index: 49
+.draggable
+    position: absolute
+    z-index: 1001
+    top: 0
+    left: 0
+    background-image: url("/assets/global/about/windowsMiddle.png")
+    .exitCube    
+        z-index: 801
+        position: absolute
+        cursor: pointer
+        top: 3px
+        right: 4px
+        width: 16px
+        height: 15px
+    .windowStuff
+        display: flex
+        justify-content: center
+        margin: 1em auto
+        width: fit-content
+        font-size: 2em
+        font-family: monospace
+        #pcImg
+            display: inline-block
+            margin-right: 1em
+        #detailedCat
+            width: 12em
+            height: 12em
+            filter: hue-rotate(71deg) saturate(1.5)
+        p
+            display: inline-block
+            user-select: all
+    .winBottom
+        position: absolute
+        bottom: 0
 </style>
