@@ -3,35 +3,36 @@
         <div id="screenWall">
             <div class="screenWrap">
             <div class="screen">
-                <img src="/assets/global/newAbout/screens/1.jpg"/>
-                <img src="/assets/global/newAbout/screens/1.jpg"/>
-                <img src="/assets/global/newAbout/screens/1.jpg"/>
+                <img src="/assets/global/newAbout/screens/2.jpg"/>
+                <img src="/assets/global/newAbout/screens/3.png"/>
+            </div></div>
+            <div class="screenWrap">
+            <div class="screen">
+                <img src="/assets/global/newAbout/screens/4.jpg"/>
+                <img src="/assets/global/newAbout/screens/5.jpg"/>
+                <img src="/assets/global/newAbout/screens/6.jpg"/>
             </div></div>
             <div class="screenWrap">
             <div class="screen">
                 <img src="/assets/global/newAbout/screens/1.jpg"/>
-                <img src="/assets/global/newAbout/screens/1.jpg"/>
-                <img src="/assets/global/newAbout/screens/1.jpg"/>
+                <img src="/assets/global/newAbout/screens/7.jpg"/>
+                <img src="/assets/global/newAbout/screens/8.jpg"/>
             </div></div>
             <div class="screenWrap">
             <div class="screen">
-                <img src="/assets/global/newAbout/screens/1.jpg"/>
-                <img src="/assets/global/newAbout/screens/1.jpg"/>
-                <img src="/assets/global/newAbout/screens/1.jpg"/>
+                <img src="/assets/global/newAbout/screens/9.jpg"/>
+                <img src="/assets/global/newAbout/screens/10.jpg"/>
+                <img src="/assets/global/newAbout/screens/11.jpg"/>
             </div></div>
             <div class="screenWrap">
             <div class="screen">
-                <img src="/assets/global/newAbout/screens/1.jpg"/>
-                <img src="/assets/global/newAbout/screens/1.jpg"/>
-                <img src="/assets/global/newAbout/screens/1.jpg"/>
-            </div></div>
-            <div class="screenWrap">
-            <div class="screen">
-                <img src="/assets/global/newAbout/screens/1.jpg"/>
-                <img src="/assets/global/newAbout/screens/1.jpg"/>
-                <img src="/assets/global/newAbout/screens/1.jpg"/>
+                <img src="/assets/global/newAbout/screens/12.jpg"/>
+                <img src="/assets/global/newAbout/screens/13.jpg"/>
+                <img src="/assets/global/newAbout/screens/14.jpg"/>
             </div></div>
         </div>
+        <div id="topLight"></div>
+        <div id="bottomLight"></div>
         <div id="walls">
             <div class="top"></div>
             <div class="right"></div>
@@ -118,7 +119,7 @@ export default {
                 width: 24em
                 margin-left: 1.5em
                 display: inline-block
-                filter: sepia(.85) hue-rotate(170deg)
+                filter: sepia(0.85) hue-rotate(170deg) brightness(1.5)
                 @include boxGlow($neonBlue)
                 opacity: .85
         &:nth-child(2)
@@ -223,8 +224,25 @@ export default {
             left: 0
             height: 100%
             width: 23em
+    #light
+        background-image: linear-gradient(to right, transparentize($neonBlue,.25) , rgba(0,0,0,0))
+        width: 18.5em
+        position: absolute
+        z-index: 890
+    #topLight
+        @extend #light
+        height: 9em
+        left: 48em
+        top: .85em
+        transform: perspective(1em) rotateX(177deg)
+    #bottomLight
+        @extend #light
+        height: 33em
+        transform: perspective(10px) rotateX(6.25deg)
+        left: 36.49em
+        bottom: 10.1em
     #window
-        opacity: 0
+        //opacity: 0
         #windowTint    
             width: 100%
             height: 100%
