@@ -3,7 +3,7 @@
         <div id="screenWall">
             <div class="screenWrap" v-for="index in 5" :key="index">
                 <div class="screen">
-                    <img v-for="num in 3" :key="num" :src="theArchive.length > ((index-1)*3)+num-1 ? assetURL+theArchive[((index-1)*3)+num-1].img : `/assets/global/newAbout/screens/${((index-1)*3)+num-1}.jpg`"/>
+                    <img class="screenimg" v-for="num in 3" :key="num" :src="theArchive.length > ((index-1)*3)+num-1 ? assetURL+theArchive[((index-1)*3)+num-1].img : `/assets/global/newAbout/screens/${((index-1)*3)+num-1}.jpg`"/>
                 </div>
             </div>
         </div>
@@ -83,7 +83,7 @@ export default {
             coords: [],
             popUpArray: [],
             assetURL: '/assets/contentImages/',
-            theArchive: []
+            theArchive: [{"comicsArray":[],"_id":"5cc737ae77ebc22a4dfbbd63","title":"PC-98 Bot","subtitle":"","img":"1.png","url":"https://twitter.com/PC98_bot","category":"project","date":"2019-04-29T17:43:10.000Z","series":"noseries","__v":0,"updatedDate":"2019-04-29T17:43:10.000Z"},{"comicsArray":[],"_id":"5d9a86a449b6141506db2b03","title":"Xenoblade Chronicles 2 Team Builder","subtitle":"","img":"xenoboy.jpg","url":"/projects/xenoblade/","category":"project","date":"2018-03-14T00:28:20.000Z","series":"noseries","__v":0,"updatedDate":"2018-03-14T00:28:20.000Z"},{"comicsArray":[],"_id":"5ca2f00f4395a139db1aceda","title":"Oil","subtitle":"Local Gas Station Robber","img":"newOil.png","url":"/archive/sbboard/gang-fight.com/wp/comic/local-gas-station-robber/index.html","category":"comic","date":"2017-04-21T06:00:00.000Z","series":"noseries","__v":0,"updatedDate":"2017-04-21T06:00:00.000Z"},{"comicsArray":["1.jpg","2.jpg","3.jpg","4.jpg","5.jpg","6.jpg","7.jpg","8.jpg","9.jpg","10.jpg"],"_id":"5cd8ea4377ebc22a4dfbbd64","title":"Afro Ahab","subtitle":"","img":"afroAhab.png","url":"afroAhab","category":"comic","date":"2016-10-30T17:43:10.000Z","series":"noseries","__v":0,"updatedDate":"2016-10-30T17:43:10.000Z"},{"comicsArray":[""],"_id":"5ca2efa04395a139db1aced9","title":"SBboard Archive","subtitle":"","img":"sbboard.png","url":"/sbboard/","category":"comic","date":"2011-01-02T07:00:00.000Z","series":"noseries","__v":0,"updatedDate":"2011-01-02T07:00:00.000Z"}]
         };
     },
     computed: {
@@ -97,6 +97,7 @@ export default {
         .get(`${this.$store.getters.getAPI}/`)
         .then(response => (this.theArchive = response.data))
         this.shuffle(this.theArchive)
+        this.changeScreen()
     },
     methods: {
         exitWindow(num) {
@@ -109,8 +110,16 @@ export default {
             this.popUpArray.push(windowType)
             this.popups++
         },
-        shuffle: function(rand){
+        shuffle(rand){
             return rand.sort(function(){return 0.5 - Math.random()});
+        },
+        changeScreen(){  
+            this.intervalid1 = setInterval(() => {
+                let newScreen = Math.floor(Math.random() * this.theArchive.length)
+                let toChange = Math.floor(Math.random() * 15)
+                var x = document.getElementsByClassName("screenimg")
+                x[toChange].src = this.assetURL + this.theArchive[newScreen].img
+            }, 5000);
         }
     },
     watch: {
