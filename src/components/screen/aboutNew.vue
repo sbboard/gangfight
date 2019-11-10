@@ -1,35 +1,11 @@
 <template>
     <div id="aboutUs" :style="fontSize">
         <div id="screenWall">
-            <div class="screenWrap">
-            <div class="screen">
-                <img src="/assets/global/newAbout/screens/2.jpg"/>
-                <img src="/assets/global/newAbout/screens/3.png"/>
-            </div></div>
-            <div class="screenWrap">
-            <div class="screen">
-                <img src="/assets/global/newAbout/screens/4.jpg"/>
-                <img src="/assets/global/newAbout/screens/5.jpg"/>
-                <img src="/assets/global/newAbout/screens/6.jpg"/>
-            </div></div>
-            <div class="screenWrap">
-            <div class="screen">
-                <img src="/assets/global/newAbout/screens/1.jpg"/>
-                <img src="/assets/global/newAbout/screens/7.jpg"/>
-                <img src="/assets/global/newAbout/screens/8.jpg"/>
-            </div></div>
-            <div class="screenWrap">
-            <div class="screen">
-                <img src="/assets/global/newAbout/screens/9.jpg"/>
-                <img src="/assets/global/newAbout/screens/10.jpg"/>
-                <img src="/assets/global/newAbout/screens/11.jpg"/>
-            </div></div>
-            <div class="screenWrap">
-            <div class="screen">
-                <img src="/assets/global/newAbout/screens/12.jpg"/>
-                <img src="/assets/global/newAbout/screens/13.jpg"/>
-                <img src="/assets/global/newAbout/screens/14.jpg"/>
-            </div></div>
+            <div class="screenWrap" v-for="index in 5" :key="index">
+                <div class="screen">
+                    <img v-for="num in 3" :key="num" :src="theArchive.length > ((index-1)*3)+num-1 ? assetURL+theArchive[((index-1)*3)+num-1].img : `/assets/global/newAbout/screens/${((index-1)*3)+num-1}.jpg`"/>
+                </div>
+            </div>
         </div>
         <img id="segaaa" src="/assets/global/newAbout/sega.png"/>
         <div class="draggable" :style="{ top: coords[boxNumber-1].y, left: coords[boxNumber-1].x}" v-draggable="draggableValue" v-for="boxNumber in popups" :key="boxNumber">
@@ -92,6 +68,7 @@
 
 <script>
 import { Draggable } from 'draggable-vue-directive'
+import axios from 'axios'
 export default {
     directives: {
         Draggable,
@@ -104,16 +81,22 @@ export default {
             },
             popups: 0,
             coords: [],
-            popUpArray: []
+            popUpArray: [],
+            assetURL: '/assets/contentImages/',
+            theArchive: []
         };
     },
     computed: {
         fontSize(){
             return {fontSize: '1'+this.$store.getters.getTaller}
-        }
+        },
     },
     mounted() {
         this.draggableValue.handle = this.$refs[this.handleId]
+        axios
+        .get(`${this.$store.getters.getAPI}/`)
+        .then(response => (this.theArchive = response.data))
+        this.shuffle(this.theArchive)
     },
     methods: {
         exitWindow(num) {
@@ -126,7 +109,15 @@ export default {
             this.popUpArray.push(windowType)
             this.popups++
         },
+        shuffle: function(rand){
+            return rand.sort(function(){return 0.5 - Math.random()});
+        }
     },
+    watch: {
+        theArchive(){
+            this.shuffle()
+        }
+    }
 }
 </script>
 
