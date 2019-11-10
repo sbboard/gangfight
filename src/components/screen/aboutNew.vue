@@ -3,7 +3,10 @@
         <div id="screenWall">
             <div class="screenWrap" v-for="index in 5" :key="index">
                 <div class="screen">
-                    <img class="screenimg" v-for="num in 3" :key="num" :src="theArchive.length > ((index-1)*3)+num-1 ? assetURL+theArchive[((index-1)*3)+num-1].img : `/assets/global/newAbout/screens/${((index-1)*3)+num-1}.jpg`"/>
+                    <img v-for="num in 3" :key="num" 
+                        class="screenimg"
+                        @click="spawnpop((((index-1)*3)+num-1))"
+                        :src="theArchive.length > ((index-1)*3)+num-1 ? assetURL+theArchive[((index-1)*3)+num-1].img : `/assets/global/newAbout/screens/${((index-1)*3)+num-1}.jpg`"/>
                 </div>
             </div>
         </div>
@@ -20,6 +23,15 @@
                 </template>
                 <template v-if="popUpArray[boxNumber-1] == 'cat'">
                     <img id="detailedCat" src="/assets/global/about/detailedCat.png"/>
+                </template>
+                <template v-if="popUpArray[boxNumber-1] == 4">
+                    <img id="accept" src="/assets/global/newAbout/accept.gif"/>
+                </template>
+                <template v-if="popUpArray[boxNumber-1] == 8">
+                    <img id="accept" src="/assets/global/newAbout/breeding.gif"/>
+                </template>
+                <template v-if="popUpArray[boxNumber-1] == 12">
+                    <img id="accept" src="/assets/global/newAbout/downlaod.gif"/>
                 </template>
             </div>
             <img class="winBottom" src="/assets/global/about/windowsBottom.png"/>
@@ -104,11 +116,13 @@ export default {
             document.getElementsByClassName("draggable")[num-1].style.visibility = "hidden"
         },
         spawnpop(windowType){
-            let randoX = Math.floor(Math.random() * Math.floor(60))
-            let randoY = Math.floor(Math.random() * Math.floor(80))
-            this.coords.push({x: randoX + "em",y: randoY + "em"})
-            this.popUpArray.push(windowType)
-            this.popups++
+            if(windowType == "email" || windowType == "cat" || windowType %4 == 0){
+                let randoX = Math.floor(Math.random() * Math.floor(60))
+                let randoY = Math.floor(Math.random() * Math.floor(80))
+                this.coords.push({x: randoX + "em",y: randoY + "em"})
+                this.popUpArray.push(windowType)
+                this.popups++
+            }
         },
         shuffle(rand){
             return rand.sort(function(){return 0.5 - Math.random()});
@@ -119,7 +133,7 @@ export default {
                 let toChange = Math.floor(Math.random() * 15)
                 var x = document.getElementsByClassName("screenimg")
                 x[toChange].src = this.assetURL + this.theArchive[newScreen].img
-            }, 5000);
+            }, 7500);
         }
     },
     watch: {
@@ -135,6 +149,17 @@ export default {
 @import "../../css/gangColors.sass"
 @import "../../css/gangFonts.sass"
 
+#accept
+    width: 17em
+    height: auto
+    image-rendering: pixelated
+#asciiPic
+    white-space: pre
+    letter-spacing: -.1em
+    font-family: "courier new"
+    font-size: .3em
+    color: black
+    position: unset
 #segaaa
     z-index: 2000
     position: absolute
@@ -161,6 +186,8 @@ export default {
             left: 4em
             text-align: right
             z-index: 900
+            animation: screenGlow 5s infinite
+            animation-direction: alternate
             img
                 height: 19em
                 width: 24em
@@ -168,7 +195,6 @@ export default {
                 display: inline-block
                 filter: sepia(0.85) hue-rotate(170deg) brightness(1.5)
                 @include boxGlow($neonBlue)
-                opacity: .85
         &:nth-child(2)
             transform: rotate(31deg)
             .screen
@@ -391,4 +417,9 @@ export default {
     .winBottom
         position: absolute
         bottom: 0
+@keyframes screenGlow
+  0%
+      opacity: .6
+  100%
+      opacity: .9
 </style>
