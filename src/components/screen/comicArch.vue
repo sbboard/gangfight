@@ -61,10 +61,6 @@
     <div id="tableFront"></div>
     <div id="poleLeft"></div>
     <div id="poleRight"></div>
-    <div id="logo">
-        <h1>Gang</h1> 
-        <h1>Fight</h1> 
-    </div>
     <div id="lantern" v-if="typeof picayunes[picaTwo] === 'undefined'">
         <h3>拉</h3>
         <h4>麺</h4>
