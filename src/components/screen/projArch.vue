@@ -141,7 +141,7 @@ import axios from 'axios'
 export default {
     data(){
         return{
-            theArchive: [],
+            theArchive: [{"comicsArray":[],"_id":"5dc8da1e9eb72d55cc83e073","title":"Soviet Futbol Gang Fight Sticker Collection","subtitle":"","img":"gangfight.png","url":"https://parkerkellywebsite.com/soviet/product-category/gangfight/","category":"project","date":"2019-11-11T03:48:46.000Z","series":"noseries","updatedDate":"2019-11-11T03:48:46.000Z","__v":0},{"comicsArray":[],"_id":"5cc737ae77ebc22a4dfbbd63","title":"PC-98 Bot","subtitle":"","img":"1.png","url":"https://twitter.com/PC98_bot","category":"project","date":"2019-04-29T17:43:10.000Z","series":"noseries","__v":0,"updatedDate":"2019-04-29T17:43:10.000Z"},{"comicsArray":[],"_id":"5d9a86a449b6141506db2b03","title":"Xenoblade Chronicles 2 Team Builder","subtitle":"","img":"xenoboy.jpg","url":"/projects/xenoblade/","category":"project","date":"2018-03-14T00:28:20.000Z","series":"noseries","__v":0,"updatedDate":"2018-03-14T00:28:20.000Z"}],
             gameOne: 0,
             gameTwo: 1,
             gameThree: 2,
@@ -470,6 +470,9 @@ export default {
             font-size: 2.5em
             top: 2.25em
             color: black
+            -webkit-text-fill-color: white
+            -webkit-text-stroke-width: 1px
+            -webkit-text-stroke-color: black
             width: 7em
             left: .5em
             font-family: 'Permanent Marker', cursive
