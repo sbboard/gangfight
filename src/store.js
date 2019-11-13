@@ -40,25 +40,31 @@ export const store = new Vuex.Store({
             state.date = n
             if(n[1]==2 && n[0] < 16){
                 state.assets = "2valentines"
+                state.fortune = "Kiss your friends using Gang Fight's alluring sounds."
             }
             //halloween
             else if(n[1]==10){
                 state.assets = "10halloween"
+                state.fortune = "Spook the spirits by rubbing Gang Fight in your hair."
             }
             //christmas
             else if(n[1]==12 && n[0] < 31){
                 state.assets = "12christmas"
+                state.fortune = "Gift your friends the erotic sight of Gang Fight."
             }
             //new years
             else if(n[1]==12 && n[0] == 31){
                 state.assets = "1newYears"
+                state.fortune = "Starting off the new year correctly with a motivating Gang Fight."
             }
             //summer gang fight
             else if(n[1] >= 5 && n[1] <= 8){
                 state.assets = "8summer"
+                state.fortune = "Survive impending heat death - rub Gang Fight on your skin."
             }
             else{
                 state.assets = "0default"
+                state.fortune = "Challenge yourself to enjoy the exclusive flavors of Gang Fight."
             }
         }
     }

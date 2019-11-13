@@ -133,7 +133,7 @@ export default {
       windowHeight: 0,
       windowWidth: 0,
       flexDirect: "row",
-      fortune: this.$store.getters.getFortune,
+      fortune: "",
       futureYear: 0,
       day: 0,
       month: 0,
@@ -179,6 +179,7 @@ export default {
   },
   beforeMount(){
     this.sendTime()
+    this.fortune = this.$store.getters.getFortune
   },
   created(){
     this.windowHeight = window.innerHeight
