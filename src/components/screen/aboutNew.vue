@@ -136,6 +136,9 @@ export default {
             }, 7500);
         }
     },
+    beforeDestroy () {
+       clearInterval(this.intervalid1)
+    },
     watch: {
         theArchive(){
             this.shuffle()

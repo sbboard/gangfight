@@ -137,7 +137,7 @@ export default {
 
         //blink animation for ramen shop owner
         const images = ["/assets/global/comicArch/ownerEyeC.png","/assets/global/comicArch/ownerEyeClosedC.png"]
-        setInterval(function(){
+        this.intervalid2 = setInterval(function(){
             document.getElementById("ownerEye").src = images[1]; 
             setTimeout(function(){ 
                 document.getElementById("ownerEye").src = images[0]; 
@@ -190,7 +190,10 @@ export default {
                 this.theArchive[i].updatedDate = this.formatDate(this.theArchive[i].updatedDate)
             }
         }
-    }
+    },
+    beforeDestroy () {
+       clearInterval(this.intervalid2)
+    },
 }
 </script>
 
