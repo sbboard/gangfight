@@ -127,7 +127,8 @@ export default {
                         ],
             picayunes: ["how","whattime","newEnter"],
             picaOne: 0,
-            picaTwo: 0
+            picaTwo: 0,
+            intervalid2:'',
         }
     },
     mounted() {
