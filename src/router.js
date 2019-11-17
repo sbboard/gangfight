@@ -52,7 +52,7 @@ export default new Router({
         component: sbboardExit
       },
       {
-        path: "*",
+        path: "/:string",
         name: "Culture Club",
         component: fakeFourOFour
       },
