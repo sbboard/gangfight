@@ -125,7 +125,7 @@ export default {
             currentPage: 0,
             theArchive: [
                         ],
-            picayunes: ["how","whattime","newEnter"],
+            picayunes: ["how","whattime","newEnter","asl"],
             picaOne: 0,
             picaTwo: 0,
             intervalid2:'',
@@ -152,7 +152,7 @@ export default {
         },6000);
 
         //set picayunes
-        const chances = 20
+        const chances = 1
         const totalYunes = this.picayunes.length * chances
         this.picaOne = Math.floor(Math.random() * totalYunes)
         this.picaTwo = Math.floor(Math.random() * totalYunes)
@@ -221,6 +221,7 @@ $metalColor: #c964ff
             display: inline-block
             width: 22em
             filter: blur(1px)
+            image-rendering: pixelated
     #picaOne
         @extend #picatemp
         right: 33.5em
