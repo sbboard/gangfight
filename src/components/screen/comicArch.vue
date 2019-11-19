@@ -152,7 +152,7 @@ export default {
         },6000);
 
         //set picayunes
-        const chances = 1
+        const chances = 20
         const totalYunes = this.picayunes.length * chances
         this.picaOne = Math.floor(Math.random() * totalYunes)
         this.picaTwo = Math.floor(Math.random() * totalYunes)
