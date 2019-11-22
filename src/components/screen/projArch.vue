@@ -69,7 +69,8 @@
                     <div class="wide"></div>
                 </div>
                 <div class="greybar"></div>
-                <div class="gameArt"></div>
+                <div class="gameArt">
+                    <img :src="'/assets/global/projectArch/gameboy/' + gameFour + '.jpg'"/></div>
             </div>
             <div class="fakePackage">
                 <div class="hook"></div>
@@ -207,6 +208,11 @@ export default {
 @import "../../css/gangColors.sass"
 @import "../../css/gangFonts.sass"
 
+
+#arch.middleViewHigh
+    transform: rotate(-6deg) scale(1.16) translateY(2em) translateX(-14em)
+    .fakePackage
+        filter: blur(.15em)
 #owner
     position: absolute
     top: 14em
@@ -249,6 +255,7 @@ export default {
     height: 100%
     background-size: 90% 90%
     background-position: top center
+    transition: transform .5s
     #gameLibrary
         .gamerbox
             position: absolute
@@ -430,9 +437,9 @@ export default {
         z-index: 50
     #shelf
         background-image: linear-gradient(#47d2bf, #5a337d)
-        width: 48em
+        width: 58em
         position: absolute
-        right: -3em
+        right: -13em
         top: 0
         height: 100em
         transform: skewX(-3deg)
@@ -551,6 +558,7 @@ export default {
                 height: 100%
     .fakePackage
         @extend .gamePackage
+        transition: transform 1s
         &:nth-of-type(1)
             left: 98em
             top: 12em

@@ -209,6 +209,8 @@ $woodTint: #8f3d64
 $bannerTint: $neonRed
 $metalColor: #c964ff
 
+#scene.middleViewHigh
+    transform: scale(1.15) translateY(2em)
 
 #picayunes
     width: 100%
@@ -510,6 +512,7 @@ $metalColor: #c964ff
     width: 100%
     height: 100%
     line-height: 0
+    transition: transform .5s
     #woodBack
         position: absolute
         top: 7.5em

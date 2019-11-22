@@ -153,6 +153,8 @@ export default {
 @import "../../css/gangColors.sass"
 @import "../../css/gangFonts.sass"
 
+#aboutUs.middleViewHigh
+    transform: scale(1.5) translateY(9em) translateX(4.7em)
 #accept
     width: 17em
     height: auto
@@ -225,6 +227,7 @@ export default {
                 left: -60em
 
 #aboutUs
+    transition: transform .5s
     #sketch
         width: 100%
         height: 100%
