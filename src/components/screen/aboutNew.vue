@@ -154,7 +154,7 @@ export default {
 @import "../../css/gangFonts.sass"
 
 #aboutUs.middleViewHigh
-    transform: scale(1.5) translateY(9em) translateX(4.7em)
+    transform: scale(1.25) translateY(9em) translateX(4.7em)
 #accept
     width: 17em
     height: auto
