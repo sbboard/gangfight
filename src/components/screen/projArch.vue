@@ -213,12 +213,18 @@ export default {
     transform: rotate(-6deg) scale(1.16) translateY(2em) translateX(-14em)
     .fakePackage
         filter: blur(.15em) drop-shadow(2px 4px 6px black)
+    #owner
+        transform: rotate(0deg) translateX(15em) translateY(0em) scale(.95)
+        z-index: 44
+    #shelf
+        filter: drop-shadow(-1em 5em 6em black)
 #owner
     position: absolute
     top: 14em
     left: 7em
     z-index: 460
     transform: rotate(-4deg)
+    transition: transform .5s
     #girl
         width: 24.4em
     #mouth
@@ -445,6 +451,7 @@ export default {
         transform: skewX(-3deg)
         z-index: 501
         filter: drop-shadow(-2em 5em 13em black)
+        transition: filter
     .gamePackage
         position: absolute
         width: 20em
@@ -558,7 +565,7 @@ export default {
                 height: 100%
     .fakePackage
         @extend .gamePackage
-        transition: transform 1s
+        transition: filter 1s
         &:nth-of-type(1)
             left: 98em
             top: 12em
