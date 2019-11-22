@@ -13,7 +13,7 @@
         <img id="segaaa" src="/assets/global/newAbout/sega.png"/>
         <div class="draggable" :style="{ top: coords[boxNumber-1].y, left: coords[boxNumber-1].x}" v-draggable="draggableValue" v-for="boxNumber in popups" :key="boxNumber">
             <div class="exitCube" @click="exitWindow(boxNumber)"></div>
-            <div :ref="handleId">
+            <div id="windowsTopBar" :ref="handleId">
                 <img src="/assets/global/about/windowsTopBar.gif" alt="move">
             </div>
             <div class="windowStuff">
@@ -96,7 +96,7 @@ export default {
             popUpArray: [],
             intervalid1:'',
             assetURL: '/assets/contentImages/',
-            theArchive: [{"comicsArray":[],"_id":"5cc737ae77ebc22a4dfbbd63","title":"PC-98 Bot","subtitle":"","img":"1.png","url":"https://twitter.com/PC98_bot","category":"project","date":"2019-04-29T17:43:10.000Z","series":"noseries","__v":0,"updatedDate":"2019-04-29T17:43:10.000Z"},{"comicsArray":[],"_id":"5d9a86a449b6141506db2b03","title":"Xenoblade Chronicles 2 Team Builder","subtitle":"","img":"xenoboy.jpg","url":"/projects/xenoblade/","category":"project","date":"2018-03-14T00:28:20.000Z","series":"noseries","__v":0,"updatedDate":"2018-03-14T00:28:20.000Z"},{"comicsArray":[],"_id":"5ca2f00f4395a139db1aceda","title":"Oil","subtitle":"Local Gas Station Robber","img":"newOil.png","url":"/archive/sbboard/gang-fight.com/wp/comic/local-gas-station-robber/index.html","category":"comic","date":"2017-04-21T06:00:00.000Z","series":"noseries","__v":0,"updatedDate":"2017-04-21T06:00:00.000Z"},{"comicsArray":["1.jpg","2.jpg","3.jpg","4.jpg","5.jpg","6.jpg","7.jpg","8.jpg","9.jpg","10.jpg"],"_id":"5cd8ea4377ebc22a4dfbbd64","title":"Afro Ahab","subtitle":"","img":"afroAhab.png","url":"afroAhab","category":"comic","date":"2016-10-30T17:43:10.000Z","series":"noseries","__v":0,"updatedDate":"2016-10-30T17:43:10.000Z"},{"comicsArray":[""],"_id":"5ca2efa04395a139db1aced9","title":"SBboard Archive","subtitle":"","img":"sbboard.png","url":"/sbboard/","category":"comic","date":"2011-01-02T07:00:00.000Z","series":"noseries","__v":0,"updatedDate":"2011-01-02T07:00:00.000Z"}]
+            theArchive: []
         };
     },
     computed: {
@@ -155,6 +155,19 @@ export default {
 
 #aboutUs.middleViewHigh
     transform: scale(1.25) translateY(9em) translateX(4.7em)
+    .draggable
+        top: 2em !important
+        left: 7em !important
+        background-size: contain
+        width: 36em
+        #windowsTopBar
+            img
+                width: 100%
+        .winBottom
+            width: 100%
+        .windowStuff
+            p
+                align-self: center
 #accept
     width: 17em
     height: auto
@@ -396,6 +409,9 @@ export default {
     top: 0
     left: 0
     background-image: url("/assets/global/about/windowsMiddle.png")
+    transition: top 1s, left 1s
+    &:active
+        transition: none
     .exitCube    
         z-index: 801
         position: absolute
