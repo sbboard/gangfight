@@ -212,7 +212,7 @@ export default {
 #arch.middleViewHigh
     transform: rotate(-6deg) scale(1.16) translateY(2em) translateX(-14em)
     .fakePackage
-        filter: blur(.15em)
+        filter: blur(.15em) drop-shadow(2px 4px 6px black)
 #owner
     position: absolute
     top: 14em
