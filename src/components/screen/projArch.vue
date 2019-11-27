@@ -218,6 +218,9 @@ export default {
         z-index: 44
     #shelf
         filter: drop-shadow(-1em 5em 6em black)
+    .gamePackage
+        h1
+            -webkit-text-stroke-width: .5px
 #owner
     position: absolute
     top: 14em
