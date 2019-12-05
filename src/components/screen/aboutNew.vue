@@ -159,7 +159,7 @@ export default {
         top: 2em !important
         left: 7em !important
         background-size: contain
-        width: 36em
+        width: 38em
         #windowsTopBar
             img
                 width: 100%
