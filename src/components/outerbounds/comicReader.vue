@@ -1,20 +1,20 @@
 <template>
     <div id="comicPage">
       <div id="comicNav" :class="[(this.$store.getters.getTaller == 'vh')?'desktop':'mobile',{open: navOpen}]">
-        <div id="leftArrow">
+        <a id="leftArrow" :href="`/comicReader/${priorComic._id}/${cat}`">
           <span class="arrow"><i class="fas fa-angle-left"></i></span>
-          <span class="nameContent">name of content</span>
-        </div>
+          <span class="nameContent">{{priorComic.title}}</span>
+        </a>
         <template v-if="cat=='1'">
-          <div id="currentArch">G</div>
+          <div id="currentArch" @click="switchCat(0)">{{comicInfo.series}}</div>
         </template>
         <template v-else>
-          <div id="currentArch">ALL COMIC ARCHIVE</div>
+          <div id="currentArch" @click="switchCat(1)">ALL COMIC ARCHIVE</div>
         </template>
-        <div id="rightArrow">
-          <span class="nameContent">name of content</span>
+        <a id="rightArrow" :href="`/comicReader/${nextComic._id}/${cat}`">
+          <span class="nameContent">{{nextComic.title}}</span>
           <span class="arrow"><i class="fas fa-angle-right"></i></span>
-        </div>
+        </a>
       </div>
       <div id="theComic">
         
@@ -24,9 +24,6 @@
           <img v-for="pages in comicInfo.comicsArray" :key="pages" v-lazy="`/assets/comics/${comicInfo.url}/${pages}`"/>
         </div>
         <navigation :class="[(this.$store.getters.getTaller == 'vh')?'navWidthHundred':'navWidthMiddle']"/>
-        <div v-if="comicInfo.series !== 'noseries'">
-          farLeft left {{comicInfo.series}} right farRight
-        </div>
       </div>
       <div id="city"></div>
       <div id="cityLights"></div>
@@ -53,7 +50,9 @@ export default {
       // "series":"noseries"},
       comicInfo:{"comicsArray":["1.jpg","2.jpg","3.jpg","4.jpg","5.jpg","6.jpg","7.jpg","8.jpg","9.jpg","10.jpg"],"_id":"5cd8ea4377ebc22a4dfbbd64","title":"Afro Ahab","subtitle":"","img":"afroAhab.png","url":"afroAhab","category":"comic","date":"2016-10-30T17:43:10.000Z","series":"noseries","__v":0,"updatedDate":"2016-10-30T17:43:10.000Z"},
       comicId: this.$route.params.id,
-      cat: 0
+      cat: 0,
+      nextComic:{"comicsArray":["1.jpg","2.jpg","3.jpg","4.jpg","5.jpg","6.jpg","7.jpg","8.jpg","9.jpg","10.jpg"],"_id":"5cd8ea4377ebc22a4dfbbd64","title":"Afro Ahab","subtitle":"","img":"afroAhab.png","url":"afroAhab","category":"comic","date":"2016-10-30T17:43:10.000Z","series":"noseries","__v":0,"updatedDate":"2016-10-30T17:43:10.000Z"},
+      priorComic:{"comicsArray":["1.jpg","2.jpg","3.jpg","4.jpg","5.jpg","6.jpg","7.jpg","8.jpg","9.jpg","10.jpg"],"_id":"5cd8ea4377ebc22a4dfbbd64","title":"Afro Ahab","subtitle":"","img":"afroAhab.png","url":"afroAhab","category":"comic","date":"2016-10-30T17:43:10.000Z","series":"noseries","__v":0,"updatedDate":"2016-10-30T17:43:10.000Z"},
     }
   },
   components: {
@@ -62,6 +61,9 @@ export default {
   mounted () {
       if(typeof this.$route.params.cat !== 'undefined'){
         this.cat = this.$route.params.cat
+      }
+      else{
+        this.cat = 0
       }
        axios
        .get(`${this.$store.getters.getAPI}/comic/${this.comicId}`)
@@ -74,6 +76,13 @@ export default {
            }
        })
       //  .catch(() => this.$router.push('/'))
+
+      //search comics array for the id, get id's of comics next to it, save info in variables
+  },
+  methods:{
+    switchCat(nnew){
+      this.cat = nnew
+    }
   }
 }
 </script>
@@ -126,6 +135,7 @@ export default {
     margin: 0 auto
     max-width: 40%
     text-align: center
+    text-transform: uppercase
   .nameContent
     margin-bottom: .5em
   &.desktop
