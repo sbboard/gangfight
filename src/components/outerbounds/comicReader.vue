@@ -1,6 +1,6 @@
 <template>
     <div id="comicPage">
-      <div id="comicNav">
+      <div id="comicNav" :class="[(this.$store.getters.getTaller == 'vh')?'desktop':'mobile',{open: navOpen}]">
         <div id="leftArrow">
           <span class="arrow"><i class="fas fa-angle-left"></i></span>
           <span class="nameContent">name of content</span>
@@ -12,6 +12,7 @@
         </div>
       </div>
       <div id="theComic">
+        
         <h1>{{comicInfo.title}}</h1>
         <h2>{{comicInfo.subtitle}}</h2>
         <div class="comicPages">
@@ -88,22 +89,6 @@ export default {
   align-items: center
   justify-content: space-between
   font-family: Yantramanav
-  &::before
-    width: .5em
-    content: ' '
-    position: absolute
-    top: 0em
-    height: 4em
-    left: -.5em
-    background: linear-gradient(to right, rgba(0,0,0,0), rgba(0,0,0,.75))
-  &::after
-    width: .5em
-    content: ' '
-    position: absolute
-    top: 0em
-    height: 4em
-    right: -.5em
-    background: linear-gradient(to left, rgba(0,0,0,0), rgba(0,0,0,.75))
   .arrow
     font-size: 4em
     color: $neonBlue 
@@ -115,20 +100,44 @@ export default {
     color: white
     position: absolute
     top: 0
+    max-width: 30%
+    cursor: pointer
   #rightArrow
     @extend #leftArrow
     right: 0
+    justify-content: flex-end
+    .nameContent
+      text-align: right
   #currentArch
     color: $neonGreen
     font-size: 1.5em
     cursor: pointer
     display: block
     margin: 0 auto
-    max-width: 15em
+    max-width: 40%
     text-align: center
   .nameContent
-    max-width: 10em
     margin-bottom: .5em
+  &.desktop
+    &::before
+      width: .5em
+      content: ' '
+      position: absolute
+      top: 0em
+      height: 4em
+      left: -.5em
+      background: linear-gradient(to right, rgba(0,0,0,0), rgba(0,0,0,.75))
+    &::after
+      width: .5em
+      content: ' '
+      position: absolute
+      top: 0em
+      height: 4em
+      right: -.5em
+      background: linear-gradient(to left, rgba(0,0,0,0), rgba(0,0,0,.75))
+  &.mobile
+    top: 0
+    width: 100%
 #navBox.desktop
   bottom: 3.47em
   padding: .5em 0 0 0
@@ -159,6 +168,7 @@ export default {
     padding: 1em 1em 7vh 1em
     h1
       font-size: 3em
+      margin-top: 1em
       text-align: center
       color: $neonRed
       font-family: Montserrat
