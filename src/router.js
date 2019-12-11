@@ -16,7 +16,7 @@ export default new Router({
   mode: 'history',
   routes: [
     {
-      path: "/comicReader/:id",
+      path: "/comicReader/:id/:cat?",
       component: ComicReader
     },
     { path: '/', component: screen,

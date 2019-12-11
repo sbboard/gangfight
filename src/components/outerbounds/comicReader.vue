@@ -5,7 +5,12 @@
           <span class="arrow"><i class="fas fa-angle-left"></i></span>
           <span class="nameContent">name of content</span>
         </div>
-        <div id="currentArch">ALL COMIC ARCHIVE</div>
+        <template v-if="cat=='1'">
+          <div id="currentArch">G</div>
+        </template>
+        <template v-else>
+          <div id="currentArch">ALL COMIC ARCHIVE</div>
+        </template>
         <div id="rightArrow">
           <span class="nameContent">name of content</span>
           <span class="arrow"><i class="fas fa-angle-right"></i></span>
@@ -47,23 +52,27 @@ export default {
       // "date":"",
       // "series":"noseries"},
       comicInfo:{"comicsArray":["1.jpg","2.jpg","3.jpg","4.jpg","5.jpg","6.jpg","7.jpg","8.jpg","9.jpg","10.jpg"],"_id":"5cd8ea4377ebc22a4dfbbd64","title":"Afro Ahab","subtitle":"","img":"afroAhab.png","url":"afroAhab","category":"comic","date":"2016-10-30T17:43:10.000Z","series":"noseries","__v":0,"updatedDate":"2016-10-30T17:43:10.000Z"},
-      comicId: this.$route.params.id
+      comicId: this.$route.params.id,
+      cat: 0
     }
   },
   components: {
     navigation
   },
   mounted () {
-      //  axios
-      //  .get(`${this.$store.getters.getAPI}/comic/${this.comicId}`)
-      //   .then((response) => {
-      //      if(response.data.length > 0){
-      //       this.comicInfo = response.data[0]
-      //      }
-      //      else{
-      //        this.$router.push('/')
-      //      }
-      //  })
+      if(typeof this.$route.params.cat !== 'undefined'){
+        this.cat = this.$route.params.cat
+      }
+       axios
+       .get(`${this.$store.getters.getAPI}/comic/${this.comicId}`)
+        .then((response) => {
+           if(response.data.length > 0){
+            this.comicInfo = response.data[0]
+           }
+           else{
+             this.$router.push('/')
+           }
+       })
       //  .catch(() => this.$router.push('/'))
   }
 }
