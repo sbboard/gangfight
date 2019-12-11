@@ -37,15 +37,16 @@ import navigation from '../../components/nav/navHome.vue'
 export default {
   data(){
     return{
-      comicInfo:{"comicsArray":[""],
-      "_id":"",
-      "title":"",
-      "subtitle":"",
-      "img":"",
-      "url":"",
-      "category":"",
-      "date":"",
-      "series":"noseries"},
+      // comicInfo:{"comicsArray":[""],
+      // "_id":"",
+      // "title":"",
+      // "subtitle":"",
+      // "img":"",
+      // "url":"",
+      // "category":"",
+      // "date":"",
+      // "series":"noseries"},
+      comicInfo:{"comicsArray":["1.jpg","2.jpg","3.jpg","4.jpg","5.jpg","6.jpg","7.jpg","8.jpg","9.jpg","10.jpg"],"_id":"5cd8ea4377ebc22a4dfbbd64","title":"Afro Ahab","subtitle":"","img":"afroAhab.png","url":"afroAhab","category":"comic","date":"2016-10-30T17:43:10.000Z","series":"noseries","__v":0,"updatedDate":"2016-10-30T17:43:10.000Z"},
       comicId: this.$route.params.id
     }
   },
@@ -53,17 +54,17 @@ export default {
     navigation
   },
   mounted () {
-       axios
-       .get(`${this.$store.getters.getAPI}/comic/${this.comicId}`)
-        .then((response) => {
-           if(response.data.length > 0){
-            this.comicInfo = response.data[0]
-           }
-           else{
-             this.$router.push('/')
-           }
-       })
-       //.catch(() => this.$router.push('/'))
+      //  axios
+      //  .get(`${this.$store.getters.getAPI}/comic/${this.comicId}`)
+      //   .then((response) => {
+      //      if(response.data.length > 0){
+      //       this.comicInfo = response.data[0]
+      //      }
+      //      else{
+      //        this.$router.push('/')
+      //      }
+      //  })
+      //  .catch(() => this.$router.push('/'))
   }
 }
 </script>
@@ -84,7 +85,7 @@ export default {
   display: block
   right: 0
   background-color: rgba(0, 0, 0, .75)
-  width: 56.8em
+  width: 100%
   display: flex
   align-items: center
   justify-content: space-between
@@ -141,22 +142,7 @@ export default {
 #navBox.desktop
   bottom: 3.47em
   padding: .5em 0 0 0
-  &::before
-    width: .5em
-    content: ' '
-    position: absolute
-    top: 0em
-    height: 3em
-    left: -.5em
-    background: linear-gradient(to right, rgba(0,0,0,0), rgba(0,0,0,.75))
-  &::after
-    width: .5em
-    content: ' '
-    position: absolute
-    top: 0em
-    height: 3em
-    right: -.5em
-    background: linear-gradient(to left, rgba(0,0,0,0), rgba(0,0,0,.75))
+  width: 100%
 .navWidthMiddle
   width: 100%
 .navWidthHundred
@@ -165,7 +151,7 @@ export default {
   position: relative
   min-height: 100vh
   #theComic
-    padding: 1em 1em 7vh 1em
+    padding: 1em 1em 7em 1em
     h1
       font-size: 3em
       margin-top: 1em
