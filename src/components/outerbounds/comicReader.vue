@@ -1,5 +1,16 @@
 <template>
     <div id="comicPage">
+      <div id="comicNav">
+        <div id="leftArrow">
+          <span class="arrow"><i class="fas fa-angle-left"></i></span>
+          <span class="nameContent">name of content</span>
+        </div>
+        <div id="currentArch">ALL COMIC ARCHIVE</div>
+        <div id="rightArrow">
+          <span class="nameContent">name of content</span>
+          <span class="arrow"><i class="fas fa-angle-right"></i></span>
+        </div>
+      </div>
       <div id="theComic">
         <h1>{{comicInfo.title}}</h1>
         <h2>{{comicInfo.subtitle}}</h2>
@@ -51,7 +62,7 @@ export default {
              this.$router.push('/')
            }
        })
-       .catch(() => this.$router.push('/'))
+       //.catch(() => this.$router.push('/'))
   }
 }
 </script>
@@ -60,6 +71,83 @@ export default {
 @import "../../css/reset.css"
 @import "../../css/gangColors.sass"
 @import "../../css/gangFonts.sass"
+
+#comicNav
+  padding: 0 0 .5em 0
+  height: 3.5em
+  position: fixed
+  bottom: 0
+  left: 0
+  margin: 0 auto
+  z-index: 555
+  display: block
+  right: 0
+  background-color: rgba(0, 0, 0, .75)
+  width: 56.8em
+  display: flex
+  align-items: center
+  justify-content: space-between
+  font-family: Yantramanav
+  &::before
+    width: .5em
+    content: ' '
+    position: absolute
+    top: 0em
+    height: 4em
+    left: -.5em
+    background: linear-gradient(to right, rgba(0,0,0,0), rgba(0,0,0,.75))
+  &::after
+    width: .5em
+    content: ' '
+    position: absolute
+    top: 0em
+    height: 4em
+    right: -.5em
+    background: linear-gradient(to left, rgba(0,0,0,0), rgba(0,0,0,.75))
+  .arrow
+    font-size: 4em
+    color: $neonBlue 
+    @include textGlow($neonBlue, 1px)
+    margin: 0 .25em
+  #leftArrow
+    display: flex
+    align-items: center
+    color: white
+    position: absolute
+    top: 0
+  #rightArrow
+    @extend #leftArrow
+    right: 0
+  #currentArch
+    color: $neonGreen
+    font-size: 1.5em
+    cursor: pointer
+    display: block
+    margin: 0 auto
+    max-width: 15em
+    text-align: center
+  .nameContent
+    max-width: 10em
+    margin-bottom: .5em
+#navBox.desktop
+  bottom: 3.47em
+  padding: .5em 0 0 0
+  &::before
+    width: .5em
+    content: ' '
+    position: absolute
+    top: 0em
+    height: 3em
+    left: -.5em
+    background: linear-gradient(to right, rgba(0,0,0,0), rgba(0,0,0,.75))
+  &::after
+    width: .5em
+    content: ' '
+    position: absolute
+    top: 0em
+    height: 3em
+    right: -.5em
+    background: linear-gradient(to left, rgba(0,0,0,0), rgba(0,0,0,.75))
 .navWidthMiddle
   width: 100%
 .navWidthHundred
@@ -101,7 +189,9 @@ export default {
     z-index: -5
     height: 100%
     width: 100%
+    filter: brightness(0.5)
 #cityOfStars
+    filter: brightness(0.5)
     z-index: -7
     position: absolute
     width: 100%
