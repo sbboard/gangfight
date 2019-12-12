@@ -81,7 +81,9 @@ export default {
   },
   methods:{
     switchCat(nnew){
-      this.cat = nnew
+      if(this.comicInfo.series != "noseries"){
+        this.cat = nnew
+      }
     }
   }
 }
