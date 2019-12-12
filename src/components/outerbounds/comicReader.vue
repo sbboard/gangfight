@@ -39,26 +39,27 @@ import navigation from '../../components/nav/navHome.vue'
 export default {
   data(){
     return{
-      // comicInfo:{"comicsArray":[""],
-      // "_id":"",
-      // "title":"",
-      // "subtitle":"",
-      // "img":"",
-      // "url":"",
-      // "category":"",
-      // "date":"",
-      // "series":"noseries"},
-      comicInfo:{"comicsArray":["1.jpg","2.jpg","3.jpg","4.jpg","5.jpg","6.jpg","7.jpg","8.jpg","9.jpg","10.jpg"],"_id":"5cd8ea4377ebc22a4dfbbd64","title":"Afro Ahab","subtitle":"","img":"afroAhab.png","url":"afroAhab","category":"comic","date":"2016-10-30T17:43:10.000Z","series":"noseries","__v":0,"updatedDate":"2016-10-30T17:43:10.000Z"},
+      comicInfo:{"comicsArray":[""],
+      "_id":"",
+      "title":"",
+      "subtitle":"",
+      "img":"",
+      "url":"",
+      "category":"",
+      "date":"",
+      "series":"noseries"},
+      fullReturn: [],
       comicId: this.$route.params.id,
       cat: 0,
-      nextComic:{"comicsArray":["1.jpg","2.jpg","3.jpg","4.jpg","5.jpg","6.jpg","7.jpg","8.jpg","9.jpg","10.jpg"],"_id":"5cd8ea4377ebc22a4dfbbd64","title":"Afro Ahab","subtitle":"","img":"afroAhab.png","url":"afroAhab","category":"comic","date":"2016-10-30T17:43:10.000Z","series":"noseries","__v":0,"updatedDate":"2016-10-30T17:43:10.000Z"},
-      priorComic:{"comicsArray":["1.jpg","2.jpg","3.jpg","4.jpg","5.jpg","6.jpg","7.jpg","8.jpg","9.jpg","10.jpg"],"_id":"5cd8ea4377ebc22a4dfbbd64","title":"Afro Ahab","subtitle":"","img":"afroAhab.png","url":"afroAhab","category":"comic","date":"2016-10-30T17:43:10.000Z","series":"noseries","__v":0,"updatedDate":"2016-10-30T17:43:10.000Z"},
+      nextComic:{"_id":"","title":""},
+      priorComic:{"_id":"","title":""},
     }
   },
   components: {
     navigation
   },
   mounted () {
+      var self = this
       if(typeof this.$route.params.cat !== 'undefined'){
         this.cat = this.$route.params.cat
       }
@@ -66,18 +67,23 @@ export default {
         this.cat = 0
       }
        axios
-       .get(`${this.$store.getters.getAPI}/comic/${this.comicId}`)
-        .then((response) => {
-           if(response.data.length > 0){
-            this.comicInfo = response.data[0]
-           }
-           else{
-             this.$router.push('/')
-           }
-       })
-      //  .catch(() => this.$router.push('/'))
-
-      //search comics array for the id, get id's of comics next to it, save info in variables
+       .get(`${this.$store.getters.getAPI}/category/comic`)
+       .then(response => (this.fullReturn = response.data))
+       .catch(() => this.$router.push('/'))
+       .finally(function(){
+        let currentIndex = self.fullReturn.map(function(e) { return e._id; }).indexOf(self.comicId)
+        if(self.fullReturn.length > 0 && currentIndex > -1){
+          self.comicInfo = self.fullReturn[currentIndex]
+          if(currentIndex != 0){
+            self.nextComic = self.fullReturn[currentIndex-1]
+          }
+          if(currentIndex < self.fullReturn.length-1){
+            self.priorComic = self.fullReturn[currentIndex+1]
+          }
+        }
+        else{
+          self.$router.push('/')
+        }})
   },
   methods:{
     switchCat(nnew){
