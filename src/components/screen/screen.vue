@@ -247,11 +247,11 @@ $sideImgOpacity: .7
   z-index: 99999999
   #grids
   .bottomRouteName
-    font-size: 9vw
+    font-size: 7vw
     background-color: #fcfb07
     color: #700123
-    text-shadow: 0px 0px 8px #c56508
-    font-family: Montserrat
+    //text-shadow: 0px 0px 8px #c56508
+    font-family: ferrite
     padding: 0
     display: flex
     align-content: center
@@ -519,11 +519,11 @@ span#topWords
         opacity: 0.3
   .routeName
     font-size: 7vh
-    padding: .5vh .5em
+    padding: 0vh .5em 1.9vh
     background-color: #fcfb07
     color: #700123
-    text-shadow: 0px 0px 8px #c56508
-    font-family: Montserrat
+    //text-shadow: 0px 0px 8px #c56508
+    font-family: ferrite
     border-radius: 11px
     @include boxGlow(#fcfb07)
   .copyRight

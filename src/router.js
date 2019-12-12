@@ -28,12 +28,12 @@ export default new Router({
       },
       {
         path: "/about",
-        name: "cockpit",
+        name: "home net",
         component: About
       },
       {
         path: "/project",
-        name: "game shop",
+        name: "game shoppe",
         component: ProjArch
       },
       {
@@ -43,7 +43,7 @@ export default new Router({
       },
       {
         path: "/comic",
-        name: "ramen cart",
+        name: "noodle cart",
         component: ComicArch
       },
       {
