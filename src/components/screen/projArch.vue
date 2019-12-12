@@ -215,7 +215,6 @@ export default {
         filter: blur(.15em) drop-shadow(2px 4px 6px black)
     #owner
         transform: rotate(0deg) translateX(15em) translateY(0em) scale(.95)
-        z-index: 44
     #shelf
         filter: drop-shadow(-1em 5em 6em black)
     .gamePackage
@@ -225,7 +224,7 @@ export default {
     position: absolute
     top: 14em
     left: 7em
-    z-index: 460
+    z-index: -11
     transform: rotate(-4deg)
     transition: transform .5s
     #girl
@@ -238,7 +237,7 @@ export default {
 #deskTop
     background-color: #eed415
     position: absolute
-    z-index: 488
+    z-index: -10
     left: -1em
     transform: skewY(-11deg)
     top: 48em
@@ -253,19 +252,20 @@ export default {
     width: 42em
     opacity: .6
     transform: rotate(8deg)
-    z-index: 500  
+    z-index: -1
     filter: hue-rotate(329deg)
     image-rendering: auto
     image-rendering: crisp-edges
     image-rendering: pixelated
 #arch
-    background-image: url("/assets/global/projectArch/sketch.jpg")
     width: 100%
     height: 100%
     background-size: 90% 90%
     background-position: top center
     transition: transform .5s
     #gameLibrary
+        position: absolute
+        z-index: -12
         .gamerbox
             position: absolute
             width: 8em
@@ -320,7 +320,7 @@ export default {
         transform: rotate(-39deg)
         width: 150em
         position: absolute
-        z-index: 21
+        z-index: -799
         left: -41em
     #streakOne
         @extend #streak
@@ -338,7 +338,7 @@ export default {
         position: absolute
         height: auto    
         width: 10em
-        z-index: 40
+        z-index: -12
         transform: rotate3d(-6, 195, -5, 154deg)
         filter: sepia(.5) hue-rotate(180deg)
     #posterOne
@@ -361,24 +361,26 @@ export default {
     #cityscape
         //display: none
         filter: blur(3px)
+        position: absolute
+        z-index: -900
         #city
             width: 172em
             position: absolute
             left: -17em
-            z-index: 3
+            z-index: -500
             top: -4em
         #blackbox
             width: 61em
             height: 29em
-            z-index: 10
+            z-index: -800
             background-image: linear-gradient(rgba(255, 0, 0, 0) -27%, black 36%)
             position: absolute
             top: 26em
             left: -1em
         #stars
             position: absolute
-            z-index: 1
-            left: -21em
+            z-index: -700
+            left: -900
             height: auto
             top: 0
             width: 100em
@@ -387,7 +389,7 @@ export default {
         width: fit-content
         border: 1em double $lightNeonBlue
         border-radius: 4em
-        z-index: 250
+        z-index: -15
         left: -3em
         top: -2em
         position: absolute
@@ -405,7 +407,7 @@ export default {
         left: -4em
         top: -3em
         opacity: .5
-        z-index: 249
+        z-index: -16
     #pageTab
         position: absolute
         left: 44em
@@ -443,7 +445,7 @@ export default {
         width: 68em
         height: 58em
         transform: skewY(-11deg)
-        z-index: 50
+        z-index: -100
     #shelf
         background-image: linear-gradient(#47d2bf, #5a337d)
         width: 58em
@@ -452,7 +454,7 @@ export default {
         top: 0
         height: 100em
         transform: skewX(-3deg)
-        z-index: 501
+        z-index: -1
         filter: drop-shadow(-2em 5em 13em black)
         transition: filter
     .gamePackage
@@ -461,7 +463,7 @@ export default {
         transform: rotate(7deg)
         height: 23em
         background-color: rgba(255,255,255,.5)
-        z-index: 502
+        z-index: -1
         filter: drop-shadow(2px 4px 6px black)
         &:nth-of-type(1)
             left: 52em
