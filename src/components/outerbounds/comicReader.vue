@@ -101,6 +101,7 @@ export default {
   bottom: 0
   left: 0
   margin: 0 auto
+  font-size: 1em
   z-index: 555
   display: block
   right: 0
@@ -161,9 +162,10 @@ export default {
     top: 0
     width: 100%
 #navBox.desktop
-  bottom: 3.47em
+  bottom: 3.2em
   padding: .5em 0 0 0
   width: 100%
+  font-size: 1.25em
 .navWidthMiddle
   width: 100%
 .navWidthHundred
