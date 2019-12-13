@@ -6,7 +6,7 @@
         <h2>{{comicInfo.subtitle}}</h2>
 
         <div id="comicNav" :class="[(this.$store.getters.getTaller == 'vh')?'desktop':'mobile']">
-          <a id="leftArrow" :href="`/comicReader/${priorComic._id}/${cat}`">
+          <a v-if="priorComic.title != ''" id="leftArrow" :href="`/comicReader/${priorComic._id}/${cat}`">
             <span class="arrow"><i class="fas fa-angle-left"></i></span>
             <span class="nameContent">{{priorComic.title}}</span>
           </a>
@@ -16,7 +16,7 @@
           <template v-else>
             <div id="currentArch" @click="switchCat(1)">ALL COMIC ARCHIVE</div>
           </template>
-          <a id="rightArrow" :href="`/comicReader/${nextComic._id}/${cat}`">
+          <a v-if="nextComic.title != ''" id="rightArrow" :href="`/comicReader/${nextComic._id}/${cat}`">
             <span class="nameContent">{{nextComic.title}}</span>
             <span class="arrow"><i class="fas fa-angle-right"></i></span>
           </a>
@@ -40,7 +40,7 @@ import navigation from '../../components/nav/navHome.vue'
 export default {
   data(){
     return{
-      comicInfo:{"comicsArray":[""],
+      comicInfo:{"comicsArray":[],
       "_id":"",
       "title":"",
       "subtitle":"",
@@ -49,7 +49,7 @@ export default {
       "category":"",
       "date":"",
       "series":"noseries"},
-      fullReturn: JSON.parse(JSON.stringify(this.$store.getters.getArchive)),
+      fullReturn: JSON.parse(JSON.stringify(this.$store.getters.getArchive)).filter(e => e.comicsArray.length > 0 && e.comicsArray[0] != ""),
       comicId: this.$route.params.id,
       cat: 0,
       nextComic:{"_id":"","title":""},
@@ -123,7 +123,7 @@ export default {
     color: white
     position: absolute
     top: 0
-    max-width: 30%
+    width: 30%
     cursor: pointer
   #rightArrow
     @extend #leftArrow
@@ -137,7 +137,7 @@ export default {
     cursor: pointer
     display: block
     margin: 0 auto
-    max-width: 40%
+    width: 40%
     text-align: center
     text-transform: uppercase
   .nameContent
