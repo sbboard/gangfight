@@ -298,8 +298,8 @@ export default {
         transform: perspective(1em) rotateX(177deg)
     #bottomLight
         @extend #light
-        height: 47em
-        transform: perspective(10px) rotateX(2deg) skewX(-20deg)
+        height: 47.1em
+        transform: perspective(1.07em) rotateX(2deg) skewX(-20deg)
         left: 30em
         width: 34em
         bottom: -3.8em
