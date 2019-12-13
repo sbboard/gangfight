@@ -14,7 +14,7 @@
             <div id="currentArch" @click="switchCat(0)">{{comicInfo.series}}</div>
           </template>
           <template v-else>
-            <div id="currentArch" @click="switchCat(1)">ALL COMIC ARCHIVE</div>
+            <div id="currentArch" @click="switchCat(1)">comics</div>
           </template>
           <a v-if="nextComic.title != ''" id="rightArrow" :href="`/comicReader/${nextComic._id}/${cat}`">
             <span class="nameContent">{{nextComic.title}}</span>
@@ -66,24 +66,39 @@ export default {
       else{
         this.cat = 0
       }
-      let currentIndex = this.fullReturn.map(function(e) { return e._id; }).indexOf(this.comicId)
-      if(this.fullReturn.length > 0 && currentIndex > -1){
-        this.comicInfo = this.fullReturn[currentIndex]
-        if(currentIndex != 0){
-          this.nextComic = this.fullReturn[currentIndex-1]
-        }
-        if(currentIndex < this.fullReturn.length-1){
-          this.priorComic = this.fullReturn[currentIndex+1]
-        }
-      }
-      else{
-        this.$router.push('/')
-      }
+      this.getIndexes(this.fullReturn)
+      this.switchCat(this.cat)
   },
   methods:{
     switchCat(nnew){
       if(this.comicInfo.series != "noseries"){
-        this.cat = nnew
+        if(nnew == 1){
+          let seriesArray = this.fullReturn.filter(e => e.series.toLowerCase() == this.comicInfo.series.toLowerCase())
+          this.cat = nnew
+          this.getIndexes(seriesArray)
+        }
+        else{
+          this.cat = nnew
+          this.getIndexes(this.fullReturn)
+        }
+      }
+      else{
+        this.cat = 0
+      }
+    },
+    getIndexes(archive){
+      let currentIndex = archive.map(function(e) { return e._id; }).indexOf(this.comicId)
+      if(archive.length > 0 && currentIndex > -1){
+        this.comicInfo = archive[currentIndex]
+        if(currentIndex != 0){
+          this.nextComic = archive[currentIndex-1]
+        }
+        if(currentIndex < archive.length-1){
+          this.priorComic = archive[currentIndex+1]
+        }
+      }
+      else{
+        this.$router.push('/')
       }
     }
   }
