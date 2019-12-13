@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div id="app" v-if="loaded == true">
   <router-view></router-view>
   </div>
 </template>
@@ -12,6 +12,7 @@ export default {
     return{
       windowHeight: 0,
       windowWidth: 0,
+      loaded: false
     }
   },
   methods:{
@@ -33,9 +34,11 @@ export default {
     }
   },
   mounted() {
+    var self = this
     axios
     .get(process.env.VUE_APP_API)
     .then(response => (this.$store.commit('setArchive',response.data)))
+    .finally(function(){ self.loaded = true})
     this.$nextTick(() => {
       window.addEventListener('resize', () => {
         this.windowHeight = window.innerHeight
