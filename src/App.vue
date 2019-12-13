@@ -5,6 +5,7 @@
 </template>
 
 <script>
+import axios from 'axios'
 export default {
   data(){
     return{
@@ -37,6 +38,9 @@ export default {
         this.windowWidth = window.innerWidth
       });
     })
+    axios
+    .get(`${this.$store.getters.getAPI}`)
+    .then(response => (this.$store.commit('setArchive',response.date)))
   },
 }
 </script>

@@ -121,7 +121,6 @@
 </template>
 <script>
 import navigation from '../../components/nav/navHome.vue'
-import axios from 'axios'
 
 export default {
   name: 'app',
@@ -197,9 +196,6 @@ export default {
         this.randoTwo += 1
       }
     }
-
-    //get latest update
-    axios.get(`${this.$store.getters.getAPI}/1`).then(response => (this.newestUpdate = response.data[0].img))
   },
   computed: {
     logoBoxBottom(){
@@ -221,6 +217,7 @@ export default {
         this.getLogoHeight()
       });
     })
+    this.newestUpdate = this.$store.getters.getArchive[0].img
   },
 }
 </script>

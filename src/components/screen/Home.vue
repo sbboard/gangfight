@@ -33,8 +33,6 @@
 </template>
 
 <script>
-import axios from 'axios'
-
 export default {
     data(){
         return{
@@ -47,9 +45,7 @@ export default {
         }
     },
     mounted () {
-        axios
-        .get(`${this.$store.getters.getAPI}/4`)
-        .then(response => (this.theFour = response.data))
+        this.theFour = this.$store.getters.getArchive.slice(0, 4)
     },
     methods: {
         formatDate(isoDate){

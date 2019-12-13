@@ -9,7 +9,8 @@ export const store = new Vuex.Store({
         assets: "default",
         isTaller: "vw",
         GFAPI: process.env.VUE_APP_API,
-        date: []
+        date: [],
+        archive: JSON.parse(process.env.VUE_APP_ARCH)
     },
     getters:{
         getFortune: state=> {
@@ -26,11 +27,17 @@ export const store = new Vuex.Store({
         },
         getDate: state=>{
             return state.date
+        },
+        getArchive: state=>{
+            return state.archive
         }
     },
     mutations: {
         changeFortune(state,n){
             state.fortune = n
+        },
+        setArchive(state,n){
+            state.archive = n
         },
         setTaller(state,n){
             state.isTaller = n

@@ -117,13 +117,12 @@
 </template>
 
 <script>
-import axios from 'axios'
 export default {
   name: 'comicArchive',
     data(){
         return{
             currentPage: 0,
-            theArchive: [],
+            theArchive: this.$store.getters.getArchive.filter(e => e.category == "comic"),
             picayunes: ["how","whattime","newEnter","asl"],
             picaOne: 0,
             picaTwo: 0,
@@ -131,10 +130,6 @@ export default {
         }
     },
     mounted() {
-        axios
-        .get(`${this.$store.getters.getAPI}/category/comic`)
-        .then(response => (this.theArchive = response.data))
-
         //blink animation for ramen shop owner
         const images = ["/assets/global/comicArch/ownerEyeC.png","/assets/global/comicArch/ownerEyeClosedC.png"]
         this.intervalid2 = setInterval(function(){

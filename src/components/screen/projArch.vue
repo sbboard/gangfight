@@ -12,7 +12,6 @@
             <h2>OPEN</h2>
         </div>
         <img id="pollo" src="/assets/global/projectArch/pollo.png"/>
-        <div id="glass"></div>
         <div id="streakOne"></div>
         <div id="streakTwo"></div>
         <div id="streakThree"></div>
@@ -137,12 +136,10 @@
 </template>
 
 <script>
-import axios from 'axios'
-
 export default {
     data(){
         return{
-            theArchive: [],
+            theArchive: this.$store.getters.getArchive.filter(e => e.category == "project"),
             gameOne: 0,
             gameTwo: 1,
             gameThree: 2,
@@ -152,10 +149,6 @@ export default {
         }
     },
     mounted () {
-        axios
-        .get(`${this.$store.getters.getAPI}/category/project`)
-        .then(response => (this.theArchive = response.data))
-
         this.gameOne = Math.floor(Math.random() * 10) + 1
         this.gameTwo = Math.floor(Math.random() * 10) + 1
         this.gameThree = Math.floor(Math.random() * 10) + 1
@@ -312,7 +305,7 @@ export default {
         position: absolute
         background-color: white
         opacity: 0.1
-        z-index: 25
+        z-index: -899
     #streak
         background-color: white
         opacity: .3
@@ -372,7 +365,7 @@ export default {
         #blackbox
             width: 61em
             height: 29em
-            z-index: -800
+            z-index: -7
             background-image: linear-gradient(rgba(255, 0, 0, 0) -27%, black 36%)
             position: absolute
             top: 26em
@@ -380,7 +373,7 @@ export default {
         #stars
             position: absolute
             z-index: -700
-            left: -900
+            left: -21em
             height: auto
             top: 0
             width: 100em
@@ -463,7 +456,7 @@ export default {
         transform: rotate(7deg)
         height: 23em
         background-color: rgba(255,255,255,.5)
-        z-index: -1
+        z-index: 1
         filter: drop-shadow(2px 4px 6px black)
         &:nth-of-type(1)
             left: 52em
@@ -571,6 +564,7 @@ export default {
     .fakePackage
         @extend .gamePackage
         transition: filter 1s
+        z-index: -1
         &:nth-of-type(1)
             left: 98em
             top: 12em

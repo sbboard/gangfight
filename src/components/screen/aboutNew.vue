@@ -10,7 +10,6 @@
                 </div>
             </div>
         </div>
-        <img id="segaaa" src="/assets/global/newAbout/sega.png"/>
         <div class="draggable" :style="{ top: coords[boxNumber-1].y, left: coords[boxNumber-1].x}" v-draggable="draggableValue" v-for="boxNumber in popups" :key="boxNumber">
             <div class="exitCube" @click="exitWindow(boxNumber)"></div>
             <div id="windowsTopBar" :ref="handleId">
@@ -44,7 +43,6 @@
             <div class="bottom"></div>
             <div class="left"></div>
         </div>
-        <div id="sketch"></div>
 
         <!-- action stuff -->
         <div id="descBox">
@@ -64,7 +62,6 @@
 
         <!-- window -->
         <div id="window">
-            <div id="windowTint"></div>
             <div id="windowStreakOne"></div>
             <div id="windowStreakTwo"></div>
 
@@ -80,7 +77,6 @@
 
 <script>
 import { Draggable } from 'draggable-vue-directive'
-import axios from 'axios'
 export default {
     directives: {
         Draggable,
@@ -96,7 +92,7 @@ export default {
             popUpArray: [],
             intervalid1:'',
             assetURL: '/assets/contentImages/',
-            theArchive: []
+            theArchive: this.$store.getters.getArchive
         };
     },
     computed: {
@@ -106,10 +102,6 @@ export default {
     },
     mounted() {
         this.draggableValue.handle = this.$refs[this.handleId]
-        axios
-        .get(`${this.$store.getters.getAPI}/`)
-        .then(response => (this.theArchive = response.data))
-        this.shuffle(this.theArchive)
         this.changeScreen()
     },
     methods: {
@@ -125,9 +117,6 @@ export default {
                 this.popups++
             }
         },
-        shuffle(rand){
-            return rand.sort(function(){return 0.5 - Math.random()});
-        },
         changeScreen(){  
             this.intervalid1 = setInterval(() => {
                 let newScreen = Math.floor(Math.random() * this.theArchive.length)
@@ -139,11 +128,6 @@ export default {
     },
     beforeDestroy () {
        clearInterval(this.intervalid1)
-    },
-    watch: {
-        theArchive(){
-            this.shuffle()
-        }
     }
 }
 </script>
@@ -179,16 +163,8 @@ export default {
     font-size: .3em
     color: black
     position: unset
-#segaaa
-    z-index: 2000
-    position: absolute
-    top: 75em
-    left: 31em
-    filter: drop-shadow(7em 5em 3em black) hue-rotate(87deg) drop-shadow(6em 5em 4em black) blur(.5px)
-    width: 16em
-    display: none
 #screenWall
-    z-index: 900
+    z-index: -1
     position: absolute
     top: -6em
     height: 100em
@@ -204,7 +180,7 @@ export default {
             top: 6em
             left: 4em
             text-align: right
-            z-index: 900
+            z-index: -2
             animation: screenGlow 5s infinite
             animation-direction: alternate
             img
@@ -241,16 +217,6 @@ export default {
 
 #aboutUs
     transition: transform .5s
-    #sketch
-        width: 100%
-        height: 100%
-        background-image: url(/assets/global/newAbout/sketch.jpg)
-        background-size: 140% 140%
-        background-position: -18em -20em
-        z-index: 2000
-        position: absolute
-        opacity: 0
-        pointer-events: none
     #descBox
         position: absolute    
         color: $neonBlue
@@ -262,7 +228,7 @@ export default {
         transform: rotate(-1deg)
         font-size: 2em
         font-family: Yantramanav
-        z-index: 1000
+        z-index: 2
         @include boxGlow($neonBlue)
         span
             display: block
@@ -270,7 +236,7 @@ export default {
                 margin-bottom: .25em
     .socMedia    
         left: 11.5em
-        z-index: 1000
+        z-index: 2
         top: 16.35em
         font-size: 3.35em
         background-color: rgba(black,.8)
@@ -290,7 +256,7 @@ export default {
             color: white
     #walls
         opacity: 1
-        z-index: 100
+        z-index: -100
         position: absolute
         top: 0
         left: 0
@@ -323,7 +289,7 @@ export default {
         background-image: linear-gradient(to right, transparentize($neonBlue,.25) , rgba(0,0,0,0))
         width: 18.5em
         position: absolute
-        z-index: 890
+        z-index: -10
     #topLight
         @extend #light
         height: 9em
@@ -355,7 +321,7 @@ export default {
             transform: rotate(-30deg)
             width: 100em
             position: absolute
-            z-index: 76
+            z-index: -200
             left: 5em
         #windowStreakOne
             @extend #windowStreaks
@@ -368,7 +334,7 @@ export default {
         #rochesterThree  
             position: absolute
             width: 200em
-            z-index: 51
+            z-index: -249
             margin: 0 auto
             left: -96em
             transform: scaleX(-1)
@@ -376,7 +342,7 @@ export default {
         #rochester    
             position: absolute
             width: 170em
-            z-index: 50
+            z-index: -250
             margin: 0 auto
             left: -24em
             top: 19em
@@ -388,12 +354,12 @@ export default {
             position: absolute
             transform: scaleX(-1)
             filter: brightness(.6)
-            z-index: 49
+            z-index: -251
         #stars    
             width: 100%
             left: 6em
             height: 100%
-            z-index: 1
+            z-index: -9000
             left: 0
             top: 0
             position: absolute
@@ -402,7 +368,7 @@ export default {
             right: 14em
             top: 4em
             width: 22em
-            z-index: 49
+            z-index: -251
 .draggable
     position: absolute
     z-index: 1001
