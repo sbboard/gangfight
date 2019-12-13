@@ -164,7 +164,7 @@ export default {
     color: black
     position: unset
 #screenWall
-    z-index: -1
+    z-index: 1
     position: absolute
     top: -6em
     height: 100em
