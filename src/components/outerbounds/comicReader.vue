@@ -1,25 +1,27 @@
 <template>
     <div id="comicPage">
-      <div id="comicNav" :class="[(this.$store.getters.getTaller == 'vh')?'desktop':'mobile',{open: navOpen}]">
-        <a id="leftArrow" :href="`/comicReader/${priorComic._id}/${cat}`">
-          <span class="arrow"><i class="fas fa-angle-left"></i></span>
-          <span class="nameContent">{{priorComic.title}}</span>
-        </a>
-        <template v-if="cat=='1'">
-          <div id="currentArch" @click="switchCat(0)">{{comicInfo.series}}</div>
-        </template>
-        <template v-else>
-          <div id="currentArch" @click="switchCat(1)">ALL COMIC ARCHIVE</div>
-        </template>
-        <a id="rightArrow" :href="`/comicReader/${nextComic._id}/${cat}`">
-          <span class="nameContent">{{nextComic.title}}</span>
-          <span class="arrow"><i class="fas fa-angle-right"></i></span>
-        </a>
-      </div>
       <div id="theComic">
         
         <h1>{{comicInfo.title}}</h1>
         <h2>{{comicInfo.subtitle}}</h2>
+
+        <div id="comicNav" :class="[(this.$store.getters.getTaller == 'vh')?'desktop':'mobile']">
+          <a id="leftArrow" :href="`/comicReader/${priorComic._id}/${cat}`">
+            <span class="arrow"><i class="fas fa-angle-left"></i></span>
+            <span class="nameContent">{{priorComic.title}}</span>
+          </a>
+          <template v-if="cat=='1'">
+            <div id="currentArch" @click="switchCat(0)">{{comicInfo.series}}</div>
+          </template>
+          <template v-else>
+            <div id="currentArch" @click="switchCat(1)">ALL COMIC ARCHIVE</div>
+          </template>
+          <a id="rightArrow" :href="`/comicReader/${nextComic._id}/${cat}`">
+            <span class="nameContent">{{nextComic.title}}</span>
+            <span class="arrow"><i class="fas fa-angle-right"></i></span>
+          </a>
+        </div>
+
         <div class="comicPages">
           <img v-for="pages in comicInfo.comicsArray" :key="pages" v-lazy="`/assets/comics/${comicInfo.url}/${pages}`"/>
         </div>
@@ -33,7 +35,6 @@
 </template>
 
 <script>
-import axios from 'axios'
 import navigation from '../../components/nav/navHome.vue'
 
 export default {
@@ -48,7 +49,7 @@ export default {
       "category":"",
       "date":"",
       "series":"noseries"},
-      fullReturn: [],
+      fullReturn: JSON.parse(JSON.stringify(this.$store.getters.getArchive)),
       comicId: this.$route.params.id,
       cat: 0,
       nextComic:{"_id":"","title":""},
@@ -59,31 +60,25 @@ export default {
     navigation
   },
   mounted () {
-      var self = this
       if(typeof this.$route.params.cat !== 'undefined'){
         this.cat = this.$route.params.cat
       }
       else{
         this.cat = 0
       }
-       axios
-       .get(`${this.$store.getters.getAPI}/category/comic`)
-       .then(response => (this.fullReturn = response.data))
-       .catch(() => this.$router.push('/'))
-       .finally(function(){
-        let currentIndex = self.fullReturn.map(function(e) { return e._id; }).indexOf(self.comicId)
-        if(self.fullReturn.length > 0 && currentIndex > -1){
-          self.comicInfo = self.fullReturn[currentIndex]
-          if(currentIndex != 0){
-            self.nextComic = self.fullReturn[currentIndex-1]
-          }
-          if(currentIndex < self.fullReturn.length-1){
-            self.priorComic = self.fullReturn[currentIndex+1]
-          }
+      let currentIndex = this.fullReturn.map(function(e) { return e._id; }).indexOf(this.comicId)
+      if(this.fullReturn.length > 0 && currentIndex > -1){
+        this.comicInfo = this.fullReturn[currentIndex]
+        if(currentIndex != 0){
+          this.nextComic = this.fullReturn[currentIndex-1]
         }
-        else{
-          self.$router.push('/')
-        }})
+        if(currentIndex < this.fullReturn.length-1){
+          this.priorComic = this.fullReturn[currentIndex+1]
+        }
+      }
+      else{
+        //this.$router.push('/')
+      }
   },
   methods:{
     switchCat(nnew){
@@ -167,6 +162,7 @@ export default {
   &.mobile
     top: 0
     width: 100%
+    position: relative
 #navBox.desktop
   bottom: 3.2em
   padding: .5em 0 0 0
@@ -183,7 +179,6 @@ export default {
     padding: 1em 1em 7em 1em
     h1
       font-size: 3em
-      margin-top: 1em
       text-align: center
       color: $neonRed
       font-family: Montserrat
