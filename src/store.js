@@ -33,7 +33,6 @@ export const store = new Vuex.Store({
             state.fortune = n
         },
         setArchive(state,n){
-            console.log(n)
             if(typeof n !== 'undefined'){
                 state.archive = n
             }

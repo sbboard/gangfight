@@ -139,7 +139,7 @@
 export default {
     data(){
         return{
-            theArchive: this.$store.getters.getArchive.filter(e => e.category == "project"),
+            theArchive: [],
             gameOne: 0,
             gameTwo: 1,
             gameThree: 2,
@@ -149,6 +149,7 @@ export default {
         }
     },
     mounted () {
+        this.theArchive = JSON.parse(JSON.stringify(this.$store.getters.getArchive.filter(e => e.category == "project")))
         this.gameOne = Math.floor(Math.random() * 10) + 1
         this.gameTwo = Math.floor(Math.random() * 10) + 1
         this.gameThree = Math.floor(Math.random() * 10) + 1

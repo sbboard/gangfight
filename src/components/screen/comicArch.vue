@@ -122,7 +122,7 @@ export default {
     data(){
         return{
             currentPage: 0,
-            theArchive: this.$store.getters.getArchive.filter(e => e.category == "comic"),
+            theArchive: [],
             picayunes: ["how","whattime","newEnter","asl"],
             picaOne: 0,
             picaTwo: 0,
@@ -130,6 +130,7 @@ export default {
         }
     },
     mounted() {
+        this.theArchive = JSON.parse(JSON.stringify(this.$store.getters.getArchive.filter(e => e.category == "comic")))
         //blink animation for ramen shop owner
         const images = ["/assets/global/comicArch/ownerEyeC.png","/assets/global/comicArch/ownerEyeClosedC.png"]
         this.intervalid2 = setInterval(function(){
