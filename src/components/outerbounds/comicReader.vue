@@ -11,10 +11,10 @@
             <span class="nameContent">{{priorComic.title}}</span>
           </a>
           <template v-if="cat=='1'">
-            <div id="currentArch" @click="switchCat(0)">{{comicInfo.series}}</div>
+            <div id="currentArch" @click="switchCat(0)" :style="{cursor: cursorStyle}">{{comicInfo.series}}</div>
           </template>
           <template v-else>
-            <div id="currentArch" @click="switchCat(1)">comics</div>
+            <div id="currentArch" @click="switchCat(1)" :style="{cursor: cursorStyle}">comics</div>
           </template>
           <a v-if="nextComic.title != ''" id="rightArrow" :href="`/comicReader/${nextComic._id}/${cat}`">
             <span class="nameContent">{{nextComic.title}}</span>
@@ -54,6 +54,7 @@ export default {
       cat: 0,
       nextComic:{"_id":"","title":""},
       priorComic:{"_id":"","title":""},
+      cursorStyle:""
     }
   },
   components: {
@@ -72,6 +73,7 @@ export default {
   methods:{
     switchCat(nnew){
       if(this.comicInfo.series != "noseries"){
+        this.cursorStyle = "pointer"
         if(nnew == 1){
           let seriesArray = this.fullReturn.filter(e => e.series.toLowerCase() == this.comicInfo.series.toLowerCase())
           this.cat = nnew
@@ -84,6 +86,7 @@ export default {
       }
       else{
         this.cat = 0
+        this.cursorStyle = "inherit"
       }
     },
     getIndexes(archive){
@@ -140,6 +143,8 @@ export default {
     top: 0
     width: 30%
     cursor: pointer
+    .nameContent
+      word-break: break-word
   #rightArrow
     @extend #leftArrow
     right: 0
@@ -149,10 +154,9 @@ export default {
   #currentArch
     color: $neonGreen
     font-size: 1.5em
-    cursor: pointer
     display: block
     margin: 0 auto
-    width: 40%
+    width: fit-content
     text-align: center
     text-transform: uppercase
   .nameContent
@@ -178,6 +182,10 @@ export default {
     top: 0
     width: 100%
     position: relative
+    margin: 0 auto 1em 0
+    .arrow
+      font-size: 3em
+      margin: 0
 #navBox.desktop
   bottom: 3.2em
   padding: .5em 0 0 0
