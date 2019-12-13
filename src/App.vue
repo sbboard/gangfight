@@ -6,6 +6,7 @@
 
 <script>
 import axios from 'axios'
+
 export default {
   data(){
     return{
@@ -32,15 +33,15 @@ export default {
     }
   },
   mounted() {
+    axios
+    .get(process.env.VUE_APP_API)
+    .then(response => (this.$store.commit('setArchive',response.data)))
     this.$nextTick(() => {
       window.addEventListener('resize', () => {
         this.windowHeight = window.innerHeight
         this.windowWidth = window.innerWidth
       });
     })
-    axios
-    .get(`${this.$store.getters.getAPI}`)
-    .then(response => (this.$store.commit('setArchive',response.date)))
   },
 }
 </script>

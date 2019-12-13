@@ -8,7 +8,6 @@ export const store = new Vuex.Store({
         fortune: "Challenge yourself to enjoy the exclusive flavors of Gang Fight.",
         assets: "default",
         isTaller: "vw",
-        GFAPI: process.env.VUE_APP_API,
         date: [],
         archive: JSON.parse(process.env.VUE_APP_ARCH)
     },
@@ -22,9 +21,6 @@ export const store = new Vuex.Store({
         getTaller: state=> {
             return state.isTaller
         },
-        getAPI: state=>{
-            return state.GFAPI
-        },
         getDate: state=>{
             return state.date
         },
@@ -37,7 +33,10 @@ export const store = new Vuex.Store({
             state.fortune = n
         },
         setArchive(state,n){
-            state.archive = n
+            console.log(n)
+            if(typeof n !== 'undefined'){
+                state.archive = n
+            }
         },
         setTaller(state,n){
             state.isTaller = n
