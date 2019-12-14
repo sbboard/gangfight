@@ -1,9 +1,9 @@
 <template>
     <div id="arch" :style="[blockSize, fontSize]">
         <div id="pageTab" v-if="theArchive.length > postsPerPage">
-            <div class="leftTab" :class="{'dead': currentPage == 0}" @click="changeNav(-1)"><i class="fas fa-arrow-circle-left"></i></div>
+            <div class="leftTab" :class="{'dead': currentPage == totalPages.totalPages-1}" @click="changeNav(1)"><i class="fas fa-arrow-circle-left"></i></div>
             <div class="middleText">創造的な作品 {{currentPage+1}}/{{totalPages.totalPages}}</div>
-            <div class="rightTab" :class="{'dead': currentPage == totalPages.totalPages-1}" @click="changeNav(1)"><i class="fas fa-arrow-circle-right"></i></div>
+            <div class="rightTab" :class="{'dead': currentPage == 0}" @click="changeNav(-1)"><i class="fas fa-arrow-circle-right"></i></div>
         </div>
         <div id="opensign">
             <h2>OPEN</h2>

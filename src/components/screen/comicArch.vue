@@ -1,9 +1,9 @@
 <template>
     <div id="scene" :style="fontSize">
-        <div v-if="currentPage == 0" class="leftArrow dead"><i class="fas fa-arrow-left"></i></div>
-        <div v-else @click="changeNav(-1)" class="leftArrow"><i class="fas fa-arrow-left"></i></div>
-        <div v-if="currentPage >= (theArchive.length/4)-1" class="rightArrow dead"><i class="fas fa-arrow-right"></i></div>
-        <div v-else @click="changeNav(1)" class="rightArrow"><i class="fas fa-arrow-right"></i></div>
+        <div v-if="currentPage == 0" class="rightArrow dead"><i class="fas fa-arrow-right"></i></div>
+        <div v-else @click="changeNav(-1)" class="rightArrow"><i class="fas fa-arrow-right"></i></div>
+        <div v-if="currentPage >= (theArchive.length/4)-1" class="leftArrow dead"><i class="fas fa-arrow-left"></i></div>
+        <div v-else @click="changeNav(1)" class="leftArrow"><i class="fas fa-arrow-left"></i></div>
 
         <div id="picayunes">
             <div id="picaOne" v-if="typeof picayunes[picaOne] != 'undefined'">
@@ -44,15 +44,6 @@
                 <div class="pole"></div>
             </div>
         </div>
-    <!--
-    <div id="hangingSign">
-        <h2>私を殺して</h2>
-    </div>
-    <div id="signHooks">
-        <div id="leftHook"></div>
-        <div id="rightHook"></div>
-    </div>
-    -->
     <div id="leftPart">
         <div id="roof"></div>
         <div id="roofPole"></div>
@@ -718,6 +709,7 @@ $metalColor: #c964ff
         right: 0
         margin: 0 auto
         z-index: 100
+        text-align: right
         .contentBoxes
             display: inline-block
             font-family: VCR
