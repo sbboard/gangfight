@@ -114,7 +114,7 @@ export default {
         return{
             currentPage: 0,
             theArchive: [],
-            picayunes: ["how","whattime","newEnter","asl"],
+            picayunes: ["how","whattime","newEnter","asl","reflect"],
             picaOne: 0,
             picaTwo: 0,
             intervalid2:'',
