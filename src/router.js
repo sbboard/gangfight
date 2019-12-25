@@ -33,7 +33,7 @@ export default new Router({
       },
       {
         path: "/project",
-        name: "game shoppe",
+        name: "game shop",
         component: ProjArch
       },
       {
@@ -53,7 +53,7 @@ export default new Router({
       },
       {
         path: "/:string",
-        name: "Culture Club",
+        name: "Cultur Club",
         component: fakeFourOFour
       },
     ]
