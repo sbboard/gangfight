@@ -259,6 +259,7 @@ $sideImgOpacity: .7
       display: block
       height: fit-content
       align-self: center
+      margin-bottom: .25em
   .bottomRight
     text-align: right
     padding-top: .5em
@@ -304,10 +305,8 @@ $sideImgOpacity: .7
     border: 2px solid #9affff
     text-transform: uppercase
     font-family: Montserrat
-    
     color: #ffcce0
     @include textGlow(#fe0063, 1px)
-    @include boxGlow(#00c4ff)
 #TopBorder
   text-align: center
   display: flex
