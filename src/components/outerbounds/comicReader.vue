@@ -218,8 +218,6 @@ export default {
         max-width: 100%
         margin: 0 auto 1em auto
         display: block
-        min-height: 500px
-
 #city
     background-image: url('/assets/global/homepage/rochester.png')
     background-position: bottom
