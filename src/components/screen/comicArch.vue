@@ -708,6 +708,8 @@ $metalColor: #c964ff
         height: 17.5em
         right: 0
         margin: 0 auto
+        display: flex
+        flex-direction: row-reverse
         z-index: 100
         text-align: right
         .contentBoxes
