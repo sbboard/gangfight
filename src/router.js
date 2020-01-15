@@ -6,9 +6,12 @@ import fakeFourOFour from "./components/screen/placeholder404.vue"
 import About from "./components/screen/aboutNew.vue"
 import ComicArch from "./components/screen/comicArch.vue"
 import ProjArch from "./components/screen/projArch.vue"
-import ComicReader from "./components/outerbounds/comicReader.vue"
 import screen from "./components/screen/screen.vue"
-import sbboardExit from "./components/outerbounds/sbboardExit.vue"
+//pages that exist outside of borders
+import ComicReader from "./components/outerbounds/comicReader.vue"
+//projects
+import sbboardExit from "./components/projects/sbboardExit.vue"
+import chameleon from "./components/projects/ChamMan.vue"
 
 Vue.use(Router);
 
@@ -50,6 +53,11 @@ export default new Router({
         path: "/sbboard",
         name: "SBboard",
         component: sbboardExit
+      },
+      {
+        path: "/chameleon",
+        name: "Chameleon",
+        component: chameleon
       },
       {
         path: "/:string",
