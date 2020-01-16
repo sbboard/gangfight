@@ -19,7 +19,7 @@
         <div id="textBox">
             <div id="textBoxWrap">
                 <div id="maskBox"></div>
-                <div id="actualText" :class="{ promptGo: promptReady }" @click="advance()">
+                <div id="actualText" :class="{ promptGo: !textTyping }" @click="advance()">
                     {{nameTranslate(script[currentAct][currentScene].text[currentLine][0])}}<template v-if="script[currentAct][currentScene].text[currentLine][0] != ''">:</template>
                     {{printText(script[this.currentAct][currentScene].text[currentLine][1])}}
                     {{textOut}}
@@ -65,16 +65,15 @@ export default {
             script: script,
             currentCG: "intro-title",
             prompt: "hit space or click to start",
-            promptReady: true,
         }
     },
     methods: {
         advance(){
             //choose what to play next
             if(this.textTyping == true){
-                this.textOut = this.textIn
-                clearTimeout(looper)
-                this.textTyping = false
+                //this.textOut = this.textIn
+                //clearTimeout(looper)
+                //this.textTyping = false
             }
             else{
             if(this.currentLine < this.script[this.currentAct][this.currentScene].text.length-1){
