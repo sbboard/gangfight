@@ -21,8 +21,9 @@
                 <div id="maskBox"></div>
                 <div id="actualText" :class="{ promptGo: promptReady }" @click="advance()">
                     {{nameTranslate(script[currentAct][currentScene].text[currentLine][0])}}<template v-if="script[currentAct][currentScene].text[currentLine][0] != ''">:</template>
-                    {{script[currentAct][currentScene].text[currentLine][1]}}
-                    <div id="promptText">{{prompt}}</div>
+                    {{printText(script[this.currentAct][currentScene].text[currentLine][1])}}
+                    {{textOut}}
+                    <div id="promptText" v-if="!textTyping">{{prompt}}</div>
                 </div>
             </div>
         </div>
@@ -32,6 +33,7 @@
 
 <script>
 import script from '../../ChamManScript.js'
+let looper
 
 export default {
     data(){
@@ -44,7 +46,11 @@ export default {
             mainLeft: "",
             secLeft: "",
             mainRight: "",
+            textTyping: false,
+            textIn: "",
+            textOut: "",
             secRight: "",
+            currentTextChar: 0,
             currentType: "",
             charactersOnStage: [],
             eyeOptions: [],
@@ -65,6 +71,12 @@ export default {
     methods: {
         advance(){
             //choose what to play next
+            if(this.textTyping == true){
+                this.textOut = this.textIn
+                clearTimeout(looper)
+                this.textTyping = false
+            }
+            else{
             if(this.currentLine < this.script[this.currentAct][this.currentScene].text.length-1){
                 this.currentLine++
             }
@@ -117,7 +129,7 @@ export default {
                 //
 
                 this.promptReady = false
-            }
+            }}
         },
         nameTranslate(name){
             switch (name) {
@@ -132,6 +144,9 @@ export default {
                 default:
                     return ""
             }
+        },
+        printText(text){
+            this.textIn = text
         }
     },
     computed: {
@@ -139,6 +154,43 @@ export default {
             return {fontSize: '1'+this.$store.getters.getTaller}
         },
     },
+    watch: {
+        textIn(){
+            this.textOut = ""
+            clearTimeout(looper)
+            if(this.textIn.length > 0){
+                let i = 0
+                this.textTyping = true
+                let self = this
+                let normSpeech = 25
+                let timeStop = normSpeech
+
+                // eslint-disable-next-line
+                function myLoop() {
+                    looper = setTimeout(function() {
+                    self.textOut += self.textIn[i]
+                    if (self.textIn[i] == "?" || self.textIn[i] == "!" || self.textIn[i] == "." || self.textIn[i] == "-") {
+                        timeStop = normSpeech * 2
+                    }
+                    else if(self.textIn[i] == " "){
+                        timeStop = normSpeech
+                    }
+                    else {
+                        timeStop = normSpeech
+                    }
+                    i++;
+                    if (i < self.textIn.length) {
+                        myLoop();
+                    }
+                    else{
+                        self.textTyping = false
+                    }
+                    }, timeStop)
+                }
+                myLoop()
+            }
+        }
+    }
 }
 </script>
 
