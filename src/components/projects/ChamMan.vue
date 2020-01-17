@@ -52,7 +52,7 @@ export default {
             secRight: "",
             currentTextChar: 0,
             currentType: "",
-            charactersOnStage: [],
+            charactersOnStage: ["","","",""],
             eyeOptions: [],
             noseOptions: [],
             mouthOptions: [],
@@ -71,9 +71,9 @@ export default {
         advance(){
             //choose what to play next
             if(this.textTyping == true){
-                //this.textOut = this.textIn
-                //clearTimeout(looper)
-                //this.textTyping = false
+                this.textOut = this.textIn
+                clearTimeout(looper)
+                this.textTyping = false
             }
             else{
             if(this.currentLine < this.script[this.currentAct][this.currentScene].text.length-1){
@@ -104,22 +104,38 @@ export default {
             }
             else if(this.script[this.currentAct][this.currentScene].type == "scene"){
                 this.currentCG = this.script[this.currentAct][this.currentScene].bg
-                if(this.charactersOnStage.includes(this.script[this.currentAct][this.currentScene].text[this.currentLine][0])){
-                    //
+                if(this.charactersOnStage.includes(this.script[this.currentAct][this.currentScene].text[this.currentLine][0].split('-')[0])){
+                    let arrayPos = this.charactersOnStage.indexOf(this.script[this.currentAct][this.currentScene].text[this.currentLine][0].split('-')[0])
+                    if(arrayPos == 0){
+                        this.mainLeft = this.script[this.currentAct][this.currentScene].text[this.currentLine][0]
+                    }
+                    else if(arrayPos == 1){
+                        this.secLeft = this.script[this.currentAct][this.currentScene].text[this.currentLine][0]
+                    }
+                    else if(arrayPos == 2){
+                        this.secRight = this.script[this.currentAct][this.currentScene].text[this.currentLine][0]
+                    }
+                    else if(arrayPos == 3){
+                        this.mainRight = this.script[this.currentAct][this.currentScene].text[this.currentLine][0]
+                    }
                 }
                 else{
-                    this.charactersOnStage.push(this.script[this.currentAct][this.currentScene].text[this.currentLine][0])
+                    console.log(this.charactersOnStage)
                     let position = this.script[this.currentAct][this.currentScene].text[this.currentLine][2]
                     if(position == "mainRight"){
+                        this.charactersOnStage[3] = this.script[this.currentAct][this.currentScene].text[this.currentLine][0].split('-')[0]
                         this.mainRight = this.script[this.currentAct][this.currentScene].text[this.currentLine][0]
                     }
                     else if(position == "mainLeft"){
+                        this.charactersOnStage[0] = this.script[this.currentAct][this.currentScene].text[this.currentLine][0].split('-')[0]
                         this.mainLeft = this.script[this.currentAct][this.currentScene].text[this.currentLine][0]
                     }
                     else if(position == "secRight"){
+                        this.charactersOnStage[2] = this.script[this.currentAct][this.currentScene].text[this.currentLine][0].split('-')[0]
                         this.secRight = this.script[this.currentAct][this.currentScene].text[this.currentLine][0]
                     }
                     else if(position == "secLeft"){
+                        this.charactersOnStage[1] = this.script[this.currentAct][this.currentScene].text[this.currentLine][0].split('-')[0]
                         this.secLeft = this.script[this.currentAct][this.currentScene].text[this.currentLine][0]
                     }
                 }
@@ -131,7 +147,8 @@ export default {
             }}
         },
         nameTranslate(name){
-            switch (name) {
+            let nameIso = name.split("-")[0]
+            switch (nameIso) {
                 case "IPJR":
                     return "Identity Police JR"
                 case "IP":
