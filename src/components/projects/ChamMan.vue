@@ -5,11 +5,11 @@
             <img class="char left secondary"  :class="(secLeft=='')?'offscreen':''" :src="`/projects/chameleonMan/CHAR/${secLeft}.png`"/>
             <img class="char right main"  :class="(mainRight=='')?'offscreen':''" :src="`/projects/chameleonMan/CHAR/${mainRight}.png`"/>
             <img class="char right secondary"  :class="(secRight=='')?'offscreen':''" :src="`/projects/chameleonMan/CHAR/${secRight}.png`"/>
-            <!--<div id="chameleonMan" class="char left">
+            <div id="chameleonMan" class="char left offscreen">
                 <img :src="currentFace.eyes"/>
                 <img :src="currentFace.nose"/>
                 <img :src="currentFace.mouth"/>
-            </div>-->
+            </div>
             <img id="bg" :src="`/projects/chameleonMan/CG/${currentCG}.png`"/>
         </div>
         <div id="statBox">
