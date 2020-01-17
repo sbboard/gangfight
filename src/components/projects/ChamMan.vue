@@ -21,7 +21,7 @@
                 <div id="maskBox"></div>
                 <div id="actualText" :class="{ promptGo: !textTyping }" @click="advance()">
                     {{nameTranslate(script[currentAct][currentScene].text[currentLine][0])}}<template v-if="script[currentAct][currentScene].text[currentLine][0] != ''">:</template>
-                    {{printText(script[this.currentAct][currentScene].text[currentLine][1])}}
+                    {{printText(script[currentAct][currentScene].text[currentLine])}}
                     {{textOut}}
                     <div id="promptText" v-if="!textTyping">{{prompt}}</div>
                 </div>
@@ -69,11 +69,24 @@ export default {
     },
     methods: {
         advance(){
-            //choose what to play next
+            //early stop if texttyping is going
             if(this.textTyping == true){
-                this.textOut = this.textIn
-                clearTimeout(looper)
-                this.textTyping = false
+                // this.textOut = this.textIn[1]
+                // clearTimeout(looper)
+                // this.textTyping = false
+                // let arrayPos = this.charactersOnStage.indexOf(this.script[this.currentAct][this.currentScene].text[this.currentLine][0].split('-')[0])
+                // if(arrayPos == 0){
+                //     this.mainLeft = this.mainLeft.split("-o")[0]
+                // }
+                // else if(arrayPos == 1){
+                //     this.secLeft = this.secLeft.split("-o")[0]
+                // }
+                // else if(arrayPos == 2){
+                //     this.secRight = this.secRight.split("-o")[0]
+                // }
+                // else if(arrayPos == 3){
+                //     this.mainRight = this.mainRight.split("-o")[0]
+                // }
             }
             else{
             if(this.currentLine < this.script[this.currentAct][this.currentScene].text.length-1){
@@ -96,7 +109,7 @@ export default {
                     this.currentScene = 0
                 }
                 else if(this.script[this.currentAct][this.currentScene].next.includes("idle")){
-                    //
+                    //this.textTyping = true
                 }
             }
             if(this.script[this.currentAct][this.currentScene].type == "CG"){
@@ -120,7 +133,6 @@ export default {
                     }
                 }
                 else{
-                    console.log(this.charactersOnStage)
                     let position = this.script[this.currentAct][this.currentScene].text[this.currentLine][2]
                     if(position == "mainRight"){
                         this.charactersOnStage[3] = this.script[this.currentAct][this.currentScene].text[this.currentLine][0].split('-')[0]
@@ -150,9 +162,9 @@ export default {
             let nameIso = name.split("-")[0]
             switch (nameIso) {
                 case "IPJR":
-                    return "Identity Police JR"
+                    return "Agent Bijou"
                 case "IP":
-                    return "Identity Police"
+                    return "Agent Taro"
                 case "SAL":
                     return "Sal"
                 case "???":
@@ -172,35 +184,86 @@ export default {
     },
     watch: {
         textIn(){
+            let currentPos = ""
             this.textOut = ""
+            let arrayPos = this.charactersOnStage.indexOf(this.script[this.currentAct][this.currentScene].text[this.currentLine][0].split('-')[0])
+            if(arrayPos == 0){
+                currentPos = this.mainLeft
+            }
+            else if(arrayPos == 1){
+                currentPos = this.secLeft
+            }
+            else if(arrayPos == 2){
+                currentPos = this.secRight
+            }
+            else if(arrayPos == 3){
+                currentPos = this.mainRight
+            }
             clearTimeout(looper)
-            if(this.textIn.length > 0){
+            if(this.textIn[1].length > 0){
                 let i = 0
                 this.textTyping = true
                 let self = this
-                let normSpeech = 25
+                let normSpeech = 75
                 let timeStop = normSpeech
 
                 // eslint-disable-next-line
                 function myLoop() {
                     looper = setTimeout(function() {
-                    self.textOut += self.textIn[i]
-                    if (self.textIn[i] == "?" || self.textIn[i] == "!" || self.textIn[i] == "." || self.textIn[i] == "-") {
-                        timeStop = normSpeech * 2
-                    }
-                    else if(self.textIn[i] == " "){
-                        timeStop = normSpeech
-                    }
-                    else {
-                        timeStop = normSpeech
-                    }
-                    i++;
-                    if (i < self.textIn.length) {
-                        myLoop();
-                    }
-                    else{
-                        self.textTyping = false
-                    }
+                        self.textOut += self.textIn[1][i]
+                        if (currentPos.includes("-o")) {
+                            currentPos = currentPos.split("-o")[0]
+                        } else {
+                            currentPos = currentPos + "-o"
+                        }
+                        if (self.textIn[1][i] == "?" || self.textIn[1][i] == "!" || self.textIn[1][i] == "." || self.textIn[1][i] == "-") {
+                            timeStop = normSpeech * 2
+                            currentPos = currentPos.split("-o")[0]
+                        }
+                        else if(self.textIn[1][i] == " "){
+                            timeStop = normSpeech
+                            currentPos = currentPos.split("-o")[0]
+                        }
+                        else {
+                            timeStop = normSpeech
+                        }
+                        i++
+                        if(arrayPos == 0){
+                            self.mainLeft = currentPos
+                        }
+                        else if(arrayPos == 1){
+                            self.secLeft = currentPos
+                        }
+                        else if(arrayPos == 2){
+                            self.secRight = currentPos
+                        }
+                        else if(arrayPos == 3){
+                            self.mainRight = currentPos
+                        }
+                        if (i < self.textIn[1].length) {
+                            myLoop();
+                        }
+                        else{
+                            if(isNaN(self.script[self.currentAct][self.currentScene].next)&&self.script[self.currentAct][self.currentScene].next.includes("idle")){
+                                //
+                            }
+                            else{
+                                self.textTyping = false
+                            }
+                            currentPos = currentPos.split("-o")[0]
+                            if(arrayPos == 0){
+                                self.mainLeft = currentPos
+                            }
+                            else if(arrayPos == 1){
+                                self.secLeft = currentPos
+                            }
+                            else if(arrayPos == 2){
+                                self.secRight = currentPos
+                            }
+                            else if(arrayPos == 3){
+                                self.mainRight = currentPos
+                            }
+                        }
                     }, timeStop)
                 }
                 myLoop()
@@ -225,7 +288,6 @@ export default {
         top: 0
         height: 55em
         width: 100%
-        background-color: pink
         #bg
             width: 100em
             height: 100%
@@ -234,8 +296,9 @@ export default {
         .char
             position: absolute
             bottom: 0
-            transition: left .5s
             &.left
+                &:not(.offscreen)
+                    transition: left .5s
                 &.main
                     left: 1em
                     &.offscreen
@@ -245,6 +308,8 @@ export default {
                     &.offscreen
                         left: -45em
             &.right
+                &:not(.offscreen)
+                    transition: left .5s
                 &.main
                     right: 1em
                     &.offscreen

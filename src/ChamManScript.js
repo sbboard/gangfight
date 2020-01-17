@@ -16,7 +16,7 @@ const script =  [
         {"type":"scene","bg":"shop","text":[
             ["SAL-shock","!!!","mainRight"],
             ["IP-note","Hello sir, are you the owner of this fine establishment?","mainLeft"],
-            ["IPJR-intimidate","Yeah!","secLeft"],
+            ["IPJR-intimidate","Uh... yeah! We're looking for the owner!","secLeft"],
             ["SAL-worry","Uh!! Uh!! Yes!! I - I am!!"],
             ["IP-note","You got a name, pal?"],
             ["SAL-worry","Sal!! My name is Sal!"],
