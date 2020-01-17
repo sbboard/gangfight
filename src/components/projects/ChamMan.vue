@@ -18,9 +18,11 @@
         </div>
         <div id="textBox">
             <div id="textBoxWrap">
-                <div id="maskBox"></div>
+                <div id="maskBox">
+                    <img id="faceBG" src="/projects/chameleonMan/FACE/facebg.png"/>
+                </div>
                 <div id="actualText" :class="{ promptGo: !textTyping }" @click="advance()">
-                    {{nameTranslate(script[currentAct][currentScene].text[currentLine][0])}}<template v-if="script[currentAct][currentScene].text[currentLine][0] != ''">:</template>
+                    <template v-if="script[currentAct][currentScene].text[currentLine][0] != ''"><span id="characterName">{{nameTranslate(script[currentAct][currentScene].text[currentLine][0])}}:</span></template>
                     {{printText(script[currentAct][currentScene].text[currentLine])}}
                     {{textOut}}
                     <div id="promptText" v-if="!textTyping">{{prompt}}</div>
@@ -69,6 +71,7 @@ export default {
     },
     methods: {
         advance(){
+            this.prompt = "hit space or click to continue..."
             //early stop if texttyping is going
             if(this.textTyping == true){
                 // this.textOut = this.textIn[1]
@@ -89,74 +92,75 @@ export default {
                 // }
             }
             else{
-            if(this.currentLine < this.script[this.currentAct][this.currentScene].text.length-1){
-                this.currentLine++
-            }
-            else{
-                if(typeof this.script[this.currentAct][this.currentScene].next == "number"){
-                    this.currentLine = 0
-                    this.currentScene = this.script[this.currentAct][this.currentScene].next
+                if(this.currentLine < this.script[this.currentAct][this.currentScene].text.length-1){
+                    this.currentLine++
+                }
+                else{
                     this.charactersOnStage = []
                     this.mainLeft = ""
                     this.mainRight = ""
                     this.secLeft = ""
                     this.secRight = ""
-                }
-                else if(this.script[this.currentAct][this.currentScene].next.includes("ACT")){
-                    let nextAct = this.script[this.currentAct][this.currentScene].next.split("-")[1]
-                    this.currentAct = nextAct
-                    this.currentLine = 0
-                    this.currentScene = 0
-                }
-                else if(this.script[this.currentAct][this.currentScene].next.includes("idle")){
-                    //this.textTyping = true
-                }
-            }
-            if(this.script[this.currentAct][this.currentScene].type == "CG"){
-                this.currentCG = this.script[this.currentAct][this.currentScene].CG
-            }
-            else if(this.script[this.currentAct][this.currentScene].type == "scene"){
-                this.currentCG = this.script[this.currentAct][this.currentScene].bg
-                if(this.charactersOnStage.includes(this.script[this.currentAct][this.currentScene].text[this.currentLine][0].split('-')[0])){
-                    let arrayPos = this.charactersOnStage.indexOf(this.script[this.currentAct][this.currentScene].text[this.currentLine][0].split('-')[0])
-                    if(arrayPos == 0){
-                        this.mainLeft = this.script[this.currentAct][this.currentScene].text[this.currentLine][0]
+                    this.currentCG= ""
+                    if(typeof this.script[this.currentAct][this.currentScene].next == "number"){
+                        this.currentLine = 0
+                        this.currentScene = this.script[this.currentAct][this.currentScene].next
                     }
-                    else if(arrayPos == 1){
-                        this.secLeft = this.script[this.currentAct][this.currentScene].text[this.currentLine][0]
+                    else if(this.script[this.currentAct][this.currentScene].next.includes("ACT")){
+                        let nextAct = this.script[this.currentAct][this.currentScene].next.split("-")[1]
+                        this.currentAct = nextAct
+                        this.currentLine = 0
+                        this.currentScene = 0
                     }
-                    else if(arrayPos == 2){
-                        this.secRight = this.script[this.currentAct][this.currentScene].text[this.currentLine][0]
-                    }
-                    else if(arrayPos == 3){
-                        this.mainRight = this.script[this.currentAct][this.currentScene].text[this.currentLine][0]
+                    else if(this.script[this.currentAct][this.currentScene].next.includes("idle")){
+                        //
                     }
                 }
-                else{
-                    let position = this.script[this.currentAct][this.currentScene].text[this.currentLine][2]
-                    if(position == "mainRight"){
-                        this.charactersOnStage[3] = this.script[this.currentAct][this.currentScene].text[this.currentLine][0].split('-')[0]
-                        this.mainRight = this.script[this.currentAct][this.currentScene].text[this.currentLine][0]
-                    }
-                    else if(position == "mainLeft"){
-                        this.charactersOnStage[0] = this.script[this.currentAct][this.currentScene].text[this.currentLine][0].split('-')[0]
-                        this.mainLeft = this.script[this.currentAct][this.currentScene].text[this.currentLine][0]
-                    }
-                    else if(position == "secRight"){
-                        this.charactersOnStage[2] = this.script[this.currentAct][this.currentScene].text[this.currentLine][0].split('-')[0]
-                        this.secRight = this.script[this.currentAct][this.currentScene].text[this.currentLine][0]
-                    }
-                    else if(position == "secLeft"){
-                        this.charactersOnStage[1] = this.script[this.currentAct][this.currentScene].text[this.currentLine][0].split('-')[0]
-                        this.secLeft = this.script[this.currentAct][this.currentScene].text[this.currentLine][0]
-                    }
-                }
-            }
-            else if(this.script[this.currentAct][this.currentScene].type == "interactive"){
-                //
 
-                this.promptReady = false
-            }}
+                if(this.script[this.currentAct][this.currentScene].type == "CG"){
+                    this.currentCG = this.script[this.currentAct][this.currentScene].CG
+                }
+                else if(this.script[this.currentAct][this.currentScene].type == "scene"){
+                    this.currentCG = this.script[this.currentAct][this.currentScene].bg
+                    if(this.charactersOnStage.includes(this.script[this.currentAct][this.currentScene].text[this.currentLine][0].split('-')[0])){
+                        let arrayPos = this.charactersOnStage.indexOf(this.script[this.currentAct][this.currentScene].text[this.currentLine][0].split('-')[0])
+                        if(arrayPos == 0){
+                            this.mainLeft = this.script[this.currentAct][this.currentScene].text[this.currentLine][0]
+                        }
+                        else if(arrayPos == 1){
+                            this.secLeft = this.script[this.currentAct][this.currentScene].text[this.currentLine][0]
+                        }
+                        else if(arrayPos == 2){
+                            this.secRight = this.script[this.currentAct][this.currentScene].text[this.currentLine][0]
+                        }
+                        else if(arrayPos == 3){
+                            this.mainRight = this.script[this.currentAct][this.currentScene].text[this.currentLine][0]
+                        }
+                    }
+                    else{
+                        let position = this.script[this.currentAct][this.currentScene].text[this.currentLine][2]
+                        if(position == "mainRight"){
+                            this.charactersOnStage[3] = this.script[this.currentAct][this.currentScene].text[this.currentLine][0].split('-')[0]
+                            this.mainRight = this.script[this.currentAct][this.currentScene].text[this.currentLine][0]
+                        }
+                        else if(position == "mainLeft"){
+                            this.charactersOnStage[0] = this.script[this.currentAct][this.currentScene].text[this.currentLine][0].split('-')[0]
+                            this.mainLeft = this.script[this.currentAct][this.currentScene].text[this.currentLine][0]
+                        }
+                        else if(position == "secRight"){
+                            this.charactersOnStage[2] = this.script[this.currentAct][this.currentScene].text[this.currentLine][0].split('-')[0]
+                            this.secRight = this.script[this.currentAct][this.currentScene].text[this.currentLine][0]
+                        }
+                        else if(position == "secLeft"){
+                            this.charactersOnStage[1] = this.script[this.currentAct][this.currentScene].text[this.currentLine][0].split('-')[0]
+                            this.secLeft = this.script[this.currentAct][this.currentScene].text[this.currentLine][0]
+                        }
+                    }
+                }
+                else if(this.script[this.currentAct][this.currentScene].type == "interactive"){
+                    this.promptReady = false
+                }
+            }
         },
         nameTranslate(name){
             let nameIso = name.split("-")[0]
@@ -175,6 +179,14 @@ export default {
         },
         printText(text){
             this.textIn = text
+        }
+    },
+    mounted(){
+        let self = this
+        document.body.onkeyup = function(e){
+            if(e.keyCode == 32){
+                self.advance()
+            }
         }
     },
     computed: {
@@ -327,11 +339,9 @@ export default {
             
     #textBox
         width: 100%
-        background-color: blue
         height: 25em
         position: absolute
         bottom: 10em
-        opacity: .5
         user-select: none
         #textBoxWrap
             position: relative
@@ -339,8 +349,11 @@ export default {
             #maskBox
                 height: 25em
                 width: 25em
-                background-color: red
+                background-color: yellow
                 display: block
+                #faceBG
+                    width: 100%
+                    height: 100%
             #actualText
                 width: 37em
                 padding: .5em
@@ -351,6 +364,8 @@ export default {
                 right: 0
                 top: 0
                 font-size: 2em
+                #characterName
+                    font-weight: 800
                 #promptText
                     display: none
                 &.promptGo
@@ -369,5 +384,4 @@ export default {
         bottom: 35em
         width: 100%
         position: absolute
-        opacity: .5
 </style>
