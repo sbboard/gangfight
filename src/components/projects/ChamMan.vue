@@ -34,7 +34,7 @@
 </template>
 
 <script>
-import script from '../../ChamManScript.js'
+import script from './ChamManScript.js'
 let looper
 
 export default {

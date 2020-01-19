@@ -12,6 +12,7 @@ import ComicReader from "./components/outerbounds/comicReader.vue"
 //projects
 import sbboardExit from "./components/projects/sbboardExit.vue"
 import chameleon from "./components/projects/ChamMan.vue"
+import picross from "./components/projects/picross.vue"
 
 Vue.use(Router);
 
@@ -58,6 +59,11 @@ export default new Router({
         path: "/chameleon",
         name: "Chameleon",
         component: chameleon
+      },
+      {
+        path: "/picross",
+        name: "Picross",
+        component: picross
       },
       {
         path: "/:string",
