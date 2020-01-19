@@ -2,7 +2,30 @@
     <div>
         <template v-if="this.puzzleWorks()">
             <div id="puzzle">
-                {{puzzleHTML}}
+                <div id="TopLaw">
+                    <div class="cube corner"></div>
+                    <div class="law cube" v-for="(item, index) in puzzleArray[puzzle].x" :key="`${index}`">
+                        <span v-for="(item, id) in puzzleArray[puzzle].x[index]" :key="`${id}`">
+                            {{puzzleArray[puzzle].x[index][id]}}
+                        </span>
+                    </div>
+                </div>
+                <div class="row" v-for="(item, index) in puzzleArray[puzzle].y" :key="`${index}`">
+                    <div class="law cube sideLaw">
+                        <span v-for="(item, id) in puzzleArray[puzzle].y[index]" :key="`${id}`">
+                            {{puzzleArray[puzzle].y[index][id]}}
+                        </span>
+                    </div>
+                    <!-- LOOP -->
+                    <div v-for="(item, id) in puzzleArray[puzzle].x" :key="`${id}`"
+                        :id="index+'V'+id" 
+                        @click="clickCube(index+'V'+id)" 
+                        class='cube picCube'
+                        :class="{x : Xcubes.includes(index+'V'+id),
+                            black : selectedCubes.includes(index+'V'+id)
+                            }">
+                    </div>
+                </div>  
             </div>
         </template>
         <div id="result">{{result}}</div>
@@ -21,96 +44,61 @@ import puzzleArray from './puzzles.js'
 export default {
     data(){
         return{
+            puzzleArray: puzzleArray,
             puzzle: 0,
             result: "",
-            puzzleHTML: ""
+            puzzleHTML: "",
+            selectedCubes: [],
+            Xcubes: []
         }
     },
     methods: {
-        buildPuzzle(){
-            if(this.puzzleWorks()){
-                this.puzzleHTML = ""
-                this.puzzleHTML += "<div id='TopLaw'>"
-                this.puzzleHTML += "<div class='cube corner'></div>"
-                for(let h=0; h<puzzleArray[this.puzzle].x.length;h++){
-                    this.puzzleHTML += "<div class='law cube'>"
-                    for(let q=0; q<puzzleArray[this.puzzle].x[h].length; q++){
-                        this.puzzleHTML += "<span>"+puzzleArray[this.puzzle].x[h][q]+"</span>"
-                    }
-                    this.puzzleHTML += "</div>"
-                }
-                this.puzzleHTML += "</div>"
-                for(let i=0; i<puzzleArray[this.puzzle].y.length;i++){
-                    this.puzzleHTML += "<div class='row'>"
-                    this.puzzleHTML += "<div class='law cube sideLaw'>"
-                    for(let q=0; q<puzzleArray[this.puzzle].y[i].length; q++){
-                        this.puzzleHTML += "<span>"+puzzleArray[this.puzzle].y[i][q]+"</span>"
-                    }
-                    this.puzzleHTML += "</div>"
-                
-                
-                    for(let j=0; j<puzzleArray[this.puzzle].x.length;j++){
-                        this.puzzleHTML += `<div id="${i}V${j}" class='cube picCube blank'></div>`
-                    }
-                    this.puzzleHTML += "</div>"
-                }
-                let picCube = document.getElementsByClassName("picCube")
-                for (var i = 0; i < picCube.length; i++) {
-                    picCube[i].addEventListener('click', this.clickCube(), false);
-                }
-            }
-        },
         checkAnswer(){
             return true
         },
         testString(XString,i,Axle){
-                        let XStringS = XString
-                    let XStringNoS = XString
-                    XStringNoS = XStringNoS.replace(/blank/g, "");
-                    XStringNoS = XStringNoS.replace(/x/g, "");
-                    XStringNoS = XStringNoS.replace(/black/g, "1");
-                    XStringS = XStringS.replace(/blank/g, "0");
-                    XStringS = XStringS.replace(/x/g, "0");
-                    XStringS = XStringS.replace(/black/g, "1");
-                    let totalBlack = 0
-                    let doubleSpaces = true
-                    let groupCount = true
-                    for(let x = 0; x < puzzleArray[this.puzzle][Axle][i].length;x++){
-                        totalBlack += puzzleArray[this.puzzle][Axle][i][x]
-                    }
-                    if(puzzleArray[this.puzzle][Axle][i].length > 1){
-                        if(XStringS.lastIndexOf('1') - XStringS.indexOf('1') <= 1){
-                        doubleSpaces = false
-                    }
-                    }
-                    else{
-                        let expectedString = ""
-                        for(let z = 0; z<puzzleArray[this.puzzle][Axle][i][0]; z++){
-                        expectedString += "1"
-                    }
-                    if(XStringS.indexOf(expectedString) == -1){
-                        groupCount = false
-                    }
-                    }
-                    if(XStringNoS.length != totalBlack || doubleSpaces == false || groupCount == false){
-                        return false
-                    }
+                    let XStringS = XString
+                let XStringNoS = XString
+                XStringNoS = XStringNoS.replace(/blank/g, "");
+                XStringNoS = XStringNoS.replace(/x/g, "");
+                XStringNoS = XStringNoS.replace(/black/g, "1");
+                XStringS = XStringS.replace(/blank/g, "0");
+                XStringS = XStringS.replace(/x/g, "0");
+                XStringS = XStringS.replace(/black/g, "1");
+                let totalBlack = 0
+                let doubleSpaces = true
+                let groupCount = true
+                for(let x = 0; x < puzzleArray[this.puzzle][Axle][i].length;x++){
+                    totalBlack += puzzleArray[this.puzzle][Axle][i][x]
+                }
+                if(puzzleArray[this.puzzle][Axle][i].length > 1){
+                    if(XStringS.lastIndexOf('1') - XStringS.indexOf('1') <= 1){
+                    doubleSpaces = false
+                }
+                }
+                else{
+                    let expectedString = ""
+                    for(let z = 0; z<puzzleArray[this.puzzle][Axle][i][0]; z++){
+                    expectedString += "1"
+                }
+                if(XStringS.indexOf(expectedString) == -1){
+                    groupCount = false
+                }
+                }
+                if(XStringNoS.length != totalBlack || doubleSpaces == false || groupCount == false){
+                    return false
+                }
             },
-            clickCube(){
-                        let classList = this.classList
-                        if(classList.contains('blank')){
-                        this.classList.remove('blank')
-                        this.classList.add('x')
+            clickCube(cube){
+                    if(this.Xcubes.includes(cube)){
+                        this.Xcubes.splice(this.Xcubes.indexOf(cube),1)
+                        this.selectedCubes.push(cube)
                     }
-                    else if(classList.contains('x')){
-                        if(this.checkAnswer(this)){
-                        this.classList.remove('x')
-                        this.classList.add('black')
-                        }
+                    else if(this.selectedCubes.includes(cube)){
+                        this.selectedCubes.splice(this.Xcubes.indexOf(cube),1)
                     }
                     else{
-                        this.classList.remove('black')
-                        this.classList.add('blank')
+                        this.Xcubes.push(cube)
                     }
                     },
             resetPuzz(){
