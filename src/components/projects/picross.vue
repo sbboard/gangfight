@@ -75,17 +75,17 @@ export default {
             }
             if(puzzleArray[this.puzzle][Axle][i].length > 1){
                 if(XStringS.lastIndexOf('1') - XStringS.indexOf('1') <= 1){
-                doubleSpaces = false
-            }
+                    doubleSpaces = false
+                }
             }
             else{
                 let expectedString = ""
                 for(let z = 0; z<puzzleArray[this.puzzle][Axle][i][0]; z++){
-                expectedString += "1"
-            }
-            if(XStringS.indexOf(expectedString) == -1){
-                groupCount = false
-            }
+                    expectedString += "1"
+                }
+                if(XStringS.indexOf(expectedString) == -1){
+                    groupCount = false
+                }
             }
             if(XStringNoS.length != totalBlack || doubleSpaces == false || groupCount == false){
                 return false
@@ -104,12 +104,9 @@ export default {
             }
         },
         resetPuzz(){
-            let cubeList = document.getElementsByClassName("picCube")
-            for(let b = 0; b < cubeList.length; b++){
-                if(cubeList[b].classList[2] != "blank")
-                    cubeList[b].classList.remove(cubeList[b].classList[2])
-                cubeList[b].classList.add("blank")
-            }
+            this.Xcubes = []
+            this.selectedCubes = []
+            this.result = ""
         },
         puzzleWorks(){
             //check to make sure there's room for each thing
