@@ -21,8 +21,10 @@
                         :id="index+'V'+id" 
                         @click="clickCube(index+'V'+id)" 
                         class='cube picCube'
-                        :class="{x : Xcubes.includes(index+'V'+id),
-                            black : selectedCubes.includes(index+'V'+id)
+                        :class="{
+                            x : Xcubes.includes(index+'V'+id),
+                            black : selectedCubes.includes(index+'V'+id),
+                            blank : !selectedCubes.includes(index+'V'+id) && !Xcubes.includes(index+'V'+id)
                             }">
                     </div>
                 </div>  
@@ -57,58 +59,58 @@ export default {
             return true
         },
         testString(XString,i,Axle){
-                    let XStringS = XString
-                let XStringNoS = XString
-                XStringNoS = XStringNoS.replace(/blank/g, "");
-                XStringNoS = XStringNoS.replace(/x/g, "");
-                XStringNoS = XStringNoS.replace(/black/g, "1");
-                XStringS = XStringS.replace(/blank/g, "0");
-                XStringS = XStringS.replace(/x/g, "0");
-                XStringS = XStringS.replace(/black/g, "1");
-                let totalBlack = 0
-                let doubleSpaces = true
-                let groupCount = true
-                for(let x = 0; x < puzzleArray[this.puzzle][Axle][i].length;x++){
-                    totalBlack += puzzleArray[this.puzzle][Axle][i][x]
-                }
-                if(puzzleArray[this.puzzle][Axle][i].length > 1){
-                    if(XStringS.lastIndexOf('1') - XStringS.indexOf('1') <= 1){
-                    doubleSpaces = false
-                }
-                }
-                else{
-                    let expectedString = ""
-                    for(let z = 0; z<puzzleArray[this.puzzle][Axle][i][0]; z++){
-                    expectedString += "1"
-                }
-                if(XStringS.indexOf(expectedString) == -1){
-                    groupCount = false
-                }
-                }
-                if(XStringNoS.length != totalBlack || doubleSpaces == false || groupCount == false){
-                    return false
-                }
-            },
-            clickCube(cube){
-                    if(this.Xcubes.includes(cube)){
-                        this.Xcubes.splice(this.Xcubes.indexOf(cube),1)
-                        this.selectedCubes.push(cube)
-                    }
-                    else if(this.selectedCubes.includes(cube)){
-                        this.selectedCubes.splice(this.Xcubes.indexOf(cube),1)
-                    }
-                    else{
-                        this.Xcubes.push(cube)
-                    }
-                    },
-            resetPuzz(){
+            let XStringS = XString
+            let XStringNoS = XString
+            XStringNoS = XStringNoS.replace(/blank/g, "");
+            XStringNoS = XStringNoS.replace(/x/g, "");
+            XStringNoS = XStringNoS.replace(/black/g, "1");
+            XStringS = XStringS.replace(/blank/g, "0");
+            XStringS = XStringS.replace(/x/g, "0");
+            XStringS = XStringS.replace(/black/g, "1");
+            let totalBlack = 0
+            let doubleSpaces = true
+            let groupCount = true
+            for(let x = 0; x < puzzleArray[this.puzzle][Axle][i].length;x++){
+                totalBlack += puzzleArray[this.puzzle][Axle][i][x]
+            }
+            if(puzzleArray[this.puzzle][Axle][i].length > 1){
+                if(XStringS.lastIndexOf('1') - XStringS.indexOf('1') <= 1){
+                doubleSpaces = false
+            }
+            }
+            else{
+                let expectedString = ""
+                for(let z = 0; z<puzzleArray[this.puzzle][Axle][i][0]; z++){
+                expectedString += "1"
+            }
+            if(XStringS.indexOf(expectedString) == -1){
+                groupCount = false
+            }
+            }
+            if(XStringNoS.length != totalBlack || doubleSpaces == false || groupCount == false){
+                return false
+            }
+        },
+        clickCube(cube){
+            if(this.Xcubes.includes(cube)){
+                this.Xcubes.splice(this.Xcubes.indexOf(cube),1)
+                this.selectedCubes.push(cube)
+            }
+            else if(this.selectedCubes.includes(cube)){
+                this.selectedCubes.splice(this.Xcubes.indexOf(cube),1)
+            }
+            else{
+                this.Xcubes.push(cube)
+            }
+        },
+        resetPuzz(){
             let cubeList = document.getElementsByClassName("picCube")
-        for(let b = 0; b < cubeList.length; b++){
-            if(cubeList[b].classList[2] != "blank")
-                cubeList[b].classList.remove(cubeList[b].classList[2])
-            cubeList[b].classList.add("blank")
-        }
-            },
+            for(let b = 0; b < cubeList.length; b++){
+                if(cubeList[b].classList[2] != "blank")
+                    cubeList[b].classList.remove(cubeList[b].classList[2])
+                cubeList[b].classList.add("blank")
+            }
+        },
         puzzleWorks(){
             //check to make sure there's room for each thing
             let amountOfX = 0
