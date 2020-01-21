@@ -1,18 +1,32 @@
 <template>
-    <div>
-        <template v-if="this.puzzle > -1 && this.puzzleWorks()">
-            <div id="puzzle">
+    <div id="picrossProj" :style="fontSize">
+        <h1>Picross</h1>
+        <div id="puzzleMode" v-if="this.puzzle > -1 && this.puzzleWorks()">
+            <div id="puzzle" :style="{paddingRight: (((39 / largestArray) * leftLength - 4)  + (((39 / largestArray) * leftLength -3) * .25)) + 'em'}">
                 <div id="TopLaw">
                     <div class="cube corner"></div>
-                    <div class="law cube" v-for="(item, index) in puzzleArray[puzzle].x" :key="`${index}`">
-                        <span v-for="(item, id) in puzzleArray[puzzle].x[index]" :key="`${id}`">
+                    <div class="law cube" v-for="(item, index) in puzzleArray[puzzle].x" :key="`${index}`"
+                        :style="{
+                            minHeight: (39 / largestArray) + 'em',
+                            minWidth: (39 / largestArray) + 'em'
+                            }">
+                        <span v-for="(item, id) in puzzleArray[puzzle].x[index]" :key="`${id}`"
+                        :style="{
+                            fontSize: (39 / largestArray) + 'em'
+                            }">
                             {{puzzleArray[puzzle].x[index][id]}}
                         </span>
                     </div>
                 </div>
                 <div class="row" v-for="(item, index) in puzzleArray[puzzle].y" :key="`${index}`">
-                    <div class="law cube sideLaw">
-                        <span v-for="(item, id) in puzzleArray[puzzle].y[index]" :key="`${id}`">
+                    <div class="law cube sideLaw"
+                        :style="{
+                            minHeight: (39 / largestArray) + 'em'
+                            }">
+                        <span v-for="(item, id) in puzzleArray[puzzle].y[index]" :key="`${id}`"
+                        :style="{
+                            fontSize: (39 / largestArray) + 'em'
+                            }">
                             {{puzzleArray[puzzle].y[index][id]}}
                         </span>
                     </div>
@@ -25,24 +39,34 @@
                             x : Xcubes.includes(index+'V'+id),
                             black : selectedCubes.includes(index+'V'+id),
                             blank : !selectedCubes.includes(index+'V'+id) && !Xcubes.includes(index+'V'+id)
+                            }"
+                        :style="{
+                            width: (39 / largestArray) + 'em',
+                            height: (39 / largestArray) + 'em'
                             }">
                     </div>
                 </div>  
             </div>
             <div id="result">{{result}}</div>
-            <button id="checkBtn" @click="finished()">
-                Check Answer
-            </button>
-            <button id="reset" @click="resetPuzz()">
-                Reset
-            </button>
-            <button id="menuBtn" @click="puzzle = -1;resetPuzz()">
-                Quit
-            </button>
-        </template>
-        <template v-else>
+            <div id="btnBar">
+                <button id="checkBtn" @click="finished()">
+                    Check Answer
+                </button>
+                <button id="reset" @click="resetPuzz()">
+                    Reset
+                </button>
+                <button id="menuBtn" @click="puzzle = -1;resetPuzz()">
+                    Quit
+                </button>
+            </div>
+        </div>
+        <div v-else id="menuMode" >
             <span v-for="(item, id) in puzzleArray" :key="`${id}`" @click="puzzle = id;resetPuzz()">Puzzle {{id+1}}: {{item.name}}</span>
-        </template>
+        </div>
+      <div id="city"></div>
+      <div id="cityLights"></div>
+      <div id="cityOfStars"></div>
+      <div id="cityBlues"></div>
     </div>
 </template>
 
@@ -57,7 +81,27 @@ export default {
             result: "",
             puzzleHTML: "",
             selectedCubes: [],
-            Xcubes: []
+            Xcubes: [],
+            largestArray: 0,
+            leftLength: 0
+        }
+    },
+    computed: {
+        fontSize(){
+            return {fontSize: '1'+this.$store.getters.getTaller}
+        },
+    },
+    watch:{
+        puzzle(){
+            if(this.puzzle > -1){
+                this.largestArray = puzzleArray[this.puzzle].x.length
+                
+                for(let i = 0; i<puzzleArray[this.puzzle].y.length;i++){
+                    if(this.leftLength < puzzleArray[this.puzzle].y[i].length){
+                        this.leftLength = puzzleArray[this.puzzle].y[i].length
+                    }
+                }
+            }
         }
     },
     methods: {
@@ -113,6 +157,8 @@ export default {
             this.Xcubes = []
             this.selectedCubes = []
             this.result = ""
+            this.largestArray = 0
+            this.leftLength = 0
         },
         puzzleWorks(){
             //check to make sure there's room for each thing
@@ -169,10 +215,10 @@ export default {
             }
             //////////////////////////////////////////////////////////////
             if(valid == true){
-                this.result = "nice job"
+                this.result = "nice job."
             }
             else{
-                this.result = "try again!"
+                this.result = "this aint it, boss."
             }
         }
     },
@@ -180,14 +226,35 @@ export default {
 </script>
 
 <style lang="sass" scoped>
+@import "../../css/reset.css"
+@import "../../css/gangColors.sass"
+@import "../../css/gangFonts.sass"
+
+$testSize: 39 / 7 + em
+
+#picrossProj
+    font-family: Montserrat
+    color: $neonRed
+    h1
+        font-size: 4em
+        text-align: center
+        margin: 1em 0
+    #btnBar
+        margin: 0 auto
+        text-align: center
+        button
+            margin: 1em .5em
+            font-size: 1.5em
+#menuMode
+    span
+        font-size: 3em
 #puzzle
-  width: fit-content
+    width: fit-content
+    margin: 0 auto
 
 .cube
-  border: 1px solid #efefef
+  border: 1px solid black
   display: inline-block
-  width: 25px
-  height: 25px
   margin: 0
   line-height: 1
 
@@ -202,25 +269,29 @@ export default {
   display: flex
   margin-left: auto
   width: fit-content
+  border-top: 0px
 
 .law
     display: flex
     flex-direction: column
     justify-content: flex-end
     align-items: center
-    min-height: 25px
+    min-height: $testSize
     height: inherit
-    background-image: linear-gradient(to bottom, #ff000000 , cyan)
+    background-image: linear-gradient(to bottom, #ff000000 , $neonCyan)
+    span
+        margin:  .25em 0
 
 .sideLaw
     justify-content: flex-end
     align-items: center
     flex-direction: inherit
-    background-image: linear-gradient(to right, #ff000000 , cyan)
+    background-image: linear-gradient(to right, #ff000000 , $neonCyan)
     width: inherit
+    border-left: 0px
 
 .sideLaw span
-  margin-left: .5em
+  margin:  0 .25em
 
 .corner
   opacity: 0
@@ -235,4 +306,49 @@ export default {
   background-color: grey
 span
     display: block
+#city
+    background-image: url('/assets/global/homepage/rochester.png')
+    background-position: bottom
+    background-repeat: repeat-x
+    background-attachment: fixed
+    background-size: 100% auto
+    position: absolute
+    bottom: 0
+    opacity: .6
+    z-index: -5
+    height: 100%
+    width: 100%
+    filter: brightness(0.5)
+#cityOfStars
+    filter: brightness(0.5)
+    z-index: -7
+    position: absolute
+    width: 100%
+    height: 100%
+    top: 0px
+    left: 0px
+    background-image: url(/assets/global/homepage/starsbg.jpg)
+    margin: 0
+    padding: 0
+    background-attachment: fixed
+    background-repeat: no-repeat
+    opacity: .3
+#cityBlues
+  background: -webkit-radial-gradient(bottom, #121729, #020306 60%)
+  margin: 0
+  padding: 0
+  background-size: cover
+  background-repeat: no-repeat
+  background-position: center
+  background-attachment: fixed
+  height: 100%
+  width: 100%
+  z-index: -8
+  position: absolute
+  top: 0
+#result
+    text-align: center
+    font-size: 3em
+    margin-top: .5em
+    height: 1em
 </style>
