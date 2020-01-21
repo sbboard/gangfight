@@ -1,6 +1,6 @@
 <template>
     <div>
-        <template v-if="this.puzzleWorks()">
+        <template v-if="this.puzzle > -1 && this.puzzleWorks()">
             <div id="puzzle">
                 <div id="TopLaw">
                     <div class="cube corner"></div>
@@ -29,14 +29,20 @@
                     </div>
                 </div>  
             </div>
+            <div id="result">{{result}}</div>
+            <button id="checkBtn" @click="finished()">
+                Check Answer
+            </button>
+            <button id="reset" @click="resetPuzz()">
+                Reset
+            </button>
+            <button id="menuBtn" @click="puzzle = -1;resetPuzz()">
+                Quit
+            </button>
         </template>
-        <div id="result">{{result}}</div>
-        <button id="checkBtn" @click="finished()">
-            Check Answer
-        </button>
-        <button id="reset" @click="resetPuzz()">
-            Reset
-        </button>
+        <template v-else>
+            <span v-for="(item, id) in puzzleArray" :key="`${id}`" @click="puzzle = id;resetPuzz()">Puzzle {{id+1}}: {{item.name}}</span>
+        </template>
     </div>
 </template>
 
@@ -47,7 +53,7 @@ export default {
     data(){
         return{
             puzzleArray: puzzleArray,
-            puzzle: 0,
+            puzzle: -1,
             result: "",
             puzzleHTML: "",
             selectedCubes: [],
@@ -227,4 +233,6 @@ export default {
 
 .black
   background-color: grey
+span
+    display: block
 </style>
