@@ -2,7 +2,7 @@
     <div id="picrossProj" :style="fontSize">
         <h1>Picross</h1>
         <div id="puzzleMode" v-if="this.puzzle > -1 && this.puzzleWorks()">
-            <div id="puzzle" :style="{paddingRight: (((39 / largestArray) * leftLength - 4)  + (((39 / largestArray) * leftLength -3) * .25)) + 'em'}">
+            <div id="puzzle" :style="{paddingRight: ((39 / largestArray) * leftLength)+'em'}">
                 <div id="TopLaw">
                     <div class="cube corner"></div>
                     <div class="law cube" v-for="(item, index) in puzzleArray[puzzle].x" :key="`${index}`"
@@ -23,11 +23,11 @@
                         :style="{
                             minHeight: (39 / largestArray) + 'em'
                             }">
-                        <span v-for="(item, id) in puzzleArray[puzzle].y[index]" :key="`${id}`"
+                        <span v-for="(item, id) in leftLength" :key="`${id}`"
                         :style="{
                             fontSize: (39 / largestArray) + 'em'
                             }">
-                            {{puzzleArray[puzzle].y[index][id]}}
+                            {{puzzleArray[puzzle].y[index][(leftLength-1)-id]}}
                         </span>
                     </div>
                     <!-- LOOP -->
@@ -55,7 +55,7 @@
                 <button id="reset" @click="resetPuzz()">
                     Reset
                 </button>
-                <button id="menuBtn" @click="puzzle = -1;resetPuzz()">
+                <button id="menuBtn" @click="puzzle = -1;resetPuzz();largestArray = 0;leftLength = 0">
                     Quit
                 </button>
             </div>
@@ -95,7 +95,6 @@ export default {
         puzzle(){
             if(this.puzzle > -1){
                 this.largestArray = puzzleArray[this.puzzle].x.length
-                
                 for(let i = 0; i<puzzleArray[this.puzzle].y.length;i++){
                     if(this.leftLength < puzzleArray[this.puzzle].y[i].length){
                         this.leftLength = puzzleArray[this.puzzle].y[i].length
@@ -157,8 +156,6 @@ export default {
             this.Xcubes = []
             this.selectedCubes = []
             this.result = ""
-            this.largestArray = 0
-            this.leftLength = 0
         },
         puzzleWorks(){
             //check to make sure there's room for each thing
@@ -280,7 +277,9 @@ $testSize: 39 / 7 + em
     height: inherit
     background-image: linear-gradient(to bottom, #ff000000 , $neonCyan)
     span
-        margin:  .25em 0
+        width: 1em
+        text-align: center
+        height: 1em
 
 .sideLaw
     justify-content: flex-end
@@ -289,9 +288,6 @@ $testSize: 39 / 7 + em
     background-image: linear-gradient(to right, #ff000000 , $neonCyan)
     width: inherit
     border-left: 0px
-
-.sideLaw span
-  margin:  0 .25em
 
 .corner
   opacity: 0
