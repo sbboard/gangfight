@@ -9,6 +9,9 @@
                         :style="{
                             minHeight: (39 / largestArray) + 'em',
                             minWidth: (39 / largestArray) + 'em'
+                            }"
+                        :class="{
+                            highlighty : currentHoverY == index
                             }">
                         <span v-for="(item, id) in puzzleArray[puzzle].x[index]" :key="`${id}`"
                         :style="{
@@ -22,6 +25,9 @@
                     <div class="law cube sideLaw"
                         :style="{
                             minHeight: (39 / largestArray) + 'em'
+                            }"
+                        :class="{
+                            highlightx : currentHoverX == index
                             }">
                         <span v-for="(item, id) in leftLength" :key="`${id}`"
                         :style="{
@@ -34,11 +40,21 @@
                     <div v-for="(item, id) in puzzleArray[puzzle].x" :key="`${id}`"
                         :id="index+'V'+id" 
                         @click="clickCube(index+'V'+id)" 
+                        @mouseover="function(){
+                            currentHoverX = index;
+                            currentHoverY = id;
+                        }"
+                        @mouseleave="function(){
+                            currentHoverX = -1;
+                            currentHoverY = -1;
+                        }"
                         class='cube picCube'
                         :class="{
                             x : Xcubes.includes(index+'V'+id),
                             black : selectedCubes.includes(index+'V'+id),
-                            blank : !selectedCubes.includes(index+'V'+id) && !Xcubes.includes(index+'V'+id)
+                            blank : !selectedCubes.includes(index+'V'+id) && !Xcubes.includes(index+'V'+id),
+                            highlightx : currentHoverX == index,
+                            highlighty : currentHoverY == id
                             }"
                         :style="{
                             width: (39 / largestArray) + 'em',
@@ -83,7 +99,9 @@ export default {
             selectedCubes: [],
             Xcubes: [],
             largestArray: 0,
-            leftLength: 0
+            leftLength: 0,
+            currentHoverX: -1,
+            currentHoverY: -1
         }
     },
     computed: {
@@ -101,6 +119,9 @@ export default {
                     }
                 }
             }
+        },
+        currentHoverY(){
+            console.log(this.currentHoverY)
         }
     },
     mounted(){
@@ -257,7 +278,12 @@ $testSize: 39 / 7 + em
   display: inline-block
   margin: 0
   line-height: 1
-
+.highlightx
+  border-top: 1px solid yellow
+  border-bottom: 1px solid yellow
+.highlighty
+  border-left: 1px solid yellow
+  border-right: 1px solid yellow
 .row
     display: flex
     margin: 0
