@@ -103,6 +103,9 @@ export default {
             }
         }
     },
+    mounted(){
+        this.puzzleArray.sort((a, b) => (a.x.length > b.x.length) ? 1 : -1)
+    },
     methods: {
         checkAnswer(){
             return true
