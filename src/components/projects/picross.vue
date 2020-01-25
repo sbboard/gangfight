@@ -54,7 +54,8 @@
                             black : selectedCubes.includes(index+'V'+id),
                             blank : !selectedCubes.includes(index+'V'+id) && !Xcubes.includes(index+'V'+id),
                             highlightx : currentHoverX == index,
-                            highlighty : currentHoverY == id
+                            highlighty : currentHoverY == id,
+                            hover: currentHoverY == id && currentHoverX == index
                             }"
                         :style="{
                             width: (39 / largestArray) + 'em',
@@ -120,9 +121,6 @@ export default {
                 }
             }
         },
-        currentHoverY(){
-            console.log(this.currentHoverY)
-        }
     },
     mounted(){
         this.puzzleArray.sort((a, b) => (a.x.length > b.x.length) ? 1 : -1)
@@ -278,12 +276,6 @@ $testSize: 39 / 7 + em
   display: inline-block
   margin: 0
   line-height: 1
-.highlightx
-  border-top: 1px solid yellow
-  border-bottom: 1px solid yellow
-.highlighty
-  border-left: 1px solid yellow
-  border-right: 1px solid yellow
 .row
     display: flex
     margin: 0
@@ -296,28 +288,6 @@ $testSize: 39 / 7 + em
   margin-left: auto
   width: fit-content
   border-top: 0px
-
-.law
-    display: flex
-    flex-direction: column
-    justify-content: flex-end
-    align-items: center
-    min-height: $testSize
-    height: inherit
-    background-image: linear-gradient(to bottom, #ff000000 , $neonBlue)
-    span
-        width: 1em
-        text-align: center
-        height: 1em
-
-.sideLaw
-    justify-content: flex-end
-    align-items: center
-    flex-direction: inherit
-    background-image: linear-gradient(to right, #ff000000 , $neonBlue)
-    width: inherit
-    border-left: 0px
-
 .corner
   opacity: 0
 
@@ -328,7 +298,7 @@ $testSize: 39 / 7 + em
   background-color: red
 
 .black
-  background-color: grey
+  background-color: $neonBlue
 span
     display: block
 #city
@@ -377,5 +347,38 @@ span
     margin-top: .5em
     height: 1em
 .blank
-    background-color: rgba(255,255,255,.25)
+    background-color: rgba(255,255,255,.1)
+.highlightx
+    border-top: 1px solid yellow
+    border-bottom: 1px solid yellow
+    &.blank
+        background-color: rgba(255,255,255,.35)
+.highlighty
+    border-left: 1px solid yellow
+    border-right: 1px solid yellow
+    &.blank
+        background-color: rgba(255,255,255,.35)
+.hover
+    &.blank
+        background-color: rgba(255,255,255,.5)
+.law
+    display: flex
+    flex-direction: column
+    justify-content: flex-end
+    align-items: center
+    min-height: $testSize
+    height: inherit
+    background-image: linear-gradient(to bottom, #ff000000 , $neonBlue)
+    opacity: 1
+    span
+        width: 1em
+        text-align: center
+        height: 1em
+.sideLaw
+    justify-content: flex-end
+    align-items: center
+    flex-direction: inherit
+    background-image: linear-gradient(to right, #ff000000 , $neonBlue)
+    width: inherit
+    border-left: 0px
 </style>
