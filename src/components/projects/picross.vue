@@ -149,7 +149,7 @@ export default {
                 this.selectedCubes.push(cube)
             }
             else if(this.selectedCubes.includes(cube)){
-                this.selectedCubes.splice(this.Xcubes.indexOf(cube),1)
+                this.selectedCubes.splice(this.selectedCubes.indexOf(cube),1)
             }
             else{
                 this.Xcubes.push(cube)
@@ -278,7 +278,7 @@ $testSize: 39 / 7 + em
     align-items: center
     min-height: $testSize
     height: inherit
-    background-image: linear-gradient(to bottom, #ff000000 , $neonCyan)
+    background-image: linear-gradient(to bottom, #ff000000 , $neonBlue)
     span
         width: 1em
         text-align: center
@@ -288,7 +288,7 @@ $testSize: 39 / 7 + em
     justify-content: flex-end
     align-items: center
     flex-direction: inherit
-    background-image: linear-gradient(to right, #ff000000 , $neonCyan)
+    background-image: linear-gradient(to right, #ff000000 , $neonBlue)
     width: inherit
     border-left: 0px
 
@@ -350,4 +350,6 @@ span
     font-size: 3em
     margin-top: .5em
     height: 1em
+.blank
+    background-color: rgba(255,255,255,.25)
 </style>
