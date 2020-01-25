@@ -111,7 +111,7 @@
           <div class="col-2 bottomBar">
             <div><img :src="'/assets/global/sidebar/barcodeHori.png'"/></div>
           </div>
-          <div class="col-9 bottomNamebar">77regret</div>
+          <div class="col-9 bottomNamebar">パリ症候群</div>
           <div class="col-1 firstEd"><img src="/assets/global/sidebar/1stedi.png"/></div>
         </div>
         </div>
@@ -621,8 +621,9 @@ span#topWords
   background-image: linear-gradient(#c6399e, #e443aa, #ce51fd, #566ffd, rgba(44, 142, 110, 0))
 .bottomNamebar
   text-align: center
-  font-size: 13.75vw
-  font-family: Alien
+  font-size: 12vw
+  padding-top: 1vw
+  font-family: Illuminati
   color: white
 .gridPadding
   padding-top: 1vh
