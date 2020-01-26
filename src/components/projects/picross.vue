@@ -64,6 +64,15 @@
                     </div>
                 </div>  
             </div>
+            <div id="modeBar">
+                <h4>INPUT MODE:</h4> 
+                <template v-if="currentMode">
+                    <span @click="currentMode = !currentMode">PEN </span>
+                </template>
+                <template v-else>
+                    <span @click="currentMode = !currentMode">CLICK</span>
+                </template>
+            </div>
             <div id="result">{{result}}</div>
             <div id="btnBar">
                 <button id="checkBtn" @click="finished()">
@@ -102,7 +111,9 @@ export default {
             largestArray: 0,
             leftLength: 0,
             currentHoverX: -1,
-            currentHoverY: -1
+            currentHoverY: -1,
+            currentMode: false,
+            pen: "black"
         }
     },
     computed: {
@@ -251,6 +262,21 @@ export default {
 
 $testSize: 39 / 7 + em
 
+#modeBar
+    font-family: ferriteDX
+    font-size: 3em
+    text-align: center
+    margin-top: .5em
+    background-color: black
+    user-select: none
+    h4
+        width: 9em
+        display: inline-block
+        margin-right: 1em
+    span
+        width: 5em
+        display: inline-block
+        cursor: pointer
 #picrossProj
     font-family: Montserrat
     color: $neonRed
