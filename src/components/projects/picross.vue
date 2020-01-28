@@ -1,5 +1,7 @@
 <template>
-    <div id="picrossProj" :style="fontSize">
+    <div id="picrossProj" :style="fontSize"
+    @mousedown="penActive = true"
+    @mouseup="penActive = false">
         <h1>Picross</h1>
         <div id="puzzleMode" v-if="this.puzzle > -1 && this.puzzleWorks()">
             <div id="puzzle" :style="{paddingRight: ((39 / largestArray) * leftLength)+'em'}">
@@ -43,7 +45,9 @@
                         @mouseover="function(){
                             currentHoverX = index;
                             currentHoverY = id;
+                            penPaint(index+'V'+id)
                         }"
+                        @mousedown="penActive = true;penPaint(index+'V'+id)"
                         @mouseleave="function(){
                             currentHoverX = -1;
                             currentHoverY = -1;
@@ -67,7 +71,10 @@
             <div id="modeBar">
                 <h4>INPUT MODE:</h4> 
                 <template v-if="currentMode">
-                    <span @click="currentMode = !currentMode">PEN </span>
+                    <span @click="currentMode = !currentMode">PEN</span>
+                    <span @click="pen = 'blank'">BLANK</span>
+                    <span @click="pen = 'x'">X</span>
+                    <span @click="pen = 'black'">BLACK</span>
                 </template>
                 <template v-else>
                     <span @click="currentMode = !currentMode">CLICK</span>
@@ -113,7 +120,8 @@ export default {
             currentHoverX: -1,
             currentHoverY: -1,
             currentMode: false,
-            pen: "black"
+            pen: "black",
+            penActive: false
         }
     },
     computed: {
@@ -174,15 +182,41 @@ export default {
             }
         },
         clickCube(cube){
-            if(this.Xcubes.includes(cube)){
-                this.Xcubes.splice(this.Xcubes.indexOf(cube),1)
-                this.selectedCubes.push(cube)
+            if(this.currentMode == false){
+                if(this.Xcubes.includes(cube)){
+                    this.Xcubes.splice(this.Xcubes.indexOf(cube),1)
+                    this.selectedCubes.push(cube)
+                }
+                else if(this.selectedCubes.includes(cube)){
+                    this.selectedCubes.splice(this.selectedCubes.indexOf(cube),1)
+                }
+                else{
+                    this.Xcubes.push(cube)
+                }
             }
-            else if(this.selectedCubes.includes(cube)){
-                this.selectedCubes.splice(this.selectedCubes.indexOf(cube),1)
-            }
-            else{
-                this.Xcubes.push(cube)
+        },
+        penPaint(cube){
+            if(this.penActive == true && this.currentMode == true){
+                if(this.pen == "black"){
+                    if(this.Xcubes.indexOf(cube) > -1){
+                        this.Xcubes.splice(this.Xcubes.indexOf(cube),1)
+                    }
+                    this.selectedCubes.push(cube)
+                }
+                else if(this.pen == "x"){
+                    if(this.selectedCubes.indexOf(cube) > -1){
+                        this.selectedCubes.splice(this.selectedCubes.indexOf(cube),1)
+                    }
+                    this.Xcubes.push(cube)
+                }
+                else{
+                    if(this.Xcubes.indexOf(cube) > -1){
+                        this.Xcubes.splice(this.Xcubes.indexOf(cube),1)
+                    }
+                    else if(this.selectedCubes.indexOf(cube) > -1){
+                        this.selectedCubes.splice(this.selectedCubes.indexOf(cube),1)
+                    }
+                }
             }
         },
         resetPuzz(){
@@ -268,7 +302,6 @@ $testSize: 39 / 7 + em
     text-align: center
     margin-top: .5em
     background-color: black
-    user-select: none
     h4
         width: 9em
         display: inline-block
@@ -280,6 +313,7 @@ $testSize: 39 / 7 + em
 #picrossProj
     font-family: Montserrat
     color: $neonRed
+    user-select: none
     h1
         font-size: 4em
         text-align: center
