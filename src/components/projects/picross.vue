@@ -45,9 +45,12 @@
                         @mouseover="function(){
                             currentHoverX = index;
                             currentHoverY = id;
-                            penPaint(index+'V'+id)
+                            penPaint(index+'V'+id,'')
                         }"
-                        @mousedown="penActive = true;penPaint(index+'V'+id)"
+                        @mousedown.right="pen='x'"
+                        @contextmenu="handler($event)"
+                        @mouseup="pen='black'"
+                        @mousedown="penActive = true;penPaint(index+'V'+id,'MsDown')"
                         @mouseleave="function(){
                             currentHoverX = -1;
                             currentHoverY = -1;
@@ -72,9 +75,6 @@
                 <h4>INPUT MODE:</h4> 
                 <template v-if="currentMode">
                     <span @click="currentMode = !currentMode">PEN</span>
-                    <span @click="pen = 'blank'">BLANK</span>
-                    <span @click="pen = 'x'">X</span>
-                    <span @click="pen = 'black'">BLACK</span>
                 </template>
                 <template v-else>
                     <span @click="currentMode = !currentMode">CLICK</span>
@@ -119,9 +119,10 @@ export default {
             leftLength: 0,
             currentHoverX: -1,
             currentHoverY: -1,
-            currentMode: false,
+            currentMode: true,
             pen: "black",
-            penActive: false
+            penActive: false,
+            leftClick: true
         }
     },
     computed: {
@@ -147,6 +148,9 @@ export default {
     methods: {
         checkAnswer(){
             return true
+        },
+        handler(e){
+            e.preventDefault()
         },
         testString(XString,i,Axle){
             let XStringS = XString
@@ -195,26 +199,40 @@ export default {
                 }
             }
         },
-        penPaint(cube){
+        penPaint(cube,place){
             if(this.penActive == true && this.currentMode == true){
+                if(place == "MsDown"){
+                    if(this.pen == "black" && this.selectedCubes.indexOf(cube) > -1){
+                        this.pen = "blank"
+                    }
+                    else if(this.pen == "x" && this.Xcubes.indexOf(cube) > -1){
+                        this.pen = "blank"
+                    } 
+                }
                 if(this.pen == "black"){
                     if(this.Xcubes.indexOf(cube) > -1){
                         this.Xcubes.splice(this.Xcubes.indexOf(cube),1)
+                        this.selectedCubes.push(cube)
                     }
-                    this.selectedCubes.push(cube)
+                    else{
+                        this.selectedCubes.push(cube)
+                    }
                 }
                 else if(this.pen == "x"){
                     if(this.selectedCubes.indexOf(cube) > -1){
                         this.selectedCubes.splice(this.selectedCubes.indexOf(cube),1)
+                        this.Xcubes.push(cube)
                     }
-                    this.Xcubes.push(cube)
+                    else{
+                        this.Xcubes.push(cube)
+                    }
                 }
                 else{
-                    if(this.Xcubes.indexOf(cube) > -1){
-                        this.Xcubes.splice(this.Xcubes.indexOf(cube),1)
-                    }
-                    else if(this.selectedCubes.indexOf(cube) > -1){
+                    if(this.selectedCubes.indexOf(cube) > -1){
                         this.selectedCubes.splice(this.selectedCubes.indexOf(cube),1)
+                    }
+                    else if(this.Xcubes.indexOf(cube) > -1){
+                        this.Xcubes.splice(this.Xcubes.indexOf(cube),1)
                     }
                 }
             }
