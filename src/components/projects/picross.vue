@@ -6,7 +6,7 @@
         <div id="puzzleMode" v-if="this.puzzle > -1 && this.puzzleWorks()">
             <div id="puzzle" :style="{paddingRight: ((39 / largestArray) * leftLength)+'em'}">
                 <div id="TopLaw">
-                    <div class="cube corner"></div>
+                    <div class="cube corner">{{largestArray}} x {{largestArray}}</div>
                     <div class="law cube" v-for="(item, index) in puzzleArray[puzzle].x" :key="`${index}`"
                         :style="{
                             minHeight: (39 / largestArray) + 'em',
@@ -367,7 +367,10 @@ $testSize: 39 / 7 + em
   width: fit-content
   border-top: 0px
 .corner
-  opacity: 0
+    color: white
+    margin-top: auto
+    font-size: 2em
+    margin: auto .5em .5em
 
 .picCube
   cursor: pointer
