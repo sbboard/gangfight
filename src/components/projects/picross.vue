@@ -433,15 +433,15 @@ span
     border-top: 1px solid yellow
     border-bottom: 1px solid yellow
     &.blank
-        background-color: rgba(255,255,255,.35)
+        background-color: rgba(255,255,255,.2)
 .highlighty
     border-left: 1px solid yellow
     border-right: 1px solid yellow
     &.blank
-        background-color: rgba(255,255,255,.35)
+        background-color: rgba(255,255,255,.2)
 .hover
     &.blank
-        background-color: rgba(255,255,255,.5)
+        background-color: rgba(255,255,255,.3)
 .law
     display: flex
     flex-direction: column
