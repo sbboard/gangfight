@@ -1,0 +1,461 @@
+{
+    "audio":[
+        {
+            "year":2012,
+            "genre":"Album",
+            "img":"",
+            "art":"Red",
+            "artist":"Taylor Swift",
+            "exOne":"State of Grace",
+            "exOneLink":"",
+            "exTwo":"Treacherous",
+            "exTwoLink":""
+        },
+        {
+            "year":2013,
+            "genre":"Album",
+            "img":"",
+            "art":"Sky Ferreira",
+            "artist":"Night Time My Time",
+            "exOne":"Boys",
+            "exOneLink":"",
+            "exTwo":"I Blame Myself",
+            "exTwoLink":""
+        },
+        {
+            "year":2014,
+            "genre":"Album",
+            "img":"",
+            "art":"Supermodel",
+            "artist":"Foster the People",
+            "exOne":"Ask Yourself",
+            "exOneLink":"",
+            "exTwo":"Coming of Age",
+            "exTwoLink":""
+        },
+        {
+            "year":2014,
+            "genre":"Album",
+            "img":"",
+            "art":"My Everything",
+            "artist":"Ariana Grande",
+            "exOne":"Problem",
+            "exOneLink":"",
+            "exTwo":"Break Your Heart Right Back",
+            "exTwoLink":""
+        },
+        {
+            "year":2015,
+            "genre":"Album",
+            "img":"",
+            "art":"Neon Indian",
+            "artist":"VEGA INTL. NIGHT SCHOOL",
+            "exOne":"Annie",
+            "exOneLink":"",
+            "exTwo":"The Glitzy Hive",
+            "exTwoLink":""
+        },
+        {
+            "year":2015,
+            "genre":"Album",
+            "img":"",
+            "art":"Tame Impala",
+            "artist":"Currents",
+            "exOne":"Disciples",
+            "exOneLink":"",
+            "exTwo":"Reality in Motion",
+            "exTwoLink":""
+        },
+        {
+            "year":2015,
+            "genre":"Album",
+            "img":"",
+            "art":"Get to Heaven",
+            "artist":"Everything Everything",
+            "exOne":"Get to Heaven",
+            "exOneLink":"",
+            "exTwo":"The Wheel (is Turning Now)",
+            "exTwoLink":""
+        },
+        {
+            "year":2015,
+            "genre":"Album",
+            "img":"",
+            "art":"EMOTION",
+            "artist":"Carly Rae Jepsen",
+            "exOne":"Run Away With Me",
+            "exOneLink":"",
+            "exTwo":"Gimmie Love",
+            "exTwoLink":""
+        },
+        {
+            "year":2015,
+            "genre":"Album",
+            "img":"",
+            "art":"To Pimp a Butterfly",
+            "artist":"Kendrick Lamar",
+            "exOne":"entirealbum",
+            "exOneLink":"",
+            "exTwo":"",
+            "exTwoLink":""
+        },
+        {
+            "year":2016,
+            "genre":"Album",
+            "img":"",
+            "art":"Teens of Denial",
+            "artist":"Car Seat Headrest",
+            "exOne":"Fill in the Blank",
+            "exOneLink":"",
+            "exTwo":"1937 State Park",
+            "exTwoLink":""
+        },
+        {
+            "year":2016,
+            "genre":"Album",
+            "img":"",
+            "art":"City Club",
+            "artist":"The Growlers",
+            "exOne":"I'll Be Around",
+            "exOneLink":"",
+            "exTwo":"Too Many Times",
+            "exTwoLink":""
+        },
+        {
+            "year":2017,
+            "genre":"Album",
+            "img":"",
+            "art":"Ctrl",
+            "artist":"SZA",
+            "exOne":"Drew Barrymore",
+            "exOneLink":"",
+            "exTwo":"Go Gina",
+            "exTwoLink":""
+        },
+        {
+            "year":2017,
+            "genre":"Album",
+            "img":"",
+            "art":"Antisocialites",
+            "artist":"Alvvays",
+            "exOne":"In Undertow",
+            "exOneLink":"",
+            "exTwo":"Saved by a Waif",
+            "exTwoLink":""
+        },
+        {
+            "year":2018,
+            "genre":"Album",
+            "img":"",
+            "art":"Virtue",
+            "artist":"The Voidz",
+            "exOne":"Leave it in My Dreams",
+            "exOneLink":"",
+            "exTwo":"Wink",
+            "exTwoLink":""
+        },
+        {
+            "year":2018,
+            "genre":"Album",
+            "img":"",
+            "art":"Dirty Computer",
+            "artist":"Janelle Monae",
+            "exOne":"Take a Byte",
+            "exOneLink":"",
+            "exTwo":"Screwed",
+            "exTwoLink":""
+        },
+        {
+            "year":2018,
+            "genre":"Album",
+            "img":"",
+            "art":"Harutosyura",
+            "artist":"Harunemuri",
+            "exOne":"Underground",
+            "exOneLink":"",
+            "exTwo":"Sekaiwotorikaeshiteokure",
+            "exTwoLink":""
+        },
+        {
+            "year":2018,
+            "genre":"Album",
+            "img":"",
+            "art":"When My Heart Felt Volcanic",
+            "artist":"The Aces",
+            "exOne":"Volcanic Love",
+            "exOneLink":"",
+            "exTwo":"Stuck",
+            "exTwoLink":""
+        },
+        {
+            "year":2019,
+            "genre":"Album",
+            "img":"",
+            "art":"Charli",
+            "artist":"Charli XCX",
+            "exOne":"Next Level Charli",
+            "exOneLink":"",
+            "exTwo":"Gone",
+            "exTwoLink":""
+        }
+    ],
+    "games":[
+        {
+            "year":1992,
+            "system":"Gameboy",
+            "publisher":"",
+            "developer":"",
+            "title":"For Frog the Bell Tolls",
+            "img":""
+        },
+        {
+            "year":1994,
+            "system":"PC-9801",
+            "publisher":"",
+            "developer":"",
+            "title":"Policenauts",
+            "img":""
+        },
+        {
+            "year":1996,
+            "system":"Gameboy",
+            "publisher":"",
+            "developer":"",
+            "title":"Mole Mania",
+            "img":""
+        },
+        {
+            "year":1997,
+            "system":"PSX",
+            "publisher":"",
+            "developer":"",
+            "title":"Castlevania: Symphony of the Night",
+            "img":""
+        },
+        {
+            "year":1998,
+            "system":"Nintendo 64",
+            "publisher":"",
+            "developer":"",
+            "title":"Banjo Kazooie",
+            "img":""
+        },
+        {
+            "year":1999,
+            "system":"Nintendo 64",
+            "publisher":"",
+            "developer":"",
+            "title":"Pokemon Snap",
+            "img":""
+        },
+        {
+            "year":1999,
+            "system":"Neo Geo Pocket Color",
+            "publisher":"",
+            "developer":"",
+            "title":"SNK vs Capcom Card Fighters Clash",
+            "img":""
+        },
+        {
+            "year":1999,
+            "system":"PSX",
+            "publisher":"",
+            "developer":"",
+            "title":"Ape Escape",
+            "img":""
+        },
+        {
+            "year":2000,
+            "system":"Nintendo 64",
+            "publisher":"",
+            "developer":"",
+            "title":"Sin & Punishment",
+            "img":""
+        },
+        {
+            "year":2001,
+            "system":"Gameboy Color",
+            "publisher":"",
+            "developer":"",
+            "title":"Hamtaro Ham-Hams Unite",
+            "img":""
+        },
+        {
+            "year":2001,
+            "system":"Nintendo 64",
+            "publisher":"",
+            "developer":"",
+            "title":"Paper Mario",
+            "img":""
+        },
+        {
+            "year":2001,
+            "system":"Gamecube",
+            "publisher":"",
+            "developer":"",
+            "title":"Sonic Adventure 2 Battle",
+            "img":""
+        },
+        {
+            "year":2001,
+            "system":"GBA",
+            "publisher":"",
+            "developer":"",
+            "title":"Wario Land 4",
+            "img":""
+        },
+        {
+            "year":2003,
+            "system":"Gamecube",
+            "publisher":"",
+            "developer":"",
+            "title":"Kirby Air Ride",
+            "img":""
+        },
+        {
+            "year":2004,
+            "system":"PS2",
+            "publisher":"",
+            "developer":"",
+            "title":"Katamari Damacy",
+            "img":""
+        },
+        {
+            "year":2004,
+            "system":"GBA",
+            "publisher":"",
+            "developer":"",
+            "title":"WarioWare Twisted",
+            "img":""
+        },
+        {
+            "year":2005,
+            "system":"Gamecube",
+            "publisher":"",
+            "developer":"",
+            "title":"Chibi Robo",
+            "img":""
+        },
+        {
+            "year":2005,
+            "system":"PS2",
+            "publisher":"",
+            "developer":"",
+            "title":"Kingdom Hearts 2",
+            "img":""
+        },
+        {
+            "year":2006,
+            "system":"GBA",
+            "publisher":"",
+            "developer":"",
+            "title":"Drill Dozer",
+            "img":""
+        },
+        {
+            "year":2010,
+            "system":"Nintendo DS",
+            "publisher":"",
+            "developer":"",
+            "title":"Ghost Trick",
+            "img":""
+        },
+        {
+            "year":2012,
+            "system":"Wii",
+            "publisher":"",
+            "developer":"",
+            "title":"Xenoblade Chronicles",
+            "img":""
+        },
+        {
+            "year":2016,
+            "system":"PC",
+            "publisher":"",
+            "developer":"",
+            "title":"SUPERHOT",
+            "img":""
+        },
+        {
+            "year":2017,
+            "system":"3DS",
+            "publisher":"",
+            "developer":"",
+            "title":"Ever oasis",
+            "img":""
+        },
+        {
+            "year":2017,
+            "system":"Switch",
+            "publisher":"",
+            "developer":"",
+            "title":"ARMS",
+            "img":""
+        },
+        {
+            "year":2017,
+            "system":"Switch",
+            "publisher":"",
+            "developer":"",
+            "title":"Golf Story",
+            "img":""
+        },
+        {
+            "year":2018,
+            "system":"Switch",
+            "publisher":"",
+            "developer":"",
+            "title":"Into the Breach",
+            "img":""
+        },
+        {
+            "year":2018,
+            "system":"PC",
+            "publisher":"",
+            "developer":"",
+            "title":"Haunted Island Frog Detective",
+            "img":""
+        },
+        {
+            "year":2019,
+            "system":"Switch",
+            "publisher":"",
+            "developer":"",
+            "title":"Astral Chain",
+            "img":""
+        },
+        {
+            "year":2019,
+            "system":"PS4",
+            "publisher":"",
+            "developer":"",
+            "title":"Kingdom Hearts 3",
+            "img":""
+        },
+        {
+            "year":2019,
+            "system":"Switch",
+            "publisher":"",
+            "developer":"",
+            "title":"Dragon Quest XI S",
+            "img":""
+        }
+    ],
+    "text":[
+        {
+            "year":1949,
+            "author":"1984",
+            "title":"",
+            "img":"",
+            "genre":""
+        },
+        {
+            "year":2017,
+            "author":"",
+            "title":"Blood, Sweat, Pixels",
+            "img":"",
+            "genre":""
+        }
+    ],
+    "video":[]
+}
