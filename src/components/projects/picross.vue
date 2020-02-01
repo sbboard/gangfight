@@ -81,10 +81,9 @@
                     <span @click="currentMode = !currentMode">[CLICK]</span>
                 </template>
             &#60;&#60;</div>
-            <div id="result">{{result}}</div>
             <div id="btnBar">
                 <button id="checkBtn" @click="finished()">
-                    Check Answer
+                    Check
                 </button>
                 <button id="reset" @click="resetPuzz()">
                     Reset
@@ -93,6 +92,7 @@
                     Quit
                 </button>
             </div>
+            <div id="result">{{result}}</div>
         </div>
         <div v-else id="menuMode" >
             <span v-for="(item, id) in puzzleArray" :key="`${id}`" @click="puzzle = id;resetPuzz()">Puzzle {{id+1}}: {{item.name}}</span>
@@ -343,8 +343,17 @@ $testSize: 39 / 7 + em
         margin: 0 auto
         text-align: center
         button
-            margin: 1em .5em
+            margin: .5em .5em
             font-size: 1.5em
+            font-family: ferriteDX
+            font-size: 3em
+            text-transform: uppercase
+            width: 6em
+            font-weight: 800
+            background-color: initial
+            border: .1em solid $neonRed
+            color: $neonRed
+            cursor: pointer
 #menuMode
     span
         font-size: 3em
@@ -428,7 +437,6 @@ span
 #result
     text-align: center
     font-size: 3em
-    margin-top: .5em
     height: 1em
 .blank
     background-color: rgba(255,255,255,.1)
