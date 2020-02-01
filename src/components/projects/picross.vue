@@ -26,16 +26,17 @@
                 <div class="row" v-for="(item, index) in puzzleArray[puzzle].y" :key="`${index}`">
                     <div class="law cube sideLaw"
                         :style="{
-                            minHeight: (39 / largestArray) + 'em'
+                            minHeight: (39 / largestArray) + 'em',
+                            width: ((39 / largestArray) * leftLength)+'em'
                             }"
                         :class="{
                             highlightx : currentHoverX == index
                             }">
-                        <span v-for="(item, id) in leftLength" :key="`${id}`"
+                        <span v-for="(item, id) in puzzleArray[puzzle].y[index]" :key="`${id}`"
                         :style="{
                             fontSize: (39 / largestArray) + 'em'
                             }">
-                            {{puzzleArray[puzzle].y[index][(leftLength-1)-id]}}
+                                {{puzzleArray[puzzle].y[index][id]}}
                         </span>
                     </div>
                     <!-- LOOP -->
@@ -460,6 +461,5 @@ span
     align-items: center
     flex-direction: inherit
     background-image: linear-gradient(to right, #ff000000 , $neonBlue)
-    width: inherit
     border-left: 0px
 </style>
