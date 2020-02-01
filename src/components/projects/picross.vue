@@ -72,15 +72,15 @@
                     </div>
                 </div>  
             </div>
-            <div id="modeBar">
-                <h4>INPUT MODE:</h4> 
+            <div id="modeBar">>>
+                <h4>INPUT MODE:</h4>
                 <template v-if="currentMode">
-                    <span @click="currentMode = !currentMode">PEN</span>
+                    <span @click="currentMode = !currentMode">[PEN]</span>
                 </template>
                 <template v-else>
-                    <span @click="currentMode = !currentMode">CLICK</span>
+                    <span @click="currentMode = !currentMode">[CLICK]</span>
                 </template>
-            </div>
+            &#60;&#60;</div>
             <div id="result">{{result}}</div>
             <div id="btnBar">
                 <button id="checkBtn" @click="finished()">
@@ -97,7 +97,6 @@
         <div v-else id="menuMode" >
             <span v-for="(item, id) in puzzleArray" :key="`${id}`" @click="puzzle = id;resetPuzz()">Puzzle {{id+1}}: {{item.name}}</span>
         </div>
-      <div id="city"></div>
       <div id="cityLights"></div>
       <div id="cityOfStars"></div>
       <div id="cityBlues"></div>
@@ -320,15 +319,18 @@ $testSize: 39 / 7 + em
     font-size: 3em
     text-align: center
     margin-top: .5em
-    background-color: black
+    background-image: linear-gradient(to right, #ff000000, $neonBlue, #ff000000)
+    padding: 1em 0
+    color: black
     h4
         width: 9em
         display: inline-block
-        margin-right: 1em
+        margin-right: .5em
     span
         width: 5em
         display: inline-block
         cursor: pointer
+        font-weight: 800
 #picrossProj
     font-family: Montserrat
     color: $neonRed
@@ -377,7 +379,7 @@ $testSize: 39 / 7 + em
   cursor: pointer
 
 .x
-  background-color: red
+  background-color: $neonRed
 
 .black
   background-color: $neonBlue
@@ -431,13 +433,13 @@ span
 .blank
     background-color: rgba(255,255,255,.1)
 .highlightx
-    border-top: 1px solid yellow
-    border-bottom: 1px solid yellow
+    border-top: 1px solid $neonBlue
+    border-bottom: 1px solid $neonBlue
     &.blank
         background-color: rgba(255,255,255,.2)
 .highlighty
-    border-left: 1px solid yellow
-    border-right: 1px solid yellow
+    border-left: 1px solid $neonBlue
+    border-right: 1px solid $neonBlue
     &.blank
         background-color: rgba(255,255,255,.2)
 .hover
@@ -450,16 +452,17 @@ span
     align-items: center
     min-height: $testSize
     height: inherit
-    background-image: linear-gradient(to bottom, #ff000000 , $neonBlue)
+    background-image: linear-gradient(to bottom, #ff000000 , transparentize($neonBlue,0.6))
     opacity: 1
     span
         width: 1em
         text-align: center
         height: 1em
+        font-weight: 800
 .sideLaw
     justify-content: flex-end
     align-items: center
     flex-direction: inherit
-    background-image: linear-gradient(to right, #ff000000 , $neonBlue)
+    background-image: linear-gradient(to right, #ff000000 , transparentize($neonBlue,0.6))
     border-left: 0px
 </style>
