@@ -186,6 +186,7 @@ export default {
             }
         },
         clickCube(cube){
+            this.result = ""
             if(this.currentMode == false){
                 if(this.Xcubes.includes(cube)){
                     this.Xcubes.splice(this.Xcubes.indexOf(cube),1)
@@ -201,6 +202,7 @@ export default {
         },
         penPaint(cube,place){
             if(this.penActive == true && this.currentMode == true){
+                this.result = ""
                 if(place == "MsDown"){
                     if(this.pen == "black" && this.selectedCubes.indexOf(cube) > -1){
                         this.pen = "blank"
@@ -297,10 +299,10 @@ export default {
             }
             //////////////////////////////////////////////////////////////
             if(valid == true){
-                this.result = "nice job."
+                this.result = "//nice job."
             }
             else{
-                this.result = "this aint it, boss."
+                this.result = "\\\\keep trying dude//"
             }
         }
     },
@@ -388,8 +390,7 @@ $testSize: 39 / 7 + em
   cursor: pointer
 
 .x
-  background-color: $neonRed
-
+    background-color: $neonRed
 .black
   background-color: $neonBlue
 span
@@ -437,6 +438,7 @@ span
 #result
     text-align: center
     font-size: 3em
+    font-family: ferriteDX
     height: 1em
 .blank
     background-color: rgba(255,255,255,.1)
