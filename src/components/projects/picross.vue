@@ -2,7 +2,7 @@
     <div id="picrossProj" :style="fontSize"
     @mousedown="penActive = true"
     @mouseup="penActive = false">
-        <h1>Picross</h1>
+        <h1>Gang Picross</h1>
         <div id="puzzleMode" v-if="this.puzzle > -1 && this.puzzleWorks()">
             <div id="puzzle" :style="{paddingRight: ((39 / largestArray) * leftLength)+'em'}">
                 <div id="TopLaw">
@@ -334,13 +334,15 @@ $testSize: 39 / 7 + em
         cursor: pointer
         font-weight: 800
 #picrossProj
-    font-family: Montserrat
+    font-family: ferriteDX
     color: $neonRed
     user-select: none
     h1
-        font-size: 4em
+        font-size: 6em
         text-align: center
-        margin: 1em 0
+        margin: .5em 0
+        text-transform: lowercase
+        font-weight: 600
     #btnBar
         margin: 0 auto
         text-align: center
@@ -362,7 +364,7 @@ $testSize: 39 / 7 + em
 #puzzle
     width: fit-content
     margin: 0 auto
-
+    font-family: Montserrat
 .cube
   border: 1px solid black
   display: inline-block
