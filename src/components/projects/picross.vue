@@ -95,7 +95,7 @@
             <div id="result">{{result}}</div>
         </div>
         <div v-else id="menuMode" >
-            <span v-for="(item, id) in puzzleArray" :key="`${id}`" @click="puzzle = id;resetPuzz()">Puzzle {{id+1}}: {{item.name}}</span>
+            <span v-for="(item, id) in puzzleArray" :key="`${id}`" @click="puzzle = id;resetPuzz()">P{{id+1}}: {{item.name}}</span>
         </div>
       <div id="cityLights"></div>
       <div id="cityOfStars"></div>
@@ -390,9 +390,6 @@ $testSize: 39 / 7 + em
 
 .picCube
   cursor: pointer
-
-.x
-    background-color: $neonRed
 .black
   background-color: $neonBlue
 span
@@ -444,6 +441,11 @@ span
     height: 1em
 .blank
     background-color: rgba(255,255,255,.1)
+.x
+    @extend .blank
+    background-image: url('/projects/picross/redX.png')
+    background-position: center
+    background-repeat: no-repeat
 .highlightx
     border-top: 1px solid $neonBlue
     border-bottom: 1px solid $neonBlue
