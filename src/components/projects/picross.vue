@@ -95,6 +95,7 @@
             <div id="result">{{result}}</div>
         </div>
         <div v-else id="menuMode" >
+            <h2>Puzzle Select:::</h2>
             <span v-for="(item, id) in puzzleArray" :key="`${id}`" @click="puzzle = id;resetPuzz()">P{{id+1}}: {{item.name}}</span>
         </div>
       <div id="cityLights"></div>
@@ -358,9 +359,25 @@ $testSize: 39 / 7 + em
             border: .1em solid $neonRed
             color: $neonRed
             cursor: pointer
+            &:hover
+                color: $lightNeonRed
+                border: .1em solid $lightNeonRed
 #menuMode
     span
         font-size: 3em
+        cursor: pointer
+        width: fit-content
+        text-transform: uppercase
+        margin: .25em 1em 
+        color: $neonBlue
+        &:hover
+            color: $lightNeonBlue
+    h2
+        font-size: 4em
+        width: 50%
+        border-bottom: .1em solid
+        padding-left: .5em
+        color: $neonRed
 #puzzle
     width: fit-content
     margin: 0 auto
