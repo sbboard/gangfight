@@ -49,6 +49,7 @@ export default {
 }
 </script>
 
-<style lang="sass" scoped>
-
+<style lang="sass">
+html
+  overflow: auto !important
 </style>
