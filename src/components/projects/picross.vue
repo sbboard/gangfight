@@ -3,7 +3,7 @@
     @mousedown="penActive = true"
     @mouseup="penActive = false">
         <h1>Gang Picross</h1>
-        <div id="puzzleMode" v-if="this.puzzle > -1 && this.puzzleWorks()">
+        <div id="puzzleMode" v-if="this.puzzle > -1 && this.puzzleWorks() && this.winState == false">
             <div id="puzzle" :style="{paddingRight: ((39 / largestArray) * leftLength)+'em'}">
                 <div id="TopLaw">
                     <div class="cube corner">{{largestArray}} x {{largestArray}}</div>
@@ -94,9 +94,19 @@
             </div>
             <div id="result">{{result}}</div>
         </div>
+        <div id="niceJob" v-else-if="this.winState == true">
+            <h2>NICE JOB DUDE</h2>
+            <button @click="
+            resetPuzz();
+            completePuzzles.push(puzzle)
+            winState = false;
+            puzzle = -1;">CONTINUE</button>
+        </div>
         <div v-else id="menuMode" >
             <h2>Puzzle Select:::</h2>
-            <span v-for="(item, id) in puzzleArray" :key="`${id}`" @click="puzzle = id;resetPuzz()">P{{id+1}}: {{item.name}}</span>
+            <span v-for="(item, id) in puzzleArray" :key="`${id}`" @click="puzzle = id;resetPuzz()">
+                P{{id+1}}[<template v-if="completePuzzles.includes(id)">x</template><template v-else>_</template>]: {{item.name}}
+            </span>
         </div>
       <div id="cityLights"></div>
       <div id="cityOfStars"></div>
@@ -123,7 +133,9 @@ export default {
             currentMode: true,
             pen: "black",
             penActive: false,
-            leftClick: true
+            leftClick: true,
+            winState: false,
+            completePuzzles: []
         }
     },
     computed: {
@@ -300,7 +312,7 @@ export default {
             }
             //////////////////////////////////////////////////////////////
             if(valid == true){
-                this.result = "//nice job."
+                this.winState = true
             }
             else{
                 this.result = "\\\\keep trying dude//"
@@ -362,6 +374,27 @@ $testSize: 39 / 7 + em
             &:hover
                 color: $lightNeonRed
                 border: .1em solid $lightNeonRed
+#niceJob
+    button
+        margin: 1.5em auto
+        font-size: 1.5em
+        font-family: ferriteDX
+        font-size: 5em
+        text-transform: uppercase
+        width: fit-content
+        font-weight: 800
+        background-color: initial
+        border: .1em solid $neonRed
+        color: $neonRed
+        display: block
+        cursor: pointer
+        &:hover
+            color: $lightNeonRed
+            border: .1em solid $lightNeonRed
+    h2
+        font-size: 18em
+        text-align: center
+        color: $neonBlue
 #menuMode
     span
         font-size: 3em
