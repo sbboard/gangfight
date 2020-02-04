@@ -26,11 +26,12 @@
                 <div id="boxRipple"></div>
                 <div id="innerBox">
                     <ul v-if="selected==''">
-                        <li v-for="(items,id) in sortByYear(cat)" :key="`${id}`" @click="changeSelected(items)">
-                            {{items.name}}
+                        <li v-for="(items,id) in sortByYear()" :key="`${id}`" @click="changeSelected(cat,genre,year)">
+                            {{items.art}}
                         </li>
                     </ul>
                     <div id="mediaDisplay" v-else>
+                        <!--
                         <h1>{{selected.name}}</h1>
                         <h2>{{selected.creator}}</h2>
                         <h3>{{selected.year}}</h3>
@@ -39,6 +40,7 @@
                             <a :href="selected.url">Link</a>
                         </template>
                         <p v-html="selected.desc"></p>
+                        -->
                     </div>
                 </div>
                 <div id="topRow"> 
@@ -49,8 +51,9 @@
                 </div>
                 <div id="iconsRow">
                     <img @click="changeCat('video')" src="/assets/global/404/vhs.png">
-                    <img @click="changeCat('music')" src="/assets/global/404/audioSec.png">
-                    <img @click="changeCat('game')" src="/assets/global/404/gbb.png">
+                    <img @click="changeCat('audio')" src="/assets/global/404/audioSec.png">
+                    <img @click="changeCat('games')" src="/assets/global/404/gbb.png">
+                    <img @click="changeCat('books')" src="/assets/global/404/gbb.png">
                     <img @click="changeCat('')" src="/assets/global/404/misc.png">
                 </div>
             </div>
@@ -63,7 +66,7 @@
 </template>
 
 <script>
-import media from '../../mediaRec.json'
+import media from '../../media.json'
 
 export default {
     name: 'DraculaCultureClub',
@@ -71,8 +74,8 @@ export default {
         return{
             randoNum: 0,
             hour: 0,
-            mediaGallery: media.media,
-            selected: "",
+            mediaGallery: media,
+            selected: [],
             cat: "",
             urlString: this.$route.params.string
         }
@@ -89,21 +92,49 @@ export default {
         },
     },
     methods:{
-        sortByYear(category){
-            let newGall = []
-            for(let i=0;i<this.mediaGallery.length;i++){
-                if(this.mediaGallery[i].category.includes(category)){
-                    newGall.push(this.mediaGallery[i])
+        sortByYear(){
+            //get list by category
+            //do a loop
+            //{genre, year, amt}
+            //if amt < 2 and next year < 2 combine it until theres one bigger than 2
+            //{yearsCovered: [1992, 1996]}
+            let theArch = {
+                "genres":[]
+            }
+            let unsortedArray = this.mediaGallery[this.cat]
+            let sortedObj = {}
+            if(this.cat == ""){
+                unsortedArray = this.mediaGallery.audio.concat(this.mediaGallery.games,this.mediaGallery.video,this.mediaGallery.books)
+            }
+            for(let i=0; i<unsortedArray.length;i++){
+                if(theArch.genres.indexOf(unsortedArray[i].genre) == -1){
+                    theArch.genres.push(unsortedArray[i].genre)
+                }
+                if(theArch.hasOwnProperty(unsortedArray[i].genre)){
+                theArch[unsortedArray[i].genre].push(unsortedArray[i].year)
+                }
+                else{
+                    theArch[unsortedArray[i].genre] = [unsortedArray[i].year]
                 }
             }
-            newGall.sort(function(a,b){
-                return b.year - a.year;
-            })
-            return newGall
+            console.log(theArch)
+            for(let i=0;i<theArch.genres.length;i++){
+                let currentGen = theArch.genres[i]
+                console.log(currentGen)
+                for(let x=0;x<theArch[currentGen].length;x++){
+                    console.log(theArch[currentGen][x])
+                }
+            }
+            console.log(sortedObj)
+
+            // unsortedArray.sort(function(a,b){
+            //     return b.year - a.year;
+            // })
+            // return unsortedArray
         },
         changeCat(category){
             this.cat = category
-            this.selected = ""
+            this.selected = []
         },
         changeSelected(select){
             this.selected = select
