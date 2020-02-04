@@ -26,8 +26,12 @@
                 <div id="boxRipple"></div>
                 <div id="innerBox">
                     <ul v-if="selected==''">
-                        <li v-for="(items,id) in sortByYear()" :key="`${id}`" @click="changeSelected(cat,genre,year)">
-                            {{items.art}}
+                        <li v-for="(items,id) in sortByYear()" :key="`${id}`" @click="changeSelected(items.genre,items.years)">
+                            Drak's Top {{items.genre}}s 
+                            <template v-if="items.years.length > 1">
+                                {{items.years[items.years.length-1]}} - 
+                            </template>
+                            {{items.years[0]}}
                         </li>
                     </ul>
                     <div id="mediaDisplay" v-else>
@@ -93,44 +97,87 @@ export default {
     },
     methods:{
         sortByYear(){
-            //get list by category
-            //do a loop
-            //{genre, year, amt}
-            //if amt < 2 and next year < 2 combine it until theres one bigger than 2
-            //{yearsCovered: [1992, 1996]}
-            let theArch = {
-                "genres":[]
-            }
             let unsortedArray = this.mediaGallery[this.cat]
-            let sortedObj = {}
+            let sortedObj = []
+            let compressedArray = []
             if(this.cat == ""){
                 unsortedArray = this.mediaGallery.audio.concat(this.mediaGallery.games,this.mediaGallery.video,this.mediaGallery.books)
             }
             for(let i=0; i<unsortedArray.length;i++){
-                if(theArch.genres.indexOf(unsortedArray[i].genre) == -1){
-                    theArch.genres.push(unsortedArray[i].genre)
+                let unfound = true
+                for(let x=0;x<sortedObj.length;x++){
+                    if(sortedObj[x].year == unsortedArray[i].year && sortedObj[x].genre == unsortedArray[i].genre){
+                        sortedObj[x].amt += 1
+                        unfound = false
+                    }
                 }
-                if(theArch.hasOwnProperty(unsortedArray[i].genre)){
-                theArch[unsortedArray[i].genre].push(unsortedArray[i].year)
+                if(unfound == true){
+                    sortedObj.push(
+                        {
+                            "year":unsortedArray[i].year,
+                            "genre":unsortedArray[i].genre,
+                            "amt":1
+                        }
+                    )
+                }
+            }
+            sortedObj.sort(function(a,b){
+                return b.year - a.year;
+            })
+            sortedObj.sort(function(a, b){
+                if(a.genre < b.genre) { return -1; }
+                if(a.genre > b.genre) { return 1; }
+                return 0;
+            })
+
+            //compressed years with only 1 art
+            let tempOnes = []
+            let currentGenre = ""
+            for(let i=0;i<sortedObj.length;i++){
+                if(currentGenre == ""){
+                    currentGenre = sortedObj[i].genre
+                }
+                if(sortedObj[i].amt < 2){
+                    if(currentGenre == sortedObj[i].genre){
+                        tempOnes.push(sortedObj[i].year)
+                    }
+                    else{
+                        if(tempOnes.length > 0){
+                            compressedArray.push({
+                                "years":tempOnes,
+                                "genre":currentGenre
+                            })
+                        }
+                        tempOnes = []
+                        tempOnes.push(sortedObj[i].year)
+                        currentGenre = sortedObj[i].genre
+                    }
                 }
                 else{
-                    theArch[unsortedArray[i].genre] = [unsortedArray[i].year]
+                    if(tempOnes.length > 0){
+                        compressedArray.push({
+                            "years":tempOnes,
+                            "genre":currentGenre
+                        })
+                        tempOnes = []
+                    }
+                    compressedArray.push({
+                        "years":[sortedObj[i].year],
+                        "genre":sortedObj[i].genre
+                    })
                 }
             }
-            console.log(theArch)
-            for(let i=0;i<theArch.genres.length;i++){
-                let currentGen = theArch.genres[i]
-                console.log(currentGen)
-                for(let x=0;x<theArch[currentGen].length;x++){
-                    console.log(theArch[currentGen][x])
-                }
+            if(tempOnes.length > 0){
+                        compressedArray.push({
+                            "years":tempOnes,
+                            "genre":currentGenre
+                        })
             }
-            console.log(sortedObj)
+            compressedArray.sort(function(a,b){
+                return b.years[0] - a.years[0];
+            })
+            return compressedArray
 
-            // unsortedArray.sort(function(a,b){
-            //     return b.year - a.year;
-            // })
-            // return unsortedArray
         },
         changeCat(category){
             this.cat = category
@@ -314,6 +361,7 @@ export default {
             li
                 padding: .25em .5em
                 cursor: pointer
+                text-transform: capitalize
                 &:hover
                     background-color: $neonBlue
                     color: black
