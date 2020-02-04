@@ -63,7 +63,7 @@
 </template>
 
 <script>
-import media from '../../mediaRec.json'
+import media from '../../media.json'
 
 export default {
     name: 'DraculaCultureClub',
@@ -75,7 +75,6 @@ export default {
             selected: "",
             cat: "",
             urlString: this.$route.params.string,
-            selected: false
         }
     },
     created(){
@@ -106,24 +105,8 @@ export default {
             this.cat = category
             this.selected = ""
         },
-        changeSelected(genre,year){
-            if(this.cat == ""){
-                if(genre == "Podcast" || genre == "Album"){
-                    this.cat = "audio"
-                }
-                else if(genre == "game"){
-                    this.cat = "games"
-                }
-                else if(genre == "YouTube" || genre == "Film" || genre == "Show"){
-                    this.cat = "videos"
-                }
-                else if(genre == "Book" || genre == "Comic"){
-                    this.cat = "books"
-                }
-            }
-            this.selectedGenre = genre
-            this.selectedYears = year
-            this.selected = true
+        changeSelected(select){
+            this.selected = select
         }
     },
     mounted(){
