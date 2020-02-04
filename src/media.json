@@ -279,21 +279,21 @@
         },
         {
             "year":1999,
-            "creator":"",
+            "creator":"Sony",
             "category":"game",
-            "url":"",
+            "url":"https://en.wikipedia.org/wiki/Ape_Escape",
             "name":"Ape Escape",
             "pic":"",
-            "exOneLink":""
+            "exOneLink":"KZY8F0SiSFY"
         },
         {
             "year":2000,
             "category":"game",
-            "creator":"",
+            "creator":"Treasure",
             "url":"",
             "name":"Sin & Punishment",
             "pic":"sinPunish.jpg",
-            "exOneLink":""
+            "exOneLink":"k8Ee-G9R_JI"
         },
         {
             "year":2001,
@@ -302,7 +302,7 @@
             "url":"",
             "name":"Hamtaro Ham-Hams Unite",
             "pic":"hamtaro.jpg",
-            "exOneLink":""
+            "exOneLink":"ARp-OLbcGO4"
         },
         {
             "year":2001,
@@ -311,7 +311,7 @@
             "url":"",
             "name":"Paper Mario",
             "pic":"",
-            "exOneLink":""
+            "exOneLink":"6wQzSVIwYZI"
         },
         {
             "year":2001,
@@ -320,7 +320,7 @@
             "url":"",
             "name":"Sonic Adventure 2 Battle",
             "pic":"",
-            "exOneLink":""
+            "exOneLink":"EU4CbUoPBi4"
         },
         {
             "year":2001,
@@ -329,7 +329,7 @@
             "url":"",
             "name":"Wario Land 4",
             "pic":"",
-            "exOneLink":""
+            "exOneLink":"K8yXPg4_aa0"
         },
         {
             "year":2003,
@@ -338,7 +338,7 @@
             "url":"",
             "name":"Kirby Air Ride",
             "pic":"",
-            "exOneLink":""
+            "exOneLink":"Cg3faJPne74"
         },
         {
             "year":2004,
@@ -347,7 +347,7 @@
             "url":"",
             "name":"Katamari Damacy",
             "pic":"",
-            "exOneLink":""
+            "exOneLink":"BAtuIRy2mL4"
         },
         {
             "year":2004,
@@ -356,7 +356,7 @@
             "url":"",
             "name":"WarioWare Twisted",
             "pic":"",
-            "exOneLink":""
+            "exOneLink":"iAUiW3knSrQ"
         },
         {
             "year":2005,
@@ -365,7 +365,7 @@
             "url":"",
             "name":"Chibi Robo",
             "pic":"chibiRobo.jpg",
-            "exOneLink":""
+            "exOneLink":"9ZekURiUQx0"
         },
         {
             "year":2005,
@@ -374,7 +374,7 @@
             "url":"",
             "name":"Kingdom Hearts 2",
             "pic":"",
-            "exOneLink":""
+            "exOneLink":"ZdSHGX3DPvE"
         },
         {
             "year":2006,
@@ -383,7 +383,7 @@
             "url":"",
             "name":"Drill Dozer",
             "pic":"",
-            "exOneLink":""
+            "exOneLink":"8y7msNvQcR4"
         },
         {
             "year":2010,
@@ -392,10 +392,7 @@
             "url":"",
             "name":"Ghost Trick",
             "pic":"",
-            "exOne":"",
-            "exOneLink":"",
-            "exTwo":"",
-            "exTwoLink":""
+            "exOneLink":"YOSiyUIorPQ"
         },
         {
             "year":2012,
@@ -404,10 +401,7 @@
             "url":"",
             "name":"Xenoblade Chronicles",
             "pic":"",
-            "exOne":"",
-            "exOneLink":"",
-            "exTwo":"",
-            "exTwoLink":""
+            "exOneLink":"0YEhVPZjgMk"
         },
         {
             "year":2016,
@@ -416,58 +410,25 @@
             "url":"",
             "name":"SUPERHOT",
             "pic":"",
-            "exOne":"",
-            "exOneLink":"",
-            "exTwo":"",
-            "exTwoLink":""
+            "exOneLink":"vrS86l_CtAY"
         },
         {
             "year":2017,
-            "creator":"",
+            "creator":"Sidebar Games",
             "category":"game",
-            "url":"",
-            "name":"Ever Oasis",
-            "pic":"",
-            "exOne":"",
-            "exOneLink":"",
-            "exTwo":"",
-            "exTwoLink":""
-        },
-        {
-            "year":2017,
-            "category":"game",
-            "creator":"",
-            "url":"",
-            "name":"ARMS",
-            "pic":"",
-            "exOne":"",
-            "exOneLink":"",
-            "exTwo":"",
-            "exTwoLink":""
-        },
-        {
-            "year":2017,
-            "creator":"",
-            "category":"game",
-            "url":"",
+            "url":"https://sidebargames.com/golfstory/",
             "name":"Golf Story",
             "pic":"",
-            "exOne":"",
-            "exOneLink":"",
-            "exTwo":"",
-            "exTwoLink":""
+            "exOneLink":"zufLtHu_m7o"
         },
         {
             "year":2018,
             "category":"game",
-            "creator":"",
-            "url":"",
+            "creator":"Subset Games",
+            "url":"https://subsetgames.com/itb.html",
             "name":"Into the Breach",
             "pic":"",
-            "exOne":"",
-            "exOneLink":"",
-            "exTwo":"",
-            "exTwoLink":""
+            "exOneLink":"gMlD_vgM-9s"
         },
         {
             "year":2018,
@@ -481,29 +442,29 @@
         {
             "year":2019,
             "category":"game",
-            "creator":"",
-            "url":"",
+            "creator":"PlatinumGames",
+            "url":"https://www.platinumgames.com/games/astral-chain",
             "name":"Astral Chain",
             "pic":"",
-            "exOneLink":""
+            "exOneLink":"tL6CldIRowc"
         },
         {
             "year":2019,
             "category":"game",
-            "creator":"",
-            "url":"",
+            "creator":"Tetsuya Nomura",
+            "url":"https://www.kingdomhearts.com/3/us/home/",
             "name":"Kingdom Hearts 3",
             "pic":"",
-            "exOneLink":""
+            "exOneLink":"lz1w_uW3lSE"
         },
         {
             "year":2019,
             "category":"game",
-            "creator":"",
-            "url":"",
+            "creator":"Square Enix",
+            "url":"https://www.nintendo.com/games/detail/dragon-quest-xi-s-echoes-of-an-elusive-age-definitive-edition-switch/",
             "name":"Dragon Quest XI S",
             "pic":"",
-            "exOneLink":""
+            "exOneLink":"PgfOu4dEIDw"
         },
         {
             "year":2017,
@@ -517,10 +478,10 @@
             "year":1960,
             "category":"video",
             "pic":"",
-            "url":"",
+            "url":"https://en.wikipedia.org/wiki/The_Apartment",
             "name":"The Apartment",
             "creator":"Billy Wilder",
-            "exOneLink":""
+            "exOneLink":"3j9Q6w_3asA"
         },
         {
             "year":2012,
@@ -544,27 +505,27 @@
             "year":2019,
             "category":"video",
             "pic":"",
-            "url":"",
+            "url":"https://www.hbo.com/the-righteous-gemstones",
             "name":"Righteous Gemstones",
-            "creator":"",
-            "exOneLink":""
+            "creator":"Danny McBride",
+            "exOneLink":"X6eMRyxGdaI"
         },
         {
             "year":2012,
             "category":"video",
             "pic":"",
-            "url":"",
+            "url":"https://www.hbo.com/veep",
             "name":"Veep",
-            "creator":"",
-            "exOneLink":""
+            "creator":"Armando Iannucci",
+            "exOneLink":"I2HoCG_iyhU"
         },
         {
             "year":1981,
             "category":"video",
             "pic":"",
-            "url":"",
+            "url":"https://en.wikipedia.org/wiki/The_Wave_(1981_film)",
             "name":"The Wave",
-            "creator":"",
+            "creator":"Alexander Grasshoff",
             "exOneLink":"ICng-KRxXJ8"
         },
         {
@@ -574,16 +535,16 @@
             "url":"https://en.wikipedia.org/wiki/Blade_Runner",
             "name":"Blade Runner",
             "creator":"Ridley Scott",
-            "exOneLink":""
+            "exOneLink":"VSOzdFoZsho"
         },
         {
             "year":1999,
             "category":"video",
             "pic":"",
-            "url":"",
+            "url":"https://en.wikipedia.org/wiki/Office_Space",
             "name":"Office Space",
-            "creator":"",
-            "exOneLink":""
+            "creator":"Mike Judge",
+            "exOneLink":"jKYivs6ZLZk"
         },
         {
             "year":2014,
