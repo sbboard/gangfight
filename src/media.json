@@ -216,66 +216,66 @@
         },
         {
             "year":1992,
-            "url":"",
-            "creator":"",
+            "url":"https://en.wikipedia.org/wiki/Kaeru_no_Tame_ni_Kane_wa_Naru",
+            "creator":"Nintendo",
             "category":"game",
             "name":"For Frog the Bell Tolls",
             "pic":"",
-            "exOneLink":""
+            "exOneLink":"FqkeOzfsZbs"
         },
         {
             "year":1994,
             "category":"game",
-            "creator":"",
-            "url":"",
+            "creator":"Hideo Kojima",
+            "url":"https://en.wikipedia.org/wiki/Policenauts",
             "name":"Policenauts",
             "pic":"",
-            "exOneLink":""
+            "exOneLink":"J8JqMawqDCc"
         },
         {
             "year":1996,
             "category":"game",
-            "creator":"",
-            "url":"",
+            "creator":"Nintendo",
+            "url":"https://en.wikipedia.org/wiki/Mole_Mania",
             "name":"Mole Mania",
             "pic":"",
-            "exOneLink":""
+            "exOneLink":"8qvnX_OSdMo"
         },
         {
             "year":1997,
             "category":"game",
-            "creator":"",
-            "url":"",
+            "creator":"Koji Igarashi",
+            "url":"https://en.wikipedia.org/wiki/Castlevania:_Symphony_of_the_Night",
             "name":"Castlevania: Symphony of the Night",
             "pic":"",
-            "exOneLink":""
+            "exOneLink":"5HnhPNS0rqM"
         },
         {
             "year":1998,
             "category":"game",
-            "creator":"",
-            "url":"",
+            "creator":"Rare",
+            "url":"https://en.wikipedia.org/wiki/Banjo-Kazooie",
             "name":"Banjo Kazooie",
             "pic":"",
-            "exOneLink":""
+            "exOneLink":"J9feE6EqY8g"
         },
         {
             "year":1999,
             "category":"game",
-            "creator":"",
-            "url":"",
+            "creator":"HAL Laboratory",
+            "url":"https://en.wikipedia.org/wiki/Pok%C3%A9mon_Snap",
             "name":"Pokemon Snap",
             "pic":"",
-            "exOneLink":""
+            "exOneLink":"dFHgf_SY5CY"
         },
         {
             "year":1999,
             "category":"game",
-            "creator":"",
-            "url":"",
+            "creator":"SNK",
+            "url":"https://en.wikipedia.org/wiki/SNK_vs._Capcom:_Card_Fighters_Clash",
             "name":"SNK vs Capcom Card Fighters Clash",
             "pic":"",
-            "exOneLink":""
+            "exOneLink":"_M-qJEZ_xzQ"
         },
         {
             "year":1999,
@@ -387,8 +387,6 @@
         },
         {
             "year":2010,
-            "system":"Nintendo DS",
-            "publisher":"",
             "category":"game",
             "creator":"",
             "url":"",
@@ -401,8 +399,6 @@
         },
         {
             "year":2012,
-            "system":"Wii",
-            "publisher":"",
             "creator":"",
             "category":"game",
             "url":"",
@@ -415,8 +411,6 @@
         },
         {
             "year":2016,
-            "system":"PC",
-            "publisher":"",
             "category":"game",
             "creator":"",
             "url":"",
@@ -429,8 +423,6 @@
         },
         {
             "year":2017,
-            "system":"3DS",
-            "publisher":"",
             "creator":"",
             "category":"game",
             "url":"",
@@ -443,8 +435,6 @@
         },
         {
             "year":2017,
-            "system":"Switch",
-            "publisher":"",
             "category":"game",
             "creator":"",
             "url":"",
@@ -457,8 +447,6 @@
         },
         {
             "year":2017,
-            "system":"Switch",
-            "publisher":"",
             "creator":"",
             "category":"game",
             "url":"",
@@ -484,14 +472,11 @@
         {
             "year":2018,
             "category":"game",
-            "creator":"",
-            "url":"",
+            "creator":"Grace Bruxner",
+            "url":"https://frogdetective.net/",
             "name":"Haunted Island Frog Detective",
             "pic":"",
-            "exOne":"",
-            "exOneLink":"",
-            "exTwo":"",
-            "exTwoLink":""
+            "exOneLink":"V1SIWj4QO5A"
         },
         {
             "year":2019,
@@ -500,10 +485,7 @@
             "url":"",
             "name":"Astral Chain",
             "pic":"",
-            "exOne":"",
-            "exOneLink":"",
-            "exTwo":"",
-            "exTwoLink":""
+            "exOneLink":""
         },
         {
             "year":2019,
@@ -512,10 +494,7 @@
             "url":"",
             "name":"Kingdom Hearts 3",
             "pic":"",
-            "exOne":"",
-            "exOneLink":"",
-            "exTwo":"",
-            "exTwoLink":""
+            "exOneLink":""
         },
         {
             "year":2019,
@@ -524,22 +503,15 @@
             "url":"",
             "name":"Dragon Quest XI S",
             "pic":"",
-            "exOne":"",
-            "exOneLink":"",
-            "exTwo":"",
-            "exTwoLink":""
+            "exOneLink":""
         },
         {
             "year":2017,
-            "creator":"",
-            "url":"",
+            "creator":"Jason Schreier",
+            "url":"https://kotaku.com/i-wrote-a-book-about-the-making-of-uncharted-4-star-wa-1792635169",
             "name":"Blood, Sweat, Pixels",
             "pic":"",
-            "category":"book",
-            "exOne":"",
-            "exOneLink":"",
-            "exTwo":"",
-            "exTwoLink":""
+            "category":"book"
         },
         {
             "year":1960,
@@ -548,34 +520,25 @@
             "url":"",
             "name":"The Apartment",
             "creator":"Billy Wilder",
-            "exOne":"",
-            "exOneLink":"",
-            "exTwo":"",
-            "exTwoLink":""
+            "exOneLink":""
         },
         {
             "year":2012,
             "category":"video",
             "pic":"",
-            "url":"",
+            "url":"https://www.youtube.com/channel/UCilouT5irlCNn2imcCDhhJQ",
             "name":"ThorHighHeels",
-            "creator":"",
-            "exOne":"Weird Japan Only PS1 Games",
-            "exOneLink":"",
-            "exTwo":"PC-98 Games Looked Really REALLY Cool",
-            "exTwoLink":""
+            "exOneLink":"TfeBPNZAoTE",
+            "exTwoLink":"OVpX2y6KjwA"
         },
         {
             "year":2014,
             "category":"video",
             "pic":"spaceDandy.jpg",
-            "url":"",
+            "url":"https://en.wikipedia.org/wiki/Space_Dandy",
             "name":"Space☆Dandy",
-            "creator":"",
-            "exOne":"",
-            "exOneLink":"",
-            "exTwo":"",
-            "exTwoLink":""
+            "creator":"Shinichirō Watanabe",
+            "exOneLink":"IZzSxLdLVp4"
         },
         {
             "year":2019,
@@ -584,10 +547,7 @@
             "url":"",
             "name":"Righteous Gemstones",
             "creator":"",
-            "exOne":"",
-            "exOneLink":"",
-            "exTwo":"",
-            "exTwoLink":""
+            "exOneLink":""
         },
         {
             "year":2012,
@@ -596,10 +556,7 @@
             "url":"",
             "name":"Veep",
             "creator":"",
-            "exOne":"",
-            "exOneLink":"",
-            "exTwo":"",
-            "exTwoLink":""
+            "exOneLink":""
         },
         {
             "year":1981,
@@ -608,15 +565,15 @@
             "url":"",
             "name":"The Wave",
             "creator":"",
-            "exOneLink":""
+            "exOneLink":"ICng-KRxXJ8"
         },
         {
             "year":1981,
             "category":"video",
             "pic":"",
-            "url":"",
-            "name":"Bladerunner",
-            "creator":"",
+            "url":"https://en.wikipedia.org/wiki/Blade_Runner",
+            "name":"Blade Runner",
+            "creator":"Ridley Scott",
             "exOneLink":""
         },
         {
@@ -632,24 +589,24 @@
             "year":2014,
             "category":"video",
             "pic":"",
-            "url":"",
+            "url":"https://en.wikipedia.org/wiki/Whiplash_(2014_film)",
             "name":"Whiplash",
-            "creator":"",
-            "exOneLink":""
+            "creator":"Damien Chazelle",
+            "exOneLink":"7d_jQycdQGo"
         },
         {
             "year":2017,
             "category":"video",
             "pic":"",
-            "url":"",
-            "name":"Bladerunner 2048",
-            "creator":"",
-            "exOneLink":""
+            "url":"https://en.wikipedia.org/wiki/Blade_Runner_2049",
+            "name":"Bladerunner 2049",
+            "creator":"Denis Villeneuve",
+            "exOneLink":"gCcx85zbxz4"
         },
         {
             "year":1949,
-            "creator":"",
-            "url":"",
+            "creator":"George Orwell",
+            "url":"https://en.wikipedia.org/wiki/Nineteen_Eighty-Four",
             "name":"1984",
             "pic":"",
             "category":"book"
@@ -657,7 +614,7 @@
         {
             "year":1986,
             "category":"book",
-            "url":"",
+            "url":"https://www.marvel.com/comics/discover/1032/daredevil-born-again",
             "name":"Daredevil Born Again",
             "pic":"",
             "creator":"Frank Miller"
@@ -665,31 +622,31 @@
         {
             "year":1987,
             "category":"book",
-            "url":"",
+            "url":"https://www.marvel.com/comics/events/258/kravens_last_hunt",
             "name":"Spider-Man Kraven's Last Hunt",
             "pic":"",
-            "creator":""
+            "creator":"J. M. DeMatteis"
         },
         {
             "year":1992,
             "category":"book",
-            "url":"",
+            "url":"https://www.viz.com/jojo-s-bizarre-adventure",
             "name":"JoJo's Bizarre Adventure: Diamond Is Unbreakable",
             "pic":"",
-            "creator":""
+            "creator":"Hirohiko Araki"
         },
         {
             "year":2002,
             "category":"book",
-            "url":"",
+            "url":"https://www.viz.com/eyeshield-21",
             "name":"Eyeshield 21",
             "pic":"",
-            "creator":""
+            "creator":"Riichiro Inagaki"
         },
         {
             "year":2012,
             "category":"book",
-            "url":"",
+            "url":"https://www.marvel.com/comics/series/12916/daredevil_2011_-_2014",
             "name":"Daredevil",
             "pic":"",
             "creator":"Mark Waid"
@@ -697,15 +654,15 @@
         {
             "year":2015,
             "category":"book",
-            "url":"",
+            "url":"https://www.penguinrandomhouse.com/series/FS6/fantasy-sports",
             "name":"Fantasy Sports",
             "pic":"",
-            "creator":""
+            "creator":"Sam Bosma"
         },
         {
             "year":2015,
             "category":"book",
-            "url":"",
+            "url":"https://www.marvel.com/comics/series/16309/hawkeye_2012_-_2015",
             "name":"Hawkeye",
             "pic":"",
             "creator":"Matt Fraction"

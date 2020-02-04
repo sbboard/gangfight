@@ -32,7 +32,9 @@
                     </ul>
                     <div id="mediaDisplay" v-else>
                         <h1>{{selected.name}}</h1>
-                        <h2>{{selected.creator}}</h2>
+                        <template v-if="selected.hasOwnProperty('creator')">
+                            <h2>{{selected.creator}}</h2>
+                        </template>
                         <h3>{{selected.year}}</h3>
                         <img class="mediaPic" :src="'/assets/global/404/media/' + selected.pic"/>
                         <a :href="selected.url">Link</a>
