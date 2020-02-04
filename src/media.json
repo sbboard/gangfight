@@ -1,27 +1,15 @@
 {
     "audio":[
         {
-            "year":2016,
-            "genre":"Podcast",
-            "img":"",
-            "art":"Chapo Trap House"
-        },
-        {
-            "year":2018,
-            "genre":"Podcast",
-            "img":"",
-            "art":"Serial Season 3"
-        },
-        {
             "year":2012,
             "genre":"Album",
             "img":"",
             "art":"Red",
             "artist":"Taylor Swift",
             "exOne":"State of Grace",
-            "exOneLink":"https://www.youtube.com/watch?v=gBUrA1j2dzA",
+            "exOneLink":"",
             "exTwo":"Treacherous",
-            "exTwoLink":"https://www.youtube.com/watch?v=7cOqgarjuRc"
+            "exTwoLink":""
         },
         {
             "year":2013,
@@ -30,9 +18,9 @@
             "art":"Sky Ferreira",
             "artist":"Night Time My Time",
             "exOne":"Boys",
-            "exOneLink":"https://www.youtube.com/watch?v=B1gDuaY8-V4",
+            "exOneLink":"",
             "exTwo":"I Blame Myself",
-            "exTwoLink":"https://www.youtube.com/watch?v=pWo7SC-tG4U"
+            "exTwoLink":""
         },
         {
             "year":2014,
@@ -41,9 +29,9 @@
             "art":"Supermodel",
             "artist":"Foster the People",
             "exOne":"Ask Yourself",
-            "exOneLink":"https://www.youtube.com/watch?v=w02_NLLHAxs",
+            "exOneLink":"",
             "exTwo":"Coming of Age",
-            "exTwoLink":"https://www.youtube.com/watch?v=MBqzrj18S2w"
+            "exTwoLink":""
         },
         {
             "year":2014,
@@ -103,11 +91,11 @@
         {
             "year":2015,
             "genre":"Album",
-            "img":"pimp.png",
+            "img":"",
             "art":"To Pimp a Butterfly",
             "artist":"Kendrick Lamar",
             "exOne":"entirealbum",
-            "exOneLink":"https://www.youtube.com/playlist?list=PL5nwSV8KEwZyIho8LrG99Rt-eQzA17Xu-",
+            "exOneLink":"",
             "exTwo":"",
             "exTwoLink":""
         },
@@ -158,7 +146,7 @@
         {
             "year":2018,
             "genre":"Album",
-            "img":"virtue.png",
+            "img":"",
             "art":"Virtue",
             "artist":"The Voidz",
             "exOne":"Leave it in My Dreams",
@@ -169,7 +157,7 @@
         {
             "year":2018,
             "genre":"Album",
-            "img":"dirtyComputer.jpg",
+            "img":"",
             "art":"Dirty Computer",
             "artist":"Janelle Monae",
             "exOne":"Take a Byte",
@@ -217,329 +205,266 @@
             "system":"Gameboy",
             "publisher":"",
             "developer":"",
-            "art":"For Frog the Bell Tolls",
-            "img":"",
-            "genre":"game"
+            "title":"For Frog the Bell Tolls",
+            "img":""
         },
         {
             "year":1994,
             "system":"PC-9801",
             "publisher":"",
             "developer":"",
-            "art":"Policenauts",
-            "img":"",
-            "genre":"game"
+            "title":"Policenauts",
+            "img":""
         },
         {
             "year":1996,
             "system":"Gameboy",
             "publisher":"",
             "developer":"",
-            "art":"Mole Mania",
-            "img":"",
-            "genre":"game"
+            "title":"Mole Mania",
+            "img":""
         },
         {
             "year":1997,
             "system":"PSX",
             "publisher":"",
             "developer":"",
-            "art":"Castlevania: Symphony of the Night",
-            "img":"",
-            "genre":"game"
+            "title":"Castlevania: Symphony of the Night",
+            "img":""
         },
         {
             "year":1998,
             "system":"Nintendo 64",
             "publisher":"",
             "developer":"",
-            "art":"Banjo Kazooie",
-            "img":"",
-            "genre":"game"
+            "title":"Banjo Kazooie",
+            "img":""
         },
         {
             "year":1999,
             "system":"Nintendo 64",
             "publisher":"",
             "developer":"",
-            "art":"Pokemon Snap",
-            "img":"",
-            "genre":"game"
+            "title":"Pokemon Snap",
+            "img":""
         },
         {
             "year":1999,
             "system":"Neo Geo Pocket Color",
             "publisher":"",
             "developer":"",
-            "art":"SNK vs Capcom Card Fighters Clash",
-            "img":"",
-            "genre":"game"
+            "title":"SNK vs Capcom Card Fighters Clash",
+            "img":""
         },
         {
             "year":1999,
             "system":"PSX",
             "publisher":"",
             "developer":"",
-            "art":"Ape Escape",
-            "img":"",
-            "genre":"game"
+            "title":"Ape Escape",
+            "img":""
         },
         {
             "year":2000,
             "system":"Nintendo 64",
             "publisher":"",
             "developer":"",
-            "art":"Sin & Punishment",
-            "img":"sinPunish.jpg",
-            "genre":"game"
+            "title":"Sin & Punishment",
+            "img":""
         },
         {
             "year":2001,
             "system":"Gameboy Color",
             "publisher":"",
             "developer":"",
-            "art":"Hamtaro Ham-Hams Unite",
-            "img":"hamtaro.jpg",
-            "genre":"game"
+            "title":"Hamtaro Ham-Hams Unite",
+            "img":""
         },
         {
             "year":2001,
             "system":"Nintendo 64",
             "publisher":"",
             "developer":"",
-            "art":"Paper Mario",
-            "img":"",
-            "genre":"game"
+            "title":"Paper Mario",
+            "img":""
         },
         {
             "year":2001,
             "system":"Gamecube",
             "publisher":"",
             "developer":"",
-            "art":"Sonic Adventure 2 Battle",
-            "img":"",
-            "genre":"game"
+            "title":"Sonic Adventure 2 Battle",
+            "img":""
         },
         {
             "year":2001,
             "system":"GBA",
             "publisher":"",
             "developer":"",
-            "art":"Wario Land 4",
-            "img":"",
-            "genre":"game"
+            "title":"Wario Land 4",
+            "img":""
         },
         {
             "year":2003,
             "system":"Gamecube",
             "publisher":"",
             "developer":"",
-            "art":"Kirby Air Ride",
-            "img":"",
-            "genre":"game"
+            "title":"Kirby Air Ride",
+            "img":""
         },
         {
             "year":2004,
             "system":"PS2",
             "publisher":"",
             "developer":"",
-            "art":"Katamari Damacy",
-            "img":"",
-            "genre":"game"
+            "title":"Katamari Damacy",
+            "img":""
         },
         {
             "year":2004,
             "system":"GBA",
             "publisher":"",
             "developer":"",
-            "art":"WarioWare Twisted",
-            "img":"",
-            "genre":"game"
+            "title":"WarioWare Twisted",
+            "img":""
         },
         {
             "year":2005,
             "system":"Gamecube",
             "publisher":"",
             "developer":"",
-            "art":"Chibi Robo",
-            "img":"chibiRobo.jpg",
-            "genre":"game"
+            "title":"Chibi Robo",
+            "img":""
         },
         {
             "year":2005,
             "system":"PS2",
             "publisher":"",
             "developer":"",
-            "art":"Kingdom Hearts 2",
-            "img":"",
-            "genre":"game"
+            "title":"Kingdom Hearts 2",
+            "img":""
         },
         {
             "year":2006,
             "system":"GBA",
             "publisher":"",
             "developer":"",
-            "art":"Drill Dozer",
-            "img":"",
-            "genre":"game"
+            "title":"Drill Dozer",
+            "img":""
         },
         {
             "year":2010,
             "system":"Nintendo DS",
             "publisher":"",
             "developer":"",
-            "art":"Ghost Trick",
-            "img":"",
-            "genre":"game"
+            "title":"Ghost Trick",
+            "img":""
         },
         {
             "year":2012,
             "system":"Wii",
             "publisher":"",
             "developer":"",
-            "art":"Xenoblade Chronicles",
-            "img":"",
-            "genre":"game"
+            "title":"Xenoblade Chronicles",
+            "img":""
         },
         {
             "year":2016,
             "system":"PC",
             "publisher":"",
             "developer":"",
-            "art":"SUPERHOT",
-            "img":"",
-            "genre":"game"
+            "title":"SUPERHOT",
+            "img":""
         },
         {
             "year":2017,
             "system":"3DS",
             "publisher":"",
             "developer":"",
-            "art":"Ever Oasis",
-            "img":"",
-            "genre":"game"
+            "title":"Ever oasis",
+            "img":""
         },
         {
             "year":2017,
             "system":"Switch",
             "publisher":"",
             "developer":"",
-            "art":"ARMS",
-            "img":"",
-            "genre":"game"
+            "title":"ARMS",
+            "img":""
         },
         {
             "year":2017,
             "system":"Switch",
             "publisher":"",
             "developer":"",
-            "art":"Golf Story",
-            "img":"",
-            "genre":"game"
+            "title":"Golf Story",
+            "img":""
         },
         {
             "year":2018,
             "system":"Switch",
             "publisher":"",
             "developer":"",
-            "art":"Into the Breach",
-            "img":"",
-            "genre":"game"
+            "title":"Into the Breach",
+            "img":""
         },
         {
             "year":2018,
             "system":"PC",
             "publisher":"",
             "developer":"",
-            "art":"Haunted Island Frog Detective",
-            "img":"",
-            "genre":"game"
+            "title":"Haunted Island Frog Detective",
+            "img":""
         },
         {
             "year":2019,
             "system":"Switch",
             "publisher":"",
             "developer":"",
-            "art":"Astral Chain",
-            "img":"",
-            "genre":"game"
+            "title":"Astral Chain",
+            "img":""
         },
         {
             "year":2019,
             "system":"PS4",
             "publisher":"",
             "developer":"",
-            "art":"Kingdom Hearts 3",
-            "img":"",
-            "genre":"game"
+            "title":"Kingdom Hearts 3",
+            "img":""
         },
         {
             "year":2019,
             "system":"Switch",
             "publisher":"",
             "developer":"",
-            "art":"Dragon Quest XI S",
+            "title":"Dragon Quest XI S",
+            "img":""
+        }
+    ],
+    "text":[
+        {
+            "year":1949,
+            "author":"1984",
+            "title":"",
             "img":"",
-            "genre":"game"
+            "genre":""
+        },
+        {
+            "year":2017,
+            "author":"",
+            "title":"Blood, Sweat, Pixels",
+            "img":"",
+            "genre":""
         }
     ],
     "video":[
-        {
-            "year":2007,
-            "genre":"YouTube",
-            "img":"chrontendo.jpg",
-            "art":"Chrontendo",
-            "exOne":"ongoing",
-            "exOneLink":"https://www.youtube.com/playlist?list=PLRXRxTxAgO0exLF2bTgcHCzJ-kIaVn4By",
-            "exTwo":"",
-            "exTwoLink":""
-        },
-        {
-            "year":2012,
-            "genre":"YouTube",
-            "img":"",
-            "art":"ThorHighHeels",
-            "exOne":"Weird Japan Only PS1 Games",
-            "exOneLink":"",
-            "exTwo":"PC-98 games looked really REALLY cool",
-            "exTwoLink":""
-        },
-        {
-            "year":2016,
-            "genre":"YouTube",
-            "img":"",
-            "art":"vewn",
-            "exOne":"cat city",
-            "exOneLink":"",
-            "exTwo":"dead end",
-            "exTwoLink":""
-        },
-        {
-            "year":2017,
-            "genre":"YouTube",
-            "img":"",
-            "art":"Tim Rogers on Kotaku",
-            "exOne":"Dragon Quest XI: The Kotaku Review",
-            "exOneLink":"",
-            "exTwo":"1994: The Kotaku Review",
-            "exTwoLink":""
-        },
-        {
-            "year":2017,
-            "genre":"YouTube",
-            "img":"",
-            "art":"Big Joel",
-            "exOne":"Sinistar",
-            "exOneLink":"",
-            "exTwo":"The Nonsense Politics of PragerU",
-            "exTwoLink":""
-        },
         {
             "year":1960,
             "genre":"Film",
             "img":"",
             "art":"The Apartment",
             "artist":"Billy Wilder"
+<<<<<<< HEAD
         },
         {
             "year":2014,
@@ -661,6 +586,8 @@
             "art":"Hawkeye",
             "img":"",
             "artist":"Matt Fraction"
+=======
+>>>>>>> parent of d91f755... rewriting layout of menus
         }
     ]
 }

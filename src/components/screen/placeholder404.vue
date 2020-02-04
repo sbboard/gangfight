@@ -25,17 +25,12 @@
             <div id="gallery">
                 <div id="boxRipple"></div>
                 <div id="innerBox">
-                    <ul v-if="selected==false">
-                        <li v-for="(items,id) in sortByYear()" :key="`${id}`" @click="changeSelected(items.genre,items.years)">
-                            Drak's Top {{items.genre}}s 
-                            <template v-if="items.years.length > 1">
-                                {{items.years[items.years.length-1]}} - 
-                            </template>
-                            {{items.years[0]}}
+                    <ul v-if="selected==''">
+                        <li v-for="(items,id) in sortByYear(cat)" :key="`${id}`" @click="changeSelected(items)">
+                            {{items.name}}
                         </li>
                     </ul>
                     <div id="mediaDisplay" v-else>
-                        <!--
                         <h1>{{selected.name}}</h1>
                         <h2>{{selected.creator}}</h2>
                         <h3>{{selected.year}}</h3>
@@ -44,13 +39,6 @@
                             <a :href="selected.url">Link</a>
                         </template>
                         <p v-html="selected.desc"></p>
-                        -->
-                        <div v-for="(stuff,index) in mediaGallery[cat]" :key="`${index}`">
-                            <template v-if="mediaGallery[cat][index].genre == selectedGenre && selectedYears.includes(mediaGallery[cat][index].year)">
-                                {{mediaGallery[cat][index].art}}
-                                {{mediaGallery[cat][index].year}}
-                            </template>
-                        </div>
                     </div>
                 </div>
                 <div id="topRow"> 
@@ -61,9 +49,8 @@
                 </div>
                 <div id="iconsRow">
                     <img @click="changeCat('video')" src="/assets/global/404/vhs.png">
-                    <img @click="changeCat('audio')" src="/assets/global/404/audioSec.png">
-                    <img @click="changeCat('games')" src="/assets/global/404/gbb.png">
-                    <img @click="changeCat('books')" src="/assets/global/404/gbb.png">
+                    <img @click="changeCat('music')" src="/assets/global/404/audioSec.png">
+                    <img @click="changeCat('game')" src="/assets/global/404/gbb.png">
                     <img @click="changeCat('')" src="/assets/global/404/misc.png">
                 </div>
             </div>
@@ -76,7 +63,7 @@
 </template>
 
 <script>
-import media from '../../media.json'
+import media from '../../mediaRec.json'
 
 export default {
     name: 'DraculaCultureClub',
@@ -84,9 +71,8 @@ export default {
         return{
             randoNum: 0,
             hour: 0,
-            mediaGallery: media,
-            selectedYears: [],
-            selectedGenre: "",
+            mediaGallery: media.media,
+            selected: "",
             cat: "",
             urlString: this.$route.params.string,
             selected: false
@@ -104,92 +90,21 @@ export default {
         },
     },
     methods:{
-        sortByYear(){
-            let unsortedArray = this.mediaGallery[this.cat]
-            let sortedObj = []
-            let compressedArray = []
-            if(this.cat == ""){
-                unsortedArray = this.mediaGallery.audio.concat(this.mediaGallery.games,this.mediaGallery.video,this.mediaGallery.books)
-            }
-            for(let i=0; i<unsortedArray.length;i++){
-                let unfound = true
-                for(let x=0;x<sortedObj.length;x++){
-                    if(sortedObj[x].year == unsortedArray[i].year && sortedObj[x].genre == unsortedArray[i].genre){
-                        sortedObj[x].amt += 1
-                        unfound = false
-                    }
-                }
-                if(unfound == true){
-                    sortedObj.push(
-                        {
-                            "year":unsortedArray[i].year,
-                            "genre":unsortedArray[i].genre,
-                            "amt":1
-                        }
-                    )
+        sortByYear(category){
+            let newGall = []
+            for(let i=0;i<this.mediaGallery.length;i++){
+                if(this.mediaGallery[i].category.includes(category)){
+                    newGall.push(this.mediaGallery[i])
                 }
             }
-            sortedObj.sort(function(a,b){
+            newGall.sort(function(a,b){
                 return b.year - a.year;
             })
-            sortedObj.sort(function(a, b){
-                if(a.genre < b.genre) { return -1; }
-                if(a.genre > b.genre) { return 1; }
-                return 0;
-            })
-
-            //compressed years with only 1 art
-            let tempOnes = []
-            let currentGenre = ""
-            for(let i=0;i<sortedObj.length;i++){
-                if(currentGenre == ""){
-                    currentGenre = sortedObj[i].genre
-                }
-                if(sortedObj[i].amt < 2){
-                    if(currentGenre == sortedObj[i].genre){
-                        tempOnes.push(sortedObj[i].year)
-                    }
-                    else{
-                        if(tempOnes.length > 0){
-                            compressedArray.push({
-                                "years":tempOnes,
-                                "genre":currentGenre
-                            })
-                        }
-                        tempOnes = []
-                        tempOnes.push(sortedObj[i].year)
-                        currentGenre = sortedObj[i].genre
-                    }
-                }
-                else{
-                    if(tempOnes.length > 0){
-                        compressedArray.push({
-                            "years":tempOnes,
-                            "genre":currentGenre
-                        })
-                        tempOnes = []
-                    }
-                    compressedArray.push({
-                        "years":[sortedObj[i].year],
-                        "genre":sortedObj[i].genre
-                    })
-                }
-            }
-            if(tempOnes.length > 0){
-                        compressedArray.push({
-                            "years":tempOnes,
-                            "genre":currentGenre
-                        })
-            }
-            compressedArray.sort(function(a,b){
-                return b.years[0] - a.years[0];
-            })
-            return compressedArray
-
+            return newGall
         },
         changeCat(category){
             this.cat = category
-            this.selected = false
+            this.selected = ""
         },
         changeSelected(genre,year){
             if(this.cat == ""){
