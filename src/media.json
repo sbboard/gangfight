@@ -3,7 +3,7 @@
         {
             "year":2012,
             "category":"music",
-            "pic":"",
+            "pic":"red.jpg",
             "url":"https://open.spotify.com/album/1EoDsNmgTLtmwe1BDAVxV5",
             "name":"Red",
             "creator":"Taylor Swift",
@@ -13,7 +13,7 @@
         {
             "year":2013,
             "category":"music",
-            "pic":"",
+            "pic":"sky.jpg",
             "url":"https://open.spotify.com/album/1bvCVYPVl445mO690M2dOr",
             "name":"Sky Ferreira",
             "creator":"Night Time My Time",
@@ -83,7 +83,7 @@
         {
             "year":2015,
             "category":"music",
-            "pic":"",
+            "pic":"everything.jpg",
             "url":"https://open.spotify.com/album/2UJUCicAuQjIqBOFIvPzIx",
             "name":"Get to Heaven",
             "creator":"Everything Everything",
@@ -95,7 +95,7 @@
         {
             "year":2015,
             "category":"music",
-            "pic":"",
+            "pic":"carly.jpg",
             "url":"https://open.spotify.com/album/6Zpf7RlSRIavYGwvsuj94C",
             "name":"Emotion",
             "creator":"Carly Rae Jepsen",
@@ -117,13 +117,11 @@
         {
             "year":2016,
             "category":"music",
-            "pic":"",
+            "pic":"teens.jpg",
             "url":"https://open.spotify.com/album/26DseQO366JfXwIP7dIgQj",
             "name":"Teens of Denial",
             "creator":"Car Seat Headrest",
-            "exOne":"Fill in the Blank",
             "exOneLink":"s_a1hPwXiWw",
-            "exTwo":"1937 State Park",
             "exTwoLink":"JjufcdihdpY"
         },
         {
@@ -185,7 +183,7 @@
         {
             "year":2018,
             "category":"music",
-            "pic":"",
+            "pic":"haru.jpg",
             "url":"https://open.spotify.com/playlist/5YbecC3WjRjcsJ6804hH49",
             "name":"harutosyura",
             "creator":"harunemuri",
@@ -195,7 +193,7 @@
         {
             "year":2018,
             "category":"music",
-            "pic":"",
+            "pic":"aces.jpg",
             "url":"https://open.spotify.com/album/2lsQE89fPFInz2J62K6waw",
             "name":"When My Heart Felt Volcanic",
             "creator":"The Aces",
@@ -207,7 +205,7 @@
         {
             "year":2019,
             "category":"music",
-            "pic":"",
+            "pic":"charli.jpg",
             "url":"https://open.spotify.com/album/386IqvSuljaZsMjwDGGdLj",
             "name":"Charli",
             "creator":"Charli XCX",
@@ -220,7 +218,7 @@
             "creator":"Nintendo",
             "category":"game",
             "name":"For Frog the Bell Tolls",
-            "pic":"",
+            "pic":"frog.jpg",
             "exOneLink":"FqkeOzfsZbs"
         },
         {
@@ -229,7 +227,7 @@
             "creator":"Hideo Kojima",
             "url":"https://en.wikipedia.org/wiki/Policenauts",
             "name":"Policenauts",
-            "pic":"",
+            "pic":"police.jpg",
             "exOneLink":"J8JqMawqDCc"
         },
         {
@@ -238,7 +236,7 @@
             "creator":"Nintendo",
             "url":"https://en.wikipedia.org/wiki/Mole_Mania",
             "name":"Mole Mania",
-            "pic":"",
+            "pic":"mole.jpg",
             "exOneLink":"8qvnX_OSdMo"
         },
         {
@@ -298,7 +296,7 @@
         {
             "year":2001,
             "category":"game",
-            "creator":"",
+            "creator":"Pax Softnica",
             "url":"",
             "name":"Hamtaro Ham-Hams Unite",
             "pic":"hamtaro.jpg",
@@ -307,8 +305,8 @@
         {
             "year":2001,
             "category":"game",
-            "creator":"",
-            "url":"",
+            "creator":"Intelligent Systems",
+            "url":"https://en.wikipedia.org/wiki/Paper_Mario",
             "name":"Paper Mario",
             "pic":"",
             "exOneLink":"6wQzSVIwYZI"
@@ -316,8 +314,8 @@
         {
             "year":2001,
             "category":"game",
-            "creator":"",
-            "url":"",
+            "creator":"Sonic Team USA",
+            "url":"https://en.wikipedia.org/wiki/Sonic_Adventure_2",
             "name":"Sonic Adventure 2 Battle",
             "pic":"",
             "exOneLink":"EU4CbUoPBi4"
@@ -325,8 +323,8 @@
         {
             "year":2001,
             "category":"game",
-            "creator":"",
-            "url":"",
+            "creator":"Nintendo",
+            "url":"https://en.wikipedia.org/wiki/Wario_Land_4",
             "name":"Wario Land 4",
             "pic":"",
             "exOneLink":"K8yXPg4_aa0"
@@ -334,8 +332,8 @@
         {
             "year":2003,
             "category":"game",
-            "creator":"",
-            "url":"",
+            "creator":"Masahiro Sakurai",
+            "url":"https://en.wikipedia.org/wiki/Kirby_Air_Ride",
             "name":"Kirby Air Ride",
             "pic":"",
             "exOneLink":"Cg3faJPne74"
@@ -343,8 +341,8 @@
         {
             "year":2004,
             "category":"game",
-            "creator":"",
-            "url":"",
+            "creator":"Keita Takahashi",
+            "url":"https://en.wikipedia.org/wiki/Katamari_Damacy",
             "name":"Katamari Damacy",
             "pic":"",
             "exOneLink":"BAtuIRy2mL4"
@@ -352,8 +350,8 @@
         {
             "year":2004,
             "category":"game",
-            "creator":"",
-            "url":"",
+            "creator":"Goro Abe",
+            "url":"https://en.wikipedia.org/wiki/WarioWare:_Twisted!",
             "name":"WarioWare Twisted",
             "pic":"",
             "exOneLink":"iAUiW3knSrQ"
@@ -361,8 +359,8 @@
         {
             "year":2005,
             "category":"game",
-            "creator":"",
-            "url":"",
+            "creator":"skip Ltd.",
+            "url":"https://en.wikipedia.org/wiki/Chibi-Robo!_(video_game)",
             "name":"Chibi Robo",
             "pic":"chibiRobo.jpg",
             "exOneLink":"9ZekURiUQx0"
@@ -370,8 +368,8 @@
         {
             "year":2005,
             "category":"game",
-            "creator":"",
-            "url":"",
+            "creator":"Tetsuya Nomura",
+            "url":"https://en.wikipedia.org/wiki/Kingdom_Hearts_II",
             "name":"Kingdom Hearts 2",
             "pic":"",
             "exOneLink":"ZdSHGX3DPvE"
@@ -379,17 +377,17 @@
         {
             "year":2006,
             "category":"game",
-            "creator":"",
-            "url":"",
+            "creator":"Game Freak",
+            "url":"https://en.wikipedia.org/wiki/Drill_Dozer",
             "name":"Drill Dozer",
-            "pic":"",
+            "pic":"drill.jpg",
             "exOneLink":"8y7msNvQcR4"
         },
         {
             "year":2010,
             "category":"game",
-            "creator":"",
-            "url":"",
+            "creator":"Shu Takumi",
+            "url":"https://en.wikipedia.org/wiki/Ghost_Trick:_Phantom_Detective",
             "name":"Ghost Trick",
             "pic":"",
             "exOneLink":"YOSiyUIorPQ"
@@ -477,7 +475,7 @@
         {
             "year":1960,
             "category":"video",
-            "pic":"",
+            "pic":"apartment.jpg",
             "url":"https://en.wikipedia.org/wiki/The_Apartment",
             "name":"The Apartment",
             "creator":"Billy Wilder",
@@ -569,7 +567,7 @@
             "creator":"George Orwell",
             "url":"https://en.wikipedia.org/wiki/Nineteen_Eighty-Four",
             "name":"1984",
-            "pic":"",
+            "pic":"1984.jpg",
             "category":"book"
         },
         {
@@ -577,7 +575,7 @@
             "category":"book",
             "url":"https://www.marvel.com/comics/discover/1032/daredevil-born-again",
             "name":"Daredevil Born Again",
-            "pic":"",
+            "pic":"bornagain.jpg",
             "creator":"Frank Miller"
         },
         {
@@ -585,7 +583,7 @@
             "category":"book",
             "url":"https://www.marvel.com/comics/events/258/kravens_last_hunt",
             "name":"Spider-Man Kraven's Last Hunt",
-            "pic":"",
+            "pic":"kraven.jpg",
             "creator":"J. M. DeMatteis"
         },
         {
@@ -593,7 +591,7 @@
             "category":"book",
             "url":"https://www.viz.com/jojo-s-bizarre-adventure",
             "name":"JoJo's Bizarre Adventure: Diamond Is Unbreakable",
-            "pic":"",
+            "pic":"jojos.jpg",
             "creator":"Hirohiko Araki"
         },
         {
@@ -601,7 +599,7 @@
             "category":"book",
             "url":"https://www.viz.com/eyeshield-21",
             "name":"Eyeshield 21",
-            "pic":"",
+            "pic":"eyes.jpg",
             "creator":"Riichiro Inagaki"
         },
         {
@@ -609,7 +607,7 @@
             "category":"book",
             "url":"https://www.marvel.com/comics/series/12916/daredevil_2011_-_2014",
             "name":"Daredevil",
-            "pic":"",
+            "pic":"darewaid.jpg",
             "creator":"Mark Waid"
         },
         {
@@ -617,7 +615,7 @@
             "category":"book",
             "url":"https://www.penguinrandomhouse.com/series/FS6/fantasy-sports",
             "name":"Fantasy Sports",
-            "pic":"",
+            "pic":"fansports.jpg",
             "creator":"Sam Bosma"
         },
         {
@@ -625,7 +623,7 @@
             "category":"book",
             "url":"https://www.marvel.com/comics/series/16309/hawkeye_2012_-_2015",
             "name":"Hawkeye",
-            "pic":"",
+            "pic":"hawkeye.jpg",
             "creator":"Matt Fraction"
         }
     ]
