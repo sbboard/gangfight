@@ -464,7 +464,6 @@
             "img":"",
             "art":"The Apartment",
             "artist":"Billy Wilder"
-<<<<<<< HEAD
         },
         {
             "year":2014,
@@ -586,8 +585,6 @@
             "art":"Hawkeye",
             "img":"",
             "artist":"Matt Fraction"
-=======
->>>>>>> parent of d91f755... rewriting layout of menus
         }
     ]
 }
