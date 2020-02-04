@@ -25,7 +25,7 @@
             <div id="gallery">
                 <div id="boxRipple"></div>
                 <div id="innerBox">
-                    <ul v-if="selected==''">
+                    <ul v-if="selected==false">
                         <li v-for="(items,id) in sortByYear()" :key="`${id}`" @click="changeSelected(items.genre,items.years)">
                             Drak's Top {{items.genre}}s 
                             <template v-if="items.years.length > 1">
@@ -45,6 +45,12 @@
                         </template>
                         <p v-html="selected.desc"></p>
                         -->
+                        <div v-for="(stuff,index) in mediaGallery[cat]" :key="`${index}`">
+                            <template v-if="mediaGallery[cat][index].genre == selectedGenre && selectedYears.includes(mediaGallery[cat][index].year)">
+                                {{mediaGallery[cat][index].art}}
+                                {{mediaGallery[cat][index].year}}
+                            </template>
+                        </div>
                     </div>
                 </div>
                 <div id="topRow"> 
@@ -79,9 +85,11 @@ export default {
             randoNum: 0,
             hour: 0,
             mediaGallery: media,
-            selected: [],
+            selectedYears: [],
+            selectedGenre: "",
             cat: "",
-            urlString: this.$route.params.string
+            urlString: this.$route.params.string,
+            selected: false
         }
     },
     created(){
@@ -181,10 +189,26 @@ export default {
         },
         changeCat(category){
             this.cat = category
-            this.selected = []
+            this.selected = false
         },
-        changeSelected(select){
-            this.selected = select
+        changeSelected(genre,year){
+            if(this.cat == ""){
+                if(genre == "Podcast" || genre == "Album"){
+                    this.cat = "audio"
+                }
+                else if(genre == "game"){
+                    this.cat = "games"
+                }
+                else if(genre == "YouTube" || genre == "Film" || genre == "Show"){
+                    this.cat = "videos"
+                }
+                else if(genre == "Book" || genre == "Comic"){
+                    this.cat = "books"
+                }
+            }
+            this.selectedGenre = genre
+            this.selectedYears = year
+            this.selected = true
         }
     },
     mounted(){
