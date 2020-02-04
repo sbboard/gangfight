@@ -35,10 +35,13 @@
                         <h2>{{selected.creator}}</h2>
                         <h3>{{selected.year}}</h3>
                         <img class="mediaPic" :src="'/assets/global/404/media/' + selected.pic"/>
-                        <template v-if="selected.hasOwnProperty('url')">
-                            <a :href="selected.url">Link</a>
+                        <a :href="selected.url">Link</a>
+                        <template v-if="selected.hasOwnProperty('exOneLink') && selected.exOneLink != ''">
+                            <iframe :src="'https://www.youtube.com/embed/'+selected.exOneLink" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe>
                         </template>
-                        <p v-html="selected.desc"></p>
+                        <template v-if="selected.hasOwnProperty('exTwoLink') && selected.exTwoLink != ''">
+                            <iframe :src="'https://www.youtube.com/embed/'+selected.exTwoLink" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe>
+                        </template>
                     </div>
                 </div>
                 <div id="topRow"> 
