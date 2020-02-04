@@ -14,13 +14,13 @@
             "year":2013,
             "category":"music",
             "pic":"",
-            "url":"",
+            "url":"https://open.spotify.com/album/1bvCVYPVl445mO690M2dOr",
             "name":"Sky Ferreira",
             "creator":"Night Time My Time",
             "exOne":"Boys",
-            "exOneLink":"",
+            "exOneLink":"B1gDuaY8-V4",
             "exTwo":"I Blame Myself",
-            "exTwoLink":""
+            "exTwoLink":"pWo7SC-tG4U"
         },
         {
             "year":2014,
@@ -96,61 +96,59 @@
             "year":2015,
             "category":"music",
             "pic":"",
-            "url":"",
-            "name":"EMOTION",
+            "url":"https://open.spotify.com/album/6Zpf7RlSRIavYGwvsuj94C",
+            "name":"Emotion",
             "creator":"Carly Rae Jepsen",
             "exOne":"Run Away With Me",
-            "exOneLink":"",
+            "exOneLink":"TeccAtqd5K8",
             "exTwo":"Gimmie Love",
-            "exTwoLink":""
+            "exTwoLink":"OKsAnpPg15c"
         },
         {
             "year":2015,
             "category":"music",
             "pic":"pimp.png",
-            "url":"",
+            "url":"https://open.spotify.com/album/7ycBtnsMtyVbbwTfJwRjSP",
             "name":"To Pimp a Butterfly",
             "creator":"Kendrick Lamar",
-            "exOne":"entiremusic",
-            "exOneLink":"",
-            "exTwo":"",
-            "exTwoLink":""
+            "exOneLink":"ZTYgq4EoRo",
+            "exTwoLink":"hRK7PVJFbS8"
         },
         {
             "year":2016,
             "category":"music",
             "pic":"",
-            "url":"",
+            "url":"https://open.spotify.com/album/26DseQO366JfXwIP7dIgQj",
             "name":"Teens of Denial",
             "creator":"Car Seat Headrest",
             "exOne":"Fill in the Blank",
-            "exOneLink":"",
+            "exOneLink":"s_a1hPwXiWw",
             "exTwo":"1937 State Park",
-            "exTwoLink":""
+            "exTwoLink":"JjufcdihdpY"
         },
         {
             "year":2016,
             "category":"music",
             "pic":"",
-            "url":"",
+            "url":"https://open.spotify.com/album/5rKFS59ntz44KWVXPIlc3N",
             "name":"City Club",
             "creator":"The Growlers",
             "exOne":"I'll Be Around",
-            "exOneLink":"",
+            "exOneLink":"p50R8rkzkhk",
             "exTwo":"Too Many Times",
-            "exTwoLink":""
+            "exTwoLink":"TBbHIggWXF8"
         },
         {
             "year":2017,
             "category":"music",
             "pic":"",
-            "url":"",
+            "url":"https://open.spotify.com/album/76290XdXVF9rPzGdNRWdCh",
             "name":"Ctrl",
             "creator":"SZA",
             "exOne":"Drew Barrymore",
-            "exOneLink":"",
+            "exOneLink":"dp45V_M4Akw",
             "exTwo":"Go Gina",
-            "exTwoLink":""
+            "exTwoLink":"UWktRW128UA"
         },
         {
             "year":2017,
@@ -188,13 +186,11 @@
             "year":2018,
             "category":"music",
             "pic":"",
-            "url":"",
-            "name":"Harutosyura",
-            "creator":"Harunemuri",
-            "exOne":"Underground",
-            "exOneLink":"",
-            "exTwo":"Sekaiwotorikaeshiteokure",
-            "exTwoLink":""
+            "url":"https://open.spotify.com/playlist/5YbecC3WjRjcsJ6804hH49",
+            "name":"harutosyura",
+            "creator":"harunemuri",
+            "exOneLink":"avHQoD-dg_w",
+            "exTwoLink":"XY9QHQlfNQ8"
         },
         {
             "year":2018,
@@ -212,227 +208,155 @@
             "year":2019,
             "category":"music",
             "pic":"",
-            "url":"",
+            "url":"https://open.spotify.com/album/386IqvSuljaZsMjwDGGdLj",
             "name":"Charli",
             "creator":"Charli XCX",
-            "exOne":"Next Level Charli",
-            "exOneLink":"",
-            "exTwo":"Gone",
-            "exTwoLink":""
+            "exOneLink":"8mhfE_vzwjo",
+            "exTwoLink":"chSZCtLrgz8"
         },
         {
             "year":1992,
             "url":"",
+            "creator":"",
             "category":"game",
             "name":"For Frog the Bell Tolls",
             "pic":"",
-            "exOne":"",
-            "exOneLink":"",
-            "exTwo":"",
-            "exTwoLink":""
+            "exOneLink":""
         },
         {
             "year":1994,
-            "system":"PC-9801",
             "category":"game",
-            "publisher":"",
             "creator":"",
             "url":"",
-"name":"Policenauts",
+            "name":"Policenauts",
             "pic":"",
-            "exOne":"",
-            "exOneLink":"",
-            "exTwo":"",
-            "exTwoLink":""
+            "exOneLink":""
         },
         {
             "year":1996,
-            "system":"Gameboy",
             "category":"game",
-            "publisher":"",
             "creator":"",
             "url":"",
-"name":"Mole Mania",
+            "name":"Mole Mania",
             "pic":"",
-            "exOne":"",
-            "exOneLink":"",
-            "exTwo":"",
-            "exTwoLink":""
+            "exOneLink":""
         },
         {
             "year":1997,
-            "system":"PSX",
             "category":"game",
-            "publisher":"",
             "creator":"",
             "url":"",
-"name":"Castlevania: Symphony of the Night",
+            "name":"Castlevania: Symphony of the Night",
             "pic":"",
-            "exOne":"",
-            "exOneLink":"",
-            "exTwo":"",
-            "exTwoLink":""
+            "exOneLink":""
         },
         {
             "year":1998,
             "category":"game",
-            "publisher":"",
             "creator":"",
             "url":"",
-"name":"Banjo Kazooie",
+            "name":"Banjo Kazooie",
             "pic":"",
-            "exOne":"",
-            "exOneLink":"",
-            "exTwo":"",
-            "exTwoLink":""
+            "exOneLink":""
         },
         {
             "year":1999,
-            "system":"Nintendo 64",
-            "publisher":"",
             "category":"game",
             "creator":"",
             "url":"",
-"name":"Pokemon Snap",
+            "name":"Pokemon Snap",
             "pic":"",
-            "exOne":"",
-            "exOneLink":"",
-            "exTwo":"",
-            "exTwoLink":""
+            "exOneLink":""
         },
         {
             "year":1999,
-            "system":"Neo Geo Pocket Color",
-            "publisher":"",
             "category":"game",
             "creator":"",
             "url":"",
-"name":"SNK vs Capcom Card Fighters Clash",
+            "name":"SNK vs Capcom Card Fighters Clash",
             "pic":"",
-            "exOne":"",
-            "exOneLink":"",
-            "exTwo":"",
-            "exTwoLink":""
+            "exOneLink":""
         },
         {
             "year":1999,
-            "system":"PSX",
-            "publisher":"",
             "creator":"",
             "category":"game",
             "url":"",
-"name":"Ape Escape",
+            "name":"Ape Escape",
             "pic":"",
-            "exOne":"",
-            "exOneLink":"",
-            "exTwo":"",
-            "exTwoLink":""
+            "exOneLink":""
         },
         {
             "year":2000,
-            "creator":"",
             "category":"game",
-            "url":"",
-"name":"Sin & Punishment",
-"pic":"sinPunish.jpg",
-            "exOne":"",
-            "exOneLink":"",
-            "exTwo":"",
-            "exTwoLink":""
-        },
-        {
-            "year":2001,
             "creator":"",
-            "category":"game",
             "url":"",
-"name":"Hamtaro Ham-Hams Unite",
-"pic":"hamtaro.jpg",
-            "exOne":"",
-            "exOneLink":"",
-            "exTwo":"",
-            "exTwoLink":""
+            "name":"Sin & Punishment",
+            "pic":"sinPunish.jpg",
+            "exOneLink":""
         },
         {
             "year":2001,
             "category":"game",
             "creator":"",
             "url":"",
-"name":"Paper Mario",
+            "name":"Hamtaro Ham-Hams Unite",
+            "pic":"hamtaro.jpg",
+            "exOneLink":""
+        },
+        {
+            "year":2001,
+            "category":"game",
+            "creator":"",
+            "url":"",
+            "name":"Paper Mario",
             "pic":"",
-            "exOne":"",
-            "exOneLink":"",
-            "exTwo":"",
-            "exTwoLink":""
+            "exOneLink":""
         },
         {
             "year":2001,
-            "system":"Gamecube",
-            "publisher":"",
             "category":"game",
             "creator":"",
             "url":"",
-"name":"Sonic Adventure 2 Battle",
+            "name":"Sonic Adventure 2 Battle",
             "pic":"",
-            "exOne":"",
-            "exOneLink":"",
-            "exTwo":"",
-            "exTwoLink":""
+            "exOneLink":""
         },
         {
             "year":2001,
-            "system":"GBA",
-            "publisher":"",
             "category":"game",
             "creator":"",
             "url":"",
-"name":"Wario Land 4",
+            "name":"Wario Land 4",
             "pic":"",
-            "exOne":"",
-            "exOneLink":"",
-            "exTwo":"",
-            "exTwoLink":""
+            "exOneLink":""
         },
         {
             "year":2003,
-            "system":"Gamecube",
-            "publisher":"",
             "category":"game",
             "creator":"",
             "url":"",
-"name":"Kirby Air Ride",
+            "name":"Kirby Air Ride",
             "pic":"",
-            "exOne":"",
-            "exOneLink":"",
-            "exTwo":"",
-            "exTwoLink":""
+            "exOneLink":""
         },
         {
             "year":2004,
-            "system":"PS2",
-            "publisher":"",
             "category":"game",
             "creator":"",
             "url":"",
-"name":"Katamari Damacy",
+            "name":"Katamari Damacy",
             "pic":"",
-            "exOne":"",
-            "exOneLink":"",
-            "exTwo":"",
-            "exTwoLink":""
+            "exOneLink":""
         },
         {
             "year":2004,
-            "system":"GBA",
-            "publisher":"",
             "category":"game",
             "creator":"",
             "url":"",
             "name":"WarioWare Twisted",
             "pic":"",
-            "exOne":"",
-            "exOneLink":"",
-            "exTwo":"",
-            "exTwoLink":""
+            "exOneLink":""
         },
         {
             "year":2005,
@@ -441,24 +365,16 @@
             "url":"",
             "name":"Chibi Robo",
             "pic":"chibiRobo.jpg",
-            "exOne":"",
-            "exOneLink":"",
-            "exTwo":"",
-            "exTwoLink":""
+            "exOneLink":""
         },
         {
             "year":2005,
-            "system":"PS2",
-            "publisher":"",
             "category":"game",
             "creator":"",
             "url":"",
             "name":"Kingdom Hearts 2",
             "pic":"",
-            "exOne":"",
-            "exOneLink":"",
-            "exTwo":"",
-            "exTwoLink":""
+            "exOneLink":""
         },
         {
             "year":2006,
@@ -467,10 +383,7 @@
             "url":"",
             "name":"Drill Dozer",
             "pic":"",
-            "exOne":"",
-            "exOneLink":"",
-            "exTwo":"",
-            "exTwoLink":""
+            "exOneLink":""
         },
         {
             "year":2010,
@@ -695,10 +608,7 @@
             "url":"",
             "name":"The Wave",
             "creator":"",
-            "exOne":"",
-            "exOneLink":"",
-            "exTwo":"",
-            "exTwoLink":""
+            "exOneLink":""
         },
         {
             "year":1981,
@@ -707,10 +617,7 @@
             "url":"",
             "name":"Bladerunner",
             "creator":"",
-            "exOne":"",
-            "exOneLink":"",
-            "exTwo":"",
-            "exTwoLink":""
+            "exOneLink":""
         },
         {
             "year":1999,
@@ -719,10 +626,7 @@
             "url":"",
             "name":"Office Space",
             "creator":"",
-            "exOne":"",
-            "exOneLink":"",
-            "exTwo":"",
-            "exTwoLink":""
+            "exOneLink":""
         },
         {
             "year":2014,
@@ -731,10 +635,7 @@
             "url":"",
             "name":"Whiplash",
             "creator":"",
-            "exOne":"",
-            "exOneLink":"",
-            "exTwo":"",
-            "exTwoLink":""
+            "exOneLink":""
         },
         {
             "year":2017,
@@ -743,10 +644,7 @@
             "url":"",
             "name":"Bladerunner 2048",
             "creator":"",
-            "exOne":"",
-            "exOneLink":"",
-            "exTwo":"",
-            "exTwoLink":""
+            "exOneLink":""
         },
         {
             "year":1949,
