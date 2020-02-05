@@ -25,7 +25,7 @@
         {
             "year":2014,
             "category":"music",
-            "pic":"",
+            "pic":"foster.jpg",
             "url":"https://open.spotify.com/album/22cFcAQkydpTzeSKQZEKv0",
             "name":"Supermodel",
             "creator":"Foster the People",
@@ -37,7 +37,7 @@
         {
             "year":2016,
             "category":"video",
-            "pic":"",
+            "pic":"vewn.jpg",
             "url":"https://www.youtube.com/channel/UCd0zIZlbgvEifm_hd3FwlBQ",
             "name":"vewn",
             "creator":"",
@@ -47,7 +47,7 @@
         {
             "year":2014,
             "category":"music",
-            "pic":"",
+            "pic":"ariana.jpg",
             "url":"https://open.spotify.com/album/41zTgMSJC9mF6NyBkXXxZr",
             "name":"My Everything",
             "creator":"Ariana Grande",
@@ -59,7 +59,7 @@
         {
             "year":2015,
             "category":"music",
-            "pic":"",
+            "pic":"neon.jpg",
             "creator":"Neon Indian",
             "url":"https://open.spotify.com/album/5qA9yoz0W5eHKYOr45Rkc4",
             "name":"VEGA INTL. NIGHT SCHOOL",
@@ -71,7 +71,7 @@
         {
             "year":2015,
             "category":"music",
-            "pic":"",
+            "pic":"tame.jpg",
             "url":"https://open.spotify.com/album/79dL7FLiJFOO0EoehUHQBv",
             "name":"Tame Impala",
             "creator":"Currents",
@@ -127,7 +127,7 @@
         {
             "year":2016,
             "category":"music",
-            "pic":"",
+            "pic":"city.jpg",
             "url":"https://open.spotify.com/album/5rKFS59ntz44KWVXPIlc3N",
             "name":"City Club",
             "creator":"The Growlers",
@@ -139,7 +139,7 @@
         {
             "year":2017,
             "category":"music",
-            "pic":"",
+            "pic":"sza.jpg",
             "url":"https://open.spotify.com/album/76290XdXVF9rPzGdNRWdCh",
             "name":"Ctrl",
             "creator":"SZA",
@@ -151,7 +151,7 @@
         {
             "year":2017,
             "category":"music",
-            "pic":"",
+            "pic":"alvvays.jpg",
             "url":"https://open.spotify.com/album/7CCwkPweMxKq8yWkVerH6T",
             "name":"Antisocialites",
             "creator":"Alvvays",
@@ -245,7 +245,7 @@
             "creator":"Koji Igarashi",
             "url":"https://en.wikipedia.org/wiki/Castlevania:_Symphony_of_the_Night",
             "name":"Castlevania: Symphony of the Night",
-            "pic":"",
+            "pic":"castle.jpg",
             "exOneLink":"5HnhPNS0rqM"
         },
         {
@@ -254,7 +254,7 @@
             "creator":"Rare",
             "url":"https://en.wikipedia.org/wiki/Banjo-Kazooie",
             "name":"Banjo Kazooie",
-            "pic":"",
+            "pic":"banjo.jpg",
             "exOneLink":"J9feE6EqY8g"
         },
         {
@@ -263,7 +263,7 @@
             "creator":"HAL Laboratory",
             "url":"https://en.wikipedia.org/wiki/Pok%C3%A9mon_Snap",
             "name":"Pokemon Snap",
-            "pic":"",
+            "pic":"snap.jpg",
             "exOneLink":"dFHgf_SY5CY"
         },
         {
@@ -271,8 +271,8 @@
             "category":"game",
             "creator":"SNK",
             "url":"https://en.wikipedia.org/wiki/SNK_vs._Capcom:_Card_Fighters_Clash",
-            "name":"SNK vs Capcom Card Fighters Clash",
-            "pic":"",
+            "name":"SNK vs Capcom: Card Fighters Clash",
+            "pic":"snkv.jpg",
             "exOneLink":"_M-qJEZ_xzQ"
         },
         {
@@ -281,14 +281,14 @@
             "category":"game",
             "url":"https://en.wikipedia.org/wiki/Ape_Escape",
             "name":"Ape Escape",
-            "pic":"",
+            "pic":"ape.jpg",
             "exOneLink":"KZY8F0SiSFY"
         },
         {
             "year":2000,
             "category":"game",
             "creator":"Treasure",
-            "url":"",
+            "url":"https://en.wikipedia.org/wiki/Sin_and_Punishment",
             "name":"Sin & Punishment",
             "pic":"sinPunish.jpg",
             "exOneLink":"k8Ee-G9R_JI"
@@ -297,8 +297,8 @@
             "year":2001,
             "category":"game",
             "creator":"Pax Softnica",
-            "url":"",
-            "name":"Hamtaro Ham-Hams Unite",
+            "url":"https://en.wikipedia.org/wiki/Hamtaro:_Ham-Hams_Unite!",
+            "name":"Hamtaro Ham-Hams Unite!",
             "pic":"hamtaro.jpg",
             "exOneLink":"ARp-OLbcGO4"
         },
@@ -308,7 +308,7 @@
             "creator":"Intelligent Systems",
             "url":"https://en.wikipedia.org/wiki/Paper_Mario",
             "name":"Paper Mario",
-            "pic":"",
+            "pic":"pape.jpg",
             "exOneLink":"6wQzSVIwYZI"
         },
         {
@@ -317,7 +317,7 @@
             "creator":"Sonic Team USA",
             "url":"https://en.wikipedia.org/wiki/Sonic_Adventure_2",
             "name":"Sonic Adventure 2 Battle",
-            "pic":"",
+            "pic":"sonic.jpg",
             "exOneLink":"EU4CbUoPBi4"
         },
         {
@@ -326,7 +326,7 @@
             "creator":"Nintendo",
             "url":"https://en.wikipedia.org/wiki/Wario_Land_4",
             "name":"Wario Land 4",
-            "pic":"",
+            "pic":"warioland.jpg",
             "exOneLink":"K8yXPg4_aa0"
         },
         {
@@ -335,7 +335,7 @@
             "creator":"Masahiro Sakurai",
             "url":"https://en.wikipedia.org/wiki/Kirby_Air_Ride",
             "name":"Kirby Air Ride",
-            "pic":"",
+            "pic":"kirby.jpg",
             "exOneLink":"Cg3faJPne74"
         },
         {
@@ -344,7 +344,7 @@
             "creator":"Keita Takahashi",
             "url":"https://en.wikipedia.org/wiki/Katamari_Damacy",
             "name":"Katamari Damacy",
-            "pic":"",
+            "pic":"katamari.jpg",
             "exOneLink":"BAtuIRy2mL4"
         },
         {
@@ -353,7 +353,7 @@
             "creator":"Goro Abe",
             "url":"https://en.wikipedia.org/wiki/WarioWare:_Twisted!",
             "name":"WarioWare Twisted",
-            "pic":"",
+            "pic":"warioware.jpg",
             "exOneLink":"iAUiW3knSrQ"
         },
         {
@@ -371,7 +371,7 @@
             "creator":"Tetsuya Nomura",
             "url":"https://en.wikipedia.org/wiki/Kingdom_Hearts_II",
             "name":"Kingdom Hearts 2",
-            "pic":"",
+            "pic":"kh2.jpg",
             "exOneLink":"ZdSHGX3DPvE"
         },
         {
@@ -389,25 +389,25 @@
             "creator":"Shu Takumi",
             "url":"https://en.wikipedia.org/wiki/Ghost_Trick:_Phantom_Detective",
             "name":"Ghost Trick",
-            "pic":"",
+            "pic":"ghost.jpg",
             "exOneLink":"YOSiyUIorPQ"
         },
         {
             "year":2012,
-            "creator":"",
+            "creator":"Monolith Soft",
             "category":"game",
-            "url":"",
+            "url":"https://www.nintendo.com/games/detail/xenoblade-chronicles-definitive-edition-switch/",
             "name":"Xenoblade Chronicles",
-            "pic":"",
+            "pic":"xeno.jpg",
             "exOneLink":"0YEhVPZjgMk"
         },
         {
             "year":2016,
             "category":"game",
-            "creator":"",
-            "url":"",
+            "creator":"SUPERHOT Team",
+            "url":"https://superhotgame.com/",
             "name":"SUPERHOT",
-            "pic":"",
+            "pic":"superhot.jpg",
             "exOneLink":"vrS86l_CtAY"
         },
         {
@@ -416,7 +416,7 @@
             "category":"game",
             "url":"https://sidebargames.com/golfstory/",
             "name":"Golf Story",
-            "pic":"",
+            "pic":"golf.jpg",
             "exOneLink":"zufLtHu_m7o"
         },
         {
@@ -425,7 +425,7 @@
             "creator":"Subset Games",
             "url":"https://subsetgames.com/itb.html",
             "name":"Into the Breach",
-            "pic":"",
+            "pic":"breach.jpg",
             "exOneLink":"gMlD_vgM-9s"
         },
         {
@@ -434,7 +434,7 @@
             "creator":"Grace Bruxner",
             "url":"https://frogdetective.net/",
             "name":"Haunted Island Frog Detective",
-            "pic":"",
+            "pic":"haunted.jpg",
             "exOneLink":"V1SIWj4QO5A"
         },
         {
@@ -443,7 +443,7 @@
             "creator":"PlatinumGames",
             "url":"https://www.platinumgames.com/games/astral-chain",
             "name":"Astral Chain",
-            "pic":"",
+            "pic":"astral.jpg",
             "exOneLink":"tL6CldIRowc"
         },
         {
@@ -452,7 +452,7 @@
             "creator":"Tetsuya Nomura",
             "url":"https://www.kingdomhearts.com/3/us/home/",
             "name":"Kingdom Hearts 3",
-            "pic":"",
+            "pic":"kh3.jpg",
             "exOneLink":"lz1w_uW3lSE"
         },
         {
@@ -461,7 +461,7 @@
             "creator":"Square Enix",
             "url":"https://www.nintendo.com/games/detail/dragon-quest-xi-s-echoes-of-an-elusive-age-definitive-edition-switch/",
             "name":"Dragon Quest XI S",
-            "pic":"",
+            "pic":"dqxis.jpg",
             "exOneLink":"PgfOu4dEIDw"
         },
         {
@@ -469,7 +469,7 @@
             "creator":"Jason Schreier",
             "url":"https://kotaku.com/i-wrote-a-book-about-the-making-of-uncharted-4-star-wa-1792635169",
             "name":"Blood, Sweat, Pixels",
-            "pic":"",
+            "pic":"bsp.jpg",
             "category":"book"
         },
         {
@@ -484,7 +484,7 @@
         {
             "year":2012,
             "category":"video",
-            "pic":"",
+            "pic":"thor.jpg",
             "url":"https://www.youtube.com/channel/UCilouT5irlCNn2imcCDhhJQ",
             "name":"ThorHighHeels",
             "exOneLink":"TfeBPNZAoTE",
@@ -502,7 +502,7 @@
         {
             "year":2019,
             "category":"video",
-            "pic":"",
+            "pic":"gem.jpg",
             "url":"https://www.hbo.com/the-righteous-gemstones",
             "name":"Righteous Gemstones",
             "creator":"Danny McBride",
@@ -511,7 +511,7 @@
         {
             "year":2012,
             "category":"video",
-            "pic":"",
+            "pic":"veep.jpg",
             "url":"https://www.hbo.com/veep",
             "name":"Veep",
             "creator":"Armando Iannucci",
@@ -520,7 +520,7 @@
         {
             "year":1981,
             "category":"video",
-            "pic":"",
+            "pic":"wave.jpg",
             "url":"https://en.wikipedia.org/wiki/The_Wave_(1981_film)",
             "name":"The Wave",
             "creator":"Alexander Grasshoff",
@@ -529,7 +529,7 @@
         {
             "year":1981,
             "category":"video",
-            "pic":"",
+            "pic":"blade.jpg",
             "url":"https://en.wikipedia.org/wiki/Blade_Runner",
             "name":"Blade Runner",
             "creator":"Ridley Scott",
@@ -538,7 +538,7 @@
         {
             "year":1999,
             "category":"video",
-            "pic":"",
+            "pic":"office.jpg",
             "url":"https://en.wikipedia.org/wiki/Office_Space",
             "name":"Office Space",
             "creator":"Mike Judge",
@@ -547,7 +547,7 @@
         {
             "year":2014,
             "category":"video",
-            "pic":"",
+            "pic":"whip.jpg",
             "url":"https://en.wikipedia.org/wiki/Whiplash_(2014_film)",
             "name":"Whiplash",
             "creator":"Damien Chazelle",
@@ -556,7 +556,7 @@
         {
             "year":2017,
             "category":"video",
-            "pic":"",
+            "pic":"2049.jpg",
             "url":"https://en.wikipedia.org/wiki/Blade_Runner_2049",
             "name":"Bladerunner 2049",
             "creator":"Denis Villeneuve",

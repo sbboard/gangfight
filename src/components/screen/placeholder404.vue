@@ -56,7 +56,7 @@
                     <img @click="changeCat('video')" src="/assets/global/404/vhs.png">
                     <img @click="changeCat('music')" src="/assets/global/404/audioSec.png">
                     <img @click="changeCat('game')" src="/assets/global/404/gbb.png">
-                    <img @click="changeCat('book')" src="/assets/global/404/gbb.png">
+                    <img @click="changeCat('book')" src="/assets/global/404/paper.png">
                     <img @click="changeCat('')" src="/assets/global/404/misc.png">
                 </div>
             </div>
