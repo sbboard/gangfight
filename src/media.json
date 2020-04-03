@@ -222,6 +222,24 @@
             "exOneLink":"FqkeOzfsZbs"
         },
         {
+            "year":2001,
+            "url":"http://www.ace-attorney.com/trilogy/us/",
+            "creator":"Shu Takumi",
+            "category":"game",
+            "name":"Phoenix Wright Trilogy",
+            "pic":"phoenix.jpg",
+            "exOneLink":"QY7EDGd_B50"
+        },
+        {
+            "year":2015,
+            "url":"https://www.orithegame.com/blind-forest/",
+            "creator":"Thomas Mahler",
+            "category":"game",
+            "name":"Ori and the Blind Forest",
+            "pic":"ori.jpg",
+            "exOneLink":"cklw-Yu3moE"
+        },
+        {
             "year":1994,
             "category":"game",
             "creator":"Hideo Kojima",
@@ -498,6 +516,15 @@
             "name":"ThorHighHeels",
             "exOneLink":"TfeBPNZAoTE",
             "exTwoLink":"OVpX2y6KjwA"
+        },
+        {
+            "year":2013,
+            "category":"video",
+            "pic":"nitro.jpg",
+            "url":"https://www.youtube.com/channel/UC-3J5xNrAbTLbU1gN8mMpOA",
+            "name":"Nitro Rad",
+            "exOneLink":"ToNbMQ94B0g",
+            "exTwoLink":"zmoCo-hyDe8"
         },
         {
             "year":2014,
