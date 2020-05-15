@@ -9,6 +9,7 @@ import ProjArch from "./components/screen/projArch.vue"
 import screen from "./components/screen/screen.vue"
 //pages that exist outside of borders
 import ComicReader from "./components/outerbounds/comicReader.vue"
+import ArticleReader from "./components/outerbounds/articleReader.vue"
 //projects
 import sbboardExit from "./components/projects/sbboardExit.vue"
 import chameleon from "./components/projects/ChamMan.vue"
@@ -22,6 +23,10 @@ export default new Router({
     {
       path: "/comicReader/:id/:cat?",
       component: ComicReader
+    },
+    {
+      path: "/article/:id/",
+      component: ArticleReader
     },
     { path: '/', component: screen,
     children: [
