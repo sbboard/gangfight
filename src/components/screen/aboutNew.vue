@@ -46,7 +46,7 @@
 
         <!-- action stuff -->
         <div id="descBox">
-            <span>Gang Fight is a digital media brand based in the United States of America.
+            <span>Gang Fight is a digital media brand specializing in comic and web art. 
             We make content not because we seek any sort of financial gain, 
             but because mankind inherited a genetic craving to create from the force that birthed it.</span>
             <span>In our quest to quench this thirst we hope to create content that feels authentic and unique. 
