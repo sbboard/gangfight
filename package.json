@@ -10,7 +10,8 @@
   "dependencies": {
     "axios": "^0.18.1",
     "draggable-vue-directive": "^2.1.0",
-    "node-sass": "^4.13.1",
+    "gsap": "^3.3.1",
+    "node-sass": "^4.14.1",
     "sass-loader": "^7.3.1",
     "vue": "^2.6.11",
     "vue-3d-model": "^1.2.2",

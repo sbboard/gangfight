@@ -22,6 +22,17 @@
                 </a>
             </div>
         </div>
+            <a id="newsTicker" :href='newsTicker.url'>
+                <b>ONGOING:</b>
+                <div id="newsWindow">
+                    <div id="addedText">
+                        <span ref="oneStrip">{{newsTicker.headline}}//</span>
+                        <span 
+                        v-for="index in toFill" 
+                        :key="index">{{newsTicker.headline}}//</span>
+                    </div>
+                </div>
+            </a>
                 <!-- end -->
             </div>
         </div>
@@ -33,6 +44,8 @@
 </template>
 
 <script>
+import { gsap } from "gsap";
+
 export default {
     data(){
         return{
@@ -42,10 +55,18 @@ export default {
                         {"_id":"0","comicsArray":[],"title":"UH...","img":"tvload.jpg","url":"#","newDate":"01:01:0000","date":"2019-01-29T17:43:10.000Z","__v":0},
                         {"_id":"0","comicsArray":[],"title":"OH NO","img":"tvload.jpg","url":"#","newDate":"01:01:0000","date":"2019-01-29T17:43:10.000Z","__v":0},
                         ],
+            newsTicker: {"headline":"STRIKEOUT EVERY WEDNESDAY ON TWITTER","url":"http://www.google.com/","expiration":6/7/20},
+            toFill: 0,
+            buffer: 0
         }
     },
     mounted () {
         this.theFour = this.$store.getters.getArchive.slice(0, 4)
+
+        this.toFill = Math.floor((94 / this.newsTicker.headline.length))
+        let that = this
+        setInterval(
+            function(){that.buffer = (that.$refs.oneStrip.getBoundingClientRect().width) * -1},1000)
     },
     methods: {
         formatDate(isoDate){
@@ -82,6 +103,11 @@ export default {
             for(let i=0;i<this.theFour.length;i++){
                 this.theFour[i].newDate = this.formatDate(this.theFour[i].date)
             }
+        },
+        buffer(){
+            let that = this
+            gsap.killTweensOf("#addedText");
+            gsap.fromTo("#addedText", {x: 0}, {x:that.buffer, duration: 5, repeat:-1,ease:'none'});
         }
     }
 }
@@ -93,6 +119,38 @@ export default {
 @import "../../css/gangFonts.sass"
 @import "../../css/fontawesome/css/all.css"
 
+#newsTicker
+    border-top: 3px double $neonGreen
+    border-bottom: 3px double $neonGreen
+    line-height: 1
+    height: 1em
+    background-color: rgba(0,0,0,.5)
+    color: $neonGreen
+    padding: .25em .5em
+    width: 94%
+    display: flex
+    text-decoration: none
+    align-items: center
+    justify-content: normal
+    position: relative
+    font-size: 1.25em
+    #newsWindow
+        position: relative
+        width: calc(100% - 6em)
+        overflow: hidden
+        height: 1em
+    b
+        width: 6em
+        font-weight: 800
+#addedText
+    display: block
+    width: 100em
+    left: 0
+    position: absolute
+    text-align: left
+    display: block
+    span
+        display: inline-block
 #homeBlock
     display: flex
     //flex-direction: column
