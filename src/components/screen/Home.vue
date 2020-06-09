@@ -22,7 +22,7 @@
                 </a>
             </div>
         </div>
-            <a id="newsTicker" :href='newsTicker.url'>
+            <a v-if="currentNews" id="newsTicker" :href='newsTicker.url'>
                 <b>ONGOING:</b>
                 <div id="newsWindow">
                     <div id="addedText">
@@ -55,20 +55,35 @@ export default {
                         {"_id":"0","comicsArray":[],"title":"UH...","img":"tvload.jpg","url":"#","newDate":"01:01:0000","date":"2019-01-29T17:43:10.000Z","__v":0},
                         {"_id":"0","comicsArray":[],"title":"OH NO","img":"tvload.jpg","url":"#","newDate":"01:01:0000","date":"2019-01-29T17:43:10.000Z","__v":0},
                         ],
-            newsTicker: {"headline":"STRIKEOUT EVERY WEDNESDAY ON TWITTER","url":"http://www.google.com/","expiration":6/7/20},
+            newsTicker: {"headline":"STRIKEOUT EVERY WEDNESDAY ON TWITTER","url":"http://www.google.com/","expiration":"2020-09-29T17:43:10.000Z"},
             toFill: 0,
-            buffer: 0
+            buffer: undefined,
+            currentNews: false
         }
     },
     mounted () {
         this.theFour = this.$store.getters.getArchive.slice(0, 4)
-
         this.toFill = Math.floor((94 / this.newsTicker.headline.length))
-        let that = this
-        setInterval(
-            function(){that.buffer = (that.$refs.oneStrip.getBoundingClientRect().width) * -1},1000)
+        if(Date.parse(this.newsTicker.expiration)>=Date.now()){
+            this.currentNews = true
+            window.addEventListener("load", this.getBuffer());
+            window.addEventListener("resize", this.getBuffer);
+        }
     },
     methods: {
+        getBuffer(){
+            let that = this
+            let tempBuff
+            let bufferInterval = setInterval(function(){
+                tempBuff = (that.$refs.oneStrip.getBoundingClientRect().width) * -1
+                if(that.buffer != tempBuff){
+                    that.buffer = tempBuff
+                }
+                else{
+                    clearInterval(bufferInterval)
+                }
+                },100)
+        },
         formatDate(isoDate){
             let d = new Date(isoDate)
             let month = d.getMonth()+1 < 10 ? `0${d.getMonth()+1}` : d.getMonth()+1
@@ -120,11 +135,12 @@ export default {
 @import "../../css/fontawesome/css/all.css"
 
 #newsTicker
+    margin-top: .5em
     border-top: 3px double $neonGreen
     border-bottom: 3px double $neonGreen
     line-height: 1
     height: 1em
-    background-color: rgba(0,0,0,.5)
+    background-color: rgba(0,0,0,.75)
     color: $neonGreen
     padding: .25em .5em
     width: 94%
