@@ -45,6 +45,7 @@
 
 <script>
 import { gsap } from "gsap";
+import axios from 'axios'
 
 export default {
     data(){
@@ -55,20 +56,27 @@ export default {
                         {"_id":"0","comicsArray":[],"title":"UH...","img":"tvload.jpg","url":"#","newDate":"01:01:0000","date":"2019-01-29T17:43:10.000Z","__v":0},
                         {"_id":"0","comicsArray":[],"title":"OH NO","img":"tvload.jpg","url":"#","newDate":"01:01:0000","date":"2019-01-29T17:43:10.000Z","__v":0},
                         ],
-            newsTicker: {"headline":"STRIKEOUT EVERY WEDNESDAY ON TWITTER","url":"http://www.google.com/","expiration":"2020-09-29T17:43:10.000Z"},
+            newsTicker: {},
             toFill: 0,
             buffer: undefined,
             currentNews: false
         }
     },
     mounted () {
+        let that = this
         this.theFour = this.$store.getters.getArchive.slice(0, 4)
-        this.toFill = Math.floor((94 / this.newsTicker.headline.length))
-        if(Date.parse(this.newsTicker.expiration)>=Date.now()){
-            this.currentNews = true
-            window.addEventListener("load", this.getBuffer());
-            window.addEventListener("resize", this.getBuffer);
-        }
+
+        axios
+        .get(process.env.VUE_APP_NEWS)
+        .then(response => (that.newsTicker = (response.data)))
+        .finally(function(){
+         that.toFill = Math.floor((94 / that.newsTicker.headline.length))
+         if(Date.parse(that.newsTicker.expiration)>=Date.now()){
+             that.currentNews = true
+             window.addEventListener("load", that.getBuffer());
+             window.addEventListener("resize", that.getBuffer);
+         }
+        })
     },
     methods: {
         getBuffer(){
