@@ -1,16 +1,6 @@
 {
     "media":[
         {
-            "year":2012,
-            "category":"music",
-            "pic":"red.jpg",
-            "url":"https://open.spotify.com/album/1EoDsNmgTLtmwe1BDAVxV5",
-            "name":"Red",
-            "creator":"Taylor Swift",
-            "exOneLink":"gBUrA1j2dzA",
-            "exTwoLink":"7cOqgarjuRc"
-        },
-        {
             "year":2013,
             "category":"music",
             "pic":"sky.jpg",
@@ -55,18 +45,6 @@
             "creator":"",
             "exOneLink":"NWeyUpqnKuk",
             "exTwoLink":"RUaOpH31IRU"
-        },
-        {
-            "year":2014,
-            "category":"music",
-            "pic":"ariana.jpg",
-            "url":"https://open.spotify.com/album/41zTgMSJC9mF6NyBkXXxZr",
-            "name":"My Everything",
-            "creator":"Ariana Grande",
-            "exOne":"Problem",
-            "exOneLink":"iS1g8G_njx8",
-            "exTwo":"Break Your Heart Right Back",
-            "exTwoLink":"80Q30ebnXpU"
         },
         {
             "year":2015,
@@ -151,18 +129,6 @@
         {
             "year":2017,
             "category":"music",
-            "pic":"sza.jpg",
-            "url":"https://open.spotify.com/album/76290XdXVF9rPzGdNRWdCh",
-            "name":"Ctrl",
-            "creator":"SZA",
-            "exOne":"Drew Barrymore",
-            "exOneLink":"dp45V_M4Akw",
-            "exTwo":"Go Gina",
-            "exTwoLink":"UWktRW128UA"
-        },
-        {
-            "year":2017,
-            "category":"music",
             "pic":"alvvays.jpg",
             "url":"https://open.spotify.com/album/7CCwkPweMxKq8yWkVerH6T",
             "name":"Antisocialites",
@@ -241,15 +207,6 @@
             "name":"Jet Set Radio",
             "pic":"jsr.jpg",
             "exOneLink":"8pbnKvlbOhc"
-        },
-        {
-            "year":2001,
-            "url":"http://www.ace-attorney.com/trilogy/us/",
-            "creator":"Shu Takumi",
-            "category":"game",
-            "name":"Phoenix Wright Trilogy",
-            "pic":"phoenix.jpg",
-            "exOneLink":"QY7EDGd_B50"
         },
         {
             "year":2015,
@@ -331,15 +288,6 @@
             "name":"Sin & Punishment",
             "pic":"sinPunish.jpg",
             "exOneLink":"k8Ee-G9R_JI"
-        },
-        {
-            "year":2001,
-            "category":"game",
-            "creator":"Pax Softnica",
-            "url":"https://en.wikipedia.org/wiki/Hamtaro:_Ham-Hams_Unite!",
-            "name":"Hamtaro Ham-Hams Unite!",
-            "pic":"hamtaro.jpg",
-            "exOneLink":"ARp-OLbcGO4"
         },
         {
             "year":2001,
@@ -486,15 +434,6 @@
             "exOneLink":"tL6CldIRowc"
         },
         {
-            "year":2019,
-            "category":"game",
-            "creator":"Tetsuya Nomura",
-            "url":"https://www.kingdomhearts.com/3/us/home/",
-            "name":"Kingdom Hearts 3",
-            "pic":"kh3.jpg",
-            "exOneLink":"lz1w_uW3lSE"
-        },
-        {
             "year":2004,
             "category":"game",
             "creator":"Hiroki Kato",
@@ -513,21 +452,13 @@
             "exOneLink":"PgfOu4dEIDw"
         },
         {
-            "year":2017,
-            "creator":"Jason Schreier",
-            "url":"https://kotaku.com/i-wrote-a-book-about-the-making-of-uncharted-4-star-wa-1792635169",
-            "name":"Blood, Sweat, Pixels",
-            "pic":"bsp.jpg",
-            "category":"book"
-        },
-        {
-            "year":1960,
-            "category":"video",
-            "pic":"apartment.jpg",
-            "url":"https://en.wikipedia.org/wiki/The_Apartment",
-            "name":"The Apartment",
-            "creator":"Billy Wilder",
-            "exOneLink":"3j9Q6w_3asA"
+            "year":2020,
+            "category":"game",
+            "creator":"Umurangi Generation",
+            "url":"http://umurangi.tapiki.io/",
+            "name":"Umurangi Generation",
+            "pic":"umu.jpg",
+            "exOneLink":"vQ7CFN2ZPZc"
         },
         {
             "year":2012,
@@ -539,15 +470,6 @@
             "exTwoLink":"OVpX2y6KjwA"
         },
         {
-            "year":2013,
-            "category":"video",
-            "pic":"nitro.jpg",
-            "url":"https://www.youtube.com/channel/UC-3J5xNrAbTLbU1gN8mMpOA",
-            "name":"Nitro Rad",
-            "exOneLink":"ToNbMQ94B0g",
-            "exTwoLink":"zmoCo-hyDe8"
-        },
-        {
             "year":2014,
             "category":"video",
             "pic":"spaceDandy.jpg",
@@ -555,33 +477,6 @@
             "name":"Space☆Dandy",
             "creator":"Shinichirō Watanabe",
             "exOneLink":"IZzSxLdLVp4"
-        },
-        {
-            "year":2019,
-            "category":"video",
-            "pic":"gem.jpg",
-            "url":"https://www.hbo.com/the-righteous-gemstones",
-            "name":"Righteous Gemstones",
-            "creator":"Danny McBride",
-            "exOneLink":"X6eMRyxGdaI"
-        },
-        {
-            "year":2012,
-            "category":"video",
-            "pic":"veep.jpg",
-            "url":"https://www.hbo.com/veep",
-            "name":"Veep",
-            "creator":"Armando Iannucci",
-            "exOneLink":"I2HoCG_iyhU"
-        },
-        {
-            "year":1981,
-            "category":"video",
-            "pic":"wave.jpg",
-            "url":"https://en.wikipedia.org/wiki/The_Wave_(1981_film)",
-            "name":"The Wave",
-            "creator":"Alexander Grasshoff",
-            "exOneLink":"ICng-KRxXJ8"
         },
         {
             "year":1981,
@@ -645,14 +540,6 @@
             "creator":"Frank Miller"
         },
         {
-            "year":1987,
-            "category":"book",
-            "url":"https://www.marvel.com/comics/events/258/kravens_last_hunt",
-            "name":"Spider-Man Kraven's Last Hunt",
-            "pic":"kraven.jpg",
-            "creator":"J. M. DeMatteis"
-        },
-        {
             "year":1992,
             "category":"book",
             "url":"https://www.viz.com/jojo-s-bizarre-adventure",
@@ -667,14 +554,6 @@
             "name":"Eyeshield 21",
             "pic":"eyes.jpg",
             "creator":"Riichiro Inagaki"
-        },
-        {
-            "year":2012,
-            "category":"book",
-            "url":"https://www.marvel.com/comics/series/12916/daredevil_2011_-_2014",
-            "name":"Daredevil",
-            "pic":"darewaid.jpg",
-            "creator":"Mark Waid"
         },
         {
             "year":2015,
