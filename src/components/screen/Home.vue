@@ -173,6 +173,7 @@ export default {
     position: absolute
     text-align: left
     display: block
+    text-transform: uppercase
     span
         display: inline-block
 #homeBlock
