@@ -67,7 +67,7 @@ export default {
         this.theFour = this.$store.getters.getArchive.slice(0, 4)
 
         axios
-        .get(process.env.VUE_APP_NEWS)
+        .get(`${process.env.VUE_APP_NEWS}#timestamp=${new Date().getTime()}`)
         .then(response => (that.newsTicker = (response.data)))
         .finally(function(){
          that.toFill = Math.floor((94 / that.newsTicker.headline.length))
