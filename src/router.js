@@ -1,18 +1,21 @@
 import Vue from "vue"
 import Router from "vue-router"
 import Home from "./components/screen/Home.vue"
-import Login from "./components/screen/login.vue"
-import fakeFourOFour from "./components/screen/placeholder404.vue"
-import About from "./components/screen/aboutNew.vue"
-import ComicArch from "./components/screen/comicArch.vue"
-import ProjArch from "./components/screen/projArch.vue"
 import screen from "./components/screen/screen.vue"
+
+//import Login from "./components/screen/login.vue"
+const fakeFourOFour = () => import(/* webpackChunkName: "group-mainpage" */ "./components/screen/placeholder404.vue")
+const About = () => import(/* webpackChunkName: "group-mainpage" */ "./components/screen/aboutNew.vue")
+const ComicArch = () => import(/* webpackChunkName: "group-mainpage" */ "./components/screen/comicArch.vue")
+const ProjArch = () => import(/* webpackChunkName: "group-mainpage" */ "./components/screen/projArch.vue")
+
 //pages that exist outside of borders
-import ComicReader from "./components/outerbounds/comicReader.vue"
-import ArticleReader from "./components/outerbounds/articleReader.vue"
+const ComicReader  = () => import(/* webpackChunkName: "group-reader" */ "./components/outerbounds/comicReader.vue")
+const ArticleReader  = () => import(/* webpackChunkName: "group-reader" */ "./components/outerbounds/articleReader.vue")
+
 //projects
-import sbboardExit from "./components/projects/sbboardExit.vue"
-import picross from "./components/projects/picross.vue"
+const sbboardExit = () => import("./components/projects/sbboardExit.vue")
+const picross = () => import("./components/projects/picross.vue")
 
 Vue.use(Router);
 
@@ -44,11 +47,11 @@ export default new Router({
         name: "game shop",
         component: ProjArch
       },
-      {
-        path: "/login",
-        name: "login",
-        component: Login
-      },
+      // {
+      //   path: "/login",
+      //   name: "login",
+      //   component: Login
+      // },
       {
         path: "/comic",
         name: "noodle cart",
