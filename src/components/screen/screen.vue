@@ -89,7 +89,7 @@
             </div>
 
             <div class="col-9 theBottomRight"><div class="routeName">>>{{this.$router.currentRoute.name}}</div></div>
-            <div class="col-3 theBottomRight"><div class="copyRight"><div><span class="english">© 2012 - {{futureYear}} Buff</span><br/><span class="japanese">イルミナティの公式メンバー</span></div></div></div>
+            <div class="col-3 theBottomRight"><div class="copyRight"><div><span class="english">© 2012 - {{futureYear}}</span><br/><span class="japanese">イルミナティの公式メンバー</span></div></div></div>
           </div>
           
         </div>

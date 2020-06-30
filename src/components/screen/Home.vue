@@ -22,8 +22,8 @@
                 </a>
             </div>
         </div>
-            <a v-if="currentNews" id="newsTicker" :href='newsTicker.url'>
-                <b>ONGOING:</b>
+            <a v-if="currentNews" id="newsTicker" :href='newsTicker.url' :class="{adjusting: !adjusted}">
+                <b>CURRENT:</b>
                 <div id="newsWindow">
                     <div id="addedText">
                         <span ref="oneStrip">{{newsTicker.headline}}//</span>
@@ -59,7 +59,8 @@ export default {
             newsTicker: {},
             toFill: 0,
             buffer: undefined,
-            currentNews: false
+            currentNews: false,
+            adjusted: false
         }
     },
     mounted () {
@@ -89,6 +90,7 @@ export default {
                 }
                 else{
                     clearInterval(bufferInterval)
+                    that.adjusted = true
                 }
                 },100)
         },
@@ -142,8 +144,10 @@ export default {
 @import "../../css/gangFonts.sass"
 @import "../../css/fontawesome/css/all.css"
 
+.adjusting
+    opacity: 0
 #newsTicker
-    margin-top: .5em
+    margin: .38em auto 0 auto
     border-top: 3px double $neonGreen
     border-bottom: 3px double $neonGreen
     line-height: 1
@@ -151,13 +155,14 @@ export default {
     background-color: rgba(0,0,0,.75)
     color: $neonGreen
     padding: .25em .5em
-    width: 94%
+    width: 91%
     display: flex
     text-decoration: none
     align-items: center
     justify-content: normal
     position: relative
     font-size: 1.25em
+    transition: opacity .25s
     #newsWindow
         position: relative
         width: calc(100% - 6em)
