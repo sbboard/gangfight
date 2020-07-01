@@ -22,10 +22,10 @@
                 </a>
             </div>
         </div>
-            <a v-if="currentNews" id="newsTicker" :href='newsTicker.url' :class="{adjusting: !adjusted}">
+            <a v-if="currentNews" id="newsTicker" :href='newsTicker.url'>
                 <b>CURRENT:</b>
                 <div id="newsWindow">
-                    <div id="addedText">
+                    <div id="addedText" :class="{adjusting: !adjusted}">
                         <span ref="oneStrip">{{newsTicker.headline}}//</span>
                         <span 
                         v-for="index in toFill" 
@@ -162,7 +162,6 @@ export default {
     justify-content: normal
     position: relative
     font-size: 1.25em
-    transition: opacity .25s
     #newsWindow
         position: relative
         width: calc(100% - 6em)
@@ -179,6 +178,7 @@ export default {
     text-align: left
     display: block
     text-transform: uppercase
+    transition: opacity 1s
     span
         display: inline-block
 #homeBlock
