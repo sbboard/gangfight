@@ -67,6 +67,17 @@
         <a href="#" class="socMedia" @click="spawnpop('email')">
         <i class="fas fa-envelope"></i></a>
 
+        <div id="patron" v-if="patrons.length > 0">
+            <h1>VCD Level Patron Supporters</h1>
+            <p>
+                <span v-for="(items,id) in patrons" :key="`${id}`">
+                    <template v-if="patrons[id][1] !== null"><a :href='patrons[id][1]'>{{patrons[id][0]}}</a></template>
+                    <template v-else>{{patrons[id][0]}}</template>
+                    <template v-if="id < patrons.length - 1">,&nbsp;</template>
+                </span>
+            </p>
+        </div>
+
         <!-- window -->
         <div id="window">
             <div id="windowStreakOne"></div>
@@ -99,7 +110,9 @@ export default {
             popUpArray: [],
             intervalid1:'',
             assetURL: '/assets/contentImages/',
-            theArchive: this.$store.getters.getArchive
+            theArchive: this.$store.getters.getArchive,
+            //patrons: [["swordgunguygugngugn",null],["swordgunguygugngugn",null]],
+            patrons: []
         };
     },
     computed: {
@@ -145,7 +158,7 @@ export default {
 @import "../../css/gangFonts.sass"
 
 #aboutUs.middleViewHigh
-    transform: scale(1.25) translateY(9em) translateX(4.7em)
+    //transform: scale(1.25) translateY(9em) translateX(4.7em)
     .draggable
         top: 2em !important
         left: 7em !important
@@ -228,10 +241,10 @@ export default {
         position: absolute    
         color: $neonBlue
         background-color: rgba(black,.8)
-        width: 20em
-        left: 17em
+        width: 24em
+        left: 22.5em
         padding: 1em
-        top: 14.5em
+        top: 8.5em
         transform: rotate(-1deg)
         font-size: 2em
         font-family: Yantramanav
@@ -241,10 +254,34 @@ export default {
             display: block
             &:first-child
                 margin-bottom: .25em
+    #patron
+        @extend #descBox
+        top: 23em
+        h1
+            font-weight: 800
+            border-bottom: 1px solid
+        span
+            display: inline-block
+            &:first-child
+                margin-bottom: 0
+            a
+                &:visited
+                    color: $neonBlue
+        p
+            overflow: auto
+            max-height: 17em
+            &::-webkit-scrollbar 
+                width: .75em
+            &::-webkit-scrollbar-track
+                background: $lightNeonBlue
+            &::-webkit-scrollbar-thumb
+                background: $neonBlue
+            &::-webkit-scrollbar-thumb:hover
+                background: darken($neonBlue,20)
     .socMedia    
-        left: 11.5em
+        left: 13.5em
         z-index: 2
-        top: 16.35em
+        top: 11.5em
         font-size: 3.35em
         background-color: rgba(black,.8)
         padding: .5em
@@ -254,11 +291,11 @@ export default {
         text-align: center
         height: 1em
         &:nth-of-type(1)
-            left: 13.75em
+            left: 15.75em
         &:nth-of-type(2)
-            left: 16em
+            left: 18em
         &:nth-of-type(3)
-            left: 18.25em
+            left: 20.25em
         color: $neonBlue
         @include boxGlow($neonBlue)
         &:hover
