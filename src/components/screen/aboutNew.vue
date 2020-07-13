@@ -52,11 +52,18 @@
             <span>In our quest to quench this thirst we hope to create content that feels authentic and unique. 
             A lot of what we create was created with a very specific type of person in mind, but we hope anyone can find beauty in the niche.</span>
         </div>
+
+
+        <a href="https://www.patreon.com/gangfight" class="socMedia">
+            <i class="fab fa-patreon"></i></a>
+
         <a href="https://twitter.com/gyangufaito" class="socMedia">
             <i class="fab fa-twitter"></i>
         </a>
+
         <a href="https://www.facebook.com/gangfight" class="socMedia">
             <i class="fab fa-facebook-f"></i></a>
+
         <a href="#" class="socMedia" @click="spawnpop('email')">
         <i class="fas fa-envelope"></i></a>
 
@@ -250,6 +257,8 @@ export default {
             left: 13.75em
         &:nth-of-type(2)
             left: 16em
+        &:nth-of-type(3)
+            left: 18.25em
         color: $neonBlue
         @include boxGlow($neonBlue)
         &:hover
