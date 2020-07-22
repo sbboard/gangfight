@@ -68,7 +68,7 @@
         <i class="fas fa-envelope"></i></a>
 
         <div id="patron" v-if="patrons.length > 0">
-            <h1>VCD Level Patron Supporters</h1>
+            <h1>All-Time Greatest All-Star Level Patron Supporters</h1>
             <p>
                 <span v-for="(items,id) in patrons" :key="`${id}`">
                     <template v-if="patrons[id][1] !== null"><a :href='patrons[id][1]'>{{patrons[id][0]}}</a></template>
@@ -111,8 +111,8 @@ export default {
             intervalid1:'',
             assetURL: '/assets/contentImages/',
             theArchive: this.$store.getters.getArchive,
-            //patrons: [["swordgunguygugngugn",null],["swordgunguygugngugn",null]],
-            patrons: []
+            patrons: [["swordgunguygugngugn",null],["swordgunguygugngugn",null]],
+            //patrons: []
         };
     },
     computed: {
@@ -268,8 +268,8 @@ export default {
                 &:visited
                     color: $neonBlue
         p
-            overflow: auto
-            max-height: 17em
+            overflow-y: auto
+            height: 17em
             &::-webkit-scrollbar 
                 width: .75em
             &::-webkit-scrollbar-track

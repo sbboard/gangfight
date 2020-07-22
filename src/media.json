@@ -540,6 +540,14 @@
             "creator":"Frank Miller"
         },
         {
+            "year":2004,
+            "category":"book",
+            "url":"https://en.wikipedia.org/wiki/Persepolis_(comics)",
+            "name":"Persepolis",
+            "pic":"perse.jpg",
+            "creator":"Marjane Satrapi"
+        },
+        {
             "year":1992,
             "category":"book",
             "url":"https://www.viz.com/jojo-s-bizarre-adventure",
