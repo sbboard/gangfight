@@ -68,7 +68,7 @@
         <i class="fas fa-envelope"></i></a>
 
         <div id="patron" v-if="patrons.length > 0">
-            <h1>All-Time Greatest All-Star Level Patron Supporters</h1>
+            <h1>All-Star Level Patron Supporters</h1>
             <p>
                 <span v-for="(items,id) in patrons" :key="`${id}`">
                     <template v-if="patrons[id][1] !== null"><a :href='patrons[id][1]'>{{patrons[id][0]}}</a></template>
@@ -111,8 +111,8 @@ export default {
             intervalid1:'',
             assetURL: '/assets/contentImages/',
             theArchive: this.$store.getters.getArchive,
-            patrons: [["swordgunguygugngugn",null],["swordgunguygugngugn",null]],
-            //patrons: []
+            //patrons: [["sword",null],["gugn",null]],
+            patrons: []
         };
     },
     computed: {
@@ -122,6 +122,13 @@ export default {
     },
     mounted() {
         this.draggableValue.handle = this.$refs[this.handleId]
+        
+        this.patrons = this.patrons
+        .map((a) => ({sort: Math.random(), value: a}))
+        .sort((a, b) => a.sort - b.sort)
+        .map((a) => a.value)
+
+
         this.changeScreen()
     },
     methods: {
@@ -158,7 +165,6 @@ export default {
 @import "../../css/gangFonts.sass"
 
 #aboutUs.middleViewHigh
-    //transform: scale(1.25) translateY(9em) translateX(4.7em)
     .draggable
         top: 2em !important
         left: 7em !important
@@ -241,10 +247,10 @@ export default {
         position: absolute    
         color: $neonBlue
         background-color: rgba(black,.8)
-        width: 24em
-        left: 22.5em
+        width: 20em
+        left: 17em
         padding: 1em
-        top: 8.5em
+        top: 14.5em
         transform: rotate(-1deg)
         font-size: 2em
         font-family: Yantramanav
@@ -256,7 +262,12 @@ export default {
                 margin-bottom: .25em
     #patron
         @extend #descBox
-        top: 23em
+        //display: none
+        left: 22em
+        top: 31.5em
+        width: 23em 
+        color: $neonGreen
+        @include boxGlow($neonGreen)
         h1
             font-weight: 800
             border-bottom: 1px solid
@@ -266,22 +277,22 @@ export default {
                 margin-bottom: 0
             a
                 &:visited
-                    color: $neonBlue
+                    color: $neonGreen
         p
             overflow-y: auto
-            height: 17em
+            height: 6em
             &::-webkit-scrollbar 
                 width: .75em
             &::-webkit-scrollbar-track
-                background: $lightNeonBlue
+                background: $lightNeonGreen
             &::-webkit-scrollbar-thumb
-                background: $neonBlue
+                background: $neonGreen
             &::-webkit-scrollbar-thumb:hover
-                background: darken($neonBlue,20)
+                background: darken($neonGreen,20)
     .socMedia    
-        left: 13.5em
+        left: 11.5em
         z-index: 2
-        top: 11.5em
+        top: 16.35em
         font-size: 3.35em
         background-color: rgba(black,.8)
         padding: .5em
@@ -291,11 +302,11 @@ export default {
         text-align: center
         height: 1em
         &:nth-of-type(1)
-            left: 15.75em
+            left: 13.75em
         &:nth-of-type(2)
-            left: 18em
+            left: 16em
         &:nth-of-type(3)
-            left: 20.25em
+            left: 18.25em
         color: $neonBlue
         @include boxGlow($neonBlue)
         &:hover
