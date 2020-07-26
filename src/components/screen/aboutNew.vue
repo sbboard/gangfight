@@ -27,10 +27,10 @@
                     <img id="accept" src="/assets/global/newAbout/accept.gif"/>
                 </template>
                 <template v-if="popUpArray[boxNumber-1] == 8">
-                    <img id="accept" src="/assets/global/newAbout/breeding.gif"/>
+                    <img id="accept" src="/assets/global/newAbout/simon.gif"/>
                 </template>
                 <template v-if="popUpArray[boxNumber-1] == 12">
-                    <img id="accept" src="/assets/global/newAbout/downlaod.gif"/>
+                    <img id="accept" src="/assets/global/newAbout/coolhead.gif"/>
                 </template>
             </div>
             <img class="winBottom" src="/assets/global/about/windowsBottom.png"/>
