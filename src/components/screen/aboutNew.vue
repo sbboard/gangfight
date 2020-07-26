@@ -150,7 +150,7 @@ export default {
                 let toChange = Math.floor(Math.random() * 15)
                 var x = document.getElementsByClassName("screenimg")
                 x[toChange].src = this.assetURL + this.theArchive[newScreen].img
-            }, 7500);
+            }, 2000);
         }
     },
     beforeDestroy () {

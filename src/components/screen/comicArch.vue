@@ -138,7 +138,7 @@ export default {
         },6000);
 
         //set picayunes
-        const chances = 20
+        const chances = 15
         const totalYunes = this.picayunes.length * chances
         this.picaOne = Math.floor(Math.random() * totalYunes)
         this.picaTwo = Math.floor(Math.random() * totalYunes)
@@ -205,6 +205,7 @@ $metalColor: #c964ff
         bottom: 20em
         position: absolute
         z-index: 850
+        animation-timing-function: ease
         img
             display: inline-block
             width: 22em
@@ -213,16 +214,30 @@ $metalColor: #c964ff
     #picaOne
         @extend #picatemp
         right: 33.5em
+        animation: patronBounce .5s infinite
     #picaTwo
         @extend #picatemp  
         right: 12.5em
-
+        animation: patronBounceTwo .5s infinite
+@keyframes patronBounce
+  0%
+      bottom: 20em
+  50%
+      bottom: 22em
+  100%
+      bottom: 20em
+@keyframes patronBounceTwo
+  0%
+      bottom: 22em
+  50%
+      bottom: 20em
+  100%
+      bottom: 22em
 #shopOwner    
     position: absolute
     top: 40em
     left: 20em
     z-index: 1
-    //sepia(.5) hue-rotate(-163deg)
     img
         position: absolute   
     .eye
@@ -478,6 +493,9 @@ $metalColor: #c964ff
     right: 14em
     pointer-events: none
     z-index: 50
+    animation: lanternSway 5s infinite
+    transform-origin: top
+    animation-timing-function: ease-in-out
     h3    
         font-size: 7em
         z-index: 300
@@ -494,6 +512,13 @@ $metalColor: #c964ff
     img
         width: 100%    
         filter: hue-rotate(300deg)
+@keyframes lanternSway
+  0%
+      transform: rotate(3deg)
+  50%
+      transform: rotate(-3deg)
+  100%
+      transform: rotate(3deg)
 #scene
     width: 100%
     height: 100%
@@ -619,7 +644,6 @@ $metalColor: #c964ff
             -webkit-transform: rotateZ(45deg)
             transform: rotateZ(45deg)
             opacity: 0
-            //animation: lightShake 10s steps(5, start) infinite alternate-reverse
     #logo
         position: absolute
         z-index: 999
