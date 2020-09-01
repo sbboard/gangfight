@@ -63,12 +63,20 @@
             "category":"music",
             "pic":"tame.jpg",
             "url":"https://open.spotify.com/album/79dL7FLiJFOO0EoehUHQBv",
-            "name":"Tame Impala",
-            "creator":"Currents",
-            "exOne":"Disciples",
+            "creator":"Tame Impala",
+            "name":"Currents",
             "exOneLink":"NTfYYRGTB3g",
-            "exTwo":"Reality in Motion",
             "exTwoLink":"en2Erz9i98g"
+        },
+        {
+            "year":2020,
+            "category":"music",
+            "pic":"newab.jpg",
+            "url":"https://open.spotify.com/album/2xkZV2Hl1Omi8rk2D7t5lN",
+            "creator":"The Strokes",
+            "name":"The New Abnormal",
+            "exOneLink":"o4qsjmLxhow",
+            "exTwoLink":"5c3EjeP2x-Q"
         },
         {
             "year":2015,
@@ -324,15 +332,6 @@
             "name":"Sonic Adventure 2 Battle",
             "pic":"sonic.jpg",
             "exOneLink":"EU4CbUoPBi4"
-        },
-        {
-            "year":2001,
-            "category":"game",
-            "creator":"Nintendo",
-            "url":"https://en.wikipedia.org/wiki/Wario_Land_4",
-            "name":"Wario Land 4",
-            "pic":"warioland.jpg",
-            "exOneLink":"K8yXPg4_aa0"
         },
         {
             "year":2003,

@@ -218,6 +218,8 @@ export default {
         max-width: 100%
         margin: 0 auto 1em auto
         display: block
+      img[lazy=loading]
+        height: 100vh
 #city
     background-image: url('/assets/global/homepage/rochester.png')
     background-position: bottom
