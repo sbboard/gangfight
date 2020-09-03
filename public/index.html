@@ -32,19 +32,22 @@
         background-color: black;
         background:-webkit-radial-gradient(bottom, #121729, #020306 60%);margin:0;padding:0;background-size:cover;background-attachment:fixed;background-repeat:no-repeat;background-position:center;height:100%;width:100%;z-index:-8;position:absolute;top:0}
 
-      @import"https://fonts.googleapis.com/css?family=Montserrat";#loadWrap{display:flex;width:100vw;height:100vh;position:absolute;top:0;left:0;color:#f4225a}#loadWrap span{align-self:center;width:100%;text-align:center;font-family:Montserrat}#loadWrap #city{background-image:url("./assets/global/homepage/rochester.png");background-position:bottom;background-repeat:repeat-x;background-size:100% auto;position:absolute;z-index:-5;height:100%;width:100%}#loadWrap #cityLights{position:absolute;z-index:-6;height:40%;width:100%;bottom:0;background:linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(81, 82, 241, 0.1) 30%, rgba(255, 0, 129, 0.9))}
+      @import"https://fonts.googleapis.com/css?family=Montserrat";#loadWrap{display:flex;width:100vw;height:100vh;position:absolute;top:0;left:0;color:#ff0081}#loadWrap span{align-self:center;width:100%;text-align:center;font-family:monospace;margin-top:1em;}#loadWrap #city{background-image:url("./assets/global/homepage/rochester.png");background-position:bottom;background-repeat:repeat-x;background-size:100% auto;position:absolute;z-index:-5;height:100%;width:100%}#loadWrap #cityLights{position:absolute;z-index:-6;height:40%;width:100%;bottom:0;background:linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(81, 82, 241, 0.1) 30%, rgba(255, 0, 129, 0.9))}
+      #loadContain{margin:0 auto;position:relative;width:100px;height:101px;display:flex;align-items:center;justify-content:center}.chewy{height:4px;width:79px;margin:0 auto;left:0;right:0;background-color:#ff0081;position:absolute;top:50%;border-top-left-radius:100px;border-top-right-radius:100px}.leftLeg{height:41%;width:4px;background-color:#ff0081;bottom:7px;position:absolute;transform:skew(-14deg,10deg);left:32px;border-bottom-right-radius:100%}.rightLeg{height:41%;width:4px;background-color:#ff0081;bottom:7px;position:absolute;transform:skew(14deg,10deg);right:32px;border-bottom-left-radius:100%}.nb-spinner{position:absolute;width:75px;height:75px;margin:0;background:0 0;border-top:4px solid #ff0081;border-right:4px solid transparent;border-radius:50%;-webkit-animation:1s spin linear infinite;animation:1s spin linear infinite}@-webkit-keyframes spin{from{-webkit-transform:rotate(0);transform:rotate(0)}to{-webkit-transform:rotate(360deg);transform:rotate(360deg)}}@keyframes spin{from{-webkit-transform:rotate(0);transform:rotate(0)}to{-webkit-transform:rotate(360deg);transform:rotate(360deg)}}
     </style>
   </head>
   <body>
     <div id="app">
       <div id="loadWrap">
-        <span>
-          [<noscript>ERROR </noscript>LOADING]<noscript>: We're sorry but Gang Fight doesn't work properly without JavaSkript enabled. Please enable it to continue.
-        </noscript>
-      </span>
-        <div id="city"></div>
-        <div id="cityLights"></div>
-        <div id="cityBlues"></div>
+        <span id="loadUp">
+          <div id="loadContain">
+          <div class="chewy"></div>
+          <div class="leftLeg"></div>
+          <div class="rightLeg"></div>
+          <div class="nb-spinner"></div>
+        </div>
+          <noscript>Sorry, but Gang Fight doesn't work without JavaSkript enabled.<br>Please enable it to continue.</noscript>
+        </span>
       </div>
     </div>
     <!-- built files will be auto injected -->

@@ -219,7 +219,10 @@ export default {
         margin: 0 auto 1em auto
         display: block
       img[lazy=loading]
-        height: 100vh
+        height: 300px
+        margin: calc(50vh - 150px) auto
+        opacity: .5
+        border-radius: 10px
 #city
     background-image: url('/assets/global/homepage/rochester.png')
     background-position: bottom

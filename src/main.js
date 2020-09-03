@@ -8,7 +8,7 @@ import {store} from './store.js';
 Vue.config.productionTip = false
 Vue.use(VueLazyload, {
   preLoad: 1.3,
-  loading: '/assets/global/comics/kk12.gif',
+  loading: '/assets/global/comics/nerv2.gif',
   attempt: 3,
 })
 
