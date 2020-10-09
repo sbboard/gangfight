@@ -471,11 +471,20 @@
         {
             "year":2020,
             "category":"game",
-            "creator":"Umurangi Generation",
+            "creator":"Ves Kelekov",
             "url":"http://umurangi.tapiki.io/",
             "name":"Umurangi Generation",
             "pic":"umu.jpg",
             "exOneLink":"vQ7CFN2ZPZc"
+        },
+        {
+            "year":1998,
+            "category":"game",
+            "creator":"Square",
+            "url":"https://www.mobygames.com/game/brave-fencer-musashi",
+            "name":"Brave Fencer Musashi",
+            "pic":"brave.jpg",
+            "exOneLink":"KoH-UfznyY4"
         },
         {
             "year":2012,
