@@ -61,8 +61,8 @@
             <i class="fab fa-twitter"></i>
         </a>
 
-        <a href="https://www.facebook.com/gangfight" class="socMedia">
-            <i class="fab fa-facebook-f"></i></a>
+        <!-- <a href="https://www.facebook.com/gangfight" class="socMedia">
+            <i class="fab fa-facebook-f"></i></a> -->
 
         <a href="#" class="socMedia" @click="spawnpop('email')">
         <i class="fas fa-envelope"></i></a>
@@ -222,12 +222,12 @@ export default {
                 transform: perspective(55em) rotateY(45deg)
                 top: 23em
                 left: -5em
-        &:nth-child(3)
-            transform: rotate(8deg)
-            .screen
-                transform: perspective(55em) rotateY(45deg)
-                top: 35em
-                left: -21em
+        // &:nth-child(3)
+        //     transform: rotate(8deg)
+        //     .screen
+        //         transform: perspective(55em) rotateY(45deg)
+        //         top: 35em
+        //         left: -21em
         &:nth-child(4)
             transform: rotate(-15deg)
             .screen
@@ -304,9 +304,9 @@ export default {
         &:nth-of-type(1)
             left: 13.75em
         &:nth-of-type(2)
-            left: 16em
-        &:nth-of-type(3)
-            left: 18.25em
+            left: 15.95em
+        // &:nth-of-type(3)
+        //     left: 18.25em
         color: $neonBlue
         @include boxGlow($neonBlue)
         &:hover

@@ -9,17 +9,7 @@
         <span class="aboutText">Despite its flaws I still really cherish this collection of amateur comics, and I think it’s worth flipping through even today in 20XX. We had a lot of fun making these stories, and there's actually some real bangers in there still. Hope you enjoy checking it out.</span>
         <span id="quoteAtt">- SBboard Team</span>
         <a id="goLink" href="/archive/sbboard/gang-fight.com/wp/">Let's Go</a>
-
-        <div class="bottomSect">
-        <h2>Where to find us now:</h2>
-<div class="attr"><span class="guy">Birthboy (Eggplant):</span> <span class="link">i don’t have a web base until i launch my political commentary youtube channel in 2022 where you can expect me to break down which episodes of rugrats reinforced harmful gender stereotypes and why i think soviet style communism is the best way forward for the european union</span></div>
-<div class="attr"><span class="guy">Buff (Colin Buffum):</span> <span class="link"><a href="https://www.gang-fight.com/">https://www.gang-fight.com/</a></span></div>
-<div class="attr"><span class="guy">Desktop Metaphor (Johnny Panic):</span> <span class="link"> <a href="https://desktop-metaphor.itch.io/">https://desktop-metaphor.itch.io/</a></span></div>
-<!--Tyler McBride: -->
-<!--Mr Yes: -->
-  <div class="btm">I’ve lost touch with everyone else involved, but if they ever see this and want their name added to this page hit me up.</div>
-</div>
-    </div>
+      </div>
         <div id="cityOfStars"></div>
         <div id="cityBlues"></div>
     </div>
