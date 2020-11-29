@@ -222,12 +222,12 @@ export default {
                 transform: perspective(55em) rotateY(45deg)
                 top: 23em
                 left: -5em
-        // &:nth-child(3)
-        //     transform: rotate(8deg)
-        //     .screen
-        //         transform: perspective(55em) rotateY(45deg)
-        //         top: 35em
-        //         left: -21em
+        &:nth-child(3)
+            transform: rotate(8deg)
+            .screen
+                transform: perspective(55em) rotateY(45deg)
+                top: 35em
+                left: -21em
         &:nth-child(4)
             transform: rotate(-15deg)
             .screen
@@ -306,7 +306,7 @@ export default {
         &:nth-of-type(2)
             left: 15.95em
         // &:nth-of-type(3)
-        //     left: 18.25em
+        //     left: 18.15em
         color: $neonBlue
         @include boxGlow($neonBlue)
         &:hover
