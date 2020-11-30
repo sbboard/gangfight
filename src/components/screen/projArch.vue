@@ -459,6 +459,10 @@ export default {
         background-color: rgba(255,255,255,.5)
         z-index: 1
         filter: drop-shadow(2px 4px 6px black)
+        transform-origin: top
+        transition: transform .25s
+        &:hover
+            transform: rotate(10deg)
         &:nth-of-type(1)
             left: 52em
             top: 6em
