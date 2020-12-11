@@ -1,200 +1,298 @@
 <template>
-    <div id="arch" :style="[blockSize, fontSize]">
-        <div id="pageTab" v-if="theArchive.length > postsPerPage">
-            <div class="leftTab" :class="{'dead': currentPage == totalPages.totalPages-1}" @click="changeNav(1)"><i class="fas fa-arrow-circle-left"></i></div>
-            <div class="middleText">創造的な作品 {{currentPage+1}}/{{totalPages.totalPages}}</div>
-            <div class="rightTab" :class="{'dead': currentPage == 0}" @click="changeNav(-1)"><i class="fas fa-arrow-circle-right"></i></div>
-        </div>
-        <div id="opensign">
-            <h2>OPEN</h2>
-        </div>
-        <div id="opensignTwo">
-            <h2>OPEN</h2>
-        </div>
-        <img id="pollo" src="/assets/global/projectArch/pollo.png"/>
-        <div id="streakOne"></div>
-        <div id="streakTwo"></div>
-        <div id="streakThree"></div>
-        <img class="poster" id="posterOne" src="/assets/global/projectArch/poster1.jpg"/>
-        <img class="poster" id="posterTwo" src="/assets/global/projectArch/poster2.jpg"/>
-        <img class="poster" id="posterThree" src="/assets/global/projectArch/poster3.jpg"/>
-        <img class="poster" id="posterFour" src="/assets/global/projectArch/poster4.jpg"/>
-        <img class="poster" id="posterFive" src="/assets/global/projectArch/poster5.jpg"/>
-        <div id="shelf"></div>
-        <div id="gameLibrary">
-            <div class="leftCol">
-                <img class="gamerbox topRow" src="/assets/global/projectArch/gamebox/L1.jpg"/>
-                <img class="gamerbox midRow" src="/assets/global/projectArch/gamebox/L2.jpg"/>
-                <img class="gamerbox bottomRow" src="/assets/global/projectArch/gamebox/L3.jpg"/>
-            </div>
-            <div class="midCol">
-                <img class="gamerbox topRow" src="/assets/global/projectArch/gamebox/M1.jpg"/>
-                <img class="gamerbox midRow" src="/assets/global/projectArch/gamebox/R2.jpg"/>
-                <img class="gamerbox bottomRow" src="/assets/global/projectArch/gamebox/M3.jpg"/>
-            </div>
-            <div class="rightCol">
-                <img class="gamerbox midRow" src="/assets/global/projectArch/gamebox/R1.jpg"/>
-                <img class="gamerbox topRow" src="/assets/global/projectArch/gamebox/R3.jpg"/>
-                <img class="gamerbox bottomRow" src="/assets/global/projectArch/gamebox/M2.jpg"/>            </div>
-            <div class="bench StopRow"></div>
-            <div class="bench SmidRow"></div>
-            <div class="bench SbottomRow"></div>
-        </div>
-        <div id="deskTop"></div>
-        <div id="desk"></div>
-        <div id="owner">
-            <img id="mouth" src="/assets/global/projectArch/mouth-loop8.gif"/>
-            <img id="girl" src="/assets/global/projectArch/shopowner0.png"/>
-        </div>
-        <a :href="item.url" class="gamePackage" v-for="(item, id) in theArchive.slice(currentPage*postsPerPage, currentPage*postsPerPage+postsPerPage)" :key="`${id}`">
-            <div class="hook"></div>
-            <div class="topPackage"></div>
-            <h1>{{item.title}}</h1>
-            <div id="priceSticker"><h2 v-html="item.updatedDate"></h2></div>
-            <div class="gameboy">
-                <div class="tall"></div>
-                <div class="wide"></div>
-            </div>
-            <div class="greybar"></div>
-            <div class="gameArt">
-                <img :src="'/assets/contentImages/'+item.img" :alt="item.title"></div>
-        </a>
-        <div id="fakes">
-            <div class="fakePackage">
-                <div class="hook"></div>
-                <div class="topPackage"></div>
-                <div class="gameboy">
-                    <div class="tall"></div>
-                    <div class="wide"></div>
-                </div>
-                <div class="greybar"></div>
-                <div class="gameArt">
-                    <img :src="'/assets/global/projectArch/gameboy/' + gameFour + '.jpg'"/></div>
-            </div>
-            <div class="fakePackage">
-                <div class="hook"></div>
-                <div class="topPackage"></div>
-                <div class="gameboy">
-                    <div class="tall"></div>
-                    <div class="wide"></div>
-                </div>
-                <div class="greybar"></div>
-                <div class="gameArt">
-                    <img :src="'/assets/global/projectArch/gameboy/' + gameTwo + '.jpg'"/></div>
-            </div>
-            <div class="fakePackage">
-                <div class="hook"></div>
-                <div class="topPackage"></div>
-                <div class="gameboy">
-                    <div class="tall"></div>
-                    <div class="wide"></div>
-                </div>
-                <div class="greybar"></div>
-                <div class="gameArt">
-                    <img :src="'/assets/global/projectArch/gameboy/' + gameOne + '.jpg'"/>
-                </div>
-            </div>
-            <div class="fakePackage">
-                <div class="hook"></div>
-                <div class="topPackage"></div>
-                <div class="gameboy">
-                    <div class="tall"></div>
-                    <div class="wide"></div>
-                </div>
-                <div class="greybar"></div>
-                <div class="gameArt">
-                    <img :src="'/assets/global/projectArch/gameboy/' + gameThree + '.jpg'"/></div>
-            </div>
-            <div class="fakePackage">
-                <div class="hook"></div>
-                <div class="topPackage"></div>
-                <div class="gameboy">
-                    <div class="tall"></div>
-                    <div class="wide"></div>
-                </div>
-                <div class="greybar"></div>
-                <div class="gameArt">
-                    <img :src="'/assets/global/projectArch/gameboy/' + gameFour + '.jpg'"/></div>
-            </div>
-            <div class="fakePackage">
-                <div class="hook"></div>
-                <div class="topPackage"></div>
-                <div class="gameboy">
-                    <div class="tall"></div>
-                    <div class="wide"></div>
-                </div>
-                <div class="greybar"></div>
-                <div class="gameArt"></div>
-            </div>
-        </div>
-        <div id="cityscape">
-            <img id="city" src="/assets/global/homepage/rochester.png"/>
-            <div id="blackbox"></div>
-            <img id="stars" src="/assets/global/homepage/starsbg.jpg"/>
-        </div>
+  <div id="arch" :style="[blockSize, fontSize]">
+    <div id="pageTab" v-if="theArchive.length > postsPerPage">
+      <div
+        class="leftTab"
+        :class="{ dead: currentPage == totalPages.totalPages - 1 }"
+        @click="changeNav(1)"
+      >
+        <i class="fas fa-arrow-circle-left"></i>
+      </div>
+      <div class="middleText">
+        創造的な作品 {{ currentPage + 1 }}/{{ totalPages.totalPages }}
+      </div>
+      <div
+        class="rightTab"
+        :class="{ dead: currentPage == 0 }"
+        @click="changeNav(-1)"
+      >
+        <i class="fas fa-arrow-circle-right"></i>
+      </div>
     </div>
+    <div id="opensign">
+      <h2>OPEN</h2>
+    </div>
+    <div id="opensignTwo">
+      <h2>OPEN</h2>
+    </div>
+    <img id="pollo" src="/assets/global/projectArch/pollo.png" />
+    <div id="streakOne"></div>
+    <div id="streakTwo"></div>
+    <div id="streakThree"></div>
+    <img
+      class="poster"
+      id="posterOne"
+      src="/assets/global/projectArch/poster1.jpg"
+    />
+    <img
+      class="poster"
+      id="posterTwo"
+      src="/assets/global/projectArch/poster2.jpg"
+    />
+    <img
+      class="poster"
+      id="posterThree"
+      src="/assets/global/projectArch/poster3.jpg"
+    />
+    <img
+      class="poster"
+      id="posterFour"
+      src="/assets/global/projectArch/poster4.jpg"
+    />
+    <img
+      class="poster"
+      id="posterFive"
+      src="/assets/global/projectArch/poster5.jpg"
+    />
+    <div id="shelf"></div>
+    <div id="gameLibrary">
+      <div class="leftCol">
+        <img
+          class="gamerbox topRow"
+          src="/assets/global/projectArch/gamebox/L1.jpg"
+        />
+        <img
+          class="gamerbox midRow"
+          src="/assets/global/projectArch/gamebox/L2.jpg"
+        />
+        <img
+          class="gamerbox bottomRow"
+          src="/assets/global/projectArch/gamebox/L3.jpg"
+        />
+      </div>
+      <div class="midCol">
+        <img
+          class="gamerbox topRow"
+          src="/assets/global/projectArch/gamebox/M1.jpg"
+        />
+        <img
+          class="gamerbox midRow"
+          src="/assets/global/projectArch/gamebox/R2.jpg"
+        />
+        <img
+          class="gamerbox bottomRow"
+          src="/assets/global/projectArch/gamebox/M3.jpg"
+        />
+      </div>
+      <div class="rightCol">
+        <img
+          class="gamerbox midRow"
+          src="/assets/global/projectArch/gamebox/R1.jpg"
+        />
+        <img
+          class="gamerbox topRow"
+          src="/assets/global/projectArch/gamebox/R3.jpg"
+        />
+        <img
+          class="gamerbox bottomRow"
+          src="/assets/global/projectArch/gamebox/M2.jpg"
+        />
+      </div>
+      <div class="bench StopRow"></div>
+      <div class="bench SmidRow"></div>
+      <div class="bench SbottomRow"></div>
+    </div>
+    <div id="deskTop"></div>
+    <div id="desk"></div>
+    <div id="owner">
+      <img id="mouth" src="/assets/global/projectArch/mouth-loop8.gif" />
+      <img id="girl" src="/assets/global/projectArch/shopowner0.png" />
+    </div>
+    <a
+      :href="item.url"
+      class="gamePackage"
+      v-for="(item, id) in theArchive.slice(
+        currentPage * postsPerPage,
+        currentPage * postsPerPage + postsPerPage
+      )"
+      :key="`${id}`"
+    >
+      <div class="hook"></div>
+      <div class="topPackage"></div>
+      <h1>{{ item.title }}</h1>
+      <div id="priceSticker"><h2 v-html="item.updatedDate"></h2></div>
+      <div class="gameboy">
+        <div class="tall"></div>
+        <div class="wide"></div>
+      </div>
+      <div class="greybar"></div>
+      <div class="gameArt">
+        <img :src="'/assets/contentImages/' + item.img" :alt="item.title" />
+      </div>
+    </a>
+    <div id="fakes">
+      <div class="fakePackage">
+        <div class="hook"></div>
+        <div class="topPackage"></div>
+        <div class="gameboy">
+          <div class="tall"></div>
+          <div class="wide"></div>
+        </div>
+        <div class="greybar"></div>
+        <div class="gameArt">
+          <img
+            :src="'/assets/global/projectArch/gameboy/' + gameFour + '.jpg'"
+          />
+        </div>
+      </div>
+      <div class="fakePackage">
+        <div class="hook"></div>
+        <div class="topPackage"></div>
+        <div class="gameboy">
+          <div class="tall"></div>
+          <div class="wide"></div>
+        </div>
+        <div class="greybar"></div>
+        <div class="gameArt">
+          <img
+            :src="'/assets/global/projectArch/gameboy/' + gameTwo + '.jpg'"
+          />
+        </div>
+      </div>
+      <div class="fakePackage">
+        <div class="hook"></div>
+        <div class="topPackage"></div>
+        <div class="gameboy">
+          <div class="tall"></div>
+          <div class="wide"></div>
+        </div>
+        <div class="greybar"></div>
+        <div class="gameArt">
+          <img
+            :src="'/assets/global/projectArch/gameboy/' + gameOne + '.jpg'"
+          />
+        </div>
+      </div>
+      <div class="fakePackage">
+        <div class="hook"></div>
+        <div class="topPackage"></div>
+        <div class="gameboy">
+          <div class="tall"></div>
+          <div class="wide"></div>
+        </div>
+        <div class="greybar"></div>
+        <div class="gameArt">
+          <img
+            :src="'/assets/global/projectArch/gameboy/' + gameThree + '.jpg'"
+          />
+        </div>
+      </div>
+      <div class="fakePackage">
+        <div class="hook"></div>
+        <div class="topPackage"></div>
+        <div class="gameboy">
+          <div class="tall"></div>
+          <div class="wide"></div>
+        </div>
+        <div class="greybar"></div>
+        <div class="gameArt">
+          <img
+            :src="'/assets/global/projectArch/gameboy/' + gameFour + '.jpg'"
+          />
+        </div>
+      </div>
+      <div class="fakePackage">
+        <div class="hook"></div>
+        <div class="topPackage"></div>
+        <div class="gameboy">
+          <div class="tall"></div>
+          <div class="wide"></div>
+        </div>
+        <div class="greybar"></div>
+        <div class="gameArt"></div>
+      </div>
+    </div>
+    <div id="cityscape">
+      <img id="city" src="/assets/global/homepage/rochester.png" />
+      <div id="blackbox"></div>
+      <img id="stars" src="/assets/global/homepage/starsbg.jpg" />
+    </div>
+  </div>
 </template>
 
 <script>
 export default {
-    data(){
-        return{
-            theArchive: [],
-            gameOne: 0,
-            gameTwo: 1,
-            gameThree: 2,
-            gameFour: 3,
-            currentPage: 0,
-            postsPerPage: 6
-        }
+  data() {
+    return {
+      theArchive: [],
+      gameOne: 0,
+      gameTwo: 1,
+      gameThree: 2,
+      gameFour: 3,
+      currentPage: 0,
+      postsPerPage: 6,
+    };
+  },
+  mounted() {
+    this.theArchive = JSON.parse(
+      JSON.stringify(
+        this.$store.getters.getArchive.filter((e) => e.category == "project")
+      )
+    );
+    this.gameOne = Math.floor(Math.random() * 10) + 1;
+    this.gameTwo = Math.floor(Math.random() * 10) + 1;
+    this.gameThree = Math.floor(Math.random() * 10) + 1;
+    this.gameFour = Math.floor(Math.random() * 10) + 1;
+  },
+  methods: {
+    formatDate(isoDate) {
+      let d = new Date(isoDate);
+      let month =
+        d.getMonth() + 1 < 10 ? `0${d.getMonth() + 1}` : d.getMonth() + 1;
+      let date = d.getDate() < 10 ? `0${d.getDate()}` : d.getDate();
+      let year = d
+        .getFullYear()
+        .toString()
+        .substring(2);
+      let dString = `${month}/${date}<h3>20${year}</h3>`;
+      return dString;
     },
-    mounted () {
-        this.theArchive = JSON.parse(JSON.stringify(this.$store.getters.getArchive.filter(e => e.category == "project")))
-        this.gameOne = Math.floor(Math.random() * 10) + 1
-        this.gameTwo = Math.floor(Math.random() * 10) + 1
-        this.gameThree = Math.floor(Math.random() * 10) + 1
-        this.gameFour = Math.floor(Math.random() * 10) + 1
+    changeNav(num) {
+      this.currentPage += num;
+      this.gameOne = Math.floor(Math.random() * 10) + 1;
+      this.gameTwo = Math.floor(Math.random() * 10) + 1;
+      this.gameThree = Math.floor(Math.random() * 10) + 1;
+      this.gameFour = Math.floor(Math.random() * 10) + 1;
     },
-    methods: {
-        formatDate(isoDate){
-            let d = new Date(isoDate)
-            let month = d.getMonth()+1 < 10 ? `0${d.getMonth()+1}` : d.getMonth()+1
-            let date = d.getDate() < 10 ? `0${d.getDate()}` : d.getDate()
-            let year = d.getFullYear().toString().substring(2)
-            let dString = `${month}/${date}<h3>20${year}</h3>`
-            return dString
-        },
-        changeNav(num){
-            this.currentPage += num
-            this.gameOne = Math.floor(Math.random() * 10) + 1
-            this.gameTwo = Math.floor(Math.random() * 10) + 1
-            this.gameThree = Math.floor(Math.random() * 10) + 1
-            this.gameFour = Math.floor(Math.random() * 10) + 1
-        }
+  },
+  computed: {
+    blockSize() {
+      return {
+        width: "25" + this.$store.getters.getTaller,
+        height: "25" + this.$store.getters.getTaller,
+      };
     },
-    computed: {
-        blockSize(){
-            return {width: '25'+this.$store.getters.getTaller,height: '25'+this.$store.getters.getTaller}
-        },
-        fontSize(){
-            return {fontSize: '1'+this.$store.getters.getTaller}
-        },
-        totalPages(){
-            let pagetotal = Math.floor(this.theArchive.length/this.postsPerPage)
-            if(this.theArchive.length%this.postsPerPage!=0){
-                pagetotal += 1
-            }
-            return {totalPages: pagetotal}
-        },
+    fontSize() {
+      return { fontSize: "1" + this.$store.getters.getTaller };
     },
-    watch: {
-        theArchive(){
-            for(let i=0;i<this.theArchive.length;i++){
-                this.theArchive[i].updatedDate = this.formatDate(this.theArchive[i].updatedDate)
-            }
-        }
-    }
-}
+    totalPages() {
+      let pagetotal = Math.floor(this.theArchive.length / this.postsPerPage);
+      if (this.theArchive.length % this.postsPerPage != 0) {
+        pagetotal += 1;
+      }
+      return { totalPages: pagetotal };
+    },
+  },
+  watch: {
+    theArchive() {
+      for (let i = 0; i < this.theArchive.length; i++) {
+        this.theArchive[i].updatedDate = this.formatDate(
+          this.theArchive[i].updatedDate
+        );
+      }
+    },
+  },
+};
 </script>
 
 <style lang="sass" scoped>
@@ -272,7 +370,7 @@ export default {
         .midRow
             top: 69em
         .bottomRow
-            top: 84em   
+            top: 84em
         .leftCol
             left: 33em
             position: absolute
@@ -299,7 +397,7 @@ export default {
             left: 33em
         .SbottomRow
             top: 93em
-            left: 33.1em  
+            left: 33.1em
     #glass
         width: 100%
         height: 100%
@@ -330,7 +428,7 @@ export default {
         top: 37em
     .poster
         position: absolute
-        height: auto    
+        height: auto
         width: 10em
         z-index: -12
         transform: rotate3d(-6, 195, -5, 154deg)
@@ -549,14 +647,14 @@ export default {
                 position: absolute
                 left: 3em
                 background-color: #8d8d8d
-        .greybar   
+        .greybar
             width: 12em
             height: 10em
             background-color: #c6d0d2
             position: absolute
             top: 10em
             left: 4em
-        .gameArt    
+        .gameArt
             width: 10em
             height: 10em
             background-color: #338586
@@ -582,10 +680,10 @@ export default {
         &:nth-of-type(4)
             left: 55em
             top: -20em
-        &:nth-of-type(5)    
+        &:nth-of-type(5)
             left: 78em
             top: -17em
-        &:nth-of-type(6)    
+        &:nth-of-type(6)
             left: 101em
             top: -14em
 </style>
