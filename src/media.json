@@ -209,6 +209,24 @@
         },
         {
             "year":2020,
+            "url":"http://sakunaofriceandruin.com/",
+            "creator":"Edelweiss",
+            "category":"game",
+            "name":"Sakuna: Of Rice & Ruin",
+            "pic":"rice.jpg",
+            "exOneLink":"7myPIX9CVVA"
+        },
+        {
+            "year":2010,
+            "url":"http://www.vanquishgame.com/",
+            "creator":"Shinji Mikami",
+            "category":"game",
+            "name":"Vanquish",
+            "pic":"vanq.jpg",
+            "exOneLink":"IG8LVpuzYls"
+        },
+        {
+            "year":2020,
             "url":"https://twitter.com/VirtuosoComms",
             "creator":"Virtuoso Neomedia",
             "category":"game",
@@ -496,6 +514,15 @@
             "exTwoLink":"OVpX2y6KjwA"
         },
         {
+            "year":2015,
+            "category":"video",
+            "pic":"worthi.jpg",
+            "url":"https://www.youtube.com/channel/UCxXu9tCU63mF1ntk89XPkzA",
+            "name":"Worthikids",
+            "exOneLink":"xJBCuRsrqUU",
+            "exTwoLink":"GyCagepF_T4"
+        },
+        {
             "year":2020,
             "category":"video",
             "pic":"timrog.jpg",
@@ -512,6 +539,15 @@
             "name":"Space☆Dandy",
             "creator":"Shinichirō Watanabe",
             "exOneLink":"IZzSxLdLVp4"
+        },
+        {
+            "year":1998,
+            "category":"video",
+            "pic":"cardca.jpg",
+            "url":"http://ccsakura-official.com/",
+            "name":"Card Captor Sakura",
+            "creator":"Madhouse",
+            "exOneLink":"z4hiVuB9Jcc"
         },
         {
             "year":2017,
@@ -583,6 +619,22 @@
             "url":"https://en.wikipedia.org/wiki/Nineteen_Eighty-Four",
             "name":"1984",
             "pic":"1984.jpg",
+            "category":"book"
+        },
+        {
+            "year":2014,
+            "creator":"Dan Slott / Mike Allred",
+            "url":"https://www.marvel.com/comics/series/18310/silver_surfer_2014_-_2015",
+            "name":"Silver Surfer (2014)",
+            "pic":"surf.jpg",
+            "category":"book"
+        },
+        {
+            "year":2020,
+            "creator":"Corey Lewis",
+            "url":"https://www.indiegogo.com/projects/peng-action-sports-adventures-graphic-novel#/",
+            "name":"PENG!",
+            "pic":"peng.jpg",
             "category":"book"
         },
         {
