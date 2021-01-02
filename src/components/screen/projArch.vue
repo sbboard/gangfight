@@ -222,6 +222,9 @@
 
 <script>
 export default {
+  metaInfo: {
+      title: "Project Archive"
+  },
   data() {
     return {
       theArchive: [],

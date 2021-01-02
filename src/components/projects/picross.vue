@@ -118,6 +118,10 @@
 import puzzleArray from './puzzles.js'
 
 export default {
+    
+  metaInfo: {
+      title:"Gang Picross"
+  },
     data(){
         return{
             puzzleArray: puzzleArray,

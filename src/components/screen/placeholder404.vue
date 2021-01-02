@@ -73,6 +73,9 @@ import media from '../../media.json'
 
 export default {
     name: 'DraculaCultureClub',
+  metaInfo: {
+      title: "404"
+  },
     data(){
         return{
             randoNum: 0,

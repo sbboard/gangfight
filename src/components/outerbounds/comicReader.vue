@@ -38,6 +38,11 @@
 import navigation from '../../components/nav/navHome.vue'
 
 export default {
+  metaInfo() {
+    return{
+      title: this.comicInfo.title
+    }
+  },
   data(){
     return{
       comicInfo:{"comicsArray":[],

@@ -110,6 +110,9 @@
 <script>
 export default {
   name: 'comicArchive',
+  metaInfo: {
+      title:"Comic Archive"
+  },
     data(){
         return{
             currentPage: 0,

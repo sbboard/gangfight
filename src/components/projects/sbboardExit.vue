@@ -17,6 +17,9 @@
 
 <script>
 export default {
+  metaInfo: {
+      title:"SBboard Portal"
+  },
     computed: {
         fontSize(){
             return {fontSize: '1.75'+this.$store.getters.getTaller}

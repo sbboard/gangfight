@@ -96,6 +96,9 @@
 <script>
 import { Draggable } from 'draggable-vue-directive'
 export default {
+  metaInfo: {
+      title: "About Us"
+  },
     directives: {
         Draggable,
     },

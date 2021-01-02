@@ -48,6 +48,9 @@ import { gsap } from "gsap";
 import axios from 'axios'
 
 export default {
+  metaInfo: {
+      title: "Home"
+  },
     data(){
         return{
             theFour: [
