@@ -26,7 +26,11 @@
                 <div id="boxRipple"></div>
                 <div id="innerBox">
                     <ul v-if="selected==''">
-                        <li v-for="(items,id) in sortByYear(cat)" :key="`${id}`" @click="changeSelected(items)">
+                        <li v-for="(items,id) in sortByYear(cat)" :key="`${id}`" @click="changeSelected(items)"
+                        :class="{ lastOfYear: (cat.length == 0
+                        && sortByYear(cat).length != id + 1
+                        && sortByYear(cat)[id].year !== sortByYear(cat)[id+1].year
+                        )}">
                             {{items.name}}
                         </li>
                     </ul>
@@ -95,7 +99,7 @@ export default {
     computed: {
         fontSize(){
             return {fontSize: '1'+this.$store.getters.getTaller}
-        },
+        }
     },
     methods:{
         sortByYear(category){
@@ -523,4 +527,6 @@ iframe
     z-index: -8
     position: absolute
     top: 0
+.lastOfYear
+    border-bottom: 1px solid $neonGreen
 </style>
