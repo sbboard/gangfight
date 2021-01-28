@@ -309,6 +309,7 @@ export default {
             padding: 0 3px 0 3px
             text-decoration: none
             font-size: .75em
+            width: fit-content
     &:hover
         opacity: 1
         .titleName
