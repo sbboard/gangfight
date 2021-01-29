@@ -242,6 +242,7 @@ export default {
         this.$store.getters.getArchive.filter((e) => e.category == "project")
       )
     );
+    this.theArchive.sort(function(a,b){return new Date(b.updatedDate) - new Date(a.updatedDate);});
     this.gameOne = Math.floor(Math.random() * 10) + 1;
     this.gameTwo = Math.floor(Math.random() * 10) + 1;
     this.gameThree = Math.floor(Math.random() * 10) + 1;
