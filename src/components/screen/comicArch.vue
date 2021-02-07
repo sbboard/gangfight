@@ -117,7 +117,7 @@ export default {
         return{
             currentPage: 0,
             theArchive: [],
-            picayunes: ["how","whattime","newEnter","asl","reflect"],
+            picayunes: ["how","whattime","newEnter","asl","reflect","warmup"],
             picaOne: 0,
             picaTwo: 0,
             intervalid2:'',
@@ -141,7 +141,7 @@ export default {
         },6000);
 
         //set picayunes
-        const chances = 15
+        const chances = 10
         const totalYunes = this.picayunes.length * chances
         this.picaOne = Math.floor(Math.random() * totalYunes)
         this.picaTwo = Math.floor(Math.random() * totalYunes)
