@@ -224,18 +224,18 @@ $metalColor: #c964ff
         animation: patronBounceTwo .5s infinite
 @keyframes patronBounce
   0%
-      bottom: 20em
+      bottom: 21em
   50%
-      bottom: 22em
+      bottom: 20.75em
   100%
-      bottom: 20em
+      bottom: 21em
 @keyframes patronBounceTwo
   0%
-      bottom: 22em
+      bottom: 20.75em
   50%
-      bottom: 20em
+      bottom: 21em
   100%
-      bottom: 22em
+      bottom: 20.75em
 #shopOwner    
     position: absolute
     top: 40em
