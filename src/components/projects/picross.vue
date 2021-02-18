@@ -103,10 +103,25 @@
             puzzle = -1;">CONTINUE</button>
         </div>
         <div v-else id="menuMode" >
-            <h2>Puzzle Select:::</h2>
-            <span v-for="(item, id) in puzzleArray" :key="`${id}`" @click="puzzle = id;resetPuzz()">
-                P{{id+1}}[<template v-if="completePuzzles.includes(id)">x</template><template v-else>_</template>]: {{item.name}}
-            </span>
+            <div id="professor">
+            <div id="speechBubble" class="active">
+                <div id="innerMouth"></div>
+                <div id="speechProg"></div><div id="blackBox">█</div>
+                <div id="speechText" class="hidden">You consider yourself worthy of picross? Well, we will see about that.</div>
+                <div id="tailBorder"></div>
+            </div>
+                <div id="imgWrap">
+                    <img id="mouth" src="/assets/global/picross/man.png">
+                </div>
+            </div>
+            <div id="listBlock">
+            <h2>Puzzle Select:</h2>
+            <div id="puzzleList">
+                <span v-for="(item, id) in puzzleArray" :key="`${id}`" @click="puzzle = id;resetPuzz()">
+                    P{{id+1}}[<template v-if="completePuzzles.includes(id)">x</template><template v-else>_</template>]: {{item.name}}
+                </span>
+            </div>
+            </div>
         </div>
       <div id="cityLights"></div>
       <div id="cityOfStars"></div>
@@ -161,6 +176,75 @@ export default {
     },
     mounted(){
         this.puzzleArray.sort((a, b) => (a.x.length > b.x.length) ? 1 : -1)
+
+        
+        const talk = document.getElementById("speechText").textContent;
+        let bubble = document.getElementById("speechBubble")
+        let speechProg = document.getElementById("speechProg")
+        let mouth = document.getElementById("mouth")
+        let blackBox = document.getElementById("blackBox")
+        let innerMouth = document.getElementById("innerMouth")
+        let i = 0
+        let normSpeech = 150
+
+        function speechEngine() {
+        let timeStop = normSpeech
+
+        function myLoop() {
+            setTimeout(function() {
+            speechProg.innerHTML += talk[i]
+            if (mouth.classList.contains("open")) {
+                mouth.classList.remove("open");
+                innerMouth.classList.remove("open");
+            } else {
+                mouth.classList.add("open");
+                innerMouth.classList.add("open");
+            }
+            if (talk[i] == "?" || talk[i] == "!" || talk[i] == "." || talk[i] == "-") {
+                timeStop = normSpeech * 2
+                mouth.classList.remove("open");
+                innerMouth.classList.remove("open");
+            }
+            else if(talk[i] == " "){
+                mouth.classList.remove("open");
+                innerMouth.classList.remove("open");
+                timeStop = normSpeech
+            }
+            else {
+                timeStop = normSpeech
+            }
+            i++;
+            if (i < talk.length) {
+                myLoop();
+            }
+            else{
+                mouth.classList.remove("open");
+                    bubble.classList.remove("active")
+                blackBox.classList.add("hidden");
+            }
+            }, timeStop)
+        }
+        myLoop()
+        }
+
+        function bubbleClick(){
+        if(bubble.classList.contains("active")){
+            bubble.classList.remove("active")
+            let textbox = document.getElementById("speechText")
+            i = talk.length-1
+            mouth.classList.remove("open")
+            speechProg.classList.add("hidden");
+            textbox.classList.remove("hidden");
+            bubble.classList.remove("active")
+            blackBox.classList.add("hidden");
+        }
+        else{
+            bubble.classList.add("hidden")
+        }
+        }
+
+        document.getElementById("speechBubble").addEventListener("click", bubbleClick);
+        speechEngine()
     },
     methods: {
         checkAnswer(){
@@ -319,7 +403,7 @@ export default {
                 this.winState = true
             }
             else{
-                this.result = "\\\\keep trying dude//"
+                this.result = "\\\\not done, yet!//"
             }
         }
     },
@@ -533,4 +617,100 @@ span
     flex-direction: inherit
     background-image: linear-gradient(to right, #ff000000 , transparentize($neonBlue,0.6))
     border-left: 0px
+#professor
+    position: absolute
+    bottom: 0
+    width: 60%
+    overflow: hidden
+    height: 100%
+    right: -10em
+    z-index: 200
+    pointer-events: none
+    #imgWrap
+        position: relative
+        height: 100%
+        width: 100%
+        #mouth
+            position: absolute
+            bottom: 0
+            left: 0
+            width: 200%
+            filter: hue-rotate(45deg)
+            image-rendering: pixelated
+            &.open
+                left: inherit
+                right: 0
+#listBlock
+    transform: skewY(6deg)
+    h2
+        margin-top: 2em
+    #puzzleList
+        max-height: 66em
+        overflow-y: auto
+        width: 61em
+        background-color: rgba(0,0,0,.7)
+        &::-webkit-scrollbar 
+            width: .75em
+        &::-webkit-scrollbar-track
+            background: $lightNeonGreen
+        &::-webkit-scrollbar-thumb
+            background: $neonGreen
+        &::-webkit-scrollbar-thumb:hover
+            background: darken($neonGreen,20)
+#speechBubble
+    cursor: pointer
+    //background-color: transparentize($neonBlue,.1)
+    //color: white
+    width: 45em
+    border-radius: .5em
+    top: 11.5em
+    left: 5em
+    z-index: 4
+    position: absolute
+    padding: 1em
+    color: $neonBlue
+    background-color: black
+    border: 1px solid $neonBlue
+    @include boxGlow($neonBlue)
+    &:after    
+        content: ''
+        position: absolute
+        bottom: 0
+        left: 24em
+        width: 0
+        height: 0
+        border: 3em solid transparent
+        border-top-color: black
+        border-bottom: 0
+        border-left: 0
+        margin-left: -5em
+        margin-bottom: -3em
+    #innerMouth
+        width: 8em
+        height: 10em
+        background-image: url("/assets/global/404/iconClosedD2.png")
+        background-size: auto 100%
+        background-repeat: no-repeat
+        float: left
+        margin-right: 1em
+    #innerMouth.open
+        background-image: url("/assets/global/404/iconOpenD2.png")
+        background-repeat: no-repeat
+    .hidden
+        display: none
+    &.hidden
+        display: none
+    #speechProg
+        display: inline
+        font-size: 2em
+        font-family: Yantramanav
+    #speechProg.hidden
+        display: none
+    #blackBox
+        display: inline
+        font-size: 2em
+    #blackBox.hidden
+        display: none
+    #speechText
+        @extend #speechProg
 </style>
