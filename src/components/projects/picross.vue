@@ -95,7 +95,9 @@
             <div id="result">{{result}}</div>
         </div>
         <div id="niceJob" v-else-if="this.winState == true">
-            <h2>NICE JOB DUDE</h2>
+            <div id="chewBox">
+                <img src="/assets/global/picross/chewnice.png">
+            </div>
             <button @click="
             resetPuzz();
             completePuzzles.push(puzzle)
@@ -437,6 +439,10 @@ $testSize: 39 / 7 + em
                 color: $lightNeonRed
                 border: .1em solid $lightNeonRed
 #niceJob
+    height: 79em
+    display: flex
+    flex-direction: column
+    justify-content: space-evenly
     button
         margin: 1.5em auto
         font-size: 1.5em
@@ -454,7 +460,7 @@ $testSize: 39 / 7 + em
             color: $lightNeonRed
             border: .1em solid $lightNeonRed
     h2
-        font-size: 18em
+        font-size: 6em
         text-align: center
         color: $neonBlue
 #menuMode
@@ -666,4 +672,20 @@ span
         display: none
     #speechText
         @extend #speechProg
+#chewBox
+    overflow: hidden
+    width: 57em
+    margin: 0 auto
+    position: relative
+    height: 57em
+    img
+        width: 100%
+        position: absolute
+        animation: blink 1s steps(1) infinite
+        transition-property: none
+@keyframes blink
+    0%
+        top: 0
+    50%
+        top: -57em
 </style>
