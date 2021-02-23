@@ -100,7 +100,6 @@
             </div>
             <button @click="
             resetPuzz();
-            completePuzzles.push(puzzle)
             winState = false;
             puzzle = -1;">CONTINUE</button>
         </div>
@@ -180,6 +179,17 @@ export default {
                 this.speechEngine()
             }
         },
+        completePuzzles(){
+            if(this.completePuzzles.length == 1){
+                this.mastersMessage = "So you've beaten one puzzle? I am not impressed..."
+            }
+            else if(this.completePuzzles.length > 1 && this.completePuzzles.length < this.puzzleArray.length){
+                this.mastersMessage = "A few puzzles complete? Please... any fool can stumble their way to success."
+            }
+            else if(this.completePuzzles.length == this.puzzleArray.length){
+                this.mastersMessage = "No... this can not be... you are... the picross king? I bow before thee."
+            }
+        }
     },
     mounted(){
         this.puzzleArray.sort((a, b) => (a.x.length > b.x.length) ? 1 : -1)
@@ -222,9 +232,6 @@ export default {
             if(this.textOver == true){
                 myLoop()
             }
-        },
-        checkAnswer(){
-            return true
         },
         handler(e){
             e.preventDefault()
@@ -377,6 +384,7 @@ export default {
             //////////////////////////////////////////////////////////////
             if(valid == true){
                 this.winState = true
+                this.completePuzzles.push(this.puzzle)
             }
             else{
                 this.result = "\\\\not done, yet!//"
