@@ -192,8 +192,15 @@ export default {
         }
     },
     mounted(){
-        this.puzzleArray.sort((a, b) => (a.x.length > b.x.length) ? 1 : -1)
+        //this.puzzleArray.sort((a, b) => (a.x.length > b.x.length) ? 1 : -1)
         this.speechEngine()
+
+        let gotCookie = document.cookie;
+        if(gotCookie.length > 0){
+            console.log(gotCookie)
+            let cookieResult = gotCookie.split("=")[1]
+            this.completePuzzles = cookieResult.split`,`.map(x=>+x)
+        }
     },
     methods: {
         speechEngine() {
@@ -385,6 +392,7 @@ export default {
             if(valid == true){
                 this.winState = true
                 this.completePuzzles.push(this.puzzle)
+                document.cookie = `completePuzzles=${this.completePuzzles}; expires=Fri, 31 Dec 9999 23:59:59 GMT`
             }
             else{
                 this.result = "\\\\not done, yet!//"

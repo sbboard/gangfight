@@ -29,4 +29,4 @@ const devil = {
     'x':[[7,],[3,1,1,],[1,1,1,],[1,1,1,],[1,1,1,],[1,1,1,],[1,1,1,1,],[3,1,1,3,],[7,3,],[1,1,],[2,1,],[3,],]
     }
 
-module.exports = [dracula,tempPuzzle,afroAhab,hattie,devil]
+module.exports = [tempPuzzle,dracula,afroAhab,hattie,devil]
