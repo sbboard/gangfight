@@ -194,15 +194,17 @@ export default {
     mounted(){
         //this.puzzleArray.sort((a, b) => (a.x.length > b.x.length) ? 1 : -1)
         this.speechEngine()
-
-        let gotCookie = document.cookie;
-        if(gotCookie.length > 0){
-            console.log(gotCookie)
-            let cookieResult = gotCookie.split("=")[1]
-            this.completePuzzles = cookieResult.split`,`.map(x=>+x)
+        if(this.getCookie("completePuzzles")){
+            this.completePuzzles = this.getCookie("completePuzzles").split`,`.map(x=>+x)
         }
     },
     methods: {
+        
+    getCookie(name) {
+  const value = `; ${document.cookie}`;
+  const parts = value.split(`; ${name}=`);
+  if (parts.length === 2) return parts.pop().split(';').shift();
+},
         speechEngine() {
                 this.speechProgg = ""
                 let i = 0

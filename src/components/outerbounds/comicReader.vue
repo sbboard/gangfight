@@ -11,10 +11,15 @@
             <span class="nameContent">{{priorComic.title}}</span>
           </a>
           <template v-if="cat=='1'">
-            <div id="currentArch" @click="switchCat(0)" :style="{cursor: cursorStyle}">{{comicInfo.series}}</div>
+            <div id="currentArch" @click="switchCat(0)" :style="{cursor: cursorStyle}">
+              <div id="archName">{{comicInfo.series}}</div>
+            </div>
           </template>
           <template v-else>
-            <div id="currentArch" @click="switchCat(1)" :style="{cursor: cursorStyle}">comics</div>
+            <div id="currentArch" @click="switchCat(1)" :style="{cursor: cursorStyle}">
+              <div id="archName">all comics</div>
+              <div id="archInstruct" v-if="comicInfo.series != 'noseries' && catClicked == false">click to change directory</div>
+            </div>
           </template>
           <a v-if="nextComic.title != ''" id="rightArrow" :href="`/comicReader/${nextComic._id}/${cat}`">
             <span class="nameContent">{{nextComic.title}}</span>
@@ -59,7 +64,8 @@ export default {
       cat: 0,
       nextComic:{"_id":"","title":""},
       priorComic:{"_id":"","title":""},
-      cursorStyle:""
+      cursorStyle:"",
+      catClicked: false
     }
   },
   components: {
@@ -74,12 +80,18 @@ export default {
       }
       this.getIndexes(this.fullReturn)
       this.switchCat(this.cat)
+
+      if(this.getCookie("clickedCook")){
+        this.catClicked = true
+      }
   },
   methods:{
     switchCat(nnew){
       if(this.comicInfo.series != "noseries"){
         this.cursorStyle = "pointer"
         if(nnew == 1){
+          this.catClicked = true
+          document.cookie = "clickedCook=true"
           let seriesArray = this.fullReturn.filter(e => e.series.toLowerCase() == this.comicInfo.series.toLowerCase())
           this.cat = nnew
           this.getIndexes(seriesArray)
@@ -108,7 +120,12 @@ export default {
       else{
         this.$router.push('/')
       }
-    }
+    },
+    getCookie(name) {
+  const value = `; ${document.cookie}`;
+  const parts = value.split(`; ${name}=`);
+  if (parts.length === 2) return parts.pop().split(';').shift();
+}
   }
 }
 </script>
@@ -268,4 +285,6 @@ export default {
   z-index: -8
   position: absolute
   top: 0
+#archInstruct
+  font-size: 0.5em
 </style>
