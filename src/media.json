@@ -316,6 +316,24 @@
             "exOneLink":"_M-qJEZ_xzQ"
         },
         {
+            "year":2001,
+            "creator":"Compile",
+            "category":"game",
+            "url":"https://web.archive.org/web/20070608081122/http://guru.titney.org/",
+            "name":"Guru Logic Champ",
+            "pic":"guru.jpg",
+            "exOneLink":"dAbt1L3n1ow"
+        },
+        {
+            "year":2016,
+            "creator":"Atlus",
+            "category":"game",
+            "url":"https://atlus.com/p5r/lang/en/",
+            "name":"Persona 5 Royal",
+            "pic":"p5r.jpg",
+            "exOneLink":"vWWy7V9rCrA"
+        },
+        {
             "year":1999,
             "creator":"Sony",
             "category":"game",
