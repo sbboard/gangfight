@@ -147,12 +147,13 @@ export default {
   mounted() {
     this.draggableValue.handle = this.$refs[this.handleId];
 
+    let that = this
     axios
       .get(`${process.env.VUE_APP_API}patrons`)
-      .then((response) => (this.patrons = response))
+      .then((response) => (that.patrons = response.data))
       .catch((err) => console.log(err))
       .finally(function () {
-        this.patrons = this.patrons
+        that.patrons = that.patrons
           .map((a) => ({ sort: Math.random(), value: a }))
           .sort((a, b) => a.sort - b.sort)
           .map((a) => a.value);
