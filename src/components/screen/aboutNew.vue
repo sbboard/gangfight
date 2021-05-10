@@ -1,172 +1,197 @@
 <template>
-    <div id="aboutUs" :style="fontSize">
-        <div id="screenWall">
-            <div class="screenWrap" v-for="index in 5" :key="index">
-                <div class="screen">
-                    <img v-for="num in 3" :key="num" 
-                        class="screenimg"
-                        @click="spawnpop((((index-1)*3)+num-1))"
-                        :src="theArchive.length > ((index-1)*3)+num-1 ? assetURL+theArchive[((index-1)*3)+num-1].img : `/assets/global/newAbout/screens/${((index-1)*3)+num-1}.jpg`"/>
-                </div>
-            </div>
+  <div id="aboutUs" :style="fontSize">
+    <div id="screenWall">
+      <div class="screenWrap" v-for="index in 5" :key="index">
+        <div class="screen">
+          <img
+            v-for="num in 3"
+            :key="num"
+            class="screenimg"
+            @click="spawnpop((index - 1) * 3 + num - 1)"
+            :src="
+              theArchive.length > (index - 1) * 3 + num - 1
+                ? assetURL + theArchive[(index - 1) * 3 + num - 1].img
+                : `/assets/global/newAbout/screens/${
+                    (index - 1) * 3 + num - 1
+                  }.jpg`
+            "
+          />
         </div>
-        <div class="draggable" :style="{ top: coords[boxNumber-1].y, left: coords[boxNumber-1].x}" v-draggable="draggableValue" v-for="boxNumber in popups" :key="boxNumber">
-            <div class="exitCube" @click="exitWindow(boxNumber)"></div>
-            <div id="windowsTopBar" :ref="handleId">
-                <img src="/assets/global/about/windowsTopBar.gif" alt="move">
-            </div>
-            <div class="windowStuff">
-                <template v-if="popUpArray[boxNumber-1] == 'email'">
-                    <img id="pcImg" src="/assets/global/about/pc.png"/>
-                    <p>gyangu.faito@gmail.com</p>
-                </template>
-                <template v-if="popUpArray[boxNumber-1] == 'cat'">
-                    <img id="detailedCat" src="/assets/global/about/detailedCat.png"/>
-                </template>
-                <template v-if="popUpArray[boxNumber-1] == 4">
-                    <img id="accept" src="/assets/global/newAbout/accept.gif"/>
-                </template>
-                <template v-if="popUpArray[boxNumber-1] == 8">
-                    <img id="accept" src="/assets/global/newAbout/simon.gif"/>
-                </template>
-                <template v-if="popUpArray[boxNumber-1] == 12">
-                    <img id="accept" src="/assets/global/newAbout/coolhead.gif"/>
-                </template>
-            </div>
-            <img class="winBottom" src="/assets/global/about/windowsBottom.png"/>
-        </div>
-        <div id="topLight"></div>
-        <div id="bottomLight"></div>
-        <div id="walls">
-            <div class="top"></div>
-            <div class="right"></div>
-            <div class="bottom"></div>
-            <div class="left"></div>
-        </div>
+      </div>
+    </div>
+    <div
+      class="draggable"
+      :style="{ top: coords[boxNumber - 1].y, left: coords[boxNumber - 1].x }"
+      v-draggable="draggableValue"
+      v-for="boxNumber in popups"
+      :key="boxNumber"
+    >
+      <div class="exitCube" @click="exitWindow(boxNumber)"></div>
+      <div id="windowsTopBar" :ref="handleId">
+        <img src="/assets/global/about/windowsTopBar.gif" alt="move" />
+      </div>
+      <div class="windowStuff">
+        <template v-if="popUpArray[boxNumber - 1] == 'email'">
+          <img id="pcImg" src="/assets/global/about/pc.png" />
+          <p>gyangu.faito@gmail.com</p>
+        </template>
+        <template v-if="popUpArray[boxNumber - 1] == 'cat'">
+          <img id="detailedCat" src="/assets/global/about/detailedCat.png" />
+        </template>
+        <template v-if="popUpArray[boxNumber - 1] == 4">
+          <img id="accept" src="/assets/global/newAbout/accept.gif" />
+        </template>
+        <template v-if="popUpArray[boxNumber - 1] == 8">
+          <img id="accept" src="/assets/global/newAbout/simon.gif" />
+        </template>
+        <template v-if="popUpArray[boxNumber - 1] == 12">
+          <img id="accept" src="/assets/global/newAbout/coolhead.gif" />
+        </template>
+      </div>
+      <img class="winBottom" src="/assets/global/about/windowsBottom.png" />
+    </div>
+    <div id="topLight"></div>
+    <div id="bottomLight"></div>
+    <div id="walls">
+      <div class="top"></div>
+      <div class="right"></div>
+      <div class="bottom"></div>
+      <div class="left"></div>
+    </div>
 
-        <!-- action stuff -->
-        <div id="descBox">
-            <span>Gang Fight is a digital media brand specializing in comic and web art. 
-            We make content not because we seek any sort of financial gain, 
-            but because mankind inherited a genetic craving to create from the force that birthed it.</span>
-            <span>In our quest to quench this thirst we hope to create content that feels authentic and unique. 
-            A lot of what we create was created with a very specific type of person in mind, but we hope anyone can find beauty in the niche.</span>
-        </div>
+    <!-- action stuff -->
+    <div id="descBox">
+      <span
+        >Gang Fight is a digital media brand specializing in comic and web art.
+        We make content not because we seek any sort of financial gain, but
+        because mankind inherited a genetic craving to create from the force
+        that birthed it.</span
+      >
+      <span
+        >In our quest to quench this thirst we hope to create content that feels
+        authentic and unique. A lot of what we create was created with a very
+        specific type of person in mind, but we hope anyone can find beauty in
+        the niche.</span
+      >
+    </div>
 
+    <a href="https://www.patreon.com/gangfight" class="socMedia">
+      <i class="fab fa-patreon"></i
+    ></a>
 
-        <a href="https://www.patreon.com/gangfight" class="socMedia">
-            <i class="fab fa-patreon"></i></a>
+    <a href="https://twitter.com/gyangufaito" class="socMedia">
+      <i class="fab fa-twitter"></i>
+    </a>
 
-        <a href="https://twitter.com/gyangufaito" class="socMedia">
-            <i class="fab fa-twitter"></i>
-        </a>
-
-        <!-- <a href="https://www.facebook.com/gangfight" class="socMedia">
+    <!-- <a href="https://www.facebook.com/gangfight" class="socMedia">
             <i class="fab fa-facebook-f"></i></a> -->
 
-        <a href="#" class="socMedia" @click="spawnpop('email')">
-        <i class="fas fa-envelope"></i></a>
+    <a href="#" class="socMedia" @click="spawnpop('email')">
+      <i class="fas fa-envelope"></i
+    ></a>
 
-        <div id="patron" v-if="patrons.length > 0">
-            <h1>All-Star Level Patron Supporters</h1>
-            <p>
-                <span v-for="(items,id) in patrons" :key="`${id}`">
-                    <template v-if="patrons[id][1] !== null"><a :href='patrons[id][1]'>{{patrons[id][0]}}</a></template>
-                    <template v-else>{{patrons[id][0]}}</template>
-                    <template v-if="id < patrons.length - 1">,&nbsp;</template>
-                </span>
-            </p>
-        </div>
-
-        <!-- window -->
-        <div id="window">
-            <div id="windowStreakOne"></div>
-            <div id="windowStreakTwo"></div>
-
-            <!-- outside -->
-            <img id="rochesterThree" src="/assets/global/homepage/rochester.png"/>
-            <img id="rochester" src="/assets/global/homepage/rochester.png"/>
-            <img id="rochesterTwo" src="/assets/global/homepage/rochester.png"/>
-            <img id="stars" src="/assets/global/homepage/starsbg.jpg"/>
-            <img id="catStat" src="/assets/global/about/cat.gif"/>
-        </div>
+    <div id="patron" v-if="patrons.length > 0">
+      <h1>Patreon Supporters</h1>
+      <p>
+        <span v-for="(items, id) in patrons" :key="`${id}`">{{ patrons[id].name }}<template v-if="id < patrons.length - 1">, </template>
+        </span>
+      </p>
     </div>
+
+    <!-- window -->
+    <div id="window">
+      <div id="windowStreakOne"></div>
+      <div id="windowStreakTwo"></div>
+
+      <!-- outside -->
+      <img id="rochesterThree" src="/assets/global/homepage/rochester.png" />
+      <img id="rochester" src="/assets/global/homepage/rochester.png" />
+      <img id="rochesterTwo" src="/assets/global/homepage/rochester.png" />
+      <img id="stars" src="/assets/global/homepage/starsbg.jpg" />
+      <img id="catStat" src="/assets/global/about/cat.gif" />
+    </div>
+  </div>
 </template>
 
 <script>
-import { Draggable } from 'draggable-vue-directive'
+import { Draggable } from "draggable-vue-directive";
+import axios from "axios";
+
 export default {
   metaInfo: {
-      title: "About Us"
+    title: "About Us",
   },
-    directives: {
-        Draggable,
+  directives: {
+    Draggable,
+  },
+  data() {
+    return {
+      handleId: "handle-id",
+      draggableValue: {
+        handle: undefined,
+      },
+      popups: 0,
+      coords: [],
+      popUpArray: [],
+      intervalid1: "",
+      assetURL: "/assets/contentImages/",
+      theArchive: this.$store.getters.getArchive,
+      patrons: [],
+    };
+  },
+  computed: {
+    fontSize() {
+      return { fontSize: "1" + this.$store.getters.getTaller };
     },
-    data() {
-        return {
-            handleId: "handle-id",
-            draggableValue: {
-                handle: undefined
-            },
-            popups: 0,
-            coords: [],
-            popUpArray: [],
-            intervalid1:'',
-            assetURL: '/assets/contentImages/',
-            theArchive: this.$store.getters.getArchive,
-            //patrons: [["sword",null],["gugn",null]],
-            patrons: []
-        };
-    },
-    computed: {
-        fontSize(){
-            return {fontSize: '1'+this.$store.getters.getTaller}
-        },
-    },
-    mounted() {
-        this.draggableValue.handle = this.$refs[this.handleId]
-        
+  },
+  mounted() {
+    this.draggableValue.handle = this.$refs[this.handleId];
+
+    axios
+      .get(`${process.env.VUE_APP_API}patrons`)
+      .then((response) => (this.patrons = response))
+      .catch((err) => console.log(err))
+      .finally(function () {
         this.patrons = this.patrons
-        .map((a) => ({sort: Math.random(), value: a}))
-        .sort((a, b) => a.sort - b.sort)
-        .map((a) => a.value)
-
-
-        this.changeScreen()
+          .map((a) => ({ sort: Math.random(), value: a }))
+          .sort((a, b) => a.sort - b.sort)
+          .map((a) => a.value);
+      });
+    this.changeScreen();
+  },
+  methods: {
+    exitWindow(num) {
+      document.getElementsByClassName("draggable")[num - 1].style.visibility =
+        "hidden";
     },
-    methods: {
-        exitWindow(num) {
-            document.getElementsByClassName("draggable")[num-1].style.visibility = "hidden"
-        },
-        spawnpop(windowType){
-            if(windowType == "email" || windowType == "cat" || windowType %4 == 0){
-                let randoX = Math.floor(Math.random() * Math.floor(60))
-                let randoY = Math.floor(Math.random() * Math.floor(80))
-                this.coords.push({x: randoX + "em",y: randoY + "em"})
-                this.popUpArray.push(windowType)
-                this.popups++
-            }
-        },
-        changeScreen(){  
-            this.intervalid1 = setInterval(() => {
-                let newScreen = Math.floor(Math.random() * this.theArchive.length)
-                let toChange = Math.floor(Math.random() * 15)
-                var x = document.getElementsByClassName("screenimg")
-                x[toChange].src = this.assetURL + this.theArchive[newScreen].img
-            }, 2000);
-        }
+    spawnpop(windowType) {
+      if (windowType == "email" || windowType == "cat" || windowType % 4 == 0) {
+        let randoX = Math.floor(Math.random() * Math.floor(60));
+        let randoY = Math.floor(Math.random() * Math.floor(80));
+        this.coords.push({ x: randoX + "em", y: randoY + "em" });
+        this.popUpArray.push(windowType);
+        this.popups++;
+      }
     },
-    beforeDestroy () {
-       clearInterval(this.intervalid1)
-    }
-}
+    changeScreen() {
+      this.intervalid1 = setInterval(() => {
+        let newScreen = Math.floor(Math.random() * this.theArchive.length);
+        let toChange = Math.floor(Math.random() * 15);
+        var x = document.getElementsByClassName("screenimg");
+        x[toChange].src = this.assetURL + this.theArchive[newScreen].img;
+      }, 2000);
+    },
+  },
+  beforeDestroy() {
+    clearInterval(this.intervalid1);
+  },
+};
 </script>
 
 <style lang="sass" scoped>
 @import "../../css/reset.css"
 @import "../../css/gangColors.sass"
 @import "../../css/gangFonts.sass"
-
 #aboutUs.middleViewHigh
     .draggable
         top: 2em !important
@@ -243,7 +268,6 @@ export default {
                 transform: perspective(55em) rotateY(45deg)
                 top: 37em
                 left: -60em
-
 #aboutUs
     transition: transform .5s
     #descBox
@@ -265,10 +289,10 @@ export default {
                 margin-bottom: .25em
     #patron
         @extend #descBox
-        //display: none
+        white-space: pre-wrap
         left: 22em
         top: 31.5em
-        width: 23em 
+        width: 17em 
         color: $neonGreen
         @include boxGlow($neonGreen)
         h1
