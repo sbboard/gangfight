@@ -90,7 +90,7 @@
       <i class="fas fa-envelope"></i
     ></a>
 
-    <div id="patron" v-if="patrons.length > 0">
+    <div id="patron" :class="{ litUp: patronOpacity }">
       <h1>Patreon Supporters</h1>
       <p>
         <span v-for="(items, id) in patrons" :key="`${id}`">{{ patrons[id].name }}<template v-if="id < patrons.length - 1">, </template>
@@ -137,6 +137,7 @@ export default {
       assetURL: "/assets/contentImages/",
       theArchive: this.$store.getters.getArchive,
       patrons: [],
+      patronOpacity: false
     };
   },
   computed: {
@@ -151,7 +152,7 @@ export default {
     axios
       .get(`${process.env.VUE_APP_API}patrons`)
       .then((response) => (that.patrons = response.data))
-      .catch((err) => console.log(err))
+      .catch((err) => {console.log(err);})
       .finally(function () {
         that.patrons = that.patrons
           .map((a) => ({ sort: Math.random(), value: a }))
@@ -186,6 +187,14 @@ export default {
   beforeDestroy() {
     clearInterval(this.intervalid1);
   },
+  
+    watch: {
+      patrons(){
+        if(this.patrons.length > 0){
+          this.patronOpacity = 1
+        }
+      }
+    }
 };
 </script>
 
@@ -296,9 +305,14 @@ export default {
         width: 17em 
         color: $neonGreen
         @include boxGlow($neonGreen)
+        transition: opacity .5s
+        opacity: 0
+        &.litUp
+            opacity: 1
         h1
             font-weight: 800
             border-bottom: 1px solid
+            margin-bottom: .25em
         span
             display: inline-block
             &:first-child
