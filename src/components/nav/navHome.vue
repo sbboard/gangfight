@@ -7,7 +7,7 @@
         <router-link to="/" class="redLink">Gang Fight</router-link>
         <router-link to="/about" class="redLink">About Us</router-link>
         <router-link to="/comic" class="blueLink">Comics</router-link>
-        <router-link to="/project" class="blueLink">Projects</router-link>
+        <router-link to="/projects" class="blueLink">Projects</router-link>
     </nav>
 </div>
 </template>

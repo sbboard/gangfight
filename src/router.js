@@ -43,7 +43,7 @@ export default new Router({
         component: About
       },
       {
-        path: "/project",
+        path: "/projects",
         name: "game shop",
         component: ProjArch
       },
