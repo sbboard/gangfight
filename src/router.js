@@ -47,11 +47,6 @@ export default new Router({
         name: "game shop",
         component: ProjArch
       },
-      // {
-      //   path: "/login",
-      //   name: "login",
-      //   component: Login
-      // },
       {
         path: "/comic",
         name: "noodle cart",
@@ -68,7 +63,7 @@ export default new Router({
         component: picross
       },
       {
-        path: "/:string",
+        path: "/*",
         name: "Cultur Club",
         component: fakeFourOFour
       },
