@@ -59,4 +59,5 @@ export default {
 <style lang="sass">
 html
   overflow: auto !important
+  scroll-behavior: smooth
 </style>

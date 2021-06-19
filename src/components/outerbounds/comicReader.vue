@@ -1,134 +1,196 @@
 <template>
-    <div id="comicPage">
-      <div id="theComic">
-        
-        <h1>{{comicInfo.title}}</h1>
-        <h2>{{comicInfo.subtitle}}</h2>
-        <div id="minOption" @click="menuClosed = !menuClosed" :class="[(this.$store.getters.getTaller == 'vh')?'desktop':'mobile', {closed: menuClosed}]"><span>MENU</span><i class="fas fa-caret-down"></i></div>
-        <div id="comicNav" :class="[(this.$store.getters.getTaller == 'vh')?'desktop':'mobile', {closed: menuClosed}]">
-          <a v-if="priorComic.title != ''" id="leftArrow" :href="`/comicReader/${priorComic._id}/${cat}`">
-            <span class="arrow"><i class="fas fa-angle-left"></i></span>
-            <span class="nameContent">{{priorComic.title}}</span>
-          </a>
-          <template v-if="cat=='1'">
-            <div id="currentArch" @click="switchCat(0)" :style="{cursor: cursorStyle}">
-              <div id="archName">{{comicInfo.series}}</div>
-            </div>
-          </template>
-          <template v-else>
-            <div id="currentArch" @click="switchCat(1)" :style="{cursor: cursorStyle}">
-              <div id="archName">all comics</div>
-              <div id="archInstruct" v-if="comicInfo.series != 'noseries' && catClicked == false">click to change directory</div>
-            </div>
-          </template>
-          <a v-if="nextComic.title != ''" id="rightArrow" :href="`/comicReader/${nextComic._id}/${cat}`">
-            <span class="nameContent">{{nextComic.title}}</span>
-            <span class="arrow"><i class="fas fa-angle-right"></i></span>
-          </a>
-        </div>
-
-        <div class="comicPages">
-          <img v-for="pages in comicInfo.comicsArray" :key="pages" v-lazy="`/assets/comics/${comicInfo.url}/${pages}`"/>
-        </div>
-        <navigation :class="[(this.$store.getters.getTaller == 'vh')?'navWidthHundred':'navWidthMiddle', {closed: menuClosed}]"/>
+  <div id="comicPage">
+    <div id="theComic">
+      <h1>{{ comicInfo.title }}</h1>
+      <h2>{{ comicInfo.subtitle }}</h2>
+      <div
+        id="minOption"
+        @click="menuClosed = !menuClosed"
+        :class="[
+          this.$store.getters.getTaller == 'vh' ? 'desktop' : 'mobile',
+          { closed: menuClosed },
+        ]"
+      >
+        <span>MENU</span><i class="fas fa-caret-down"></i>
       </div>
-      <div id="city"></div>
-      <div id="cityLights"></div>
-      <div id="cityOfStars"></div>
-      <div id="cityBlues"></div>
+      <div
+        id="comicNav"
+        :class="[
+          this.$store.getters.getTaller == 'vh' ? 'desktop' : 'mobile',
+          { closed: menuClosed },
+        ]"
+      >
+        <a
+          v-if="priorComic.title != ''"
+          id="leftArrow"
+          :href="`/comicReader/${priorComic._id}/${cat}`"
+        >
+          <span class="arrow"><i class="fas fa-angle-left"></i></span>
+          <span class="nameContent">{{ priorComic.title }}</span>
+        </a>
+        <template v-if="cat == '1'">
+          <div
+            id="currentArch"
+            @click="switchCat(0)"
+            :style="{ cursor: cursorStyle }"
+          >
+            <div id="archName">{{ comicInfo.series }}</div>
+          </div>
+        </template>
+        <template v-else>
+          <div
+            id="currentArch"
+            @click="switchCat(1)"
+            :style="{ cursor: cursorStyle }"
+          >
+            <div id="archName">all comics</div>
+            <div
+              id="archInstruct"
+              v-if="comicInfo.series != 'noseries' && catClicked == false"
+            >
+              click to change directory
+            </div>
+          </div>
+        </template>
+        <a
+          v-if="nextComic.title != ''"
+          id="rightArrow"
+          :href="`/comicReader/${nextComic._id}/${cat}`"
+        >
+          <span class="nameContent">{{ nextComic.title }}</span>
+          <span class="arrow"><i class="fas fa-angle-right"></i></span>
+        </a>
+      </div>
+
+      <div class="comicPages">
+        <img
+          v-for="(pages, index) in comicInfo.comicsArray"
+          :key="pages"
+          :ref="'pg-' + index"
+          v-lazy="`/assets/comics/${comicInfo.url}/${pages}`"
+          @click="pageJump(index)"
+        />
+      </div>
+
+      <navigation
+        :class="[
+          this.$store.getters.getTaller == 'vh'
+            ? 'navWidthHundred'
+            : 'navWidthMiddle',
+          { closed: menuClosed },
+        ]"
+      />
     </div>
+    <div id="city"></div>
+    <div id="cityLights"></div>
+    <div id="cityOfStars"></div>
+    <div id="cityBlues"></div>
+  </div>
 </template>
 
 <script>
-import navigation from '../../components/nav/navHome.vue'
+import navigation from "../../components/nav/navHome.vue";
 
 export default {
   metaInfo() {
-    return{
-      title: this.comicInfo.title
-    }
+    return {
+      title: this.comicInfo.title,
+    };
   },
-  data(){
-    return{
-      comicInfo:{"comicsArray":[],
-      "_id":"",
-      "title":"",
-      "subtitle":"",
-      "img":"",
-      "url":"",
-      "category":"",
-      "date":"",
-      "series":"noseries"},
-      fullReturn: JSON.parse(JSON.stringify(this.$store.getters.getArchive)).filter(e => e.comicsArray.length > 0 && e.comicsArray[0] != ""),
+  data() {
+    return {
+      comicInfo: {
+        comicsArray: [],
+        _id: "",
+        title: "",
+        subtitle: "",
+        img: "",
+        url: "",
+        category: "",
+        date: "",
+        series: "noseries",
+      },
+      fullReturn: JSON.parse(
+        JSON.stringify(this.$store.getters.getArchive)
+      ).filter((e) => e.comicsArray.length > 0 && e.comicsArray[0] != ""),
       comicId: this.$route.params.id,
       cat: 0,
-      nextComic:{"_id":"","title":""},
-      priorComic:{"_id":"","title":""},
-      cursorStyle:"",
+      nextComic: { _id: "", title: "" },
+      priorComic: { _id: "", title: "" },
+      cursorStyle: "",
       catClicked: false,
       menuClosed: true,
-    }
+    };
   },
   components: {
-    navigation
+    navigation,
   },
-  mounted () {
-      if(typeof this.$route.params.cat !== 'undefined'){
-        this.cat = this.$route.params.cat
-      }
-      else{
-        this.cat = 0
-      }
-      this.getIndexes(this.fullReturn)
-      this.switchCat(this.cat)
+  mounted() {
+    if (typeof this.$route.params.cat !== "undefined") {
+      this.cat = this.$route.params.cat;
+    } else {
+      this.cat = 0;
+    }
+    this.getIndexes(this.fullReturn);
+    this.switchCat(this.cat);
 
-      if(this.getCookie("clickedCook")){
-        this.catClicked = true
-      }
+    if (this.getCookie("clickedCook")) {
+      this.catClicked = true;
+    }
   },
-  methods:{
-    switchCat(nnew){
-      if(this.comicInfo.series != "noseries"){
-        this.cursorStyle = "pointer"
-        if(nnew == 1){
-          this.catClicked = true
-          document.cookie = "clickedCook=true"
-          let seriesArray = this.fullReturn.filter(e => e.series.toLowerCase() == this.comicInfo.series.toLowerCase())
-          this.cat = nnew
-          this.getIndexes(seriesArray)
+  methods: {
+    switchCat(nnew) {
+      if (this.comicInfo.series != "noseries") {
+        this.cursorStyle = "pointer";
+        if (nnew == 1) {
+          this.catClicked = true;
+          document.cookie = "clickedCook=true";
+          let seriesArray = this.fullReturn.filter(
+            (e) => e.series.toLowerCase() == this.comicInfo.series.toLowerCase()
+          );
+          this.cat = nnew;
+          this.getIndexes(seriesArray);
+        } else {
+          this.cat = nnew;
+          this.getIndexes(this.fullReturn);
         }
-        else{
-          this.cat = nnew
-          this.getIndexes(this.fullReturn)
-        }
-      }
-      else{
-        this.cat = 0
-        this.cursorStyle = "inherit"
+      } else {
+        this.cat = 0;
+        this.cursorStyle = "inherit";
       }
     },
-    getIndexes(archive){
-      let currentIndex = archive.map(function(e) { return e._id; }).indexOf(this.comicId)
-      if(archive.length > 0 && currentIndex > -1){
-        this.comicInfo = archive[currentIndex]
-        if(currentIndex != 0){
-          this.nextComic = archive[currentIndex-1]
-        }
-        if(currentIndex < archive.length-1){
-          this.priorComic = archive[currentIndex+1]
-        }
+    pageJump(page) {
+      if (page < this.comicInfo.comicsArray.length - 1) {
+        let marginTop = window.getComputedStyle(this.$refs[`pg-${page}`][0], null).getPropertyValue("margin-top")
+        let scrollLength = this.$refs[`pg-${page}`][0].clientHeight + this.$refs[`pg-${page}`][0].offsetTop + parseInt(marginTop)
+        window.scrollTo(0, scrollLength);
       }
-      else{
-        this.$router.push('/')
+    },
+    getIndexes(archive) {
+      let currentIndex = archive
+        .map(function (e) {
+          return e._id;
+        })
+        .indexOf(this.comicId);
+      if (archive.length > 0 && currentIndex > -1) {
+        this.comicInfo = archive[currentIndex];
+        if (currentIndex != 0) {
+          this.nextComic = archive[currentIndex - 1];
+        }
+        if (currentIndex < archive.length - 1) {
+          this.priorComic = archive[currentIndex + 1];
+        }
+      } else {
+        this.$router.push("/");
       }
     },
     getCookie(name) {
-  const value = `; ${document.cookie}`;
-  const parts = value.split(`; ${name}=`);
-  if (parts.length === 2) return parts.pop().split(';').shift();
-}
-  }
-}
+      const value = `; ${document.cookie}`;
+      const parts = value.split(`; ${name}=`);
+      if (parts.length === 2) return parts.pop().split(";").shift();
+    },
+  },
+};
 </script>
 
 <style lang="sass" scoped>
@@ -158,7 +220,7 @@ export default {
     bottom: -7.1em
   .arrow
     font-size: 4em
-    color: $neonBlue 
+    color: $neonBlue
     @include textGlow($neonBlue, 1px)
     margin: 0 .25em
   #leftArrow
@@ -245,41 +307,45 @@ export default {
     .comicPages
       img
         max-width: 100%
-        margin: 0 auto 1em auto
+        margin: 0 auto 0 auto
+        margin-top: 1em
         display: block
         max-height: 100vh
+        cursor: pointer
+        &:last-of-type
+          cursor: initial
       img[lazy=loading]
         height: 50vh
         margin: calc(50vh - 150px) auto
         opacity: .5
         border-radius: 10px
 #city
-    background-image: url('/assets/global/homepage/rochester.png')
-    background-position: bottom
-    background-repeat: repeat-x
-    background-attachment: fixed
-    background-size: 100% auto
-    position: absolute
-    bottom: 0
-    opacity: .6
-    z-index: -5
-    height: 100%
-    width: 100%
-    filter: brightness(0.5)
+  background-image: url('/assets/global/homepage/rochester.png')
+  background-position: bottom
+  background-repeat: repeat-x
+  background-attachment: fixed
+  background-size: 100% auto
+  position: absolute
+  bottom: 0
+  opacity: .6
+  z-index: -5
+  height: 100%
+  width: 100%
+  filter: brightness(0.5)
 #cityOfStars
-    filter: brightness(0.5)
-    z-index: -7
-    position: absolute
-    width: 100%
-    height: 100%
-    top: 0px
-    left: 0px
-    background-image: url(/assets/global/homepage/starsbg.jpg)
-    margin: 0
-    padding: 0
-    background-attachment: fixed
-    background-repeat: no-repeat
-    opacity: .3
+  filter: brightness(0.5)
+  z-index: -7
+  position: absolute
+  width: 100%
+  height: 100%
+  top: 0px
+  left: 0px
+  background-image: url(/assets/global/homepage/starsbg.jpg)
+  margin: 0
+  padding: 0
+  background-attachment: fixed
+  background-repeat: no-repeat
+  opacity: .3
 #cityBlues
   background: -webkit-radial-gradient(bottom, #121729, #020306 60%)
   margin: 0
@@ -310,6 +376,7 @@ export default {
   color: $neonBlue
   transition: bottom .2s
   @include textGlow($neonBlue, 1px)
+  cursor: pointer
   &.mobile
     display: none
   &.closed
@@ -319,7 +386,6 @@ export default {
   i
     margin: 0 auto
     display: block
-    cursor: pointer
     transition: transform .25s
     transform: rotateX(180deg)
   span
