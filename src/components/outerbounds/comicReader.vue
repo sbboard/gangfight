@@ -4,8 +4,8 @@
         
         <h1>{{comicInfo.title}}</h1>
         <h2>{{comicInfo.subtitle}}</h2>
-
-        <div id="comicNav" :class="[(this.$store.getters.getTaller == 'vh')?'desktop':'mobile']">
+        <div id="minOption" @click="menuClosed = !menuClosed" :class="{closed: menuClosed}"><i class="fas fa-caret-down"></i></div>
+        <div id="comicNav" :class="[(this.$store.getters.getTaller == 'vh')?'desktop':'mobile', {closed: menuClosed}]">
           <a v-if="priorComic.title != ''" id="leftArrow" :href="`/comicReader/${priorComic._id}/${cat}`">
             <span class="arrow"><i class="fas fa-angle-left"></i></span>
             <span class="nameContent">{{priorComic.title}}</span>
@@ -30,7 +30,7 @@
         <div class="comicPages">
           <img v-for="pages in comicInfo.comicsArray" :key="pages" v-lazy="`/assets/comics/${comicInfo.url}/${pages}`"/>
         </div>
-        <navigation :class="[(this.$store.getters.getTaller == 'vh')?'navWidthHundred':'navWidthMiddle']"/>
+        <navigation :class="[(this.$store.getters.getTaller == 'vh')?'navWidthHundred':'navWidthMiddle', {closed: menuClosed}]"/>
       </div>
       <div id="city"></div>
       <div id="cityLights"></div>
@@ -65,7 +65,8 @@ export default {
       nextComic:{"_id":"","title":""},
       priorComic:{"_id":"","title":""},
       cursorStyle:"",
-      catClicked: false
+      catClicked: false,
+      menuClosed: true,
     }
   },
   components: {
@@ -139,7 +140,7 @@ export default {
   padding: 0 0 .5em 0
   height: 3.5em
   position: fixed
-  bottom: 0
+  bottom: 0em
   left: 0
   margin: 0 auto
   font-size: 1em
@@ -152,6 +153,9 @@ export default {
   align-items: center
   justify-content: space-between
   font-family: Yantramanav
+  transition: bottom .2s
+  &.closed
+    bottom: -7.1em
   .arrow
     font-size: 4em
     color: $neonBlue 
@@ -213,6 +217,9 @@ export default {
   padding: .5em 0 0 0
   width: 100%
   font-size: 1.25em
+  transition: bottom .2s
+  &.closed
+    bottom: -2.5em
 .navWidthMiddle
   width: 100%
 .navWidthHundred
@@ -225,11 +232,11 @@ export default {
     h1
       font-size: 3em
       text-align: center
-      color: $neonRed
+      color: $neonBlue
       font-family: Montserrat
-      @include textGlow($neonRed, 1px)
+      @include textGlow($neonBlue, 1px)
     h2
-      font-size: 2em
+      font-size: 2.5em
       text-align: center
       margin-bottom: .5em
       color: $neonBlue
@@ -240,8 +247,9 @@ export default {
         max-width: 100%
         margin: 0 auto 1em auto
         display: block
+        max-height: 100vh
       img[lazy=loading]
-        height: 300px
+        height: 50vh
         margin: calc(50vh - 150px) auto
         opacity: .5
         border-radius: 10px
@@ -287,4 +295,30 @@ export default {
   top: 0
 #archInstruct
   font-size: 0.5em
+#minOption
+  height: 1em
+  position: fixed
+  font-size: 2.5em
+  bottom: 7.15rem
+  right: .5em
+  margin: 0 auto
+  z-index: 555
+  display: flex
+  align-items: center
+  justify-content: space-between
+  font-family: Yantramanav
+  color: $neonBlue
+  transition: bottom .2s
+  transform: rotateX(180deg)
+  &.closed
+    bottom: 0rem
+    i
+      transform: rotateX(180deg)
+      @include textGlow($neonBlue, -1px)
+  i
+    margin: 0 auto
+    display: block
+    cursor: pointer
+    transition: transform .25s
+    @include textGlow($neonBlue, 1px)
 </style>
