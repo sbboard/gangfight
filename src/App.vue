@@ -11,7 +11,7 @@ export default {
   name: "App",
   metaInfo: {
     title: "Loading",
-    titleTemplate: "Gang Fight // %s",
+    titleTemplate: "Gang Fight | %s",
   },
   data() {
     return {
