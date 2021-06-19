@@ -4,7 +4,7 @@
         
         <h1>{{comicInfo.title}}</h1>
         <h2>{{comicInfo.subtitle}}</h2>
-        <div id="minOption" @click="menuClosed = !menuClosed" :class="{closed: menuClosed}"><i class="fas fa-caret-down"></i></div>
+        <div id="minOption" @click="menuClosed = !menuClosed" :class="[(this.$store.getters.getTaller == 'vh')?'desktop':'mobile', {closed: menuClosed}]"><span>MENU</span><i class="fas fa-caret-down"></i></div>
         <div id="comicNav" :class="[(this.$store.getters.getTaller == 'vh')?'desktop':'mobile', {closed: menuClosed}]">
           <a v-if="priorComic.title != ''" id="leftArrow" :href="`/comicReader/${priorComic._id}/${cat}`">
             <span class="arrow"><i class="fas fa-angle-left"></i></span>
@@ -309,16 +309,20 @@ export default {
   font-family: Yantramanav
   color: $neonBlue
   transition: bottom .2s
-  transform: rotateX(180deg)
+  @include textGlow($neonBlue, 1px)
+  &.mobile
+    display: none
   &.closed
     bottom: 0rem
     i
-      transform: rotateX(180deg)
-      @include textGlow($neonBlue, -1px)
+      transform: rotateX(0deg)
   i
     margin: 0 auto
     display: block
     cursor: pointer
     transition: transform .25s
-    @include textGlow($neonBlue, 1px)
+    transform: rotateX(180deg)
+  span
+    font-size: 1.25rem
+    margin-right: .5em
 </style>
