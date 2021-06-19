@@ -315,7 +315,7 @@ export default {
         &:last-of-type
           cursor: initial
       img[lazy=loading]
-        height: 50vh
+        height: 300px
         margin: calc(50vh - 150px) auto
         opacity: .5
         border-radius: 10px
