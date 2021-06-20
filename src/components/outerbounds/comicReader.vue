@@ -290,7 +290,7 @@ export default {
   position: relative
   min-height: 100vh
   #theComic
-    padding: 1em 1em 7em 1em
+    padding: 1em 1em 3em 1em
     h1
       font-size: 3em
       text-align: center
