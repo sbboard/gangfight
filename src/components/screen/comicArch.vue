@@ -128,7 +128,7 @@
     </div>
     <div id="comixSign">
       <h1>コミック</h1>
-      <h2>{{ currentPage + 1 }}/{{ totalPages.totalPages }}</h2>
+      <!-- <h2>{{ currentPage + 1 }}/{{ totalPages.totalPages }}</h2> -->
     </div>
     <div id="backboard"></div>
     <img id="posterOne" src="/assets/global/comicArch/oil.gif" />
@@ -738,19 +738,19 @@ $metalColor: #c964ff
         left: 0
         margin: 0 auto
         right: 0
-        top: 33em
+        top: 34em
         display: flex
         h1
-            font-size: 4em
+            font-size: 5em
             font-family: calig
-            @include textGlow($neonPink, 1px)
             color: white
+            letter-spacing: .5em
         h2
-            @include textGlow($neonPink, 1px)
             color: white
-            font-family: VCR
-            font-size: 2em
-            line-height: 1
+            font-family: 'Permanent Marker', cursive
+            font-size: 4em
+            margin-left: .5em
+            width: 1em
     #bg
         background-size: 100% 100%
         position: absolute
@@ -801,6 +801,7 @@ $metalColor: #c964ff
             transition: filter .2s
             &:hover
                 filter: drop-shadow(0px 9px 18px black) contrast(1.5)
+                z-index: 200
             .boxWrap
                 img
                     width: 100%
