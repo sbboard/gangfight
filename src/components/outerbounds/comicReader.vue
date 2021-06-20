@@ -61,6 +61,30 @@
             </div>
           </template>
         </template>
+        <template v-if="archiveAll == true">
+          <select>
+            <option
+              v-for="(comics, index) in fullReturn"
+              :key="comics._id"
+              :ref="'pg-' + index"
+              :selected="comicInfo.title == comics.title"
+            >
+              {{ comics.title }}
+            </option>
+          </select>
+        </template>
+        <template v-else>
+          <select>
+            <option
+              v-for="(comics, index) in seriesReturn"
+              :key="comics._id"
+              :ref="'pg-' + index"
+              :selected="comicInfo.title == comics.title"
+            >
+              {{ comics.title }}
+            </option>
+          </select>
+        </template>
         <a
           v-if="nextComic.title != ''"
           id="rightArrow"
@@ -202,6 +226,17 @@ export default {
       }
     },
   },
+  computed: {
+    seriesReturn() {
+      let seriesReturn = JSON.parse(JSON.stringify(this.fullReturn)).filter(
+        (e) =>
+          e.comicsArray.length > 0 &&
+          e.comicsArray[0] != "" &&
+          e.series == this.comicInfo.series
+      );
+      return seriesReturn;
+    },
+  },
   watch: {
     menuClosed() {
       if (this.menuClosed == true) {
@@ -244,18 +279,23 @@ export default {
   font-size: 1em
   z-index: 555
   display: block
+  flex-direction: column
   right: 0
   background-color: rgba(0, 0, 0, .75)
   width: 100%
   display: flex
-  align-items: center
-  justify-content: space-between
+  justify-content: center
   font-family: Yantramanav
   transition: bottom .2s
   &.closed
     bottom: -7.1em
+  select
+    display: block
+    width: fit-content
+    margin: 0 auto
+    max-width: 40vw
   .arrow
-    font-size: 4em
+    font-size: 3em
     color: $neonBlue
     @include textGlow($neonBlue, 1px)
     margin: 0 .25em
@@ -272,8 +312,7 @@ export default {
       text-decoration: underline
     .nameContent
       word-break: break-word
-      margin: 0 .5em .25em .5em
-      width: 10vw
+      width: 17vw
   #rightArrow
     @extend #leftArrow
     right: 0
@@ -282,7 +321,7 @@ export default {
       text-align: right
   #currentArch
     color: $neonGreen
-    font-size: 1.5em
+    font-size: 1.25em
     display: block
     margin: 0 auto
     width: fit-content
@@ -314,8 +353,10 @@ export default {
     position: relative
     margin: 0 auto 1em 0
     background-color: initial
+    .nameContent
+      margin: 0 .5em .25em .5em
     .arrow
-      font-size: 3em
+      font-size: 2em
       margin: 0
     #archName
       font-size: .8em
