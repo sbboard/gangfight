@@ -23,15 +23,15 @@
         <a
           v-if="priorComic.title != ''"
           id="leftArrow"
-          :href="`/comicReader/${priorComic._id}/${cat}`"
+          :href="`/comicReader/${priorComic._id}/${cat[0]}${cat[1]}`"
         >
           <span class="arrow"><i class="fas fa-angle-left"></i></span>
           <span class="nameContent">{{ priorComic.title }}</span>
         </a>
-        <template v-if="cat == '1'">
+        <template v-if="archiveAll == false">
           <div
             id="currentArch"
-            @click="switchCat(0)"
+            @click="switchCat()"
             :style="{ cursor: cursorStyle }"
           >
             <div id="archName">{{ comicInfo.series }}</div>
@@ -40,7 +40,7 @@
         <template v-else>
           <div
             id="currentArch"
-            @click="switchCat(1)"
+            @click="switchCat()"
             :style="{ cursor: cursorStyle }"
           >
             <div id="archName">all comics</div>
@@ -55,7 +55,7 @@
         <a
           v-if="nextComic.title != ''"
           id="rightArrow"
-          :href="`/comicReader/${nextComic._id}/${cat}`"
+          :href="`/comicReader/${nextComic._id}/${cat[0]}${cat[1]}`"
         >
           <span class="nameContent">{{ nextComic.title }}</span>
           <span class="arrow"><i class="fas fa-angle-right"></i></span>
@@ -114,55 +114,72 @@ export default {
         JSON.stringify(this.$store.getters.getArchive)
       ).filter((e) => e.comicsArray.length > 0 && e.comicsArray[0] != ""),
       comicId: this.$route.params.id,
-      cat: 0,
+      cat: [0, 0],
       nextComic: { _id: "", title: "" },
       priorComic: { _id: "", title: "" },
       cursorStyle: "",
       catClicked: false,
       menuClosed: true,
+      archiveAll: true,
     };
   },
   components: {
     navigation,
   },
   mounted() {
+    console.log("mounting");
     if (typeof this.$route.params.cat !== "undefined") {
-      this.cat = this.$route.params.cat;
-    } else {
-      this.cat = 0;
+      this.cat = this.$route.params.cat.split("");
+      this.cat[0] = parseInt(this.cat[0]);
+      this.cat[1] = parseInt(this.cat[1]);
     }
-    this.getIndexes(this.fullReturn);
-    this.switchCat(this.cat);
+    if (this.cat[0] == 0) {
+      this.archiveAll = true;
+      this.getIndexes(this.fullReturn);
+    } else {
+      this.archiveAll = false;
+      this.getIndexes(this.fullReturn);
+    }
+    if (this.cat[1] == 0) {
+      this.menuClosed = true;
+    } else {
+      this.menuClosed = false;
+    }
 
     if (this.getCookie("clickedCook")) {
       this.catClicked = true;
     }
+    if (this.comicInfo.series != "noseries") {
+      this.cursorStyle = "pointer";
+    }
   },
   methods: {
-    switchCat(nnew) {
+    switchCat() {
       if (this.comicInfo.series != "noseries") {
-        this.cursorStyle = "pointer";
-        if (nnew == 1) {
+        this.archiveAll = !this.archiveAll;
+        if (this.archiveAll == false) {
           this.catClicked = true;
           document.cookie = "clickedCook=true";
           let seriesArray = this.fullReturn.filter(
             (e) => e.series.toLowerCase() == this.comicInfo.series.toLowerCase()
           );
-          this.cat = nnew;
           this.getIndexes(seriesArray);
         } else {
-          this.cat = nnew;
           this.getIndexes(this.fullReturn);
         }
       } else {
-        this.cat = 0;
         this.cursorStyle = "inherit";
       }
     },
     pageJump(page) {
       if (page < this.comicInfo.comicsArray.length - 1) {
-        let marginTop = window.getComputedStyle(this.$refs[`pg-${page}`][0], null).getPropertyValue("margin-top")
-        let scrollLength = this.$refs[`pg-${page}`][0].clientHeight + this.$refs[`pg-${page}`][0].offsetTop + parseInt(marginTop)
+        let marginTop = window
+          .getComputedStyle(this.$refs[`pg-${page}`][0], null)
+          .getPropertyValue("margin-top");
+        let scrollLength =
+          this.$refs[`pg-${page}`][0].clientHeight +
+          this.$refs[`pg-${page}`][0].offsetTop +
+          parseInt(marginTop);
         window.scrollTo(0, scrollLength);
       }
     },
@@ -175,10 +192,18 @@ export default {
       if (archive.length > 0 && currentIndex > -1) {
         this.comicInfo = archive[currentIndex];
         if (currentIndex != 0) {
-          this.nextComic = archive[currentIndex - 1];
+          let newArray = archive.slice();
+          this.nextComic.title = newArray[currentIndex - 1].title;
+          this.nextComic._id = newArray[currentIndex - 1]._id;
+        } else {
+          this.nextComic.title = "";
         }
-        if (currentIndex < archive.length - 1) {
-          this.priorComic = archive[currentIndex + 1];
+        if (currentIndex == archive.length - 1) {
+          this.priorComic.title = "";
+        } else {
+          let newArray = archive.slice();
+          this.priorComic.title = newArray[currentIndex + 1].title;
+          this.priorComic._id = newArray[currentIndex + 1]._id;
         }
       } else {
         this.$router.push("/");
@@ -188,6 +213,30 @@ export default {
       const value = `; ${document.cookie}`;
       const parts = value.split(`; ${name}=`);
       if (parts.length === 2) return parts.pop().split(";").shift();
+    },
+  },
+  watch: {
+    menuClosed() {
+      if (this.menuClosed == true) {
+        this.cat[1] = 0;
+      } else {
+        this.cat[1] = 1;
+      }
+    },
+    archiveAll() {
+      if (this.archiveAll == true) {
+        this.cat[0] = 0;
+      } else {
+        this.cat[0] = 1;
+      }
+    },
+    comicInfo() {
+      if (this.archiveAll == false) {
+        let seriesArray = this.fullReturn.filter(
+          (e) => e.series.toLowerCase() == this.comicInfo.series.toLowerCase()
+        );
+        this.getIndexes(seriesArray);
+      }
     },
   },
 };
@@ -391,4 +440,6 @@ export default {
   span
     font-size: 1.25rem
     margin-right: .5em
+#archName
+  user-select: none
 </style>
