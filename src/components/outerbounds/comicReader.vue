@@ -13,6 +13,17 @@
       >
         <span>MENU</span><i class="fas fa-caret-down"></i>
       </div>
+
+      <div class="comicPages">
+        <img
+          v-for="(pages, index) in comicInfo.comicsArray"
+          :key="pages"
+          :ref="'pg-' + index"
+          v-lazy="`/assets/comics/${comicInfo.url}/${pages}`"
+          @click="pageJump(index)"
+        />
+      </div>
+
       <div
         id="comicNav"
         :class="[
@@ -28,29 +39,27 @@
           <span class="arrow"><i class="fas fa-angle-left"></i></span>
           <span class="nameContent">{{ priorComic.title }}</span>
         </a>
-        <template v-if="archiveAll == false">
-          <div
-            id="currentArch"
-            @click="switchCat()"
-            :style="{ cursor: cursorStyle }"
-          >
-            <div id="archName">{{ comicInfo.series }}</div>
-          </div>
-        </template>
-        <template v-else>
-          <div
-            id="currentArch"
-            @click="switchCat()"
-            :style="{ cursor: cursorStyle }"
-          >
-            <div id="archName">all comics</div>
+        <template v-if="comicInfo.series != 'noseries'">
+          <template v-if="archiveAll == false">
             <div
-              id="archInstruct"
-              v-if="comicInfo.series != 'noseries'"
+              id="currentArch"
+              @click="switchCat()"
+              :style="{ cursor: cursorStyle }"
             >
-              click to change directory
+              <div id="archInstruct">current series:</div>
+              <div id="archName">{{ comicInfo.series }}</div>
             </div>
-          </div>
+          </template>
+          <template v-else>
+            <div
+              id="currentArch"
+              @click="switchCat()"
+              :style="{ cursor: cursorStyle }"
+            >
+              <div id="archInstruct">current series:</div>
+              <div id="archName">all comics</div>
+            </div>
+          </template>
         </template>
         <a
           v-if="nextComic.title != ''"
@@ -60,16 +69,6 @@
           <span class="nameContent">{{ nextComic.title }}</span>
           <span class="arrow"><i class="fas fa-angle-right"></i></span>
         </a>
-      </div>
-
-      <div class="comicPages">
-        <img
-          v-for="(pages, index) in comicInfo.comicsArray"
-          :key="pages"
-          :ref="'pg-' + index"
-          v-lazy="`/assets/comics/${comicInfo.url}/${pages}`"
-          @click="pageJump(index)"
-        />
       </div>
 
       <navigation
@@ -268,8 +267,13 @@ export default {
     top: 0
     width: 30%
     cursor: pointer
+    text-decoration: none
+    &:hover
+      text-decoration: underline
     .nameContent
       word-break: break-word
+      margin: 0 .5em .25em .5em
+      width: 10vw
   #rightArrow
     @extend #leftArrow
     right: 0
@@ -285,7 +289,8 @@ export default {
     text-align: center
     text-transform: uppercase
   .nameContent
-    margin-bottom: .5em
+    margin-bottom: .25em
+    text-decoration: none
   &.desktop
     &::before
       width: .5em
@@ -308,9 +313,14 @@ export default {
     width: 100%
     position: relative
     margin: 0 auto 1em 0
+    background-color: initial
     .arrow
       font-size: 3em
       margin: 0
+    #archName
+      font-size: .8em
+    #archInstruct
+      font-size: 0.3em
 #navBox.desktop
   bottom: 3.2em
   padding: .5em 0 0 0
@@ -398,6 +408,7 @@ export default {
   top: 0
 #archInstruct
   font-size: 0.5em
+  user-select: none
 #minOption
   height: 1em
   position: fixed
