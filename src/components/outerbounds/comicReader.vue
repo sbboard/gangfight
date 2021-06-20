@@ -46,7 +46,7 @@
             <div id="archName">all comics</div>
             <div
               id="archInstruct"
-              v-if="comicInfo.series != 'noseries' && catClicked == false"
+              v-if="comicInfo.series != 'noseries'"
             >
               click to change directory
             </div>
@@ -118,7 +118,6 @@ export default {
       nextComic: { _id: "", title: "" },
       priorComic: { _id: "", title: "" },
       cursorStyle: "",
-      catClicked: false,
       menuClosed: true,
       archiveAll: true,
     };
@@ -145,10 +144,6 @@ export default {
     } else {
       this.menuClosed = false;
     }
-
-    if (this.getCookie("clickedCook")) {
-      this.catClicked = true;
-    }
     if (this.comicInfo.series != "noseries") {
       this.cursorStyle = "pointer";
     }
@@ -158,8 +153,6 @@ export default {
       if (this.comicInfo.series != "noseries") {
         this.archiveAll = !this.archiveAll;
         if (this.archiveAll == false) {
-          this.catClicked = true;
-          document.cookie = "clickedCook=true";
           let seriesArray = this.fullReturn.filter(
             (e) => e.series.toLowerCase() == this.comicInfo.series.toLowerCase()
           );
@@ -208,11 +201,6 @@ export default {
       } else {
         this.$router.push("/");
       }
-    },
-    getCookie(name) {
-      const value = `; ${document.cookie}`;
-      const parts = value.split(`; ${name}=`);
-      if (parts.length === 2) return parts.pop().split(";").shift();
     },
   },
   watch: {
