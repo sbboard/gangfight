@@ -1,190 +1,238 @@
 <template>
-    <div id="scene" :style="fontSize">
-        <div v-if="currentPage == 0" class="rightArrow dead"><i class="fas fa-arrow-right"></i></div>
-        <div v-else @click="changeNav(-1)" class="rightArrow"><i class="fas fa-arrow-right"></i></div>
-        <div v-if="currentPage >= (theArchive.length/4)-1" class="leftArrow dead"><i class="fas fa-arrow-left"></i></div>
-        <div v-else @click="changeNav(1)" class="leftArrow"><i class="fas fa-arrow-left"></i></div>
+  <div id="scene" :style="fontSize">
+    <div v-if="currentPage == 0" class="rightArrow dead">
+      <i class="fas fa-arrow-right"></i>
+    </div>
+    <div v-else @click="changeNav(-1)" class="rightArrow">
+      <i class="fas fa-arrow-right"></i>
+    </div>
+    <div v-if="currentPage >= theArchive.length / 4 - 1" class="leftArrow dead">
+      <i class="fas fa-arrow-left"></i>
+    </div>
+    <div v-else @click="changeNav(1)" class="leftArrow">
+      <i class="fas fa-arrow-left"></i>
+    </div>
 
-        <div id="picayunes">
-            <div id="picaOne" v-if="typeof picayunes[picaOne] != 'undefined'">
-                <a :href="'/projects/' + picayunes[picaOne]">
-                <img :src="'/assets/global/comicArch/picayunes/'+ picayunes[picaOne] + '.png'"/>
-                </a>
-            </div>
-            <div id="picaTwo" v-if="typeof picayunes[picaTwo] != 'undefined'">
-                <a :href="'/projects/' + picayunes[picaTwo]">
-                <img :src="'/assets/global/comicArch/picayunes/'+ picayunes[picaTwo] + '.png'"/>
-                </a>
-            </div>
-        </div>
+    <div id="picayunes">
+      <div id="picaOne" v-if="picayunes[picaOne] != undefined">
+        <a :href="'/projects/' + picayunes[picaOne]">
+          <img
+            :src="
+              '/assets/global/comicArch/picayunes/' +
+              picayunes[picaOne] +
+              '.png'
+            "
+          />
+        </a>
+      </div>
+      <div id="picaTwo" v-if="picayunes[picaTwo] != undefined">
+        <a :href="'/projects/' + picayunes[picaTwo]">
+          <img
+            :src="
+              '/assets/global/comicArch/picayunes/' +
+              picayunes[picaTwo] +
+              '.png'
+            "
+          />
+        </a>
+      </div>
+    </div>
 
-        <div id="shopOwner">
-            <img class="eye" id="ownerEye" src="/assets/global/comicArch/ownerEyeC.png"/>
-            <img class="body" src="/assets/global/comicArch/ownerBodyCS.png"/>
-        </div>
-        <div id="wheel">
-            <div id="outerRim"></div>
-            <div id="onePole"></div>
-            <div id="twoPole"></div>
-            <div id="threePole"></div>
-            <div id="innerCircle"></div>
-        </div>  
-        <div id="handle">
-            <div id="topHandle"></div>
-            <div id="rightHandle"></div>
-            <div id="handleCurve"></div>
-        </div>
-        <div id="stoolGroup">
-            <div id="stoolOne">
-                <div class="seat"></div>
-                <div class="pole"></div>
-            </div>
-            <div id="stoolTwo">
-                <div class="seat"></div>
-                <div class="pole"></div>
-            </div>
-        </div>
+    <div id="shopOwner">
+      <img
+        class="eye"
+        id="ownerEye"
+        src="/assets/global/comicArch/ownerEyeC.png"
+      />
+      <img class="body" src="/assets/global/comicArch/ownerBodyCS.png" />
+    </div>
+    <div id="wheel">
+      <div id="outerRim"></div>
+      <div id="onePole"></div>
+      <div id="twoPole"></div>
+      <div id="threePole"></div>
+      <div id="innerCircle"></div>
+    </div>
+    <div id="handle">
+      <div id="topHandle"></div>
+      <div id="rightHandle"></div>
+      <div id="handleCurve"></div>
+    </div>
+    <div id="stoolGroup">
+      <div id="stoolOne">
+        <div class="seat"></div>
+        <div class="pole"></div>
+      </div>
+      <div id="stoolTwo">
+        <div class="seat"></div>
+        <div class="pole"></div>
+      </div>
+    </div>
     <div id="leftPart">
-        <div id="roof"></div>
-        <div id="roofPole"></div>
+      <div id="roof"></div>
+      <div id="roofPole"></div>
     </div>
     <div id="tableTop"></div>
     <div id="tableFront"></div>
     <div id="poleLeft"></div>
     <div id="poleRight"></div>
     <div id="lantern" v-if="typeof picayunes[picaTwo] === 'undefined'">
-        <h3>拉</h3>
-        <h4>麺</h4>
-        <img src="/assets/global/comicArch/lantern.png">
+      <h3>拉</h3>
+      <h4>麺</h4>
+      <img src="/assets/global/comicArch/lantern.png" />
     </div>
     <div id="shadowTheHedgehog">
-        <div class="topShadow"></div>
-        <div class="farLeft"></div>
-        <div class="midOne"></div>
-        <div class="midThree"></div>
-        <div class="midFive"></div>
-        <div class="farRight"></div>
-        <div class="lightFlicker"></div>
+      <div class="topShadow"></div>
+      <div class="farLeft"></div>
+      <div class="midOne"></div>
+      <div class="midThree"></div>
+      <div class="midFive"></div>
+      <div class="farRight"></div>
+      <div class="lightFlicker"></div>
     </div>
     <div id="rowOfLights">
-        <div class="lightOne"></div>
-        <div class="lightTwo"></div>
-        <div class="lightThree"></div>
-        <div class="lightFour"></div>
+      <div class="lightOne"></div>
+      <div class="lightTwo"></div>
+      <div class="lightThree"></div>
+      <div class="lightFour"></div>
     </div>
-    <div id="blackFilter">
+    <div id="blackFilter"></div>
+    <div id="menu">
+      <div
+        class="contentBoxes"
+        v-for="(item, id) in theArchive.slice(
+          currentPage * 4,
+          currentPage * 4 + 4
+        )"
+        :key="`${id}`"
+      >
+        <div class="boxWrap">
+          <p class="boxDate">{{ item.updatedDate }}</p>
+          <p class="titleName">
+            <span class="titleText">{{ item.title }}</span>
+            <span class="subtitle" v-if="item.subtitle != ''">{{
+              item.subtitle
+            }}</span>
+          </p>
+          <a
+            :href="item.url"
+            v-if="item.comicsArray.length < 1 || item.comicsArray[0] == ''"
+          >
+            <img :src="'/assets/contentImages/' + item.img" :alt="item.title" />
+          </a>
+          <a v-else :href="'/comicReader/' + item._id">
+            <img :src="'/assets/contentImages/' + item.img" :alt="item.title" />
+          </a>
+        </div>
+      </div>
     </div>
-      <div id="menu">     
-        <div class="contentBoxes" v-for="(item, id) in theArchive.slice(currentPage*4, currentPage*4+4)" :key="`${id}`">
-              <div class="boxWrap">
-                  <p class="boxDate">{{item.updatedDate}}</p>
-                  <p class="titleName">
-                      <span class="titleText">{{item.title}}</span>
-                      <span class="subtitle" v-if="item.subtitle != ''">{{item.subtitle}}</span>
-                  </p>
-                  <a :href="item.url" v-if="item.comicsArray.length < 1 || item.comicsArray[0] == ''">
-                      <img :src="'/assets/contentImages/'+item.img" :alt="item.title"/>
-                  </a>
-                  <a v-else :href="'/comicReader/'+item._id">
-                      <img :src="'/assets/contentImages/'+item.img" :alt="item.title"/>
-                  </a>
-              </div>
-      </div>
-      </div>
-      <div id="comixSign">
-        <h1>コミック</h1>
-        <h2>{{currentPage+1}}/{{totalPages.totalPages}}</h2>
-      </div>
-      <div id="backboard"></div>
-      <img id="posterOne" src="/assets/global/comicArch/oil.gif"/>
-      <img id="posterTwo" src="/assets/global/comicArch/gf.gif"/>
-      <div id="woodBack"></div>
-      <div id="tinRoof"></div>
-      <div id="glowbg"></div>
-      <div id="citybg"></div>
-      <div id="backwall"></div>
-      <div id="rightwall"></div>
+    <div id="comixSign">
+      <h1>コミック</h1>
+      <h2>{{ currentPage + 1 }}/{{ totalPages.totalPages }}</h2>
     </div>
+    <div id="backboard"></div>
+    <img id="posterOne" src="/assets/global/comicArch/oil.gif" />
+    <img id="posterTwo" src="/assets/global/comicArch/gf.gif" />
+    <div id="woodBack"></div>
+    <div id="tinRoof"></div>
+    <div id="glowbg"></div>
+    <div id="citybg"></div>
+    <div id="backwall"></div>
+    <div id="rightwall"></div>
+  </div>
 </template>
 
 <script>
 export default {
-  name: 'comicArchive',
+  name: "comicArchive",
   metaInfo: {
-      title:"Comic Archive"
+    title: "Comic Archive",
   },
-    data(){
-        return{
-            currentPage: 0,
-            theArchive: [],
-            picayunes: ["how","whattime","newEnter","asl","reflect","warmup"],
-            picaOne: 0,
-            picaTwo: 0,
-            intervalid2:'',
-        }
-    },
-    mounted() {
-        this.theArchive = JSON.parse(JSON.stringify(this.$store.getters.getArchive.filter(e => e.category == "comic")))
-        //blink animation for ramen shop owner
-        const images = ["/assets/global/comicArch/ownerEyeC.png","/assets/global/comicArch/ownerEyeClosedC.png"]
-        this.intervalid2 = setInterval(function(){
-            document.getElementById("ownerEye").src = images[1]; 
-            setTimeout(function(){ 
-                document.getElementById("ownerEye").src = images[0]; 
-            }, 300);
-            setTimeout(function(){ 
-                document.getElementById("ownerEye").src = images[1]; 
-            }, 600);
-            setTimeout(function(){ 
-                document.getElementById("ownerEye").src = images[0]; 
-            }, 900);
-        },6000);
+  data() {
+    return {
+      currentPage: 0,
+      theArchive: [],
+      picayunes: ["how", "whattime", "newEnter", "asl", "reflect", "warmup"],
+      picaOne: 0,
+      picaTwo: 0,
+      intervalid2: "",
+    };
+  },
+  mounted() {
+    this.theArchive = JSON.parse(
+      JSON.stringify(
+        this.$store.getters.getArchive.filter((e) => e.category == "comic")
+      )
+    );
+    //blink animation for ramen shop owner
+    const images = [
+      "/assets/global/comicArch/ownerEyeC.png",
+      "/assets/global/comicArch/ownerEyeClosedC.png",
+    ];
+    this.intervalid2 = setInterval(function () {
+      document.getElementById("ownerEye").src = images[1];
+      setTimeout(function () {
+        document.getElementById("ownerEye").src = images[0];
+      }, 300);
+      setTimeout(function () {
+        document.getElementById("ownerEye").src = images[1];
+      }, 600);
+      setTimeout(function () {
+        document.getElementById("ownerEye").src = images[0];
+      }, 900);
+    }, 6000);
 
-        //set picayunes
-        const chances = 10
-        const totalYunes = this.picayunes.length * chances
-        this.picaOne = Math.floor(Math.random() * totalYunes)
-        this.picaTwo = Math.floor(Math.random() * totalYunes)
-        if(this.picaOne == this.picaTwo){
-            this.picaOne = 999
-            this.picaTwo = 999
-        }
+    //set picayunes
+    const chances = 10;
+    const totalYunes = this.picayunes.length * chances;
+    this.picaOne = Math.floor(Math.random() * totalYunes);
+    this.picaTwo = Math.floor(Math.random() * totalYunes);
+    if (this.picaOne == this.picaTwo) {
+      this.picaOne = 999;
+      this.picaTwo = 999;
+    }
+  },
+  methods: {
+    formatDate(isoDate) {
+      let d = new Date(isoDate);
+      let month =
+        d.getMonth() + 1 < 10 ? `0${d.getMonth() + 1}` : d.getMonth() + 1;
+      let date = d.getDate() < 10 ? `0${d.getDate()}` : d.getDate();
+      let year = d.getFullYear().toString().substring(2);
+      let dString = `${month}:${date}:${year}`;
+      return dString;
     },
-    methods: {
-        formatDate(isoDate){
-            let d = new Date(isoDate)
-            let month = d.getMonth()+1 < 10 ? `0${d.getMonth()+1}` : d.getMonth()+1
-            let date = d.getDate() < 10 ? `0${d.getDate()}` : d.getDate()
-            let year = d.getFullYear().toString().substring(2)
-            let dString = `${month}:${date}:${year}`
-            return dString
-        },
-        changeNav(num){
-            this.currentPage += num
-        }
+    changeNav(num) {
+      this.currentPage += num;
     },
-    computed: {
-        blockSize(){
-            return {width: '25'+this.$store.getters.getTaller,height: '25'+this.$store.getters.getTaller}
-        },
-        fontSize(){
-            return {fontSize: '1'+this.$store.getters.getTaller}
-        },
-        totalPages(){
-            return {totalPages: Math.floor(this.theArchive.length/5 + 1)}
-        },
+  },
+  computed: {
+    blockSize() {
+      return {
+        width: "25" + this.$store.getters.getTaller,
+        height: "25" + this.$store.getters.getTaller,
+      };
     },
-    watch: {
-        theArchive(){
-            for(let i=0;i<this.theArchive.length;i++){
-                this.theArchive[i].updatedDate = this.formatDate(this.theArchive[i].updatedDate)
-            }
-        }
+    fontSize() {
+      return { fontSize: "1" + this.$store.getters.getTaller };
     },
-    beforeDestroy () {
-       clearInterval(this.intervalid2)
+    totalPages() {
+      return { totalPages: Math.floor(this.theArchive.length / 5 + 1) };
     },
-}
+  },
+  watch: {
+    theArchive() {
+      for (let i = 0; i < this.theArchive.length; i++) {
+        this.theArchive[i].updatedDate = this.formatDate(
+          this.theArchive[i].updatedDate
+        );
+      }
+    },
+  },
+  beforeDestroy() {
+    clearInterval(this.intervalid2);
+  },
+};
 </script>
 
 <style lang="sass" scoped>
@@ -219,36 +267,36 @@ $metalColor: #c964ff
         right: 33.5em
         animation: patronBounce .5s infinite
     #picaTwo
-        @extend #picatemp  
+        @extend #picatemp
         right: 12.5em
         animation: patronBounceTwo .5s infinite
 @keyframes patronBounce
-  0%
-      bottom: 21em
-  50%
-      bottom: 20.75em
-  100%
-      bottom: 21em
+    0%
+        bottom: 21em
+    50%
+        bottom: 20.75em
+    100%
+        bottom: 21em
 @keyframes patronBounceTwo
-  0%
-      bottom: 20.75em
-  50%
-      bottom: 21em
-  100%
-      bottom: 20.75em
-#shopOwner    
+    0%
+        bottom: 20.75em
+    50%
+        bottom: 21em
+    100%
+        bottom: 20.75em
+#shopOwner
     position: absolute
     top: 40em
     left: 20em
     z-index: 1
     img
-        position: absolute   
+        position: absolute
     .eye
         z-index: 2
         width: 5em
         top: 9.5em
         left: 7.5em
-    .body 
+    .body
         width: 19em
 #postTemp
     position: absolute
@@ -284,11 +332,11 @@ $metalColor: #c964ff
     color: $lightNeonBlue
     @include textGlow($neonBlue, 1px)
 .leftArrow
-    @extend .arrowTemplate    
+    @extend .arrowTemplate
     left: .75em
     transform: rotateZ(15deg)
 .rightArrow
-    @extend .arrowTemplate 
+    @extend .arrowTemplate
     left: 8.36em
     transform: rotateZ(-15deg)
 .dead
@@ -314,7 +362,7 @@ $metalColor: #c964ff
         background-color: darken($woodTint, 5%)
         width: 33em
         height: 3em
-    #twoPole    
+    #twoPole
         position: absolute
         top: 17.5em
         left: 2em
@@ -330,7 +378,7 @@ $metalColor: #c964ff
         width: 33em
         height: 3em
         transform: rotateZ(120deg)
-    #innerCircle  
+    #innerCircle
         position: absolute
         top: 14em
         left: 14em
@@ -372,7 +420,7 @@ $metalColor: #c964ff
         top: 45em
         transform: skewY(39deg)
 #leftPart
-    #roof    
+    #roof
         width: 12em
         position: absolute
         height: 2em
@@ -380,7 +428,7 @@ $metalColor: #c964ff
         transform: rotateZ(-28deg)
         top: 22em
         background-color: $roofTint
-    #roofPole    
+    #roofPole
         width: 1.5em
         position: absolute
         height: 48em
@@ -388,7 +436,7 @@ $metalColor: #c964ff
         z-index: -1
         left: 5em
         background-color: darken($woodTint, 15%)
-#signHooks    
+#signHooks
     width: 28em
     height: 8em
     top: 37em
@@ -489,7 +537,7 @@ $metalColor: #c964ff
     margin: 0 auto
     width: 89em
     height: 26em
-#lantern    
+#lantern
     position: absolute
     width: 16em
     top: 39em
@@ -499,7 +547,7 @@ $metalColor: #c964ff
     animation: lanternSway 5s infinite
     transform-origin: top
     animation-timing-function: ease-in-out
-    h3    
+    h3
         font-size: 7em
         z-index: 300
         position: absolute
@@ -513,15 +561,15 @@ $metalColor: #c964ff
         @extend h3
         top: 2em
     img
-        width: 100%    
+        width: 100%
         filter: hue-rotate(300deg)
 @keyframes lanternSway
-  0%
-      transform: rotate(3deg)
-  50%
-      transform: rotate(-3deg)
-  100%
-      transform: rotate(3deg)
+    0%
+        transform: rotate(3deg)
+    50%
+        transform: rotate(-3deg)
+    100%
+        transform: rotate(3deg)
 #scene
     width: 100%
     height: 100%
@@ -550,7 +598,7 @@ $metalColor: #c964ff
     #rowOfLights
         z-index: 499
         position: relative
-        .lightOne    
+        .lightOne
             width: 10em
             height: 4em
             position: absolute
@@ -577,7 +625,7 @@ $metalColor: #c964ff
             border-top-right-radius: 10em
             background-color: $metalColor
             top: 7em
-        .lightFour  
+        .lightFour
             width: 10em
             height: 4em
             position: absolute
@@ -612,13 +660,13 @@ $metalColor: #c964ff
             left: -35.5em
             top: -18em
         .midOne
-            @extend .shadow    
+            @extend .shadow
             width: 10em
             left: 27.5em
             top: 1.5em
             height: 10em
         .midThree
-            @extend .shadow     
+            @extend .shadow
             width: 25em
             left: 0
             right: 0
@@ -672,16 +720,16 @@ $metalColor: #c964ff
         height: 50em
         background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,1) 90%)
     #backboard
-      background-color: $bannerTint
-      @include boxGlow($bannerTint)
-      height: 27em
-      position: absolute
-      z-index: 50
-      top: 9em
-      margin: 0 auto
-      right: 0
-      left: 0
-      width: 73em
+        background-color: $bannerTint
+    @include boxGlow($bannerTint)
+    height: 27em
+    position: absolute
+    z-index: 50
+    top: 9em
+    margin: 0 auto
+    right: 0
+    left: 0
+    width: 73em
     #comixSign
         width: fit-content
         display: block
@@ -700,16 +748,16 @@ $metalColor: #c964ff
         h2
             @include textGlow($neonPink, 1px)
             color: white
-            font-family: VCR    
+            font-family: VCR
             font-size: 2em
             line-height: 1
     #bg
-      background-size: 100% 100%
-      position: absolute
-      top: 0
-      left: 0
-      width: 100em
-      height: 100em
+        background-size: 100% 100%
+        position: absolute
+        top: 0
+        left: 0
+        width: 100em
+        height: 100em
     #citybg
         @extend #bg
         background-image: url("/assets/global/comicArch/bgidk3.jpg")
@@ -720,7 +768,7 @@ $metalColor: #c964ff
         image-rendering: pixelated
         image-rendering: optimize-contrast
         -ms-interpolation-mode: nearest-neighbor
-        z-index: -202    
+        z-index: -202
         filter: brightness(0.5)
     #glowbg
         @extend #bg
@@ -750,9 +798,10 @@ $metalColor: #c964ff
             animation: screenGlow 10s infinite
             width: 17.5em
             height: 17.5em
+            transition: filter .2s
+            &:hover
+                filter: drop-shadow(0px 9px 18px black) contrast(1.5)
             .boxWrap
-                &:hover
-                    filter: contrast(2)
                 img
                     width: 100%
                 .boxDate
