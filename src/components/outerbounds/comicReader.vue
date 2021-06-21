@@ -1,5 +1,5 @@
 <template>
-  <div id="comicPage">
+  <div id="comicPage" :key="pageKey">
     <div id="theComic">
       <h1>{{ comicInfo.title }}</h1>
       <h2>{{ comicInfo.subtitle }}</h2>
@@ -62,10 +62,11 @@
           </template>
         </template>
         <template v-if="archiveAll == true">
-          <select>
+          <select @change="switchPage">
             <option
               v-for="comics in fullReturn"
               :key="comics._id"
+              :data-id="comics._id"
               :selected="comicInfo.title == comics.title"
             >
               {{ comics.title }}
@@ -73,10 +74,11 @@
           </select>
         </template>
         <template v-else>
-          <select>
+          <select @change="switchPage">
             <option
-              v-for="(comics) in seriesReturn"
+              v-for="comics in seriesReturn"
               :key="comics._id"
+              :data-id="comics._id"
               :selected="comicInfo.title == comics.title"
             >
               {{ comics.title }}
@@ -131,6 +133,7 @@ export default {
         date: "",
         series: "noseries",
       },
+      pageKey: 0,
       fullReturn: JSON.parse(
         JSON.stringify(this.$store.getters.getArchive)
       ).filter((e) => e.comicsArray.length > 0 && e.comicsArray[0] != ""),
@@ -221,6 +224,11 @@ export default {
       } else {
         this.$router.push("/");
       }
+    },
+    switchPage(e) {
+      let newRoute = `/comicReader/${e.target.selectedOptions[0].dataset.id}/${this.cat[0]}${this.cat[1]}?`;
+      // this.$router.push({ path: newRoute });
+      window.location.href = newRoute;
     },
   },
   computed: {
