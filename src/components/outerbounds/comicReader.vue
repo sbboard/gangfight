@@ -64,9 +64,8 @@
         <template v-if="archiveAll == true">
           <select>
             <option
-              v-for="(comics, index) in fullReturn"
+              v-for="comics in fullReturn"
               :key="comics._id"
-              :ref="'pg-' + index"
               :selected="comicInfo.title == comics.title"
             >
               {{ comics.title }}
@@ -76,9 +75,8 @@
         <template v-else>
           <select>
             <option
-              v-for="(comics, index) in seriesReturn"
+              v-for="(comics) in seriesReturn"
               :key="comics._id"
-              :ref="'pg-' + index"
               :selected="comicInfo.title == comics.title"
             >
               {{ comics.title }}
@@ -149,7 +147,6 @@ export default {
     navigation,
   },
   mounted() {
-    console.log("mounting");
     if (typeof this.$route.params.cat !== "undefined") {
       this.cat = this.$route.params.cat.split("");
       this.cat[0] = parseInt(this.cat[0]);
