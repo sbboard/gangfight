@@ -1,6 +1,22 @@
 <template>
   <div id="comicPage" :key="pageKey">
     <div id="theComic">
+      <div
+        id="stretchOp"
+        @click="
+          () => {
+            wideMode = !wideMode;
+          }
+        "
+        :class="[
+          this.$store.getters.getTaller == 'vh' ? 'desktop' : 'mobile',
+          { wideOn: wideMode },
+        ]"
+      >
+        <div>
+          <i class="fas fa-arrows-alt-h"></i>
+        </div>
+      </div>
       <h1>{{ comicInfo.title }}</h1>
       <h2>{{ comicInfo.subtitle }}</h2>
       <div
@@ -21,6 +37,7 @@
           :ref="'pg-' + index"
           v-lazy="`/assets/comics/${comicInfo.url}/${pages}`"
           @click="pageJump(index)"
+          :class="{ fullWidth: wideMode }"
         />
       </div>
 
@@ -144,6 +161,7 @@ export default {
       cursorStyle: "",
       menuClosed: true,
       archiveAll: true,
+      wideMode: true,
     };
   },
   components: {
@@ -227,7 +245,6 @@ export default {
     },
     switchPage(e) {
       let newRoute = `/comicReader/${e.target.selectedOptions[0].dataset.id}/${this.cat[0]}${this.cat[1]}?`;
-      // this.$router.push({ path: newRoute });
       window.location.href = newRoute;
     },
   },
@@ -273,6 +290,28 @@ export default {
 @import "../../css/reset.css"
 @import "../../css/gangColors.sass"
 @import "../../css/gangFonts.sass"
+
+#stretchOp
+  color: $neonBlue
+  @include textGlow($neonBlue, 1px)
+  border: 3px solid $neonBlue
+  @include boxGlow($neonBlue)
+  font-size: 2rem
+  position: fixed
+  top: 20px
+  right: 20px
+  line-height: 0.1
+  padding: .5rem
+  border-radius: .15em
+  cursor: pointer
+  &.mobile
+    display: none
+  i
+    transform: rotate(90deg)
+    transition: transform .2s
+  &.wideOn
+    i
+      transform: rotate(0deg)
 
 #comicNav
   padding: 0 0 .5em 0
@@ -405,8 +444,12 @@ export default {
         display: block
         max-height: 100vh
         cursor: pointer
+        transition: max-height .2s
         &:last-of-type
           cursor: initial
+        &.fullWidth
+          max-height: 200vh
+          transition: max-height .4s
       img[lazy=loading]
         height: 300px
         margin: calc(50vh - 150px) auto

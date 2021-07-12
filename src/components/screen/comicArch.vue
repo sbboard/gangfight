@@ -128,7 +128,6 @@
     </div>
     <div id="comixSign">
       <h1>コミック</h1>
-      <!-- <h2>{{ currentPage + 1 }}/{{ totalPages.totalPages }}</h2> -->
     </div>
     <div id="backboard"></div>
     <img id="posterOne" src="/assets/global/comicArch/oil.gif" />
