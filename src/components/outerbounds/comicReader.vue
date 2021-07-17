@@ -54,7 +54,11 @@
           :href="`/comicReader/${priorComic._id}/${cat[0]}${cat[1]}`"
         >
           <span class="arrow"><i class="fas fa-angle-left"></i></span>
-          <span class="nameContent">{{ priorComic.title }}</span>
+          <span class="nameContent"
+            >{{ priorComic.title }}<template v-if="priorComic.subtitle">: {{
+              priorComic.subtitle
+            }}</template></span
+          >
         </a>
         <template v-if="comicInfo.series != 'noseries'">
           <template v-if="archiveAll == false">
@@ -86,7 +90,7 @@
               :data-id="comics._id"
               :selected="comicInfo.title == comics.title"
             >
-              {{ comics.title }}
+              {{ comics.title }}<template v-if="comics.subtitle">: {{comics.subtitle}}</template>
             </option>
           </select>
         </template>
@@ -98,7 +102,7 @@
               :data-id="comics._id"
               :selected="comicInfo.title == comics.title"
             >
-              {{ comics.title }}
+              {{ comics.title }}<template v-if="comics.subtitle">: {{comics.subtitle}}</template>
             </option>
           </select>
         </template>
@@ -107,7 +111,11 @@
           id="rightArrow"
           :href="`/comicReader/${nextComic._id}/${cat[0]}${cat[1]}`"
         >
-          <span class="nameContent">{{ nextComic.title }}</span>
+          <span class="nameContent"
+            >{{ nextComic.title }}<template v-if="nextComic.subtitle">: {{
+              nextComic.subtitle
+            }}</template>
+          </span>
           <span class="arrow"><i class="fas fa-angle-right"></i></span>
         </a>
       </div>
@@ -156,8 +164,8 @@ export default {
       ).filter((e) => e.comicsArray.length > 0 && e.comicsArray[0] != ""),
       comicId: this.$route.params.id,
       cat: [0, 0],
-      nextComic: { _id: "", title: "" },
-      priorComic: { _id: "", title: "" },
+      nextComic: { _id: "", title: "", subtitle: "" },
+      priorComic: { _id: "", title: "", subtitle: "" },
       cursorStyle: "",
       menuClosed: true,
       archiveAll: true,
@@ -228,6 +236,7 @@ export default {
         if (currentIndex != 0) {
           let newArray = archive.slice();
           this.nextComic.title = newArray[currentIndex - 1].title;
+          this.nextComic.subtitle = newArray[currentIndex - 1].subtitle;
           this.nextComic._id = newArray[currentIndex - 1]._id;
         } else {
           this.nextComic.title = "";
@@ -237,6 +246,7 @@ export default {
         } else {
           let newArray = archive.slice();
           this.priorComic.title = newArray[currentIndex + 1].title;
+          this.priorComic.subtitle = newArray[currentIndex + 1].subtitle;
           this.priorComic._id = newArray[currentIndex + 1]._id;
         }
       } else {
