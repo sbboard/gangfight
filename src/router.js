@@ -64,11 +64,7 @@ export default new Router({
       },
       {
         path: "/:string",
-        name: "Cultur Club",
-        component: fakeFourOFour
-      },
-      {
-        path: "/*",
+        alias: "/*",
         name: "Cultur Club",
         component: fakeFourOFour
       },

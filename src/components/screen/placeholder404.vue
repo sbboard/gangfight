@@ -1,198 +1,271 @@
 <template>
-    <div :style="fontSize">
-        <div id="dayMode" v-if="urlString!='hour<19&&hour>5&&forceNight'">
-            <div class="fourText">
-                <h1>404</h1>
-                <h2>come back when it's darker</h2>
-            </div>
-            <iframe class="efron" :src="'https://www.youtube.com/embed/videoseries?list=PLa20yDzXOyGg9KigaXG3YsijSPLqHSw1C&amp;controls=0&amp;showinfo=0&amp;autoplay=1&mute=1&loop=1&index='+randoNum" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-            <div id="cityLights"></div>
-            <div id="cityOfStars"></div>
-            <div id="cityBlues"></div>
-        </div>
-        <div id="nightMode" v-else>
-            <div id="logo">404 DRAKULA'S CULTURE CLUB</div>
-            <div id="speechBubble" class="active">
-                <div id="innerMouth"></div>
-                <div id="speechProg"></div><div id="blackBox">█</div>
-                <div id="speechText" class="hidden">What's up it's me -- Drakula. Thanks for visiting my club tonight. Feel free to browse my collection of worthwhile media while you're here.</div>
-                <div id="tailBorder"></div>
-            </div>
-            <div id="dracula">
-                <div id="mouth"></div>
-                <img src="/assets/global/404/draculaa.png" alt="Dracula - The King of Darkness"/>
-            </div>
-            <div id="gallery">
-                <div id="boxRipple"></div>
-                <div id="innerBox">
-                    <ul v-if="selected==''">
-                        <li v-for="(items,id) in sortByYear(cat)" :key="`${id}`" @click="changeSelected(items)"
-                        :class="{ lastOfYear: (cat.length == 0
-                        && sortByYear(cat).length != id + 1
-                        && sortByYear(cat)[id].year !== sortByYear(cat)[id+1].year
-                        )}">
-                            {{items.name}}
-                        </li>
-                    </ul>
-                    <div id="mediaDisplay" v-else>
-                        <h1>{{selected.name}}</h1>
-                        <template v-if="selected.hasOwnProperty('creator')">
-                            <h2>{{selected.creator}}</h2>
-                        </template>
-                        <h3>{{selected.year}}</h3>
-                        <img class="mediaPic" :src="'/assets/global/404/media/' + selected.pic"/>
-                        <a :href="selected.url">Link</a>
-                        <template v-if="selected.hasOwnProperty('exOneLink') && selected.exOneLink != ''">
-                            <iframe :src="'https://www.youtube.com/embed/'+selected.exOneLink" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe>
-                        </template>
-                        <template v-if="selected.hasOwnProperty('exTwoLink') && selected.exTwoLink != ''">
-                            <iframe :src="'https://www.youtube.com/embed/'+selected.exTwoLink" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe>
-                        </template>
-                    </div>
-                </div>
-                <div id="topRow"> 
-                    <!--this is a secret row-->
-                    <img src="/assets/global/404/pmsprite.png">
-                    <img src="/assets/global/404/pmsprite.png">
-                    <img src="/assets/global/404/pmsprite.png">
-                </div>
-                <div id="iconsRow">
-                    <img @click="changeCat('video')" src="/assets/global/404/vhs.png">
-                    <img @click="changeCat('music')" src="/assets/global/404/audioSec.png">
-                    <img @click="changeCat('game')" src="/assets/global/404/gbb.png">
-                    <img @click="changeCat('book')" src="/assets/global/404/paper.png">
-                    <img @click="changeCat('')" src="/assets/global/404/misc.png">
-                </div>
-            </div>
-            <div id="horizon"></div>
-            <div id="blackness"></div>
-            <img id="moon" src="/assets/global/404/moon.png"/>
-            <div id="sky"></div>
-        </div>
+  <div :style="fontSize">
+    <div
+      id="dayMode"
+      v-if="hour < timeTime && hour > 5 && urlString != 'forceNight'"
+    >
+      <div class="fourText">
+        <h1>404</h1>
+        <h2>come back when it's darker</h2>
+      </div>
+      <iframe
+        class="efron"
+        :src="
+          'https://www.youtube.com/embed/videoseries' +
+          '?list=PLa20yDzXOyGg9KigaXG3YsijSPLqHSw1C' +
+          '&amp;controls=0' +
+          '&amp;showinfo=0' +
+          '&amp;autoplay=1' +
+          '&amp;mute=1' +
+          '&amp;loop=1' +
+          '&amp;hl=ja' +
+          `&amp;value=${randoNum}`
+        "
+        frameborder="0"
+        allow="autoplay; encrypted-media"
+        allowfullscreen
+      ></iframe>
+      <div id="cityLights"></div>
+      <div id="cityOfStars"></div>
+      <div id="cityBlues"></div>
     </div>
+    <div id="nightMode" v-else>
+      <div id="logo">404 DRAKULA'S CULTURE CLUB</div>
+      <div id="speechBubble" class="active">
+        <div id="innerMouth"></div>
+        <div id="speechProg"></div>
+        <div id="blackBox">█</div>
+        <div id="speechText" class="hidden">
+          What's up it's me -- Drakula. Thanks for visiting my club tonight.
+          Feel free to browse my collection of worthwhile media while you're
+          here.
+        </div>
+        <div id="tailBorder"></div>
+      </div>
+      <div id="dracula">
+        <div id="mouth"></div>
+        <img
+          src="/assets/global/404/draculaa.png"
+          alt="Dracula - The King of Darkness"
+        />
+      </div>
+      <div id="gallery">
+        <div id="boxRipple"></div>
+        <div id="innerBox">
+          <ul v-if="selected == ''">
+            <li
+              v-for="(items, id) in sortByYear(cat)"
+              :key="`${id}`"
+              @click="changeSelected(items)"
+              :class="{
+                lastOfYear:
+                  cat.length == 0 &&
+                  sortByYear(cat).length != id + 1 &&
+                  sortByYear(cat)[id].year !== sortByYear(cat)[id + 1].year,
+              }"
+            >
+              {{ items.name }}
+            </li>
+          </ul>
+          <div id="mediaDisplay" v-else>
+            <h1>{{ selected.name }}</h1>
+            <template v-if="selected.hasOwnProperty('creator')">
+              <h2>{{ selected.creator }}</h2>
+            </template>
+            <h3>{{ selected.year }}</h3>
+            <img
+              class="mediaPic"
+              :src="'/assets/global/404/media/' + selected.pic"
+            />
+            <a :href="selected.url">Link</a>
+            <template
+              v-if="
+                selected.hasOwnProperty('exOneLink') && selected.exOneLink != ''
+              "
+            >
+              <iframe
+                :src="'https://www.youtube.com/embed/' + selected.exOneLink"
+                frameborder="0"
+                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+              ></iframe>
+            </template>
+            <template
+              v-if="
+                selected.hasOwnProperty('exTwoLink') && selected.exTwoLink != ''
+              "
+            >
+              <iframe
+                :src="'https://www.youtube.com/embed/' + selected.exTwoLink"
+                frameborder="0"
+                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+              ></iframe>
+            </template>
+          </div>
+        </div>
+        <div id="topRow">
+          <!--this is a secret row-->
+          <img src="/assets/global/404/pmsprite.png" />
+          <img src="/assets/global/404/pmsprite.png" />
+          <img src="/assets/global/404/pmsprite.png" />
+        </div>
+        <div id="iconsRow">
+          <img @click="changeCat('video')" src="/assets/global/404/vhs.png" />
+          <img
+            @click="changeCat('music')"
+            src="/assets/global/404/audioSec.png"
+          />
+          <img @click="changeCat('game')" src="/assets/global/404/gbb.png" />
+          <img @click="changeCat('book')" src="/assets/global/404/paper.png" />
+          <img @click="changeCat('')" src="/assets/global/404/misc.png" />
+        </div>
+      </div>
+      <div id="horizon"></div>
+      <div id="blackness"></div>
+      <img id="moon" src="/assets/global/404/moon.png" />
+      <div id="sky"></div>
+    </div>
+  </div>
 </template>
 
 <script>
-import media from '../../media.json'
+import media from "../../media.json";
 
 export default {
-    name: 'DraculaCultureClub',
+  name: "DraculaCultureClub",
   metaInfo: {
-      title: "404"
+    title: "404",
   },
-    data(){
-        return{
-            randoNum: 0,
-            hour: 0,
-            mediaGallery: media.media,
-            selected: "",
-            cat: "",
-            urlString: this.$route.params.string,
-        }
+  data() {
+    return {
+      randoNum: 0,
+      hour: 0,
+      mediaGallery: media.media,
+      selected: "",
+      cat: "",
+      urlString: this.$route.params.string,
+      timeTime: 24,
+    };
+  },
+  created() {
+    let today = new Date();
+    this.hour = today.getHours();
+    //generate rando Nos for YouTube Vid
+    this.randoNum = Math.floor(Math.random() * 10) + 1;
+  },
+  computed: {
+    fontSize() {
+      return { fontSize: "1" + this.$store.getters.getTaller };
     },
-    created(){
-        let today = new Date();
-        this.hour = today.getHours()
-        //generate rando Nos for YouTube Vid
-        this.randoNum = Math.floor(Math.random() * 10) + 1
+  },
+  methods: {
+    sortByYear(category) {
+      let newGall = [];
+      for (let i = 0; i < this.mediaGallery.length; i++) {
+        if (this.mediaGallery[i].category.includes(category)) {
+          newGall.push(this.mediaGallery[i]);
+        }
+      }
+      newGall.sort(function (a, b) {
+        return b.year - a.year;
+      });
+      return newGall;
     },
-    computed: {
-        fontSize(){
-            return {fontSize: '1'+this.$store.getters.getTaller}
-        }
+    changeCat(category) {
+      this.cat = category;
+      this.selected = "";
     },
-    methods:{
-        sortByYear(category){
-            let newGall = []
-            for(let i=0;i<this.mediaGallery.length;i++){
-                if(this.mediaGallery[i].category.includes(category)){
-                    newGall.push(this.mediaGallery[i])
-                }
-            }
-            newGall.sort(function(a,b){
-                return b.year - a.year;
-            })
-            return newGall
-        },
-        changeCat(category){
-            this.cat = category
-            this.selected = ""
-        },
-        changeSelected(select){
-            this.selected = select
-        }
+    changeSelected(select) {
+      this.selected = select;
     },
-    mounted(){
-        const talk = document.getElementById("speechText").textContent;
-        let bubble = document.getElementById("speechBubble")
-        let speechProg = document.getElementById("speechProg")
-        let mouth = document.getElementById("mouth")
-        let blackBox = document.getElementById("blackBox")
-        let innerMouth = document.getElementById("innerMouth")
-        let i = 0
-        let normSpeech = 150
-
-        function speechEngine() {
-        let timeStop = normSpeech
-
-        function myLoop() {
-            setTimeout(function() {
-            speechProg.innerHTML += talk[i]
-            if (mouth.classList.contains("open")) {
-                mouth.classList.remove("open");
-                innerMouth.classList.remove("open");
-            } else {
-                mouth.classList.add("open");
-                innerMouth.classList.add("open");
-            }
-            if (talk[i] == "?" || talk[i] == "!" || talk[i] == "." || talk[i] == "-") {
-                timeStop = normSpeech * 2
-                mouth.classList.remove("open");
-                innerMouth.classList.remove("open");
-            }
-            else if(talk[i] == " "){
-                mouth.classList.remove("open");
-                innerMouth.classList.remove("open");
-                timeStop = normSpeech
-            }
-            else {
-                timeStop = normSpeech
-            }
-            i++;
-            if (i < talk.length) {
-                myLoop();
-            }
-            else{
-                mouth.classList.remove("open");
-                    bubble.classList.remove("active")
-                blackBox.classList.add("hidden");
-            }
-            }, timeStop)
-        }
-        myLoop()
-        }
-
-        function bubbleClick(){
-        if(bubble.classList.contains("active")){
-            bubble.classList.remove("active")
-            let textbox = document.getElementById("speechText")
-            i = talk.length-1
-            mouth.classList.remove("open")
-            speechProg.classList.add("hidden");
-            textbox.classList.remove("hidden");
-            bubble.classList.remove("active")
-            blackBox.classList.add("hidden");
-        }
-        else{
-            bubble.classList.add("hidden")
-        }
-        }
-
-        document.getElementById("speechBubble").addEventListener("click", bubbleClick);
-        speechEngine()
-
+  },
+  mounted() {
+    let talk, bubble, speechProg, mouth, blackBox, innerMouth;
+    if (
+      this.hour >= this.timeTime ||
+      this.hour < 5 ||
+      this.urlString == "forceNight"
+    ) {
+      talk = document.getElementById("speechText").textContent;
+      bubble = document.getElementById("speechBubble");
+      speechProg = document.getElementById("speechProg");
+      mouth = document.getElementById("mouth");
+      blackBox = document.getElementById("blackBox");
+      innerMouth = document.getElementById("innerMouth");
     }
-}
+
+    let i = 0;
+    let normSpeech = 150;
+
+    function speechEngine() {
+      let timeStop = normSpeech;
+
+      function myLoop() {
+        setTimeout(function () {
+          speechProg.innerHTML += talk[i];
+          if (mouth.classList.contains("open")) {
+            mouth.classList.remove("open");
+            innerMouth.classList.remove("open");
+          } else {
+            mouth.classList.add("open");
+            innerMouth.classList.add("open");
+          }
+          if (
+            talk[i] == "?" ||
+            talk[i] == "!" ||
+            talk[i] == "." ||
+            talk[i] == "-"
+          ) {
+            timeStop = normSpeech * 2;
+            mouth.classList.remove("open");
+            innerMouth.classList.remove("open");
+          } else if (talk[i] == " ") {
+            mouth.classList.remove("open");
+            innerMouth.classList.remove("open");
+            timeStop = normSpeech;
+          } else {
+            timeStop = normSpeech;
+          }
+          i++;
+          if (i < talk.length) {
+            myLoop();
+          } else {
+            mouth.classList.remove("open");
+            bubble.classList.remove("active");
+            blackBox.classList.add("hidden");
+          }
+        }, timeStop);
+      }
+      myLoop();
+    }
+
+    function bubbleClick() {
+      if (bubble.classList.contains("active")) {
+        bubble.classList.remove("active");
+        let textbox = document.getElementById("speechText");
+        i = talk.length - 1;
+        mouth.classList.remove("open");
+        speechProg.classList.add("hidden");
+        textbox.classList.remove("hidden");
+        bubble.classList.remove("active");
+        blackBox.classList.add("hidden");
+      } else {
+        bubble.classList.add("hidden");
+      }
+    }
+
+    if (
+      this.hour >= this.timeTime ||
+      this.hour < 5 ||
+      this.urlString == "forceNight"
+    ) {
+      document
+        .getElementById("speechBubble")
+        .addEventListener("click", bubbleClick);
+
+      speechEngine();
+    }
+  },
+};
 </script>
 
 <style lang="sass" scoped>
@@ -241,7 +314,7 @@ export default {
     z-index: 2
     background-size: 100% 100%
     display: none
-#gallery    
+#gallery
     position: absolute
     bottom: 5.75em
     left: 53em
@@ -269,12 +342,12 @@ export default {
         img
             pointer-events: all
             cursor: pointer
-            transform: skewY(10deg)    
+            transform: skewY(10deg)
             width: 8em
             height: 10em
             &:hover
                 animation: dip .5s alternate infinite
-    #innerBox        
+    #innerBox
         display: block
         overflow: auto
         max-height: 33.5em
@@ -284,7 +357,7 @@ export default {
         @include boxGlow($neonGreen)
         border: 1px solid $neonGreen
         background-color: rgba(0,0,0,.7)
-        &::-webkit-scrollbar 
+        &::-webkit-scrollbar
             width: .75em
         &::-webkit-scrollbar-track
             background: $lightNeonGreen
@@ -325,7 +398,7 @@ export default {
     top: 17em
     filter: brightness(0)
     height: 36em
-#blackness    
+#blackness
     position: absolute
     width: 100%
     height: 80em
@@ -333,7 +406,7 @@ export default {
     background-color: black
     top: 36em
     z-index: -1
-#moon    
+#moon
     position: absolute
     top: 2em
     width: 54em
@@ -355,7 +428,7 @@ export default {
     top: 12em
     z-index: 0
     left: -.125em
-    &:after    
+    &:after
         content: ''
         position: absolute
         bottom: 0
@@ -383,7 +456,7 @@ export default {
     background-color: black
     border: 1px solid $neonBlue
     @include boxGlow($neonBlue)
-    &:after    
+    &:after
         content: ''
         position: absolute
         bottom: 0
@@ -515,7 +588,7 @@ iframe
     background-position: center
     animation: starglow 10s infinite
 #cityBlues
-    background: -webkit-radial-gradient(bottom, #121729, #020306 60%);
+    background: -webkit-radial-gradient(bottom, #121729, #020306 60%)
     margin: 0
     padding: 0
     background-size: cover
