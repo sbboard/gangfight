@@ -63,6 +63,11 @@ export default new Router({
         component: picross
       },
       {
+        path: "/:string",
+        name: "Cultur Club",
+        component: fakeFourOFour
+      },
+      {
         path: "/*",
         name: "Cultur Club",
         component: fakeFourOFour

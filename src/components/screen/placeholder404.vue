@@ -1,6 +1,6 @@
 <template>
     <div :style="fontSize">
-        <div id="dayMode" v-if="hour<18&&hour>5&&urlString!='forceNight'">
+        <div id="dayMode" v-if="urlString!='hour<19&&hour>5&&forceNight'">
             <div class="fourText">
                 <h1>404</h1>
                 <h2>come back when it's darker</h2>
