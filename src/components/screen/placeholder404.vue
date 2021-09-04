@@ -143,7 +143,7 @@ export default {
       selected: "",
       cat: "",
       urlString: this.$route.params.string,
-      timeTime: 24,
+      timeTime: 19,
     };
   },
   created() {
