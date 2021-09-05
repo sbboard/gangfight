@@ -169,7 +169,7 @@ export default {
       cursorStyle: "",
       menuClosed: true,
       archiveAll: true,
-      wideMode: true,
+      wideMode: false,
     };
   },
   components: {
