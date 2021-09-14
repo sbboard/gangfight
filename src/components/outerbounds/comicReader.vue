@@ -1,6 +1,11 @@
 <template>
   <div id="comicPage" :key="pageKey">
-    <div id="theComic">
+    <div
+      id="theComic"
+      :class="[
+        this.$store.getters.getTaller == 'vh' ? '' : 'mobile'
+      ]"
+    >
       <div
         id="stretchOp"
         @click="
@@ -55,9 +60,10 @@
         >
           <span class="arrow"><i class="fas fa-angle-left"></i></span>
           <span class="nameContent"
-            >{{ priorComic.title }}<template v-if="priorComic.subtitle">: {{
-              priorComic.subtitle
-            }}</template></span
+            >{{ priorComic.title
+            }}<template v-if="priorComic.subtitle"
+              >: {{ priorComic.subtitle }}</template
+            ></span
           >
         </a>
         <template v-if="comicInfo.series != 'noseries'">
@@ -90,7 +96,10 @@
               :data-id="comics._id"
               :selected="comicInfo.title == comics.title"
             >
-              {{ comics.title }}<template v-if="comics.subtitle">: {{comics.subtitle}}</template>
+              {{ comics.title
+              }}<template v-if="comics.subtitle"
+                >: {{ comics.subtitle }}</template
+              >
             </option>
           </select>
         </template>
@@ -102,7 +111,10 @@
               :data-id="comics._id"
               :selected="comicInfo.title == comics.title"
             >
-              {{ comics.title }}<template v-if="comics.subtitle">: {{comics.subtitle}}</template>
+              {{ comics.title
+              }}<template v-if="comics.subtitle"
+                >: {{ comics.subtitle }}</template
+              >
             </option>
           </select>
         </template>
@@ -112,9 +124,10 @@
           :href="`/comicReader/${nextComic._id}/${cat[0]}${cat[1]}`"
         >
           <span class="nameContent"
-            >{{ nextComic.title }}<template v-if="nextComic.subtitle">: {{
-              nextComic.subtitle
-            }}</template>
+            >{{ nextComic.title
+            }}<template v-if="nextComic.subtitle"
+              >: {{ nextComic.subtitle }}</template
+            >
           </span>
           <span class="arrow"><i class="fas fa-angle-right"></i></span>
         </a>
@@ -405,7 +418,7 @@ export default {
     top: 0
     width: 100%
     position: relative
-    margin: 0 auto 1em 0
+    margin: 1em auto 0 0
     background-color: initial
     .nameContent
       margin: 0 .5em .25em .5em
@@ -433,14 +446,16 @@ export default {
   min-height: 100vh
   #theComic
     padding: 1em 1em 3em 1em
+    &.mobile
+      padding: 1em 1em 1.5em 1em
     h1
-      font-size: 3em
+      font-size: 5vmin
       text-align: center
       color: $neonBlue
       font-family: Montserrat
       @include textGlow($neonBlue, 1px)
     h2
-      font-size: 2.5em
+      font-size: 4vmin
       text-align: center
       margin-bottom: .5em
       color: $neonBlue
