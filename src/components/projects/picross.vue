@@ -192,7 +192,10 @@ export default {
         }
     },
     mounted(){
-        //this.puzzleArray.sort((a, b) => (a.x.length > b.x.length) ? 1 : -1)
+        this.puzzleArray = this.puzzleArray.sort((a, b) => {
+            return a.y.length - b.y.length;
+        });
+        
         this.speechEngine()
         if(this.getCookie("completePuzzles")){
             this.completePuzzles = this.getCookie("completePuzzles").split`,`.map(x=>+x)
@@ -397,7 +400,7 @@ export default {
                 document.cookie = `completePuzzles=${this.completePuzzles}; expires=Fri, 31 Dec 9999 23:59:59 GMT`
             }
             else{
-                this.result = "\\\\not done, yet!//"
+                this.result = "\\\\not done yet!//"
             }
         }
     },
