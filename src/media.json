@@ -514,6 +514,24 @@
             "exOneLink":"rJK0DnZ2a5w"
         },
         {
+            "year":2021,
+            "category":"game",
+            "creator":"Siactro",
+            "url":"https://siactro.itch.io/toree-2",
+            "name":"Toree 2",
+            "pic":"toree.jpg",
+            "exOneLink":"zzSy6BMoEag"
+        },
+        {
+            "year":2020,
+            "category":"game",
+            "creator":"Bryce Bucher",
+            "url":"https://bryce-bucher.itch.io/fatum-betula",
+            "name":"Fatum Betula",
+            "pic":"fatum.jpg",
+            "exOneLink":"PhC5sQE8s5w"
+        },
+        {
             "year":2019,
             "category":"game",
             "creator":"Square Enix",
