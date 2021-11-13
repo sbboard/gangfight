@@ -13,6 +13,16 @@
             "exTwoLink":"pWo7SC-tG4U"
         },
         {
+            "year":1990,
+            "category":"music",
+            "pic":"publicenemy.jpg",
+            "url":"https://open.spotify.com/album/0aFNb4RDk2hmKKLa0bzXNz?autoplay=true",
+            "creator":"Public Enemy",
+            "name":"Fear of a Black Planet",
+            "exOneLink":"pL2vVWEgKE0",
+            "exTwoLink":"DhQGH6CbKhw"
+        },
+        {
             "year":2020,
             "category":"music",
             "pic":"dua.png",
