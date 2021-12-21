@@ -2,7 +2,7 @@
   <div :style="fontSize">
     <div
       id="dayMode"
-      v-if="hour < timeTime && hour > 5 && urlString != 'forceNight'"
+      v-if="(hour < timeTime && hour > 5 && urlString != 'forceNight') || urlString == 'forceDay'"
     >
       <div class="fourText">
         <h1>404</h1>
@@ -11,20 +11,22 @@
       <iframe
         class="efron"
         :src="
-          'https://www.youtube.com/embed/videoseries' +
-          '?list=PLa20yDzXOyGg9KigaXG3YsijSPLqHSw1C' +
-          '&amp;controls=0' +
-          '&amp;showinfo=0' +
-          '&amp;autoplay=1' +
-          '&amp;mute=1' +
-          '&amp;loop=1' +
-          '&amp;hl=ja' +
-          `&amp;value=${randoNum}`
+          'https://www.youtube-nocookie.com/embed/' +
+          videos[randoNum] +
+          '?version=3' +
+          '&controls=0' +
+          '&showinfo=0' +
+          '&autoplay=1' +
+          '&mute=1' +
+          '&loop=1' +
+          '&hl=ja' +
+          '&playlist=' + videos[randoNum]
         "
         frameborder="0"
         allow="autoplay; encrypted-media"
         allowfullscreen
-      ></iframe>
+      >
+      </iframe>
       <div id="cityLights"></div>
       <div id="cityOfStars"></div>
       <div id="cityBlues"></div>
@@ -144,13 +146,15 @@ export default {
       cat: "",
       urlString: this.$route.params.string,
       timeTime: 19,
+      currentVideo: "IGQBtbKSVhY",
+      videos: ["zHtic327sT4","ElB2GxoClRg","jqZgEIELERs","OnaClmuna78","bcKHSus9pjA","oz3c4Wyr-uw","J6chr50v6vg","vaquvsK0u40","01mCklHlgZw"]
     };
   },
   created() {
     let today = new Date();
     this.hour = today.getHours();
     //generate rando Nos for YouTube Vid
-    this.randoNum = Math.floor(Math.random() * 10) + 1;
+    this.randoNum = Math.floor(Math.random() * this.videos.length);
   },
   computed: {
     fontSize() {
@@ -560,9 +564,11 @@ export default {
         text-align: center
         width: 7em
 iframe
-    width: 100%
-    height: 100%
-    opacity: .5
+  width: 200%
+  position: absolute
+  left: -50%
+  height: 100%
+  opacity: 0.4
 #cityLights
     position: absolute
     z-index: -6
