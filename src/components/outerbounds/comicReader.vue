@@ -2,17 +2,11 @@
   <div id="comicPage" :key="pageKey">
     <div
       id="theComic"
-      :class="[
-        this.$store.getters.getTaller == 'vh' ? '' : 'mobile'
-      ]"
+      :class="[this.$store.getters.getTaller == 'vh' ? '' : 'mobile']"
     >
       <div
         id="stretchOp"
-        @click="
-          () => {
-            wideMode = !wideMode;
-          }
-        "
+        @click="swapSize"
         :class="[
           this.$store.getters.getTaller == 'vh' ? 'desktop' : 'mobile',
           { wideOn: wideMode },
@@ -39,6 +33,7 @@
         <img
           v-for="(pages, index) in comicInfo.comicsArray"
           :key="pages"
+          :id="'pg-' + index"
           :ref="'pg-' + index"
           v-lazy="`/assets/comics/${comicInfo.url}/${pages}`"
           @click="pageJump(index)"
@@ -183,10 +178,17 @@ export default {
       menuClosed: true,
       archiveAll: true,
       wideMode: false,
+      currentPage: 0,
     };
   },
   components: {
     navigation,
+  },
+  created() {
+    window.addEventListener("scroll", this.onScreen);
+  },
+  destroyed() {
+    window.removeEventListener("scroll", this.onScreen);
   },
   mounted() {
     if (typeof this.$route.params.cat !== "undefined") {
@@ -211,6 +213,13 @@ export default {
     }
   },
   methods: {
+    swapSize() {
+      this.wideMode = !this.wideMode;
+      let that = this;
+      setTimeout(function () {
+        that.pageJump(that.currentPage - 1);
+      }, 500);
+    },
     switchCat() {
       if (this.comicInfo.series != "noseries") {
         this.archiveAll = !this.archiveAll;
@@ -225,6 +234,20 @@ export default {
       } else {
         this.cursorStyle = "inherit";
       }
+    },
+    onScreen() {
+      var allPages = document.querySelectorAll("img");
+      var pagesOnScreen = Array.from(allPages).filter(function (el) {
+        var rect = el.getBoundingClientRect();
+        var elemTop = rect.top;
+        var elemBottom = rect.bottom;
+        var isVisible = elemTop < window.innerHeight && elemBottom >= 0;
+        if (isVisible) {
+          return el;
+        }
+      });
+      this.currentPage = pagesOnScreen[0].id.replace("pg-", "");
+      console.log("current page:", this.currentPage);
     },
     pageJump(page) {
       if (page < this.comicInfo.comicsArray.length - 1) {
@@ -465,21 +488,23 @@ export default {
       img
         max-width: 100%
         margin: 0 auto 0 auto
-        margin-top: 1em
+        margin-top: 4em
         display: block
         max-height: 100vh
+        image-rendering: -webkit-optimize-contrast
         cursor: pointer
-        transition: max-height .2s
+        transition: max-height .5s,opacity .5s
         &:last-of-type
           cursor: initial
         &.fullWidth
           max-height: 200vh
-          transition: max-height .4s
       img[lazy=loading]
         height: 300px
         margin: calc(50vh - 150px) auto
-        opacity: .5
+        opacity: 0
         border-radius: 10px
+      img[lazy=loaded]
+        opacity: 1
 #city
   background-image: url('/assets/global/homepage/rochester.png')
   background-position: bottom
