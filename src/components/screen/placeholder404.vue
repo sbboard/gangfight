@@ -281,9 +281,16 @@ export default {
     color: $neonBlue
     padding: .5em
     h1
-        text-align: center
-        font-size: 1.5em
-        color: $neonRed
+      text-align: center
+      font-size: 1.5em
+      color: $neonRed
+    iframe
+      display: block
+      margin: 0 auto
+      margin-bottom: 1em
+      position: inherit
+      width: initial
+      opacity: 1
     h2
         text-align: center
         font-size: 1.25em

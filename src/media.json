@@ -1,779 +1,789 @@
 {
-    "media":[
-        {
-            "year":2013,
-            "category":"music",
-            "pic":"sky.jpg",
-            "url":"https://open.spotify.com/album/1bvCVYPVl445mO690M2dOr",
-            "creator":"Sky Ferreira",
-            "name":"Night Time My Time",
-            "exOne":"Boys",
-            "exOneLink":"B1gDuaY8-V4",
-            "exTwo":"I Blame Myself",
-            "exTwoLink":"pWo7SC-tG4U"
-        },
-        {
-            "year":1990,
-            "category":"music",
-            "pic":"publicenemy.jpg",
-            "url":"https://open.spotify.com/album/0aFNb4RDk2hmKKLa0bzXNz?autoplay=true",
-            "creator":"Public Enemy",
-            "name":"Fear of a Black Planet",
-            "exOneLink":"pL2vVWEgKE0",
-            "exTwoLink":"DhQGH6CbKhw"
-        },
-        {
-            "year":2020,
-            "category":"music",
-            "pic":"dua.png",
-            "url":"https://open.spotify.com/album/7fJJK56U9fHixgO0HQkhtI",
-            "creator":"Dua Lipa",
-            "name":"Future Nostalgia",
-            "exOne":"Future Nostalgia",
-            "exOneLink":"8EJ-vZyBzOQ",
-            "exTwo":"Pretty Please",
-            "exTwoLink":"H0reSX-2jz8"
-        },
-        {
-            "year":2014,
-            "category":"music",
-            "pic":"foster.jpg",
-            "url":"https://open.spotify.com/album/22cFcAQkydpTzeSKQZEKv0",
-            "name":"Supermodel",
-            "creator":"Foster the People",
-            "exOne":"Ask Yourself",
-            "exOneLink":"w02_NLLHAxs",
-            "exTwo":"Coming of Age",
-            "exTwoLink":"MBqzrj18S2w"
-        },
-        {
-            "year":2016,
-            "category":"video",
-            "pic":"vewn.jpg",
-            "url":"https://www.youtube.com/channel/UCd0zIZlbgvEifm_hd3FwlBQ",
-            "name":"vewn",
-            "creator":"",
-            "exOneLink":"NWeyUpqnKuk",
-            "exTwoLink":"RUaOpH31IRU"
-        },
-        {
-            "year":2015,
-            "category":"music",
-            "pic":"neon.jpg",
-            "creator":"Neon Indian",
-            "url":"https://open.spotify.com/album/5qA9yoz0W5eHKYOr45Rkc4",
-            "name":"VEGA INTL. NIGHT SCHOOL",
-            "exOne":"Annie",
-            "exOneLink":"TTuT1s-YPLE",
-            "exTwo":"The Glitzy Hive",
-            "exTwoLink":"c0WtwtOCC1g"
-        },
-        {
-            "year":2015,
-            "category":"music",
-            "pic":"tame.jpg",
-            "url":"https://open.spotify.com/album/79dL7FLiJFOO0EoehUHQBv",
-            "creator":"Tame Impala",
-            "name":"Currents",
-            "exOneLink":"NTfYYRGTB3g",
-            "exTwoLink":"en2Erz9i98g"
-        },
-        {
-            "year":2020,
-            "category":"music",
-            "pic":"newab.jpg",
-            "url":"https://open.spotify.com/album/2xkZV2Hl1Omi8rk2D7t5lN",
-            "creator":"The Strokes",
-            "name":"The New Abnormal",
-            "exOneLink":"o4qsjmLxhow",
-            "exTwoLink":"5c3EjeP2x-Q"
-        },
-        {
-            "year":2015,
-            "category":"music",
-            "pic":"everything.jpg",
-            "url":"https://open.spotify.com/album/2UJUCicAuQjIqBOFIvPzIx",
-            "name":"Get to Heaven",
-            "creator":"Everything Everything",
-            "exOne":"Get to Heaven",
-            "exOneLink":"6D3gntAlrfU",
-            "exTwo":"The Wheel (is Turning Now)",
-            "exTwoLink":"4F8N4hwD5E4"
-        },
-        {
-            "year":2015,
-            "category":"music",
-            "pic":"carly.jpg",
-            "url":"https://open.spotify.com/album/6Zpf7RlSRIavYGwvsuj94C",
-            "name":"Emotion",
-            "creator":"Carly Rae Jepsen",
-            "exOne":"Run Away With Me",
-            "exOneLink":"TeccAtqd5K8",
-            "exTwo":"Gimmie Love",
-            "exTwoLink":"OKsAnpPg15c"
-        },
-        {
-            "year":2015,
-            "category":"music",
-            "pic":"pimp.png",
-            "url":"https://open.spotify.com/album/7ycBtnsMtyVbbwTfJwRjSP",
-            "name":"To Pimp a Butterfly",
-            "creator":"Kendrick Lamar",
-            "exOneLink":"ZTYgq4EoRo",
-            "exTwoLink":"hRK7PVJFbS8"
-        },
-        {
-            "year":2016,
-            "category":"music",
-            "pic":"teens.jpg",
-            "url":"https://open.spotify.com/album/26DseQO366JfXwIP7dIgQj",
-            "name":"Teens of Denial",
-            "creator":"Car Seat Headrest",
-            "exOneLink":"s_a1hPwXiWw",
-            "exTwoLink":"JjufcdihdpY"
-        },
-        {
-            "year":2016,
-            "category":"music",
-            "pic":"city.jpg",
-            "url":"https://open.spotify.com/album/5rKFS59ntz44KWVXPIlc3N",
-            "name":"City Club",
-            "creator":"The Growlers",
-            "exOne":"I'll Be Around",
-            "exOneLink":"p50R8rkzkhk",
-            "exTwo":"Too Many Times",
-            "exTwoLink":"TBbHIggWXF8"
-        },
-        {
-            "year":2017,
-            "category":"music",
-            "pic":"alvvays.jpg",
-            "url":"https://open.spotify.com/album/7CCwkPweMxKq8yWkVerH6T",
-            "name":"Antisocialites",
-            "creator":"Alvvays",
-            "exOne":"In Undertow",
-            "exOneLink":"T1n72aCdwdU",
-            "exTwo":"Saved by a Waif",
-            "exTwoLink":"HM7rt01hF_U"
-        },
-        {
-            "year":2018,
-            "category":"music",
-            "pic":"virtue.png",
-            "url":"https://open.spotify.com/album/2dMmcXlG8xtRJNlsjIrPWe",
-            "name":"Virtue",
-            "creator":"The Voidz",
-            "exOneLink":"P1nCVWBTays",
-            "exTwoLink":"hgwMe2f0bi0"
-        },
-        {
-            "year":2018,
-            "category":"music",
-            "pic":"dirtyComputer.jpg",
-            "url":"https://open.spotify.com/album/2PjlaxlMunGOUvcRzlTbtE",
-            "name":"Dirty Computer",
-            "creator":"Janelle Monae",
-            "exOneLink":"kuWyu7ipsJ8",
-            "exTwoLink":"fgSpeV-bklk"
-        },
-        {
-            "year":2018,
-            "category":"music",
-            "pic":"haru.jpg",
-            "url":"https://open.spotify.com/playlist/5YbecC3WjRjcsJ6804hH49",
-            "name":"harutosyura",
-            "creator":"harunemuri",
-            "exOneLink":"avHQoD-dg_w",
-            "exTwoLink":"XY9QHQlfNQ8"
-        },
-        {
-            "year":2018,
-            "category":"music",
-            "pic":"aces.jpg",
-            "url":"https://open.spotify.com/album/2lsQE89fPFInz2J62K6waw",
-            "name":"When My Heart Felt Volcanic",
-            "creator":"The Aces",
-            "exOne":"Volcanic Love",
-            "exOneLink":"UOlVELlP2jk",
-            "exTwo":"Stuck",
-            "exTwoLink":"vA6sDKKDx9Q"
-        },
-        {
-            "year":2019,
-            "category":"music",
-            "pic":"charli.jpg",
-            "url":"https://open.spotify.com/album/386IqvSuljaZsMjwDGGdLj",
-            "name":"Charli",
-            "creator":"Charli XCX",
-            "exOneLink":"8mhfE_vzwjo",
-            "exTwoLink":"chSZCtLrgz8"
-        },
-        {
-            "year":1992,
-            "url":"https://en.wikipedia.org/wiki/Kaeru_no_Tame_ni_Kane_wa_Naru",
-            "creator":"Nintendo",
-            "category":"game",
-            "name":"For Frog the Bell Tolls",
-            "pic":"frog.jpg",
-            "exOneLink":"FqkeOzfsZbs"
-        },
-        {
-            "year":1994,
-            "url":"https://en.wikipedia.org/wiki/Live_A_Live",
-            "creator":"Square",
-            "category":"game",
-            "name":"Live A Live",
-            "pic":"livealive.jpg",
-            "exOneLink":"wRop31JcTz8"
-        },
-        {
-            "year":1999,
-            "url":"https://segaretro.org/L.A._Machineguns",
-            "creator":"Sega",
-            "category":"game",
-            "name":"L.A. Machineguns",
-            "pic":"lamachine.jpg",
-            "exOneLink":"mlbnxMEUM9M"
-        },
-        {
-            "year":2020,
-            "url":"http://sakunaofriceandruin.com/",
-            "creator":"Edelweiss",
-            "category":"game",
-            "name":"Sakuna: Of Rice & Ruin",
-            "pic":"rice.jpg",
-            "exOneLink":"7myPIX9CVVA"
-        },
-        {
-            "year":2010,
-            "url":"http://www.vanquishgame.com/",
-            "creator":"Shinji Mikami",
-            "category":"game",
-            "name":"Vanquish",
-            "pic":"vanq.jpg",
-            "exOneLink":"IG8LVpuzYls"
-        },
-        {
-            "year":2020,
-            "url":"https://twitter.com/VirtuosoComms",
-            "creator":"Virtuoso Neomedia",
-            "category":"game",
-            "name":"ZODIAC XX",
-            "pic":"zodiac.jpg",
-            "exOneLink":"gFC2GNHTMsk"
-        },
-        {
-            "year":2000,
-            "url":"http://dc.sega.jp/game_jsr.html",
-            "creator":"Smilebit",
-            "category":"game",
-            "name":"Jet Set Radio",
-            "pic":"jsr.jpg",
-            "exOneLink":"8pbnKvlbOhc"
-        },
-        {
-            "year":1997,
-            "url":"https://moon-rpg.com/",
-            "creator":"Kenichi Nishi",
-            "category":"game",
-            "name":"Moon: Remix RPG Adventure",
-            "pic":"moon.jpg",
-            "exOneLink":"FClNYk5Pbdw"
-        },
-        {
-            "year":2015,
-            "url":"https://www.orithegame.com/blind-forest/",
-            "creator":"Thomas Mahler",
-            "category":"game",
-            "name":"Ori and the Blind Forest",
-            "pic":"ori.jpg",
-            "exOneLink":"cklw-Yu3moE"
-        },
-        {
-            "year":1994,
-            "category":"game",
-            "creator":"Hideo Kojima",
-            "url":"https://en.wikipedia.org/wiki/Policenauts",
-            "name":"Policenauts",
-            "pic":"police.jpg",
-            "exOneLink":"J8JqMawqDCc"
-        },
-        {
-            "year":1996,
-            "category":"game",
-            "creator":"Nintendo",
-            "url":"https://en.wikipedia.org/wiki/Mole_Mania",
-            "name":"Mole Mania",
-            "pic":"mole.jpg",
-            "exOneLink":"8qvnX_OSdMo"
-        },
-        {
-            "year":1997,
-            "category":"game",
-            "creator":"Koji Igarashi",
-            "url":"https://en.wikipedia.org/wiki/Castlevania:_Symphony_of_the_Night",
-            "name":"Castlevania: Symphony of the Night",
-            "pic":"castle.jpg",
-            "exOneLink":"5HnhPNS0rqM"
-        },
-        {
-            "year":1998,
-            "category":"game",
-            "creator":"Rare",
-            "url":"https://en.wikipedia.org/wiki/Banjo-Kazooie",
-            "name":"Banjo Kazooie",
-            "pic":"banjo.jpg",
-            "exOneLink":"J9feE6EqY8g"
-        },
-        {
-            "year":1999,
-            "category":"game",
-            "creator":"HAL Laboratory",
-            "url":"https://en.wikipedia.org/wiki/Pok%C3%A9mon_Snap",
-            "name":"Pokemon Snap",
-            "pic":"snap.jpg",
-            "exOneLink":"dFHgf_SY5CY"
-        },
-        {
-            "year":1999,
-            "category":"game",
-            "creator":"SNK",
-            "url":"https://en.wikipedia.org/wiki/SNK_vs._Capcom:_Card_Fighters_Clash",
-            "name":"SNK vs Capcom: Card Fighters Clash",
-            "pic":"snkv.jpg",
-            "exOneLink":"_M-qJEZ_xzQ"
-        },
-        {
-            "year":2001,
-            "creator":"Compile",
-            "category":"game",
-            "url":"https://web.archive.org/web/20070608081122/http://guru.titney.org/",
-            "name":"Guru Logic Champ",
-            "pic":"guru.jpg",
-            "exOneLink":"dAbt1L3n1ow"
-        },
-        {
-            "year":2016,
-            "creator":"Atlus",
-            "category":"game",
-            "url":"https://atlus.com/p5r/lang/en/",
-            "name":"Persona 5 Royal",
-            "pic":"p5r.jpg",
-            "exOneLink":"vWWy7V9rCrA"
-        },
-        {
-            "year":1999,
-            "creator":"Sony",
-            "category":"game",
-            "url":"https://en.wikipedia.org/wiki/Ape_Escape",
-            "name":"Ape Escape",
-            "pic":"ape.jpg",
-            "exOneLink":"KZY8F0SiSFY"
-        },
-        {
-            "year":2000,
-            "category":"game",
-            "creator":"Treasure",
-            "url":"https://en.wikipedia.org/wiki/Sin_and_Punishment",
-            "name":"Sin & Punishment",
-            "pic":"sinPunish.jpg",
-            "exOneLink":"k8Ee-G9R_JI"
-        },
-        {
-            "year":2001,
-            "category":"game",
-            "creator":"Intelligent Systems",
-            "url":"https://en.wikipedia.org/wiki/Paper_Mario",
-            "name":"Paper Mario",
-            "pic":"pape.jpg",
-            "exOneLink":"6wQzSVIwYZI"
-        },
-        {
-            "year":2001,
-            "category":"game",
-            "creator":"Sonic Team USA",
-            "url":"https://en.wikipedia.org/wiki/Sonic_Adventure_2",
-            "name":"Sonic Adventure 2 Battle",
-            "pic":"sonic.jpg",
-            "exOneLink":"EU4CbUoPBi4"
-        },
-        {
-            "year":2003,
-            "category":"game",
-            "creator":"Masahiro Sakurai",
-            "url":"https://en.wikipedia.org/wiki/Kirby_Air_Ride",
-            "name":"Kirby Air Ride",
-            "pic":"kirby.jpg",
-            "exOneLink":"Cg3faJPne74"
-        },
-        {
-            "year":2004,
-            "category":"game",
-            "creator":"Keita Takahashi",
-            "url":"https://en.wikipedia.org/wiki/Katamari_Damacy",
-            "name":"Katamari Damacy",
-            "pic":"katamari.jpg",
-            "exOneLink":"BAtuIRy2mL4"
-        },
-        {
-            "year":2004,
-            "category":"game",
-            "creator":"Goro Abe",
-            "url":"https://en.wikipedia.org/wiki/WarioWare:_Twisted!",
-            "name":"WarioWare Twisted",
-            "pic":"warioware.jpg",
-            "exOneLink":"iAUiW3knSrQ"
-        },
-        {
-            "year":2005,
-            "category":"game",
-            "creator":"skip Ltd.",
-            "url":"https://en.wikipedia.org/wiki/Chibi-Robo!_(video_game)",
-            "name":"Chibi Robo",
-            "pic":"chibiRobo.jpg",
-            "exOneLink":"9ZekURiUQx0"
-        },
-        {
-            "year":2005,
-            "category":"game",
-            "creator":"Tetsuya Nomura",
-            "url":"https://en.wikipedia.org/wiki/Kingdom_Hearts_II",
-            "name":"Kingdom Hearts 2",
-            "pic":"kh2.jpg",
-            "exOneLink":"ZdSHGX3DPvE"
-        },
-        {
-            "year":2006,
-            "category":"game",
-            "creator":"Game Freak",
-            "url":"https://en.wikipedia.org/wiki/Drill_Dozer",
-            "name":"Drill Dozer",
-            "pic":"drill.jpg",
-            "exOneLink":"8y7msNvQcR4"
-        },
-        {
-            "year":2010,
-            "category":"game",
-            "creator":"Shu Takumi",
-            "url":"https://en.wikipedia.org/wiki/Ghost_Trick:_Phantom_Detective",
-            "name":"Ghost Trick",
-            "pic":"ghost.jpg",
-            "exOneLink":"YOSiyUIorPQ"
-        },
-        {
-            "year":2012,
-            "creator":"Monolith Soft",
-            "category":"game",
-            "url":"https://www.nintendo.com/games/detail/xenoblade-chronicles-definitive-edition-switch/",
-            "name":"Xenoblade Chronicles",
-            "pic":"xeno.jpg",
-            "exOneLink":"0YEhVPZjgMk"
-        },
-        {
-            "year":2016,
-            "category":"game",
-            "creator":"SUPERHOT Team",
-            "url":"https://superhotgame.com/",
-            "name":"SUPERHOT",
-            "pic":"superhot.jpg",
-            "exOneLink":"vrS86l_CtAY"
-        },
-        {
-            "year":2017,
-            "creator":"Sidebar Games",
-            "category":"game",
-            "url":"https://sidebargames.com/golfstory/",
-            "name":"Golf Story",
-            "pic":"golf.jpg",
-            "exOneLink":"zufLtHu_m7o"
-        },
-        {
-            "year":2018,
-            "category":"game",
-            "creator":"Subset Games",
-            "url":"https://subsetgames.com/itb.html",
-            "name":"Into the Breach",
-            "pic":"breach.jpg",
-            "exOneLink":"gMlD_vgM-9s"
-        },
-        {
-            "year":2018,
-            "category":"game",
-            "creator":"Grace Bruxner",
-            "url":"https://frogdetective.net/",
-            "name":"Haunted Island Frog Detective",
-            "pic":"haunted.jpg",
-            "exOneLink":"V1SIWj4QO5A"
-        },
-        {
-            "year":2019,
-            "category":"game",
-            "creator":"PlatinumGames",
-            "url":"https://www.platinumgames.com/games/astral-chain",
-            "name":"Astral Chain",
-            "pic":"astral.jpg",
-            "exOneLink":"tL6CldIRowc"
-        },
-        {
-            "year":2004,
-            "category":"game",
-            "creator":"Hiroki Kato",
-            "url":"https://en.wikipedia.org/wiki/Under_the_Skin_(video_game)",
-            "name":"Under the Skin",
-            "pic":"skin.jpg",
-            "exOneLink":"rJK0DnZ2a5w"
-        },
-        {
-            "year":2021,
-            "category":"game",
-            "creator":"Siactro",
-            "url":"https://siactro.itch.io/toree-2",
-            "name":"Toree 2",
-            "pic":"toree.jpg",
-            "exOneLink":"zzSy6BMoEag"
-        },
-        {
-            "year":2020,
-            "category":"game",
-            "creator":"Bryce Bucher",
-            "url":"https://bryce-bucher.itch.io/fatum-betula",
-            "name":"Fatum Betula",
-            "pic":"fatum.jpg",
-            "exOneLink":"PhC5sQE8s5w"
-        },
-        {
-            "year":2019,
-            "category":"game",
-            "creator":"Square Enix",
-            "url":"https://www.nintendo.com/games/detail/dragon-quest-xi-s-echoes-of-an-elusive-age-definitive-edition-switch/",
-            "name":"Dragon Quest XI S",
-            "pic":"dqxis.jpg",
-            "exOneLink":"PgfOu4dEIDw"
-        },
-        {
-            "year":2020,
-            "category":"game",
-            "creator":"Ves Kelekov",
-            "url":"http://umurangi.tapiki.io/",
-            "name":"Umurangi Generation",
-            "pic":"umu.jpg",
-            "exOneLink":"vQ7CFN2ZPZc"
-        },
-        {
-            "year":1998,
-            "category":"game",
-            "creator":"Square",
-            "url":"https://www.mobygames.com/game/brave-fencer-musashi",
-            "name":"Brave Fencer Musashi",
-            "pic":"brave.jpg",
-            "exOneLink":"KoH-UfznyY4"
-        },
-        {
-            "year":2001,
-            "category":"video",
-            "pic":"shaolin.jpg",
-            "url":"https://www.miramax.com/movie/shaolin-soccer/",
-            "name":"Shaolin Soccer",
-            "exOneLink":"t0C9BC8PLbE",
-            "exTwoLink":"exMmixM3b3Q"
-        },
-        {
-            "year":1987,
-            "category":"video",
-            "pic":"animalchin.jpg",
-            "url":"https://en.wikipedia.org/wiki/The_Search_for_Animal_Chin",
-            "name":"The Search for Animal Chin",
-            "exOneLink":"Q8c_qpX6c0A"
-        },
-        {
-            "year":2012,
-            "category":"video",
-            "pic":"thor.jpg",
-            "url":"https://www.youtube.com/channel/UCilouT5irlCNn2imcCDhhJQ",
-            "name":"ThorHighHeels",
-            "exOneLink":"TfeBPNZAoTE",
-            "exTwoLink":"OVpX2y6KjwA"
-        },
-        {
-            "year":1991,
-            "category":"video",
-            "pic":"vanilla.jpg",
-            "url":"https://en.wikipedia.org/wiki/Cool_as_Ice",
-            "name":"Cool as Ice",
-            "exOneLink":"R1MxGFncZgQ",
-            "exTwoLink":"b8oFKKPfgi0"
-        },
-        {
-            "year":2015,
-            "category":"video",
-            "pic":"worthi.jpg",
-            "url":"https://www.youtube.com/channel/UCxXu9tCU63mF1ntk89XPkzA",
-            "name":"Worthikids",
-            "exOneLink":"xJBCuRsrqUU",
-            "exTwoLink":"GyCagepF_T4"
-        },
-        {
-            "year":2020,
-            "category":"video",
-            "pic":"timrog.jpg",
-            "url":"https://www.youtube.com/c/ActionButton/videos",
-            "name":"Action Button",
-            "exOneLink":"Hu4H5ykBP0I",
-            "exTwoLink":"38zduHkwGcc"
-        },
-        {
-            "year":2014,
-            "category":"video",
-            "pic":"spaceDandy.jpg",
-            "url":"https://en.wikipedia.org/wiki/Space_Dandy",
-            "name":"Space☆Dandy",
-            "creator":"Shinichirō Watanabe",
-            "exOneLink":"IZzSxLdLVp4"
-        },
-        {
-            "year":1998,
-            "category":"video",
-            "pic":"cardca.jpg",
-            "url":"http://ccsakura-official.com/",
-            "name":"Card Captor Sakura",
-            "creator":"Madhouse",
-            "exOneLink":"z4hiVuB9Jcc"
-        },
-        {
-            "year":2017,
-            "category":"video",
-            "pic":"nirv.jpg",
-            "url":"https://video.vice.com/en_ca/show/nirvanna-the-band-the-show",
-            "name":"Nirvanna the Band the Show",
-            "creator":"Matt Johnson & Jay McCarrol",
-            "exOneLink":"B_qnI1WrlnU",
-            "exTwoLink":"Scm4ZzNCgRA"
-        },
-        {
-            "year":1981,
-            "category":"video",
-            "pic":"blade.jpg",
-            "url":"https://en.wikipedia.org/wiki/Blade_Runner",
-            "name":"Blade Runner",
-            "creator":"Ridley Scott",
-            "exOneLink":"VSOzdFoZsho"
-        },
-        {
-            "year":2019,
-            "category":"video",
-            "pic":"promare.jpg",
-            "url":"https://promare-movie.com/",
-            "name":"Promare",
-            "creator":"Studio Trigger",
-            "exOneLink":"UO91f-C_hlA"
-        },
-        {
-            "year":1999,
-            "category":"video",
-            "pic":"office.jpg",
-            "url":"https://en.wikipedia.org/wiki/Office_Space",
-            "name":"Office Space",
-            "creator":"Mike Judge",
-            "exOneLink":"jKYivs6ZLZk"
-        },
-        {
-            "year":2014,
-            "category":"video",
-            "pic":"whip.jpg",
-            "url":"https://en.wikipedia.org/wiki/Whiplash_(2014_film)",
-            "name":"Whiplash",
-            "creator":"Damien Chazelle",
-            "exOneLink":"7d_jQycdQGo"
-        },
-        {
-            "year":2017,
-            "category":"video",
-            "pic":"2049.jpg",
-            "url":"https://en.wikipedia.org/wiki/Blade_Runner_2049",
-            "name":"Bladerunner 2049",
-            "creator":"Denis Villeneuve",
-            "exOneLink":"gCcx85zbxz4"
-        },
-        {
-            "year":2008,
-            "category":"video",
-            "pic":"speed.jpg",
-            "url":"https://en.wikipedia.org/wiki/Speed_Racer_(film)",
-            "name":"Speed Racer",
-            "creator":"Wachowski Sisters",
-            "exOneLink":"8V8sLlqJB2w"
-        },
-        {
-            "year":1949,
-            "creator":"George Orwell",
-            "url":"https://en.wikipedia.org/wiki/Nineteen_Eighty-Four",
-            "name":"1984",
-            "pic":"1984.jpg",
-            "category":"book"
-        },
-        {
-            "year":2014,
-            "creator":"Dan Slott / Mike Allred",
-            "url":"https://www.marvel.com/comics/series/18310/silver_surfer_2014_-_2015",
-            "name":"Silver Surfer (2014)",
-            "pic":"surf.jpg",
-            "category":"book"
-        },
-        {
-            "year":2020,
-            "creator":"Corey Lewis",
-            "url":"https://www.indiegogo.com/projects/peng-action-sports-adventures-graphic-novel#/",
-            "name":"PENG!",
-            "pic":"peng.jpg",
-            "category":"book"
-        },
-        {
-            "year":1986,
-            "category":"book",
-            "url":"https://www.marvel.com/comics/discover/1032/daredevil-born-again",
-            "name":"Daredevil Born Again",
-            "pic":"bornagain.jpg",
-            "creator":"Frank Miller"
-        },
-        {
-            "year":2004,
-            "category":"book",
-            "url":"https://en.wikipedia.org/wiki/Persepolis_(comics)",
-            "name":"Persepolis",
-            "pic":"perse.jpg",
-            "creator":"Marjane Satrapi"
-        },
-        {
-            "year":1992,
-            "category":"book",
-            "url":"https://www.viz.com/jojo-s-bizarre-adventure",
-            "name":"JoJo's Bizarre Adventure: Diamond Is Unbreakable",
-            "pic":"jojos.jpg",
-            "creator":"Hirohiko Araki"
-        },
-        {
-            "year":2002,
-            "category":"book",
-            "url":"https://www.viz.com/eyeshield-21",
-            "name":"Eyeshield 21",
-            "pic":"eyes.jpg",
-            "creator":"Riichiro Inagaki"
-        },
-        {
-            "year":2015,
-            "category":"book",
-            "url":"https://www.penguinrandomhouse.com/series/FS6/fantasy-sports",
-            "name":"Fantasy Sports",
-            "pic":"fansports.jpg",
-            "creator":"Sam Bosma"
-        },
-        {
-            "year":2015,
-            "category":"book",
-            "url":"https://www.marvel.com/comics/series/16309/hawkeye_2012_-_2015",
-            "name":"Hawkeye",
-            "pic":"hawkeye.jpg",
-            "creator":"Matt Fraction"
-        }
-    ]
+  "media": [
+    {
+      "year": 2013,
+      "category": "music",
+      "pic": "sky.jpg",
+      "url": "https://open.spotify.com/album/1bvCVYPVl445mO690M2dOr",
+      "creator": "Sky Ferreira",
+      "name": "Night Time My Time",
+      "exOne": "Boys",
+      "exOneLink": "B1gDuaY8-V4",
+      "exTwo": "I Blame Myself",
+      "exTwoLink": "pWo7SC-tG4U"
+    },
+    {
+      "year": 1990,
+      "category": "music",
+      "pic": "publicenemy.jpg",
+      "url": "https://open.spotify.com/album/0aFNb4RDk2hmKKLa0bzXNz?autoplay=true",
+      "creator": "Public Enemy",
+      "name": "Fear of a Black Planet",
+      "exOneLink": "pL2vVWEgKE0",
+      "exTwoLink": "DhQGH6CbKhw"
+    },
+    {
+      "year": 2020,
+      "category": "music",
+      "pic": "dua.png",
+      "url": "https://open.spotify.com/album/7fJJK56U9fHixgO0HQkhtI",
+      "creator": "Dua Lipa",
+      "name": "Future Nostalgia",
+      "exOne": "Future Nostalgia",
+      "exOneLink": "8EJ-vZyBzOQ",
+      "exTwo": "Pretty Please",
+      "exTwoLink": "H0reSX-2jz8"
+    },
+    {
+      "year": 2014,
+      "category": "music",
+      "pic": "foster.jpg",
+      "url": "https://open.spotify.com/album/22cFcAQkydpTzeSKQZEKv0",
+      "name": "Supermodel",
+      "creator": "Foster the People",
+      "exOne": "Ask Yourself",
+      "exOneLink": "w02_NLLHAxs",
+      "exTwo": "Coming of Age",
+      "exTwoLink": "MBqzrj18S2w"
+    },
+    {
+      "year": 2016,
+      "category": "video",
+      "pic": "vewn.jpg",
+      "url": "https://www.youtube.com/channel/UCd0zIZlbgvEifm_hd3FwlBQ",
+      "name": "vewn",
+      "creator": "",
+      "exOneLink": "NWeyUpqnKuk",
+      "exTwoLink": "RUaOpH31IRU"
+    },
+    {
+      "year": 2015,
+      "category": "music",
+      "pic": "neon.jpg",
+      "creator": "Neon Indian",
+      "url": "https://open.spotify.com/album/5qA9yoz0W5eHKYOr45Rkc4",
+      "name": "VEGA INTL. NIGHT SCHOOL",
+      "exOne": "Annie",
+      "exOneLink": "TTuT1s-YPLE",
+      "exTwo": "The Glitzy Hive",
+      "exTwoLink": "c0WtwtOCC1g"
+    },
+    {
+      "year": 2015,
+      "category": "music",
+      "pic": "tame.jpg",
+      "url": "https://open.spotify.com/album/79dL7FLiJFOO0EoehUHQBv",
+      "creator": "Tame Impala",
+      "name": "Currents",
+      "exOneLink": "NTfYYRGTB3g",
+      "exTwoLink": "en2Erz9i98g"
+    },
+    {
+      "year": 2020,
+      "category": "music",
+      "pic": "newab.jpg",
+      "url": "https://open.spotify.com/album/2xkZV2Hl1Omi8rk2D7t5lN",
+      "creator": "The Strokes",
+      "name": "The New Abnormal",
+      "exOneLink": "o4qsjmLxhow",
+      "exTwoLink": "5c3EjeP2x-Q"
+    },
+    {
+      "year": 2015,
+      "category": "music",
+      "pic": "everything.jpg",
+      "url": "https://open.spotify.com/album/2UJUCicAuQjIqBOFIvPzIx",
+      "name": "Get to Heaven",
+      "creator": "Everything Everything",
+      "exOne": "Get to Heaven",
+      "exOneLink": "6D3gntAlrfU",
+      "exTwo": "The Wheel (is Turning Now)",
+      "exTwoLink": "4F8N4hwD5E4"
+    },
+    {
+      "year": 2015,
+      "category": "music",
+      "pic": "carly.jpg",
+      "url": "https://open.spotify.com/album/6Zpf7RlSRIavYGwvsuj94C",
+      "name": "Emotion",
+      "creator": "Carly Rae Jepsen",
+      "exOne": "Run Away With Me",
+      "exOneLink": "TeccAtqd5K8",
+      "exTwo": "Gimmie Love",
+      "exTwoLink": "OKsAnpPg15c"
+    },
+    {
+      "year": 2015,
+      "category": "music",
+      "pic": "pimp.png",
+      "url": "https://open.spotify.com/album/7ycBtnsMtyVbbwTfJwRjSP",
+      "name": "To Pimp a Butterfly",
+      "creator": "Kendrick Lamar",
+      "exOneLink": "ZTYgq4EoRo",
+      "exTwoLink": "hRK7PVJFbS8"
+    },
+    {
+      "year": 2016,
+      "category": "music",
+      "pic": "teens.jpg",
+      "url": "https://open.spotify.com/album/26DseQO366JfXwIP7dIgQj",
+      "name": "Teens of Denial",
+      "creator": "Car Seat Headrest",
+      "exOneLink": "s_a1hPwXiWw",
+      "exTwoLink": "JjufcdihdpY"
+    },
+    {
+      "year": 2016,
+      "category": "music",
+      "pic": "city.jpg",
+      "url": "https://open.spotify.com/album/5rKFS59ntz44KWVXPIlc3N",
+      "name": "City Club",
+      "creator": "The Growlers",
+      "exOne": "I'll Be Around",
+      "exOneLink": "p50R8rkzkhk",
+      "exTwo": "Too Many Times",
+      "exTwoLink": "TBbHIggWXF8"
+    },
+    {
+      "year": 2017,
+      "category": "music",
+      "pic": "alvvays.jpg",
+      "url": "https://open.spotify.com/album/7CCwkPweMxKq8yWkVerH6T",
+      "name": "Antisocialites",
+      "creator": "Alvvays",
+      "exOne": "In Undertow",
+      "exOneLink": "T1n72aCdwdU",
+      "exTwo": "Saved by a Waif",
+      "exTwoLink": "HM7rt01hF_U"
+    },
+    {
+      "year": 2018,
+      "category": "music",
+      "pic": "virtue.png",
+      "url": "https://open.spotify.com/album/2dMmcXlG8xtRJNlsjIrPWe",
+      "name": "Virtue",
+      "creator": "The Voidz",
+      "exOneLink": "P1nCVWBTays",
+      "exTwoLink": "hgwMe2f0bi0"
+    },
+    {
+      "year": 2018,
+      "category": "music",
+      "pic": "dirtyComputer.jpg",
+      "url": "https://open.spotify.com/album/2PjlaxlMunGOUvcRzlTbtE",
+      "name": "Dirty Computer",
+      "creator": "Janelle Monae",
+      "exOneLink": "kuWyu7ipsJ8",
+      "exTwoLink": "fgSpeV-bklk"
+    },
+    {
+      "year": 2018,
+      "category": "music",
+      "pic": "haru.jpg",
+      "url": "https://open.spotify.com/playlist/5YbecC3WjRjcsJ6804hH49",
+      "name": "harutosyura",
+      "creator": "harunemuri",
+      "exOneLink": "avHQoD-dg_w",
+      "exTwoLink": "XY9QHQlfNQ8"
+    },
+    {
+      "year": 2018,
+      "category": "music",
+      "pic": "aces.jpg",
+      "url": "https://open.spotify.com/album/2lsQE89fPFInz2J62K6waw",
+      "name": "When My Heart Felt Volcanic",
+      "creator": "The Aces",
+      "exOne": "Volcanic Love",
+      "exOneLink": "UOlVELlP2jk",
+      "exTwo": "Stuck",
+      "exTwoLink": "vA6sDKKDx9Q"
+    },
+    {
+      "year": 2019,
+      "category": "music",
+      "pic": "charli.jpg",
+      "url": "https://open.spotify.com/album/386IqvSuljaZsMjwDGGdLj",
+      "name": "Charli",
+      "creator": "Charli XCX",
+      "exOneLink": "8mhfE_vzwjo",
+      "exTwoLink": "chSZCtLrgz8"
+    },
+    {
+      "year": 1992,
+      "url": "https://en.wikipedia.org/wiki/Kaeru_no_Tame_ni_Kane_wa_Naru",
+      "creator": "Nintendo",
+      "category": "game",
+      "name": "For Frog the Bell Tolls",
+      "pic": "frog.jpg",
+      "exOneLink": "FqkeOzfsZbs"
+    },
+    {
+      "year": 1994,
+      "url": "https://en.wikipedia.org/wiki/Live_A_Live",
+      "creator": "Square",
+      "category": "game",
+      "name": "Live A Live",
+      "pic": "livealive.jpg",
+      "exOneLink": "wRop31JcTz8"
+    },
+    {
+      "year": 2005,
+      "url": "https://en.wikipedia.org/wiki/Musashi:_Samurai_Legend",
+      "creator": "Square-Enix",
+      "category": "game",
+      "name": "Musashi: Samurai Legend",
+      "pic": "musashi.jpg",
+      "exOneLink": "CiM_95fl2TA",
+      "exTwoLink": "UwVwXMUZDGQ"
+    },
+    {
+      "year": 1999,
+      "url": "https://segaretro.org/L.A._Machineguns",
+      "creator": "Sega",
+      "category": "game",
+      "name": "L.A. Machineguns",
+      "pic": "lamachine.jpg",
+      "exOneLink": "mlbnxMEUM9M"
+    },
+    {
+      "year": 2020,
+      "url": "http://sakunaofriceandruin.com/",
+      "creator": "Edelweiss",
+      "category": "game",
+      "name": "Sakuna: Of Rice & Ruin",
+      "pic": "rice.jpg",
+      "exOneLink": "7myPIX9CVVA"
+    },
+    {
+      "year": 2010,
+      "url": "http://www.vanquishgame.com/",
+      "creator": "Shinji Mikami",
+      "category": "game",
+      "name": "Vanquish",
+      "pic": "vanq.jpg",
+      "exOneLink": "IG8LVpuzYls"
+    },
+    {
+      "year": 2020,
+      "url": "https://twitter.com/VirtuosoComms",
+      "creator": "Virtuoso Neomedia",
+      "category": "game",
+      "name": "ZODIAC XX",
+      "pic": "zodiac.jpg",
+      "exOneLink": "gFC2GNHTMsk"
+    },
+    {
+      "year": 2000,
+      "url": "http://dc.sega.jp/game_jsr.html",
+      "creator": "Smilebit",
+      "category": "game",
+      "name": "Jet Set Radio",
+      "pic": "jsr.jpg",
+      "exOneLink": "8pbnKvlbOhc"
+    },
+    {
+      "year": 1997,
+      "url": "https://moon-rpg.com/",
+      "creator": "Kenichi Nishi",
+      "category": "game",
+      "name": "Moon: Remix RPG Adventure",
+      "pic": "moon.jpg",
+      "exOneLink": "FClNYk5Pbdw"
+    },
+    {
+      "year": 2015,
+      "url": "https://www.orithegame.com/blind-forest/",
+      "creator": "Thomas Mahler",
+      "category": "game",
+      "name": "Ori and the Blind Forest",
+      "pic": "ori.jpg",
+      "exOneLink": "cklw-Yu3moE"
+    },
+    {
+      "year": 1994,
+      "category": "game",
+      "creator": "Hideo Kojima",
+      "url": "https://en.wikipedia.org/wiki/Policenauts",
+      "name": "Policenauts",
+      "pic": "police.jpg",
+      "exOneLink": "J8JqMawqDCc"
+    },
+    {
+      "year": 1996,
+      "category": "game",
+      "creator": "Nintendo",
+      "url": "https://en.wikipedia.org/wiki/Mole_Mania",
+      "name": "Mole Mania",
+      "pic": "mole.jpg",
+      "exOneLink": "8qvnX_OSdMo"
+    },
+    {
+      "year": 1997,
+      "category": "game",
+      "creator": "Koji Igarashi",
+      "url": "https://en.wikipedia.org/wiki/Castlevania:_Symphony_of_the_Night",
+      "name": "Castlevania: Symphony of the Night",
+      "pic": "castle.jpg",
+      "exOneLink": "5HnhPNS0rqM"
+    },
+    {
+      "year": 1998,
+      "category": "game",
+      "creator": "Rare",
+      "url": "https://en.wikipedia.org/wiki/Banjo-Kazooie",
+      "name": "Banjo Kazooie",
+      "pic": "banjo.jpg",
+      "exOneLink": "J9feE6EqY8g"
+    },
+    {
+      "year": 1999,
+      "category": "game",
+      "creator": "HAL Laboratory",
+      "url": "https://en.wikipedia.org/wiki/Pok%C3%A9mon_Snap",
+      "name": "Pokemon Snap",
+      "pic": "snap.jpg",
+      "exOneLink": "dFHgf_SY5CY"
+    },
+    {
+      "year": 1999,
+      "category": "game",
+      "creator": "SNK",
+      "url": "https://en.wikipedia.org/wiki/SNK_vs._Capcom:_Card_Fighters_Clash",
+      "name": "SNK vs Capcom: Card Fighters Clash",
+      "pic": "snkv.jpg",
+      "exOneLink": "_M-qJEZ_xzQ"
+    },
+    {
+      "year": 2001,
+      "creator": "Compile",
+      "category": "game",
+      "url": "https://web.archive.org/web/20070608081122/http://guru.titney.org/",
+      "name": "Guru Logic Champ",
+      "pic": "guru.jpg",
+      "exOneLink": "dAbt1L3n1ow"
+    },
+    {
+      "year": 2016,
+      "creator": "Atlus",
+      "category": "game",
+      "url": "https://atlus.com/p5r/lang/en/",
+      "name": "Persona 5 Royal",
+      "pic": "p5r.jpg",
+      "exOneLink": "vWWy7V9rCrA"
+    },
+    {
+      "year": 1999,
+      "creator": "Sony",
+      "category": "game",
+      "url": "https://en.wikipedia.org/wiki/Ape_Escape",
+      "name": "Ape Escape",
+      "pic": "ape.jpg",
+      "exOneLink": "KZY8F0SiSFY"
+    },
+    {
+      "year": 2000,
+      "category": "game",
+      "creator": "Treasure",
+      "url": "https://en.wikipedia.org/wiki/Sin_and_Punishment",
+      "name": "Sin & Punishment",
+      "pic": "sinPunish.jpg",
+      "exOneLink": "k8Ee-G9R_JI"
+    },
+    {
+      "year": 2001,
+      "category": "game",
+      "creator": "Intelligent Systems",
+      "url": "https://en.wikipedia.org/wiki/Paper_Mario",
+      "name": "Paper Mario",
+      "pic": "pape.jpg",
+      "exOneLink": "6wQzSVIwYZI"
+    },
+    {
+      "year": 2001,
+      "category": "game",
+      "creator": "Sonic Team USA",
+      "url": "https://en.wikipedia.org/wiki/Sonic_Adventure_2",
+      "name": "Sonic Adventure 2 Battle",
+      "pic": "sonic.jpg",
+      "exOneLink": "EU4CbUoPBi4"
+    },
+    {
+      "year": 2003,
+      "category": "game",
+      "creator": "Masahiro Sakurai",
+      "url": "https://en.wikipedia.org/wiki/Kirby_Air_Ride",
+      "name": "Kirby Air Ride",
+      "pic": "kirby.jpg",
+      "exOneLink": "Cg3faJPne74"
+    },
+    {
+      "year": 2004,
+      "category": "game",
+      "creator": "Keita Takahashi",
+      "url": "https://en.wikipedia.org/wiki/Katamari_Damacy",
+      "name": "Katamari Damacy",
+      "pic": "katamari.jpg",
+      "exOneLink": "BAtuIRy2mL4"
+    },
+    {
+      "year": 2004,
+      "category": "game",
+      "creator": "Goro Abe",
+      "url": "https://en.wikipedia.org/wiki/WarioWare:_Twisted!",
+      "name": "WarioWare Twisted",
+      "pic": "warioware.jpg",
+      "exOneLink": "iAUiW3knSrQ"
+    },
+    {
+      "year": 2005,
+      "category": "game",
+      "creator": "skip Ltd.",
+      "url": "https://en.wikipedia.org/wiki/Chibi-Robo!_(video_game)",
+      "name": "Chibi Robo",
+      "pic": "chibiRobo.jpg",
+      "exOneLink": "9ZekURiUQx0"
+    },
+    {
+      "year": 2005,
+      "category": "game",
+      "creator": "Tetsuya Nomura",
+      "url": "https://en.wikipedia.org/wiki/Kingdom_Hearts_II",
+      "name": "Kingdom Hearts 2",
+      "pic": "kh2.jpg",
+      "exOneLink": "ZdSHGX3DPvE"
+    },
+    {
+      "year": 2006,
+      "category": "game",
+      "creator": "Game Freak",
+      "url": "https://en.wikipedia.org/wiki/Drill_Dozer",
+      "name": "Drill Dozer",
+      "pic": "drill.jpg",
+      "exOneLink": "8y7msNvQcR4"
+    },
+    {
+      "year": 2010,
+      "category": "game",
+      "creator": "Shu Takumi",
+      "url": "https://en.wikipedia.org/wiki/Ghost_Trick:_Phantom_Detective",
+      "name": "Ghost Trick",
+      "pic": "ghost.jpg",
+      "exOneLink": "YOSiyUIorPQ"
+    },
+    {
+      "year": 2012,
+      "creator": "Monolith Soft",
+      "category": "game",
+      "url": "https://www.nintendo.com/games/detail/xenoblade-chronicles-definitive-edition-switch/",
+      "name": "Xenoblade Chronicles",
+      "pic": "xeno.jpg",
+      "exOneLink": "0YEhVPZjgMk"
+    },
+    {
+      "year": 2016,
+      "category": "game",
+      "creator": "SUPERHOT Team",
+      "url": "https://superhotgame.com/",
+      "name": "SUPERHOT",
+      "pic": "superhot.jpg",
+      "exOneLink": "vrS86l_CtAY"
+    },
+    {
+      "year": 2017,
+      "creator": "Sidebar Games",
+      "category": "game",
+      "url": "https://sidebargames.com/golfstory/",
+      "name": "Golf Story",
+      "pic": "golf.jpg",
+      "exOneLink": "zufLtHu_m7o"
+    },
+    {
+      "year": 2018,
+      "category": "game",
+      "creator": "Subset Games",
+      "url": "https://subsetgames.com/itb.html",
+      "name": "Into the Breach",
+      "pic": "breach.jpg",
+      "exOneLink": "gMlD_vgM-9s"
+    },
+    {
+      "year": 2018,
+      "category": "game",
+      "creator": "Grace Bruxner",
+      "url": "https://frogdetective.net/",
+      "name": "Haunted Island Frog Detective",
+      "pic": "haunted.jpg",
+      "exOneLink": "V1SIWj4QO5A"
+    },
+    {
+      "year": 2019,
+      "category": "game",
+      "creator": "PlatinumGames",
+      "url": "https://www.platinumgames.com/games/astral-chain",
+      "name": "Astral Chain",
+      "pic": "astral.jpg",
+      "exOneLink": "tL6CldIRowc"
+    },
+    {
+      "year": 2004,
+      "category": "game",
+      "creator": "Hiroki Kato",
+      "url": "https://en.wikipedia.org/wiki/Under_the_Skin_(video_game)",
+      "name": "Under the Skin",
+      "pic": "skin.jpg",
+      "exOneLink": "rJK0DnZ2a5w"
+    },
+    {
+      "year": 2021,
+      "category": "game",
+      "creator": "Siactro",
+      "url": "https://siactro.itch.io/toree-2",
+      "name": "Toree 2",
+      "pic": "toree.jpg",
+      "exOneLink": "zzSy6BMoEag"
+    },
+    {
+      "year": 2020,
+      "category": "game",
+      "creator": "Bryce Bucher",
+      "url": "https://bryce-bucher.itch.io/fatum-betula",
+      "name": "Fatum Betula",
+      "pic": "fatum.jpg",
+      "exOneLink": "PhC5sQE8s5w"
+    },
+    {
+      "year": 2019,
+      "category": "game",
+      "creator": "Square Enix",
+      "url": "https://www.nintendo.com/games/detail/dragon-quest-xi-s-echoes-of-an-elusive-age-definitive-edition-switch/",
+      "name": "Dragon Quest XI S",
+      "pic": "dqxis.jpg",
+      "exOneLink": "PgfOu4dEIDw"
+    },
+    {
+      "year": 2020,
+      "category": "game",
+      "creator": "Ves Kelekov",
+      "url": "http://umurangi.tapiki.io/",
+      "name": "Umurangi Generation",
+      "pic": "umu.jpg",
+      "exOneLink": "vQ7CFN2ZPZc"
+    },
+    {
+      "year": 1998,
+      "category": "game",
+      "creator": "Square",
+      "url": "https://www.mobygames.com/game/brave-fencer-musashi",
+      "name": "Brave Fencer Musashi",
+      "pic": "brave.jpg",
+      "exOneLink": "KoH-UfznyY4"
+    },
+    {
+      "year": 2001,
+      "category": "video",
+      "pic": "shaolin.jpg",
+      "url": "https://www.miramax.com/movie/shaolin-soccer/",
+      "name": "Shaolin Soccer",
+      "exOneLink": "t0C9BC8PLbE",
+      "exTwoLink": "exMmixM3b3Q"
+    },
+    {
+      "year": 1987,
+      "category": "video",
+      "pic": "animalchin.jpg",
+      "url": "https://en.wikipedia.org/wiki/The_Search_for_Animal_Chin",
+      "name": "The Search for Animal Chin",
+      "exOneLink": "Q8c_qpX6c0A"
+    },
+    {
+      "year": 2012,
+      "category": "video",
+      "pic": "thor.jpg",
+      "url": "https://www.youtube.com/channel/UCilouT5irlCNn2imcCDhhJQ",
+      "name": "ThorHighHeels",
+      "exOneLink": "TfeBPNZAoTE",
+      "exTwoLink": "OVpX2y6KjwA"
+    },
+    {
+      "year": 1991,
+      "category": "video",
+      "pic": "vanilla.jpg",
+      "url": "https://en.wikipedia.org/wiki/Cool_as_Ice",
+      "name": "Cool as Ice",
+      "exOneLink": "R1MxGFncZgQ",
+      "exTwoLink": "b8oFKKPfgi0"
+    },
+    {
+      "year": 2015,
+      "category": "video",
+      "pic": "worthi.jpg",
+      "url": "https://www.youtube.com/channel/UCxXu9tCU63mF1ntk89XPkzA",
+      "name": "Worthikids",
+      "exOneLink": "xJBCuRsrqUU",
+      "exTwoLink": "GyCagepF_T4"
+    },
+    {
+      "year": 2020,
+      "category": "video",
+      "pic": "timrog.jpg",
+      "url": "https://www.youtube.com/c/ActionButton/videos",
+      "name": "Action Button",
+      "exOneLink": "Hu4H5ykBP0I",
+      "exTwoLink": "38zduHkwGcc"
+    },
+    {
+      "year": 2014,
+      "category": "video",
+      "pic": "spaceDandy.jpg",
+      "url": "https://en.wikipedia.org/wiki/Space_Dandy",
+      "name": "Space☆Dandy",
+      "creator": "Shinichirō Watanabe",
+      "exOneLink": "IZzSxLdLVp4"
+    },
+    {
+      "year": 1998,
+      "category": "video",
+      "pic": "cardca.jpg",
+      "url": "http://ccsakura-official.com/",
+      "name": "Card Captor Sakura",
+      "creator": "Madhouse",
+      "exOneLink": "z4hiVuB9Jcc"
+    },
+    {
+      "year": 2017,
+      "category": "video",
+      "pic": "nirv.jpg",
+      "url": "https://video.vice.com/en_ca/show/nirvanna-the-band-the-show",
+      "name": "Nirvanna the Band the Show",
+      "creator": "Matt Johnson & Jay McCarrol",
+      "exOneLink": "B_qnI1WrlnU",
+      "exTwoLink": "Scm4ZzNCgRA"
+    },
+    {
+      "year": 1981,
+      "category": "video",
+      "pic": "blade.jpg",
+      "url": "https://en.wikipedia.org/wiki/Blade_Runner",
+      "name": "Blade Runner",
+      "creator": "Ridley Scott",
+      "exOneLink": "VSOzdFoZsho"
+    },
+    {
+      "year": 2019,
+      "category": "video",
+      "pic": "promare.jpg",
+      "url": "https://promare-movie.com/",
+      "name": "Promare",
+      "creator": "Studio Trigger",
+      "exOneLink": "UO91f-C_hlA"
+    },
+    {
+      "year": 1999,
+      "category": "video",
+      "pic": "office.jpg",
+      "url": "https://en.wikipedia.org/wiki/Office_Space",
+      "name": "Office Space",
+      "creator": "Mike Judge",
+      "exOneLink": "jKYivs6ZLZk"
+    },
+    {
+      "year": 2014,
+      "category": "video",
+      "pic": "whip.jpg",
+      "url": "https://en.wikipedia.org/wiki/Whiplash_(2014_film)",
+      "name": "Whiplash",
+      "creator": "Damien Chazelle",
+      "exOneLink": "7d_jQycdQGo"
+    },
+    {
+      "year": 2017,
+      "category": "video",
+      "pic": "2049.jpg",
+      "url": "https://en.wikipedia.org/wiki/Blade_Runner_2049",
+      "name": "Bladerunner 2049",
+      "creator": "Denis Villeneuve",
+      "exOneLink": "gCcx85zbxz4"
+    },
+    {
+      "year": 2008,
+      "category": "video",
+      "pic": "speed.jpg",
+      "url": "https://en.wikipedia.org/wiki/Speed_Racer_(film)",
+      "name": "Speed Racer",
+      "creator": "Wachowski Sisters",
+      "exOneLink": "8V8sLlqJB2w"
+    },
+    {
+      "year": 1949,
+      "creator": "George Orwell",
+      "url": "https://en.wikipedia.org/wiki/Nineteen_Eighty-Four",
+      "name": "1984",
+      "pic": "1984.jpg",
+      "category": "book"
+    },
+    {
+      "year": 2014,
+      "creator": "Dan Slott / Mike Allred",
+      "url": "https://www.marvel.com/comics/series/18310/silver_surfer_2014_-_2015",
+      "name": "Silver Surfer (2014)",
+      "pic": "surf.jpg",
+      "category": "book"
+    },
+    {
+      "year": 2020,
+      "creator": "Corey Lewis",
+      "url": "https://www.indiegogo.com/projects/peng-action-sports-adventures-graphic-novel#/",
+      "name": "PENG!",
+      "pic": "peng.jpg",
+      "category": "book"
+    },
+    {
+      "year": 1986,
+      "category": "book",
+      "url": "https://www.marvel.com/comics/discover/1032/daredevil-born-again",
+      "name": "Daredevil Born Again",
+      "pic": "bornagain.jpg",
+      "creator": "Frank Miller"
+    },
+    {
+      "year": 2004,
+      "category": "book",
+      "url": "https://en.wikipedia.org/wiki/Persepolis_(comics)",
+      "name": "Persepolis",
+      "pic": "perse.jpg",
+      "creator": "Marjane Satrapi"
+    },
+    {
+      "year": 1992,
+      "category": "book",
+      "url": "https://www.viz.com/jojo-s-bizarre-adventure",
+      "name": "JoJo's Bizarre Adventure: Diamond Is Unbreakable",
+      "pic": "jojos.jpg",
+      "creator": "Hirohiko Araki"
+    },
+    {
+      "year": 2002,
+      "category": "book",
+      "url": "https://www.viz.com/eyeshield-21",
+      "name": "Eyeshield 21",
+      "pic": "eyes.jpg",
+      "creator": "Riichiro Inagaki"
+    },
+    {
+      "year": 2015,
+      "category": "book",
+      "url": "https://www.penguinrandomhouse.com/series/FS6/fantasy-sports",
+      "name": "Fantasy Sports",
+      "pic": "fansports.jpg",
+      "creator": "Sam Bosma"
+    },
+    {
+      "year": 2015,
+      "category": "book",
+      "url": "https://www.marvel.com/comics/series/16309/hawkeye_2012_-_2015",
+      "name": "Hawkeye",
+      "pic": "hawkeye.jpg",
+      "creator": "Matt Fraction"
+    }
+  ]
 }
