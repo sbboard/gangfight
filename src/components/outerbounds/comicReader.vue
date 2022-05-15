@@ -191,23 +191,29 @@ export default {
     window.removeEventListener("scroll", this.onScreen);
   },
   mounted() {
-    if (typeof this.$route.params.cat !== "undefined") {
+    this.getIndexes(this.fullReturn);
+    if (typeof this.$route.params.cat != "undefined") {
       this.cat = this.$route.params.cat.split("");
       this.cat[0] = parseInt(this.cat[0]);
       this.cat[1] = parseInt(this.cat[1]);
-    }
-    if (this.cat[0] == 0) {
-      this.archiveAll = true;
-      this.getIndexes(this.fullReturn);
-    } else {
+      if (this.cat[0] == 0) {
+        this.archiveAll = true;
+      } else {
+        this.archiveAll = false;
+      }
+      if (this.cat[1] == 0) {
+        this.menuClosed = true;
+      } else {
+        this.menuClosed = false;
+      }
+    } else if (this.comicInfo.series != "noseries") {
       this.archiveAll = false;
-      this.getIndexes(this.fullReturn);
-    }
-    if (this.cat[1] == 0) {
-      this.menuClosed = true;
-    } else {
       this.menuClosed = false;
+    } else {
+      this.archiveAll = true;
+      this.menuClosed = true;
     }
+
     if (this.comicInfo.series != "noseries") {
       this.cursorStyle = "pointer";
     }
