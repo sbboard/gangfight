@@ -253,7 +253,11 @@ export default {
         }
       });
       this.currentPage = pagesOnScreen[0].id.replace("pg-", "");
-      console.log("current page:", this.currentPage);
+      console.log("current page:", this.currentPage + "/" + (this.comicInfo.comicsArray.length - 1));
+      if(this.currentPage == (this.comicInfo.comicsArray.length - 1) && this.menuClosed){
+        console.log("page end reached")
+        this.menuClosed = false;
+      }
     },
     pageJump(page) {
       if (page < this.comicInfo.comicsArray.length - 1) {
@@ -502,6 +506,7 @@ export default {
         transition: max-height .5s,opacity .5s
         &:last-of-type
           cursor: initial
+          margin-bottom: 5em
         &.fullWidth
           max-height: 200vh
       img[lazy=loading]
