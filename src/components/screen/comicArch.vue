@@ -38,14 +38,7 @@
       </div>
     </div>
 
-    <div id="shopOwner">
-      <img
-        class="eye"
-        id="ownerEye"
-        src="/assets/global/comicArch/ownerEyeC.png"
-      />
-      <img class="body" src="/assets/global/comicArch/ownerBodyCS.png" />
-    </div>
+    <img id="shopOwner" src="/assets/global/comicArch/shop_owner.gif" />
     <div id="wheel">
       <div id="outerRim"></div>
       <div id="onePole"></div>
@@ -163,23 +156,6 @@ export default {
         this.$store.getters.getArchive.filter((e) => e.category == "comic")
       )
     );
-    //blink animation for ramen shop owner
-    const images = [
-      "/assets/global/comicArch/ownerEyeC.png",
-      "/assets/global/comicArch/ownerEyeClosedC.png",
-    ];
-    this.intervalid2 = setInterval(function () {
-      document.getElementById("ownerEye").src = images[1];
-      setTimeout(function () {
-        document.getElementById("ownerEye").src = images[0];
-      }, 300);
-      setTimeout(function () {
-        document.getElementById("ownerEye").src = images[1];
-      }, 600);
-      setTimeout(function () {
-        document.getElementById("ownerEye").src = images[0];
-      }, 900);
-    }, 6000);
 
     //set picayunes
     const chances = 10;
@@ -285,18 +261,12 @@ $metalColor: #c964ff
         bottom: 20.75em
 #shopOwner
     position: absolute
-    top: 40em
-    left: 20em
+    top: 41em
+    left: 19em
     z-index: 1
-    img
-        position: absolute
-    .eye
-        z-index: 2
-        width: 5em
-        top: 9.5em
-        left: 7.5em
-    .body
-        width: 19em
+    width: 21em
+    animation: breathe 5s infinite
+    transform-origin: bottom
 #postTemp
     position: absolute
     filter: sepia(1)
@@ -569,6 +539,13 @@ $metalColor: #c964ff
         transform: rotate(-3deg)
     100%
         transform: rotate(3deg)
+@keyframes breathe
+    0%
+        transform: rotateX(0deg)
+    50%
+        transform: rotateX(10deg)
+    100%
+        transform: rotateX(0deg)
 #scene
     width: 100%
     height: 100%
