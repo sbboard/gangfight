@@ -79,7 +79,7 @@
       <i class="fab fa-patreon"></i
     ></a>
 
-    <a href="https://twitter.com/gyangufaito" class="socMedia">
+    <a href="https://twitter.com/_gangfight_" class="socMedia">
       <i class="fab fa-twitter"></i>
     </a>
 
