@@ -447,7 +447,7 @@ export default {
     top: 0
     width: 100%
     position: relative
-    margin: 1em auto 0 0
+    margin: 0 auto 10vh 0
     background-color: initial
     .nameContent
       margin: 0 .5em .25em .5em

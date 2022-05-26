@@ -69,7 +69,7 @@ export default {
     height: 10vh
     width: 9.6vh
     cursor: pointer
-    transition: height .25s, width .25s, padding .25s
+    //transition: height .25s, width .25s, padding .25s
     nav
         font-size: 0vh
         opacity: 0

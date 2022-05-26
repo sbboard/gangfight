@@ -11,7 +11,7 @@
         id="TopBorder"
         :style="{
           height: (windowHeight - windowWidth) / 2 + 'px',
-          //backgroundImage:'url(/assets/' +this.$store.getters.assetFolder +'/sidebar/tempTopp.gif)',
+          backgroundImage:'url(/assets/0default/sidebar/tempTopp.gif)',
         }"
       >
         <div
