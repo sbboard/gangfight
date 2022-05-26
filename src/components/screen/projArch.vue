@@ -234,6 +234,7 @@ export default {
       gameFour: 3,
       currentPage: 0,
       postsPerPage: 6,
+      num_of_games: 15,
     };
   },
   mounted() {
@@ -243,10 +244,10 @@ export default {
       )
     );
     this.theArchive.sort(function(a,b){return new Date(b.updatedDate) - new Date(a.updatedDate);});
-    this.gameOne = Math.floor(Math.random() * 10) + 1;
-    this.gameTwo = Math.floor(Math.random() * 10) + 1;
-    this.gameThree = Math.floor(Math.random() * 10) + 1;
-    this.gameFour = Math.floor(Math.random() * 10) + 1;
+    this.gameOne = Math.floor(Math.random() * this.num_of_games) + 1;
+    this.gameTwo = Math.floor(Math.random() * this.num_of_games) + 1;
+    this.gameThree = Math.floor(Math.random() * this.num_of_games) + 1;
+    this.gameFour = Math.floor(Math.random() * this.num_of_games) + 1;
   },
   methods: {
     formatDate(isoDate) {
@@ -313,9 +314,6 @@ export default {
         transform: rotate(0deg) translateX(15em) translateY(0em) scale(.95)
     #shelf
         filter: drop-shadow(-1em 5em 6em black)
-    .gamePackage
-        h1
-            -webkit-text-stroke-width: .5px
 #owner
     position: absolute
     top: 14em
