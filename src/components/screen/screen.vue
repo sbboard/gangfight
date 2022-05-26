@@ -1,29 +1,62 @@
 <template>
-  <div id="app" :style="{flexDirection: (this.$store.getters.getTaller == 'vh')?'row':'column'}">
-
+  <div
+    id="app"
+    :style="{
+      flexDirection: this.$store.getters.getTaller == 'vh' ? 'row' : 'column',
+    }"
+  >
     <!-- TOP -->
     <template v-if="this.$store.getters.getTaller == 'vw'">
-      <div id="TopBorder" :style="{height: (windowHeight - windowWidth) / 2 + 'px',
-                                   backgroundImage: 'url(' + '/assets/' + this.$store.getters.assetFolder + '/sidebar/tempTopp.gif)'}">
-        <div ref="wordBox" class="topLogoBox" :style="{bottom: logoBoxBottom,
-        backgroundImage: 'url(' + '/assets/global/sidebar/sidebarTop.jpg)'}">
-        <span id="topWords">gang fight</span>
-        <div id="bottomWords"><span>ギ</span><span>ャ</span><span>ン</span><span>グ</span><span>フ</span><span>ァ</span><span>イ</span><span>ト</span></div>
+      <div
+        id="TopBorder"
+        :style="{
+          height: (windowHeight - windowWidth) / 2 + 'px',
+          //backgroundImage:'url(/assets/' +this.$store.getters.assetFolder +'/sidebar/tempTopp.gif)',
+        }"
+      >
+        <div
+          ref="wordBox"
+          class="topLogoBox"
+          :style="{
+            backgroundImage: 'url(' + '/assets/global/sidebar/sidebarTop.jpg)',
+          }"
+        >
+          <span id="topWords">gang fight</span>
+          <div id="bottomWords">
+            <span>ギ</span><span>ャ</span><span>ン</span><span>グ</span
+            ><span>フ</span><span>ァ</span><span>イ</span><span>ト</span>
+          </div>
         </div>
       </div>
     </template>
 
     <!-- LEFT -->
     <template v-if="this.$store.getters.getTaller == 'vh'">
-      <div id="LeftBorder" :style="{width: (windowWidth - windowHeight) / 2 + 'px'}">
-        <div id="leftBoxContain" :style="{height: (windowWidth - windowHeight) / 2 + 'px',
-                                          transform: 'translateY('+ (windowHeight - windowWidth) / 2 +'px) rotate(90deg)',
-                                          transformOrigin: 'left bottom'
-                                          }">
+      <div
+        id="LeftBorder"
+        :style="{ width: (windowWidth - windowHeight) / 2 + 'px' }"
+      >
+        <div
+          id="leftBoxContain"
+          :style="{
+            height: (windowWidth - windowHeight) / 2 + 'px',
+            transform:
+              'translateY(' +
+              (windowHeight - windowWidth) / 2 +
+              'px) rotate(90deg)',
+            transformOrigin: 'left bottom',
+          }"
+        >
           <div class="grid gridPadding">
             <div class="col-10 pinkNeonBlock">
-              <div class="col-12 heightFifty sideLogo"><div><span>ギ</span><span>ャ</span><span>ン</span><span>グ</span><span>フ</span><span>ァ</span><span>イ</span><span>ト</span></div><span class="leftLine"></span></div>
-              <div class="col-12 heightFifty fortune">"{{fortune}}"</div>
+              <div class="col-12 heightFifty sideLogo">
+                <div>
+                  <span>ギ</span><span>ャ</span><span>ン</span><span>グ</span
+                  ><span>フ</span><span>ァ</span><span>イ</span><span>ト</span>
+                </div>
+                <span class="leftLine"></span>
+              </div>
+              <div class="col-12 heightFifty fortune">"{{ fortune }}"</div>
             </div>
             <div class="col-2"></div>
           </div>
@@ -32,44 +65,109 @@
     </template>
 
     <!-- MIDDLE -->
-    <navigation :class="[(this.$store.getters.getTaller == 'vh')?'navWidthHundred':'navWidthMiddle']"/>
-    <router-view :class="[(this.$store.getters.getTaller == 'vh')?'middleViewLong':'middleViewHigh']" :style="{width: '100'+this.$store.getters.getTaller, height: '100'+this.$store.getters.getTaller, position: 'relative'}"/>
-    
+    <navigation
+      :class="[
+        this.$store.getters.getTaller == 'vh'
+          ? 'navWidthHundred'
+          : 'navWidthMiddle',
+      ]"
+    />
+    <router-view
+      :class="[
+        this.$store.getters.getTaller == 'vh'
+          ? 'middleViewLong'
+          : 'middleViewHigh',
+      ]"
+      :style="{
+        width: '100' + this.$store.getters.getTaller,
+        height: '100' + this.$store.getters.getTaller,
+        position: 'relative',
+      }"
+    />
+
     <!-- RIGHT -->
     <template v-if="this.$store.getters.getTaller == 'vh'">
-      <div id="RightBorder" :style="{width: (windowWidth - windowHeight) / 2 + 'px'}">
-        <div id="rightBoxContain" :style="{height: (windowWidth - windowHeight) / 2 + 'px',
-                                          transform: 'translateY('+ (windowHeight - windowWidth) / 2 +'px) rotate(90deg)',
-                                          transformOrigin: 'left bottom'
-                                          }">
-          
+      <div
+        id="RightBorder"
+        :style="{ width: (windowWidth - windowHeight) / 2 + 'px' }"
+      >
+        <div
+          id="rightBoxContain"
+          :style="{
+            height: (windowWidth - windowHeight) / 2 + 'px',
+            transform:
+              'translateY(' +
+              (windowHeight - windowWidth) / 2 +
+              'px) rotate(90deg)',
+            transformOrigin: 'left bottom',
+          }"
+        >
           <div class="grid rightBox gridPadding">
             <div class="col-2">
               <div class="openWindow">
                 <div>
-                  <div class="openText">OPEN
-                    <span>24HR</span></div>
+                  <div class="openText">OPEN <span>24HR</span></div>
                 </div>
               </div>
             </div>
             <div class="col-1 timeCol">
               <div class="timeDiv">
-                <span>{{hour}}:{{minute}}{{AMPM}}</span>
+                <span>{{ hour }}:{{ minute }}{{ AMPM }}</span>
               </div>
             </div>
             <div class="col-2">
-              <div class="col-12 randoBlock fiftyFifty"><div>
-                <img class="scanlines" src="/assets/global/sidebar/scanlines4.png"/>
-                <img class="screen" :src="'/assets/' + this.$store.getters.assetFolder + '/sidebar/'+this.randoOne+'.jpg'"/>
-                </div></div>
-              <div class="col-12 randoBlock fiftyFifty"><div>
-                <img class="scanlines" src="/assets/global/sidebar/scanlines4.png"/>
-                <img class="screen" :src="'/assets/' + this.$store.getters.assetFolder + '/sidebar/'+this.randoTwo+'.jpg'"/></div></div>
+              <div class="col-12 randoBlock fiftyFifty">
+                <div>
+                  <img
+                    class="scanlines"
+                    src="/assets/global/sidebar/scanlines4.png"
+                  />
+                  <img
+                    class="screen"
+                    :src="
+                      '/assets/' +
+                      this.$store.getters.assetFolder +
+                      '/sidebar/' +
+                      this.randoOne +
+                      '.jpg'
+                    "
+                  />
+                </div>
+              </div>
+              <div class="col-12 randoBlock fiftyFifty">
+                <div>
+                  <img
+                    class="scanlines"
+                    src="/assets/global/sidebar/scanlines4.png"
+                  />
+                  <img
+                    class="screen"
+                    :src="
+                      '/assets/' +
+                      this.$store.getters.assetFolder +
+                      '/sidebar/' +
+                      this.randoTwo +
+                      '.jpg'
+                    "
+                  />
+                </div>
+              </div>
             </div>
             <div class="col-4">
-              <div class="col-12 fiftyFifty"><div id="threeLetter"><span>シ</span><span>ャ</span><span>イ</span></div></div>
+              <div class="col-12 fiftyFifty">
+                <div id="threeLetter">
+                  <span>シ</span><span>ャ</span><span>イ</span>
+                </div>
+              </div>
               <div class="col-12 fiftyFifty leftLeft">
-                <div id="newImg" :style="{ 'background-image': 'url(/assets/contentImages/' + this.newestUpdate + ')' }" style="background-size: contain;">
+                <div
+                  id="newImg"
+                  :style="{
+                    'background-image':
+                      'url(/assets/contentImages/' + this.newestUpdate + ')',
+                  }"
+                  style="background-size: contain"
+                >
                   <div id="top">
                     <span>FREE</span>
                   </div>
@@ -80,55 +178,100 @@
               </div>
             </div>
             <div class="col-3">
-              <div class="col-6 fiftyFifty chewyPlace"><div id="iconGuy"><span>
-              <img src="/assets/global/sidebar/chewy.svg" onload="SVGInject(this)" />
-              <img id="blurredChewy" src="/assets/global/sidebar/chewy.svg" onload="SVGInject(this)" />
-              </span></div></div>
+              <div class="col-6 fiftyFifty chewyPlace">
+                <div id="iconGuy">
+                  <span>
+                    <img
+                      src="/assets/global/sidebar/chewy.svg"
+                      onload="SVGInject(this)"
+                    />
+                    <img
+                      id="blurredChewy"
+                      src="/assets/global/sidebar/chewy.svg"
+                      onload="SVGInject(this)"
+                    />
+                  </span>
+                </div>
+              </div>
               <div class="col-6 padZero"></div>
-              <div class="col-12 fiftyFifty leftLeft"><div id="cyberTop"><div id="cyber"><span></span><span>C</span><span>Y</span><span>B</span><span>E</span><span>R</span><span></span></div></div></div>
+              <div class="col-12 fiftyFifty leftLeft">
+                <div id="cyberTop">
+                  <div id="cyber">
+                    <span></span><span>C</span><span>Y</span><span>B</span
+                    ><span>E</span><span>R</span><span></span>
+                  </div>
+                </div>
+              </div>
             </div>
 
-            <div class="col-9 theBottomRight"><div class="routeName">>>{{this.$router.currentRoute.name}}</div></div>
-            <div class="col-3 theBottomRight"><div class="copyRight"><div><span class="english">© 2012 - {{futureYear}}</span><br/><span class="japanese">イルミナティの公式メンバー</span></div></div></div>
+            <div class="col-9 theBottomRight">
+              <div class="routeName">
+                >>{{ this.$router.currentRoute.name }}
+              </div>
+            </div>
+            <div class="col-3 theBottomRight">
+              <div class="copyRight">
+                <div>
+                  <span class="english">© 2012 - {{ futureYear }}</span
+                  ><br /><span class="japanese"
+                    >イルミナティの公式メンバー</span
+                  >
+                </div>
+              </div>
+            </div>
           </div>
-          
         </div>
       </div>
     </template>
 
     <!-- BOTTOM -->
     <template v-if="this.$store.getters.getTaller == 'vw'">
-      <div id="BottomBorder" :style="{height: (windowHeight - windowWidth) / 2 + 'px'}">
-      <div id="grids">
-        <div class="grid">
-          <div class="col-8 bottomRouteName"><span>{{this.$router.currentRoute.name}}</span></div>
-          <div class="col-4 bottomRight"><div><span class="bottomEng">© 2012 - {{futureYear}}</span><br/><span class="bottomJP">イルミナティの公式メンバー</span></div></div>
-        </div>
-        <div class="grid">
-          <div class="col-12 personInfo">{{month}}/{{day}}/{{futureYear}} {{hour}}:{{minute}}{{AMPM}}</div>
-        </div>
-        <div class="grid rainbowRoad">
-          <div class="col-2 bottomBar">
-            <div><img :src="'/assets/global/sidebar/barcodeHori.png'"/></div>
+      <div
+        id="BottomBorder"
+        :style="{ height: (windowHeight - windowWidth) / 2 + 'px' }"
+      >
+        <div id="grids">
+          <div class="grid">
+            <div class="col-8 bottomRouteName">
+              <span>{{ this.$router.currentRoute.name }}</span>
+            </div>
+            <div class="col-4 bottomRight">
+              <div>
+                <span class="bottomEng">© 2012 - {{ futureYear }}</span
+                ><br /><span class="bottomJP">イルミナティの公式メンバー</span>
+              </div>
+            </div>
           </div>
-          <div class="col-9 bottomNamebar">パリ症候群</div>
-          <div class="col-1 firstEd"><img src="/assets/global/sidebar/1stedi.png"/></div>
-        </div>
+          <div class="grid">
+            <div class="col-12 personInfo">
+              {{ month }}/{{ day }}/{{ futureYear }} {{ hour }}:{{ minute
+              }}{{ AMPM }}
+            </div>
+          </div>
+          <div class="grid rainbowRoad">
+            <div class="col-2 bottomBar">
+              <div><img :src="'/assets/global/sidebar/barcodeHori.png'" /></div>
+            </div>
+            <div class="col-9 bottomNamebar">パリ症候群</div>
+            <div class="col-1 firstEd">
+              <img src="/assets/global/sidebar/1stedi.png" />
+            </div>
+          </div>
         </div>
       </div>
     </template>
   </div>
 </template>
 <script>
-import navigation from '../../components/nav/navHome.vue'
+import navigation from "../../components/nav/navHome.vue";
 
 export default {
-  name: 'app',
+  name: "app",
   components: {
-    navigation
+    navigation,
   },
-  data(){
-    return{
+  data() {
+    return {
       windowHeight: 0,
       windowWidth: 0,
       flexDirect: "row",
@@ -142,84 +285,82 @@ export default {
       hour: 0,
       minute: 0,
       AMPM: "AM",
-      newestUpdate: "tvload.jpg"
-    }
+      newestUpdate: "tvload.jpg",
+    };
   },
-  methods:{
-    getLogoHeight(){
-      const logoBox = this.$refs.wordBox
-      if(logoBox != null){
-        this.boxHeight = logoBox.clientHeight
+  methods: {
+    getLogoHeight() {
+      const logoBox = this.$refs.wordBox;
+      if (logoBox != null) {
+        this.boxHeight = logoBox.clientHeight;
       }
     },
-    sendTime(){
+    sendTime() {
       function addZero(i) {
-      if (i < 10) {
-        i = "0" + i;
-      }
-      return i;
+        if (i < 10) {
+          i = "0" + i;
+        }
+        return i;
       }
       var today = new Date();
       var dd = today.getDate();
       var mm = today.getMonth() + 1; //January is 0!
       var yyyy = today.getFullYear();
-      let tempHour = today.getHours()
-      if(tempHour > 12){
-        tempHour = tempHour-12
-        this.AMPM = "PM"
+      let tempHour = today.getHours();
+      if (tempHour > 12) {
+        tempHour = tempHour - 12;
+        this.AMPM = "PM";
       }
-      (tempHour == 0)?this.hour = 12:this.hour = tempHour
-      this.minute = addZero(today.getMinutes())
-      this.month = mm
-      this.day = dd
-      this.futureYear = yyyy+12
-      this.$store.commit('setAsset', [dd,mm,yyyy])
-    }
+      tempHour == 0 ? (this.hour = 12) : (this.hour = tempHour);
+      this.minute = addZero(today.getMinutes());
+      this.month = mm;
+      this.day = dd;
+      this.futureYear = yyyy + 12;
+      this.$store.commit("setAsset", [dd, mm, yyyy]);
+    },
   },
-  beforeMount(){
-    this.sendTime()
-    this.fortune = this.$store.getters.getFortune
+  beforeMount() {
+    this.sendTime();
+    this.fortune = this.$store.getters.getFortune;
   },
-  created(){
-    this.windowHeight = window.innerHeight
-    this.windowWidth = window.innerWidth
+  created() {
+    this.windowHeight = window.innerHeight;
+    this.windowWidth = window.innerWidth;
     setInterval(this.sendTime, 1000);
 
     //generate rando Nos for sidebar imgs
-    this.randoOne = Math.floor(Math.random() * 10) + 1
-    this.randoTwo = Math.floor(Math.random() * 10) + 1
-    if(this.randoOne == this.randoTwo){
-      if(this.randoOne == 10){
-        this.randoTwo = 2
-      }
-      else{
-        this.randoTwo += 1
+    this.randoOne = Math.floor(Math.random() * 10) + 1;
+    this.randoTwo = Math.floor(Math.random() * 10) + 1;
+    if (this.randoOne == this.randoTwo) {
+      if (this.randoOne == 10) {
+        this.randoTwo = 2;
+      } else {
+        this.randoTwo += 1;
       }
     }
   },
   computed: {
-    logoBoxBottom(){
-      const windowSize = (this.windowHeight - this.windowWidth) / 2
-      if(((windowSize - this.boxHeight) / 2) > 10){
-        return (windowSize - this.boxHeight) / 2 + "px"
+    logoBoxBottom() {
+      const windowSize = (this.windowHeight - this.windowWidth) / 2;
+      if ((windowSize - this.boxHeight) / 2 > 10) {
+        return (windowSize - this.boxHeight) / 2 + "px";
+      } else {
+        return "10px";
       }
-      else{
-        return "10px"
-      }
-    }
+    },
   },
   mounted() {
     this.$nextTick(() => {
-      this.getLogoHeight()
-      window.addEventListener('resize', () => {
-        this.windowHeight = window.innerHeight
-        this.windowWidth = window.innerWidth
-        this.getLogoHeight()
+      this.getLogoHeight();
+      window.addEventListener("resize", () => {
+        this.windowHeight = window.innerHeight;
+        this.windowWidth = window.innerWidth;
+        this.getLogoHeight();
       });
-    })
-    this.newestUpdate = this.$store.getters.getArchive[0].img
+    });
+    this.newestUpdate = this.$store.getters.getArchive[0].img;
   },
-}
+};
 </script>
 
 <style lang="sass" scoped>
@@ -228,9 +369,9 @@ export default {
 @import "../../css/gangFonts.sass"
 @import "../../css/gridlex.min.css"
 [class*=grid-], [class*=grid_], [class~=grid]
-    margin: 0
+  margin: 0
 [class*=col-], [class*=col_], [class~=col]
-    padding: 0 .75vh 1.75vh
+  padding: 0 .75vh 1.75vh
 
 $lineWidth: .5em
 $sideImgOpacity: .7
@@ -328,13 +469,12 @@ $sideImgOpacity: .7
     left: 0
     background-size: 100% auto
     background-position: center
+    bottom: 10px
     right: 0
-    //border: 2px solid white
     padding: 1em
     position: absolute
-    bottom: 0
 span#topWords
-  display:block !important
+  display: block !important
   font-size: 9vw
   font-family: Montserrat
 #bottomWords
@@ -443,7 +583,7 @@ span#topWords
 .farLeft
   //background-color: $neonBlack
   line-height: 0
-.profilePic    
+.profilePic
   width: 25vh
   height: 100%
 .rightBox
@@ -503,7 +643,7 @@ span#topWords
       position: relative
       .screen
         transform: rotate(-90deg)
-        width: 100%    
+        width: 100%
         filter: contrast(1.75) saturate(2)
         opacity: 0.9
       .scanlines
@@ -549,7 +689,7 @@ span#topWords
     border: 3px double #F25101
     font-family: "Courier New", Courier, monospace
     div
-      display: block    
+      display: block
       transform: rotate(-90deg)
       font-size: 1.75vh
       position: absolute
@@ -644,7 +784,7 @@ span#topWords
   #cyber
     border: .5vh solid $neonGreen
     @include boxGlow($neonGreen)
-    font-family: Montserrat    
+    font-family: Montserrat
     height: 50%
     width: 100%
     display: flex
