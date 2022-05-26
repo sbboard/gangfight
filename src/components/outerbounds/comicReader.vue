@@ -529,6 +529,7 @@ export default {
   filter: brightness(0.5)
   z-index: -7
   position: absolute
+  background-size: cover
   width: 100%
   height: 100%
   top: 0px
