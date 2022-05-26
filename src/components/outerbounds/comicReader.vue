@@ -4,18 +4,6 @@
       id="theComic"
       :class="[this.$store.getters.getTaller == 'vh' ? '' : 'mobile']"
     >
-      <div
-        id="stretchOp"
-        @click="swapSize"
-        :class="[
-          this.$store.getters.getTaller == 'vh' ? 'desktop' : 'mobile',
-          { wideOn: wideMode },
-        ]"
-      >
-        <div>
-          <i class="fas fa-arrows-alt-h"></i>
-        </div>
-      </div>
       <h1>{{ comicInfo.title }}</h1>
       <h2>{{ comicInfo.subtitle }}</h2>
       <div
@@ -137,7 +125,7 @@
         ]"
       />
     </div>
-    <div id="city"></div>
+    <!--<div id="city"></div>-->
     <div id="cityLights"></div>
     <div id="cityOfStars"></div>
     <div id="cityBlues"></div>
@@ -179,6 +167,7 @@ export default {
       archiveAll: true,
       wideMode: false,
       currentPage: 0,
+      endLaunched: false,
     };
   },
   components: {
@@ -219,13 +208,6 @@ export default {
     }
   },
   methods: {
-    swapSize() {
-      this.wideMode = !this.wideMode;
-      let that = this;
-      setTimeout(function () {
-        that.pageJump(that.currentPage - 1);
-      }, 500);
-    },
     switchCat() {
       if (this.comicInfo.series != "noseries") {
         this.archiveAll = !this.archiveAll;
@@ -253,11 +235,25 @@ export default {
         }
       });
       this.currentPage = pagesOnScreen[0].id.replace("pg-", "");
-      console.log("current page:", this.currentPage + "/" + (this.comicInfo.comicsArray.length - 1));
-      if(this.currentPage == (this.comicInfo.comicsArray.length - 1) && this.menuClosed){
-        console.log("page end reached")
-        this.menuClosed = false;
+      console.log(
+        "current page:",
+        this.currentPage + "/" + (this.comicInfo.comicsArray.length - 1)
+      );
+
+      if (
+        this.currentPage == this.comicInfo.comicsArray.length - 1 &&
+        !this.endLaunched
+      ) {
+        console.log("page end reached");
+        if(this.menuClosed){
+          this.menuClosed = false;
+        }
+        this.endLaunched = true;
       }
+      else if(this.currentPage != this.comicInfo.comicsArray.length - 1 && this.endLaunched){
+        this.endLaunched = false;
+      }
+
     },
     pageJump(page) {
       if (page < this.comicInfo.comicsArray.length - 1) {
@@ -498,12 +494,12 @@ export default {
       img
         max-width: 100%
         margin: 0 auto 0 auto
-        margin-top: 4em
+        margin-top: 4vh
         display: block
         max-height: 100vh
         image-rendering: -webkit-optimize-contrast
         cursor: pointer
-        transition: max-height .5s,opacity .5s
+        transition: opacity .5s
         &:last-of-type
           cursor: initial
           margin-bottom: 5em
