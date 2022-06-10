@@ -178,10 +178,10 @@ export default {
     changeScreen() {
       this.intervalid1 = setInterval(() => {
         let newScreen = Math.floor(Math.random() * this.theArchive.length);
-        let toChange = Math.floor(Math.random() * 15);
+        let toChange = Math.floor(Math.random() * 14) + 1;
         var x = document.getElementsByClassName("screenimg");
         x[toChange].src = this.assetURL + this.theArchive[newScreen].img;
-      }, 2000);
+      }, 250);
     },
   },
   beforeDestroy() {

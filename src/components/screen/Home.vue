@@ -166,7 +166,7 @@ export default {
       let diff = Math.floor(
         (Date.parse(currentWeekString) - Date.parse(newWeek)) / 86400000
       );
-      if (diff <= 7) {
+      if (diff <= 30) {
         return true;
       } else {
         return false;

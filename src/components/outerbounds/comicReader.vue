@@ -17,6 +17,11 @@
         <span>MENU</span><i class="fas fa-caret-down"></i>
       </div>
 
+      <h3 @click="jumpToBottom('down')">
+        <i class="fas fa-caret-down"></i> Jump To End
+        <i class="fas fa-caret-down"></i>
+      </h3>
+
       <div class="comicPages">
         <img
           v-for="(pages, index) in comicInfo.comicsArray"
@@ -28,6 +33,11 @@
           :class="{ fullWidth: wideMode }"
         />
       </div>
+
+      <h3 @click="jumpToBottom('up')" :class="this.$store.getters.getTaller == 'vh' ? 'desktop' : 'mobile'">
+        <i class="fas fa-caret-up"></i> Jump To Start
+        <i class="fas fa-caret-up"></i>
+      </h3>
 
       <div
         id="comicNav"
@@ -208,6 +218,14 @@ export default {
     }
   },
   methods: {
+    jumpToBottom(direction) {
+      const scrollingElement = document.scrollingElement || document.body;
+      if (direction == "down") {
+        scrollingElement.scrollTop = scrollingElement.scrollHeight;
+      } else {
+        scrollingElement.scrollTop = 0;
+      }
+    },
     switchCat() {
       if (this.comicInfo.series != "noseries") {
         this.archiveAll = !this.archiveAll;
@@ -245,15 +263,16 @@ export default {
         !this.endLaunched
       ) {
         console.log("page end reached");
-        if(this.menuClosed){
+        if (this.menuClosed) {
           this.menuClosed = false;
         }
         this.endLaunched = true;
-      }
-      else if(this.currentPage != this.comicInfo.comicsArray.length - 1 && this.endLaunched){
+      } else if (
+        this.currentPage != this.comicInfo.comicsArray.length - 1 &&
+        this.endLaunched
+      ) {
         this.endLaunched = false;
       }
-
     },
     pageJump(page) {
       if (page < this.comicInfo.comicsArray.length - 1) {
@@ -483,6 +502,18 @@ export default {
       color: $neonBlue
       font-family: Montserrat
       @include textGlow($neonBlue, 1px)
+    h3
+      color: $neonRed
+      font-family: Montserrat
+      @include textGlow($neonRed, 1px)
+      margin: 4vh 0 1em 0
+      text-align: center
+      cursor: pointer
+      &:last-of-type
+        margin-top: 1em
+        margin-bottom: 5em
+      &.mobile
+        margin-bottom: 1em
     h2
       font-size: 4vmin
       text-align: center
@@ -500,13 +531,14 @@ export default {
         image-rendering: -webkit-optimize-contrast
         cursor: pointer
         transition: opacity .5s
+        &:first-of-type
+          margin-top: 0
         &:last-of-type
           cursor: initial
-          margin-bottom: 5em
         &.fullWidth
           max-height: 200vh
       img[lazy=loading]
-        height: 300px
+        height: 100vh
         margin: calc(50vh - 150px) auto
         opacity: 0
         border-radius: 10px
