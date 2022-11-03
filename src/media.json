@@ -1,18 +1,6 @@
 {
   "media": [
     {
-      "year": 2013,
-      "category": "music",
-      "pic": "sky.jpg",
-      "url": "https://open.spotify.com/album/1bvCVYPVl445mO690M2dOr",
-      "creator": "Sky Ferreira",
-      "name": "Night Time My Time",
-      "exOne": "Boys",
-      "exOneLink": "B1gDuaY8-V4",
-      "exTwo": "I Blame Myself",
-      "exTwoLink": "pWo7SC-tG4U"
-    },
-    {
       "year": 1990,
       "category": "music",
       "pic": "publicenemy.jpg",
@@ -206,15 +194,6 @@
       "exTwoLink": "chSZCtLrgz8"
     },
     {
-      "year": 1994,
-      "url": "https://en.wikipedia.org/wiki/Live_A_Live",
-      "creator": "Square",
-      "category": "game",
-      "name": "Live A Live",
-      "pic": "livealive.jpg",
-      "exOneLink": "wRop31JcTz8"
-    },
-    {
       "year": 2005,
       "url": "https://en.wikipedia.org/wiki/Musashi:_Samurai_Legend",
       "creator": "Square-Enix",
@@ -304,24 +283,6 @@
       "name": "SNK vs Capcom: Card Fighters Clash",
       "pic": "snkv.jpg",
       "exOneLink": "_M-qJEZ_xzQ"
-    },
-    {
-      "year": 2001,
-      "creator": "Compile",
-      "category": "game",
-      "url": "https://web.archive.org/web/20070608081122/http://guru.titney.org/",
-      "name": "Guru Logic Champ",
-      "pic": "guru.jpg",
-      "exOneLink": "dAbt1L3n1ow"
-    },
-    {
-      "year": 2016,
-      "creator": "Atlus",
-      "category": "game",
-      "url": "https://atlus.com/p5r/lang/en/",
-      "name": "Persona 5 Royal",
-      "pic": "p5r.jpg",
-      "exOneLink": "vWWy7V9rCrA"
     },
     {
       "year": 1999,
@@ -548,25 +509,6 @@
       "exOneLink": "IZzSxLdLVp4"
     },
     {
-      "year": 1998,
-      "category": "video",
-      "pic": "cardca.jpg",
-      "url": "http://ccsakura-official.com/",
-      "name": "Card Captor Sakura",
-      "creator": "Madhouse",
-      "exOneLink": "z4hiVuB9Jcc"
-    },
-    {
-      "year": 2017,
-      "category": "video",
-      "pic": "nirv.jpg",
-      "url": "https://video.vice.com/en_ca/show/nirvanna-the-band-the-show",
-      "name": "Nirvanna the Band the Show",
-      "creator": "Matt Johnson & Jay McCarrol",
-      "exOneLink": "B_qnI1WrlnU",
-      "exTwoLink": "Scm4ZzNCgRA"
-    },
-    {
       "year": 1981,
       "category": "video",
       "pic": "blade.jpg",
@@ -611,28 +553,12 @@
       "category": "book"
     },
     {
-      "year": 2014,
-      "creator": "Dan Slott / Mike Allred",
-      "url": "https://www.marvel.com/comics/series/18310/silver_surfer_2014_-_2015",
-      "name": "Silver Surfer (2014)",
-      "pic": "surf.jpg",
-      "category": "book"
-    },
-    {
       "year": 2020,
       "creator": "Corey Lewis",
       "url": "https://www.indiegogo.com/projects/peng-action-sports-adventures-graphic-novel#/",
       "name": "PENG!",
       "pic": "peng.jpg",
       "category": "book"
-    },
-    {
-      "year": 1986,
-      "category": "book",
-      "url": "https://www.marvel.com/comics/discover/1032/daredevil-born-again",
-      "name": "Daredevil Born Again",
-      "pic": "bornagain.jpg",
-      "creator": "Frank Miller"
     },
     {
       "year": 1992,
@@ -657,14 +583,6 @@
       "name": "Fantasy Sports",
       "pic": "fansports.jpg",
       "creator": "Sam Bosma"
-    },
-    {
-      "year": 2015,
-      "category": "book",
-      "url": "https://www.marvel.com/comics/series/16309/hawkeye_2012_-_2015",
-      "name": "Hawkeye",
-      "pic": "hawkeye.jpg",
-      "creator": "Matt Fraction"
     }
   ]
 }
