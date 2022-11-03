@@ -35,18 +35,6 @@
       "exTwoLink": "H0reSX-2jz8"
     },
     {
-      "year": 2014,
-      "category": "music",
-      "pic": "foster.jpg",
-      "url": "https://open.spotify.com/album/22cFcAQkydpTzeSKQZEKv0",
-      "name": "Supermodel",
-      "creator": "Foster the People",
-      "exOne": "Ask Yourself",
-      "exOneLink": "w02_NLLHAxs",
-      "exTwo": "Coming of Age",
-      "exTwoLink": "MBqzrj18S2w"
-    },
-    {
       "year": 2016,
       "category": "video",
       "pic": "vewn.jpg",
@@ -218,15 +206,6 @@
       "exTwoLink": "chSZCtLrgz8"
     },
     {
-      "year": 1992,
-      "url": "https://en.wikipedia.org/wiki/Kaeru_no_Tame_ni_Kane_wa_Naru",
-      "creator": "Nintendo",
-      "category": "game",
-      "name": "For Frog the Bell Tolls",
-      "pic": "frog.jpg",
-      "exOneLink": "FqkeOzfsZbs"
-    },
-    {
       "year": 1994,
       "url": "https://en.wikipedia.org/wiki/Live_A_Live",
       "creator": "Square",
@@ -300,15 +279,6 @@
       "exOneLink": "FClNYk5Pbdw"
     },
     {
-      "year": 2015,
-      "url": "https://www.orithegame.com/blind-forest/",
-      "creator": "Thomas Mahler",
-      "category": "game",
-      "name": "Ori and the Blind Forest",
-      "pic": "ori.jpg",
-      "exOneLink": "cklw-Yu3moE"
-    },
-    {
       "year": 1994,
       "category": "game",
       "creator": "Hideo Kojima",
@@ -318,15 +288,6 @@
       "exOneLink": "J8JqMawqDCc"
     },
     {
-      "year": 1996,
-      "category": "game",
-      "creator": "Nintendo",
-      "url": "https://en.wikipedia.org/wiki/Mole_Mania",
-      "name": "Mole Mania",
-      "pic": "mole.jpg",
-      "exOneLink": "8qvnX_OSdMo"
-    },
-    {
       "year": 1997,
       "category": "game",
       "creator": "Koji Igarashi",
@@ -334,24 +295,6 @@
       "name": "Castlevania: Symphony of the Night",
       "pic": "castle.jpg",
       "exOneLink": "5HnhPNS0rqM"
-    },
-    {
-      "year": 1998,
-      "category": "game",
-      "creator": "Rare",
-      "url": "https://en.wikipedia.org/wiki/Banjo-Kazooie",
-      "name": "Banjo Kazooie",
-      "pic": "banjo.jpg",
-      "exOneLink": "J9feE6EqY8g"
-    },
-    {
-      "year": 1999,
-      "category": "game",
-      "creator": "HAL Laboratory",
-      "url": "https://en.wikipedia.org/wiki/Pok%C3%A9mon_Snap",
-      "name": "Pokemon Snap",
-      "pic": "snap.jpg",
-      "exOneLink": "dFHgf_SY5CY"
     },
     {
       "year": 1999,
@@ -397,15 +340,6 @@
       "name": "Sin & Punishment",
       "pic": "sinPunish.jpg",
       "exOneLink": "k8Ee-G9R_JI"
-    },
-    {
-      "year": 2001,
-      "category": "game",
-      "creator": "Intelligent Systems",
-      "url": "https://en.wikipedia.org/wiki/Paper_Mario",
-      "name": "Paper Mario",
-      "pic": "pape.jpg",
-      "exOneLink": "6wQzSVIwYZI"
     },
     {
       "year": 2001,
@@ -480,15 +414,6 @@
       "exOneLink": "YOSiyUIorPQ"
     },
     {
-      "year": 2012,
-      "creator": "Monolith Soft",
-      "category": "game",
-      "url": "https://www.nintendo.com/games/detail/xenoblade-chronicles-definitive-edition-switch/",
-      "name": "Xenoblade Chronicles",
-      "pic": "xeno.jpg",
-      "exOneLink": "0YEhVPZjgMk"
-    },
-    {
       "year": 2016,
       "category": "game",
       "creator": "SUPERHOT Team",
@@ -496,24 +421,6 @@
       "name": "SUPERHOT",
       "pic": "superhot.jpg",
       "exOneLink": "vrS86l_CtAY"
-    },
-    {
-      "year": 2017,
-      "creator": "Sidebar Games",
-      "category": "game",
-      "url": "https://sidebargames.com/golfstory/",
-      "name": "Golf Story",
-      "pic": "golf.jpg",
-      "exOneLink": "zufLtHu_m7o"
-    },
-    {
-      "year": 2018,
-      "category": "game",
-      "creator": "Subset Games",
-      "url": "https://subsetgames.com/itb.html",
-      "name": "Into the Breach",
-      "pic": "breach.jpg",
-      "exOneLink": "gMlD_vgM-9s"
     },
     {
       "year": 2018,
@@ -559,15 +466,6 @@
       "name": "Fatum Betula",
       "pic": "fatum.jpg",
       "exOneLink": "PhC5sQE8s5w"
-    },
-    {
-      "year": 2019,
-      "category": "game",
-      "creator": "Square Enix",
-      "url": "https://www.nintendo.com/games/detail/dragon-quest-xi-s-echoes-of-an-elusive-age-definitive-edition-switch/",
-      "name": "Dragon Quest XI S",
-      "pic": "dqxis.jpg",
-      "exOneLink": "PgfOu4dEIDw"
     },
     {
       "year": 2020,
@@ -678,24 +576,6 @@
       "exOneLink": "VSOzdFoZsho"
     },
     {
-      "year": 2019,
-      "category": "video",
-      "pic": "promare.jpg",
-      "url": "https://promare-movie.com/",
-      "name": "Promare",
-      "creator": "Studio Trigger",
-      "exOneLink": "UO91f-C_hlA"
-    },
-    {
-      "year": 1999,
-      "category": "video",
-      "pic": "office.jpg",
-      "url": "https://en.wikipedia.org/wiki/Office_Space",
-      "name": "Office Space",
-      "creator": "Mike Judge",
-      "exOneLink": "jKYivs6ZLZk"
-    },
-    {
       "year": 2014,
       "category": "video",
       "pic": "whip.jpg",
@@ -753,14 +633,6 @@
       "name": "Daredevil Born Again",
       "pic": "bornagain.jpg",
       "creator": "Frank Miller"
-    },
-    {
-      "year": 2004,
-      "category": "book",
-      "url": "https://en.wikipedia.org/wiki/Persepolis_(comics)",
-      "name": "Persepolis",
-      "pic": "perse.jpg",
-      "creator": "Marjane Satrapi"
     },
     {
       "year": 1992,
