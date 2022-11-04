@@ -1,6 +1,103 @@
 {
   "media": [
     {
+      "year": 1984,
+      "category": "video",
+      "pic": "repoman.jpg",
+      "url": "https://en.wikipedia.org/wiki/Repo_Man_(film)",
+      "creator": "Alex Cox",
+      "name": "Repo Man",
+      "exOneLink": "DLGrXGEMOSo"
+    },
+    {
+      "year": 1987,
+      "category": "video",
+      "pic": "miami.jpg",
+      "url": "https://en.wikipedia.org/wiki/Miami_Connection",
+      "creator": "Y.K. Kim",
+      "name": "Miami Connection",
+      "exOneLink": "VpZu69OB2KM"
+    },
+    {
+      "year": 2000,
+      "category": "video",
+      "pic": "FLCL.jpg",
+      "url": "https://open.spotify.com/album/0aFNb4RDk2hmKKLa0bzXNz?autoplay=true",
+      "creator": "Kazuya Tsurumaki",
+      "name": "FLCL",
+      "exOneLink": "yYTnHjD6GuE",
+      "exTwoLink": "CK-BwQL3a-w"
+    },
+    {
+      "year": 2022,
+      "category": "music",
+      "pic": "beach.jpg",
+      "url": "https://beachbunny.bandcamp.com/album/emotional-creature",
+      "creator": "Beach Bunny",
+      "name": "Emotional Creature",
+      "exOneLink": "BYiraKCTViY",
+      "exTwoLink": "GtpysTR1Dso"
+    },
+    {
+      "year": 2012,
+      "category": "music",
+      "pic": "yathing.jpg",
+      "url": "https://www.youtube.com/watch?v=36DCuT1KxM4",
+      "creator": "Gorillaz / James Murphy / Andre 3000",
+      "name": "Do Ya Thing",
+      "exOneLink": "36DCuT1KxM4"
+    },
+    {
+      "year": 2022,
+      "category": "book",
+      "pic": "bomb.jpg",
+      "url": "https://imagecomics.com/comics/series/do-a-powerbomb",
+      "creator": "Daniel Warren Johnson",
+      "name": "Do a Power Bomb"
+    },
+    {
+      "year": 2010,
+      "category": "book",
+      "pic": "frank.jpg",
+      "url": "https://comicvine.gamespot.com/punisher-franken-castle-1-hc/4000-246588/",
+      "creator": "Rick Remender",
+      "name": "Punisher: Franken-Castle"
+    },
+    {
+      "year": 2022,
+      "category": "book",
+      "pic": "mama.jpg",
+      "url": "https://ethanpope.bigcartel.com/product/mama-mojo",
+      "creator": "Ethan Pope",
+      "name": "Mama Mojo"
+    },
+    {
+      "year": 2022,
+      "category": "book",
+      "pic": "dawinna.jpg",
+      "url": "https://www.simonandschuster.com/books/Cinnamon/Victoria-Douglas/9781953414175",
+      "creator": "Victoria Douglas",
+      "name": "Cinnamon"
+    },
+    {
+      "year": 2014,
+      "category": "book",
+      "pic": "avenger.jpg",
+      "url": "https://marvel.fandom.com/wiki/100th_Anniversary_Special_-_Avengers_Vol_1_1",
+      "creator": "James Stokoe",
+      "name": "100th Anniversary Special - Avengers"
+    },
+    {
+      "year": 2021,
+      "category": "video",
+      "pic": "hazel.jpg",
+      "url": "https://www.youtube.com/c/hazelll/videos",
+      "creator": "",
+      "name": "Hazel",
+      "exOneLink": "TCO16aX_J_w",
+      "exTwoLink": "DcTaI_Xq5yY"
+    },
+    {
       "year": 1990,
       "category": "music",
       "pic": "publicenemy.jpg",
@@ -80,9 +177,7 @@
       "url": "https://open.spotify.com/album/2UJUCicAuQjIqBOFIvPzIx",
       "name": "Get to Heaven",
       "creator": "Everything Everything",
-      "exOne": "Get to Heaven",
       "exOneLink": "6D3gntAlrfU",
-      "exTwo": "The Wheel (is Turning Now)",
       "exTwoLink": "4F8N4hwD5E4"
     },
     {
@@ -240,13 +335,13 @@
       "exOneLink": "gFC2GNHTMsk"
     },
     {
-      "year": 2000,
-      "url": "http://dc.sega.jp/game_jsr.html",
+      "year": 2002,
+      "url": "https://en.wikipedia.org/wiki/Jet_Set_Radio_Future",
       "creator": "Smilebit",
       "category": "game",
-      "name": "Jet Set Radio",
-      "pic": "jsr.jpg",
-      "exOneLink": "8pbnKvlbOhc"
+      "name": "Jet Set Radio Future",
+      "pic": "jsrf.jpg",
+      "exOneLink": "ZId5O3dbYJw"
     },
     {
       "year": 1997,
