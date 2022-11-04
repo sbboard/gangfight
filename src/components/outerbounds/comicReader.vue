@@ -14,7 +14,7 @@
           { closed: menuClosed },
         ]"
       >
-        <span>MENU</span><i class="fas fa-caret-down"></i>
+        <span>MENU</span><i class="fas fa-caret-up"></i>
       </div>
 
       <h3 @click="jumpToBottom('down')">
