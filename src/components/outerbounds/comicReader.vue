@@ -25,12 +25,21 @@
 
       <div class="comicPages">
         <img
-          v-for="(pages, index) in comicInfo.comicsArray"
-          :key="pages"
+          v-for="(pages, index) in pagesToLoad"
+          :key="index"
           :id="'pg-' + index"
           :ref="'pg-' + index"
-          :src="`/assets/comics/${comicInfo.url}/${pages}`"
+          :src="`/assets/comics/${comicInfo.url}/${comicInfo.comicsArray[index]}`"
           @click="pageJump(index)"
+          @load="
+            () => {
+              if (pagesToLoad < comicInfo.comicsArray.length) {
+                pagesToLoad++;
+              } else {
+                finishedLoading = true;
+              }
+            }
+          "
         />
       </div>
 
@@ -179,6 +188,8 @@ export default {
       isPlaying: false,
       currentPage: 0,
       endLaunched: false,
+      pagesToLoad: 1,
+      finishedLoading: false,
     };
   },
   components: {
@@ -244,7 +255,11 @@ export default {
         }
       );
       this.currentPage = pagesOnScreen[0].id.replace("pg-", "");
-      if (this.currentPage == numOfPages && !this.endLaunched) {
+      if (
+        this.currentPage == numOfPages &&
+        !this.endLaunched &&
+        this.finishedLoading
+      ) {
         if (this.menuClosed) this.menuClosed = false;
         this.endLaunched = true;
       } else if (this.currentPage != numOfPages && this.endLaunched) {
