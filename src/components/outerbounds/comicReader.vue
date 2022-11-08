@@ -1,23 +1,17 @@
 <template>
-  <div id="comicPage" :key="pageKey">
-    <div
-      id="theComic"
-      :class="[this.$store.getters.getTaller == 'vh' ? '' : 'mobile']"
-    >
+  <div id="comicPage">
+    <div id="theComic" :class="[versionClass]">
       <h1>{{ comicInfo.title }}</h1>
       <h2>{{ comicInfo.subtitle }}</h2>
       <div
         id="minOption"
         @click="menuClosed = !menuClosed"
-        :class="[
-          this.$store.getters.getTaller == 'vh' ? 'desktop' : 'mobile',
-          { closed: menuClosed },
-        ]"
+        :class="[versionClass, { closed: menuClosed }]"
       >
         <span>MENU</span><i class="fas fa-caret-up"></i>
       </div>
 
-      <h3 @click="jumpToBottom('down')">
+      <h3 @click="jumpToBottom(true)">
         <i class="fas fa-caret-down"></i> Jump To End
         <i class="fas fa-caret-down"></i>
       </h3>
@@ -30,22 +24,15 @@
           :ref="'pg-' + index"
           v-lazy="`/assets/comics/${comicInfo.url}/${pages}`"
           @click="pageJump(index)"
-          :class="{ fullWidth: wideMode }"
         />
       </div>
 
-      <h3 @click="jumpToBottom('up')" :class="this.$store.getters.getTaller == 'vh' ? 'desktop' : 'mobile'">
+      <h3 @click="jumpToBottom(false)" :class="versionClass">
         <i class="fas fa-caret-up"></i> Jump To Start
         <i class="fas fa-caret-up"></i>
       </h3>
 
-      <div
-        id="comicNav"
-        :class="[
-          this.$store.getters.getTaller == 'vh' ? 'desktop' : 'mobile',
-          { closed: menuClosed },
-        ]"
-      >
+      <div id="comicNav" :class="[versionClass, { closed: menuClosed }]">
         <a
           v-if="priorComic.title != ''"
           id="leftArrow"
@@ -53,14 +40,14 @@
         >
           <span class="arrow"><i class="fas fa-angle-left"></i></span>
           <span class="nameContent"
-            >{{ priorComic.title
-            }}<template v-if="priorComic.subtitle"
-              >: {{ priorComic.subtitle }}</template
-            ></span
+            >{{ priorComic.title }}
+            <template v-if="priorComic.subtitle"
+              >: {{ priorComic.subtitle }}
+            </template></span
           >
         </a>
         <template v-if="comicInfo.series != 'noseries'">
-          <template v-if="archiveAll == false">
+          <template v-if="!archiveAll">
             <div
               id="currentArch"
               @click="switchCat()"
@@ -81,7 +68,8 @@
             </div>
           </template>
         </template>
-        <template v-if="archiveAll == true">
+
+        <template v-if="archiveAll">
           <select @change="switchPage">
             <option
               v-for="comics in fullReturn"
@@ -89,10 +77,10 @@
               :data-id="comics._id"
               :selected="comicInfo.title == comics.title"
             >
-              {{ comics.title
-              }}<template v-if="comics.subtitle"
-                >: {{ comics.subtitle }}</template
-              >
+              {{ comics.title }}
+              <template v-if="comics.subtitle"
+                >: {{ comics.subtitle }}
+              </template>
             </option>
           </select>
         </template>
@@ -117,10 +105,10 @@
           :href="`/comicReader/${nextComic._id}/${cat[0]}${cat[1]}`"
         >
           <span class="nameContent"
-            >{{ nextComic.title
-            }}<template v-if="nextComic.subtitle"
-              >: {{ nextComic.subtitle }}</template
-            >
+            >{{ nextComic.title }}
+            <template v-if="nextComic.subtitle"
+              >: {{ nextComic.subtitle }}
+            </template>
           </span>
           <span class="arrow"><i class="fas fa-angle-right"></i></span>
         </a>
@@ -135,7 +123,6 @@
         ]"
       />
     </div>
-    <!--<div id="city"></div>-->
     <div id="cityLights"></div>
     <div id="cityOfStars"></div>
     <div id="cityBlues"></div>
@@ -164,7 +151,6 @@ export default {
         date: "",
         series: "noseries",
       },
-      pageKey: 0,
       fullReturn: JSON.parse(
         JSON.stringify(this.$store.getters.getArchive)
       ).filter((e) => e.comicsArray.length > 0 && e.comicsArray[0] != ""),
@@ -175,7 +161,6 @@ export default {
       cursorStyle: "",
       menuClosed: true,
       archiveAll: true,
-      wideMode: false,
       currentPage: 0,
       endLaunched: false,
     };
@@ -195,22 +180,11 @@ export default {
       this.cat = this.$route.params.cat.split("");
       this.cat[0] = parseInt(this.cat[0]);
       this.cat[1] = parseInt(this.cat[1]);
-      if (this.cat[0] == 0) {
-        this.archiveAll = true;
-      } else {
-        this.archiveAll = false;
-      }
-      if (this.cat[1] == 0) {
-        this.menuClosed = true;
-      } else {
-        this.menuClosed = false;
-      }
-    } else if (this.comicInfo.series != "noseries") {
-      this.archiveAll = false;
-      this.menuClosed = false;
+      this.archiveAll = this.cat[0] == 0;
+      this.menuClosed = this.cat[1] == 0;
     } else {
-      this.archiveAll = true;
-      this.menuClosed = true;
+      this.archiveAll = this.comicInfo.series == "noseries";
+      this.menuClosed = this.comicInfo.series == "noseries";
     }
 
     if (this.comicInfo.series != "noseries") {
@@ -218,18 +192,14 @@ export default {
     }
   },
   methods: {
-    jumpToBottom(direction) {
+    jumpToBottom(isDown) {
       const scrollingElement = document.scrollingElement || document.body;
-      if (direction == "down") {
-        scrollingElement.scrollTop = scrollingElement.scrollHeight;
-      } else {
-        scrollingElement.scrollTop = 0;
-      }
+      scrollingElement.scrollTop = isDown ? scrollingElement.scrollHeight : 0;
     },
     switchCat() {
       if (this.comicInfo.series != "noseries") {
         this.archiveAll = !this.archiveAll;
-        if (this.archiveAll == false) {
+        if (!this.archiveAll) {
           let seriesArray = this.fullReturn.filter(
             (e) => e.series.toLowerCase() == this.comicInfo.series.toLowerCase()
           );
@@ -242,44 +212,27 @@ export default {
       }
     },
     onScreen() {
-      var allPages = document.querySelectorAll("img");
-      var pagesOnScreen = Array.from(allPages).filter(function (el) {
-        var rect = el.getBoundingClientRect();
-        var elemTop = rect.top;
-        var elemBottom = rect.bottom;
-        var isVisible = elemTop < window.innerHeight && elemBottom >= 0;
-        if (isVisible) {
-          return el;
+      const numOfPages = this.comicInfo.comicsArray.length - 1;
+      const pagesOnScreen = Array.from(document.querySelectorAll("img")).filter(
+        (el) => {
+          const rect = el.getBoundingClientRect();
+          if (rect.top < window.innerHeight && rect.bottom >= 0) return el;
         }
-      });
-      this.currentPage = pagesOnScreen[0].id.replace("pg-", "");
-      console.log(
-        "current page:",
-        this.currentPage + "/" + (this.comicInfo.comicsArray.length - 1)
       );
-
-      if (
-        this.currentPage == this.comicInfo.comicsArray.length - 1 &&
-        !this.endLaunched
-      ) {
-        console.log("page end reached");
-        if (this.menuClosed) {
-          this.menuClosed = false;
-        }
+      this.currentPage = pagesOnScreen[0].id.replace("pg-", "");
+      if (this.currentPage == numOfPages && !this.endLaunched) {
+        if (this.menuClosed) this.menuClosed = false;
         this.endLaunched = true;
-      } else if (
-        this.currentPage != this.comicInfo.comicsArray.length - 1 &&
-        this.endLaunched
-      ) {
+      } else if (this.currentPage != numOfPages && this.endLaunched) {
         this.endLaunched = false;
       }
     },
     pageJump(page) {
       if (page < this.comicInfo.comicsArray.length - 1) {
-        let marginTop = window
+        const marginTop = window
           .getComputedStyle(this.$refs[`pg-${page}`][0], null)
           .getPropertyValue("margin-top");
-        let scrollLength =
+        const scrollLength =
           this.$refs[`pg-${page}`][0].clientHeight +
           this.$refs[`pg-${page}`][0].offsetTop +
           parseInt(marginTop);
@@ -288,14 +241,14 @@ export default {
     },
     getIndexes(archive) {
       let currentIndex = archive
-        .map(function (e) {
+        .map((e) => {
           return e._id;
         })
         .indexOf(this.comicId);
       if (archive.length > 0 && currentIndex > -1) {
         this.comicInfo = archive[currentIndex];
         if (currentIndex != 0) {
-          let newArray = archive.slice();
+          const newArray = archive.slice();
           this.nextComic.title = newArray[currentIndex - 1].title;
           this.nextComic.subtitle = newArray[currentIndex - 1].subtitle;
           this.nextComic._id = newArray[currentIndex - 1]._id;
@@ -305,7 +258,7 @@ export default {
         if (currentIndex == archive.length - 1) {
           this.priorComic.title = "";
         } else {
-          let newArray = archive.slice();
+          const newArray = archive.slice();
           this.priorComic.title = newArray[currentIndex + 1].title;
           this.priorComic.subtitle = newArray[currentIndex + 1].subtitle;
           this.priorComic._id = newArray[currentIndex + 1]._id;
@@ -315,8 +268,7 @@ export default {
       }
     },
     switchPage(e) {
-      let newRoute = `/comicReader/${e.target.selectedOptions[0].dataset.id}/${this.cat[0]}${this.cat[1]}?`;
-      window.location.href = newRoute;
+      window.location.href = `/comicReader/${e.target.selectedOptions[0].dataset.id}/${this.cat[0]}${this.cat[1]}?`;
     },
   },
   computed: {
@@ -329,24 +281,19 @@ export default {
       );
       return seriesReturn;
     },
+    versionClass() {
+      return this.$store.getters.getTaller == "vh" ? "desktop" : "mobile";
+    },
   },
   watch: {
     menuClosed() {
-      if (this.menuClosed == true) {
-        this.cat[1] = 0;
-      } else {
-        this.cat[1] = 1;
-      }
+      this.cat[1] = this.menuClosed ? 0 : 1;
     },
     archiveAll() {
-      if (this.archiveAll == true) {
-        this.cat[0] = 0;
-      } else {
-        this.cat[0] = 1;
-      }
+      this.cat[0] = this.archiveAll ? 0 : 1;
     },
     comicInfo() {
-      if (this.archiveAll == false) {
+      if (!this.archiveAll) {
         let seriesArray = this.fullReturn.filter(
           (e) => e.series.toLowerCase() == this.comicInfo.series.toLowerCase()
         );
