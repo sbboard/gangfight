@@ -29,7 +29,7 @@
           :key="pages"
           :id="'pg-' + index"
           :ref="'pg-' + index"
-          v-lazy="`/assets/comics/${comicInfo.url}/${pages}`"
+          :src="`/assets/comics/${comicInfo.url}/${pages}`"
           @click="pageJump(index)"
         />
       </div>
@@ -534,13 +534,6 @@ export default {
           cursor: initial
         &.fullWidth
           max-height: 200vh
-      img[lazy=loading]
-        height: 100vh
-        margin: calc(50vh - 150px) auto
-        opacity: 0
-        border-radius: 10px
-      img[lazy=loaded]
-        opacity: 1
 #city
   background-image: url('/assets/global/homepage/rochester.png')
   background-position: bottom
