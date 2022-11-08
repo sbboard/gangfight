@@ -3,18 +3,25 @@
     <div id="theComic" :class="[versionClass]">
       <h1>{{ comicInfo.title }}</h1>
       <h2>{{ comicInfo.subtitle }}</h2>
-      <div
-        id="minOption"
-        @click="menuClosed = !menuClosed"
-        :class="[versionClass, { closed: menuClosed }]"
-      >
-        <span>MENU</span><i class="fas fa-caret-up"></i>
-      </div>
 
-      <h3 @click="jumpToBottom(true)">
-        <i class="fas fa-caret-down"></i> Jump To End
-        <i class="fas fa-caret-down"></i>
-      </h3>
+      <template v-if="comicInfo.audio">
+        <audio
+          @play="isPlaying = true"
+          @timeupdate="loopAudio"
+          ref="audioElement"
+          autoplay
+          :src="comicInfo.audio"
+          type="audio/mpeg"
+        ></audio>
+        <h2 class="music" v-if="comicInfo.musician">
+          Audio by {{ comicInfo.musician }}
+          <span
+            @click="isPlaying = !isPlaying"
+            :class="{ isPlaying: !isPlaying }"
+            >{{ isPlaying ? "STOP" : "PLAY" }}</span
+          >
+        </h2>
+      </template>
 
       <div class="comicPages">
         <img
@@ -27,10 +34,18 @@
         />
       </div>
 
-      <h3 @click="jumpToBottom(false)" :class="versionClass">
-        <i class="fas fa-caret-up"></i> Jump To Start
+      <h3 @click="jumpToTop()" :class="versionClass">
+        <i class="fas fa-caret-up"></i> Jump To Top
         <i class="fas fa-caret-up"></i>
       </h3>
+
+      <div
+        id="minOption"
+        @click="menuClosed = !menuClosed"
+        :class="[versionClass, { closed: menuClosed }]"
+      >
+        <span>MENU</span><i class="fas fa-caret-up"></i>
+      </div>
 
       <div id="comicNav" :class="[versionClass, { closed: menuClosed }]">
         <a
@@ -161,6 +176,7 @@ export default {
       cursorStyle: "",
       menuClosed: true,
       archiveAll: true,
+      isPlaying: false,
       currentPage: 0,
       endLaunched: false,
     };
@@ -192,9 +208,17 @@ export default {
     }
   },
   methods: {
-    jumpToBottom(isDown) {
+    jumpToTop() {
       const scrollingElement = document.scrollingElement || document.body;
-      scrollingElement.scrollTop = isDown ? scrollingElement.scrollHeight : 0;
+      scrollingElement.scrollTop = 0;
+    },
+    loopAudio() {
+      const buffer = 0.5;
+      const audioEl = this.$refs.audioElement;
+      if (audioEl.currentTime > audioEl.duration - buffer) {
+        audioEl.currentTime = 0;
+        audioEl.play();
+      }
     },
     switchCat() {
       if (this.comicInfo.series != "noseries") {
@@ -288,6 +312,10 @@ export default {
   watch: {
     menuClosed() {
       this.cat[1] = this.menuClosed ? 0 : 1;
+    },
+    isPlaying() {
+      if (this.isPlaying) this.$refs.audioElement.play();
+      else this.$refs.audioElement.pause();
     },
     archiveAll() {
       this.cat[0] = this.archiveAll ? 0 : 1;
@@ -468,6 +496,28 @@ export default {
       color: $neonBlue
       font-family: Montserrat
       @include textGlow($neonBlue, 1px)
+      &.music
+        font-size: 1.25em
+        color: $neonYellow
+        margin-bottom: 4vmin
+        text-transform: lowercase
+        user-select: none
+        @include textGlow($neonYellow, 1px)
+        span
+          border: 1px solid $neonYellow
+          @include textGlow($neonYellow, 1px)
+          width: 3em
+          padding: 0.25em 0.5em
+          justify-content: center
+          text-align: center
+          font-size: .75em
+          display: inline-flex
+          text-transform: uppercase
+          cursor: pointer
+          margin-left: 0.5em
+          &.isPlaying
+            color: black
+            background-color: $neonYellow
     .comicPages
       img
         max-width: 100%
