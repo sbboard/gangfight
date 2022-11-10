@@ -1,5 +1,5 @@
 <template>
-  <div id="app" v-if="loaded == true">
+  <div id="app" v-if="loaded">
     <router-view></router-view>
   </div>
 </template>
