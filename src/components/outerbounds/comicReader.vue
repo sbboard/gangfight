@@ -577,11 +577,11 @@ export default {
   position: fixed
   font-size: 1.25rem
   bottom: 5.75rem
-  padding: 0 0.5em
+  padding: 0 1.5rem
   margin: 0 auto
   z-index: 555
   left: 0
-  width: calc(100vw - 1.5em)
+  width: calc(100vw - 4rem)
   display: flex
   justify-content: space-between
   font-family: Yantramanav
