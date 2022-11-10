@@ -48,12 +48,13 @@
         <i class="fas fa-caret-up"></i>
       </h3>
 
-      <div
-        id="minOption"
-        @click="menuClosed = !menuClosed"
-        :class="[versionClass, { closed: menuClosed }]"
-      >
-        <span>MENU</span><i class="fas fa-caret-up"></i>
+      <div id="minOption" :class="[versionClass, { closed: menuClosed }]">
+        <router-link to="/" class="redLink"
+          ><i class="fas fa-caret-left"></i> BACK TO GANG FIGHT</router-link
+        >
+        <span @click="menuClosed = !menuClosed"
+          >MENU <i class="fas fa-caret-up"></i
+        ></span>
       </div>
 
       <div id="comicNav" :class="[versionClass, { closed: menuClosed }]">
@@ -137,15 +138,6 @@
           <span class="arrow"><i class="fas fa-angle-right"></i></span>
         </a>
       </div>
-
-      <navigation
-        :class="[
-          this.$store.getters.getTaller == 'vh'
-            ? 'navWidthHundred'
-            : 'navWidthMiddle',
-          { closed: menuClosed },
-        ]"
-      />
     </div>
     <div id="cityLights"></div>
     <div id="cityOfStars"></div>
@@ -154,8 +146,6 @@
 </template>
 
 <script>
-import navigation from "../../components/nav/navHome.vue";
-
 export default {
   metaInfo() {
     return {
@@ -191,9 +181,6 @@ export default {
       pagesToLoad: 1,
       finishedLoading: false,
     };
-  },
-  components: {
-    navigation,
   },
   created() {
     window.addEventListener("scroll", this.onScreen);
@@ -375,7 +362,7 @@ export default {
       transform: rotate(0deg)
 
 #comicNav
-  padding: 0 0 .5em 0
+  padding: 1em 0
   height: 3.5em
   position: fixed
   bottom: 0em
@@ -386,7 +373,7 @@ export default {
   display: block
   flex-direction: column
   right: 0
-  background-color: rgba(0, 0, 0, .75)
+  background: linear-gradient(180deg, black, rgba(0, 0, 0, 0.8))
   width: 100%
   display: flex
   justify-content: center
@@ -410,6 +397,7 @@ export default {
     color: white
     position: absolute
     top: 0
+    bottom: 0
     width: 30%
     cursor: pointer
     text-decoration: none
@@ -467,14 +455,8 @@ export default {
       font-size: .8em
     #archInstruct
       font-size: 0.3em
-#navBox.desktop
-  bottom: 3.2em
-  padding: .5em 0 0 0
-  width: 100%
-  font-size: 1.25em
-  transition: bottom .2s
   &.closed
-    bottom: -2.5em
+    bottom: -5.5em
 .navWidthMiddle
   width: 100%
 .navWidthHundred
@@ -500,8 +482,7 @@ export default {
       text-align: center
       cursor: pointer
       &:last-of-type
-        margin-top: 1em
-        margin-bottom: 5em
+        margin: 1em 0 5em 0
       &.mobile
         margin-bottom: 1em
     h2
@@ -536,8 +517,7 @@ export default {
     .comicPages
       img
         max-width: 100%
-        margin: 0 auto 0 auto
-        margin-top: 4vh
+        margin: 4vh auto 0 auto
         display: block
         max-height: 100vh
         image-rendering: -webkit-optimize-contrast
@@ -594,35 +574,40 @@ export default {
   font-size: 0.5em
   user-select: none
 #minOption
-  height: 1em
   position: fixed
-  font-size: 2.5em
-  bottom: 7.15rem
-  right: .5em
+  font-size: 1.25rem
+  bottom: 5.75rem
+  padding: 0 0.5em
   margin: 0 auto
   z-index: 555
+  left: 0
+  width: calc(100vw - 1.5em)
   display: flex
-  align-items: center
   justify-content: space-between
   font-family: Yantramanav
-  color: $neonBlue
   transition: bottom .2s
   @include textGlow($neonBlue, 1px)
-  cursor: pointer
+  color: $neonBlue
   &.mobile
     display: none
   &.closed
-    bottom: 0rem
-    i
+    bottom: .5rem
+    span i
       transform: rotateX(0deg)
   i
     margin: 0 auto
-    display: block
+    display: inline-block
     transition: transform .25s
     transform: rotateX(180deg)
-  span
-    font-size: 1.25rem
+  span, .redLink
     margin-right: .5em
+    cursor: pointer
+  .redLink
+    margin-right: 0
+    text-decoration: none
+    color: $neonBlue
+    &:hover
+      text-decoration: underline
 #archName
   user-select: none
 </style>
