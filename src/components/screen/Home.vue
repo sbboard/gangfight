@@ -3,7 +3,6 @@
     <div id="gridBlock" :style="fontSize">
       <span class="latestTracks">Latest Tracks:</span>
       <div id="latestGrid">
-        <!-- begin -->
         <div
           class="contentBoxes"
           :style="blockSize"
@@ -51,7 +50,6 @@
             </div>
           </div>
         </a>
-        <!-- end -->
       </div>
     </div>
     <div id="city"></div>
@@ -123,7 +121,6 @@ export default {
   mounted() {
     let that = this;
     this.theFour = this.$store.getters.getArchive.slice(0, 4);
-
     axios
       .get(`${process.env.VUE_APP_NEWS}#timestamp=${new Date().getTime()}`)
       .then((response) => (that.newsTicker = response.data))
@@ -156,21 +153,15 @@ export default {
         d.getMonth() + 1 < 10 ? `0${d.getMonth() + 1}` : d.getMonth() + 1;
       let date = d.getDate() < 10 ? `0${d.getDate()}` : d.getDate();
       let year = d.getFullYear().toString().substring(2);
-      let dString = `${month}:${date}:${year}`;
-      return dString;
+      return `${month}:${date}:${year}`;
     },
     checkWeek(week) {
-      const newWeek = week.split("T")[0];
       const wk = this.$store.getters.getDate;
       const currentWeekString = `${wk[2]}-${wk[1]}-${wk[0]}`;
       let diff = Math.floor(
-        (Date.parse(currentWeekString) - Date.parse(newWeek)) / 86400000
+        (Date.parse(currentWeekString) - Date.parse(week.split("T")[0])) / 86400000
       );
-      if (diff <= 30) {
-        return true;
-      } else {
-        return false;
-      }
+      return diff <= 30;
     },
   },
   computed: {
@@ -241,14 +232,12 @@ export default {
     left: 0
     position: absolute
     text-align: left
-    display: block
     text-transform: uppercase
     transition: opacity 1s
     span
         display: inline-block
 #homeBlock
     display: flex
-    //flex-direction: column
     justify-content: center
     #city
         background-image: url('/assets/global/homepage/rochester.png')
@@ -266,12 +255,12 @@ export default {
         width: 100%
         position: absolute
         bottom: 0
-        background: linear-gradient(to bottom, rgba(255,255,255,0), rgba(81,82,241,0.1) 30%, rgba(255,0,129,0.9))
+        mix-blend-mode: plus-lighter
+        background: linear-gradient(to bottom, rgba(81, 82, 241, 0) 0, rgb(255, 0, 129))
     #cityOfStars
         position: absolute
         z-index: -7
         width: 100%
-        position: absolute
         bottom: 0px
         left: 0px
         height: 100%
@@ -298,12 +287,11 @@ export default {
         top: 0
     #gridBlock
         width: 80%
-        margin: 0 auto
+        margin: 7em auto 0 auto
         line-height: normal
         letter-spacing: 1.5px
         font-family: Yantramanav
         font-size: 16px
-        margin-top: 7em
         .latestTracks
             margin-left: 3%
             color: $neonWhite
@@ -323,7 +311,6 @@ export default {
     font-size: 2em
     color: white
     font-weight: 100
-    //background-image: url('/assets/global/homepage/pixel2.png')
     animation: screenGlow 10s infinite
     border-radius: .2em
     .boxWrap
