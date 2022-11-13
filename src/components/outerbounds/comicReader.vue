@@ -444,7 +444,7 @@ export default {
     top: 0
     width: 100%
     position: relative
-    margin: 0 auto 10vh 0
+    margin: 0 auto
     background-color: initial
     .nameContent
       margin: 0 .5em .25em .5em
@@ -467,7 +467,7 @@ export default {
   #theComic
     padding: 1em 1em 3em 1em
     &.mobile
-      padding: 1em 1em 1.5em 1em
+      padding: 1em 1em 0em 1em
     h1
       font-size: 5vmin
       text-align: center
@@ -529,27 +529,14 @@ export default {
           cursor: initial
         &.fullWidth
           max-height: 200vh
-#city
-  background-image: url('/assets/global/homepage/rochester.png')
-  background-position: bottom
-  background-repeat: repeat-x
-  background-attachment: fixed
-  background-size: 100% auto
-  position: absolute
-  bottom: 0
-  opacity: .6
-  z-index: -5
-  height: 100%
-  width: 100%
-  filter: brightness(0.5)
 #cityOfStars
   filter: brightness(0.5)
   z-index: -7
-  position: absolute
+  position: fixed
   background-size: cover
   width: 100%
-  height: 100%
-  top: 0px
+  height: 100vh
+  bottom: 0
   left: 0px
   background-image: url(/assets/global/homepage/starsbg.jpg)
   margin: 0
@@ -565,11 +552,11 @@ export default {
   background-repeat: no-repeat
   background-position: center
   background-attachment: fixed
-  height: 100%
+  height: 100vh
   width: 100%
   z-index: -8
-  position: absolute
-  top: 0
+  position: fixed
+  bottom: 0
 #archInstruct
   font-size: 0.5em
   user-select: none
