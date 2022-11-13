@@ -10,28 +10,31 @@
     because mankind inherited a genetic craving to create from the force
     that birthed it."
     />
-    <meta name="keywords" content="comics,digital,media,gang,fight,art,brand,gang fight,comic" />
+    <meta
+      name="keywords"
+      content="comics,digital,media,gang,fight,art,brand,gang fight,comic"
+    />
     <meta name="author" content="Gang Fight" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width,initial-scale=1.0" />
     <link rel="icon" href="<%= BASE_URL %>favicon.ico" />
     <script src="/js/svg-inject.min.js"></script>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
     <script
       async
       src="https://www.googletagmanager.com/gtag/js?id=UA-148579798-1"
     ></script>
     <script>
       window.dataLayer = window.dataLayer || [];
+
       function gtag() {
         dataLayer.push(arguments);
       }
       gtag("js", new Date());
-
       gtag("config", "UA-148579798-1");
     </script>
     <title>Gang Fight</title>
     <style>
+      @import "https://fonts.googleapis.com/css?family=Montserrat";
       body {
         height: 100%;
         width: 100%;
@@ -40,157 +43,304 @@
         height: 100%;
         width: 100%;
         overflow: hidden;
-        background-color: black;
-        background: -webkit-radial-gradient(bottom, #121729, #020306 60%);
+        background: linear-gradient(0deg, #121729, #020306 60%);
         margin: 0;
         padding: 0;
         background-size: cover;
         background-attachment: fixed;
         background-repeat: no-repeat;
         background-position: center;
-        height: 100%;
-        width: 100%;
         z-index: -8;
         position: absolute;
         top: 0;
       }
-
-      @import "https://fonts.googleapis.com/css?family=Montserrat";
-      #loadWrap {
-        display: flex;
-        width: 100vw;
-        height: 100vh;
-        position: absolute;
-        top: 0;
-        left: 0;
-        color: #ff0081;
-      }
-      #loadWrap span {
-        align-self: center;
+      .glow {
+        filter: drop-shadow(0 0 8px #ff0081ff);
         width: 100%;
-        text-align: center;
-        font-family: monospace;
-        margin-top: 1em;
-      }
-      #loadWrap #city {
-        background-image: url("./assets/global/homepage/rochester.png");
-        background-position: bottom;
-        background-repeat: repeat-x;
-        background-size: 100% auto;
-        position: absolute;
-        z-index: -5;
+        position: relative;
         height: 100%;
-        width: 100%;
-      }
-      #loadWrap #cityLights {
-        position: absolute;
-        z-index: -6;
-        height: 40%;
-        width: 100%;
-        bottom: 0;
-        background: linear-gradient(
-          to bottom,
-          rgba(255, 255, 255, 0),
-          rgba(81, 82, 241, 0.1) 30%,
-          rgba(255, 0, 129, 0.9)
-        );
       }
       #loadContain {
+        --line-thick: 20px;
+        --size: 200px;
+        --pink: #ff0081;
         margin: 0 auto;
         position: relative;
-        width: 100px;
-        height: 101px;
+        width: 300px;
         display: flex;
+        height: 100vh;
         align-items: center;
         justify-content: center;
       }
-      .chewy {
-        height: 4px;
-        width: 79px;
-        margin: 0 auto;
-        left: 0;
-        right: 0;
-        background-color: #ff0081;
+      #loadContain.animation {
+        animation: 0.25s fadeout ease-out forwards;
+        animation-delay: 2.75s;
+      }
+      @keyframes fadeout {
+        0% {
+          opacity: 1;
+        }
+        100% {
+          opacity: 0;
+        }
+      }
+      .animation .chewy {
+        height: var(--line-thick);
+        left: 10%;
+        background-color: var(--pink);
         position: absolute;
+        top: calc(50% - (var(--line-thick) / 2));
+        animation: 0.25s side ease-out forwards;
+        animation-delay: 1s;
+      }
+      .animation .leftLeg,
+      .animation .rightLeg {
+        width: var(--line-thick);
+        position: absolute;
+        background-color: var(--pink);
         top: 50%;
-        border-top-left-radius: 100px;
-        border-top-right-radius: 100px;
+        animation: 0.25s drop ease-out forwards;
       }
-      .leftLeg {
-        height: 41%;
-        width: 4px;
-        background-color: #ff0081;
-        bottom: 7px;
-        position: absolute;
-        transform: skew(-14deg, 10deg);
-        left: 32px;
-        border-bottom-right-radius: 100%;
+      .animation .leftLeg {
+        left: 30%;
+        transform: rotate(7deg);
+        animation-delay: 1.25s;
       }
-      .rightLeg {
-        height: 41%;
-        width: 4px;
-        background-color: #ff0081;
-        bottom: 7px;
-        position: absolute;
-        transform: skew(14deg, 10deg);
-        right: 32px;
-        border-bottom-left-radius: 100%;
+      .animation .rightLeg {
+        right: 30%;
+        transform: rotate(-7deg);
+        animation-delay: 1.5s;
       }
-      .nb-spinner {
+      .animation .nb-spinner {
         position: absolute;
-        width: 75px;
-        height: 75px;
-        margin: 0;
+        width: var(--size);
+        height: var(--size);
+        right: 0;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        margin: auto;
         background: 0 0;
-        border-top: 4px solid #ff0081;
-        border-right: 4px solid transparent;
         border-radius: 50%;
-        -webkit-animation: 1s spin linear infinite;
-        animation: 1s spin linear infinite;
-      }
-      @-webkit-keyframes spin {
-        from {
-          -webkit-transform: rotate(0);
-          transform: rotate(0);
-        }
-        to {
-          -webkit-transform: rotate(360deg);
-          transform: rotate(360deg);
-        }
+        border: var(--line-thick) solid var(--pink);
+        animation: 1s spin linear forwards;
       }
       @keyframes spin {
+        0% {
+          clip-path: polygon(
+            50% 50%,
+            50% 0%,
+            50% 0%,
+            50% 0%,
+            50% 0%,
+            50% 0%,
+            50% 0%,
+            50% 0%,
+            50% 0%,
+            50% 0%
+          );
+        }
+        12.5% {
+          clip-path: polygon(
+            50% 50%,
+            50% 0%,
+            100% 0%,
+            100% 0%,
+            100% 0%,
+            100% 0%,
+            100% 0%,
+            100% 0%,
+            100% 0%,
+            100% 0%
+          );
+        }
+        25% {
+          clip-path: polygon(
+            50% 50%,
+            50% 0%,
+            100% 0%,
+            100% 50%,
+            100% 50%,
+            100% 50%,
+            100% 50%,
+            100% 50%,
+            100% 50%,
+            100% 50%
+          );
+        }
+        37.5% {
+          clip-path: polygon(
+            50% 50%,
+            50% 0%,
+            100% 0%,
+            100% 50%,
+            100% 100%,
+            100% 100%,
+            100% 100%,
+            100% 100%,
+            100% 100%,
+            100% 100%
+          );
+        }
+        50% {
+          clip-path: polygon(
+            50% 50%,
+            50% 0%,
+            100% 0%,
+            100% 50%,
+            100% 100%,
+            50% 100%,
+            50% 100%,
+            0% 50%,
+            50% 100%,
+            50% 100%
+          );
+        }
+        62.5% {
+          clip-path: polygon(
+            50% 50%,
+            50% 0%,
+            100% 0%,
+            100% 50%,
+            100% 100%,
+            50% 100%,
+            0% 100%,
+            0% 100%,
+            0% 100%,
+            0% 100%
+          );
+        }
+        75% {
+          clip-path: polygon(
+            50% 50%,
+            50% 0%,
+            100% 0%,
+            100% 50%,
+            100% 100%,
+            50% 100%,
+            0% 100%,
+            0% 50%,
+            0% 50%,
+            0% 50%
+          );
+        }
+        87.5% {
+          clip-path: polygon(
+            50% 50%,
+            50% 0%,
+            100% 0%,
+            100% 50%,
+            100% 100%,
+            50% 100%,
+            0% 100%,
+            0% 50%,
+            0% 0%,
+            0% 0%
+          );
+        }
+        100% {
+          clip-path: polygon(
+            50% 50%,
+            50% 0%,
+            100% 0%,
+            100% 50%,
+            100% 100%,
+            50% 100%,
+            0% 100%,
+            0% 50%,
+            0% 0%,
+            50% 0%
+          );
+        }
+      }
+      @keyframes side {
         from {
-          -webkit-transform: rotate(0);
-          transform: rotate(0);
+          width: 0%;
         }
         to {
-          -webkit-transform: rotate(360deg);
-          transform: rotate(360deg);
+          width: 80%;
         }
+      }
+      @keyframes drop {
+        from {
+          height: 0;
+        }
+        to {
+          height: calc(var(--size) / 2);
+        }
+      }
+      .four-pointed-star {
+        transform: scale(0);
+      }
+      .animation .four-pointed-star {
+        width: 1em;
+        position: absolute;
+        left: 60%;
+        z-index: 1;
+        top: calc(50% - (var(--line-thick) * 3));
+        font-size: 3em;
+        animation: 0.2s twist ease-out forwards;
+        animation-delay: 1.75s;
+      }
+      @keyframes twist {
+        0% {
+          transform: scale(0);
+        }
+        100% {
+          transform: scale(1);
+          opacity: 1;
+        }
+      }
+      .four-pointed-star:before {
+        content: "";
+        position: absolute;
+        background: #00ff95;
+        width: 1em;
+        height: 1.15em;
+        transform: rotate(-45deg) skewX(22.5deg) skewY(22.5deg);
+      }
+      .four-pointed-star:after {
+        content: "";
+        position: absolute;
+        background: #00ff95;
+        width: 1em;
+        height: 1.15em;
+        transform: rotate(45deg) skewX(22.5deg) skewY(22.5deg);
       }
     </style>
   </head>
   <body>
     <div id="app">
-      <div id="loadWrap">
-        <span id="loadUp">
-          <div id="loadContain">
-            <div class="chewy"></div>
-            <div class="leftLeg"></div>
-            <div class="rightLeg"></div>
-            <div class="nb-spinner"></div>
-          </div>
-          <noscript
-            ><br />Gang Fight is a digital media brand specializing in comic and
-            web art.<br />
-            We make content not because we seek any sort of financial gain,<br />but
-            because mankind inherited a genetic craving to create from the force
-            that birthed it.<br /><br />To view our website please enable
-            javaskript.</noscript
-          >
-        </span>
+      <div id="loadContain">
+        <div class="four-pointed-star"></div>
+        <div class="glow">
+          <div class="chewy"></div>
+          <div class="leftLeg"></div>
+          <div class="rightLeg"></div>
+          <div class="nb-spinner"></div>
+        </div>
       </div>
+      <script>
+        function loadAnimation() {
+          const load = document.querySelector("#loadContain");
+          if (load) {
+            load.classList.remove("animation");
+            setTimeout(() => {
+              load.classList.add("animation");
+              setTimeout(loadAnimation, 3000);
+            }, 1000);
+          }
+        }
+        loadAnimation();
+      </script>
     </div>
-    <!-- built files will be auto injected -->
+    <noscript
+      ><br />Gang Fight is a digital media brand specializing in comic and web
+      art.<br />
+      We make content not because we seek any sort of financial gain,<br />but
+      because mankind inherited a genetic craving to create from the force that
+      birthed it.<br /><br />To view our website please enable
+      javaskript.</noscript
+    >
   </body>
 </html>
