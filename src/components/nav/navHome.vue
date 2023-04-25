@@ -1,39 +1,48 @@
 <template>
-<div id="navBox" :class="[(this.$store.getters.getTaller == 'vh')?'desktop':'mobile',{open: navOpen}]">
+  <div
+    id="navBox"
+    :class="[
+      this.$store.getters.getTaller == 'vh' ? 'desktop' : 'mobile',
+      { open: navOpen },
+    ]"
+  >
     <span class="button" @click="clickNav('button')">
-        <i :class="[(navOpen)?'far fa-times-circle':'fas fa-bars']"></i>
+      <i :class="[navOpen ? 'far fa-times-circle' : 'fas fa-bars']"></i>
     </span>
     <nav @click="clickNav('link')">
-        <router-link to="/" class="redLink">Gang Fight</router-link>
-        <router-link to="/about" class="redLink">About Us</router-link>
-        <router-link to="/comic" class="blueLink">Comics</router-link>
-        <router-link to="/projects" class="blueLink">Projects</router-link>
+      <router-link to="/" class="redLink">Gang Fight</router-link>
+      <router-link to="/about" class="redLink">About Us</router-link>
+      <router-link to="/comic" class="blueLink">Comics</router-link>
+      <router-link to="/projects" class="blueLink">Projects</router-link>
+      <a
+        href="https://www.beetle.city/category/gang-fight"
+        target="_blank"
+        class="greenLink"
+        >Shop</a
+      >
     </nav>
-</div>
+  </div>
 </template>
 
 <script>
 export default {
-    name: "navigation",
-    data(){
-        return{
-            navOpen: false
-        }
+  name: "navigation",
+  data() {
+    return {
+      navOpen: false,
+    };
+  },
+  methods: {
+    clickNav(source) {
+      this.navOpen = source === "button" ? !this.navOpen : false;
     },
-    methods:{
-        clickNav(source){
-            if(source == "button")
-                this.navOpen = !this.navOpen
-            else if(source == "link")
-                this.navOpen = false
-        }
+  },
+  computed: {
+    fontSize() {
+      return { fontSize: "1" + this.$store.getters.getTaller };
     },
-    computed: {
-        fontSize(){
-            return {fontSize: '1'+this.$store.getters.getTaller}
-        }
-    }
-}
+  },
+};
 </script>
 
 <style lang="sass" scoped>
@@ -61,6 +70,11 @@ export default {
         color: $neonBlue
         &:hover
             color: $lightNeonBlue
+    .greenLink
+        @extend .linkFormat
+        color: $neonGreen
+        &:hover
+            color: $lightNeonGreen
 #navBox.mobile
     color: $neonRed
     position: fixed
@@ -76,7 +90,7 @@ export default {
         transition: opacity 0s, font-size 0s
         transition-delay: 0s
         font-weight: 100
-    .button     
+    .button
         text-align: center
         position: absolute
         top: 0
@@ -120,7 +134,7 @@ export default {
     right: 0
     margin: 0 auto
     left: 0
-    display: flex    
+    display: flex
     flex-direction: inherit
     justify-content: space-evenly
     position: fixed
